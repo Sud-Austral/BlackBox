@@ -11,8 +11,9 @@ namespace AplicacionBlanco.Controllers
     {
         static Database db = new Database();
         // GET: Pagina
-        public ActionResult Index()
+        public ActionResult Index(string id, string producto)
         {
+            var url = db.pedidos.Where(x => x.cliente.id == id && x.producto.id == producto).FirstOrDefault();
             return View();
         }
 
@@ -26,14 +27,15 @@ namespace AplicacionBlanco.Controllers
             return View();
         }
 
-        public ActionResult Validador(int cliente, int producto)
+        public ActionResult Validador(string id, string producto)
         {
-            var url = db.pedidos.Where(x => x.cliente.id == cliente && x.producto.id == producto).FirstOrDefault();
+            var url = db.pedidos.Where(x => x.cliente.id == id && x.producto.id == producto).FirstOrDefault();
             if(url == null)
             {
                 return View("Restriccion");
             }
             Session["url"] = url.producto.url;
+            Session.Timeout = 1;
 
             return Redirect("Dashboard");
         }
@@ -44,6 +46,11 @@ namespace AplicacionBlanco.Controllers
         }
 
         public ActionResult Test()
+        {
+            return View();
+        }
+
+        public ActionResult Clent(string id)
         {
             return View();
         }

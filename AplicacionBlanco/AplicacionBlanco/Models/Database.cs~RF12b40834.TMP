@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Web;
+
+namespace AplicacionBlanco.Models
+{
+    public class Database
+    {
+        public List<Pedido> pedidos;
+
+        public Database()
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/Sud-Austral/dropbox_to_github/main/data_customers.csv");
+            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            var reader = new StreamReader(resp.GetResponseStream());
+
+            List<Cliente> clientes = new List<Cliente>();
+            List<string> auxiliar = new List<string>();
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+                //string values_r = values[1].Replace("\"", "");
+                try
+                {
+                    if (!auxiliar.Contains(values[19]))
+                    {
+                        auxiliar.Add(values[19]);
+                        clientes.Add(new Cliente(values[19], ""));
+                    }
+                    
+                }
+                catch (Exception e)
+                {
+                    string aux = "Error";
+                }
+                //clientes.Add(new Cliente(values[19], ""));
+                
+            }
+            
+
+            Producto producto1 = new Producto("1", "https://training-dataintelligence.odoo.com/data-educacion", "Test");
+            Producto producto2 = new Producto("2", "https://training-dataintelligence.odoo.com/data-riesgos", "Test");
+            Producto producto3 = new Producto("3", "https://training-dataintelligence.odoo.com/data-salud", "Test");
+            Producto producto4 = new Producto("4", "https://training-dataintelligence.odoo.com/data-territorio", "Test");
+            //Cliente cliente1 = new Cliente(1, "Test1");
+            //Cliente cliente2 = new Cliente(2, "Test2");
+            //Cliente cliente3 = new Cliente(3, "Test3");
+            //Pedido pedido1 = new Pedido(1, cliente1, producto1);
+            this.pedidos = new List<Pedido>();
+            //pedidos.Add(new Pedido(1, cliente1, producto1));
+            //pedidos.Add(new Pedido(2, cliente1, producto2));
+            //pedidos.Add(new Pedido(3, cliente1, producto3));
+            //pedidos.Add(new Pedido(3, cliente1, producto4));
+            // pedidos.Add(new Pedido(4, cliente2, producto1));
+            foreach (var item in clientes)
+            {
+                pedidos.Add(new Pedido(1,item, producto1));
+                pedidos.Add(new Pedido(1, item, producto2));
+                pedidos.Add(new Pedido(1, item, producto3));
+                pedidos.Add(new Pedido(1, item, producto4));
+            }
+        }
+    }
+}

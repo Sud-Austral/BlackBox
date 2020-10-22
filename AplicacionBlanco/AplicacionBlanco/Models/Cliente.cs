@@ -7,7 +7,7 @@ namespace AplicacionBlanco.Models
 {
     public class Cliente
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public string nombre { get; set; }
 
         public Cliente()
@@ -15,7 +15,7 @@ namespace AplicacionBlanco.Models
 
         }
 
-        public Cliente(int id, string nombre)
+        public Cliente(string id, string nombre)
         {
             this.id = id;
             this.nombre = nombre;
