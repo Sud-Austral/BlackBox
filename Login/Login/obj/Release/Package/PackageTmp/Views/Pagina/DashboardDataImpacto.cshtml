@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>DashboardFree</title>
+    <title>Dashboard de Data Riesgo</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -27,16 +27,37 @@
         */
                 }
 
-                .nav-item {
-                    width: 180px;
-                    text-align: center;
-                }
+        .nav-item {
+            width: 180px;
+            text-align: center;   
+        }
+
+        .nav-item {
+            width: 180px;
+            text-align: center;
+        }
+        /*
+        .nav-link:active{
+            background-color:red !important;
+        }
+        .nav-item:active {
+            background-color: red !important;
+        }
+        */
+        .nav-link.active {
+            color: red !important;
+            background-color: red !important;
+        }
+        .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+            color: black !important;
+            background-color: red !important;
+        }
     </style>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs " role="tablist" style=" margin-left:19%; ">
 
         <li class="nav-item">
-            <a class="nav-link  bg-light  border  ml-2" data-toggle="tab" href="#home" role="tab">
+            <a class="nav-link bg-light border  ml-2" data-toggle="tab" href="#home" role="tab">
                 Impactos de Eta
             </a>
         </li>
@@ -65,7 +86,7 @@
 
     <!-- Tab panes -->
     <div class="tab-content" style=" height:800px; margin-left19%;">
-        <div class="tab-pane" id="home" role="tabpanel">
+        <div class="tab-pane active" id="home" role="tabpanel">
             <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjgzMDc4YWQtMGI0ZC00MTFmLWJlZTgtNTFiOTM0MGViM2FlIiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9"></iframe>
         </div>
 
