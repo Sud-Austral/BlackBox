@@ -316,6 +316,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\Utilidades.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -364,6 +365,7 @@
     <Content Include="Views\Pagina\Validador.cshtml" />
     <Content Include="Views\Pagina\Restriccion.cshtml" />
     <Content Include="Views\Pagina\Dashboard.cshtml" />
+    <Content Include="Views\Pagina\DashboardDataImpacto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

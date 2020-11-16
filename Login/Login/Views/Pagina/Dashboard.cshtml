@@ -14,13 +14,21 @@
             margin: 0;
         }
     </style>
+    @Scripts.Render("~/bundles/bootstrap")
 </head>
 <body>
 
+    <div id="image-box">
+        <div id="myframe" class="embed-responsive">
+        </div>
+    </div>
 
 
-    <iframe id='iframe2' class="embed-responsive" src="@ViewBag.url" frameborder="0" style="overflow: hidden; height: 100%; width: 100%; position: absolute;"></iframe>
     <!--
+
+     <iframe id='iframe2' class="embed-responsive" src="@ViewBag.url" frameborder="0" style="overflow: hidden; height: 100%; width: 100%; position: absolute;"></iframe>
+
+
     <iframe id='iframe2' class="embed-responsive" src="@ViewBag.url" frameborder="0" style="overflow: hidden; height: 100%; width: 100%; position: absolute;"></iframe>
 
 
@@ -41,6 +49,12 @@
     </style>
     <iframe src="http://52.173.85.103:8069/pt1"></iframe>
         -->
+    <script>
+        //alert("Hola");
+        //saludo();
+        OcultarURL("@ViewBag.url");
+    </script>
+   
 </body>
 </html>
 

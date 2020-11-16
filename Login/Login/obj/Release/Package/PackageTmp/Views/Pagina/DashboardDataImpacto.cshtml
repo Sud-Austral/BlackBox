@@ -1,0 +1,97 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DashboardFree</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <style>
+                iframe {
+                    width: 98%;
+                    height: 780px;
+                    border: none;
+                    position: absolute;
+                    clip: rect(0px, 1400px, 743px, 0px);
+                    /* 0px=top(arriba)
+            1400px=left(izquierda)
+             743px = botton(abajo)
+             0px=right(derecha)
+        */
+                }
+
+                .nav-item {
+                    width: 180px;
+                    text-align: center;
+                }
+    </style>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs " role="tablist" style=" margin-left:19%; ">
+
+        <li class="nav-item">
+            <a class="nav-link  bg-light  border  ml-2" data-toggle="tab" href="#home" role="tab">
+                Impactos de Eta
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link  bg-light  border ml-2" data-toggle="tab" href="#profile" role="tab">Tormentas Activas</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link  bg-light  border ml-2" data-toggle="tab" href="#messages" role="tab">Escenario 1 - Iota</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link  bg-light  border ml-2" data-toggle="tab" href="#settings" role="tab">
+                Escenario 2 - Iota
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link  bg-light  border ml-2" data-toggle="tab" href="#Trayectorias" role="tab">Trayectorias</a>
+        </li>
+
+    </ul>
+    <br />
+    <br />
+
+    <!-- Tab panes -->
+    <div class="tab-content" style=" height:800px; margin-left19%;">
+        <div class="tab-pane" id="home" role="tabpanel">
+            <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjgzMDc4YWQtMGI0ZC00MTFmLWJlZTgtNTFiOTM0MGViM2FlIiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9"></iframe>
+        </div>
+
+        <div class="tab-pane" id="profile" role="tabpanel">
+            <iframe class="embed-responsive embed-responsive-16by9" id="powerbi" style="margin: 0 auto; width: 90%; height: 780px; " src="https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=83717bd9a9fe4f8b8eec1213d73efcfc&extent=-97.1832,4.6514,-65.5426,21.0419"></iframe>
+        </div>
+
+        <div class="tab-pane" id="messages" role="tabpanel">
+            <iframe class="embed-responsive embed-responsive-16by9" id="powerbi" style="margin: 0 auto; width: 90%; height: 780px; " src="https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=7a9dbf0dfdaf44cb8062b3c99e56dd17&extent=-98.5840,6.5757,-66.9434,22.8355"
+                    frameborder="0"></iframe>
+        </div>
+
+        <div class="tab-pane" id="settings" role="tabpanel">
+            <iframe class=" embed-responsive embed-responsive-16by9 " id="powerbi" style="margin: 0 auto; width: 90%; height: 780px;" src="https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=c18471c50597435f9d8d56ce1406677e&extent=-98.5840,6.5757,-66.9434,22.8355"
+                    frameborder="0"></iframe>
+        </div>
+
+        <div class="tab-pane" id="Trayectorias" role="tabpanel">
+            <iframe class=" embed-responsive embed-responsive-16by9 " id="powerbi" style="margin: 0 auto; width: 90%; height: 780px;  " src="https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=8968a78812d644858916532e46c7dec3&extent=-98.9355,6.4229,-67.2949,22.6936"
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

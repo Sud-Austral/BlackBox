@@ -30,6 +30,10 @@ namespace Login.Controllers
             {
                 return View("Restriccion");
             }
+            if (url.Contains("showLayers"))
+            {
+                bool flag = true;
+            }
             Session["url"] = url;
             Session.Timeout = 1;
 
@@ -55,6 +59,11 @@ namespace Login.Controllers
             {
                 return View("Restriccion");
             }
+            return View();
+        }
+
+        public ActionResult DashboardDataImpacto()
+        {
             return View();
         }
     }
