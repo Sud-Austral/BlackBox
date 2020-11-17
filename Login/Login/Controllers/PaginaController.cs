@@ -25,6 +25,7 @@ namespace Login.Controllers
 
         public ActionResult Validador(string url, string idOrden)
         {
+            url = "https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=8968a78812d644858916532e46c7dec3&extent=-120.5127,6.3355,-45.2343,37.5955";
             //var url = db.pedidos.Where(x => x.cliente.id == id && x.producto.id == producto).FirstOrDefault();
             if (url == null)
             {
@@ -66,5 +67,12 @@ namespace Login.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
+        public ActionResult DashboardDataImpactoFree()
+        {
+            return View("DashboardDataImpacto");
+        }
+
+        
     }
 }
