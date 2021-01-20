@@ -8,9 +8,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Dashboard de Data Riesgo</title>
+    <title>Dashboard de Data Impacto</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163367570-1"></script>
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163367570-1');
+    </script>
 </head>
 <body style="margin:0;padding:0">
     <header id="top" data-name="Header">
@@ -20,9 +29,9 @@
                 <a href="http://dataintelligence-group.com/" class="navbar-brand logo">
                     <span role="img" aria-label="Logo of dataintelligence" title="dataintelligence">
 
-
-                        <img src="~/Images/DataImpacto/logoDataIntelligence_transparente_Blanco.png"
-                             style="margin-left:-5vw"
+                        
+                        <img src="~/Images/DataImpacto/logoDataIntelligence_transparente_Blanco.png" 
+                             style="margin-left:-4vw"
                              alt="dataintelligence">
                     </span>
                 </a>
@@ -81,33 +90,52 @@
                 background-color: red !important;
             }
         </style>
-
+        <div class="container" style="margin-bottom:1%">
+            <div class="row">
+                <div class="col text-center">
+                    <h1 class="">
+                        DATA IMPACTO
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="text-center">
+                        Convencidos del poder que genera la información, DATA INTELLIGENCE ofrece al público en general la plataforma Data Impacto; un compilatorio de datos en línea generados 
+                        con la perspectiva ambiental y social de su impacto en la comunidad.
+                        En esta plataforma encontrará el mapa de la temporada de huracanes y tormentas con información actualizada minuto a minuto; se muestran las tormentas activas, 
+                        sus trayectorias y las que están en formación.
+                    </p>
+                </div>
+            </div>
+        </div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs " role="tablist" style=" margin-left:19%;">
 
             <li class="nav-item">
-                <a class="nav-link bg-light border  ml-2" data-toggle="tab" href="#home" role="tab">
+                <a class="nav-link bg-light border  ml-2"  href="~/pagina/dashboardDataimpactofree" role="tab">
                     Impactos de Eta
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  bg-light  border ml-2" data-toggle="tab"
-                   href="#profile" role="tab">Trayectoria de Huracanes 2020</a>
+                <a class="nav-link  bg-light  border ml-2"  href="~/pagina/dashboardDataimpactofree" role="tab">Tormentas Activas</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  bg-light  border ml-2" data-toggle="tab"
-                   href="#messages" role="tab">Fuerza Huracán ETA</a>
+                <a class="nav-link  bg-light  border ml-2" href="~/pagina/dashboardDataimpactofree" role="tab">Escenario 1 - Activas</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  bg-light  border ml-2" data-toggle="tab"
-                   href="#settings" role="tab">
-                    Fuerza Huracán IOTA
+                <a class="nav-link  bg-light  border ml-2" href="~/pagina/dashboardDataimpactofree" role="tab">
+                    Escenario 2 - Activas
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link  bg-light  border ml-2" data-toggle="tab" href="#Trayectorias" role="tab">
+                Trayectorias</a>
+            </li>
 
         </ul>
         <br />
@@ -115,35 +143,40 @@
 
         <!-- Tab panes -->
         <div class="tab-content" style=" height:800px; margin-left19%;">
-            <div class="tab-pane active" id="home" role="tabpanel">
-                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjgzMDc4YWQtMGI0ZC00MTFmLWJlZTgtNTFiOTM0MGViM2FlIiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9"></iframe>
+            <div class="tab-pane" id="home" role="tabpanel">
+                <iframe loading="lazy"
+                 src="https://app.powerbi.com/view?r=eyJrIjoiYjgzMDc4YWQtMGI0ZC00MTFmLWJlZTgtNTFiOTM0MGViM2FlIiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9"></iframe>
             </div>
 
             <div class="tab-pane" id="profile" role="tabpanel">
-                <iframe class="embed-responsive embed-responsive-16by9" id="powerbi"
-                        style="margin: 0 auto; width: 90%; height: 780px; "
-                        src="https://ide.dataintelligence-group.com/mapstore/#/context/huracanes/258"></iframe>
+                <iframe loading="lazy"
+                        class="embed-responsive embed-responsive-16by9" id="powerbi" style="margin: 0 auto; width: 90%; height: 780px; "></iframe>
+                                                                                                                                           
             </div>
 
             <div class="tab-pane" id="messages" role="tabpanel">
-                <iframe class="embed-responsive embed-responsive-16by9" id="powerbi"
-                        style="margin: 0 auto; width: 90%; height: 780px; "
-                        src="https://ide.dataintelligence-group.com/mapstore/#/context/huracanes/259"
+                <iframe loading="lazy"
+                        class="embed-responsive embed-responsive-16by9" id="powerbi" style="margin: 0 auto; width: 90%; height: 780px; " 
                         frameborder="0"></iframe>
             </div>
 
             <div class="tab-pane" id="settings" role="tabpanel">
-                <iframe class=" embed-responsive embed-responsive-16by9 " id="powerbi"
-                        style="margin: 0 auto; width: 90%; height: 780px;"
-                        src="https://ide.dataintelligence-group.com/mapstore/#/context/huracanes/260"
+                <iframe loading="lazy"
+                        class=" embed-responsive embed-responsive-16by9 " id="powerbi" style="margin: 0 auto; width: 90%; height: 780px;" 
+
                         frameborder="0"></iframe>
             </div>
 
+            <div class="tab-pane  active" id="Trayectorias" role="tabpanel">
+                <iframe loading="lazy"
+                        class=" embed-responsive embed-responsive-16by9 " id="powerbi" style="margin: 0 auto; width: 90%; height: 780px;  " src="https://ide.dataintelligence-group.com/mapstore/#/context/huracanes/259"
+                        frameborder="0"></iframe>
+            </div>
         </div>
     </div>
-    <footer id="bottom" data-anchor="true" class="bg-dark text-light" style="margin:0">
-        <div id="footer">
-            <section class="s_text_block pt0 pb0 bg-black" data-name="Text block">
+    <footer id="bottom" data-anchor="true" class="bg-dark text-light" style="margin:0" >
+        <div id="footer" >
+            <section class="s_text_block pt0 pb0 bg-black" data-name="Text block" >
                 <div class="container">
                     <div class="row">
                         <div class="pb24 col-lg-12">

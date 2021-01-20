@@ -371,6 +371,8 @@
     <Content Include="Views\Pagina\Dashboard.cshtml" />
     <Content Include="Views\Pagina\DashboardDataImpacto.cshtml" />
     <Content Include="Views\Pagina\DashboardDataImpactoFree.cshtml" />
+    <Content Include="Views\Pagina\DashboardArgis.cshtml" />
+    <Content Include="Views\Pagina\Trayectorias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
