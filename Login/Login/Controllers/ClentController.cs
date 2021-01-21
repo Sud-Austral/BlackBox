@@ -22,7 +22,7 @@ namespace Login.Controllers
              TimeSpan td = fechaActual - fechaInicio;
 
             // Total de dias.
-           //int differenceInDays = ts.Days;   
+           //int differenceInDays = td.Days;   
             ViewBag.totalDias = Util.fechaLimite(fecha);
             if (ViewBag.totalDias)
             {
@@ -34,12 +34,20 @@ namespace Login.Controllers
                 return View("error");
             }
 
+
+
             
         }
 
-        public ActionResult error()
+        public ActionResult Error()
         {
 
+            return View();
+        }
+
+        //Test producto
+        public ActionResult Producto(string url, string idOrden)
+        {
             return View();
         }
     }
