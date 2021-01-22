@@ -11,15 +11,39 @@ namespace Login.Models
         {
             bool salida = false;
             int cantidadDias = 1;
-
-            DateTime fechaInicio = DateTime.Parse(fecha);
+            DateTime fechaInicio = DateTime.Now;
+            try
+            {
+                fechaInicio = DateTime.Parse(fecha);
+            }
+            catch (Exception)
+            {
+                return false;
+            }            
             DateTime fechaActual = DateTime.Now;
-
             //Calculo de dias.
             TimeSpan td = fechaActual - fechaInicio;
-
             salida = td.Days <= cantidadDias;
+            return salida;
+        }
 
+        public static bool fechaLimite(string fecha, int cantidadDias)
+        {
+            bool salida = false;
+            //int cantidadDias = 1;
+            DateTime fechaInicio = DateTime.Now;
+            try
+            {
+                fechaInicio = DateTime.Parse(fecha);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            DateTime fechaActual = DateTime.Now;
+            //Calculo de dias.
+            TimeSpan td = fechaActual - fechaInicio;
+            salida = td.Days <= cantidadDias;
             return salida;
         }
     }
