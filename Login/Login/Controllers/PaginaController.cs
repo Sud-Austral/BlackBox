@@ -23,11 +23,12 @@ namespace Login.Controllers
             return View();
         }
 
-        public ActionResult Validador(string url, string idOrden, string saturno)
+        public ActionResult Validador(string url, string idOrden, string saturno, string nombre)
         {
             string ola = url;
-            if (!Util.fechaLimite(saturno))
+            if (!Util.fechaLimite(saturno, nombre))
             {
+                ViewBag.enlaceShopify = "https://dataintelligence.store/" + nombre;
                 return View("errorTiempo");
             }
             //url = "https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=8968a78812d644858916532e46c7dec3&extent=-120.5127,6.3355,-45.2343,37.5955";
