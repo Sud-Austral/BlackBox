@@ -25,6 +25,7 @@ namespace Login.Controllers
 
         public ActionResult Validador(string url, string idOrden, string saturno)
         {
+            string ola = url;
             if (!Util.fechaLimite(saturno))
             {
                 return View("errorTiempo");
