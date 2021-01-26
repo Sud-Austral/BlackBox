@@ -24,10 +24,12 @@ namespace Login.Controllers
         }
 
         public ActionResult Validador(string url, string idOrden, string saturno, string nombre)
+        //public string Validador(string url, string idOrden, string saturno, string nombre)
         {
             string ola = url;
             if (!Util.fechaLimite(saturno, nombre))
             {
+
                 ViewBag.enlaceShopify = "https://dataintelligence.store/" + nombre;
                 return View("errorTiempo");
             }
@@ -56,12 +58,14 @@ namespace Login.Controllers
         {
             ViewBag.url = (string)Session["url"];
             string user = User.Identity.GetUserName();
+            /*
             ViewBag.user = user;
             List<string> aux = correos.correos;
             if (!aux.Contains(user))
             {
                 return View("Restriccion");
             }
+            */
             if (ViewBag.url == null)
             {
                 return View("Restriccion");
