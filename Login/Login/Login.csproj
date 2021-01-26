@@ -213,6 +213,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\DataImpacto\dataintelligence.png" />
     <Content Include="Images\DataImpacto\logoDataIntelligence_transparente_Blanco.png" />
+    <Content Include="Images\Error\imagen_licencia_caduca.jpg" />
+    <Content Include="Images\Error\logo_DataIntelligence_normal.png" />
     <Content Include="Images\login\arrow-down1.gif" />
     <Content Include="Images\login\data_portabilityprivacy_banner_003_256_30fps-1.gif" />
     <Content Include="Scripts\bootstrap.bundle.js" />
