@@ -11,8 +11,13 @@ namespace Login.Controllers
     {
         public ActionResult Index()
         {
-            
-            return View();
+            ViewBag.outs = Request.IsAuthenticated;
+         if (Request.IsAuthenticated)
+            {
+                return View("Bienvenida");
+            }
+
+                return View();
         }
 
         public ActionResult About()
@@ -26,6 +31,11 @@ namespace Login.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Bienvenida()
+        {
             return View();
         }
     }

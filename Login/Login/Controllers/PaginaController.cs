@@ -49,7 +49,7 @@ namespace Login.Controllers
             return Redirect("Dashboard");
         }
 
-        public ActionResult Restriccion(int cliente, int producto)
+        public ActionResult Restriccion(int cliente=0, int producto=0)
         {
             return View();
         }
