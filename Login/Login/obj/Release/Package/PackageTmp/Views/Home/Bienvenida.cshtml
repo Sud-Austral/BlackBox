@@ -7,8 +7,8 @@
     <img class="img-fluid" src="~/Images/Error/enlaceal_dashboard.jpg" style="width:100%;" />
 </div>
 <h2>
-    Bienvenido @User.Identity.GetUserName(), para visualizar el dashboard que haz adquirido, debes regresar al correo de confirmación de tu pedido y hacer nuevamente click en el link que te enviamos de la compra de tu producto para poder visualizarlo y poder utilizarlo. Disculpa las molestias pero este proceso es por el resguardo de nuestro producto y para poder brindarte una mejor atención.
- </h2>
+    Bienvenido @User.Identity.GetUserName(), para visualizar el dashboard que has adquirido, deberás regresar al correo de confirmación de tu pedido y hacer nuevamente clic en el link que enviamos por tu compra. Este proceso es necesario para asegurar el acceso exclusivo al producto que acabas de adquirir y brindarte una mejor atención de soporte.
+</h2>
 
     @{
         using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -43,3 +43,4 @@
                 <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
             </ul>
         }*@
+
