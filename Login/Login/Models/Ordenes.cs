@@ -15,6 +15,7 @@ namespace Login.Models
         {
             this.ordenes = new List<Orden>();
             string url = "https://raw.githubusercontent.com/Sud-Austral/dropbox_to_github/main/orders.csv";
+            
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
             HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
             var reader = new StreamReader(resp.GetResponseStream());
@@ -25,10 +26,21 @@ namespace Login.Models
             {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
+                this.ordenes.Add(new Orden(values[9], values[23]));
                 //this.ordenes.Add(new Orden(values[],values[],values[],values[],values[]));
                 //string values_r = values[1].Replace("\"", "");
 
             }
+        }
+
+        public bool validarCompra(string email, string producto)
+        {
+            /*
+            if(email == "lmonsalve22@gmail.com")
+            {
+                return true;
+            }*/
+            return this.ordenes.Where(x => x.correo == email && x.producto == producto).Count() > 0;
         }
     }
 }

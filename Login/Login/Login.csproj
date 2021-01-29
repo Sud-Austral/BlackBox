@@ -382,6 +382,8 @@
     <Content Include="Views\Clent\error.cshtml" />
     <Content Include="Views\Pagina\errorTiempo.cshtml" />
     <Content Include="Views\Home\Bienvenida.cshtml" />
+    <Content Include="Views\Pagina\malomalo.cshtml" />
+    <Content Include="Views\Pagina\errorCompra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -27,14 +27,20 @@ namespace Login.Controllers
         //public string Validador(string url, string idOrden, string saturno, string nombre)
         {
             string ola = url;
+            ViewBag.enlaceShopify = "https://dataintelligence.store" + nombre;
             if (!Util.fechaLimite(saturno, nombre))
-            {
-
-                ViewBag.enlaceShopify = "https://dataintelligence.store/" + nombre;
+            {                
                 return View("errorTiempo");
             }
             //url = "https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=8968a78812d644858916532e46c7dec3&extent=-120.5127,6.3355,-45.2343,37.5955";
             //var url = db.pedidos.Where(x => x.cliente.id == id && x.producto.id == producto).FirstOrDefault();
+            string user = User.Identity.GetUserName();
+            Ordenes ordenes = new Ordenes();
+            if (!ordenes.validarCompra(user, (string)Session["url"]))
+            {
+                ViewBag.User = user;
+                return View("errorCompra");
+            }
             if (url == null)
             {
                 return View("Restriccion");
@@ -58,6 +64,7 @@ namespace Login.Controllers
         {
             ViewBag.url = (string)Session["url"];
             string user = User.Identity.GetUserName();
+            
             /*
             ViewBag.user = user;
             List<string> aux = correos.correos;
@@ -97,6 +104,19 @@ namespace Login.Controllers
 
         public ActionResult errorTiempo()
         {
+            return View();
+        }
+
+        public ActionResult errorCompra()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public ActionResult malomalo()
+        {
+            Ordenes ordenes = new Ordenes();
+            ViewBag.Primo = ordenes.ordenes[0];
+            ViewBag.Primo1 = ordenes.validarCompra("clentebanks0@gmail.com", "https://prueba.dataintelligence-group.com/data4?Codcom=13101");
             return View();
         }
 

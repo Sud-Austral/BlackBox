@@ -21,5 +21,14 @@ namespace Login.Models
             this.sku = sku;
             this.cliente = cliente;
         }
+
+        public Orden(string correo, string producto)
+        {
+            this.id = "";
+            this.correo = correo;
+            this.producto = producto;
+            this.sku = "";
+            this.cliente = "";
+        }
     }
 }
