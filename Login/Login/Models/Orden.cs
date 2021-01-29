@@ -22,9 +22,9 @@ namespace Login.Models
             this.cliente = cliente;
         }
 
-        public Orden(string correo, string producto)
+        public Orden(string correo, string producto, string nombre)
         {
-            this.id = "";
+            this.id = nombre;
             this.correo = correo;
             this.producto = producto;
             this.sku = "";

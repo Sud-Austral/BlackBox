@@ -29,7 +29,7 @@ namespace Login.Controllers
             string ola = url;
             ViewBag.enlaceShopify = "https://dataintelligence.store" + nombre;
             if (!Util.fechaLimite(saturno, nombre))
-            {                
+            {    
                 return View("errorTiempo");
             }
             //url = "https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=8968a78812d644858916532e46c7dec3&extent=-120.5127,6.3355,-45.2343,37.5955";
@@ -38,6 +38,7 @@ namespace Login.Controllers
             Ordenes ordenes = new Ordenes();
             if (!ordenes.validarCompra(user, (string)Session["url"]))
             {
+                ViewBag.Lista = ordenes.productosPorUsuario("clentebanks0@gmail.com");
                 ViewBag.User = user;
                 return View("errorCompra");
             }

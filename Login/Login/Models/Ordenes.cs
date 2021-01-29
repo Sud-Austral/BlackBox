@@ -26,7 +26,7 @@ namespace Login.Models
             {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
-                this.ordenes.Add(new Orden(values[9], values[23]));
+                this.ordenes.Add(new Orden(values[9], values[23], values[18]));
                 //this.ordenes.Add(new Orden(values[],values[],values[],values[],values[]));
                 //string values_r = values[1].Replace("\"", "");
 
@@ -41,6 +41,11 @@ namespace Login.Models
                 return true;
             }*/
             return this.ordenes.Where(x => x.correo == email && x.producto == producto).Count() > 0;
+        }
+
+        public List<Orden> productosPorUsuario(string email)
+        {
+            return this.ordenes.Where(x => x.correo == email).ToList();
         }
     }
 }
