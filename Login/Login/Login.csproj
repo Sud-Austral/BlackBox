@@ -188,10 +188,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PaginaController.cs" />
+    <Compile Include="Controllers\ReadAPIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\APIShopify.cs" />
     <Compile Include="Models\Correos.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -392,6 +394,7 @@
     <Content Include="Views\Home\Bienvenida.cshtml" />
     <Content Include="Views\Pagina\malomalo.cshtml" />
     <Content Include="Views\Pagina\errorCompra.cshtml" />
+    <Content Include="Views\ReadAPI\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

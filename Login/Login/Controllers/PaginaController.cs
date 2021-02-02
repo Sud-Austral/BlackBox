@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Login.Models;
 using Microsoft.AspNet.Identity;
+using Newtonsoft.Json.Linq;
 
 namespace Login.Controllers
 {
@@ -23,7 +25,7 @@ namespace Login.Controllers
             return View();
         }
 
-        public ActionResult Validador(string url, string idOrden, string saturno, string nombre)
+        public ActionResult Validador(string url, string idOrden, string saturno, string nombre, string ordenCliente)
         //public string Validador(string url, string idOrden, string saturno, string nombre)
         {
             string ola = url;
@@ -35,13 +37,20 @@ namespace Login.Controllers
             //url = "https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=8968a78812d644858916532e46c7dec3&extent=-120.5127,6.3355,-45.2343,37.5955";
             //var url = db.pedidos.Where(x => x.cliente.id == id && x.producto.id == producto).FirstOrDefault();
             string user = User.Identity.GetUserName();
-            Ordenes ordenes = new Ordenes();
-            if (!ordenes.validarCompra(user, (string)Session["url"]))
+            if(!APIShopify.ValidarCorreo(ordenCliente, user))
+            {
+                return View("errorCompra");
+            }
+            //Ordenes ordenes = new Ordenes();
+            /*
+            if (!ordenes.validarCompra(user, url))
             {
                 ViewBag.Lista = ordenes.productosPorUsuario("clentebanks0@gmail.com");
                 ViewBag.User = user;
                 return View("errorCompra");
             }
+            */
+
             if (url == null)
             {
                 return View("Restriccion");
@@ -117,8 +126,20 @@ namespace Login.Controllers
         {
             Ordenes ordenes = new Ordenes();
             ViewBag.Primo = ordenes.ordenes[0];
-            ViewBag.Primo1 = ordenes.validarCompra("clentebanks0@gmail.com", "https://prueba.dataintelligence-group.com/data4?Codcom=13101");
+            ViewBag.Primo1 = ordenes.validarCompra("clentebanks0@gmail.com", "https://www.dataintelligence-group.com/salud-24/7-chile?prodId=8/0");
+            //string url = "https://www.dataintelligence-group.com/213123241234";
+
+            //HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+            //HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            //var code = resp.StatusCode.ToString();
+            //ViewBag.Code = code;
             return View();
+        }
+
+        public string ejemploRapido(string orden, string correo = "")
+        {
+            
+            return APIShopify.ValidarCorreo(orden,correo).ToString();
         }
 
 
