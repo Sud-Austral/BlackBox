@@ -7,11 +7,13 @@
 @{
     ViewBag.Title = "errorCompra";
 }
-
-<h2>
-    Estimado @ViewBag.User, para validar su compra debe esperar 15 minutos para registrarla en nuestra
-    base de datos, de lo contrario lo invitamos a comprar el producto <a href="@ViewBag.enlaceShopify">Aqui</a>
-</h2>
-
-
-
+<div class="jumbotron" style="background-color:transparent;padding:0;">
+    <img class="img-fluid" src="~/Images/Error/imagen_licencia_caduca.jpg" style="width:100%;" />
+</div>
+<h2>Estimado @ViewBag.User, si no logras acceder al producto adquirido, debes esperar un máximo de 15 minutos e intentar nuevamente.</h2>
+<p>
+    Si no has comprado este producto, te invitamos a nuestra plataforma de <a href="@ViewBag.enlaceShopify">ventas</a>.
+</p>
+<p>
+    Si  de igual modo no logras ingresar a tu producto por favor comunícate con soporte@dataintelligence-group.com
+</p>

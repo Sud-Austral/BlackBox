@@ -13,7 +13,9 @@
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Cree una cuenta nueva.</h4>
+<h4>
+    ¡Hola! Queremos brindarte una mejor atención ahora y en tus visitas futuras, por eso necesitamos que te registres. Para esto deberás crear una cuenta y asignarle una contraseña conteniendo una letra mayúscula y por lo menos un número.
+</h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
