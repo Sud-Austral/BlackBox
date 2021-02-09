@@ -54,7 +54,7 @@ namespace Login.Models
             {
                 return false;
             }
-            return JObject.Parse(json.GetValue("order").ToString()).GetValue("email").ToString() == correo;
+            return JObject.Parse(json.GetValue("order").ToString()).GetValue("email").ToString() == correo.ToLower();
         }
     }
 }

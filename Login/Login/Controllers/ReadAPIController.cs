@@ -1,4 +1,5 @@
 ﻿using Login.Models;
+using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,8 @@ namespace Login.Controllers
             }
             */
             ViewBag.json = APIShopify.BuscarOrden(id);
+            //ViewBag.json = CSharpScript.EvaluateAsync<string>("System.DateTime.Now.ToString()").Result;
+            
             return View();
         }
     }
