@@ -143,5 +143,14 @@ namespace Login.Controllers
         }
 
 
+        public string ValidadorProductosInternos(string id = null)
+        {
+
+            List<Producto> productos = (List<Producto>)Session["Productos"];
+
+            return productos.Where(x => x.ID == id).First().NOMBRE;
+        }
+
+
     }
 }

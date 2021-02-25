@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h1 class="">Hola @ViewBag.User, esperamos poder ayudarte</h1>
+
+<br />
+<h2>Estos son tus productos:</h2>
+@*
+        <table class="table">
+
+
+            @foreach (var item in ViewBag.Resultado)
+            {
+
+                <p>
+                    @item.email
+                </p>
+            }
+
+            @*
+
+                <p>Hola</p>
+                <h2>@ViewBag.Resultado[1]</h2>
+
+    </table>
+
+    <h2>@ViewBag.Resultado[0].line_items</h2>
+*@
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Nombre</th>
+        <th>SKU</th>
+    </tr>
+    @foreach (var item in ViewBag.Resultado)
+    {
+        <tr>
+            <td>
+                <p>@item.NOMBRE</p>
+            </td>
+            <td>
+                <a href="~/Pagina/ValidadorProductosInternos/@item.ID">
+                    <p>Producto</p>
+                </a>
+            </td>
+            <td>
+                <a href="@item.COMPROBANTE" target="_blank">
+                    Comprobante
+                </a>
+            </td>
+        </tr>
+    }
+</table>

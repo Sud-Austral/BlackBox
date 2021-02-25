@@ -188,6 +188,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PaginaController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ReadAPIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +200,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Orden.cs" />
     <Compile Include="Models\Ordenes.cs" />
+    <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -395,6 +397,7 @@
     <Content Include="Views\Pagina\malomalo.cshtml" />
     <Content Include="Views\Pagina\errorCompra.cshtml" />
     <Content Include="Views\ReadAPI\Index.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
