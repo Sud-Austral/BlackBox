@@ -215,6 +215,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\csm_trainings_01_8a14e43b84.png" />
     <Content Include="Images\DataImpacto\dataintelligence.png" />
     <Content Include="Images\DataImpacto\logoDataIntelligence_transparente_Blanco.png" />
     <Content Include="Images\Error\creoCuentaNueva.jpg" />
