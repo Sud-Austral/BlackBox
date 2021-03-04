@@ -29,28 +29,40 @@
 
     <h2>@ViewBag.Resultado[0].line_items</h2>
 *@
-<table class="table">
-    <tr>
-        <th>Nombre</th>
-        <th>Nombre</th>
-        <th>SKU</th>
-    </tr>
+<table class="table table-bordered table-dark" align="center">
+    <thead class="thead-dark">
+        <tr>
+            <th> Nombre </th>
+
+            <th> Producto </th>
+
+            <th> Comprobante </th>
+        </tr>
+    </thead>
     @foreach (var item in ViewBag.Resultado)
     {
-        <tr>
-            <td>
-                <p>@item.NOMBRE</p>
-            </td>
-            <td>
-                <a href="~/Pagina/ValidadorProductosInternos/@item.ID">
-                    <p>Producto</p>
-                </a>
-            </td>
-            <td>
-                <a href="@item.COMPROBANTE" target="_blank">
-                    Comprobante
-                </a>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>
+                    @item.NOMBRE
+                </th>
+
+                <td>
+                    <a href="~/Pagina/ValidadorProductosInternos/@item.ID" style="color:lightblue;">
+                        Producto
+                    </a>
+                </td>
+
+                <td>
+                    <a href="@item.COMPROBANTE" target="_blank" style="color:lightblue;">
+                        Comprobante
+                    </a>
+                </td>
+            </tr>
+        </tbody>
     }
-</table>
+        
+    </table>
+
+<br/><br /><br /><br />
+<img src="~/Images/csm_trainings_01_8a14e43b84.png" class="img-fluid" alt="Responsive image">
