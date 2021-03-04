@@ -12,12 +12,14 @@ namespace Login.Models
         public string NOMBRE { get; set; }
         public string SKU { get; set; }
         public string COMPROBANTE { get; set; }
+        public string PRODUCT_ID { get; set; }
 
         public Producto(JToken json, string comprobante)
         {
             ID = (string)json["variant_id"];
             NOMBRE = (string)json["name"];
             SKU = (string)json["sku"];
+            PRODUCT_ID = (string)json["product_id"];
             COMPROBANTE = comprobante;
         }
 
@@ -26,6 +28,7 @@ namespace Login.Models
             ID = (string)json["variant_id"];
             NOMBRE = (string)json["name"];
             SKU = (string)json["sku"];
+            PRODUCT_ID = (string)json["product_id"];
         }
 
     }

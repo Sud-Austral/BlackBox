@@ -143,12 +143,16 @@ namespace Login.Controllers
         }
 
 
-        public string ValidadorProductosInternos(string id = null)
+        public ActionResult ValidadorProductosInternos(string id = null)
         {
-
             List<Producto> productos = (List<Producto>)Session["Productos"];
-
-            return productos.Where(x => x.ID == id).First().NOMBRE;
+            string url = productos.Where(x => x.ID == id).First().SKU;
+            Session["url"] = url; //"https://www.c-sharpcorner.com/article/html-action-and-html-renderaction-in-Asp-Net-mvc/";
+            //return Redirect("Dashboard");
+            return Redirect("../Dashboard");
+            //return productos.Where(x => x.ID == id).First().SKU;
+            //return url;
+            //return Dashboard();
         }
 
 
