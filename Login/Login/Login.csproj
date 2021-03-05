@@ -254,7 +254,6 @@
     <None Include="Properties\PublishProfiles\ServicioDashboard - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\ServicioDashboard - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -401,6 +400,7 @@
     <Content Include="Views\ReadAPI\Index.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Views\Grafico\Index.cshtml" />
+    <Content Include="Views\Producto\Elecciones_HN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
