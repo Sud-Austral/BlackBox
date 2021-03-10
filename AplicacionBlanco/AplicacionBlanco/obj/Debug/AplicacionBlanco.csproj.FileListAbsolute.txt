@@ -137,8 +137,8 @@ D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\bin\es\System.Web.WebPages.
 D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\bin\es\System.Net.Http.Formatting.resources.dll
 D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\bin\es\System.Web.Http.resources.dll
 D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\bin\es\System.Web.Http.WebHost.resources.dll
+D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\obj\Debug\AplicacionBlanco.csprojAssemblyReference.cache
 D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\obj\Debug\AplicacionBlanco.csproj.CoreCompileInputs.cache
 D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\obj\Debug\AplicacionBlanco.csproj.CopyComplete
 D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\obj\Debug\AplicacionBlanco.dll
 D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\obj\Debug\AplicacionBlanco.pdb
-D:\GitHub\BlackBox\AplicacionBlanco\AplicacionBlanco\obj\Debug\AplicacionBlanco.csprojAssemblyReference.cache
