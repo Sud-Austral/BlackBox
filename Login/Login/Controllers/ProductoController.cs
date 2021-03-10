@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Login.Controllers
 {   
-    [Authorize]
+    
     public class ProductoController : Controller
     {
         // GET: Producto
@@ -33,7 +33,7 @@ namespace Login.Controllers
             ViewBag.Resultado = productos;
             return View();
         }
-        [Authorize]
+        
         public ActionResult Elecciones_HN()
         {
             ViewBag.url = "https://odooutil.azurewebsites.net/design/eleccioneshn";
