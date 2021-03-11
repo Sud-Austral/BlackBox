@@ -19,9 +19,9 @@ namespace Login.Models
                 var mail = new MailMessage()
                 {
                     From = new MailAddress("lmonsalve22@gmail.com", "Comprobante de aporte final"),
-                    Subject = "Comprobante de aporte final",
-                    Body = "<html><head></head><body><p>Correo prueba</p>"+
-                    contenido+
+                    Subject = "Recuperación de contraseña",
+                    Body = "<html><head></head><body><p>Correo de Recuperación de Contraseña</p><br/>"+
+                    contenido +
                     "</body></html>",
                     IsBodyHtml = true
                 };

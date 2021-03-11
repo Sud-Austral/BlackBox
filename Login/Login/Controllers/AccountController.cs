@@ -210,7 +210,7 @@ namespace Login.Controllers
             string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
             var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
             //await UserManager.SendEmailAsync(user.Id, "Restablecer contraseña", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
-            Correo.SendEmailAsync("ianmeza29@gmail.com", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+            Correo.SendEmailAsync(model.Email, "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
             /*
             if (ModelState.IsValid)
             {
