@@ -46,6 +46,21 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
+                        <div class="input" id="forgottenpw">
+                            <a href="~/Account/ForgotPassword"><input type="button" value="¿Olvidaste tu contraseña?" class="btn btn-primary" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="text">
+                            Para recuperar la contraseña puede enviar un email a la siguiente <b><a href="mailto:soporte@dataintelligence-group.com">dirección.</a></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
                     </div>
                 </div>
@@ -56,9 +71,9 @@
                     @Html.ActionLink("Regístrate de manera fácil con tu correo electrónico. ¡En tan solo un par de clics!", "Register")
                 </p>
                 @* Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
-                    <p>
-                        @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
-                    </p>*@
+            <p>
+                @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+            </p>*@
             }
         </section>
     </div>

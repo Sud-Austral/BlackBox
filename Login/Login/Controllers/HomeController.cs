@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Login.Models;
 using Microsoft.AspNet.Identity;
 
 namespace Login.Controllers
@@ -23,7 +24,7 @@ namespace Login.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
+            Correo.SendEmailAsync("ianmeza29@gmail.com", "Hola");
             return View();
         }
 
