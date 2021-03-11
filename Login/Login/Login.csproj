@@ -196,6 +196,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\APIShopify.cs" />
+    <Compile Include="Models\Correo.cs" />
     <Compile Include="Models\Correos.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
