@@ -194,6 +194,7 @@ namespace Login.Controllers
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
+            
             return View();
         }
 
@@ -204,6 +205,13 @@ namespace Login.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
+            var user = await UserManager.FindByNameAsync(model.Email);
+            //Correo.SendEmailAsync("ianmeza29@gmail.com", "Para restablecer la ");
+            string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+            var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+            //await UserManager.SendEmailAsync(user.Id, "Restablecer contraseña", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+            Correo.SendEmailAsync("ianmeza29@gmail.com", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+            /*
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindByNameAsync(model.Email);
@@ -221,7 +229,7 @@ namespace Login.Controllers
                 Correo.SendEmailAsync("ianmeza29@gmail.com", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
                  return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
-
+            */
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
             return View(model);
         }
