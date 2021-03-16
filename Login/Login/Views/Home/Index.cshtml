@@ -16,11 +16,11 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body style="padding-top:0;">
-    
+
     <div class="container" align="center">
 
         <div class="card mb-3" id="problema">
-            <img src="~/Images/Error/NOHAYSESIONACTIVA.jpg" class="card-img-top" alt="No hay sesión activa">
+            <img src="~/Images/Error/IndexError.png" class="card-img-top" alt="No hay sesión activa">
             <div class="card-body">
                 <h2 class="card-title" align="left">No hay sesión activa</h2>
                 <br /><br />
@@ -31,33 +31,42 @@
                     </font>
                 </p>
             </div>
-        </div>
-
-        <div class="card text-center">
-
             <div class="card-body">
                 <h5 class="card-title" align="left">Solución:</h5>
-                <!--
-                <p class="card-text" align="left">
-                    Si es usuario nuevo, puede <b>Registrarse</b><br />
-                    Si ya posee una cuenta, <b>Inicie sesión</b>
-                </p>
-                -->
-                <a href="~/Account/Login" class="btn btn-primary">Inicie sesión</a>
-                <a href="~/Account/Register" class="btn btn-primary">Registrarse</a>
-                <br />
-                <br />
-                <a href="~/Account/ForgotPassword" class="btn btn-primary">¿Olvidó su contraseña?</a>
-                <br />
-                <br />
-                <a href="https://dataintelligence.store/collections/all" target="_blank" class="btn btn-primary">Tienda en línea</a>
-            </div>
-            <div class="card-footer text-muted">
-                <h2>
-                    Consulte también:
-                </h2>
-                <p>La pagina de <a href="https://dataintelligence.store/pages/preguntas-frecuentes" target="_blank">preguntas frecuentes </a>en la seccion de PROCESO DE COMPRA Y DEVOLUCIÓN/párrafo #4 ¿Qué puedo hacer si una plataforma que compré no funciona correctamente?</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card" style="padding-bottom:40px">
+                            <p class="card-text" align="left" style="padding-left: 10px">
+                                Si es usuario nuevo, puede <b>Registrarse</b><br />
+                            </p>
+                            <a href="~/Account/Register" class="btn btn-primary" style="width:150px; align-self:center">Registrarse</a>
+                            <br />
+                        </div>
+                    </div>
 
+                    <div class="col-sm-6">
+                        <div class="card" style="padding-bottom:1em">
+                            <p class="card-text" align="left" style="padding-left: 10px">
+                                Si ya posee una cuenta, <b>Inicie sesión</b>
+                            </p>
+                            <a href="~/Account/Login" class="btn btn-primary" style="width:150px; align-self:center">Inicie sesión</a>
+                            <br />
+                            <a href="~/Account/ForgotPassword">¿Olvidaste tu contraseña?</a>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+                <br />
+                <a href="https://dataintelligence.store/collections/all" target="_blank" class="btn btn-primary"><ion-icon name="bag-handle-outline"></ion-icon>&nbsp;Tienda en línea</a>
+                <br />
+                <hr style="border:0px" />
+                <div class="card-footer text-muted">
+                    <h2>
+                        Consulte también:
+                    </h2>
+                    <p>La pagina de <a href="https://dataintelligence.store/pages/preguntas-frecuentes" target="_blank">preguntas frecuentes </a>en la seccion de PROCESO DE COMPRA Y DEVOLUCIÓN/párrafo #4 ¿Qué puedo hacer si una plataforma que compré no funciona correctamente?</p>
+
+                </div>
             </div>
         </div>
 
@@ -120,6 +129,77 @@
 
     </div>
 
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">¿No has encontrado lo que estabas buscando?</h5>
+
+                    <p>
+                        Nuestro centro de ayuda (Help Center) contiene las soluciones
+                        para casi cada falla técnica conocida. Si no puedes encontrar
+                        la respuesta a tu pregunta, por favor envía una solicitud de
+                        soporte utilizando el enlace a continuación.
+                    </p>
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-dark">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-dark">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">Data Intelligence</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
 </body>
 </html>

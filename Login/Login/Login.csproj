@@ -223,6 +223,7 @@
     <Content Include="Images\Error\creoCuentaNueva.jpg" />
     <Content Include="Images\Error\enlaceal_dashboard.jpg" />
     <Content Include="Images\Error\imagen_licencia_caduca.jpg" />
+    <Content Include="Images\Error\IndexError.png" />
     <Content Include="Images\Error\logo_DataIntelligence_normal.png" />
     <Content Include="Images\Error\NOHAYSESIONACTIVA.jpg" />
     <Content Include="Images\Error\SINaccesoalDashboard.jpg" />
