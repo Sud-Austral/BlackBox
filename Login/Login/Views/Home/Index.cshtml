@@ -18,6 +18,51 @@
 <body style="padding-top:0;">
     
     <div class="container" align="center">
+
+        <div class="card mb-3" id="problema">
+            <img src="~/Images/Error/NOHAYSESIONACTIVA.jpg" class="card-img-top" alt="No hay sesión activa">
+            <div class="card-body">
+                <h2 class="card-title" align="left">No hay sesión activa</h2>
+                <br /><br />
+                <h2 class="card-text" align="left">Problema:</h2>
+                <p align="left">
+                    <font size="5">
+                        El usuario no ha iniciado sesión
+                    </font>
+                </p>
+            </div>
+        </div>
+
+        <div class="card text-center">
+
+            <div class="card-body">
+                <h5 class="card-title" align="left">Solución:</h5>
+                <!--
+                <p class="card-text" align="left">
+                    Si es usuario nuevo, puede <b>Registrarse</b><br />
+                    Si ya posee una cuenta, <b>Inicie sesión</b>
+                </p>
+                -->
+                <a href="~/Account/Login" class="btn btn-primary">Inicie sesión</a>
+                <a href="~/Account/Register" class="btn btn-primary">Registrarse</a>
+                <br />
+                <br />
+                <a href="~/Account/ForgotPassword" class="btn btn-primary">¿Olvidó su contraseña?</a>
+                <br />
+                <br />
+                <a href="https://dataintelligence.store/collections/all" target="_blank" class="btn btn-primary">Tienda en línea</a>
+            </div>
+            <div class="card-footer text-muted">
+                <h2>
+                    Consulte también:
+                </h2>
+                <p>La pagina de <a href="https://dataintelligence.store/pages/preguntas-frecuentes" target="_blank">preguntas frecuentes </a>en la seccion de PROCESO DE COMPRA Y DEVOLUCIÓN/párrafo #4 ¿Qué puedo hacer si una plataforma que compré no funciona correctamente?</p>
+
+            </div>
+        </div>
+
+        <br /><br /><br /><br />
+
         <div class="jumbotron" style="background-color:transparent;padding:0;">
             <!-- <h1 class="display-4">Error - Licencia caducada</h1>-->
             <img class="img-fluid" src="~/Images/Error/NOHAYSESIONACTIVA.jpg" style="width:100%;" />
