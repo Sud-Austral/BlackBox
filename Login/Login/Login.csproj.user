@@ -21,6 +21,10 @@
     <NameOfLastUsedPublishProfile>ServicioDashboard - Web Deploy</NameOfLastUsedPublishProfile>
     <View_SelectedScaffolderID>MvcViewScaffolder</View_SelectedScaffolderID>
     <View_SelectedScaffolderCategoryPath>root/Common/MVC/View</View_SelectedScaffolderCategoryPath>
+    <_SelectedScaffolderID>MvcControllerWithContextScaffolder</_SelectedScaffolderID>
+    <_SelectedScaffolderCategoryPath>root/Common</_SelectedScaffolderCategoryPath>
+    <WebStackScaffolding_DbContextTypeFullName>Login.Models.graficosEntities</WebStackScaffolding_DbContextTypeFullName>
+    <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

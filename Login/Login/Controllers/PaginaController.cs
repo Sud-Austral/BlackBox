@@ -145,7 +145,7 @@ namespace Login.Controllers
 
         public ActionResult ValidadorProductosInternos(string id = null)
         {
-            List<Producto> productos = (List<Producto>)Session["Productos"];
+            List<Producto_Shopify> productos = (List<Producto_Shopify>)Session["Productos"];
             string url = productos.Where(x => x.ID == id).First().SKU;
             Session["url"] = url; //"https://www.c-sharpcorner.com/article/html-action-and-html-renderaction-in-Asp-Net-mvc/";
             //return Redirect("Dashboard");

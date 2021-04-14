@@ -27,7 +27,7 @@ namespace Login
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 //LoginPath = new PathString("/Account/Login"),
                 LoginPath = new PathString("/Home/Index"),
-                //LoginPath = new PathString("../../Producto/Elecciones_HN"),
+                //LoginPath = new PathString("../../Producto_Shopify/Elecciones_HN"),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Permite a la aplicación validar la marca de seguridad cuando el usuario inicia sesión.

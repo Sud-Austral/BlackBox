@@ -12,10 +12,10 @@ namespace Login.Controllers
     
     public class ProductoController : Controller
     {
-        // GET: Producto
+        // GET: Producto_Shopify
         public ActionResult Index()
         {
-            List<Producto> productos = new List<Producto>();
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
             ViewBag.User = User.Identity.GetUserName();
             //ViewBag.Resultado = APIShopify.BuscarOrdenes();
             //ViewBag.Resultado = APIShopify.BuscarOrdenesPorMail();
@@ -25,7 +25,7 @@ namespace Login.Controllers
                 foreach (var item2 in item["line_items"])
                 {
 
-                    productos.Add(new Producto(item2,(string)item["order_status_url"]));
+                    productos.Add(new Producto_Shopify(item2,(string)item["order_status_url"]));
                 }
             }
             //ViewBag.url = (string)Session["url"];
