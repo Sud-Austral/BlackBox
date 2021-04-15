@@ -95,6 +95,8 @@ namespace Login.Models
             //return View();
         }
 
+       
+
         public static List<JToken> BuscarOrdenesPorMail()
         {
             JObject json = BuscarOrdenes();
@@ -119,6 +121,46 @@ namespace Login.Models
             //return categories.Select(c => (string)c).ToList(); ;
             return categories.Where(c => (string)c["email"] == correo).ToList(); //.Select(c => (string)c["email"] == "viviandrg7@gmail.com").ToList()[0];
             //return json;
+        }
+
+        public static JObject BuscarImagenes(string idProduct = "5997704741018")
+        {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            var url = "https://5b4e5f28876dd9a9bdbc6b1e0b2d6de0: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@data-intelligence.myshopify.com/admin/api/2021-07/products/" + idProduct  + "/images.json";
+            //var url = "https://data-intelligence.myshopify.com/admin/api/2021-01/products/" + idProduct + "/images.json";
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.ContentType = "application/json";
+            request.Accept = "application/json";
+            request.Headers["X-Shopify-Access-Token"] = "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";
+            //HttpWebResponse resp = (HttpWebResponse)request.GetResponse();
+            try
+            {
+                using (WebResponse response = request.GetResponse())
+                {
+                    using (Stream strReader = response.GetResponseStream())
+                    {
+                        if (strReader == null) return null;
+                        using (StreamReader objReader = new StreamReader(strReader))
+                        {
+                            string responseBody = objReader.ReadToEnd();
+                            JObject json = JObject.Parse(responseBody);
+                            //return json; //.GetValue("orders").Count();   //[0];
+                            // Do something with responseBody
+                            //Console.WriteLine(responseBody);
+                            return json;
+                        }
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                string error = ex.Message;
+                //return url;
+                return null;
+                // Handle error
+            }
+            //return View();
         }
     }
 }

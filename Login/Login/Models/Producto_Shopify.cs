@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using Login.Models;
 
 namespace Login.Models
 {
@@ -17,6 +18,7 @@ namespace Login.Models
         //created_at
         public string FECHA_CREADO { get; set; }
         public DateTime FECHA_CREADO2 { get; set; }
+        public string URL_IMAGEN { get; set; }
 
         public Producto_Shopify(JToken json, string comprobante, JToken ORDEN)
         {
@@ -25,9 +27,13 @@ namespace Login.Models
             SKU = (string)json["sku"];
             PRODUCT_ID = (string)json["product_id"];
             FECHA_CREADO = (string)ORDEN["created_at"];
-            //FECHA_CREADO2 = DateTime.ParseExact((string)ORDEN["created_at"],
-            //            "MM-dd-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+            FECHA_CREADO2 = DateTime.ParseExact((string)ORDEN["created_at"],  //"11/11/2021 11:00:00",
+                        "MM/dd/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
             COMPROBANTE = comprobante;
+            //URL_IMAGEN
+            JObject jObject = APIShopify.BuscarImagenes((string)json["product_id"]);
+            JArray jArray = (JArray)jObject["images"];
+            URL_IMAGEN = (string)jArray[0]["src"];
         }
 
 

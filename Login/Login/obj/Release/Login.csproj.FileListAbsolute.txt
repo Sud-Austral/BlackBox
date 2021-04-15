@@ -123,7 +123,6 @@ C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login
 C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
 C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login.pdb
-D:\GitHub\BlackBox\Login\Login\bin\System.Web.Mvc.xml
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\bin\Login.dll.config
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\bin\Login.dll
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\bin\Login.pdb
@@ -250,8 +249,6 @@ C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.Core
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.pdb
-D:\GitHub\BlackBox\Login\Login\bin\System.Web.WebPages.dll
-D:\GitHub\BlackBox\Login\Login\bin\System.Web.WebPages.xml
 D:\GitHub\BlackBox\Login\Login\bin\Login.dll.config
 D:\GitHub\BlackBox\Login\Login\bin\Login.dll
 D:\GitHub\BlackBox\Login\Login\bin\Login.pdb
@@ -328,11 +325,16 @@ D:\GitHub\BlackBox\Login\Login\bin\System.Web.Mvc.dll
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.Optimization.dll
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.Razor.dll
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.WebPages.Deployment.dll
+D:\GitHub\BlackBox\Login\Login\bin\System.Web.WebPages.dll
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.WebPages.Razor.dll
 D:\GitHub\BlackBox\Login\Login\bin\WebGrease.dll
+D:\GitHub\BlackBox\Login\Login\bin\EntityFramework.xml
+D:\GitHub\BlackBox\Login\Login\bin\EntityFramework.SqlServer.xml
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.Helpers.xml
+D:\GitHub\BlackBox\Login\Login\bin\System.Web.Mvc.xml
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.Optimization.xml
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.Razor.xml
+D:\GitHub\BlackBox\Login\Login\bin\System.Web.WebPages.xml
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.WebPages.Deployment.xml
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.WebPages.Razor.xml
 D:\GitHub\BlackBox\Login\Login\bin\Newtonsoft.Json.xml
@@ -340,8 +342,6 @@ D:\GitHub\BlackBox\Login\Login\bin\Antlr3.Runtime.pdb
 D:\GitHub\BlackBox\Login\Login\bin\System.Net.Http.Formatting.xml
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.Http.xml
 D:\GitHub\BlackBox\Login\Login\bin\System.Web.Http.WebHost.xml
-D:\GitHub\BlackBox\Login\Login\bin\EntityFramework.xml
-D:\GitHub\BlackBox\Login\Login\bin\EntityFramework.SqlServer.xml
 D:\GitHub\BlackBox\Login\Login\bin\Microsoft.AspNet.Identity.Core.xml
 D:\GitHub\BlackBox\Login\Login\bin\Microsoft.AspNet.Identity.Owin.xml
 D:\GitHub\BlackBox\Login\Login\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -355,6 +355,8 @@ D:\GitHub\BlackBox\Login\Login\bin\Microsoft.Owin.Security.Twitter.xml
 D:\GitHub\BlackBox\Login\Login\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\GitHub\BlackBox\Login\Login\bin\Microsoft.Owin.Security.OAuth.xml
 D:\GitHub\BlackBox\Login\Login\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\GitHub\BlackBox\Login\Login\bin\es\EntityFramework.resources.dll
+D:\GitHub\BlackBox\Login\Login\bin\es\EntityFramework.SqlServer.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\System.Web.Helpers.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\System.Web.Mvc.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\System.Web.Optimization.resources.dll
@@ -365,8 +367,6 @@ D:\GitHub\BlackBox\Login\Login\bin\es\System.Web.WebPages.Razor.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\System.Net.Http.Formatting.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\System.Web.Http.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\System.Web.Http.WebHost.resources.dll
-D:\GitHub\BlackBox\Login\Login\bin\es\EntityFramework.resources.dll
-D:\GitHub\BlackBox\Login\Login\bin\es\EntityFramework.SqlServer.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
@@ -374,4 +374,3 @@ D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CoreCompileInputs.cache
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.pdb
-D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache

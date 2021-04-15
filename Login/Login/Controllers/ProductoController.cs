@@ -1,5 +1,6 @@
 ﻿using Login.Models;
 using Microsoft.AspNet.Identity;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,16 @@ namespace Login.Controllers
             ViewBag.url = "https://odooutil.azurewebsites.net/design/eleccioneshn";
 
             return View();
+        }
+
+        public string Producto()
+        {
+
+            //return APIShopify.BuscarOrden("5997704741018");
+            JObject jObject = APIShopify.BuscarImagenes("5997704741018");
+            JArray jArray = (JArray)jObject["images"];
+
+            return (string)jArray[0]["src"];
         }
     }
 }
