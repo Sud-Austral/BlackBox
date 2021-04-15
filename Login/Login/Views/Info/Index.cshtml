@@ -62,58 +62,99 @@
         }
     </style>
     @*header menu principal*@
+    @*header menu principal*@
     <header style="border:none;">
         <div class="ruby-menu-demo-header row" style="background-color:#000; font-family: 'MYRIADPRO-REGULAR';">
             <!-- COMIENZO: MEGAMENU HORIZONTAL -->
-            <div class="ruby-wrapper" style="background-color:#000; font-family:">
+            <div class="ruby-wrapper" style="background-color:#000;">
                 <button class="c-hamburger c-hamburger--htx visible-xs">
                     <span>toggle menu</span>
                 </button>
+
                 <ul class="ruby-menu">
                     <li class="ruby-active-menu-item"><a href="#">Home</a></li>
-                    <li>
+
+                    @*
+        <li>
+
                         <a href="#">Classic</a>
                         <ul class="">
-                            <li><a href="#">2nd Level #1</a></li>
-                            <li><a href="#">2nd Level #2</a></li>
-                            <li>
-                                <a href="#">2nd Level #3</a>
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fa fa-university" aria-hidden="true"></i>3rd Level #1</a>
-                                        <ul>
-                                            <li><a href="#">4th Level #1</a></li>
-                                            <li><a href="#">4th Level #2</a></li>
-                                        </ul>
-                                        <span class="ruby-dropdown-toggle"></span>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>3rd Level #2</a></li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i>3rd Level #3</a>
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>4th Level #1</a></li>
-                                            <li><a href="#"><i class="fa fa-print" aria-hidden="true"></i>4th Level #2</a></li>
-                                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i>4th Level #3</a></li>
-                                        </ul>
-                                        <span class="ruby-dropdown-toggle"></span>
-                                    </li>
-                                </ul>
-                                <span class="ruby-dropdown-toggle"></span>
-                            </li>
-                            <li class="ruby-open-to-left">
-                                <a href="#">2nd Level #4</a>
-                                <ul>
-                                    <li><a href="#">3rd Level #1</a></li>
-                                    <li><a href="#">3rd Level #2</a></li>
-                                    <li><a href="#">3rd Level #3</a></li>
-                                </ul>
-                                <span class="ruby-dropdown-toggle"></span>
-                            </li>
-                            <li><a href="#">2nd Level #5</a></li>
-                        </ul>
-                        <span class="ruby-dropdown-toggle"></span>
-                    </li>
+                            @foreach (var item in ViewBag.menu)
+                            {
+                                foreach (var item2 in item.SECTOR)
 
+                        <li>
+                            <a href="#">Classic</a>
+                            <ul class="">
+                                @foreach (var item in ViewBag.menu)
+
+                                {
+
+                                <li>
+                                    <a href="#">@item.nombre</a>
+                                    <ul>
+                                        @foreach (var item2 in ViewBag.menu2)
+                                        {
+
+
+                                            <li>
+                                                <a href="#"><i aria-hidden="true"></i>@item2.nombre</a>
+                                                <ul>
+                                                    @foreach (var item3 in ViewBag.menu3)
+                                                    {
+                                                        <li>
+                                                            <a href="#">@item3.nombre</a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                                <span class="ruby-dropdown-toggle"></span>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                                    @*
+                <li><a href="#">2nd Level #2</a></li>
+                <li>
+                    <a href="#">2nd Level #3</a>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-university" aria-hidden="true"></i>3rd Level #1</a>
+                            <ul>
+                                <li><a href="#">4th Level #1</a></li>
+                                <li><a href="#">4th Level #2</a></li>
+                            </ul>
+                            <span class="ruby-dropdown-toggle"></span>
+                        </li>
+                        <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>3rd Level #2</a></li>
+                        <li>
+                            <a href="#"><i class="fa fa-users" aria-hidden="true"></i>3rd Level #3</a>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>4th Level #1</a></li>
+                                <li><a href="#"><i class="fa fa-print" aria-hidden="true"></i>4th Level #2</a></li>
+                                <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i>4th Level #3</a></li>
+                            </ul>
+                            <span class="ruby-dropdown-toggle"></span>
+                        </li>
+                    </ul>
+                    <span class="ruby-dropdown-toggle"></span>
+                </li>
+                <li class="ruby-open-to-left">
+                    <a href="#">2nd Level #4</a>
+                    <ul>
+                        <li><a href="#">3rd Level #1</a></li>
+                        <li><a href="#">3rd Level #2</a></li>
+                        <li><a href="#">3rd Level #3</a></li>
+                    </ul>
+                    <span class="ruby-dropdown-toggle"></span>
+                </li>
+
+
+                                }
+                            </ul>
+                            <span class="ruby-dropdown-toggle"></span>
+                        </li>
+                    }
+                    *@
                     <li class="ruby-menu-mega">
                         <a href="#">Mega</a>
                         <div class="ruby-grid ruby-grid-lined">
@@ -184,7 +225,7 @@
                     </li>
 
                     <li class="ruby-menu-mega-blog">
-                        <a href="#">Blog</a>
+                        <a href="#">DataLab</a>
                         <div style="height: 269.359px;" class="">
                             <ul class="ruby-menu-mega-blog-nav">
 
@@ -193,40 +234,43 @@
                                     <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
                                         <div class="ruby-row">
                                             <div class="ruby-col-3">
-                                                <img src="http://brienlabs.com/ruby-mega-menu/img/travel-1.jpg">
+                                                <img src="~/Content/img/13_portadabeso_1800x540_crop_center.jpg">
                                                 <div class="ruby-c-inline">
                                                     <span class="ruby-c-category"><a href="#">News / Travel</a></span>
                                                     <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
                                                 </div>
-                                                <span class="ruby-c-title ruby-margin-10"><a href="#">Vacation Proved To Increase Productivity</a></span>
-                                                <span class="ruby-c-content">The primary research for the study was based on an online survey that was...</span>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="https://dataintelligence.store/blogs/noticias/el-beso-mas-largo-de-la-historia" target="_blank">El beso más largo de la historia</a></span>
+                                                <span class="ruby-c-content">El 13 de abril de 2011, Ekkachai y Laksana Tirnarat, una pareja de nacionalidad tailandesa,
+                                                participó en un concurso anual organizado por Ripley’s Believe It or Not! (Ripley, ¡aunque usted no lo crea!).</span>
                                             </div>
                                             <div class="ruby-col-3">
-                                                <img src="http://brienlabs.com/ruby-mega-menu/img/health-3.jpg">
+                                                <img class="img-fluid" src="~/Content/img/10_portadahomeopatia_1800x540_crop_center.jpg">
                                                 <div class="ruby-c-inline">
                                                     <span class="ruby-c-category"><a href="#">News / Health</a></span>
                                                     <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
                                                 </div>
-                                                <span class="ruby-c-title ruby-margin-10"><a href="#">Stereotype Idioms By The Smokers</a></span>
-                                                <span class="ruby-c-content">If you have ever said some of below idioms you are for sure a smoking...</span>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="https://dataintelligence.store/blogs/noticias/dia-internacional-de-la-homeopatia" target="_blank">Día Internacional de la Homeopatía</a></span>
+                                                <span class="ruby-c-content">El debate entre la medicina integral y la comprobada científicamente tiene larga data, sin embargo,
+                                                cada día existen más personas que adoptan la medicina integral ....</span>
                                             </div>
                                             <div class="ruby-col-3">
-                                                <img src="http://brienlabs.com/ruby-mega-menu/img/culture-2.jpg">
+                                                <img class="img-fluid" src="~/Content/img/7_abrilRRSS_diaMundialSalud_portadablog_1800x540_crop_center.jpg">
                                                 <div class="ruby-c-inline">
                                                     <span class="ruby-c-category"><a href="#">News / Culture</a></span>
                                                     <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
                                                 </div>
-                                                <span class="ruby-c-title ruby-margin-10"><a href="#">10 Facts About The Philosophers</a></span>
-                                                <span class="ruby-c-content">When we think “philosopher,” a certain image comes to mind—most often a wise...</span>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="https://dataintelligence.store/blogs/noticias/dia-mundial-de-la-salud-construir-un-mundo-mas-justo-y-saludable" target="_blank">Día Mundial de la Salud: Construir un mundo más justo y saludable</a></span>
+                                                <span class="ruby-c-content">Este 07 de abril se celebra el día mundial de la salud, y la Organización Mundial de la Salud (OMS)....</span>
                                             </div>
                                             <div class="ruby-col-3">
-                                                <img src="http://brienlabs.com/ruby-mega-menu/img/health-2.jpg">
+                                                <img src="~/Content/img/7_abrilRRSS_diaMundialSalud_portadablog_1800x540_crop_center.jpg">
                                                 <div class="ruby-c-inline">
                                                     <span class="ruby-c-category"><a href="#">News / Tech</a></span>
                                                     <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
                                                 </div>
-                                                <span class="ruby-c-title ruby-margin-10"><a href="#">In 2016, 10 People Died While Taking Selfie</a></span>
-                                                <span class="ruby-c-content">This is a list of serious injuries and deaths in which the victim or a member of...</span>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="https://dataintelligence.store/blogs/noticias/dia-internacional-del-deporte-para-el-desarrollo-y-la-paz" target="_blank">Día Internacional del Deporte para el Desarrollo y la Paz</a></span>
+                                                <span class="ruby-c-content">El deporte es una actividad que nos ha rodeado día a día desde los inicios de nuestra civilización. 
+                                                David Hernández y Geoffrey Recoder ...</span>
                                             </div>
                                         </div>
                                     </div>
@@ -415,92 +459,117 @@
                     </li>
 
                     <li class="ruby-menu-mega-shop">
-                        <a href="#">Shop</a>
+                        <a href="#">Dimensiones</a>
                         <div style="height: 263px;" class="">
                             <ul>
                                 <li class="ruby-active-menu-item">
-                                    <a href="#">Clothing</a>
+                                    <a href="#">Ambiental</a>
                                     <div class="ruby-grid ruby-grid-lined">
                                         <div class="ruby-row">
                                             <div class="ruby-col-2">
-                                                <h3 class="ruby-list-heading">TOPS</h3>
+                                                <img class="img-fluid mx-0 my-0" src="~/Content/Dimensiones/ofrecemos_dimension_ambiental.jpg">
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading text-center">DataAgro</h3>
                                                 <ul>
-                                                    <li><a href="#">Menu Item #1</a></li>
-                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="https://dataintelligence.store/products/dataparadataagro" target="_blank">Agrostat</a></li>
+                                                    <li><a href="https://dataintelligence.store/products/geomatica-agricola" target="_blank">Geomatica Agrícola</a></li>
+                                                    @*
+                                        <li><a href="#">Menu Item #3</a></li>
+                                        <li><a href="#">Menu Item #4</a></li>
+                                        <li><a href="#">Menu Item #5</a></li>
+                                                    *@
+                                                </ul>
+                                            </div>
+
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading text-center">DataClima</h3>
+                                                <ul>
+                                                    <li><a href="https://dataintelligence.store/products/plataforma-de-analisis-y-monitoreo-del-clima-honduras" target="_blank">Monitoreo Clima Honduras</a></li>
+                                                    <li><a href="https://dataintelligence.store/products/plataforma-de-analisis-y-monitoreo-del-clima-chile" target="_blank">Monitoreo Clima Chile</a></li>
+                                                    <li><a href="#">Monitoreo Clima Guatemala</a></li>
+                                                    <li><a href="#">Monitoreo Clima El Salvador</a></li>
+                                                    <li><a href="#">Monitoreo Clima Panama</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading text-center">DataClimático</h3>
+                                                <ul>
+                                                    <li><a href="#">Inv. Gases Efecto Invernadero PRO</a></li>
+                                                    <li><a href="#">Inv. Gases Efecto Invernadero PRO MENSUAL</a></li>
                                                     <li><a href="#">Menu Item #3</a></li>
                                                     <li><a href="#">Menu Item #4</a></li>
                                                     <li><a href="#">Menu Item #5</a></li>
                                                 </ul>
                                             </div>
+                                            @*
+                                <div class="ruby-col-2">
+                                    <img src="img/outerwear-3.jpg">
+                                </div>
+                                            *@
                                             <div class="ruby-col-2">
-                                                <img src="img/outerwear-2.jpg">
-                                            </div>
-                                            <div class="ruby-col-2">
-                                                <h3 class="ruby-list-heading">BOTTOM</h3>
+                                                <h3 class="ruby-list-heading">DataImpacto</h3>
                                                 <ul>
-                                                    <li><a href="#">Menu Item #1</a></li>
-                                                    <li><a href="#">Menu Item #2</a></li>
-                                                    <li><a href="#">Menu Item #3</a></li>
-                                                    <li><a href="#">Menu Item #4</a></li>
-                                                    <li><a href="#">Menu Item #5</a></li>
+                                                    <li><a href="#">Impacto Huracan ETA</a></li>
+                                                    @*
+                                        <li><a href="#">Menu Item #2</a></li>
+                                        <li><a href="#">Menu Item #3</a></li>
+                                        <li><a href="#">Menu Item #4</a></li>
+                                        <li><a href="#">Menu Item #5</a></li>
+                                                    *@
                                                 </ul>
                                             </div>
+
                                             <div class="ruby-col-2">
-                                                <h3 class="ruby-list-heading">NIGHTWEAR</h3>
+                                                <h3 class="ruby-list-heading">DataImpacto</h3>
                                                 <ul>
-                                                    <li><a href="#">Menu Item #1</a></li>
-                                                    <li><a href="#">Menu Item #2</a></li>
-                                                    <li><a href="#">Menu Item #3</a></li>
-                                                    <li><a href="#">Menu Item #4</a></li>
-                                                    <li><a href="#">Menu Item #5</a></li>
+                                                    <li><a href="#">Impacto Huracan ETA</a></li>
+                                                    @*
+                                        <li><a href="#">Menu Item #2</a></li>
+                                        <li><a href="#">Menu Item #3</a></li>
+                                        <li><a href="#">Menu Item #4</a></li>
+                                        <li><a href="#">Menu Item #5</a></li>
+                                                    *@
                                                 </ul>
                                             </div>
-                                            <div class="ruby-col-2">
-                                                <img src="img/outerwear-3.jpg">
-                                            </div>
-                                            <div class="ruby-col-2">
-                                                <h3 class="ruby-list-heading">SWIMWEAR</h3>
-                                                <ul>
-                                                    <li><a href="#">Menu Item #1</a></li>
-                                                    <li><a href="#">Menu Item #2</a></li>
-                                                    <li><a href="#">Menu Item #3</a></li>
-                                                    <li><a href="#">Menu Item #4</a></li>
-                                                    <li><a href="#">Menu Item #5</a></li>
-                                                </ul>
-                                            </div>
+
                                         </div>
                                     </div>
                                     <span class="ruby-dropdown-toggle"></span>
                                 </li>
                                 <li>
-                                    <a href="#">Outerwear</a>
+                                    <a href="#">Económica</a>
                                     <div class="ruby-grid ruby-grid-lined">
                                         <div class="ruby-row">
                                             <div class="ruby-col-3">
-                                                <img src="img/outerwear.jpg">
+                                                <img class="img-fluid" src="~/Content/Dimensiones/ofrecemos_dimension_economica.jpg">
                                             </div>
                                             <div class="ruby-col-3">
-                                                <h3 class="ruby-list-heading">COATS</h3>
+                                                <h3 class="ruby-list-heading">DataEmpresa</h3>
                                                 <ul>
-                                                    <li><a href="#">Menu Item #1</a></li>
-                                                    <li><a href="#">Menu Item #2</a></li>
-                                                    <li><a href="#">Menu Item #3</a></li>
-                                                    <li><a href="#">Menu Item #4</a></li>
-                                                    <li><a href="#">Menu Item #5</a></li>
-                                                    <li><a href="#">Menu Item #6</a></li>
-                                                    <li><a href="#">Menu Item #7</a></li>
+                                                    <li><a href="#">Registro de empresas Chile</a></li>
+                                                    @*
+                                        <li><a href="#">Menu Item #2</a></li>
+                                        <li><a href="#">Menu Item #3</a></li>
+                                        <li><a href="#">Menu Item #4</a></li>
+                                        <li><a href="#">Menu Item #5</a></li>
+                                        <li><a href="#">Menu Item #6</a></li>
+                                        <li><a href="#">Menu Item #7</a></li>
+                                                    *@
                                                 </ul>
                                             </div>
                                             <div class="ruby-col-3">
-                                                <h3 class="ruby-list-heading">JACKETS</h3>
+                                                <h3 class="ruby-list-heading">DataGlobal</h3>
                                                 <ul>
-                                                    <li><a href="#">Menu Item #1</a></li>
-                                                    <li><a href="#">Menu Item #2</a></li>
-                                                    <li><a href="#">Menu Item #3</a></li>
-                                                    <li><a href="#">Menu Item #4</a></li>
-                                                    <li><a href="#">Menu Item #5</a></li>
-                                                    <li><a href="#">Menu Item #6</a></li>
-                                                    <li><a href="#">Menu Item #7</a></li>
+                                                    <li><a href="#">Evolución del Financiamiento de proyectos internacionales</a></li>
+                                                    @*
+                                        <li><a href="#">Menu Item #2</a></li>
+                                        <li><a href="#">Menu Item #3</a></li>
+                                        <li><a href="#">Menu Item #4</a></li>
+                                        <li><a href="#">Menu Item #5</a></li>
+                                        <li><a href="#">Menu Item #6</a></li>
+                                        <li><a href="#">Menu Item #7</a></li>
+                                                    *@
                                                 </ul>
                                             </div>
                                             <div class="ruby-col-3">
@@ -520,16 +589,17 @@
                                     <span class="ruby-dropdown-toggle"></span>
                                 </li>
                                 <li>
-                                    <a href="#">Bags &amp; Shoes</a>
+                                    @* <a href="#">Bags &amp; Shoes</a>*@
+                                    <a href="#">Institucional</a>
                                     <div class="ruby-grid ruby-grid-lined">
                                         <div class="ruby-row">
                                             <div class="ruby-col-3">
-                                                <img src="img/bags.jpg">
+                                                <img class="img-fluid" src="~/Content/Dimensiones/ofrecemos_dimension_institucional.jpg">
                                             </div>
                                             <div class="ruby-col-3">
-                                                <h3 class="ruby-list-heading">BAGS</h3>
+                                                <h3 class="ruby-list-heading">DataEvaluación</h3>
                                                 <ul>
-                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Evaluacion de programas e instituciones del servicio publico</a></li>
                                                     <li><a href="#">Menu Item #2</a></li>
                                                     <li><a href="#">Menu Item #3</a></li>
                                                     <li><a href="#">Menu Item #4</a></li>
@@ -537,28 +607,41 @@
                                                 </ul>
                                             </div>
                                             <div class="ruby-col-3">
-                                                <h3 class="ruby-list-heading">SHOES</h3>
+                                                <h3 class="ruby-list-heading">DataMunicipio</h3>
                                                 <ul>
-                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Métricas e índices para la gestión Municipal</a></li>
                                                     <li><a href="#">Menu Item #2</a></li>
                                                     <li><a href="#">Menu Item #3</a></li>
                                                     <li><a href="#">Menu Item #4</a></li>
                                                     <li><a href="#">Menu Item #5</a></li>
                                                 </ul>
                                             </div>
+
                                             <div class="ruby-col-3">
-                                                <img src="img/shoes.jpg">
+                                                <h3 class="ruby-list-heading">DataTerritorio</h3>
+                                                <ul>
+                                                    <li><a href="#">Instrumentos de planificación Territorial (IPT)</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
                                             </div>
+                                            @*
+                                <div class="ruby-col-3">
+                                    <img src="img/shoes.jpg">
+                                </div>
+                                            *@
                                         </div>
                                     </div>
                                     <span class="ruby-dropdown-toggle"></span>
                                 </li>
                                 <li>
-                                    <a href="#">Accessories</a>
+                                    <a href="#">Social</a>
                                     <div class="ruby-grid ruby-grid-lined">
                                         <div class="ruby-row">
                                             <div class="ruby-col-3">
-                                                <img src="img/eyewear.jpg">
+                                                <img src="~/Content/Dimensiones/ofrecemos_dimension_social.jpg">
                                                 <h3 class="ruby-list-heading" style="margin-top: 16px;">EYEWEAR</h3>
                                                 <ul>
                                                     <li><a href="#">Menu Item #1</a></li>
@@ -601,40 +684,42 @@
                                     </div>
                                     <span class="ruby-dropdown-toggle"></span>
                                 </li>
-                                <li>
-                                    <a href="#">Collections</a>
-                                    <div class="ruby-grid ruby-grid-lined">
-                                        <div class="ruby-row">
-                                            <div class="ruby-col-3">
-                                                <img src="img/collection-accessori.jpg">
-                                            </div>
-                                            <div class="ruby-col-3">
-                                                <img src="img/collection-bridal.jpg">
-                                            </div>
-                                            <div class="ruby-col-3">
-                                                <img src="img/collection-cube.jpg">
-                                            </div>
-                                            <div class="ruby-col-3">
-                                                <img src="img/collection-elegante.jpg">
-                                            </div>
-                                        </div>
-                                        <div class="ruby-row">
-                                            <div class="ruby-col-3">
-                                                <img src="img/collection-maxmara.jpg">
-                                            </div>
-                                            <div class="ruby-col-3">
-                                                <img src="img/collection-sfilata.jpg">
-                                            </div>
-                                            <div class="ruby-col-3">
-                                                <img src="img/collection-shine.jpg">
-                                            </div>
-                                            <div class="ruby-col-3">
-                                                <img src="img/collection-s-maxmara.jpg">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="ruby-dropdown-toggle"></span>
-                                </li>
+                                @*
+                    <li>
+                        <a href="#">Collections</a>
+                        <div class="ruby-grid ruby-grid-lined">
+                            <div class="ruby-row">
+                                <div class="ruby-col-3">
+                                    <img src="img/collection-accessori.jpg">
+                                </div>
+                                <div class="ruby-col-3">
+                                    <img src="img/collection-bridal.jpg">
+                                </div>
+                                <div class="ruby-col-3">
+                                    <img src="img/collection-cube.jpg">
+                                </div>
+                                <div class="ruby-col-3">
+                                    <img src="img/collection-elegante.jpg">
+                                </div>
+                            </div>
+                            <div class="ruby-row">
+                                <div class="ruby-col-3">
+                                    <img src="img/collection-maxmara.jpg">
+                                </div>
+                                <div class="ruby-col-3">
+                                    <img src="img/collection-sfilata.jpg">
+                                </div>
+                                <div class="ruby-col-3">
+                                    <img src="img/collection-shine.jpg">
+                                </div>
+                                <div class="ruby-col-3">
+                                    <img src="img/collection-s-maxmara.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+                                *@
                             </ul>
                         </div>
                         <span class="ruby-dropdown-toggle"></span>
@@ -697,7 +782,6 @@
             <!-- FIN: MEGAMENU HORIZONTAL -->
         </div>
     </header>
-
     @*contnedor de seccion breadcrums, titulo carrusel pequeñ0,aside, contenido y carrusel grande de graficos *@
     <div class="container mt-5">
         <style>
@@ -779,11 +863,11 @@
                 </iframe>
                 <div class="row no-gutters" style="color:blue; font-size:10px;">
                     <div class="col-md-2 col-3 text-center mt-2 mb-5" style="border-right:1px solid #d9d9d9;">
-                        <a href="#"><span >Ver información</span></a> 
+                        <a href="#"><span>Ver información</span></a>
                     </div>
                     <div class=" col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
-                        <a href="#"><span>Ver fuentes</span></a> 
-                    
+                        <a href="#"><span>Ver fuentes</span></a>
+
                     </div>
                     <div class="col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
                         <a href="javascript:void(0);">
@@ -797,18 +881,14 @@
                                 return false;
                             });
                         </script>
-
-                        <div class="col">
-                            <div class="row d-flex">
-
-                                <div class="col-5 mb-1 ml-auto p-1">
-                                    <img class="img-fluid " src="~/Content/img/logosDataIntelligence_creadopor.png" alt="Logo transparente" />
-                                </div>
+                    </div>
+                    <div class="col">
+                        <div class="row d-flex">
+                            <div class="col-5 mb-1 ml-auto p-1">
+                                <img class="img-fluid " src="~/Content/img/logosDataIntelligence_creadopor.png" alt="Logo transparente" />
                             </div>
-
                         </div>
                     </div>
-
                 </div>
                 <div>
                     <script>
@@ -1253,12 +1333,11 @@
             @*<h4 class="text-center mb-md-5 mt-md-5"><strong>Estadísticas sobre </strong>"El consumo de prensa en España"</h4>*@
             <div class="row" style="margin-bottom:20px;">
                 <div class="col-12 col-md-6">
-
                     <div class="row list-group" id="list-tab" role="tablist">
                         
                             @foreach (var item in ViewBag.listaAsociado)
                             {
-                                <a class="list-group-item list-group-item-action" id="list-@item.nombre-list" data-toggle="list" href="#list-@item.nombre" role="tab" aria-controls="@item.nombre" style="color:#000; font-family:MYRIADPRO-REGULAR;">@item.nombre</a>
+                                <a class="list-group-item list-group-item-action" id="list-@item.nombre-list" data-toggle="list" href="#list-@item.nombre" role="tab" aria-controls="@item.nombre" style="color:#000; font-family:MYRIADPRO-REGULAR;">@item.titulo</a>
                             }
                             @*
                                     <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings" style="color:#000;">Empresas</a>
@@ -1273,13 +1352,13 @@
                         <div class="tab-content col-8"  id="nav-tabContent" >
                             @foreach (var item in ViewBag.listaAsociado)
                             { 
-                               
                                 <a href="~/info/index?id=@item.id">
                                      <div class="row">
                                         <div class="col-7 tab-pane fade" id="list-@item.nombre" role="tabpanel" aria-labelledby="list-@item.nombre-list" style="border:0.5px solid #808080; border-radius:10px;">
                                             <img class=" img-fluid mx-0 " style="width:20%;" src="~/Content/img/icono_grafico.png" alt="Alternate Text" />
                                             @item.descripcion
                                         </div>
+
                                     </div>
                                 </a>
 
