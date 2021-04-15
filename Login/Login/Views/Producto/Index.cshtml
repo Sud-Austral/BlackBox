@@ -37,6 +37,9 @@
             <th> Producto </th>
 
             <th> Comprobante </th>
+            <th> SKU </th>
+            <th> Product ID </th>
+            <th> Fecha </th>
         </tr>
     </thead>
     @foreach (var item in ViewBag.Resultado)
@@ -49,14 +52,25 @@
 
                 <td>
                     <a href="~/Pagina/ValidadorProductosInternos/@item.ID" style="color:lightblue;">
-                        Producto
+                        @item.ID
                     </a>
                 </td>
 
                 <td>
                     <a href="@item.COMPROBANTE" target="_blank" style="color:lightblue;">
-                        Comprobante
+                        @item.COMPROBANTE
                     </a>
+                </td>
+                <td>
+
+                    @item.SKU
+
+                </td>
+                <td>
+                    @item.PRODUCT_ID
+                </td>
+                <td>
+                    @item.FECHA_CREADO2..ToShortDateString();
                 </td>
             </tr>
         </tbody>

@@ -103,7 +103,21 @@ namespace Login.Models
 
             JArray categories = (JArray)json["orders"];
             //return categories.Select(c => (string)c).ToList(); ;
-            return categories.Where(c => (string)c["email"] == "clentebanks0@gmail.com").ToList(); //.Select(c => (string)c["email"] == "viviandrg7@gmail.com").ToList()[0];
+            return categories.Where(c => (string)c["email"] == "mvcmacia@gmail.com").ToList(); //.Select(c => (string)c["email"] == "viviandrg7@gmail.com").ToList()[0];
+            //return json;
+            //mvcmacia@gmail.com
+            //clentebanks0@gmail.com
+        }
+
+        public static List<JToken> BuscarOrdenesPorMail(string correo)
+        {
+            JObject json = BuscarOrdenes();
+            //return JObject.Parse(json.GetValue("order").ToString());
+            //return json.GetValue("orders").ToString();
+
+            JArray categories = (JArray)json["orders"];
+            //return categories.Select(c => (string)c).ToList(); ;
+            return categories.Where(c => (string)c["email"] == correo).ToList(); //.Select(c => (string)c["email"] == "viviandrg7@gmail.com").ToList()[0];
             //return json;
         }
     }
