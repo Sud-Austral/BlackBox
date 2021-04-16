@@ -269,6 +269,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\css\StyleUsuarioBootstrap.css" />
     <Content Include="assets\bootstrap\js\bootstrap.min.js" />
     <Content Include="assets\fonts\fa-brands-400.svg" />
     <Content Include="assets\fonts\fa-regular-400.svg" />
@@ -620,6 +621,7 @@
     <Content Include="Views\Info\PaginaBusqueda.cshtml" />
     <Content Include="Views\Shared\_LayoutStatista.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Suscripcion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
