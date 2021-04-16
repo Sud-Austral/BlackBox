@@ -1,0 +1,1108 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*Titulo de la pagina*@
+    <title>Resultados de Busqueda</title>
+    @*Normalize para adaptarse a todos los browsers*@
+    <link href="~/Content/normalize.min.css" rel="stylesheet" />
+    @*icono de fontawesome menu principal *@
+    <script src="https://kit.fontawesome.com/2f08016506.js" crossorigin="anonymous"></script>
+    @*icono de fontawesome pagina resultados de busqueda principal *@
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    @*bootstrap*@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    @*pagination*@
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    @*Hola de estilos de esta vista solamente*@
+    <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
+    @*SELECTOR DE FECHAS*@
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    @*FIN SELECTOR DE FECHAS*@
+    @* filtro del buscador*@
+   
+
+</head>
+<body>
+    @*Menu principal*@
+    <header style="border:none;">
+        <div class="ruby-menu-demo-header row" style="background-color:#000; font-family: 'MYRIADPRO-REGULAR';">
+            <!-- COMIENZO: MEGAMENU HORIZONTAL -->
+            <div class="ruby-wrapper" style="background-color:#000; font-family:">
+                <button class="c-hamburger c-hamburger--htx visible-xs">
+                    <span>toggle menu</span>
+                </button>
+                <ul class="ruby-menu">
+                    <li class="ruby-active-menu-item"><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Classic</a>
+                        <ul class="">
+                            <li><a href="#">2nd Level #1</a></li>
+                            <li><a href="#">2nd Level #2</a></li>
+                            <li>
+                                <a href="#">2nd Level #3</a>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fa fa-university" aria-hidden="true"></i>3rd Level #1</a>
+                                        <ul>
+                                            <li><a href="#">4th Level #1</a></li>
+                                            <li><a href="#">4th Level #2</a></li>
+                                        </ul>
+                                        <span class="ruby-dropdown-toggle"></span>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>3rd Level #2</a></li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i>3rd Level #3</a>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>4th Level #1</a></li>
+                                            <li><a href="#"><i class="fa fa-print" aria-hidden="true"></i>4th Level #2</a></li>
+                                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i>4th Level #3</a></li>
+                                        </ul>
+                                        <span class="ruby-dropdown-toggle"></span>
+                                    </li>
+                                </ul>
+                                <span class="ruby-dropdown-toggle"></span>
+                            </li>
+                            <li class="ruby-open-to-left">
+                                <a href="#">2nd Level #4</a>
+                                <ul>
+                                    <li><a href="#">3rd Level #1</a></li>
+                                    <li><a href="#">3rd Level #2</a></li>
+                                    <li><a href="#">3rd Level #3</a></li>
+                                </ul>
+                                <span class="ruby-dropdown-toggle"></span>
+                            </li>
+                            <li><a href="#">2nd Level #5</a></li>
+                        </ul>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+                    <li class="ruby-menu-mega">
+                        <a href="#">Mega</a>
+                        <div class="ruby-grid ruby-grid-lined">
+                            <div class="ruby-row">
+                                <div class="ruby-col-2">
+                                    <h3 class="ruby-list-heading">Normal List</h3>
+                                    <ul>
+                                        <li><a href="#">Menu Item #1</a></li>
+                                        <li><a href="#">Menu Item #2</a></li>
+                                        <li><a href="#">Menu Item #3</a></li>
+                                        <li><a href="#">Menu Item #4</a></li>
+                                        <li><a href="#">Menu Item #5</a></li>
+                                    </ul>
+                                </div>
+                                <div class="ruby-col-2 hidden-md">
+                                    <h3 class="ruby-list-heading">List with Icons</h3>
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-motorcycle" aria-hidden="true"></i>Menu Item #1</a></li>
+                                        <li><a href="#"><i class="fa fa-music" aria-hidden="true"></i>Menu Item #2</a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Menu Item #3</a></li>
+                                        <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i>Menu Item #4</a></li>
+                                        <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i>Menu Item #5</a></li>
+                                    </ul>
+                                </div>
+                                <div class="ruby-col-3 ruby-col-4-md">
+                                    <h3 class="ruby-list-heading">List with Images + Desc</h3>
+                                    <ul class="ruby-list-with-images">
+                                        <li><a href="#"><img src="img/c-1.png">Menu Item #1</a><span class="ruby-list-desc">Lorem ipsum dolor sit</span></li>
+                                        <li><a href="#"><img src="img/c-2.png">Menu Item #2</a><span class="ruby-list-desc">Lorem ipsum dolor sit</span></li>
+                                        <li><a href="#"><img src="img/c-3.png">Menu Item #3</a><span class="ruby-list-desc">Lorem ipsum dolor sit</span></li>
+                                    </ul>
+                                </div>
+                                <div class="ruby-col-5">
+                                    <h3 class="ruby-list-heading">Multiple Lists with Icons</h3>
+                                    <div class="ruby-row">
+                                        <div class="ruby-col-4 ruby-col-6-md">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-signal" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-send" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Menu Item</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ruby-col-4 ruby-col-6-md" style="padding-left:10px">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-rocket" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-warning" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-upload" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-umbrella" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-trophy" aria-hidden="true"></i>Menu Item</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="ruby-col-4 hidden-md" style="padding-left:15px">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-map-o" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-image" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-legal" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-paint-brush" aria-hidden="true"></i>Menu Item</a></li>
+                                                <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>Menu Item</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+                    <li class="ruby-menu-mega-blog">
+                        <a href="#">Blog</a>
+                        <div style="height: 269.359px;" class="">
+                            <ul class="ruby-menu-mega-blog-nav">
+
+                                <li class="ruby-active-menu-item">
+                                    <a href="#">Blog-4-Column</a>
+                                    <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="http://brienlabs.com/ruby-mega-menu/img/travel-1.jpg">
+                                                <div class="ruby-c-inline">
+                                                    <span class="ruby-c-category"><a href="#">News / Travel</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="#">Vacation Proved To Increase Productivity</a></span>
+                                                <span class="ruby-c-content">The primary research for the study was based on an online survey that was...</span>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="http://brienlabs.com/ruby-mega-menu/img/health-3.jpg">
+                                                <div class="ruby-c-inline">
+                                                    <span class="ruby-c-category"><a href="#">News / Health</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="#">Stereotype Idioms By The Smokers</a></span>
+                                                <span class="ruby-c-content">If you have ever said some of below idioms you are for sure a smoking...</span>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="http://brienlabs.com/ruby-mega-menu/img/culture-2.jpg">
+                                                <div class="ruby-c-inline">
+                                                    <span class="ruby-c-category"><a href="#">News / Culture</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="#">10 Facts About The Philosophers</a></span>
+                                                <span class="ruby-c-content">When we think “philosopher,” a certain image comes to mind—most often a wise...</span>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="http://brienlabs.com/ruby-mega-menu/img/health-2.jpg">
+                                                <div class="ruby-c-inline">
+                                                    <span class="ruby-c-category"><a href="#">News / Tech</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="#">In 2016, 10 People Died While Taking Selfie</a></span>
+                                                <span class="ruby-c-content">This is a list of serious injuries and deaths in which the victim or a member of...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+
+                                <li class="hidden-md">
+                                    <a href="#">Blog-3-Column</a>
+                                    <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-1.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">An Erupting Volcano And A Meteor</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Science</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-2.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">Bottle Labels: Short Stories To Read</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Culture</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-3.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">10+ Stunning Animal Portraits By Polyushko</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Photography</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-8.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">Photographing The Beauty Of Fall</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Photography</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-9.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">10 Freaking Facts About Being A Pilot</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Life</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-10.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">Health Benefits Of A Glass Of Whiskey</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Health</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+
+                                <li>
+                                    <a href="#">Blog-2-Column</a>
+                                    <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-6">
+                                                <div class="ruby-col-4">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-4.jpg">
+                                                </div>
+                                                <div class="ruby-col-8">
+                                                    <span class="ruby-c-title"><a href="#">Nexo Created New Airless Bike Tires That Will Never Get Flat</a></span>
+                                                    <div class="ruby-c-inline">
+                                                        <span class="ruby-c-category"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i> News / Tech</a></span>
+                                                        <span class="ruby-c-date"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 05/01/2017</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-6">
+                                                <div class="ruby-col-4">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-5.jpg">
+                                                </div>
+                                                <div class="ruby-col-8">
+                                                    <span class="ruby-c-title"><a href="#">Illustrator Creates Stunning Dresses From Everyday Objects</a></span>
+                                                    <div class="ruby-c-inline">
+                                                        <span class="ruby-c-category"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i> News / Tech</a></span>
+                                                        <span class="ruby-c-date"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 05/01/2017</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-6">
+                                                <div class="ruby-col-4">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-6.jpg">
+                                                </div>
+                                                <div class="ruby-col-8">
+                                                    <span class="ruby-c-title"><a href="#">Italian Pastry Chef Creates Miniature Worlds With Desserts</a></span>
+                                                    <div class="ruby-c-inline">
+                                                        <span class="ruby-c-category"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i> News / Tech</a></span>
+                                                        <span class="ruby-c-date"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 05/01/2017</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-6">
+                                                <div class="ruby-col-4">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-7.jpg">
+                                                </div>
+                                                <div class="ruby-col-8">
+                                                    <span class="ruby-c-title"><a href="#">Dogs Brought To The Lavender Gardens To Capture Their Joy</a></span>
+                                                    <div class="ruby-c-inline">
+                                                        <span class="ruby-c-category"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i> News / Tech</a></span>
+                                                        <span class="ruby-c-date"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 05/01/2017</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+
+                                <li>
+                                    <a href="#">Blog-Article-List</a>
+                                    <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-6">
+                                                <span class="ruby-c-title" style="margin-bottom:15px">POPULAR THREADS</span>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-1.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">An Erupting Volcano And A Meteor Has Created A Fantastic View</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-2.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">Bottle Labels With Short Stories To Be Read Is The New Marketing Era</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-3.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">10+ Stunning Animal Portraits That Has Been Filmed By Polyushko</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-10.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">10 Freaking Facts About Being An airline pilot</a></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-6">
+                                                <span class="ruby-c-title" style="margin-bottom:15px">MOST COMMENTED</span>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-1.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">An Erupting Volcano And A Meteor Has Created A Fantastic View</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-2.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">Bottle Labels With Short Stories To Be Read Is The New Marketing Era</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-3.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">10+ Stunning Animal Portraits That Has Been Filmed By Polyushko</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-10.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">10 Freaking Facts About Being An airline pilot</a></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+                    <li class="ruby-menu-mega-shop">
+                        <a href="#">Shop</a>
+                        <div style="height: 263px;" class="">
+                            <ul>
+                                <li class="ruby-active-menu-item">
+                                    <a href="#">Clothing</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading">TOPS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <img src="img/outerwear-2.jpg">
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading">BOTTOM</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading">NIGHTWEAR</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <img src="img/outerwear-3.jpg">
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading">SWIMWEAR</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                                <li>
+                                    <a href="#">Outerwear</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/outerwear.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">COATS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                    <li><a href="#">Menu Item #6</a></li>
+                                                    <li><a href="#">Menu Item #7</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">JACKETS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                    <li><a href="#">Menu Item #6</a></li>
+                                                    <li><a href="#">Menu Item #7</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">LEATHER</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                    <li><a href="#">Menu Item #6</a></li>
+                                                    <li><a href="#">Menu Item #7</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                                <li>
+                                    <a href="#">Bags &amp; Shoes</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/bags.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">BAGS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">SHOES</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/shoes.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                                <li>
+                                    <a href="#">Accessories</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/eyewear.jpg">
+                                                <h3 class="ruby-list-heading" style="margin-top: 16px;">EYEWEAR</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/jewellery.jpg">
+                                                <h3 class="ruby-list-heading" style="margin-top: 16px;">JEWELLERY</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/watches.jpg">
+                                                <h3 class="ruby-list-heading" style="margin-top: 16px;">WATCHES</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/textile.jpg">
+                                                <h3 class="ruby-list-heading" style="margin-top: 16px;">OTHERS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                                <li>
+                                    <a href="#">Collections</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-accessori.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-bridal.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-cube.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-elegante.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-maxmara.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-sfilata.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-shine.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-s-maxmara.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+                    <li class="ruby-menu-right">
+                        <a href="#">Right</a>
+                        <ul>
+                            <li><a href="#">2nd Level #1</a></li>
+                            <li><a href="#">2nd Level #2</a></li>
+                            <li class="ruby-open-to-left">
+                                <a href="#">2nd Level #3</a>
+                                <ul>
+                                    <li class="ruby-open-to-left">
+                                        <a href="#"><i class="fa fa-university" aria-hidden="true"></i>3rd Level #1</a>
+                                        <ul>
+                                            <li><a href="#">4th Level #1</a></li>
+                                            <li><a href="#">4th Level #2</a></li>
+                                        </ul>
+                                        <span class="ruby-dropdown-toggle"></span>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>3rd Level #2</a></li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i>3rd Level #3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-file" aria-hidden="true"></i>3rd Level #4</a>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>4th Level #1</a></li>
+                                            <li><a href="#"><i class="fa fa-print" aria-hidden="true"></i>4th Level #2</a></li>
+                                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i>4th Level #3</a></li>
+                                        </ul>
+                                        <span class="ruby-dropdown-toggle"></span>
+                                    </li>
+                                </ul>
+                                <span class="ruby-dropdown-toggle"></span>
+                            </li>
+                            <li class="ruby-open-to-left">
+                                <a href="#">2nd Level #4</a>
+                                <ul>
+                                    <li><a href="#">3rd Level #1</a></li>
+                                    <li><a href="#">3rd Level #2</a></li>
+                                    <li><a href="#">3rd Level #3</a></li>
+                                </ul>
+                                <span class="ruby-dropdown-toggle"></span>
+                            </li>
+                            <li><a href="#">2nd Level #5</a></li>
+                        </ul>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+                    <li class="ruby-menu-right ruby-menu-social"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i><span>/rubymenu</span></a></li>
+
+                    <li class="ruby-menu-right ruby-menu-social"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i><span>/rubymenu</span></a></li>
+
+                    <li class="ruby-menu-right ruby-menu-social ruby-menu-search"><a href="#"><i class="fa fa-search" aria-hidden="true"></i><span><input type="text" name="search" placeholder="Search.."></span></a></li>
+
+                </ul>
+            </div>
+            <!-- FIN: MEGAMENU HORIZONTAL -->
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Comienzo de rsultados de Busqueda -->
+            <div class="col-md-12">
+                <div class="grid search">
+                    <div class="grid-body">
+                        <div class="row">
+                            <!-- Comienzo filtros -->
+                            <div class="tags col-md-3">
+                                <h2 class="grid-title"><i class="fa fa-filter"></i> Filtros</h2>
+                                <hr>
+
+                                <!-- Comienzo filtros por categoria-->
+                                <h4>Por Categoria:</h4>
+                                <div >
+                                    <label><input type="checkbox" id="todos"> Todos</label>
+                                </div>
+                                <div >
+                                    <label><input type="checkbox" id="arts"> NOMBRE</label>
+                                </div>
+                                <div >
+                                    <label><input type="checkbox" id="computers"> TEMPORARLIDAD</label>
+                                </div>
+                                <div >
+                                    <label><input type="checkbox" id="health"> PAIS</label>
+                                </div>
+                                <div >
+                                    <label><input type="checkbox" id="video-games"> DETALLE</label>
+                                </div>
+                                <!-- FINAL DE FILTROS POR CATEGORY -->
+
+                                <div class="padding"></div>
+
+                                <!-- COMIENZO DE FILTROS POR Product -->
+                                <h4>Por Producto:</h4>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Application</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Design</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Desktop</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Management</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Mobile</label>
+                                </div>
+                                <!-- FINAL FILTROS POR PRODUCTO -->
+                                <div class="padding"></div>
+
+                                <!-- COMIENZO FILTROS POR SECTOR -->
+                                <h4>Por Sector:</h4>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Application</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Design</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Desktop</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Management</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Mobile</label>
+                                </div>
+                                <!-- FINAL DE FILTRO POR SECTOR -->
+                                <div class="padding"></div>
+                                <!-- COMIENZO FILTROS POR INDUSTRIA -->
+                                <h4>Por Industria:</h4>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Application</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Design</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Desktop</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Management</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Mobile</label>
+                                </div>
+                                <!-- FINAL FILTROS POR INDUSTRIA -->
+                                <div class="padding"></div>
+
+                                <!-- FILTROS POR FECHA -->
+                                <h4>Por fechas:</h4>
+
+                                <div class="container">
+                                    Start Date: <input id="startDate" width="220" />
+                                    End Date: <input id="endDate" width="220" />
+                                </div>
+                                <script>
+                                    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                                    $('#startDate').datepicker({
+                                        uiLibrary: 'bootstrap4',
+                                        iconsLibrary: 'fontawesome',
+                                        minDate: today,
+                                        maxDate: function () {
+                                            return $('#endDate').val();
+                                        }
+                                    });
+                                    $('#endDate').datepicker({
+                                        uiLibrary: 'bootstrap4',
+                                        iconsLibrary: 'fontawesome',
+                                        minDate: function () {
+                                            return $('#startDate').val();
+                                        }
+                                    });
+                                </script>
+                                <!-- FINAL FILTROS POR FECHA -->
+
+                                <div class="padding"></div>
+
+                                <!-- COMIENZO FILTRO POR PRECIOS -->
+                                <h4>By price:</h4>
+                                Between <div id="price1">$300</div> to <div id="price2">$800</div>
+                                <div class="slider-primary">
+                                    <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+                                </div>
+                                <!-- FINAL FILTROS POR PRECIOS -->
+                            </div>
+                            <!-- FINAL FILTROS -->
+                            <!-- COMIENZO RESULTADOS -->
+                            <div class="col-md-9">
+                                <h2><i class="fa fa-file-o"></i> Resultados de busqueda</h2>
+                                <hr>
+
+                                <div class="padding"></div>
+
+                                <div class="row">
+                                    <!-- COMIENZO ORDENAR RESULTADOS -->
+                                    <div class="col-sm-6">
+                                        
+                                    </div>
+                                    <!-- FINAL ORDENAR RESULTADOS -->
+
+                                    <div class="col-md-6 text-right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- COMIENZO TABLA RESULTADOS -->
+                                <div class="table-responsive display " id="buscador">
+                                    <!-- COMIENZO TABLA RESULTADOS -->
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                                    <div class="table-responsive display " id="buscador">
+                                        <table id="example" class=" results table table-striped table-bordered " style="width:100%">
+
+                                            <thead id="stud_body ">
+                                                <tr>
+                                                    <th class="arts" >NOMBRE</th>
+                                                    <th class="computers">TEMPORALIDAD</th>
+                                                    <th class="health">PAIS</th>
+                                                    <th class="video-games">DETALLE</th>
+                                                    <th>PARAMETROS</th>
+                                                    <th>NOMBRE ARCHIVO</th>
+                                                    <th>INDUSTRIA</th>
+                                                    <th>SECTOR</th>
+                                                    <th>PRODUCTO</th>
+                                                    <th>CATEGORIA</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in ViewBag.Resultado)
+                                                {
+                                                    <tr>
+                                                        <td class="arts">@item.nombre</td>
+                                                        <td class="computers" >@item.TEMPORALIDAD.nombre</td>
+                                                        <td class="health">@item.TERRITORIO.nombre</td>
+                                                        <td class="video-games" >@item.DETALLE.nombre</td>
+                                                        <td>@item.PARAMETRO.nombre</td>
+                                                        <td>@item.url</td>
+                                                        <td>@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</td>
+                                                        <td>@item.CATEGORIA.PRODUCTO.SECTOR.nombre</td>
+                                                        <td>@item.CATEGORIA.PRODUCTO.nombre</td>
+                                                        <td>@item.CATEGORIA.nombre</td>
+
+                                                    </tr>
+                                                }
+                                            </tbody>
+
+                                        </table>
+                                        <script>
+                                            setTimeout(function () {
+                                                $('.results > td').hide();
+                                            }, 1);
+
+                                            $(".tags input").on("click", function () {
+                                                if ($(this).attr("id") == "todos") {
+                                                    $("#arts, #computers, #health, #video-games").prop('checked', false);
+                                                    filtrar(true);
+                                                } else {
+                                                    $("#todos").prop('checked', false);
+                                                    filtrar(false);
+                                                }
+                                            });
+
+                                            function filtrar(e) {
+                                                if (e) {
+                                                    $(".results td").each(function () {
+                                                        $(this).show();
+                                                    });
+                                                } else {
+                                                    $('.results td').hide();
+                                                    $('.tags').find('input:checked').each(function () {
+                                                        $('.results td.' + $(this).attr('id')).show();
+                                                    });
+                                                }
+                                            }
+                                        </script>
+                                    </div>
+
+                                    <!-- FINAL TABLA DE RESULTADOS -->
+                                </div>
+
+                                <!-- FINAL TABLA DE RESULTADOS -->
+                               
+                            </div>
+                            <!-- FINAL RESULTADOS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FINAL RESULTADOS DE BUSQUEDA -->
+        </div>
+    </div>
+
+
+    @*Jquery, Popper bootstrap.min.js*@
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    @*este script es para la tabla y filtro de buscado agrupar y paginacion de tabla  el codigo dentro de language es para traducir elementos de la tabla*@
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                language: {
+                    "processing": "Procesando...",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No se encontraron resultados",
+                    "emptyTable": "Ningún dato disponible en esta tabla",
+                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "search": "Buscar:",
+                    "infoThousands": ",",
+                    "loadingRecords": "Cargando...",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "aria": {
+                        "sortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                    "buttons": {
+                        "copy": "Copiar",
+                        "colvis": "Visibilidad",
+                        "collection": "Colección",
+                        "colvisRestore": "Restaurar visibilidad",
+                        "copyKeys": "Presione ctrl o u2318 + C para copiar los datos de la tabla al portapapeles del sistema. <br \/> <br \/> Para cancelar, haga clic en este mensaje o presione escape.",
+                        "copySuccess": {
+                            "1": "Copiada 1 fila al portapapeles",
+                            "_": "Copiadas %d fila al portapapeles"
+                        },
+                        "copyTitle": "Copiar al portapapeles",
+                        "csv": "CSV",
+                        "excel": "Excel",
+                        "pageLength": {
+                            "-1": "Mostrar todas las filas",
+                            "1": "Mostrar 1 fila",
+                            "_": "Mostrar %d filas"
+                        },
+                        "pdf": "PDF",
+                        "print": "Imprimir"
+                    },
+                    "autoFill": {
+                        "cancel": "Cancelar",
+                        "fill": "Rellene todas las celdas con <i>%d<\/i>",
+                        "fillHorizontal": "Rellenar celdas horizontalmente",
+                        "fillVertical": "Rellenar celdas verticalmentemente"
+                    },
+                    "decimal": ",",
+                    "searchBuilder": {
+                        "add": "Añadir condición",
+                        "button": {
+                            "0": "Constructor de búsqueda",
+                            "_": "Constructor de búsqueda (%d)"
+                        },
+                        "clearAll": "Borrar todo",
+                        "condition": "Condición",
+                        "conditions": {
+                            "date": {
+                                "after": "Despues",
+                                "before": "Antes",
+                                "between": "Entre",
+                                "empty": "Vacío",
+                                "equals": "Igual a",
+                                "notBetween": "No entre",
+                                "notEmpty": "No Vacio",
+                                "not": "Diferente de"
+                            },
+                            "number": {
+                                "between": "Entre",
+                                "empty": "Vacio",
+                                "equals": "Igual a",
+                                "gt": "Mayor a",
+                                "gte": "Mayor o igual a",
+                                "lt": "Menor que",
+                                "lte": "Menor o igual que",
+                                "notBetween": "No entre",
+                                "notEmpty": "No vacío",
+                                "not": "Diferente de"
+                            },
+                            "string": {
+                                "contains": "Contiene",
+                                "empty": "Vacío",
+                                "endsWith": "Termina en",
+                                "equals": "Igual a",
+                                "notEmpty": "No Vacio",
+                                "startsWith": "Empieza con",
+                                "not": "Diferente de"
+                            },
+                            "array": {
+                                "not": "Diferente de",
+                                "equals": "Igual",
+                                "empty": "Vacío",
+                                "contains": "Contiene",
+                                "notEmpty": "No Vacío",
+                                "without": "Sin"
+                            }
+                        },
+                        "data": "Data",
+                        "deleteTitle": "Eliminar regla de filtrado",
+                        "leftTitle": "Criterios anulados",
+                        "logicAnd": "Y",
+                        "logicOr": "O",
+                        "rightTitle": "Criterios de sangría",
+                        "title": {
+                            "0": "Constructor de búsqueda",
+                            "_": "Constructor de búsqueda (%d)"
+                        },
+                        "value": "Valor"
+                    },
+                    "searchPanes": {
+                        "clearMessage": "Borrar todo",
+                        "collapse": {
+                            "0": "Paneles de búsqueda",
+                            "_": "Paneles de búsqueda (%d)"
+                        },
+                        "count": "{total}",
+                        "countFiltered": "{shown} ({total})",
+                        "emptyPanes": "Sin paneles de búsqueda",
+                        "loadMessage": "Cargando paneles de búsqueda",
+                        "title": "Filtros Activos - %d"
+                    },
+                    "select": {
+                        "1": "%d fila seleccionada",
+                        "_": "%d filas seleccionadas",
+                        "cells": {
+                            "1": "1 celda seleccionada",
+                            "_": "$d celdas seleccionadas"
+                        },
+                        "columns": {
+                            "1": "1 columna seleccionada",
+                            "_": "%d columnas seleccionadas"
+                        }
+                    },
+                    "thousands": ".",
+                    "datetime": {
+                        "previous": "Anterior",
+                        "next": "Proximo",
+                        "hours": "Horas",
+                        "minutes": "Minutos",
+                        "seconds": "Segundos",
+                        "unknown": "-",
+                        "amPm": [
+                            "am",
+                            "pm"
+                        ]
+                    },
+                    "editor": {
+                        "close": "Cerrar",
+                        "create": {
+                            "button": "Nuevo",
+                            "title": "Crear Nuevo Registro",
+                            "submit": "Crear"
+                        },
+                        "edit": {
+                            "button": "Editar",
+                            "title": "Editar Registro",
+                            "submit": "Actualizar"
+                        },
+                        "remove": {
+                            "button": "Eliminar",
+                            "title": "Eliminar Registro",
+                            "submit": "Eliminar",
+                            "confirm": {
+                                "_": "¿Está seguro que desea eliminar %d filas?",
+                                "1": "¿Está seguro que desea eliminar 1 fila?"
+                            }
+                        },
+                        "error": {
+                            "system": "Ha ocurrido un error en el sistema (<a target=\"\\\" rel=\"\\ nofollow\" href=\"\\\">Más información&lt;\\\/a&gt;).<\/a>"
+                        },
+                        "multi": {
+                            "title": "Múltiples Valores",
+                            "info": "Los elementos seleccionados contienen diferentes valores para este registro. Para editar y establecer todos los elementos de este registro con el mismo valor, hacer click o tap aquí, de lo contrario conservarán sus valores individuales.",
+                            "restore": "Deshacer Cambios",
+                            "noMulti": "Este registro puede ser editado individualmente, pero no como parte de un grupo."
+                        }
+                    },
+                    "info": "Mostrando de _START_ a _END_ de _TOTAL_ entradas"
+                }
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src=" https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+</body>
+</html>
