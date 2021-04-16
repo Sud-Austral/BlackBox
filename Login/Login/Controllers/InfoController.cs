@@ -98,6 +98,17 @@ namespace AplicacionBlanco.Controllers
             ViewBag.test = dbGrafico.INDUSTRIA.ToList();
             return View();
         }
+        public ActionResult Industrias(int id = 10)
+        {
+            INDUSTRIA iNDUSTRIA = dbGrafico.INDUSTRIA.Where(e => e.id == id).First();
+            ViewBag.INDUSTRIA = iNDUSTRIA;
+            return View();
+        }
+
+        public ActionResult menuprueba()
+        {
+            return View();
+        }
 
     }
 }

@@ -2386,3 +2386,41 @@ h5 {
     border-radius: 25px;
     margin: 21px 0 0 0;
 }
+
+/*seccion de que lleva scroll*/
+div#scrollcat {
+    max-height:150px;
+    width: 300px;
+    overflow-y: auto;
+}
+
+/* width */
+#scrollcat::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+#scrollcat::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+}
+
+/*scroll bar*/
+/*width*/
+#scrollcat::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Handle */
+#scrollcat::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+  /* Handle on hover */
+    #scrollcat::-webkit-scrollbar-thumb:hover {
+        background: #777;
+        text-decoration: none;
+    }
+
+

@@ -620,6 +620,8 @@
     <Content Include="Views\Info\PaginaBusqueda.cshtml" />
     <Content Include="Views\Shared\_LayoutStatista.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Info\Industrias.cshtml" />
+    <Content Include="Views\Info\menuprueba.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
