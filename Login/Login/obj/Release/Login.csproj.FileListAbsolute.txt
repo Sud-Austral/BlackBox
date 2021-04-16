@@ -375,3 +375,4 @@ D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.pdb
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache
+C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache
