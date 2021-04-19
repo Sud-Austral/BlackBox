@@ -10,6 +10,11 @@ namespace Login.Controllers
 {
     public class UsuarioController : Controller
     {
+        private graficosEntities dbGrafico = new graficosEntities();
+        public UsuarioController()
+        {
+
+        }
         // GET: Usuario
         public ActionResult Index()
         {
@@ -30,7 +35,7 @@ namespace Login.Controllers
             //ViewBag.url = (string)Session["url"];
             Session["Productos"] = productos;
             ViewBag.Resultado = productos;
-           
+            ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
             return View();
         }
         public ActionResult Suscripcion()
