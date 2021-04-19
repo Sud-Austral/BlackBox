@@ -137,6 +137,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaginaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -299,6 +300,8 @@
     <Content Include="Views\Pagina\Restriccion.cshtml" />
     <Content Include="Views\Pagina\Test.cshtml" />
     <Content Include="Views\Pagina\Clent.cshtml" />
+    <Content Include="Views\Usuario\Resultado.cshtml" />
+    <Content Include="Views\Usuario\Subscripciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
