@@ -41,7 +41,7 @@ namespace Login.Models
             catch (Exception)
             {
 
-                URL_IMAGEN = null;
+                URL_IMAGEN = "https://pbs.twimg.com/profile_banners/1244018511866925058/1585841185/1500x500";
             }
             
         }

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Login.Controllers
 {
+    [Authorize]
     public class UsuarioController : Controller
     {
         private graficosEntities dbGrafico = new graficosEntities();
