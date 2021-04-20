@@ -31,9 +31,19 @@ namespace Login.Models
                         "MM/dd/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
             COMPROBANTE = comprobante;
             //URL_IMAGEN
-            JObject jObject = APIShopify.BuscarImagenes((string)json["product_id"]);
-            JArray jArray = (JArray)jObject["images"];
-            URL_IMAGEN = (string)jArray[0]["src"];
+            try
+            {
+                JObject jObject = APIShopify.BuscarImagenes((string)json["product_id"]);
+                JArray jArray = (JArray)jObject["images"];
+                URL_IMAGEN = (string)jArray[0]["src"];
+
+            }
+            catch (Exception)
+            {
+
+                URL_IMAGEN = null;
+            }
+            
         }
 
 

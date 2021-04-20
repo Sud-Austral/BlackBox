@@ -249,6 +249,7 @@ C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.Core
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.pdb
+C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache
 D:\GitHub\BlackBox\Login\Login\bin\Login.dll.config
 D:\GitHub\BlackBox\Login\Login\bin\Login.dll
 D:\GitHub\BlackBox\Login\Login\bin\Login.pdb
@@ -375,4 +376,3 @@ D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.pdb
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache
-C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache
