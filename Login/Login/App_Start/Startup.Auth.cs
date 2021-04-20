@@ -25,8 +25,8 @@ namespace Login
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                //LoginPath = new PathString("/Account/Login"),
-                LoginPath = new PathString("/Usuario/Index"),
+                LoginPath = new PathString("/Account/Login"),
+                //LoginPath = new PathString("/Usuario/Index"),
                 //LoginPath = new PathString("../../Producto_Shopify/Elecciones_HN"),
                 Provider = new CookieAuthenticationProvider
                 {

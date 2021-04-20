@@ -15,8 +15,8 @@ namespace Login.Controllers
             ViewBag.outs = Request.IsAuthenticated;
              if (Request.IsAuthenticated)
                 {
-                //return View("Bienvenida");
-                return Redirect("/Usuario/Index");
+                return View("Bienvenida");
+                //return Redirect("/Usuario/Index");
             }
 
                 return View();
