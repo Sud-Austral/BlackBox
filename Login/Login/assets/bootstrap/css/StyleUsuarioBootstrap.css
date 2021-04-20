@@ -3,6 +3,10 @@
     font-family: 'MYRIADPRO-REGULAR';
     src: url('../../../Content/img/Font/MYRIADPRO-REGULAR.OTF') format('opentype');
 }
+@font-face {
+    font-family: 'MYRIADPRO-REGULAR';
+    src: url('../../../Content/img/Font/MYRIADPRO-REGULAR.OTF') format('opentype');
+}
 html, body {
     height: 100%;
     background-color: #F5F9FC;
@@ -10,6 +14,7 @@ html, body {
 }
 
 .container {
+    position:relative;
     height: 100%;
     display: flex;
     align-items: center;
@@ -86,7 +91,7 @@ html, body {
 
     .card:hover {
         width: 24em;
-        box-shadow: 0 10px 20px 0 rgba(32, 32, 36, 0.12);
+        box-shadow: 0 10px 20px 0 #ff0000;
     }
 
         .card:hover::before {
@@ -94,12 +99,14 @@ html, body {
             opacity: 1;
             transition: opacity 0.5s ease, width 0.5s ease;
             transition-delay: 0;
+            border-radius:15px;
         }
 
         .card:hover::after {
             width: 0;
             opacity: 0;
             transition: width 0 ease;
+            border-radius:15px;
         }
 
         .card:hover .logo {

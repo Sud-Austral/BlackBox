@@ -13,9 +13,10 @@ namespace Login.Controllers
         public ActionResult Index()
         {
             ViewBag.outs = Request.IsAuthenticated;
-         if (Request.IsAuthenticated)
-            {
+             if (Request.IsAuthenticated)
+                {
                 return View("Bienvenida");
+                //return Redirect("/Usuario/Index");
             }
 
                 return View();

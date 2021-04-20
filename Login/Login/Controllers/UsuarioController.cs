@@ -8,8 +8,14 @@ using System.Web.Mvc;
 
 namespace Login.Controllers
 {
+    [Authorize]
     public class UsuarioController : Controller
     {
+        private graficosEntities dbGrafico = new graficosEntities();
+        public UsuarioController()
+        {
+
+        }
         // GET: Usuario
         public ActionResult Index()
         {
@@ -30,7 +36,7 @@ namespace Login.Controllers
             //ViewBag.url = (string)Session["url"];
             Session["Productos"] = productos;
             ViewBag.Resultado = productos;
-           
+            ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
             return View();
         }
         public ActionResult Suscripcion()
@@ -41,7 +47,7 @@ namespace Login.Controllers
             //ViewBag.Resultado = APIShopify.BuscarOrdenesPorMail();
             //var test = APIShopify.BuscarOrdenesPorMail();
             //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            foreach (var item in APIShopify.BuscarOrdenesPorMail())
+            foreach (Newtonsoft.Json.Linq.JToken item in APIShopify.BuscarOrdenesPorMail())
             {
                 foreach (var item2 in item["line_items"])
                 {
