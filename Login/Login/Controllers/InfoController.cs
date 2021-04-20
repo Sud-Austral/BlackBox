@@ -83,9 +83,9 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Resultado = db.BuscarGrafico(id);
             return View();
         }
-        public ActionResult PaginaBusqueda()
+        public ActionResult PaginaBusqueda(string id)
         {
-            ViewBag.Resultado = dbGrafico.GRAFICO.ToList();
+            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
             return View();
         }
 
