@@ -1,14 +1,47 @@
 ﻿@{
     ViewBag.Title = "Subscripciones";
+    @*Layout = null;*@
 }
+<html>
+<body>
+    <div class="container-fluid" style="background-color:#4072c9">
+        <div class="row" style="padding-top:2%; padding-right:4%; padding-bottom:2%; background-color:#010001">
+            <div class="col-9">
 
-<main role="main">
-    <header>Subscripción @*Aquí hay que  insertar el tipo de sbuscripción seleccionada*@</header>
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-header text-center">
+            </div>
+            <div class="col-3 text-center" style="background-color: #59585a; color: #d8d4d5;">
+                <header>
+                    Industria: @*AQUÍ DEBE SER INSERTADA LA INDUSTRIA SELECCIONADA PREVIAMENTE*@ Agricultura y Ganadería
+                </header>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top:1%; background-color:#4072c9">
+            <div class="col-7 text-right" style="margin-bottom:2px; background-color:#414040 ; color:#d8d4d5">
+                <header>SUBSCRIPCIÓN EMPRESARIAL @*Aquí hay que insertar un tipo de subscripción y su precio*@</header>
+            </div>
+        </div>
+        <div class="row" style="padding-top:1%; background-color:#4072c9;">
+            <div class="col-4 text-right" style="margin-bottom:2px; background-color: #59585a; color: #d8d4d5">
+                <header>SUBSCRIPCIÓN PROFESIONAL@*Aquí hay que insertar un tipo de subscripción y su precio*@</header>
+            </div>
+        </div>
+        <div class="row" style="padding-top:1%; background-color: #4072c9;">
+            <div class="col-3 text-center" style="background-color: #807f80; width:20px; color:#d8d4d5;">
+                <header>SUBSCRIPCIÓN BÁSICA FREE @*Aquí hay que  insertar el tipo de subscripción seleccionada*@</header>
+            </div>
+            <div class="col-6 " style="background-color:#4072c9">
+            </div>
+            <div class="col-3 text-center" style="background-color:#010001; color:#d8d4d5">
+                <header>PRODUCTO INDIVIDUAL @**@</header>
+            </div>
+
+        </div>
+
+        <div class="row pt-2">
+            <div class="col-3 p-0">
+                <div class="card" style="background-color:#2a72b9; height:600px; color:#d8d4d5;">
+                    <div class="card-header text-center" style="background-color:#2f539b">
                         Gráficos
                     </div>
                     <div class="card-body">
@@ -19,9 +52,9 @@
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-header text-center">
+            <div class="col-3 p-0">
+                <div class="card" style="background-color:#995bcf; height:600px; color:#d8d4d5;">
+                    <div class="card-header text-center" style="background-color:#753da8">
                         Reporte Básico
                     </div>
                     <div class="card-body">
@@ -31,9 +64,9 @@
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-header text-center">
+            <div class="col-3 p-0" style="width:100%">
+                <div class="card" style="background-color:#f77210; height:600px; color:#d8d4d5;">
+                    <div class="card-header text-center" style="background-color:#d2600c">
                         Reporte PRO
                     </div>
                     <div class="card-body">
@@ -43,9 +76,9 @@
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-header text-center">
+            <div class="col-3 p-0">
+                <div class="card" style="background-color:#6b9d43; height:600px; color:#d8d4d5;">
+                    <div class="card-header text-center" style="background-color:#4f7932">
                         Reporte++
                     </div>
                     <div class="card-body">
@@ -56,5 +89,5 @@
             </div>
         </div>
     </div>
-
-</main>
+</body>
+</html>
