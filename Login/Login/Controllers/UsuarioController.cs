@@ -61,5 +61,9 @@ namespace Login.Controllers
 
             return View();
         }
+        public JsonResult MenuBusqueda(string id)
+        {
+            return Json(id, JsonRequestBehavior.AllowGet);
+        }
     }
 }
