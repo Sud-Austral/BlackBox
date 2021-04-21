@@ -68,12 +68,12 @@
                 </div>
 
                 <!-- SidebarSearch Form -->
-                <form action="https://www.google.com/search?q=hola&oq=hola&aqs=chrome..69i57j0i433j0l2j69i60l4.3691j0j4&sourceid=chrome&ie=UTF-8">
+                <form action="~/info/PaginaBusqueda">
                     <div class="form-inline">
                         <div class="input-group" data-widget="sidebar-search">
                             <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                             <div class="input-group-append">
-                                <button class="btn btn-sidebar" type="submit" value="Submit">
+                                <button class="btn btn-sidebar"  type="submit" value="Submit">
                                     <i class="fas fa-search fa-fw"></i>
                                 </button>
                             </div>
@@ -133,7 +133,7 @@
                                             <li class="nav-item">
                                                 <a href="" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>
+                                                    <p> Industria
                                                         @item.nombre                                                     
                                                         <i class="fas fa-angle-left right"></i>
                                                     </p>
@@ -145,6 +145,7 @@
                                                             <a href="#" class="nav-link">
                                                                 <i class="far fa-circle nav-icon"></i>
                                                                 <p>
+                                                                    Sector
                                                                     @item2.nombre
                                                                     <i class="fas fa-angle-left right"></i>
                                                                 </p>
@@ -156,6 +157,7 @@
                                                                         <a href="#" class="nav-link">
                                                                             <i class="far fa-circle nav-icon"></i>
                                                                             <p>
+                                                                                Producto
                                                                                 @item3.nombre
                                                                                 <i class="fas fa-angle-left right"></i>
                                                                             </p>
@@ -167,6 +169,7 @@
                                                                                     <a href="#" class="nav-link">
                                                                                         <i class="far fa-circle nav-icon"></i>
                                                                                         <p>
+                                                                                            Categoria
                                                                                             @item4.nombre
                                                                                             <i class="fas fa-angle-left right"></i>
                                                                                         </p>
@@ -934,14 +937,15 @@
                         <div id="content">
                             <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                                 <div class="container-fluid">
-                                    
-                                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                                    
-                                    <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                    @*Boton para esconder el menu lateral*@
+                                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                                    @*Boton para esconder el menu lateral*@
+
+                                    <form  action="~/info/PaginaBusqueda" method="get" class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                                         <div class="input-group">
                                             @*SEARCH BAR BUSCADOR*@
-                                            <input class="bg-light form-control border-0 small" type="text" id="search" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                            <input class="bg-light form-control border-0 small" type="text" id="id" name="id" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="submit" value="Submit"><i class="fas fa-search"></i></button></div>
                                         </div>
                                     </form>
                                     <ul class="nav navbar-nav flex-nowrap ml-auto">
@@ -1048,15 +1052,15 @@
                                                     <a class="dropdown-item" role="presentation" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
                                                     <a class="dropdown-item" role="presentation" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
                                                     <div class="dropdown-divider">
-                                                        </div><a class="dropdown-item" role="presentation" href="~/Account/Login"  hrefAux="javascript:document.getElementById('logoutForm').submit()">
-                                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400">
-                                                            </i>&nbsp;Cerrar sesión
-                                                                        </a>
+                                                    </div><a class="dropdown-item" role="presentation" href="~/Account/Login" hrefAux="javascript:document.getElementById('logoutForm').submit()">
+                                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400">
+                                                        </i>&nbsp;Cerrar sesión
+                                                    </a>
 
-                                                   
+
                                                     @*
 
-        <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                                     *@
                                                 </div>
                                             </div>
@@ -1069,35 +1073,55 @@
                                     <h3 class="text-dark mb-0">Productos</h3>
                                 </div>
                                 <div class="row">
-                                    @foreach (var item in ViewBag.Resultado)
+                                    @if (ViewBag.Resultado.Count >= 0)
+                                    {
+                                        <div class="col-12" style="background-color:black;margin:1%;">
+                                            
+                                                
+                                            <a href="https://dataintelligence.store/" target="_self" style="color:red !important; ">
+                                                <h3 class="text-dark mb-0" style="color:white !important">
+                                                    Puedes encontrar Productos o Suscripciones en nuestra Tienda al hacer click aqui
+                                                </h3>
+                                            </a>
 
-                                    { 
-                                        <div class="col-md-6 col-xl-3 mb-4" >
-                                            <div class="car card shadow border-left-primary" style="border-radius:15px;">
-                                                <img class="card-img-top img-fluid" src="@item.URL_IMAGEN" alt="Card image cap">
-                                                <div class="card-body">
-                                                    <div class="row align-items-center no-gutters d-block">
-                                                        <div class="text-dark font-weight-bold h5 mb-0">@item.NOMBRE</div>    
-                                                        <div class="hover_content col mr-2">
-                                                            <div class="text-dark font-weight-bold h5 mb-0">PRODUCTO</div>
-                                                            <a href="~/Pagina/ValidadorProductosInternos/@item.ID" target="_blank" style="color:lightblue; font-size:30px !important;"> <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.ID</div></a>
-                                                            <div class="text-dark font-weight-bold h5 mb-0">COMPROBANTE</div>
-                                                            <a href="@item.COMPROBANTE" target="_blank" style="color:lightblue;"> <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.COMPROBANTE</div></a>
-                                                            <div class="text-dark font-weight-bold h5 mb-0">SKU</div>
-                                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.SKU</div>
-                                                            <div class="text-dark font-weight-bold h5 mb-0">PRODUCT ID</div>
-                                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.PRODUCT_ID</div>
-                                                            <div class="text-dark font-weight-bold h5 mb-0">FECHA</div>
-                                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.FECHA_CREADO</div>
-                                                        </div>
+                                                
+                                            
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                    foreach (var item in ViewBag.Resultado)
 
-                                                        @*<div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>*@
+                                    {
+                                    <div class="col-md-6 col-xl-3 mb-4">
+                                        <div class="car card shadow border-left-primary" style="border-radius:15px;">
+                                            <img class="card-img-top img-fluid" src="@item.URL_IMAGEN" alt="Card image cap">
+                                            <div class="card-body">
+                                                <div class="row align-items-center no-gutters d-block">
+                                                    <div class="text-dark font-weight-bold h5 mb-0">@item.NOMBRE</div>
+                                                    <div class="hover_content col mr-2">
+                                                        <div class="text-dark font-weight-bold h5 mb-0">PRODUCTO</div>
+                                                        <a href="~/Pagina/ValidadorProductosInternos/@item.ID" target="_blank" style="color:lightblue; font-size:30px !important;"> <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.ID</div></a>
+                                                        <div class="text-dark font-weight-bold h5 mb-0">COMPROBANTE</div>
+                                                        <a href="@item.COMPROBANTE" target="_blank" style="color:lightblue;"> <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.COMPROBANTE</div></a>
+                                                        <div class="text-dark font-weight-bold h5 mb-0">SKU</div>
+                                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.SKU</div>
+                                                        <div class="text-dark font-weight-bold h5 mb-0">PRODUCT ID</div>
+                                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.PRODUCT_ID</div>
+                                                        <div class="text-dark font-weight-bold h5 mb-0">FECHA</div>
+                                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.FECHA_CREADO</div>
                                                     </div>
+
+                                                    @*<div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>*@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                     }
-                                </div>
+
+                                    }
+
+                                    </div>
 
                                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
                                     <h3 class="text-dark mb-0">Suscripciones</h3>

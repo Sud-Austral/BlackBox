@@ -682,85 +682,96 @@
                             <div class="tags col-md-3">
                                 <h2 class="grid-title"><i class="fa fa-filter"></i> Filtros</h2>
                                 <hr>
+                                @*Este script es para hacer el filtro de la tabla*@
+                                <script>
+                                    $(document).ready(function () {
+                                        $(".name").on("click", function () {
+                                            name_list = []
+                                            $("#myTable tr").hide()
+                                            var flag = 1
+                                            $("input:checkbox[name=name]:checked").each(function () {
+                                                flag = 0;
+                                                var value = $(this).val().toLowerCase();
+                                                $("#myTable tr").filter(function () {
+                                                    if ($(this).text().toLowerCase().indexOf(value) > -1)
+                                                        $(this).show()
+                                                });
+                                            });
+                                            if (flag == 1)
+                                                $("#myTable tr").show()
+                                        });
+                                    });
+                                </script>
+                                @*Este script es para hacer el filtro de la tabla*@
+                                <!-- Comienzo filtros por Pais-->
+                                <h4>Pais:</h4>
+                                @foreach (var item in ViewBag.Paises)
+                                {
+                                    <div>
+                                        <label><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                                    </div>
+                                }
 
-                                <!-- Comienzo filtros por categoria-->
-                                <h4>Por Categoria:</h4>
-                                <div >
-                                    <label><input type="checkbox" id="todos"> Todos</label>
-                                </div>
-                                <div >
-                                    <label><input type="checkbox" id="arts"> NOMBRE</label>
-                                </div>
-                                <div >
-                                    <label><input type="checkbox" id="computers"> TEMPORARLIDAD</label>
-                                </div>
-                                <div >
-                                    <label><input type="checkbox" id="health"> PAIS</label>
-                                </div>
-                                <div >
-                                    <label><input type="checkbox" id="video-games"> DETALLE</label>
-                                </div>
                                 <!-- FINAL DE FILTROS POR CATEGORY -->
 
                                 <div class="padding"></div>
 
-                                <!-- COMIENZO DE FILTROS POR Product -->
-                                <h4>Por Producto:</h4>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Application</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Design</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Desktop</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Management</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Mobile</label>
-                                </div>
-                                <!-- FINAL FILTROS POR PRODUCTO -->
+                                <!-- COMIENZO DE FILTROS POR ANIO -->
+                                <h4>Temporalidad:</h4>
+
+                                @foreach (var item2 in ViewBag.Temporalidad)
+                                {
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" class="name icheck" name="name" value="@item2"> @item2</label>
+                                    </div>
+                                }
+
+                                <!-- FINAL FILTROS POR ANIO -->
                                 <div class="padding"></div>
 
-                                <!-- COMIENZO FILTROS POR SECTOR -->
-                                <h4>Por Sector:</h4>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Application</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Design</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Desktop</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Management</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Mobile</label>
-                                </div>
-                                <!-- FINAL DE FILTRO POR SECTOR -->
-                                <div class="padding"></div>
                                 <!-- COMIENZO FILTROS POR INDUSTRIA -->
-                                <h4>Por Industria:</h4>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Application</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Design</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Desktop</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Management</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" class="icheck"> Mobile</label>
-                                </div>
-                                <!-- FINAL FILTROS POR INDUSTRIA -->
+                                <h4>Industria:</h4>
+                                @foreach (var item5 in ViewBag.Industria)
+                                {
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" class="name icheck" name="name" value="@item5"> @item5</label>
+                                    </div>
+                                }
+
+                                <!-- FINAL DE FILTRO POR INDUSTRIA -->
+                                <div class="padding"></div>
+                                <!-- COMIENZO FILTROS POR SECTOR -->
+                                <h4>Sector:</h4>
+                                @foreach (var item4 in ViewBag.Sector)
+                                {
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" class="name icheck" name="name" value="@item4"> @item4</label>
+                                    </div>
+                                }
+
+                                <!-- FINAL FILTROS POR SECTOR -->
+                                <div class="padding"></div>
+                                <!-- COMIENZO FILTROS POR PRODUCTO -->
+                                <h4>Producto:</h4>
+                                @foreach (var item2 in ViewBag.Producto)
+                                {
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" class="name icheck" name="name" value="@item2"> @item2</label>
+                                    </div>
+                                }
+
+                                <!-- FINAL FILTROS POR PRODUCTO -->
+                                <div class="padding"></div>
+                                <!-- COMIENZO FILTROS POR CATEGORIA -->
+                                <h4>Categoria:</h4>
+                                @foreach (var item6 in ViewBag.Categoria)
+                                {
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" class="name icheck" name="name" value="@item6"> @item6</label>
+                                    </div>
+                                }
+
+                                <!-- FINAL FILTROS POR CATEGORIA -->
                                 <div class="padding"></div>
 
                                 <!-- FILTROS POR FECHA -->
@@ -845,7 +856,7 @@
 
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="myTable">
                                                 @foreach (var item in ViewBag.Resultado)
                                                 {
                                                     <tr>
@@ -865,34 +876,7 @@
                                             </tbody>
 
                                         </table>
-                                        <script>
-                                            setTimeout(function () {
-                                                $('.results > td').hide();
-                                            }, 1);
-
-                                            $(".tags input").on("click", function () {
-                                                if ($(this).attr("id") == "todos") {
-                                                    $("#arts, #computers, #health, #video-games").prop('checked', false);
-                                                    filtrar(true);
-                                                } else {
-                                                    $("#todos").prop('checked', false);
-                                                    filtrar(false);
-                                                }
-                                            });
-
-                                            function filtrar(e) {
-                                                if (e) {
-                                                    $(".results td").each(function () {
-                                                        $(this).show();
-                                                    });
-                                                } else {
-                                                    $('.results td').hide();
-                                                    $('.tags').find('input:checked').each(function () {
-                                                        $('.results td.' + $(this).attr('id')).show();
-                                                    });
-                                                }
-                                            }
-                                        </script>
+                                        
                                     </div>
 
                                     <!-- FINAL TABLA DE RESULTADOS -->
