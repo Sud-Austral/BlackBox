@@ -133,7 +133,7 @@
                                             <li class="nav-item">
                                                 <a href="" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>
+                                                    <p> Industria
                                                         @item.nombre                                                     
                                                         <i class="fas fa-angle-left right"></i>
                                                     </p>
@@ -145,6 +145,7 @@
                                                             <a href="#" class="nav-link">
                                                                 <i class="far fa-circle nav-icon"></i>
                                                                 <p>
+                                                                    Sector
                                                                     @item2.nombre
                                                                     <i class="fas fa-angle-left right"></i>
                                                                 </p>
@@ -156,6 +157,7 @@
                                                                         <a href="#" class="nav-link">
                                                                             <i class="far fa-circle nav-icon"></i>
                                                                             <p>
+                                                                                Producto
                                                                                 @item3.nombre
                                                                                 <i class="fas fa-angle-left right"></i>
                                                                             </p>
@@ -167,6 +169,7 @@
                                                                                     <a href="#" class="nav-link">
                                                                                         <i class="far fa-circle nav-icon"></i>
                                                                                         <p>
+                                                                                            Categoria
                                                                                             @item4.nombre
                                                                                             <i class="fas fa-angle-left right"></i>
                                                                                         </p>
@@ -1070,35 +1073,55 @@
                                     <h3 class="text-dark mb-0">Productos</h3>
                                 </div>
                                 <div class="row">
-                                    @foreach (var item in ViewBag.Resultado)
+                                    @if (ViewBag.Resultado.Count >= 0)
+                                    {
+                                        <div class="col-12" style="background-color:black;margin:1%;">
+                                            
+                                                
+                                            <a href="https://dataintelligence.store/" target="_self" style="color:red !important; ">
+                                                <h3 class="text-dark mb-0" style="color:white !important">
+                                                    Puedes encontrar Productos o Suscripciones en nuestra Tienda al hacer click aqui
+                                                </h3>
+                                            </a>
 
-                                    { 
-                                        <div class="col-md-6 col-xl-3 mb-4" >
-                                            <div class="car card shadow border-left-primary" style="border-radius:15px;">
-                                                <img class="card-img-top img-fluid" src="@item.URL_IMAGEN" alt="Card image cap">
-                                                <div class="card-body">
-                                                    <div class="row align-items-center no-gutters d-block">
-                                                        <div class="text-dark font-weight-bold h5 mb-0">@item.NOMBRE</div>    
-                                                        <div class="hover_content col mr-2">
-                                                            <div class="text-dark font-weight-bold h5 mb-0">PRODUCTO</div>
-                                                            <a href="~/Pagina/ValidadorProductosInternos/@item.ID" target="_blank" style="color:lightblue; font-size:30px !important;"> <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.ID</div></a>
-                                                            <div class="text-dark font-weight-bold h5 mb-0">COMPROBANTE</div>
-                                                            <a href="@item.COMPROBANTE" target="_blank" style="color:lightblue;"> <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.COMPROBANTE</div></a>
-                                                            <div class="text-dark font-weight-bold h5 mb-0">SKU</div>
-                                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.SKU</div>
-                                                            <div class="text-dark font-weight-bold h5 mb-0">PRODUCT ID</div>
-                                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.PRODUCT_ID</div>
-                                                            <div class="text-dark font-weight-bold h5 mb-0">FECHA</div>
-                                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.FECHA_CREADO</div>
-                                                        </div>
+                                                
+                                            
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                    foreach (var item in ViewBag.Resultado)
 
-                                                        @*<div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>*@
+                                    {
+                                    <div class="col-md-6 col-xl-3 mb-4">
+                                        <div class="car card shadow border-left-primary" style="border-radius:15px;">
+                                            <img class="card-img-top img-fluid" src="@item.URL_IMAGEN" alt="Card image cap">
+                                            <div class="card-body">
+                                                <div class="row align-items-center no-gutters d-block">
+                                                    <div class="text-dark font-weight-bold h5 mb-0">@item.NOMBRE</div>
+                                                    <div class="hover_content col mr-2">
+                                                        <div class="text-dark font-weight-bold h5 mb-0">PRODUCTO</div>
+                                                        <a href="~/Pagina/ValidadorProductosInternos/@item.ID" target="_blank" style="color:lightblue; font-size:30px !important;"> <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.ID</div></a>
+                                                        <div class="text-dark font-weight-bold h5 mb-0">COMPROBANTE</div>
+                                                        <a href="@item.COMPROBANTE" target="_blank" style="color:lightblue;"> <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.COMPROBANTE</div></a>
+                                                        <div class="text-dark font-weight-bold h5 mb-0">SKU</div>
+                                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.SKU</div>
+                                                        <div class="text-dark font-weight-bold h5 mb-0">PRODUCT ID</div>
+                                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.PRODUCT_ID</div>
+                                                        <div class="text-dark font-weight-bold h5 mb-0">FECHA</div>
+                                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.FECHA_CREADO</div>
                                                     </div>
+
+                                                    @*<div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>*@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                     }
-                                </div>
+
+                                    }
+
+                                    </div>
 
                                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
                                     <h3 class="text-dark mb-0">Suscripciones</h3>

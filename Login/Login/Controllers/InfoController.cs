@@ -89,6 +89,18 @@ namespace AplicacionBlanco.Controllers
             return View();
         }
 
+        public ActionResult PaginaBusqueda2(string id)
+        {
+            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            List<GRAFICO> salida = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            List<string> nombres = new List<string>();
+            foreach (var item in salida)
+            {
+                nombres.Add(item.nombre);
+            }
+            return Json(nombres, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult HomeBusqueda()
         {
             return View();
