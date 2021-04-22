@@ -830,11 +830,11 @@
 
                                     </div>
                                 </div>
-                              
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
                                 <script>
                                     // Write on keyup event of keyword input element
-                                $(document).ready(function () {
+                                    $(document).ready(function () {
                                         $("#search").keyup(function () {
                                             _this = this;
                                             // Show only matching TR, hide rest of them
@@ -845,12 +845,12 @@
                                                     $(this).show();
                                             });
                                         });
-                                });
+                                    });
                                 </script>
-                                
+
                                 <!-- COMIENZO TABLA RESULTADOS -->
                                 <div class="table-responsive display ">
-                                    
+
                                     <h4>Seleccione la cantidad de filas</h4>
                                     <div class="col-12 form-group d-flex">
                                         <select name="state" id="maxRows" class="form-control">
@@ -955,7 +955,7 @@
             if (totalRows > maxRows) {
                 var pagenum = Math.ceil(totalRows / maxRows)
                 for (var i = 1; i <= pagenum;) {
-                    $('.pagination').append('<li data-page="' + i + '">\<span>' + i++ + '<span class="page-item  sr-only">(current)</span></span>\</li>').show()
+                    $('.pagination').append('<li class="btn" data-page="' + i + '">\<span>' + i++ + '<span class="page-item  sr-only">(current)</span></span>\</li>').show()
                 }
             }
 

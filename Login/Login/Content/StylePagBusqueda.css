@@ -10,6 +10,18 @@ body {
     font-family: 'MYRIADPRO-REGULAR';
    
 }
+
+.pagination li {
+    background-color: #4CAF50; /* Green */
+    margin: 1px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 h6 {
     font-size: 17px;
 }
