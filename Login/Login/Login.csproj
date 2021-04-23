@@ -251,6 +251,8 @@
     <Compile Include="Models\SECTOR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ShopifyYSuscripciones.cs" />
+    <Compile Include="Models\Suscripcion.cs" />
     <Compile Include="Models\TEMPORALIDAD.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

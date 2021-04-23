@@ -83,10 +83,84 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Resultado = db.BuscarGrafico(id);
             return View();
         }
-        public ActionResult PaginaBusqueda()
+        public ActionResult PaginaBusqueda(string id = "1")
         {
-            ViewBag.Resultado = dbGrafico.GRAFICO.ToList();
+            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+
+            List<string> Paises = new List<string>();
+            foreach (var item in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!Paises.Contains(item.TERRITORIO.nombre))
+                {
+                    Paises.Add(item.TERRITORIO.nombre);
+                }
+            }
+            ViewBag.Paises = Paises;
+
+            List<string> Temporalidad = new List<string>();
+            foreach (var item2 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!Temporalidad.Contains(item2.TEMPORALIDAD.nombre))
+                {
+                    Temporalidad.Add(item2.TEMPORALIDAD.nombre);
+                }
+            }
+            ViewBag.Temporalidad = Temporalidad;
+
+            List<string> Producto = new List<string>();
+            foreach (var item3 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!Producto.Contains(item3.CATEGORIA.PRODUCTO.nombre))
+                {
+                    Producto.Add(item3.CATEGORIA.PRODUCTO.nombre);
+                }
+            }
+            ViewBag.Producto = Producto;
+
+            List<string> Industria = new List<string>();
+            foreach (var item5 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!Industria.Contains(item5.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
+                {
+                    Industria.Add(item5.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
+                }
+            }
+            ViewBag.Industria = Industria;
+
+
+            List<string> Sector = new List<string>();
+            foreach (var item4 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!Sector.Contains(item4.CATEGORIA.PRODUCTO.SECTOR.nombre))
+                {
+                    Sector.Add(item4.CATEGORIA.PRODUCTO.SECTOR.nombre);
+                }
+            }
+            ViewBag.Sector = Sector;
+
+
+            List<string> Categoria = new List<string>();
+            foreach (var item6 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!Categoria.Contains(item6.CATEGORIA.nombre))
+                {
+                    Categoria.Add(item6.CATEGORIA.nombre);
+                }
+            }
+            ViewBag.Categoria = Categoria;
             return View();
+        }
+
+        public ActionResult PaginaBusqueda2(string id)
+        {
+            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            List<GRAFICO> salida = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            List<string> nombres = new List<string>();
+            foreach (var item in salida)
+            {
+                nombres.Add(item.nombre);
+            }
+            return Json(nombres, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult HomeBusqueda()
