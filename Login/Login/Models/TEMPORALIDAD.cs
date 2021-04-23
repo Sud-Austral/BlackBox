@@ -26,7 +26,36 @@ namespace Login.Models
         public string auxiliar { get; set; }
         public string fecha_inicio { get; set; }
         public string fecha_termino { get; set; }
-    
+
+        public string _fecha_inicio
+        {
+            get
+            {
+                if (fecha_inicio.Contains("/"))
+                {
+                    return fecha_inicio;
+                }
+                DateTime conv = DateTime.FromOADate(Int32.Parse(fecha_inicio));
+                return conv.ToShortDateString();
+            }
+
+            set { fecha_inicio = value; }
+        }
+        public string _fecha_termino
+        {
+            get
+            {
+                if (fecha_termino.Contains("/"))
+                {
+                    return fecha_termino;
+                }
+                DateTime conv = DateTime.FromOADate(Int32.Parse(fecha_termino));
+                return conv.ToShortDateString();
+            }
+
+            set { fecha_inicio = value; }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GRAFICO> GRAFICO { get; set; }
     }

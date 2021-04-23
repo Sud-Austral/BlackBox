@@ -54,6 +54,21 @@ namespace Login.Models
         public virtual TIPO_GRAFICO TIPO_GRAFICO { get; set; }
         public virtual UNIDAD_MEDIDA UNIDAD_MEDIDA1 { get; set; }
 
+        public string _fecha_publicacion
+        {
+            get
+            {
+                if (fecha_publicacion.Contains("/"))
+                {
+                    return fecha_publicacion;
+                }
+                DateTime conv = DateTime.FromOADate(Int32.Parse(fecha_publicacion));
+                return conv.ToShortDateString();
+            }
+
+            set { fecha_publicacion = value; }
+        }
+
         public string GetURL()
         {
             string industria_id = CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id.ToString("D2");
