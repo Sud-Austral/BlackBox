@@ -25,7 +25,7 @@ namespace Login.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-            Correo.SendEmailAsync("ianmeza29@gmail.com", "Hola");
+            Correo.SendEmailAsync("lmonsalve22@gmail.com", "Hola");
             return View();
         }
 

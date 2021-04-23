@@ -65,6 +65,7 @@ namespace Login.Controllers
 
         //
         // POST: /Account/Login
+        
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -83,7 +84,8 @@ namespace Login.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    //return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Usuario");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -94,6 +96,16 @@ namespace Login.Controllers
                     return View(model);
             }
         }
+        /*
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginViewModel model, string returnUrl)
+        {
+            return RedirectToAction("Index", "Usuario");
+        }
+        */
+
 
         //
         // GET: /Account/VerifyCode

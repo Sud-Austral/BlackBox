@@ -14,11 +14,11 @@ namespace Login.Models
             try
             {
                 // Credentials
-                var credentials = new NetworkCredential("epb@ecopartnersbank.org", "ecopartnersbank");
+                var credentials = new NetworkCredential("soporte@dataintelligence-group.com", "sud123456789");
                 // Mail message
                 var mail = new MailMessage()
                 {
-                    From = new MailAddress("lmonsalve22@gmail.com", "Comprobante de aporte final"),
+                    From = new MailAddress("lmonsalve22@gmail.com", "Correo de Recuperación de Contraseña"),
                     Subject = "Recuperación de contraseña",
                     Body = "<html><head></head><body><p>Correo de Recuperación de Contraseña</p><br/>"+
                     contenido +
@@ -34,7 +34,8 @@ namespace Login.Models
                     Port = 25,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
-                    Host = "mail.ecopartnersbank.org",
+                    //Host = "mail.ecopartnersbank.org",
+                    Host = " mail.dataintelligence-group.com",
                     EnableSsl = false,
                     Credentials = credentials
                 };
