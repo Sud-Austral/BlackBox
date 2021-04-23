@@ -30,7 +30,7 @@
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     @*FIN SELECTOR DE FECHAS*@
     @* filtro del buscador*@
-   
+
 
 </head>
 <body>
@@ -826,68 +826,104 @@
                                 <div class="row">
                                     <!-- COMIENZO ORDENAR RESULTADOS -->
                                     <div class="col-sm-6">
-                                        
+
                                     </div>
                                     <!-- FINAL ORDENAR RESULTADOS -->
 
                                     <div class="col-md-6 text-right">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
-                                        </div>
+
                                     </div>
                                 </div>
 
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+                                <script>
+                                    // Write on keyup event of keyword input element
+                                    $(document).ready(function () {
+                                        $("#search").keyup(function () {
+                                            _this = this;
+                                            // Show only matching TR, hide rest of them
+                                            $.each($("#mytable tbody tr"), function () {
+                                                if ($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                                                    $(this).hide();
+                                                else
+                                                    $(this).show();
+                                            });
+                                        });
+                                    });
+                                </script>
+
                                 <!-- COMIENZO TABLA RESULTADOS -->
-                                <div class="table-responsive display " id="buscador">
-                                    <!-- COMIENZO TABLA RESULTADOS -->
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                                    <div class="table-responsive display " id="buscador">
-                                        <table id="example" class=" results table table-striped table-bordered " style="width:100%">
+                                <div class="table-responsive display ">
 
-                                            <thead id="stud_body ">
-                                                <tr>
-                                                    <th class="arts" >NOMBRE</th>
-                                                    <th class="computers">TEMPORALIDAD</th>
-                                                    <th class="health">PAIS</th>
-                                                    <th class="video-games">DETALLE</th>
-                                                    <th>PARAMETROS</th>
-                                                    <th>NOMBRE ARCHIVO</th>
-                                                    <th>INDUSTRIA</th>
-                                                    <th>SECTOR</th>
-                                                    <th>PRODUCTO</th>
-                                                    <th>CATEGORIA</th>
+                                    <h4>Seleccione la cantidad de filas</h4>
+                                    <div class="col-12 form-group d-flex">
+                                        <select name="state" id="maxRows" class="form-control">
+                                            <option value="5000">Filas</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="75">75</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                        <div class="col-4">
 
-                                                </tr>
-                                            </thead>
-                                            <tbody id="myTable">
-                                                @foreach (var item in ViewBag.Resultado)
-                                                {
-                                                    <tr>
-                                                        <td class="arts">@item.nombre</td>
-                                                        <td class="computers" >@item.TEMPORALIDAD.nombre</td>
-                                                        <td class="health">@item.TERRITORIO.nombre</td>
-                                                        <td class="video-games" >@item.DETALLE.nombre</td>
-                                                        <td>@item.PARAMETRO.nombre</td>
-                                                        <td>@item.url</td>
-                                                        <td>@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</td>
-                                                        <td>@item.CATEGORIA.PRODUCTO.SECTOR.nombre</td>
-                                                        <td>@item.CATEGORIA.PRODUCTO.nombre</td>
-                                                        <td>@item.CATEGORIA.nombre</td>
-
-                                                    </tr>
-                                                }
-                                            </tbody>
-
-                                        </table>
-                                        
+                                        </div>
+                                        <div class="col-4 input-group mb-2 text-right" style="width:100%;">
+                                            <input type="search" id="search" class="form-control rounded" placeholder="" aria-label="Search"
+                                                   aria-describedby="search-addon" />
+                                            <button type="button" class="btn btn-outline-primary">Buscar</button>
+                                        </div>
                                     </div>
 
-                                    <!-- FINAL TABLA DE RESULTADOS -->
+                                    <table id="mytable" class="table table-bordered table-striped" style="width:100%">
+
+                                        <thead id="stud_body ">
+                                            <tr>
+                                                <th class="arts">NOMBRE</th>
+                                                <th class="computers">TEMPORALIDAD</th>
+                                                <th class="health">PAIS</th>
+                                                <th class="video-games">DETALLE</th>
+                                                <th>PARAMETROS</th>
+                                                <th>NOMBRE ARCHIVO</th>
+                                                <th>INDUSTRIA</th>
+                                                <th>SECTOR</th>
+                                                <th>PRODUCTO</th>
+                                                <th>CATEGORIA</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable">
+                                            @foreach (var item in ViewBag.Resultado)
+                                            {
+                                                <tr>
+                                                    <td class="arts">@item.nombre</td>
+                                                    <td class="computers">@item.TEMPORALIDAD.nombre</td>
+                                                    <td class="health">@item.TERRITORIO.nombre</td>
+                                                    <td class="video-games">@item.DETALLE.nombre</td>
+                                                    <td>@item.PARAMETRO.nombre</td>
+                                                    <td>@item.url</td>
+                                                    <td>@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</td>
+                                                    <td>@item.CATEGORIA.PRODUCTO.SECTOR.nombre</td>
+                                                    <td>@item.CATEGORIA.PRODUCTO.nombre</td>
+                                                    <td>@item.CATEGORIA.nombre</td>
+
+                                                </tr>
+                                            }
+                                        </tbody>
+
+                                    </table>
+                                    <div class="pagination-container">
+                                        <nav>
+                                            <ul class="pagination"></ul>
+                                        </nav>
+
+                                    </div>
                                 </div>
 
                                 <!-- FINAL TABLA DE RESULTADOS -->
-                               
+
                             </div>
                             <!-- FINAL RESULTADOS -->
                         </div>
@@ -905,192 +941,56 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     @*este script es para la tabla y filtro de buscado agrupar y paginacion de tabla  el codigo dentro de language es para traducir elementos de la tabla*@
     <script>
-        $(document).ready(function () {
-            $('#example').DataTable({
-                language: {
-                    "processing": "Procesando...",
-                    "lengthMenu": "Mostrar _MENU_ registros",
-                    "zeroRecords": "No se encontraron resultados",
-                    "emptyTable": "Ningún dato disponible en esta tabla",
-                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-                    "search": "Buscar:",
-                    "infoThousands": ",",
-                    "loadingRecords": "Cargando...",
-                    "paginate": {
-                        "first": "Primero",
-                        "last": "Último",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    },
-                    "aria": {
-                        "sortAscending": ": Activar para ordenar la columna de manera ascendente",
-                        "sortDescending": ": Activar para ordenar la columna de manera descendente"
-                    },
-                    "buttons": {
-                        "copy": "Copiar",
-                        "colvis": "Visibilidad",
-                        "collection": "Colección",
-                        "colvisRestore": "Restaurar visibilidad",
-                        "copyKeys": "Presione ctrl o u2318 + C para copiar los datos de la tabla al portapapeles del sistema. <br \/> <br \/> Para cancelar, haga clic en este mensaje o presione escape.",
-                        "copySuccess": {
-                            "1": "Copiada 1 fila al portapapeles",
-                            "_": "Copiadas %d fila al portapapeles"
-                        },
-                        "copyTitle": "Copiar al portapapeles",
-                        "csv": "CSV",
-                        "excel": "Excel",
-                        "pageLength": {
-                            "-1": "Mostrar todas las filas",
-                            "1": "Mostrar 1 fila",
-                            "_": "Mostrar %d filas"
-                        },
-                        "pdf": "PDF",
-                        "print": "Imprimir"
-                    },
-                    "autoFill": {
-                        "cancel": "Cancelar",
-                        "fill": "Rellene todas las celdas con <i>%d<\/i>",
-                        "fillHorizontal": "Rellenar celdas horizontalmente",
-                        "fillVertical": "Rellenar celdas verticalmentemente"
-                    },
-                    "decimal": ",",
-                    "searchBuilder": {
-                        "add": "Añadir condición",
-                        "button": {
-                            "0": "Constructor de búsqueda",
-                            "_": "Constructor de búsqueda (%d)"
-                        },
-                        "clearAll": "Borrar todo",
-                        "condition": "Condición",
-                        "conditions": {
-                            "date": {
-                                "after": "Despues",
-                                "before": "Antes",
-                                "between": "Entre",
-                                "empty": "Vacío",
-                                "equals": "Igual a",
-                                "notBetween": "No entre",
-                                "notEmpty": "No Vacio",
-                                "not": "Diferente de"
-                            },
-                            "number": {
-                                "between": "Entre",
-                                "empty": "Vacio",
-                                "equals": "Igual a",
-                                "gt": "Mayor a",
-                                "gte": "Mayor o igual a",
-                                "lt": "Menor que",
-                                "lte": "Menor o igual que",
-                                "notBetween": "No entre",
-                                "notEmpty": "No vacío",
-                                "not": "Diferente de"
-                            },
-                            "string": {
-                                "contains": "Contiene",
-                                "empty": "Vacío",
-                                "endsWith": "Termina en",
-                                "equals": "Igual a",
-                                "notEmpty": "No Vacio",
-                                "startsWith": "Empieza con",
-                                "not": "Diferente de"
-                            },
-                            "array": {
-                                "not": "Diferente de",
-                                "equals": "Igual",
-                                "empty": "Vacío",
-                                "contains": "Contiene",
-                                "notEmpty": "No Vacío",
-                                "without": "Sin"
-                            }
-                        },
-                        "data": "Data",
-                        "deleteTitle": "Eliminar regla de filtrado",
-                        "leftTitle": "Criterios anulados",
-                        "logicAnd": "Y",
-                        "logicOr": "O",
-                        "rightTitle": "Criterios de sangría",
-                        "title": {
-                            "0": "Constructor de búsqueda",
-                            "_": "Constructor de búsqueda (%d)"
-                        },
-                        "value": "Valor"
-                    },
-                    "searchPanes": {
-                        "clearMessage": "Borrar todo",
-                        "collapse": {
-                            "0": "Paneles de búsqueda",
-                            "_": "Paneles de búsqueda (%d)"
-                        },
-                        "count": "{total}",
-                        "countFiltered": "{shown} ({total})",
-                        "emptyPanes": "Sin paneles de búsqueda",
-                        "loadMessage": "Cargando paneles de búsqueda",
-                        "title": "Filtros Activos - %d"
-                    },
-                    "select": {
-                        "1": "%d fila seleccionada",
-                        "_": "%d filas seleccionadas",
-                        "cells": {
-                            "1": "1 celda seleccionada",
-                            "_": "$d celdas seleccionadas"
-                        },
-                        "columns": {
-                            "1": "1 columna seleccionada",
-                            "_": "%d columnas seleccionadas"
-                        }
-                    },
-                    "thousands": ".",
-                    "datetime": {
-                        "previous": "Anterior",
-                        "next": "Proximo",
-                        "hours": "Horas",
-                        "minutes": "Minutos",
-                        "seconds": "Segundos",
-                        "unknown": "-",
-                        "amPm": [
-                            "am",
-                            "pm"
-                        ]
-                    },
-                    "editor": {
-                        "close": "Cerrar",
-                        "create": {
-                            "button": "Nuevo",
-                            "title": "Crear Nuevo Registro",
-                            "submit": "Crear"
-                        },
-                        "edit": {
-                            "button": "Editar",
-                            "title": "Editar Registro",
-                            "submit": "Actualizar"
-                        },
-                        "remove": {
-                            "button": "Eliminar",
-                            "title": "Eliminar Registro",
-                            "submit": "Eliminar",
-                            "confirm": {
-                                "_": "¿Está seguro que desea eliminar %d filas?",
-                                "1": "¿Está seguro que desea eliminar 1 fila?"
-                            }
-                        },
-                        "error": {
-                            "system": "Ha ocurrido un error en el sistema (<a target=\"\\\" rel=\"\\ nofollow\" href=\"\\\">Más información&lt;\\\/a&gt;).<\/a>"
-                        },
-                        "multi": {
-                            "title": "Múltiples Valores",
-                            "info": "Los elementos seleccionados contienen diferentes valores para este registro. Para editar y establecer todos los elementos de este registro con el mismo valor, hacer click o tap aquí, de lo contrario conservarán sus valores individuales.",
-                            "restore": "Deshacer Cambios",
-                            "noMulti": "Este registro puede ser editado individualmente, pero no como parte de un grupo."
-                        }
-                    },
-                    "info": "Mostrando de _START_ a _END_ de _TOTAL_ entradas"
+        var table = '#mytable'
+        $('#maxRows').on('change', function () {
+            $('.pagination').html('')
+            var trnum = 0;
+            var maxRows = parseInt($(this).val())
+            var totalRows = $(table + ' tbody tr').length
+            $(table + ' tr:gt(0)').each(function () {
+                trnum++
+                if (trnum > maxRows) {
+                    $(this).hide()
                 }
-            });
-        });
+                if (trnum <= maxRows) {
+                    $(this).show()
+                }
+            })
+            if (totalRows > maxRows) {
+                var pagenum = Math.ceil(totalRows / maxRows)
+                for (var i = 1; i <= pagenum;) {
+                    $('.pagination').append('<li class="btn" data-page="' + i + '">\<span>' + i++ + '<span class="page-item  sr-only">(current)</span></span>\</li>').show()
+                }
+            }
+
+            $('.pagination li:first-child').addClass('active')
+            $('.pagination li').on('click', function () {
+                var pageNum = $(this).attr('date-page')
+                var trIndex = 0;
+                $('.pagination li').removeClass('active')
+                $(this).addClass('active')
+                $(table + ' tr:gt(0)').each(function () {
+                    trIndex++
+                    if (trIndex > (maxRows * pageNum) || trIndex <= ((maxRows * pageNum) - maxRows)) {
+                        $(this).hide()
+                    } else {
+                        $(this).show()
+                    }
+
+                })
+            })
+        })
+        @*
+        $(function () {
+            $('table tr:eq(0)').prepend('<th>ID</th>')
+            var id = 0;
+            $('table tr:gt(0)').each(function () {
+                id++
+                $(this).prepend('<td>' + id + '</td>')
+            })
+        })
+        *@
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src=" https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 </body>
 </html>
+
