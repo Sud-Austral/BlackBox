@@ -2448,3 +2448,20 @@ h5 {
     margin: 21px 0 0 0;
 }
 
+.btn-outline-warning {
+    border-color: #c97c5a !important;
+    color: #c97c5a;
+}
+    .btn-outline-warning:hover {
+        background: #c97c5a;
+        color: #fff !important;
+    }
+.btn-outline-danger {
+    border-color: #832d43 !important;
+    color: #832d43
+}
+    .btn-outline-danger:hover {
+        background: #832d43;
+        color: #fff !important;
+    }
+
