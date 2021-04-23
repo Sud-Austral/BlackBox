@@ -2440,3 +2440,11 @@ h5 {
     transform: translateX(0);
 }
 
+.palabrasClaves .btn-sm {
+    width:140px;
+    padding: 2px 25px;
+    font-size: 10px;
+    border-radius: 25px;
+    margin: 21px 0 0 0;
+}
+
