@@ -6,7 +6,9 @@
     font-family: 'MYRIADPRO-REGULAR';
     src: url('img/Font/MYRIADPRO-REGULAR.OTF') format('opentype');
 }
+
 body {
+
     font-family: 'MYRIADPRO-REGULAR';
    
 }
@@ -2390,3 +2392,39 @@ h5 {
     border-radius: 25px;
     margin: 21px 0 0 0;
 }
+/*************************carrusel pagina HomeOdoo**********************************************************/
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+
+        .carousel-inner .carousel-item > div:first-child {
+            display: block;
+        }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(33.333%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-33.333%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+    transform: translateX(0);
+}
+

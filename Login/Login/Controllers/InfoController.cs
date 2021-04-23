@@ -160,6 +160,10 @@ namespace AplicacionBlanco.Controllers
             ViewBag.test = dbGrafico.INDUSTRIA.ToList();
             return View();
         }
+        public ActionResult HomeOdoo()
+        {
+            return View();
+        }
 
     }
 }
