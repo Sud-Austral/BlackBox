@@ -1240,74 +1240,6 @@
         </div>
 
     </section>
-        <!--carrucel-->
-        <section class="pt-5 pb-5">
-            <div class="container">
-                <div class="row ml-1 mr-1 " style="border:1px solid rgb(0 0 0 / 0.00); border-radius:10px; background-color:#bf1522;" >
-                    <div class="col-8 col-md-6">
-                        <p class="mt-2" style="color:#ffffff;">
-                            @*Uso de los medios de comunicación en España *@<strong>∙</strong> @ViewBag.ELEMENTO.CATEGORIA.PRODUCTO.SECTOR.nombre en
-                            @ViewBag.ELEMENTO.TERRITORIO.nombre
-                        </p>
-                    </div>
-                    <div class="col-4 col-md-6 text-right mt-2 ">
-                        <a class=" mr-1" href="#carouselExample" role="button" data-slide="prev" style="text-decoration: none; background-color: #c6c6c6; padding: 3px 3px 5px 5px;">
-                            <i class="fa fa-arrow-left align-baseline" style="color:red; font-size:0.8rem;"></i>
-                        </a>
-                        <a  href="#carouselExample" role="button" data-slide="next" style="text-decoration: none; background-color: #c6c6c6; padding: 3px 5px 5px 5px;">
-                            <i class="fa fa-arrow-right align-baseline" style="color:red;font-size:0.8rem; "></i>
-                        </a>
-                    </div>
-                </div>
-                    <div class="container-fluid mt-4">
-                        <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
-                            <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                                <div class="carousel-item col-md-3  active">
-                                    <div class="panel panel-default">
-                                        <div class="card" style="border: 0.5px solid #e6e6e6; border-radius:25px;background-color: #ffffff;">
-                                            <a href="~/info/index?id=2" style="color:#000;">
-
-                                                <div class="card-body">
-                                                    <h4 class="card-title text-center mt-md-2">@ViewBag.ELEMENTO.titulo</h4>
-                                                    <img class="img-fluid mx-0 mt-md-2  " alt="100%x280" src="~/Content/iconos_PopUp/gracircular (1).png">
-
-                                                    <h5 class="card-text text-center"> @ViewBag.ELEMENTO.descripcion</h5>
-
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @foreach (var item in ViewBag.listaAsociado)
-                                 {
-                                    <div class="carousel-item col-md-3">
-                                        <div class="panel panel-default">
-                                            <div class="card" style="border:0.5px solid #e6e6e6; border-radius:25px; background-color:#f2f2f2;">
-                                                @* <a href="~/info/index?id=@ViewBag.Elemento.id" style="color:#000;">*@
-                                                <a href="~/info/index?id=@item.id" style="color:#000;">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title text-center mt-md-2">@item.titulo</h4>
-                                                        @*<img class="img-fluid mx-0 mt-md-2" alt="100%x280" src="~/Content/iconos_PopUp/gracircular (1).png">*@
-                                                        @{ 
-                                                            string url = "https://raw.githubusercontent.com/Sud-Austral/MPG/main/Image/" + item.GetURL();
-                                                            url = url.Replace(".csv", ".png");
-                                                        }
-                                                        <img class="img-fluid mx-0 mt-md-2" alt="100%x280" src="@url">
-                                                        <h5 class="card-text text-center"> @item.descripcion</h5>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                 }
-
-                            </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-        </section>
 
     </div>
     <!--seccion de suscripciones-->
@@ -1503,135 +1435,74 @@
         <!-- Row -->
     </div>
     <!--nav verticar-->
-    <div class="container">
-        <!--nav verticar-->
-        <section class="container mt-4">
-            <div class="text-left mb-md-3" style="border:0.5px solid rgb(0 0 0 / 0.00) ; border-radius:10px; background-color:#bf1522;">
-                <h6 style="color:#ffffff;" class="mb-md-3 mt-md-3 ml-md-2"><strong>∙</strong> Información similar de este UN PRODUCTO</h6>
-            </div>
-            @*<h4 class="text-center mb-md-5 mt-md-5"><strong>Estadísticas sobre </strong>"El consumo de prensa en España"</h4>*@
-            <div class="row" style="margin-bottom:20px;">
-                <div class="col-12 col-md-6">
-                    <div class="row list-group" id="list-tab" role="tablist">
-                        
-                            @foreach (var item in ViewBag.listaAsociado)
-                            {
-                                <a class="list-group-item list-group-item-action" id="list-@item.nombre-list" data-toggle="list" href="#list-@item.nombre" role="tab" aria-controls="@item.nombre" style="color:#000; font-family:MYRIADPRO-REGULAR;">@item.titulo</a>
-                            }
-                            @*
-                                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings" style="color:#000;">Empresas</a>
-                            *@
-                    </div>
-                    
-
-                </div>
-                <div class="col-md-6 ">
-                    <h6 style="color:#000;margin-top:10px;"><strong>∙ Información mas relevante</strong></h6>
-                    <div class="row" >
-                        <div class="tab-content col-8"  id="nav-tabContent" >
-                            @foreach (var item in ViewBag.listaAsociado)
-                            { 
-                                <a href="~/info/index?id=@item.id">
-                                     <div class="row">
-                                        <div class="col-7 tab-pane fade" id="list-@item.nombre" role="tabpanel" aria-labelledby="list-@item.nombre-list" style="border:0.5px solid #808080; border-radius:10px;">
-                                            <img class=" img-fluid mx-0 " style="width:20%;" src="~/Content/img/icono_grafico.png" alt="Alternate Text" />
-                                            @item.descripcion
-                                        </div>
-
-                                    </div>
-                                </a>
-
-                             }
-                              
-                            @*
-                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">4 Empresas</div>*@
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <!--Seccion con scrollbar
-        <section style="margin-bottom:100px; background:#F7F9FA">
-            <br />
-            <br />
-            <h4 class="text-center mb-md-4"><strong>Otros contenidos:</strong> También le podría interesar</h4>
-            <strong style="margin-left: 80px;">Estadisticas</strong>
-            <div class="row container ml-md-5" style="list-style:none;">
-
-                <div class="col-md-7" style="width:600px; height:350px; overflow-x: hidden!important; overflow-y: scroll; margin-bottom:50px; background:#fff;">
-
-                    <ul class="list-group mb-md-7" style="list-style:none">
-
-                        @foreach (var item in ViewBag.listaOtrosContenidos)
-                        {
-                            <li class="mt-md-3"><span><img class="mr-md-2 mb-md-2" src="~/Content/iconos_PopUp/barra-grafica.png" alt="Alternate Text" /></span>@item.nombre</li>
-                        }
-                        @*
-                        <li><span><img class="mr-md-2 mb-md-2" src="~/Content/iconos_PopUp/barra-grafica.png" alt="Alternate Text" /></span>A simple primary list group item</li>
-
-                        <li><span><img class="mr-md-2 mb-md-2" src="~/Content/iconos_PopUp/barra-grafica.png" alt="Alternate Text" /></span>A simple secondary list group item</li>
-
-                        @for (int i = 0; i < 10; i++)
-                        {
-                        <li><span><img class="mr-md-2 mb-md-2" src="~/Content/iconos_PopUp/barra-grafica.png" alt="Alternate Text" /></span>@i</li>
-                        }
-                        *@
-                    </ul>
-                </div>
-                <div class="col-md-5">
-
-                    <div class="row">
-
-                        <div class="col-md-2 mb-md-4">
-                            <img src="~/Content/img/Diseño sin título - copia.png" />
-                        </div>
-                        <div class="col-md-9 ml-md-3">
-                            <p>
-                                @*
-                                @ViewBag.Resultado.TITULO
-                                *@
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-            -->
-        @* Seccion de buscador*@
-        <section class="call-to-action">
+            <!--carrucel-->
+        <section class="pt-5 pb-5">
             <div class="container">
-                <div class="row ml-1 mr-1">
-                    <div class="col-md-6 col-sm-8 m-text-center" style="background-color:#000;">
-                        <form class="card card-sm" style="background-color:transparent;border:none; width:100% !important;">
-                            <div class="card-body row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <i class="h4 text-body"></i>
-                                </div>
-                                <!--end of col-->
-                                <div style="width:80%;" >
-                                    <input class="form-control form-control-sm form-control-borderless" id="myInput" type="text" name="myCountry" placeholder="Encuentre estadísticas, y estudios">
-
-                                </div>
-                                <!--end of col-->
-                                <div>
-                                    <button class="btn btn-sm btn-success mb-md-4" type="submit">Search</button>
-                                </div>
-                                <!--end of col-->
-                            </div>
-                        </form>
-                        <h5 style="color:#fff;">¿Desea conocer más sobre nuestras soluciones profesionales?</h5>
-                        <p id="last">Le enviaremos encantados información detallada sobre nuestra Cuenta Corporativa.</p>
+                <div class="row ml-1 mr-1 " style="border:1px solid rgb(0 0 0 / 0.00); border-radius:10px; background-color:#bf1522;" >
+                    <div class="col-8 col-md-6">
+                        <p class="mt-2" style="color:#ffffff;">
+                            @*Uso de los medios de comunicación en España *@<strong>∙</strong> @ViewBag.ELEMENTO.CATEGORIA.PRODUCTO.SECTOR.nombre en
+                            @ViewBag.ELEMENTO.TERRITORIO.nombre
+                        </p>
                     </div>
-                    <div class="col-md-6 col-sm-4" style="background-image: url('/Content/img/ofrecemos_fondo_busqueda.jpg'); background-size: cover;">
-                        <img class="img-fluid pull-right" style="width:50%;" src="~/Content/img/blanco-trans - copia.png" alt="Alternate Text" />
+                    <div class="col-4 col-md-6 text-right mt-2 ">
+                        <a class=" mr-1" href="#carouselExample" role="button" data-slide="prev" style="text-decoration: none; background-color: #c6c6c6; padding: 3px 3px 5px 5px;">
+                            <i class="fa fa-arrow-left align-baseline" style="color:red; font-size:0.8rem;"></i>
+                        </a>
+                        <a  href="#carouselExample" role="button" data-slide="next" style="text-decoration: none; background-color: #c6c6c6; padding: 3px 5px 5px 5px;">
+                            <i class="fa fa-arrow-right align-baseline" style="color:red;font-size:0.8rem; "></i>
+                        </a>
                     </div>
                 </div>
+                    <div class="container-fluid mt-4">
+                        <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
+                            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                                <div class="carousel-item col-md-3  active">
+                                    <div class="panel panel-default">
+                                        <div class="card" style="border: 0.5px solid #e6e6e6; border-radius:25px;background-color: #ffffff;">
+                                            <a href="~/info/index?id=2" style="color:#000;">
+
+                                                <div class="card-body">
+                                                    <h4 class="card-title text-center mt-md-2">@ViewBag.ELEMENTO.titulo</h4>
+                                                    <img class="img-fluid mx-0 mt-md-2  " alt="100%x280" src="~/Content/iconos_PopUp/gracircular (1).png">
+
+                                                    <h5 class="card-text text-center"> @ViewBag.ELEMENTO.descripcion</h5>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @foreach (var item in ViewBag.listaAsociado)
+                                 {
+                                    <div class="carousel-item col-md-3">
+                                        <div class="panel panel-default">
+                                            <div class="card" style="border:0.5px solid #e6e6e6; border-radius:25px; background-color:#f2f2f2;">
+                                                @* <a href="~/info/index?id=@ViewBag.Elemento.id" style="color:#000;">*@
+                                                <a href="~/info/index?id=@item.id" style="color:#000;">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title text-center mt-md-2">@item.titulo</h4>
+                                                        @*<img class="img-fluid mx-0 mt-md-2" alt="100%x280" src="~/Content/iconos_PopUp/gracircular (1).png">*@
+                                                        @{ 
+                                                            string url = "https://raw.githubusercontent.com/Sud-Austral/MPG/main/Image/" + item.GetURL();
+                                                            url = url.Replace(".csv", ".png");
+                                                        }
+                                                        <img class="img-fluid mx-0 mt-md-2" alt="100%x280" src="@url">
+                                                        <h5 class="card-text text-center"> @item.descripcion</h5>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 }
+
+                            </div>
+
+                        </div>
+                    </div>
+                
             </div>
         </section>
-    </div>
     @*Footer*@
     <footer class="row">
         <div class="col">
