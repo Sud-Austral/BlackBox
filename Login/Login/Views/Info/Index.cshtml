@@ -20,6 +20,7 @@
     @*estilos*@
     <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
     <link href="~/Content/StyleBuscador.css" rel="stylesheet" />
+    <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
     @*Titulo de la pagina*@
     <title>Estadística</title>
     @*Script para cargar charts*@
@@ -1140,43 +1141,105 @@
             </aside>
         </section>
         @*Seccion de contenidos*@
-        <section class="container widgets" style="background:#fff;">
-            <h6> <strong>∙</strong> Información similar de este mismo producto</h6>
-            <div class="col-md-12 pt-md-3">
-                <div class="row" style="border: 0.5px solid #e6e6e6;border-radius: 25px;">
-                    <div class="col-md-2 col-sm-12" style="border:1px solid #e6e6e6;; border-radius:25px; background-color:#f0f3f5;">
-                        <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
-                    </div>
-                    <div class="col-md-8 col-sm-12">
-                        <p style="padding-top:10px;">
-                            <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
-                            <span  style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type
-                        </p>
-                    </div>
+    <div class="col-12 pl-2">
+        <h6 style="font-weight:bold">Información disponible sobre el tema</h6>
+    </div>
+        <section class="container widgets" style="background:#fff; border:solid #e6e6e6;; border-radius:15px;">
+        <div class="col-md-12 pt-md-3">
+            <div class="row" style="border-bottom: 2px solid #e6e6e6;">
+                <div class="col-md-2 col-sm-12">
+                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
                 </div>
-               
-                <span id="leerMas" style="display:none;">
-                   
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                <div class="col-md-8 col-sm-12">
+                    <p style="padding-top:10px;">
+                        <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
+                        <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged. It was popularised in
-                        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.
-                    </p> <br />
-
-             
-                </span>
-
-                
+                    </p>
+                </div>
             </div>
 
-        </section>
+            <span id="leerMas" style="display:none;">
+
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but also the leap into
+                    electronic typesetting, remaining essentially unchanged. It was popularised in
+                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.
+                </p> <br />
+
+
+            </span>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row" style="border-bottom: 2px solid #e6e6e6;">
+                <div class="col-md-2 col-sm-12">
+                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <p style="padding-top:10px;">
+                        <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
+                        <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type
+                    </p>
+                </div>
+            </div>
+
+            <span id="leerMas" style="display:none;">
+
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but also the leap into
+                    electronic typesetting, remaining essentially unchanged. It was popularised in
+                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.
+                </p> <br />
+
+
+            </span>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2 col-sm-12" >
+                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <p style="padding-top:10px;">
+                        <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
+                        <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type
+                    </p>
+                </div>
+            </div>
+
+            <span id="leerMas" style="display:none;">
+
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but also the leap into
+                    electronic typesetting, remaining essentially unchanged. It was popularised in
+                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.
+                </p> <br />
+            </span>
+        </div>
+
+    </section>
         <!--carrucel-->
         <section class="pt-5 pb-5">
             <div class="container">
@@ -1247,81 +1310,197 @@
         </section>
 
     </div>
-    <!--seccion suscripciones-->
-    <div class="container-fluid px-0">
-        <section class="pricing" style="box-sizing: border-box; width: 100%;">
-            <div class="container" style="border-top: 15px solid #c7c7c5; background: rgba(35,37,78, 0.3);width:80%;">
-                <div class="row display-block align-items-left align-self-end"  >
-                    <!-- Free -->
-                    <div class="col-lg-3 mt-md-4">
-                        <div class="row">
-                            <div class="col-12 mb-3">
-                                <img class="mx-0 img-fluid" src="~/Content/img/portadaPowerBi_DataELECCIONES_MasterEleccionesChile2021_Candidatos_As_CHILE (2).jpg" alt="Alternate Text" />
+    <!--seccion de suscripciones-->
+    <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_6.jpg');padding-bottom:40px; background-size:cover;">
+        <div class="row">
+            <div class="col">
+                <h3 style="color:#fff; padding:40px 0px; ">
+                    ¡El acceso más conveniente!
+                </h3>
+            </div>
+           
+        </div>
+        <!-- Row -->
+        <div class="row d-flex justify-content-center ">
+            <div class="col-md-3 col-10">
+                <div class="row d-block">
+                    <div class="col mb-3">
+                        <div class="card  mb-3" style="border-radius:20px; height:350px">
+                            <div class="card-header text-center" style="border: none;">
+                                Cuenta Básica Sin Pago
                             </div>
-                        </div>
-                        <div class="card mb-3 ">
-                            <div class="card-body">
-                                <h4 class=" text-center">Cuenta Básica</h4>
-                                <h5 class="card-title text-muted text-uppercase text-center">Para conocer Statista</h5>
-                                <hr>
-                                <p class="text-muted ">Acceso únicamente a estadísticas básicas.</p>
-                                <input style="background-color:transparent;color:#33AEFF;" type="submit" value="Regístrese gratis" class="button--reset">
-                            </div>
-                        </div>
-                        <hr style="border:0.5px solid #73777f;" />
-                    </div>
-                    <!-- Plus-->
-                    <div class="col-lg-6 mb-5" style=" z-index:1;">
-                        <div class="row">
-                            <div class="col-12 mb-3">
-                                <h2 class="text-center" style="color:#fff;">
-                                    Oferta especiales!!!
-                                    <hr style="border:0.5px solid #73777f;" />
-
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="card mt-3">
-                            <div class="card-body">
-                                <ul class="fa-ul">
-                                    <li><span class="fa-li"><i class="fas fa-check"></i></span><b>Unlimited Users</b> a un millón de estadísticas</li>
-                                    <li><span class="fa-li"><i class="fas fa-check"></i></span><b> Descarga</b> en formatos XLS, PDF y PNG</li>
-                                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Referencia <b>a las fuentes</b></li>
+                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                                <ul style="list-style: none;color:#fff;padding-top:35px;font-size:12px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief básicos </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes restringidas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
+                                  
                                 </ul>
-                                <hr>
+                            </div>
+
+                            <div class="card-footer" style="border: none;">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <h6 class="card-price text-center">$49<span class="period">/month</span></h6>
+                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                        <span style="color:red; font-size:18px;">$0</span><span><strong>USD</strong></span><br />
+                                        UN SOLO ACCESO
                                     </div>
-                                    <div class="col-md-6">
-                                        <input type="submit" value="Adquirirla ahora" class="button button--medium button--green whiteSpace--nowrap">
+                                    <div class="col-4">
+                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                            Inscribirse
+                                        </button>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
-                        <hr style="border:0.5px solid #73777f;" />
+
                     </div>
-                    <!-- Pro -->
-                    <div class="col-lg-3 mt-md-4">
-                        <div class="row">
-                            <div class="col-12 mb-3">
-                                <img class="mx-0 img-fluid" src="~/Content/img/portadaPowerBi_DataELECCIONES_MasterEleccionesChile2021_Candidatos_As_CHILE (2).jpg" alt="Alternate Text" />
+                    <div class="col mb-md-3 ">
+                        <div class="card  mb-3" style=" border-radius:20px; height:350px">
+                            <div class="card-header text-center" style="border: none;">
+                                Cuenta Profesional
+                            </div>
+                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px;; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+                                   
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro  </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
+                                   
+                                    
+                                </ul>
+
+                            </div>
+
+                            <div class="card-footer" style="border: none;">
+                                <div class="row">
+                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                        <span style="color:red; font-size:18px;">$35</span><span><strong> USD</strong> mensual</span><br />
+                                        UN SOLO ACCESO
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                            Adquirir
+                                        </button>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-body ">
-                                <h6 class=" text-center">Cuenta Corporativa</h6>
-                                <h5 class="card-title text-muted text-uppercase text-center">Acceso completo</h5>
-                                <hr>
-                                <p class="text-muted">La mejor solución para empresas</p>
-                                <input style="background-color:transparent;color:#33AEFF;" type="submit" value="Regístrese gratis" class="button--reset">
-                            </div>
-                        </div>
-                        <hr style="border:0.5px solid #73777f;" />
+
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="col-md-3 col-10">
+                <div class="row d-block ">
+                    <div class="col-12 mb-3 text-center">
+                        <p style="color:#fff;">
+                            Desde una cuenta sin pago hasta cuentas mensuales y anuales, personales o para instituciones
+                        </p>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="card  mb-3" style=" border-radius:20px; background-color:transparent;">
+
+                            <div class="card-body text-success mt-5" style="margin-left:10px; color:#fff; margin-right:10px;  ">
+                                <img class="img-fluid" src="~/Content/image_estadistica/texto_venta1.png" alt="Alternate Text" />
+
+                            </div>
+                            <div class="card-footer mt-5" style="border: none; color:#fff;">
+                                <img class="img-fluid" src="~/Content/image_estadistica/texto_venta2.png" alt="Alternate Text" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-10" >
+                <div class="row d-block">
+                    <div class="col mb-3 ">
+                        <div class="card  mb-3" style="border-radius:20px;height:350px">
+                            <div class="card-header text-center" style="border: none;">
+                                Cuenta Universidades
+                            </div>
+                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+                                   
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Toda la universidad o carrera </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado/ilimitado </li>
+                                    
+                                </ul>
+                            </div>
+
+                            <div class="card-footer" style="border: none;">
+                                <div class="row">
+                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                        <span style="color:red; font-size:18px;">$500</span><span><strong> USD </strong>mensual</span><br />
+                                        ACCESO LIMITADO/ILIMITADO
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                            Adquirir
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col mb-3 ">
+                        <div class="card  mb-3" style="border-radius:20px; height:350px">
+                            <div class="card-header text-center" style="border: none;">
+                                Cuenta Empresas e Instituciones
+                            </div>
+                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:20px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Reportes sectoriales</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Encuestas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Derechos de publicación </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Servicio de investigación </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer" style="border: none;">
+                                <div class="row">
+                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                        <span style="color:red; font-size:18px;">$700</span><span><strong> USD</strong> mensual</span><br />
+                                        ACCESO LIMITADO/ILIMITADO
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-danger btn-sm mt-1" style="border-radius:20px; font-size:12px;">
+                                            Adquirir
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Row -->
     </div>
     <!--nav verticar-->
     <div class="container">
