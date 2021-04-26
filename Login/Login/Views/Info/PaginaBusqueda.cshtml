@@ -886,7 +886,7 @@
                                                 <th>PAIS</th>
                                                 <th>DETALLE</th>
                                                 <th>PARAMETROS</th>
-                                                <th>NOMBRE ARCHIVO</th>
+                                              
                                                 <th>INDUSTRIA</th>
                                                 <th>SECTOR</th>
                                                 <th>PRODUCTO</th>
@@ -898,12 +898,12 @@
                                             @foreach (var item in ViewBag.Resultado)
                                             {
                                                 <tr>
-                                                    <td class="arts">@item.nombre</td>
-                                                    <td class="computers">@item.TEMPORALIDAD.nombre</td>
-                                                    <td class="health">@item.TERRITORIO.nombre</td>
-                                                    <td class="video-games">@item.DETALLE.nombre</td>
+                                                    <td><a href="~/info/index?id=@item.id" target="_blank">@item.nombre</a></td>
+                                                    <td>@item.TEMPORALIDAD.nombre</td>
+                                                    <td>@item.TERRITORIO.nombre</td>
+                                                    <td>@item.DETALLE.nombre</td>
                                                     <td>@item.PARAMETRO.nombre</td>
-                                                    <td>@item.url</td>
+                                                   
                                                     <td>@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</td>
                                                     <td>@item.CATEGORIA.PRODUCTO.SECTOR.nombre</td>
                                                     <td>@item.CATEGORIA.PRODUCTO.nombre</td>
