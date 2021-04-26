@@ -18,7 +18,7 @@ namespace Login.Models
                 // Mail message
                 var mail = new MailMessage()
                 {
-                    From = new MailAddress("lmonsalve22@gmail.com", "Correo de Recuperación de Contraseña"),
+                    From = new MailAddress("soporte@dataintelligence-group.com", "Correo de Recuperación de Contraseña"),
                     Subject = "Recuperación de contraseña",
                     Body = "<html><head></head><body><p>Correo de Recuperación de Contraseña</p><br/>"+
                     contenido +
