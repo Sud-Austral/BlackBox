@@ -1,6 +1,7 @@
 ﻿
 @{
     Layout = null;
+
 }
 
 <!doctype html>
@@ -18,10 +19,670 @@
     <script src="https://kit.fontawesome.com/2f08016506.js" crossorigin="anonymous"></script>
     @*bootstrap*@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    @*Hola de estilos de esta vista solamente*@
+    @*Hoja de estilos de esta vista solamente*@
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
+   
 </head>
 <body>
+    <header style="border:none;">
+        <div class="ruby-menu-demo-header row" style="background-color:#000; font-family: 'MYRIADPRO-REGULAR';">
+            <!-- COMIENZO: MEGAMENU HORIZONTAL -->
+            <div class="ruby-wrapper" style="background-color:#000; font-family:">
+                <button class="c-hamburger c-hamburger--htx visible-xs">
+                    <span>toggle menu</span>
+                </button>
+                <ul class="ruby-menu">
+
+                    <li class="ruby-active-menu-item"><a href="#">Home</a></li>
+                    <li class="ruby-menu-mega">
+                        <a href="#">Todos</a>
+                        <div class="ruby-grid ruby-grid-lined">
+                            <div class="ruby-row">
+                                <div class="ruby-col-2 hidden-md">
+                                    <div class="row">
+                                        <H6 class="text-center">Sectores</H6>
+                                        <div class="col-md-6 col-6">
+                                            <ul>
+                                                <li><a href="#"><img src="~/Content/image_estadistica/icono_1.png" /></a></li>
+                                                <li><a href="#"><img src="~/Content/image_estadistica/icono_2.png" /></a></li>
+                                                <li><a href="#"><img src="~/Content/image_estadistica/icono_3.png" /></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-6">
+                                            <ul>
+                                                <li><a href="#"><img src="~/Content/image_estadistica/icono_4.png" /></a></li>
+                                                <li><a href="#"><img src="~/Content/image_estadistica/icono_5.png" /></a></li>
+                                                <li><a href="#"><img src="~/Content/image_estadistica/icono_6.png" /></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="ruby-col-2">
+                                    <h6 class="ruby-list-heading text-center">Temas</h6>
+                                    <ul class="text-left">
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="ruby-col-3 ruby-col-4-md" id="scroll1" style="height:200px; overflow-y:scroll;">
+                                    <h6 class="ruby-list-heading text-center">Producto</h6>
+                                    <ul class="text-left">
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="ruby-col-3 ruby-col-4-md" id="scroll1" style="height:200px; overflow-y:scroll;">
+                                    <h6 class="ruby-list-heading text-center">Categorias</h6>
+                                    <ul class="text-left">
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+                                        <li><a href="#">Agricultura</a></li>
+                                        <li><a href="#">Ganaderia</a></li>
+                                        <li><a href="#">Pesca y Acuicultura</a></li>
+                                        <li><a href="#">Silvicultura</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+                    <li>
+                        <a href="#">Gráficos</a>
+                        <ul class="">
+                            <li><a href="#">2nd Level #1</a></li>
+                            <li><a href="#">2nd Level #2</a></li>
+                            <li>
+                                <a href="#">2nd Level #3</a>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fa fa-university" aria-hidden="true"></i>3rd Level #1</a>
+                                        <ul>
+                                            <li><a href="#">4th Level #1</a></li>
+                                            <li><a href="#">4th Level #2</a></li>
+                                        </ul>
+                                        <span class="ruby-dropdown-toggle"></span>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>3rd Level #2</a></li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i>3rd Level #3</a>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>4th Level #1</a></li>
+                                            <li><a href="#"><i class="fa fa-print" aria-hidden="true"></i>4th Level #2</a></li>
+                                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i>4th Level #3</a></li>
+                                        </ul>
+                                        <span class="ruby-dropdown-toggle"></span>
+                                    </li>
+                                </ul>
+                                <span class="ruby-dropdown-toggle"></span>
+                            </li>
+                            <li class="ruby-open-to-left">
+                                <a href="#">2nd Level #4</a>
+                                <ul>
+                                    <li><a href="#">3rd Level #1</a></li>
+                                    <li><a href="#">3rd Level #2</a></li>
+                                    <li><a href="#">3rd Level #3</a></li>
+                                </ul>
+                                <span class="ruby-dropdown-toggle"></span>
+                            </li>
+                            <li><a href="#">2nd Level #5</a></li>
+                        </ul>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+
+
+                    <li class="ruby-menu-mega-blog">
+                        <a href="#">Mapas</a>
+                        <div style="height: 269.359px;" class="">
+                            <ul class="ruby-menu-mega-blog-nav">
+
+                                <li class="ruby-active-menu-item">
+                                    <a href="#">Blog-4-Column</a>
+                                    <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="http://brienlabs.com/ruby-mega-menu/img/travel-1.jpg">
+                                                <div class="ruby-c-inline">
+                                                    <span class="ruby-c-category"><a href="#">News / Travel</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="#">Vacation Proved To Increase Productivity</a></span>
+                                                <span class="ruby-c-content">The primary research for the study was based on an online survey that was...</span>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="http://brienlabs.com/ruby-mega-menu/img/health-3.jpg">
+                                                <div class="ruby-c-inline">
+                                                    <span class="ruby-c-category"><a href="#">News / Health</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="#">Stereotype Idioms By The Smokers</a></span>
+                                                <span class="ruby-c-content">If you have ever said some of below idioms you are for sure a smoking...</span>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="http://brienlabs.com/ruby-mega-menu/img/culture-2.jpg">
+                                                <div class="ruby-c-inline">
+                                                    <span class="ruby-c-category"><a href="#">News / Culture</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="#">10 Facts About The Philosophers</a></span>
+                                                <span class="ruby-c-content">When we think “philosopher,” a certain image comes to mind—most often a wise...</span>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="http://brienlabs.com/ruby-mega-menu/img/health-2.jpg">
+                                                <div class="ruby-c-inline">
+                                                    <span class="ruby-c-category"><a href="#">News / Tech</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                                <span class="ruby-c-title ruby-margin-10"><a href="#">In 2016, 10 People Died While Taking Selfie</a></span>
+                                                <span class="ruby-c-content">This is a list of serious injuries and deaths in which the victim or a member of...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+
+                                <li class="hidden-md">
+                                    <a href="#">Blog-3-Column</a>
+                                    <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-1.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">An Erupting Volcano And A Meteor</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Science</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-2.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">Bottle Labels: Short Stories To Read</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Culture</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-3.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">10+ Stunning Animal Portraits By Polyushko</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Photography</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-8.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">Photographing The Beauty Of Fall</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Photography</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-9.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">10 Freaking Facts About Being A Pilot</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Life</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-4">
+                                                <div class="ruby-col-5">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-10.jpg">
+                                                </div>
+                                                <div class="ruby-col-7">
+                                                    <span class="ruby-c-title"><a href="#">Health Benefits Of A Glass Of Whiskey</a></span>
+                                                    <span class="ruby-c-category"><a href="#">News / Health</a></span>
+                                                    <span class="ruby-c-date"><a href="#">05/01/2017</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+
+                                <li>
+                                    <a href="#">Blog-2-Column</a>
+                                    <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-6">
+                                                <div class="ruby-col-4">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-4.jpg">
+                                                </div>
+                                                <div class="ruby-col-8">
+                                                    <span class="ruby-c-title"><a href="#">Nexo Created New Airless Bike Tires That Will Never Get Flat</a></span>
+                                                    <div class="ruby-c-inline">
+                                                        <span class="ruby-c-category"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i> News / Tech</a></span>
+                                                        <span class="ruby-c-date"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 05/01/2017</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-6">
+                                                <div class="ruby-col-4">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-5.jpg">
+                                                </div>
+                                                <div class="ruby-col-8">
+                                                    <span class="ruby-c-title"><a href="#">Illustrator Creates Stunning Dresses From Everyday Objects</a></span>
+                                                    <div class="ruby-c-inline">
+                                                        <span class="ruby-c-category"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i> News / Tech</a></span>
+                                                        <span class="ruby-c-date"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 05/01/2017</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-6">
+                                                <div class="ruby-col-4">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-6.jpg">
+                                                </div>
+                                                <div class="ruby-col-8">
+                                                    <span class="ruby-c-title"><a href="#">Italian Pastry Chef Creates Miniature Worlds With Desserts</a></span>
+                                                    <div class="ruby-c-inline">
+                                                        <span class="ruby-c-category"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i> News / Tech</a></span>
+                                                        <span class="ruby-c-date"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 05/01/2017</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-6">
+                                                <div class="ruby-col-4">
+                                                    <img src="http://brienlabs.com/ruby-mega-menu/img/blog-7.jpg">
+                                                </div>
+                                                <div class="ruby-col-8">
+                                                    <span class="ruby-c-title"><a href="#">Dogs Brought To The Lavender Gardens To Capture Their Joy</a></span>
+                                                    <div class="ruby-c-inline">
+                                                        <span class="ruby-c-category"><a href="#"><i class="fa fa-tag" aria-hidden="true"></i> News / Tech</a></span>
+                                                        <span class="ruby-c-date"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 05/01/2017</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+
+                                <li>
+                                    <a href="#">Blog-Article-List</a>
+                                    <div class="ruby-grid ruby-grid-lined" style="height: 264.359px;">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-6">
+                                                <span class="ruby-c-title" style="margin-bottom:15px">POPULAR THREADS</span>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-1.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">An Erupting Volcano And A Meteor Has Created A Fantastic View</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-2.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">Bottle Labels With Short Stories To Be Read Is The New Marketing Era</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-3.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">10+ Stunning Animal Portraits That Has Been Filmed By Polyushko</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-10.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">10 Freaking Facts About Being An airline pilot</a></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="ruby-col-6">
+                                                <span class="ruby-c-title" style="margin-bottom:15px">MOST COMMENTED</span>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-1.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">An Erupting Volcano And A Meteor Has Created A Fantastic View</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-2.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">Bottle Labels With Short Stories To Be Read Is The New Marketing Era</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-3.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">10+ Stunning Animal Portraits That Has Been Filmed By Polyushko</a></span></div>
+                                                </div>
+                                                <div class="ruby-row">
+                                                    <div class="ruby-col-1"><img src="img/blog-10.jpg"></div>
+                                                    <div class="ruby-col-11"><span class="ruby-c-title"><a href="#">10 Freaking Facts About Being An airline pilot</a></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+                    <li class="ruby-menu-mega-shop">
+                        <a href="#">Brief</a>
+                        <div style="height: 263px;" class="">
+                            <ul>
+                                <li class="ruby-active-menu-item">
+                                    <a href="#">Clothing</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading">TOPS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <img src="img/outerwear-2.jpg">
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading">BOTTOM</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading">NIGHTWEAR</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <img src="img/outerwear-3.jpg">
+                                            </div>
+                                            <div class="ruby-col-2">
+                                                <h3 class="ruby-list-heading">SWIMWEAR</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                                <li>
+                                    <a href="#">Outerwear</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/outerwear.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">COATS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                    <li><a href="#">Menu Item #6</a></li>
+                                                    <li><a href="#">Menu Item #7</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">JACKETS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                    <li><a href="#">Menu Item #6</a></li>
+                                                    <li><a href="#">Menu Item #7</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">LEATHER</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                    <li><a href="#">Menu Item #6</a></li>
+                                                    <li><a href="#">Menu Item #7</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                                <li>
+                                    <a href="#">Bags &amp; Shoes</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/bags.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">BAGS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <h3 class="ruby-list-heading">SHOES</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                    <li><a href="#">Menu Item #5</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/shoes.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                                <li>
+                                    <a href="#">Accessories</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/eyewear.jpg">
+                                                <h3 class="ruby-list-heading" style="margin-top: 16px;">EYEWEAR</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/jewellery.jpg">
+                                                <h3 class="ruby-list-heading" style="margin-top: 16px;">JEWELLERY</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/watches.jpg">
+                                                <h3 class="ruby-list-heading" style="margin-top: 16px;">WATCHES</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/textile.jpg">
+                                                <h3 class="ruby-list-heading" style="margin-top: 16px;">OTHERS</h3>
+                                                <ul>
+                                                    <li><a href="#">Menu Item #1</a></li>
+                                                    <li><a href="#">Menu Item #2</a></li>
+                                                    <li><a href="#">Menu Item #3</a></li>
+                                                    <li><a href="#">Menu Item #4</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                                <li>
+                                    <a href="#">Collections</a>
+                                    <div class="ruby-grid ruby-grid-lined">
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-accessori.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-bridal.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-cube.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-elegante.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="ruby-row">
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-maxmara.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-sfilata.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-shine.jpg">
+                                            </div>
+                                            <div class="ruby-col-3">
+                                                <img src="img/collection-s-maxmara.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="ruby-dropdown-toggle"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+                    <li class="ruby-menu-right">
+                        <a href="#">Right</a>
+                        <ul>
+                            <li><a href="#">2nd Level #1</a></li>
+                            <li><a href="#">2nd Level #2</a></li>
+                            <li class="ruby-open-to-left">
+                                <a href="#">2nd Level #3</a>
+                                <ul>
+                                    <li class="ruby-open-to-left">
+                                        <a href="#"><i class="fa fa-university" aria-hidden="true"></i>3rd Level #1</a>
+                                        <ul>
+                                            <li><a href="#">4th Level #1</a></li>
+                                            <li><a href="#">4th Level #2</a></li>
+                                        </ul>
+                                        <span class="ruby-dropdown-toggle"></span>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>3rd Level #2</a></li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i>3rd Level #3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-file" aria-hidden="true"></i>3rd Level #4</a>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>4th Level #1</a></li>
+                                            <li><a href="#"><i class="fa fa-print" aria-hidden="true"></i>4th Level #2</a></li>
+                                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i>4th Level #3</a></li>
+                                        </ul>
+                                        <span class="ruby-dropdown-toggle"></span>
+                                    </li>
+                                </ul>
+                                <span class="ruby-dropdown-toggle"></span>
+                            </li>
+                            <li class="ruby-open-to-left">
+                                <a href="#">2nd Level #4</a>
+                                <ul>
+                                    <li><a href="#">3rd Level #1</a></li>
+                                    <li><a href="#">3rd Level #2</a></li>
+                                    <li><a href="#">3rd Level #3</a></li>
+                                </ul>
+                                <span class="ruby-dropdown-toggle"></span>
+                            </li>
+                            <li><a href="#">2nd Level #5</a></li>
+                        </ul>
+                        <span class="ruby-dropdown-toggle"></span>
+                    </li>
+
+                    <li class="ruby-menu-right ruby-menu-social"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i><span>/rubymenu</span></a></li>
+
+                    <li class="ruby-menu-right ruby-menu-social"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i><span>/rubymenu</span></a></li>
+
+                    <li class="ruby-menu-right ruby-menu-social ruby-menu-search"><a href="#"><i class="fa fa-search" aria-hidden="true"></i><span><input type="text" name="search" placeholder="Search.."></span></a></li>
+
+                </ul>
+            </div>
+            <!-- FIN: MEGAMENU HORIZONTAL -->
+        </div>
+    </header>
     <div class="py-5 bg-light c2a1" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_1.jpg');">
         <div class="container" style="margin-top:120PX;">
             <!-- Row -->
@@ -218,7 +879,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 col-12" >
+            <div class="col-md-2 col-12">
                 <img class="img-fluid" src="~/Content/logo_DimensionSocial_descripcion.png" alt="Alternate Text" />
                 <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7">
                     <div class="col ">
@@ -235,11 +896,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 col-12" >
+            <div class="col-md-2 col-12">
                 <img class="img-fluid" src="~/Content/logo_DimensionEconomica_descripcion.png" alt="Alternate Text" />
                 <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7">
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">Empresas</button>
+                        <button type="button" class="btn btn-sm btn-outline-warning " style="border-radius: 25px; ">Empresas</button>
+
                     </div>
                     <div class="col ">
                         <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">Empleo</button>
@@ -282,7 +944,7 @@
                     ¡El acceso más conveniente!
                 </h3>
             </div>
-           
+
         </div>
         <!-- Row -->
         <div class="row d-flex justify-content-center ">
@@ -301,7 +963,7 @@
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes restringidas </li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
-                                  
+
                                 </ul>
                             </div>
 
@@ -329,7 +991,7 @@
                             </div>
                             <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
                                 <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px;; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-                                   
+
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
@@ -338,8 +1000,8 @@
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
-                                   
-                                    
+
+
                                 </ul>
 
                             </div>
@@ -385,7 +1047,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-10" >
+            <div class="col-md-3 col-10">
                 <div class="row d-block">
                     <div class="col mb-3 ">
                         <div class="card  mb-3" style="border-radius:20px;height:350px">
@@ -394,7 +1056,7 @@
                             </div>
                             <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
                                 <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-                                   
+
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
@@ -403,7 +1065,7 @@
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Toda la universidad o carrera </li>
                                     <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado/ilimitado </li>
-                                    
+
                                 </ul>
                             </div>
 
@@ -477,9 +1139,9 @@
                     Una opción perfecta para el informe o análisis que necesitas
                 </p>
             </div>
-            
+
         </div>
-        
+
         <div class="row justify-content-center">
             <diV class="col-md-1 col-8 ">
                 <img class="img-fluid" src="~/Content/image_estadistica/icono_1.png" />
