@@ -42,7 +42,7 @@ namespace AplicacionBlanco.Controllers
 
             foreach (var item in dbGrafico.INDUSTRIA)
             {
-               var listcatAuxiliar = dbGrafico.CATEGORIA.Where(x => x.PRODUCTO.SECTOR.INDUSTRIA_id == item.id).ToList();
+               var listcatAuxiliar = dbGrafico.CATEGORIA.Where(x => x.PRODUCTO.SECTOR.INDUSTRIA_id == item.id).Take(10).ToList();
                 try
                 {
                     CATEGORIA catAuxiliar = listcatAuxiliar[rand.Next(listcatAuxiliar.Count)];
