@@ -251,6 +251,8 @@
     <Compile Include="Models\SECTOR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ShopifyYSuscripciones.cs" />
+    <Compile Include="Models\Suscripcion.cs" />
     <Compile Include="Models\TEMPORALIDAD.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -293,6 +295,21 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\EstilosNuevoMenuLateral.css" />
     <Content Include="Content\EstilosPopUp.css" />
+    <Content Include="Content\image_estadistica\icono_1.png" />
+    <Content Include="Content\image_estadistica\icono_2.png" />
+    <Content Include="Content\image_estadistica\icono_3.png" />
+    <Content Include="Content\image_estadistica\icono_4.png" />
+    <Content Include="Content\image_estadistica\icono_5.png" />
+    <Content Include="Content\image_estadistica\icono_6.png" />
+    <Content Include="Content\image_estadistica\logo_DataIntelligence_slogan.png" />
+    <Content Include="Content\image_estadistica\logo_DimensionAmbiental_descripcion.png" />
+    <Content Include="Content\image_estadistica\portadaInicio_100_1.jpg" />
+    <Content Include="Content\image_estadistica\portadaInicio_100_6.jpg" />
+    <Content Include="Content\image_estadistica\portadaInicio_100_7.jpg" />
+    <Content Include="Content\image_estadistica\portadaInicio_100_8.jpg" />
+    <Content Include="Content\image_estadistica\texto_venta1.png" />
+    <Content Include="Content\image_estadistica\texto_venta2.png" />
+    <Content Include="Content\image_estadistica\ticked.png" />
     <Content Include="Content\img\10_portadahomeopatia_1800x540_crop_center.jpg" />
     <Content Include="Content\img\13_portadabeso_1800x540_crop_center.jpg" />
     <Content Include="Content\img\6_portadaDiadeporte_1800x540_crop_center.jpg" />
@@ -364,6 +381,11 @@
     <Content Include="Content\img\RRSS\Youtube.png" />
     <Content Include="Content\img\santiago.jpg" />
     <Content Include="Content\img\santiago.png" />
+    <Content Include="Content\img\testwhiteLogo.png" />
+    <Content Include="Content\logo_DimensionAmbiental_descripcion.png" />
+    <Content Include="Content\logo_DimensionEconomica_descripcion.png" />
+    <Content Include="Content\logo_DimensionInstitucional_descripcion.png" />
+    <Content Include="Content\logo_DimensionSocial_descripcion.png" />
     <Content Include="Content\sidebar-menu.css" />
     <Content Include="Content\StyleBuscador.css" />
     <Content Include="Content\StylePagBusqueda.css" />
@@ -2588,6 +2610,7 @@
     <Content Include="Views\Shared\_LayoutStatista.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Suscripcion.cshtml" />
+    <Content Include="Views\Info\HomeOdoo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,9 +6,23 @@
     font-family: 'MYRIADPRO-REGULAR';
     src: url('img/Font/MYRIADPRO-REGULAR.OTF') format('opentype');
 }
+
 body {
+
     font-family: 'MYRIADPRO-REGULAR';
    
+}
+
+.pagination li {
+    background-color: #4CAF50; /* Green */
+    margin: 1px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 h6 {
     font-size: 17px;
@@ -2390,3 +2404,97 @@ h5 {
     border-radius: 25px;
     margin: 21px 0 0 0;
 }
+/*************************carrusel pagina HomeOdoo**********************************************************/
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+
+        .carousel-inner .carousel-item > div:first-child {
+            display: block;
+        }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(33.333%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-33.333%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+    transform: translateX(0);
+}
+
+.palabrasClaves .btn-sm {
+    width:140px;
+    padding: 2px 25px;
+    font-size: 10px;
+    border-radius: 25px;
+    margin: 21px 0 0 0;
+}
+
+.btn-outline-warning {
+    border-color: #c97c5a !important;
+    color: #c97c5a;
+}
+    .btn-outline-warning:hover {
+        background: #c97c5a;
+        color: #fff !important;
+    }
+.btn-outline-danger {
+    border-color: #832d43 !important;
+    color: #832d43
+}
+    .btn-outline-danger:hover {
+        background: #832d43;
+        color: #fff !important;
+    }
+
+/***********************estilos submenus megamenu principal*******************************/
+
+#scroll1::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+#scroll1::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+    #scroll1::-webkit-scrollbar-thumb:active {
+        background-color: #999999;
+    }
+
+    #scroll1::-webkit-scrollbar-thumb:hover {
+        background: #b3b3b3;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+/* Estilos track de scroll */
+#scroll1::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+
+    #scroll1::-webkit-scrollbar-track:hover,
+    #scroll1::-webkit-scrollbar-track:active {
+        background: #d4d4d4;
+    }
+
+

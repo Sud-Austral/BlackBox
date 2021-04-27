@@ -1,0 +1,528 @@
+﻿
+@{
+    Layout = null;
+
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <title>@Page.Title</title>
+    @*Normalize para adaptarse a todos los browsers*@
+    <link href="~/Content/normalize.min.css" rel="stylesheet" />
+    @*icono de fontawesome menu principal *@
+    <script src="https://kit.fontawesome.com/2f08016506.js" crossorigin="anonymous"></script>
+    @*bootstrap*@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    @*Hoja de estilos de esta vista solamente*@
+    <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
+   
+</head>
+<body>
+    
+    <div class="py-5 bg-light c2a1" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_1.jpg');">
+        <div class="container" style="margin-top:120PX;">
+            <!-- Row -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-4 col-8 text-center mt-5">
+                    <img class="img-fluid" src="~/Content/image_estadistica/logo_DataIntelligence_slogan.png" />
+                </div>
+            </div>
+            <!-- Row -->
+            <div class="row justify-content-center" style="margin-top:190px !important">
+                <div class="col-md-4 col-8 text-center mt-5">
+                    <h3 class="mb-3 text-white font-weight-medium ">¡Explora, busca y encuentra!</h3>
+
+                    <form action="~/info/PaginaBusqueda" method="get" >
+                            <input class="typeahead form-control" type="text"  id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:10px;">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--SECCION DE CARRUCEL DE CARDS-->
+    <div class="py-5 bg-light " style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+        <section class="pt-3 pb-5">
+            <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+                <div class="row justify-content-center text-center">
+                    <div class="col-8 mb-4" style="color:#fff;">
+                        <h2 class="mb-3">¡Miles de estadísticas!</h2>
+                        <p style="font-size:24px;">
+                            Todas procesadas y graficadas por sectores, temas y categorías
+                        </p>
+                    </div>
+
+                    <div class="col-8">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">Información en gráficos</div>
+                                            <div class="card" style="border:none;">
+                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff;">
+                                                Información en mapas
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">
+                                                Información anualizada
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header last</div>
+                                            <div class="card" style="border-radius:10px;">
+                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Special title treatment</h4>
+                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!--seccion de dimensiones-->
+    <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_8.jpg');">
+        <div class="row">
+            <h3 style="padding-top:60px;">¡Todo tipo de temáticas!</h3>
+            <p style="font-size:24px;padding-bottom:20px;">
+                Generamos día a día información histórica, actual y proyectada
+            </p>
+        </div>
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-md-2 col-12">
+                <img class="img-fluid" src="~/Content/image_estadistica/logo_DimensionAmbiental_descripcion.png" alt="Alternate Text" />
+                <div class="row d-block palabrasClaves" style="border:#9bc4d0">
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Incendios</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Agua</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Climático</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12">
+                <img class="img-fluid" src="~/Content/logo_DimensionSocial_descripcion.png" alt="Alternate Text" />
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7">
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Educación</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Covid-19</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Pueblos Indígenas</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12">
+                <img class="img-fluid" src="~/Content/logo_DimensionEconomica_descripcion.png" alt="Alternate Text" />
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7">
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-warning " style="border-radius: 25px; ">Empresas</button>
+
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">Empleo</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">Exportaciones</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12">
+                <img class="img-fluid" src="~/Content/logo_DimensionInstitucional_descripcion.png" alt="Alternate Text" />
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7">
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Municipalidad</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Alcaldes</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Gestión</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
+                    </div>
+                </div>
+            </div>
+            <h3 class="mt-5 mb-5">
+                ¡Explora, busca y encuentra!
+            </h3>
+        </div>
+    </div>
+    <!--seccion de suscripciones-->
+    <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_6.jpg');padding-bottom:40px; background-size:cover;">
+        <div class="row">
+            <div class="col">
+                <h3 style="color:#fff; padding:40px 0px; ">
+                    ¡El acceso más conveniente!
+                </h3>
+            </div>
+
+        </div>
+        <!-- Row -->
+        <div class="row d-flex justify-content-center ">
+            <div class="col-md-3 col-10">
+                <div class="row d-block">
+                    <div class="col mb-3">
+                        <div class="card  mb-3" style="border-radius:20px; height:350px">
+                            <div class="card-header text-center" style="border: none;">
+                                Cuenta Básica Sin Pago
+                            </div>
+                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                                <ul style="list-style: none;color:#fff;padding-top:35px;font-size:12px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief básicos </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes restringidas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="card-footer" style="border: none;">
+                                <div class="row">
+                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                        <span style="color:red; font-size:18px;">$0</span><span><strong>USD</strong></span><br />
+                                        UN SOLO ACCESO
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                            Inscribirse
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col mb-md-3 ">
+                        <div class="card  mb-3" style=" border-radius:20px; height:350px">
+                            <div class="card-header text-center" style="border: none;">
+                                Cuenta Profesional
+                            </div>
+                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px;; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro  </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
+
+
+                                </ul>
+
+                            </div>
+
+                            <div class="card-footer" style="border: none;">
+                                <div class="row">
+                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                        <span style="color:red; font-size:18px;">$35</span><span><strong> USD</strong> mensual</span><br />
+                                        UN SOLO ACCESO
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                            Adquirir
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-10">
+                <div class="row d-block ">
+                    <div class="col-12 mb-3 text-center">
+                        <p style="color:#fff;">
+                            Desde una cuenta sin pago hasta cuentas mensuales y anuales, personales o para instituciones
+                        </p>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="card  mb-3" style=" border-radius:20px; background-color:transparent;">
+
+                            <div class="card-body text-success mt-5" style="margin-left:10px; color:#fff; margin-right:10px;  ">
+                                <img class="img-fluid" src="~/Content/image_estadistica/texto_venta1.png" alt="Alternate Text" />
+
+                            </div>
+                            <div class="card-footer mt-5" style="border: none; color:#fff;">
+                                <img class="img-fluid" src="~/Content/image_estadistica/texto_venta2.png" alt="Alternate Text" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-10">
+                <div class="row d-block">
+                    <div class="col mb-3 ">
+                        <div class="card  mb-3" style="border-radius:20px;height:350px">
+                            <div class="card-header text-center" style="border: none;">
+                                Cuenta Universidades
+                            </div>
+                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Toda la universidad o carrera </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado/ilimitado </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="card-footer" style="border: none;">
+                                <div class="row">
+                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                        <span style="color:red; font-size:18px;">$500</span><span><strong> USD </strong>mensual</span><br />
+                                        ACCESO LIMITADO/ILIMITADO
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                            Adquirir
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col mb-3 ">
+                        <div class="card  mb-3" style="border-radius:20px; height:350px">
+                            <div class="card-header text-center" style="border: none;">
+                                Cuenta Empresas e Instituciones
+                            </div>
+                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:20px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Reportes sectoriales</li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Encuestas </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Derechos de publicación </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Servicio de investigación </li>
+                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer" style="border: none;">
+                                <div class="row">
+                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                        <span style="color:red; font-size:18px;">$700</span><span><strong> USD</strong> mensual</span><br />
+                                        ACCESO LIMITADO/ILIMITADO
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-danger btn-sm mt-1" style="border-radius:20px; font-size:12px;">
+                                            Adquirir
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Row -->
+    </div>
+    <!--Seccion ultimo-->
+    <div class="container-fluid py-5 bg-dark text-center" ;>
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-2" style="color:#fff;">
+                    ¡Explora nuestro mundo de información!
+                </h2>
+                <p class="mb-4" style="color:#fff;font-size:20px;">
+                    Una opción perfecta para el informe o análisis que necesitas
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+            <diV class="col-md-1 col-8 ">
+                <img class="img-fluid" src="~/Content/image_estadistica/icono_1.png" />
+            </diV>
+            <diV class="col-md-1 col-8 ">
+                <img class="img-fluid" src="~/Content/image_estadistica/icono_2.png" />
+            </diV>
+            <diV class="col-md-1 col-8 ">
+                <img class="img-fluid" src="~/Content/image_estadistica/icono_3.png" />
+            </diV>
+            <diV class="col-md-1 col-8 ">
+                <img class="img-fluid" src="~/Content/image_estadistica/icono_4.png" />
+            </diV>
+            <diV class="col-md-1 col-8 ">
+                <img class="img-fluid" src="~/Content/image_estadistica/icono_5.png" />
+            </diV>
+            <diV class="col-md-1 col-8 ">
+                <img class="img-fluid" src="~/Content/image_estadistica/icono_6.png" />
+            </diV>
+
+        </div>
+        <div class="row mt-5 text-center  d-flex justify-content-center">
+            <p style="color:#fff;font-size:24px;">
+                Transforma estos datos sectoriales en una increíble experiencia digital
+            </p>
+            <h3 class="mb-2" style="color:#fff;">
+                ¡Explora, busca y encuentra!
+            </h3>
+            <div class="col-md-3 col-6 mt-5"><img class="img-fluid" src="~/Content/image_estadistica/logo_DataIntelligence_slogan.png" alt="Alternate Text" /></div>
+        </div>
+    </div>
+    @*Jquery, Popper bootstrap.min.js*@
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    @*Buscador*@
+    <script src="~/Scripts/ScriptBuscador.js"></script>
+</body>
+</html>
