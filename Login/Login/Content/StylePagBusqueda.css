@@ -502,6 +502,12 @@ img.iphone7 {
         float: right;
         margin-right: 20px
     }
+
+    /*Botón cartas de subscripcion (se ajusta el tamaño de la letra para que quepa en la carta)*/
+    .sub {
+        font-size: 8px!important; 
+    }
+     
 }
 
 @media(max-width: 767px) {
