@@ -295,11 +295,17 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\EstilosNuevoMenuLateral.css" />
     <Content Include="Content\EstilosPopUp.css" />
+    <Content Include="Content\image_estadistica\icono_1.1.png" />
     <Content Include="Content\image_estadistica\icono_1.png" />
+    <Content Include="Content\image_estadistica\icono_2.1.png" />
     <Content Include="Content\image_estadistica\icono_2.png" />
+    <Content Include="Content\image_estadistica\icono_3.1.png" />
     <Content Include="Content\image_estadistica\icono_3.png" />
+    <Content Include="Content\image_estadistica\icono_4.1.png" />
     <Content Include="Content\image_estadistica\icono_4.png" />
+    <Content Include="Content\image_estadistica\icono_5.1.png" />
     <Content Include="Content\image_estadistica\icono_5.png" />
+    <Content Include="Content\image_estadistica\icono_6.1.png" />
     <Content Include="Content\image_estadistica\icono_6.png" />
     <Content Include="Content\image_estadistica\logo_DataIntelligence_slogan.png" />
     <Content Include="Content\image_estadistica\logo_DimensionAmbiental_descripcion.png" />
