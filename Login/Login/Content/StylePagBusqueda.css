@@ -1741,3 +1741,13 @@ h5 {
     }
 
 
+/*Botones de submenu */
+btn-outline-dark { 
+    color: #fff;
+}
+
+.btn-outline-dark:hover {
+    border-color: #832d43 !important;
+    background: #201f1d;
+    color: #fff !important;
+}
