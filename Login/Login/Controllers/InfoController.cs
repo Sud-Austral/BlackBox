@@ -15,7 +15,7 @@ namespace AplicacionBlanco.Controllers
         }
 
         // GET: Info
-        public ActionResult Index(int id = 1, string id2 = "grafico", string id3 = "Geo_CL_provinces_.csv")
+        public ActionResult Index(int id = 100, string id2 = "grafico", string id3 = "Geo_CL_provinces_.csv")
         {
 
             ViewBag.grafico = id2;
@@ -28,8 +28,23 @@ namespace AplicacionBlanco.Controllers
             ViewBag.menu2 = dbGrafico.SECTOR.ToList();
 
             ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
-           
-            GRAFICO graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            GRAFICO graf = new GRAFICO();
+            try
+            {
+                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            }
+            catch (Exception)
+            {
+
+                graf = new GRAFICO();
+                graf.url = "https://analytics.zoho.com/open-view/2395394000000456232?ZOHO_CRITERIA=%22Frecuencia%20Final%22.%22cod_region%22%3D11%20and%20%22Frecuencia%20Final%22.%22Id_Categor%C3%ADa%22%3D220104005%20%20and%20%22Frecuencia%20Final%22.%22Tipo%20de%20Informaci%C3%B3n%22%3D%27Aprehendidos%27";
+                graf.CATEGORIA_id = 220104005;
+                graf.titulo = "Grafico de error";
+                graf.CATEGORIA = dbGrafico.CATEGORIA.Where(x => x.id == graf.CATEGORIA_id).First();
+                graf.fecha_publicacion = "29/04/2020";
+            }           
+
+            
             ViewBag.Elemento = graf;
 
             // var listaAsociado = dbGrafico.PRODUCTO.Where(x => x.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
