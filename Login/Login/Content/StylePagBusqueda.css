@@ -1742,8 +1742,8 @@ h5 {
 
 
 /*Botones de submenu */
-btn-outline-dark { 
-    color: #fff;
+btn-outline-dark {
+    color: #fff !important;
 }
 
 .btn-outline-dark:hover {
