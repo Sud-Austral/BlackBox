@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = "~/Views/Shared/_LayoutStatista.cshtml"; ;
+    Layout = "~/Views/Shared/_LayoutStatista.cshtml"; 
 }
 
 <!doctype html>
@@ -87,11 +87,7 @@
             <div class="col-md-7 col-12 align-self-center ms-text-center">
                 <h2>@ViewBag.Elemento.titulo</h2>
             </div>
-            @*
-            <div class="col-5">
-                <h2>@ViewBag.Elemento.titulo</h2>
-            </div>
-*@
+           
             <div class="col-md-5 col-12"> 
                 <div class="slider slider--full"> 
                     <div class="slider__inner">
@@ -106,7 +102,7 @@
                             <div class="slider__slide slider__slide--3"><img class="img-fluid" alt="Placeholder 300x150" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg"></div>
                             <div class="slider__slide slider__slide--4"><img class="img-fluid" alt="Placeholder 800x400" src="~/Content/img/ImpactosDelHuracanETAenHonduras.jpg"></div>
                         </div>
-                    </  div>
+                    </div>
                 </div>
 
             </div>
@@ -153,6 +149,7 @@
                         <a href="#"><span>Ver fuentes</span></a>
 
                     </div>
+
                     <div class="col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
                         <a href="javascript:void(0);">
                             <span id="verPdf">Ver en Pdf</span>
@@ -433,7 +430,7 @@
                 <div class="col-md-2 col-sm-12">
                     <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
                 </div>
-                <div class="col-md-8 col-sm-12">
+                <div class="col-md-10 col-sm-12">
                     <p style="padding-top:10px;">
                         <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
                         <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
@@ -465,7 +462,7 @@
                 <div class="col-md-2 col-sm-12">
                     <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
                 </div>
-                <div class="col-md-8 col-sm-12">
+                <div class="col-md-10 col-sm-12">
                     <p style="padding-top:10px;">
                         <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
                         <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
@@ -496,7 +493,7 @@
                 <div class="col-md-2 col-sm-12" >
                     <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
                 </div>
-                <div class="col-md-8 col-sm-12">
+                <div class="col-md-10 col-sm-12">
                     <p style="padding-top:10px;">
                         <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
                         <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
@@ -718,7 +715,7 @@
         </div>
         <!-- Row -->
     </div>
-    <!--nav verticar-->
+  
             <!--carrucel-->
         <section class="pt-5 pb-5">
             <div class="container">
@@ -890,29 +887,20 @@
         <section class="call-to-action">
             <div class="container">
                 <div class="row ml-1 mr-1">
-                    <div class="col-md-6 col-sm-8 m-text-center" style="background-color:#000;">
-                        <form class="card card-sm" style="background-color:transparent;border:none; width:100% !important;">
-                            <div class="card-body row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <i class="h4 text-body"></i>
+                    <div class="col-md-6 col-sm-8 m-text-center" style="background-color:#000; height:200px;">
+                        <div class="p-1 bg-light  shadow-sm mb-4 mt-4" style="border-radius:25px !important;">
+                            <div class="input-group" >
+                                <div class="input-group-prepend">
+                                    <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
                                 </div>
-                                <!--end of col-->
-                                <div style="width:80%;" >
-                                    <input class="form-control form-control-sm form-control-borderless" id="myInput" type="text" name="myCountry" placeholder="Encuentre estadísticas, y estudios">
-
-                                </div>
-                                <!--end of col-->
-                                <div>
-                                    <button class="btn btn-sm btn-success mb-md-4" type="submit">Search</button>
-                                </div>
-                                <!--end of col-->
+                                <input type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
                             </div>
-                        </form>
+                        </div>
                         <h5 style="color:#fff;">¿Desea conocer más sobre nuestras soluciones profesionales?</h5>
                         <p id="last">Le enviaremos encantados información detallada sobre nuestra Cuenta Corporativa.</p>
                     </div>
                     <div class="col-md-6 col-sm-4" style="background-image: url('/Content/img/ofrecemos_fondo_busqueda.jpg'); background-size: cover;">
-                        <img class="img-fluid pull-right" style="width:50%;" src="~/Content/img/blanco-trans - copia.png" alt="Alternate Text" />
+                        <img class="img-fluid offset-6" style="width:50%;" src="~/Content/img/blanco-trans - copia.png" alt="Alternate Text" />
                     </div>
                 </div>
             </div>

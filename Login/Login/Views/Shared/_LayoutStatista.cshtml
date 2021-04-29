@@ -5,6 +5,7 @@
 <head>
     <title>@Page.Title</title>
     @RenderSection("head", required: false)
+
     @*Normalize para adaptarse a todos los browsers*@
     <link href="~/Content/normalize.min.css" rel="stylesheet" />
     @*icono de fontawesome menu principal *@
@@ -28,7 +29,7 @@
                     <li class="ruby-menu-mega-blog">
                         <a href="#"> Gráficos </a>
 
-                        <div style="height: 320px; overflow-y:scroll; background-color:#201f1d; border:15px solid #010101;" class="d-flex">
+                        <div style="height: 320px; overflow-y:scroll; background-color:#201f1d; border:15px solid #010101; color:#fff;" class="d-flex;">
 
                             <style>
                                 #menu {
@@ -178,19 +179,17 @@
 
                             </script>
 
-
-
                             <div id="menu" style="width:200px;">
                                 <ul>
-
                                     <li class="has-sub d-flex" style="background-color:#201f1d">
                                         <a title="" href="#" id="test3" style="background-color:#201f1d">
-                                            <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_1.png" />
+                                            <img class="img-fluid" width="80" src="~/Content/img/logo.png" />
                                         </a>
-                                        <ul id="vis" style="visibility:visible;">
+                                        <ul id="vis" style="visibility:visible; ">
                                             <li class="has-sub" style="background-color:#201f1d">
-                                                <a title="" href="#" style="background-color:#201f1d; border-radius:25px;" type="button" class="btn "></a>
-                                                <button type="button" class="btn btn-sm btn-outline-dark" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+
+
 
                                                 <ul id="vis1" style="visibility:inherit">
                                                     <li style="background-color:#201f1d">
@@ -224,7 +223,48 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="has-sub d-flex" id="test2" style="background-color:#201f1d">
+                                    <li class="has-sub d-flex" style="background-color:#201f1d">
+                                        <a title="" href="#" id="test3" style="background-color:#201f1d">
+                                            <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_1.png" />
+                                        </a>
+                                        <ul>
+                                            <li class="has-sub" id="test2" style="background-color:#201f1d">
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+
+
+                                                <ul>
+                                                    <li style="background-color:#201f1d">
+                                                        <a title="" href="#"></a>
+
+                                                        <div class="ruby-row d-flex" style="width:500px;">
+                                                            <div class="ruby-col-6 m-3">
+                                                                <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                                            </div>
+                                                            <div class="ruby-col-6 m-3">
+                                                                <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="ruby-row d-flex" style="width:500px;">
+                                                            <div class="ruby-col-6 m-3">
+                                                                <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                                            </div>
+                                                            <div class="ruby-col-6 m-3">
+                                                                <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub d-flex" id="test5" style="background-color:#201f1d">
                                         <a title="" href="#" style="background-color:#201f1d">
                                             <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_2.png" />
                                         </a>
@@ -232,8 +272,8 @@
                                         <ul>
                                             <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
 
-                                                <a title="" href="#" type="button" class="btn " style="border-radius:25px;"></a>
-                                                <button type="button" class="btn btn-sm btn-outline-dark" style="border-radius: 25px;">Agricultura2</button>
+
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                                 <ul>
                                                     <li style="background-color:#201f1d">
                                                         <a title="" href="#"></a>
@@ -265,9 +305,9 @@
                                                 </ul>
                                             </li>
                                             <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
-                                                   <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
-                                                   
-                                             </li>
+                                                <b<button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+
+                                            </li>
 
                                         </ul>
                                     </li>
@@ -278,10 +318,7 @@
 
                                         <ul>
                                             <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
-
-                                                
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
-
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                                 <ul>
                                                     <li style="background-color:#201f1d">
                                                         <a title="" href="#"></a>
@@ -313,8 +350,7 @@
                                                 </ul>
                                             </li>
                                             <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
-
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                                 <ul>
                                                     <li style="background-color:#201f1d">
                                                         <a title="" href="#"></a>
@@ -346,10 +382,10 @@
                                                 </ul>
                                             </li>
                                             <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                             </li>
                                             <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                                 <ul>
                                                     <li style="background-color:#201f1d">
                                                         <a title="" href="#"></a>
@@ -381,7 +417,7 @@
                                                 </ul>
                                             </li>
                                             <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                                 <ul>
                                                     <li style="background-color:#201f1d">
                                                         <a title="" href="#"></a>
@@ -422,8 +458,8 @@
                                         <ul>
                                             <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
 
-                                                <a title="" href="#" type="button" class="btn " style="border-radius:25px;"></a>
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                                 <ul>
                                                     <li style="background-color:#201f1d">
                                                         <a title="" href="#"></a>
@@ -455,9 +491,7 @@
                                                 </ul>
                                             </li>
                                             <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
-
-
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                             </li>
                                         </ul>
                                     </li>
@@ -470,7 +504,7 @@
                                             <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
 
                                                 <a title="" href="#" type="button" class="btn " style="border-radius:25px;"></a>
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                                 <ul>
                                                     <li style="background-color:#201f1d">
                                                         <a title="" href="#"></a>
@@ -502,7 +536,7 @@
                                                 </ul>
                                             </li>
                                             <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                             </li>
                                         </ul>
                                     </li>
@@ -515,7 +549,7 @@
                                             <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
 
                                                 <a title="" href="#" type="button" class="btn " style="border-radius:25px;"></a>
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                                 <ul>
                                                     <li style="background-color:#201f1d">
                                                         <a title="" href="#"></a>
@@ -547,7 +581,7 @@
                                                 </ul>
                                             </li>
                                             <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
-                                                <button type="button" class="btn btn-sm btn-outline-dark mt-2" style="border-radius: 25px;">Agricultura2</button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
                                             </li>
                                         </ul>
                                     </li>

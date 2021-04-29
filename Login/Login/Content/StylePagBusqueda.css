@@ -251,7 +251,7 @@ td.ruby-menu-demo-theme-td-1:hover {
 }
 
 .ruby-menu-demo-color-1 {
-    background: #1aad86
+    background: #e30713
 }
 
 .ruby-menu-demo-color-2 {
@@ -336,8 +336,8 @@ div.ruby-menu-demo-download {
         }
 
 button.ruby-btn {
-    background: #19ad86;
-    border: 2px solid #19ad86;
+    background: #e30713;
+    border: 2px solid #e30713;
     color: #fff;
     border-radius: 0;
     padding: 10px 25px;
@@ -348,7 +348,7 @@ button.ruby-btn {
 
     button.ruby-btn:hover {
         background: #fff;
-        color: #19ad86
+        color: #e30713;
     }
 
 .switch {
@@ -1023,7 +1023,7 @@ ul.ruby-menu > li {
         }
 
         ul.ruby-menu > li > a:hover, ul.ruby-menu > li:hover > a, ul.ruby-menu > li.ruby-active-menu-item > a:hover, ul.ruby-menu > li.ruby-active-menu-item:hover > a {
-            background: #19ad86
+            background: #e30713
         }
 
             ul.ruby-menu > li > a:only-child:after, ul.ruby-menu > li:hover > a:only-child:after {
@@ -1031,7 +1031,7 @@ ul.ruby-menu > li {
             }
 
     ul.ruby-menu > li.ruby-active-menu-item > a {
-        background: #17a47d
+        background: #e30713
     }
 
     ul.ruby-menu > li > a .fa {
@@ -1742,12 +1742,8 @@ h5 {
 
 
 /*Botones de submenu */
-btn-outline-dark { 
-    color: #fff;
-}
-
 .btn-outline-dark:hover {
-    border-color: #832d43 !important;
+    border-color: #e30713 !important;
     background: #201f1d;
     color: #fff !important;
 }
