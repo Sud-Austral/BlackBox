@@ -192,5 +192,10 @@ namespace AplicacionBlanco.Controllers
             return View();
         }
 
+        public PartialViewResult menuLayout()
+        {
+            return PartialView();
+        }
+
     }
 }
