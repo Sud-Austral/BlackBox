@@ -191,6 +191,23 @@ namespace AplicacionBlanco.Controllers
         {
             return View();
         }
+        public ActionResult Dashboard(int id=100)
+        {
+            string url = dbGrafico.GRAFICO.Where(x => x.id == id).First().url;
+            ViewBag.url = url;
+            //ViewBag.url = "https://analytics.zoho.com/open-view/2395394000000697928";
+            //string user = User.Identity.GetUserName();
 
+            /*
+            ViewBag.user = user;
+            List<string> aux = correos.correos;
+            if (!aux.Contains(user))
+            {
+                return View("Restriccion");
+            }
+            */
+          
+            return View();
+        }
     }
 }
