@@ -67,10 +67,17 @@
                                     
                                     <div class="ruby-row d-flex" style="width:500px;">
                                         <div class="ruby-col-12 m-3">
-                                                                                          
-                                            <img style="border-radius:15px;" class="img-fluid" 
-                                                    src="@item2.gRAFICOs[0]._url_Image">
-                                            
+                                            @*Como lo queria hacer luis*@
+                                            @*Pero asi se ve como pequeño*@
+                                            <a href="~/info/index?id=@item2.gRAFICOs[0].id">
+                                                <img style="border-radius:15px;" class="img-fluid"
+                                                     src="@item2.gRAFICOs[0]._url_Image">
+                                            </a>
+
+                                            @*Asi se ve correctamente pero no tiene el link al grafico correspondiente*@ 
+                                            @*<img style="border-radius:15px;" class="img-fluid"
+        src="@item2.gRAFICOs[0]._url_Image">*@
+
                                         </div>
                                         <div class="ruby-col-6 m-3">
                                             
