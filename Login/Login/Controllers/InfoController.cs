@@ -194,6 +194,7 @@ namespace AplicacionBlanco.Controllers
 
         public PartialViewResult menuLayout()
         {
+            ViewBag.MenuLayout = new MENULAYOUT();
             return PartialView();
         }
 

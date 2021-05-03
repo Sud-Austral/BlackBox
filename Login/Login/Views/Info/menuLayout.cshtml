@@ -42,48 +42,62 @@
                 </li>
             </ul>
         </li>
-        @for (int i = 10; i < 20; i++)
+        @foreach (var item in ViewBag.MenuLayout.RegistroMenus)
         {
-            string nombre = "icono_" + i.ToString() + ".png";
+            string nombre = "icono_" + item.iNDUSTRIA.id.ToString() + ".png";
+            
+        
+        @*@for (int i = 10; i < 20; i++)
+        {
+            string nombre = "icono_" + i.ToString() + ".png";*@
             <li class="has-sub d-flex" style="background-color:#201f1d">
                 <a title="" href="#" id="test3" style="background-color:#201f1d">
                     <img class="img-fluid" width="80" src="~/Images/menuLayout/@nombre" />
                 </a>
                 <ul>
-                    <li class="has-sub" id="test2" style="background-color:#201f1d">
-                        <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    @foreach (var item2 in item.sECTORs)
+                    {
+                        <li class="has-sub" id="test2" style="background-color:#201f1d">
+                            <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">@item2.sECTOR.nombre</button>
 
 
-                        <ul>
-                            <li style="background-color:#201f1d">
-                                <a title="" href="#"></a>
+                            <ul>
+                                <li style="background-color:#201f1d">
+                                    
+                                    
+                                    <div class="ruby-row d-flex" style="width:500px;">
+                                        <div class="ruby-col-12 m-3">
+                                                                                          
+                                            <img style="border-radius:15px;" class="img-fluid" 
+                                                    src="@item2.gRAFICOs[0]._url_Image">
+                                            
+                                        </div>
+                                        <div class="ruby-col-6 m-3">
+                                            
+                                                <img style="border-radius:15px;" class="img-fluid" src="@item2.gRAFICOs[1]._url_Image">
+                                               
+                                        </div>
 
-                                <div class="ruby-row d-flex" style="width:500px;">
-                                    <div class="ruby-col-6 m-3">
-                                        <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
 
                                     </div>
-                                    <div class="ruby-col-6 m-3">
-                                        <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
-
+                                    <div class="ruby-row d-flex" style="width:500px;">
+                                        <div class="ruby-col-6 m-3">
+                                            
+                                                <img style="border-radius:15px;" class="img-fluid" src="@item2.gRAFICOs[2]._url_Image">
+                                                
+                                        </div>
+                                        <div class="ruby-col-6 m-3">
+                                            
+                                                <img style="border-radius:15px;" class="img-fluid " src="@item2.gRAFICOs[3]._url_Image">
+                                                
+                                            </div>
                                     </div>
+                                </li>
 
+                            </ul>
+                        </li>
+                    }
 
-                                </div>
-                                <div class="ruby-row d-flex" style="width:500px;">
-                                    <div class="ruby-col-6 m-3">
-                                        <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
-
-                                    </div>
-                                    <div class="ruby-col-6 m-3">
-                                        <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
-
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </li>
                 </ul>
             </li>
         }
