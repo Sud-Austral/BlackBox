@@ -204,7 +204,7 @@ section.pricing {
 
 /***************comienzo del mega menu***********************************/
 
-#menu a {
+/*#menu a {
    
     color: #fff !important;
 }
@@ -770,12 +770,12 @@ img.iphone7 {
         float: none;
         margin-right: 0 auto
     }
-}
+}*/
 
 
 /* theme */
 
-div.ruby-wrapper, div.ruby-wrapper.ruby-vertical {
+/*div.ruby-wrapper, div.ruby-wrapper.ruby-vertical {
     background: #f9f9f9;
     color: #222
 }
@@ -1036,11 +1036,11 @@ span.ruby-c-title, span.ruby-c-title a {
     ul.ruby-menu.ruby-menu-dividers > li, ul.ruby-menu.ruby-menu-dividers > li > a, ul.ruby-menu.ruby-menu-dividers > li.ruby-menu-social > a, ul.ruby-menu.ruby-menu-dividers > li > a:hover, ul.ruby-menu.ruby-menu-dividers > li:hover > a {
         border: none
     }
-}
+}*/
 
 /* transision */
 
-span.ruby-dropdown-toggle {
+/*span.ruby-dropdown-toggle {
     transition: transform .3s ease
 }
 
@@ -1133,11 +1133,11 @@ span.ruby-dropdown-toggle {
         -webkit-transition: all .4s ease;
         transition: all .4s ease
     }
-}
+}*/
 
 /* main */
 
-*, :before, :after {
+/**, :before, :after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box
@@ -1882,11 +1882,11 @@ span.ruby-c-content {
         border-width: 6px 8px 6px 0;
         border-color: transparent #fff transparent transparent
     }
-}
+}*/
 
 /* responsive */
 
-@media(max-width: 767px) {
+/*@media(max-width: 767px) {
     div.ruby-wrapper .hidden-xs {
         visibility: hidden;
         display: none
@@ -2399,7 +2399,7 @@ span.ruby-c-content {
         font-stretch: condensed;
         color: #666
     }
-}
+}*/
 /************************fin megamenu***************************************/
 
 /*Seccion call to action*/
