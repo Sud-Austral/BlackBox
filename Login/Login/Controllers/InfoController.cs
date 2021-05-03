@@ -217,5 +217,71 @@ namespace AplicacionBlanco.Controllers
             return View();
         }
 
+        public ActionResult ResultadoNiveles(int id = 10, int id2 = 1)
+        {
+            List<GRAFICO> Graficos = new List<GRAFICO>();
+            switch (id2)
+            {
+                case 1:
+                    Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id == id).ToList();
+                    break;
+                case 2:
+                    Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == id).ToList();
+                    break;
+                case 3:
+                    Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO_id == id).ToList();
+                    break;
+                case 4:
+                    Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id).ToList();
+                    break;
+                default:
+                    break;
+            }
+            //ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id == id).ToList();
+            //var Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id == id).ToList();
+            List<string> Paises = new List<string>();
+            List<string> Temporalidad = new List<string>();
+            List<string> Producto = new List<string>();
+            List<string> Industria = new List<string>();
+            List<string> Sector = new List<string>();
+            List<string> Categoria = new List<string>();
+
+            foreach (var item in Graficos)
+            {
+                if (!Paises.Contains(item.TERRITORIO.nombre))
+                {
+                    Paises.Add(item.TERRITORIO.nombre);
+                }
+                if (!Temporalidad.Contains(item.TEMPORALIDAD.nombre))
+                {
+                    Temporalidad.Add(item.TEMPORALIDAD.nombre);
+                }
+                if (!Producto.Contains(item.CATEGORIA.PRODUCTO.nombre))
+                {
+                    Producto.Add(item.CATEGORIA.PRODUCTO.nombre);
+                }
+                if (!Industria.Contains(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
+                {
+                    Industria.Add(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
+                }
+                if (!Sector.Contains(item.CATEGORIA.PRODUCTO.SECTOR.nombre))
+                {
+                    Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
+                }
+                if (!Categoria.Contains(item.CATEGORIA.nombre))
+                {
+                    Categoria.Add(item.CATEGORIA.nombre);
+                }
+            }
+            ViewBag.Paises = Paises;
+            ViewBag.Temporalidad = Temporalidad;
+            ViewBag.Producto = Producto;
+            ViewBag.Industria = Industria;
+            ViewBag.Sector = Sector;
+            ViewBag.Categoria = Categoria;
+            ViewBag.Resultado = Graficos;
+            return View("PaginaBusqueda");
+        }
+
     }
 }

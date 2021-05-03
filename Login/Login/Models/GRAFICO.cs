@@ -58,12 +58,22 @@ namespace Login.Models
         {
             get
             {
-                if (fecha_publicacion.Contains("/"))
+                string salida = "";
+                try
                 {
-                    return fecha_publicacion;
+                    if (fecha_publicacion.Contains("/"))
+                    {
+                        return fecha_publicacion;
+                    }
+                    DateTime conv = DateTime.FromOADate(Int32.Parse(fecha_publicacion));
+                    salida = conv.ToShortDateString();
+
                 }
-                DateTime conv = DateTime.FromOADate(Int32.Parse(fecha_publicacion));
-                return conv.ToShortDateString();
+                catch (Exception)
+                {
+                    salida = DateTime.Now.ToString("dd/MM/yyyy").Replace("-", "/");
+                }
+                return salida;                
             }
 
             set { fecha_publicacion = value; }
