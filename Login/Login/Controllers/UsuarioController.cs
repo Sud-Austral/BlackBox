@@ -134,5 +134,36 @@ namespace Login.Controllers
             //return Json(dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList(), JsonRequestBehavior.AllowGet);
             return Json(productos, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult Usuaria2()
+        {
+            ViewBag.Lista = dbGrafico.INDUSTRIA.ToList();
+
+            //Lista de productos de Shopify
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            //Nombre de Usuario
+            ViewBag.User = User.Identity.GetUserName();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail())
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                }
+            }
+            //Objeto que separa Productos y Suscripciones
+            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+            //Productos
+            productos = shopifyYSuscripciones.producto_Shopifies;
+            //ViewBag.url = (string)Session["url"];
+            Session["Productos"] = productos;
+            //Suscripciones
+            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            ViewBag.Resultado = productos;
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
+            //Menu que esta suscrito el usuario
+            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
+            return View();
+        }
     }
 }
