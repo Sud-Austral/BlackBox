@@ -165,5 +165,28 @@ namespace Login.Controllers
             ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
             return View();
         }
+
+        public ActionResult Dashboard(string id = null)
+        {
+            List<Producto_Shopify> productos = (List<Producto_Shopify>)Session["Productos"];
+            string url = productos.Where(x => x.ID == id).First().SKU;
+
+            ViewBag.url = url; //"https://www.c-sharpcorner.com/article/html-action-and-html-renderaction-in-Asp-Net-mvc/";
+            string user = User.Identity.GetUserName();
+
+            /*
+            ViewBag.user = user;
+            List<string> aux = correos.correos;
+            if (!aux.Contains(user))
+            {
+                return View("Restriccion");
+            }
+            */
+            if (ViewBag.url == null)
+            {
+                return View("Restriccion");
+            }
+            return View();
+        }
     }
 }
