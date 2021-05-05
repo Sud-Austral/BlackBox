@@ -881,25 +881,25 @@ span.ruby-c-title, span.ruby-c-title a {
 /* transision */
 
 span.ruby-dropdown-toggle {
-    transition: transform .3s ease
+    transition: transform .5s ease
 }
 
     span.ruby-dropdown-toggle:after {
-        transition: transform .3s ease
+        transition: transform .5s ease
     }
 
 @media(min-width: 767px) {
     ul.ruby-menu > li > a:after {
-        transition: all .3s ease
+        transition: all .5s ease
     }
 
     ul.ruby-menu > li > ul > li > a:after, ul.ruby-menu > li > ul > li > ul > li > a:after, ul.ruby-menu > li > ul > li > ul > li > ul > li > a:after {
-        transition: all .3s ease
+        transition: all .5s ease
     }
 
     ul.ruby-menu > li > ul, ul.ruby-menu > li > div {
         transform: translateY(25px);
-        transition: all .3s ease
+        transition: all .5s ease
     }
 
     ul.ruby-menu > li:hover > ul, ul.ruby-menu > li:hover > div {
@@ -908,7 +908,7 @@ span.ruby-dropdown-toggle {
 
     ul.ruby-menu.ruby-vertical > li > ul, ul.ruby-menu.ruby-vertical > li > div {
         transform: translateX(25px);
-        transition: all .3s ease
+        transition: all .5s ease
     }
 
     ul.ruby-menu.ruby-vertical > li:hover > ul, ul.ruby-menu.ruby-vertical > li:hover > div {
@@ -917,7 +917,7 @@ span.ruby-dropdown-toggle {
 
     ul.ruby-menu > li > ul > li > ul, ul.ruby-menu > li > ul > li > ul > li > ul, ul.ruby-menu > li > ul > li > ul > li > ul > li > ul {
         transform: translateX(25px);
-        transition: all .3s ease
+        transition: all .5s ease
     }
 
         ul.ruby-menu > li > ul > li:hover > ul, ul.ruby-menu > li > ul > li > ul > li:hover > ul, ul.ruby-menu > li > ul > li > ul > li > ul > li:hover > ul {
@@ -926,7 +926,7 @@ span.ruby-dropdown-toggle {
 
         ul.ruby-menu > li > ul > li.ruby-open-to-left > ul, ul.ruby-menu > li > ul > li > ul > li.ruby-open-to-left > ul, ul.ruby-menu > li > ul > li > ul > li > ul > li.ruby-open-to-left > ul {
             transform: translateX(-25px);
-            transition: all .3s ease
+            transition: all .5s ease
         }
 
         ul.ruby-menu > li > ul > li.ruby-open-to-left:hover > ul, ul.ruby-menu > li > ul > li > ul > li.ruby-open-to-left:hover > ul, ul.ruby-menu > li > ul > li > ul > li > ul > li.ruby-open-to-left:hover > ul {
@@ -971,7 +971,7 @@ span.ruby-dropdown-toggle {
 
     ul.ruby-menu > li.ruby-menu-mega-shop > div > ul > li > a:before, ul.ruby-menu > li.ruby-menu-mega-shop > div > ul > li > a:after {
         -webkit-transition: all .4s ease;
-        transition: all .4s ease
+        transition: all .5s ease
     }
 }
 
@@ -1067,7 +1067,7 @@ ul.ruby-menu > li {
         max-height: 50px;
         width: 30px;
         transition: all .5s ease;
-        transition-delay: .3s
+        transition-delay: .5s
     }
 
         ul.ruby-menu > li.ruby-menu-social.ruby-menu-search > a:hover, ul.ruby-menu.ruby-menu-dividers > li.ruby-menu-social.ruby-menu-search > a:hover {
@@ -1099,7 +1099,7 @@ ul.ruby-menu > li {
             max-width: 0;
             transform: scaleY(0);
             transition: all .5s ease;
-            transition-delay: .3s
+            transition-delay: .5s
         }
 
             ul.ruby-menu > li.ruby-menu-social.ruby-menu-search > a > span input:focus {
@@ -2078,8 +2078,8 @@ span.ruby-c-content {
         border-radius: none;
         border: none;
         cursor: pointer;
-        -webkit-transition: background .3s;
-        transition: background .3s
+        -webkit-transition: background .5s;
+        transition: background .5s
     }
 
         .c-hamburger:focus {
@@ -2119,13 +2119,13 @@ span.ruby-c-content {
     }
 
         .c-hamburger--htx span {
-            -webkit-transition: background 0 .3s;
-            transition: background 0 .3s
+            -webkit-transition: background 0 .5s;
+            transition: background 0 .5s
         }
 
             .c-hamburger--htx span::before, .c-hamburger--htx span::after {
-                -webkit-transition-duration: 0.3s,.3s;
-                transition-duration: 0.3s,.3s;
+                -webkit-transition-duration: 0.5s,.5s;
+                transition-duration: 0.5s,.5s;
                 -webkit-transition-delay: 0.3s,0;
                 transition-delay: 0.3s,0
             }
