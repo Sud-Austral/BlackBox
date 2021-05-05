@@ -1,0 +1,474 @@
+﻿<div id="menu" style="width:200px;">
+    <ul>
+        <li class="has-sub d-flex" style="background-color:#201f1d;width:150px;">
+            <a title="" href="#" id="test3" style="background-color:#201f1d">
+                <img class="img-fluid mb-3" width="80" src="~/Content/img/logo.png" />
+            </a>
+            <ul id="vis">
+                <li class="has-sub" style="background-color:#201f1d">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+
+                    <ul id="vis1">
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        @foreach (var item in ViewBag.MenuLayout.RegistroMenus)
+        {
+            string nombre = "icono_" + item.iNDUSTRIA.id.ToString() + ".png";
+            
+        
+        @*@for (int i = 10; i < 20; i++)
+        {
+            string nombre = "icono_" + i.ToString() + ".png";*@
+            <li class="has-sub d-flex" id="test2" style="background-color:#201f1d;width:130px;">
+                <a title="" href="#"  style="background-color:#201f1d">
+                    <img class="img-fluid mb-3" width="80" src="~/Images/menuLayout/@nombre" />
+                </a>
+                <ul >
+                    @foreach (var item2 in item.sECTORs)
+                    {
+                        <li class="has-sub" id="test4" style="background-color:#201f1d; width:200px;">
+                            <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;"><span style="white-space: pre-line;">@item2.sECTOR.nombre</span></button>
+
+
+                            <ul>
+                                <li style="background-color:#201f1d">
+                                    
+                                    
+                                    <div class="ruby-row d-flex" >
+                                        <div class="ruby-col-6 m-1">
+                                            @*Como lo queria hacer luis*@
+                                            @*Pero asi se ve como pequeño*@
+                                            <a href="~/info/index?id=@item2.gRAFICOs[0].id">
+                                                <img style="border-radius:15px; width:250px;" 
+                                                     src="@item2.gRAFICOs[0]._url_Image">
+                                            </a>
+                                            @*Asi se ve correctamente pero no tiene el link al grafico correspondiente*@ 
+                                            @*<img style="border-radius:15px;" class="img-fluid"
+                                             src="@item2.gRAFICOs[0]._url_Image">*@
+
+                                        </div>
+                                        <div class="ruby-col-6 m-1">
+                                            <a href="~/info/index?id=@item2.gRAFICOs[1].id">
+                                                <img style="border-radius:15px;width:250px;"  src="@item2.gRAFICOs[1]._url_Image">
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="ruby-row d-flex" style="width:500px;">
+                                        <a href="~/info/index?id=@item2.gRAFICOs[2].id">
+                                            <div class="ruby-col-6 m-1">
+                                                <img style="border-radius:15px; width:250px;" src="@item2.gRAFICOs[2]._url_Image">
+                                            </div>
+
+                                        </a>
+                                        <a href="~/info/index?id=@item2.gRAFICOs[3].id">
+                                            <div class="ruby-col-6 m-1">
+                                                <img style="border-radius:15px;width:250px;" src="@item2.gRAFICOs[3]._url_Image">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+                    }
+
+                </ul>
+            </li>
+        }
+
+
+        @*<li class="has-sub d-flex" style="background-color:#201f1d">
+            <a title="" href="#" id="test3" style="background-color:#201f1d">
+                <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_1.png" />
+            </a>
+            <ul>
+                <li class="has-sub" id="test2" style="background-color:#201f1d">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+
+
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="has-sub d-flex" id="test5" style="background-color:#201f1d">
+            <a title="" href="#" style="background-color:#201f1d">
+                <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_2.png" />
+            </a>
+
+            <ul>
+                <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
+
+
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+                <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
+                    <b<button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+
+                </li>
+
+            </ul>
+        </li>
+        <li class="has-sub d-flex" id="test4" style="background-color:#201f1d">
+            <a title="" href="#" style="background-color:#201f1d">
+                <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_3.png" />
+            </a>
+
+            <ul>
+                <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+                <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                </li>
+                <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="has-sub d-flex" id="test2" style="background-color:#201f1d">
+            <a title="" href="#" style="background-color:#201f1d">
+                <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_4.png" />
+            </a>
+
+            <ul>
+                <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
+
+
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+                <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                </li>
+            </ul>
+        </li>
+        <li class="has-sub d-flex" id="test2" style="background-color:#201f1d">
+            <a title="" href="#" style="background-color:#201f1d">
+                <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_5.png" />
+            </a>
+
+            <ul>
+                <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
+
+                    <a title="" href="#" type="button" class="btn " style="border-radius:25px;"></a>
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+                <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                </li>
+            </ul>
+        </li>
+        <li class="has-sub d-flex" id="test2" style="background-color:#201f1d">
+            <a title="" href="#" style="background-color:#201f1d">
+                <img class="img-fluid" width="80" src="~/Content/image_estadistica/icono_6.png" />
+            </a>
+
+            <ul>
+                <li class="has-sub" style="background-color:#201f1d;color:#fff; ">
+
+                    <a title="" href="#" type="button" class="btn " style="border-radius:25px;"></a>
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                    <ul>
+                        <li style="background-color:#201f1d">
+                            <a title="" href="#"></a>
+
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+
+
+                            </div>
+                            <div class="ruby-row d-flex" style="width:500px;">
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid" src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png">
+
+                                </div>
+                                <div class="ruby-col-6 m-3">
+                                    <img style="border-radius:15px;" class="img-fluid " src="https://raw.githubusercontent.com/Sud-Austral/BlackBox/main/screenshot.png#">
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+                <li style="background-color:#201f1d; color:#fff; border-radius:25px;">
+                    <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="border-radius: 25px; color:#fff; font-size:14px;">Agricultura2</button>
+                </li>
+            </ul>
+        </li>*@
+    </ul>
+</div>
