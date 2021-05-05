@@ -2637,6 +2637,8 @@
     <Content Include="Views\Info\menuLayout.cshtml" />
     <Content Include="Views\Info\Dashboard.cshtml" />
     <Content Include="Views\Info\rpub.cshtml" />
+    <Content Include="Views\Usuario\Usuaria2.cshtml" />
+    <Content Include="Views\Usuario\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

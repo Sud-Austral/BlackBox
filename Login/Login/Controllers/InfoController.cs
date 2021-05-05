@@ -216,6 +216,7 @@ namespace AplicacionBlanco.Controllers
           
             return View();
         }
+       
 
         public ActionResult ResultadoNiveles(int id = 10, int id2 = 1)
         {
