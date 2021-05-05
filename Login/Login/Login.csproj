@@ -2636,6 +2636,7 @@
     <Content Include="Views\Info\HomeOdoo.cshtml" />
     <Content Include="Views\Info\menuLayout.cshtml" />
     <Content Include="Views\Info\Dashboard.cshtml" />
+    <Content Include="Views\Info\rpub.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -282,6 +282,10 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Resultado = Graficos;
             return View("PaginaBusqueda");
         }
+        public ActionResult rpub()
+        {
+            return View();
+        }
 
     }
 }
