@@ -1,6 +1,11 @@
-﻿
+﻿@*
+    @{
+        Layout = "~/Views/Shared/_LayoutStatista.cshtml";
+    }
+*@
+
 @{
-    Layout = "~/Views/Shared/_LayoutStatista.cshtml";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -44,9 +49,10 @@
 </head>
 <body>
     @*Menu principal*@
-   
 
-    <div class="container-fluid mt-5" style="margin-top:100px;">
+
+    <div class="container mt-5" style="margin-top:100px;">
+        <h2>Resultados de búsqueda</h2>
         <div class="row">
             <!-- Comienzo de rsultados de Busqueda -->
             <div class="col-md-12">
@@ -75,7 +81,7 @@
                                             if (flag == 1)
                                                 $("#myTable tr").show()
 
-                                            
+
 
 
                                         });
@@ -153,61 +159,61 @@
 
                                 <!-- FINAL FILTROS POR CATEGORIA -->
                                 @*
-                                <div class="padding"></div>
+                                        <div class="padding"></div>
 
-                                <!-- FILTROS POR FECHA -->
-                                
-                                <h4>Por fecha:</h4>
+                                        <!-- FILTROS POR FECHA -->
 
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            Fecha inicial:
+                                        <h4>Por fecha:</h4>
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    Fecha inicial:
+                                                </div>
+                                                <input id="startDate" width="220" />
+                                                <div class="col-12">
+                                                    Fecha término:
+                                                </div>
+                                                <input id="endDate" width="220" />
+                                            </div>
                                         </div>
-                                        <input id="startDate" width="220" />
-                                        <div class="col-12">
-                                            Fecha término:
+                                        <script>
+                                            var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                                            $('#startDate').datepicker({
+                                                uiLibrary: 'bootstrap4',
+                                                iconsLibrary: 'fontawesome',
+                                                minDate: today,
+                                                maxDate: function () {
+                                                    return $('#endDate').val();
+                                                }
+                                            });
+                                            $('#endDate').datepicker({
+                                                uiLibrary: 'bootstrap4',
+                                                iconsLibrary: 'fontawesome',
+                                                minDate: function () {
+                                                    return $('#startDate').val();
+                                                }
+                                            });
+                                        </script>
+                                        <!-- FINAL FILTROS POR FECHA -->
+
+                                        <div class="padding"></div>
+
+                                        <!-- COMIENZO FILTRO POR PRECIOS -->
+                                        <h4>Por precio:</h4>
+                                        Entre <div id="price1">$300</div> y <div id="price2">$800</div>
+                                        <div class="slider-primary">
+                                            <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
                                         </div>
-                                        <input id="endDate" width="220" />
+                                        <!-- FINAL FILTROS POR PRECIOS -->
                                     </div>
-                                </div>
-                                <script>
-                                    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                    $('#startDate').datepicker({
-                                        uiLibrary: 'bootstrap4',
-                                        iconsLibrary: 'fontawesome',
-                                        minDate: today,
-                                        maxDate: function () {
-                                            return $('#endDate').val();
-                                        }
-                                    });
-                                    $('#endDate').datepicker({
-                                        uiLibrary: 'bootstrap4',
-                                        iconsLibrary: 'fontawesome',
-                                        minDate: function () {
-                                            return $('#startDate').val();
-                                        }
-                                    });
-                                </script>
-                                <!-- FINAL FILTROS POR FECHA -->
-
-                                <div class="padding"></div>
-
-                                <!-- COMIENZO FILTRO POR PRECIOS -->
-                                <h4>Por precio:</h4>
-                                Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-                                <div class="slider-primary">
-                                    <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
-                                </div>
-                                <!-- FINAL FILTROS POR PRECIOS -->
-                            </div>
-                            <!-- FINAL FILTROS -->
-                                    *@
+                                    <!-- FINAL FILTROS -->
+                                *@
                             </div>
                             <!-- COMIENZO RESULTADOS -->
                             <div class="col-md-9">
-                                <h2><i class="fa fa-file-o"></i> Resultados de busqueda</h2>
-                                <hr>
+
+                                
 
                                 <div class="padding"></div>
 
@@ -242,61 +248,54 @@
 
                                 <!-- COMIENZO TABLA RESULTADOS -->
                                 <div class="table-responsive display ">
+                                    @*
+                                        <h4>Seleccione la cantidad de filas</h4>
+                                        <div class="col-12 form-group d-flex">
+                                            <select name="state" id="maxRows">
+                                                <option value="5000">Filas</option>
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                                <option value="50">50</option>
+                                                <option value="75">75</option>
+                                                <option value="100">100</option>
+                                            </select>
+                                            <div class="col-4">
 
-                                    <h4>Seleccione la cantidad de filas</h4>
-                                    <div class="col-12 form-group d-flex">
-                                        <select name="state" id="maxRows">
-                                            <option value="5000">Filas</option>
-                                            <option value="5">5</option>
-                                            <option value="10">10</option>
-                                            <option value="15">15</option>
-                                            <option value="20">20</option>
-                                            <option value="50">50</option>
-                                            <option value="75">75</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                        <div class="col-4">
-
+                                            </div>
+                                            <div class="col-4 input-group mb-2 text-right" style="width:100%;">
+                                                <input type="search" id="search" class="form-control rounded" placeholder="" aria-label="Search"
+                                                       aria-describedby="search-addon" />
+                                                <button type="button" class="btn btn-outline-primary">Buscar</button>
+                                            </div>
                                         </div>
-                                        <div class="col-4 input-group mb-2 text-right" style="width:100%;">
-                                            <input type="search" id="search" class="form-control rounded" placeholder="" aria-label="Search"
-                                                   aria-describedby="search-addon" />
-                                            <button type="button" class="btn btn-outline-primary">Buscar</button>
+                                    *@
+                                    <div class="p-1 bg-light rounded-pill shadow-sm mb-4" style="border-radius:25px;">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                            </div>
+                                            <input type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-light">
                                         </div>
                                     </div>
 
-                                    <table id="mytable" class="table table-bordered table-striped" style="width:100%">
+                                    <table id="mytable" class="table table-bordered" style="width:100%; border-radius:50px !important;">
 
                                         <thead id="stud_body ">
                                             <tr>
                                                 <th>NOMBRE</th>
-                                                <th>TEMPORALIDAD</th>
-                                                <th>PAIS</th>
-                                                <th>DETALLE</th>
-                                                <th>PARAMETROS</th>
-                                              
-                                                <th>INDUSTRIA</th>
-                                                <th>SECTOR</th>
-                                                <th>PRODUCTO</th>
-                                                <th>CATEGORIA</th>
-
                                             </tr>
                                         </thead>
                                         <tbody id="myTable">
                                             @foreach (var item in ViewBag.Resultado)
                                             {
                                                 <tr>
-                                                    <td><a href="~/info/index?id=@item.id" target="_blank">@item.nombre</a></td>
-                                                    <td>@item.TEMPORALIDAD.nombre</td>
-                                                    <td>@item.TERRITORIO.nombre</td>
-                                                    <td>@item.DETALLE.nombre</td>
-                                                    <td>@item.PARAMETRO.nombre</td>
-                                                   
-                                                    <td>@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</td>
-                                                    <td>@item.CATEGORIA.PRODUCTO.SECTOR.nombre</td>
-                                                    <td>@item.CATEGORIA.PRODUCTO.nombre</td>
-                                                    <td>@item.CATEGORIA.nombre</td>
+                                                    <td style="border-top:hidden !important;">
+                                                        <a href="~/info/index?id=@item.id" target="_blank" >@item.nombre</a>
+                                                        @item.TEMPORALIDAD.nombre
 
+                                                    </td>
                                                 </tr>
                                             }
                                         </tbody>
@@ -401,7 +400,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     @*este script es para la tabla y filtro de buscado agrupar y paginacion de tabla  el codigo dentro de language es para traducir elementos de la tabla*@
-  @*script3 para la paginacion y selector de filas*@
+    @*script3 para la paginacion y selector de filas*@
     <script>
         var table = '#mytable'
         $('#maxRows').on('change', function () {
