@@ -38,7 +38,15 @@ namespace Login.Controllers
 
         public ActionResult Bienvenida()
         {
+            
             return View();
         }
+
+        public ActionResult Mapa(int id = 13)
+        {
+            ViewBag.region = id;
+            return View();
+        }
+
     }
 }

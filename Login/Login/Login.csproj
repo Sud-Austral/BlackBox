@@ -2639,6 +2639,7 @@
     <Content Include="Views\Info\rpub.cshtml" />
     <Content Include="Views\Usuario\Usuaria2.cshtml" />
     <Content Include="Views\Usuario\Dashboard.cshtml" />
+    <Content Include="Views\Home\Mapa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
