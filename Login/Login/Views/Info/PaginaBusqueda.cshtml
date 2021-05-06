@@ -86,6 +86,7 @@
                                     $(document).ready(function () {
                                         $(".name").on("click", function () {
                                             $('.pagination').html('')
+                                            $('#paginador').html('')
                                             var trnum = 1;
                                             var maxRows = 10;
                                             var totalRows = $(table + ' tbody tr').length
@@ -107,15 +108,23 @@
                                                         if (trnum <= maxRows) {
                                                         $(this).show()
 
-                                                        trnum++;
+                                                        
                                                         }
+                                                        trnum++;
                                                     }
                                                 });
                                             });
 
-                                            if (flag == 1)
+                                            if (flag == 1) {                                               
                                                 $("#myTable tr").show()
-                                            // 
+                                                var p = new Paginador(
+                                                    document.getElementById('paginador'),
+                                                    document.getElementById('mytable'),
+                                                    10
+                                                );
+                                                p.Mostrar();
+                                            }
+                                            //
                                             @*
                                             $('.pagination').html('')
                                             var trnum = 0;
@@ -213,6 +222,7 @@
 
         <!-- FINAL FILTROS POR PRODUCTO -->
         <div class="padding"></div>
+                                    *@
         <!-- COMIENZO FILTROS POR CATEGORIA -->
         <h4>Categoria:</h4>
         @foreach (var item6 in ViewBag.Categoria)
@@ -223,7 +233,7 @@
         }
 
         <!-- FINAL FILTROS POR CATEGORIA -->
-                                *@
+                                
                                 @*
             <div class="padding"></div>
 
@@ -314,29 +324,6 @@
 
                                 <!-- COMIENZO TABLA RESULTADOS -->
                                 <div class="table-responsive display" style="border:solid; border-radius:20px !important; padding-left:15px;">
-                                    @*
-            <h4>Seleccione la cantidad de filas</h4>
-            <div class="col-12 form-group d-flex">
-                <select name="state" id="maxRows">
-                    <option value="5000">Filas</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="75">75</option>
-                    <option value="100">100</option>
-                </select>
-                <div class="col-4">
-
-                </div>
-                <div class="col-4 input-group mb-2 text-right" style="width:100%;">
-                    <input type="search" id="search" class="form-control rounded" placeholder="" aria-label="Search"
-                           aria-describedby="search-addon" />
-                    <button type="button" class="btn btn-outline-primary">Buscar</button>
-                </div>
-            </div>
-                                    *@
                                     <table id="mytable" class="table table-borderless">
 
                                         <thead id="stud_body">
@@ -349,8 +336,10 @@
                                             {
                                                 <tr>
                                                     <td style="border-top:hidden !important;">
-                                                        <a href="~/info/index?id=@item.id" target="_blank">@item.nombre <br /> @item.TIPO_GRAFICO_id @item.TIPO_GRAFICO.nombre 
-                                                        @item.TERRITORIO.nombre</a>
+                                                        <a href="~/info/index?id=@item.id" target="_blank">
+                                                            @item.nombre <br /> @item.TIPO_GRAFICO_id @item.TIPO_GRAFICO.nombre
+                                                            <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                        </a>
                                                         @item.TEMPORALIDAD.nombre
 
                                                     </td>
@@ -377,6 +366,7 @@
                                                 var max = min + this.tamPagina - 1;
 
                                                 for (var i = 1; i < this.tabla.rows.length; i++) {
+                                                //alert(this.tabla.rows[i].innerText)
                                                     if (i < min || i > max)
                                                         this.tabla.rows[i].style.display = 'none';
                                                     else
@@ -427,8 +417,6 @@
                                             }
                                         }
                                     </script>
-
-
                                 </div>
                                 <div id="paginador"></div>
                                 @*script2 para paginacion*@
