@@ -112,6 +112,16 @@ namespace AplicacionBlanco.Controllers
             }
             ViewBag.Paises = Paises;
 
+            List<string> TipoGrafico = new List<string>();
+            foreach (var item7 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!TipoGrafico.Contains(item7.TIPO_GRAFICO.nombre))
+                {
+                    TipoGrafico.Add(item7.TIPO_GRAFICO.nombre);
+                }
+            }
+            ViewBag.TipoGrafico = TipoGrafico;
+
             List<string> Temporalidad = new List<string>();
             foreach (var item2 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
             {
