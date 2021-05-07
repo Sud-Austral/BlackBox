@@ -107,7 +107,7 @@
                             <!-- Add icons to the links using the .nav-icon class
                                 with font-awesome or any other icon font library -->
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="#" class="nav-link" style="border:1px solid #377db3">
                                     <i class="nav-icon fas fa-edit"></i>
                                     <p>
                                         Productos
@@ -119,26 +119,26 @@
                                     foreach (var item in ViewBag.Menu)
                                     {
                                         <ul class="nav nav-treeview">
-                                            <li class="nav-item menu-open">
+                                            <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
                                                 <a onclick="mostrador('#uno');" href="#" class="nav-link ">
                                                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                                                    <p>
+                                                    <p style="color:#518bb3">
                                                         Gráficos
                                                     </p>
                                                 </a>
                                             </li>
-                                            <li class="nav-item menu-open">
+                                            <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
                                                 <a onclick="mostrador('#dos');" href="#" class="nav-link ">
                                                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                                                    <p>
+                                                    <p style="color:#518bb3">
                                                         Informes Interactivos
                                                     </p>
                                                 </a>
                                             </li>
-                                            <li class="nav-item menu-open">
+                                            <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
                                                 <a onclick="mostrador('#tres');" href="#" class="nav-link ">
                                                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                                                    <p>
+                                                    <p style="color:#518bb3">
                                                         Reportes 360°
                                                     </p>
                                                 </a>
@@ -205,7 +205,7 @@
                                 {
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a href="#" class="nav-link" style="border:1px solid #377db3">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>
                                                     Sin Suscripciones
@@ -229,7 +229,7 @@
                             </li>*@
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="#" class="nav-link" style="border:1px solid #377db3">
                                     <i class="nav-icon fas fa-edit"></i>
                                     <p>
                                         Navegador
@@ -242,9 +242,9 @@
                                     {
                                         <ul class="nav nav-treeview">
                                             <li class="nav-item">
-                                                <a href="" class="nav-link">
+                                                <a href="" class="nav-link" style=" border-bottom:1px solid #377db3">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>
+                                                    <p style="color:#518bb3">
                                                         Industria
                                                         @item.nombre
                                                         <i class="fas fa-angle-left right"></i>
@@ -467,8 +467,8 @@
                             </nav>
                             <div class="container-fluid " id="uno" style="display:none;">
                                 @*<div class="d-sm-flex justify-content-between align-items-center mb-4">
-            <h3 class="text-dark mb-0">Productos</h3>
-        </div>*@
+                <h3 class="text-dark mb-0">Productos</h3>
+            </div>*@
                                 <div class="row">
                                     @if (ViewBag.Resultado.Count >= 0)
                                     {
@@ -476,10 +476,10 @@
 
 
                                             @*<a href="https://dataintelligence.store/" target="_self" style="color:red !important; ">
-                        <h3 class="text-dark mb-0" style="color:white !important">
-                            Puedes encontrar Productos o Suscripciones en nuestra Tienda al hacer click aqui
-                        </h3>
-                    </a>*@
+                            <h3 class="text-dark mb-0" style="color:white !important">
+                                Puedes encontrar Productos o Suscripciones en nuestra Tienda al hacer click aqui
+                            </h3>
+                        </a>*@
 
 
 
@@ -532,37 +532,37 @@
                                     @foreach (var item in ViewBag.Resultado)
 
                                     {
-                                    <div class="col-md-6 col-xl-3 mb-4">
-                                        @*<a href="~/Pagina/ValidadorProductosInternos/@item.ID" target="_blank">*@
-                                        <a href="~/Usuario/Dashboard/@item.ID" target="_blank">
-                                            <div class=" maincontainer" style="color:#fff;">
+                                        <div class="col-md-6 col-xl-3 mb-4">
+                                            @*<a href="~/Pagina/ValidadorProductosInternos/@item.ID" target="_blank">*@
+                                            <a href="~/Usuario/Dashboard/@item.ID" target="_blank">
+                                                <div class=" maincontainer" style="color:#fff;">
 
-                                                <div class=" back">
-                                                    <div class="row align-items-center no-gutters d-block">
-                                                        <div class="text-dark font-weight-bold mb-0" style="color:#fff !important;">
+                                                    <div class=" back">
+                                                        <div class="row align-items-center no-gutters d-block">
+                                                            <div class="text-dark font-weight-bold mb-0" style="color:#fff !important;">
 
-                                                            @item.NOMBRE
+                                                                @item.NOMBRE
+                                                            </div>
+                                                            <div class="col mr-2">
+                                                                <div class="text-dark font-weight-bold h5 mb-0" style="color:#fff !important;">FECHA</div>
+                                                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.FECHA_CREADO</div>
+                                                            </div>
+
+                                                            @*<div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>*@
                                                         </div>
-                                                        <div class="col mr-2">
-                                                            <div class="text-dark font-weight-bold h5 mb-0" style="color:#fff !important;">FECHA</div>
-                                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">@item.FECHA_CREADO</div>
-                                                        </div>
-
-                                                        @*<div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>*@
-                                                    </div>
-                                                </div>
-
-                                                <div class="front">
-
-                                                    <div class="image">
-                                                        <img class="img-fluid" src="@item.URL_IMAGEN">
-
                                                     </div>
 
+                                                    <div class="front">
+
+                                                        <div class="image">
+                                                            <img class="img-fluid" src="@item.URL_IMAGEN">
+
+                                                        </div>
+
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                            </a>
+                                        </div>
 
                                     }
                                 </div>
@@ -630,7 +630,26 @@
                                 </div>
 
                             </div>
+                            <div class="container-fluid ">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 class="text-dark mb-0">test</h3>
 
+                                    </div>
+                                </div>
+                                <hr style="border:0.5px solid #000000" />
+                                <div class="row">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="https://dashboardfiltrado.azurewebsites.net/AutoDash/Index/59/0 "></iframe>
+                                    </div>
+                                    <div id="image-box">
+                                        <div id="myframe" class="embed-responsive">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -178,11 +178,45 @@ namespace Login.Controllers
         public ActionResult Dashboard(string id = null)
         {
             List<Producto_Shopify> productos = (List<Producto_Shopify>)Session["Productos"];
-            string url = productos.Where(x => x.ID == id).First().SKU;
+            if (productos == null)
+            {
+                 productos = new List<Producto_Shopify>();
+                //Nombre de Usuario
+                ViewBag.User = User.Identity.GetUserName();
+                //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+                foreach (var item in APIShopify.BuscarOrdenesPorMail())
+                {
+                    foreach (var item2 in item["line_items"])
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                }
+                //Objeto que separa Productos y Suscripciones
+                ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+                //Productos
+                productos = shopifyYSuscripciones.producto_Shopifies;
+                //ViewBag.url = (string)Session["url"];
+                Session["Productos"] = productos;
+                //Suscripciones
+                Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            }
+            string url = "";
+            try
+            {
+                 url = productos.Where(x => x.ID == id).First().SKU;
+            }
+            catch (Exception)
+            {
+
+                url = productos[0].SKU;
+            }
+            
 
             ViewBag.url = url; //"https://www.c-sharpcorner.com/article/html-action-and-html-renderaction-in-Asp-Net-mvc/";
             string user = User.Identity.GetUserName();
-
+            ShopifyYSuscripciones shopifyYSuscripciones2 = new ShopifyYSuscripciones(productos);
+            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones2.industrias.Contains(x.id)).ToList();
+            ViewBag.Resultado = productos;
             /*
             ViewBag.user = user;
             List<string> aux = correos.correos;
