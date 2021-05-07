@@ -27,11 +27,20 @@ namespace Login.Controllers
             //Nombre de Usuario
             ViewBag.User = User.Identity.GetUserName();
             //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            foreach (var item in APIShopify.BuscarOrdenesPorMail())
+            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
             {
                 foreach (var item2 in item["line_items"])
                 {
-                    productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+                    
                 }
             }
             //Objeto que separa Productos y Suscripciones

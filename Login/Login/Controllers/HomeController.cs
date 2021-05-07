@@ -48,5 +48,10 @@ namespace Login.Controllers
             return View();
         }
 
+        public string descripcion()
+        {
+            return APIShopify.BuscarDescripcion();
+        }
+
     }
 }

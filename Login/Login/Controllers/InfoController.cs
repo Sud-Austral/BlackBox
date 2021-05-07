@@ -100,7 +100,7 @@ namespace AplicacionBlanco.Controllers
         }
         public ActionResult PaginaBusqueda(string id = "1")
         {
-            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id < 3).ToList();
 
             List<string> Paises = new List<string>();
             foreach (var item in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())

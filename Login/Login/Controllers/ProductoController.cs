@@ -26,8 +26,16 @@ namespace Login.Controllers
             {
                 foreach (var item2 in item["line_items"])
                 {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
 
-                    productos.Add(new Producto_Shopify(item2,(string)item["order_status_url"],item));
+                        string hola = "";
+                    }
+                    //productos.Add(new Producto_Shopify(item2,(string)item["order_status_url"],item));
                 }
             }
             //ViewBag.url = (string)Session["url"];
