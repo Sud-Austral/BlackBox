@@ -10,7 +10,7 @@
 body {
 
     font-family: 'MYRIADPRO-REGULAR';
-   
+    border:none !important;
 }
 
 .pagination li {
@@ -2257,14 +2257,8 @@ span.ruby-c-content {
     color: #666666;
     border-radius: 2px;
     margin-bottom: 25px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-    .grid .grid-body {
-        padding: 15px 20px 15px 20px;
-        font-size: 0.9em;
-        line-height: 1.9em;
-    }
 
 .search table tr td.rate {
     color: #f39c12;
