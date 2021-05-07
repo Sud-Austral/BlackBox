@@ -52,6 +52,14 @@
             <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
                 <div class="row justify-content-center text-center">
                     <div class="col-8 mb-4" style="color:#fff;">
+                        @foreach (var item in ViewBag.Graficos)
+                        {
+                            <p>Titulo: @item.titulo</p>
+                            <p>Imagen: @item._url_Image</p>
+                            <p>Categoria: @item.CATEGORIA.nombre</p>
+                            <p>Descripcion: @item.CATEGORIA.descripcion</p>
+
+                        }
                         <h2 class="mb-3">¡Miles de estadísticas!</h2>
                         <p style="font-size:24px;">
                             Todas procesadas y graficadas por sectores, temas y categorías

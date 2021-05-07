@@ -199,6 +199,16 @@ namespace AplicacionBlanco.Controllers
         }
         public ActionResult HomeOdoo()
         {
+            //ViewBag.Graficos 
+            var Graficos = dbGrafico.GRAFICO.ToList();
+            var rand = new Random();
+            List<GRAFICO> listaGraficos = new List<GRAFICO>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                listaGraficos.Add(Graficos[rand.Next(Graficos.Count)]);
+            }
+            ViewBag.Graficos = listaGraficos;
             return View();
         }
 
@@ -256,9 +266,16 @@ namespace AplicacionBlanco.Controllers
             List<string> Industria = new List<string>();
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
-
+            List<string> TipoGrafico = new List<string>();
+            
+                
+                
             foreach (var item in Graficos)
             {
+                if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
+                {
+                    TipoGrafico.Add(item.TIPO_GRAFICO.nombre);
+                }
                 if (!Paises.Contains(item.TERRITORIO.nombre))
                 {
                     Paises.Add(item.TERRITORIO.nombre);
@@ -291,6 +308,7 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
             ViewBag.Resultado = Graficos;
+            ViewBag.TipoGrafico = TipoGrafico;
             return View("PaginaBusqueda");
         }
         public ActionResult rpub()
