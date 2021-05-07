@@ -178,17 +178,78 @@
 
                     <li class="ruby-menu-right">
                         <a href="#">Acceso</a>
-                        <ul>
+                        <ul style="background:white">
 
                             <li>
-                                <a href="#">NOMBRE</a>
+                                <div class="col-12">
+                                    <div class="col-12">
+                                        <section id="loginForm">
+                                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <hr />
+                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                <div class="form-group">
+                                                    <div class="col-12">
+                                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "CORREO" })
+                                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-12">
+                                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "CONTRASEÑA" })
+                                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                                /*    <div class="form-group">
+                                                        <div class="col-md-offset-2 col-md-10">
+                                                            <div class="checkbox">
+                                                                @Html.CheckBoxFor(m => m.RememberMe)
+                                                                @Html.LabelFor(m => m.RememberMe)
+                                                            </div>
+                                                        </div>
+                                                    </div>*/
+
+
+                                                <div class="form-group">
+                                                    <div class=" col-12">
+                                                        <input style="width:100%;" type="submit" value="ACCEDER" class="btn btn-primary" />
+                                                    </div>
+                                                </div>
+
+                                                <p>
+                                                    @Html.ActionLink("¿OLVIDÓ CONTRASEÑA?", "ForgotPassword", "account")
+                                                </p>
+                                                <p>
+                                                    @Html.ActionLink("REGÍSTRATE","Register", "account")
+                                                </p>
+                                                @* Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
+            <p>
+                @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+            </p>*@
+                                            }
+                                        </section>
+                                    </div>
+                                </div>
                             </li>
-                            <li>
-                                <a href="#">CONTRASEÑA</a>
-                            </li>
-                            <li><a href="~/account/ForgotPassword">¿OLVIDO CONTRASEÑA</a></li>
-                            <li><a href="~/account/Register">REGISTRO</a></li>
-                            <li><a href="~/account/login ">ACCEDER</a></li>
+                            @*  <li>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </li>
+
+        <li><a href="~/account/ForgotPassword">¿OLVIDO CONTRASEÑA</a></li>
+        <li><a href="~/account/Register">REGISTRO</a></li>
+        <li>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
+                </div>
+            </div>
+        </li>*@
                         </ul>
                         <span class="ruby-dropdown-toggle"></span>
                     </li>
@@ -215,3 +276,7 @@
     <script src="~/Scripts/ScriptBuscador.js"></script>
 </body>
 </html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
