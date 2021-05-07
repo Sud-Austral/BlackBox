@@ -64,12 +64,12 @@
                                 <button type="button" class="btn btn-secondary" style="border-radius:10px;">Borrar filtro</button>
                             </div>
                             <div class="col-md-9 pr-0">
-                                <div class="p-1 bg-light rounded-pill shadow-sm mb-4" style="border:solid; border-radius:20px;">
+                                <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 20px;">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
                                         </div>
-                                        <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-light">
+                                        <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                     </div>
                                 </div>
                             </div>
@@ -77,19 +77,11 @@
                         <!-- Final de Fila que contiene botón borrar filtro y buscador -->
                         <div class="row" style="border:hidden !important;">
                             <!-- Comienzo filtros -->
-
-                            <div class="tags col-md-3 " style="border:solid; border-radius:20px;  padding-top:12px;">
-
-
+                            <div class="tags col-md-3 " style="border: 0.5px solid #bbc1c5; border-radius: 20px; padding-top: 12px;">
                                 @*Este script es para hacer el filtro de la tabla*@
                                 <script>
                                     $(document).ready(function () {
                                         $(".name").on("click", function () {
-                                            $('.pagination').html('')
-                                            $('#paginador').html('')
-                                            var trnum = 1;
-                                            var maxRows = 10;
-                                            var totalRows = $(table + ' tbody tr').length
                                             name_list = []
                                             $("#myTable tr").hide()
                                             var flag = 1
@@ -97,63 +89,19 @@
                                                 flag = 0;
                                                 var value = $(this).val().toLowerCase();
                                                 $("#myTable tr").filter(function () {
-                                                    //trnum++;
-                                                    if ($(this).text().toLowerCase().indexOf(value) > -1) {
-                                            //             $(this).show()
-                                                        if (trnum > maxRows) {
-                                                         $(this).hide()
-
-                                                        
-                                                        }
-                                                        if (trnum <= maxRows) {
+                                                    if ($(this).text().toLowerCase().indexOf(value) > -1)
                                                         $(this).show()
-
-                                                        
-                                                        }
-                                                        trnum++;
-                                                    }
                                                 });
                                             });
-
-                                            if (flag == 1) {                                               
+                                            if (flag == 1)
                                                 $("#myTable tr").show()
-                                                var p = new Paginador(
-                                                    document.getElementById('paginador'),
-                                                    document.getElementById('mytable'),
-                                                    10
-                                                );
-                                                p.Mostrar();
-                                            }
-                                            //
-                                            @*
-                                            $('.pagination').html('')
-                                            var trnum = 0;
-                                            var maxRows = 10;
-                                            var totalRows = $(table + ' tbody tr').length
-                                            $(table + ' tr:gt(0)').each(function () {
-                                                trnum++
-                                                alert($(this).text())
-                                                if (trnum > maxRows) {
-                                                    $(this).hide()
-                                                }
-                                                if (trnum <= maxRows) {
-                                                    $(this).show()
-                                                }
-                                            })
-                                            if (totalRows > maxRows) {
-                                                var pagenum = Math.ceil(totalRows / maxRows)
-                                                for (var i = 1; i <= pagenum;) {
-                                                    $('.pagination').append('<li class="btn" data-page="' + i + '">\<span>' + i++ + '<span class="page-item  sr-only">(current)</span></span>\</li>').show()
-                                                }
-                                            } 
-                                                *@
                                         });
                                     });
                                 </script>
                                 
                                 @*Este script es para hacer el filtro de la tabla*@
                                 <!-- Comienzo filtros por Pais-->
-                                <h4>TIPO DE INFORMACIÓN</h4>
+                                <h5 style="color:black;">TIPO DE INFORMACIÓN</h5>
                                 <div>
                                     @foreach (var item7 in ViewBag.TipoGrafico)
                                     {
@@ -163,11 +111,11 @@
                                     }
                                 </div>
                                 <h4>COBERTURA</h4>
-                                <div style="overflow:scroll; height:380px; overflow-x:hidden;">
+                                <div style="overflow:scroll; height:300px; overflow-x:hidden;">
                                     @foreach (var item in ViewBag.Paises)
                                     {
                                         <div>
-                                            <label><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                                            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
                                         </div>
                                     }
                                 </div>
@@ -224,6 +172,7 @@
         <div class="padding"></div>
                                     *@
         <!-- COMIENZO FILTROS POR CATEGORIA -->
+        @*
         <h4>Categoria:</h4>
         @foreach (var item6 in ViewBag.Categoria)
         {
@@ -231,7 +180,7 @@
                 <label><input type="checkbox" class="name icheck" name="name" value="@item6"> @item6</label>
             </div>
         }
-
+        *@
         <!-- FINAL FILTROS POR CATEGORIA -->
                                 
                                 @*
@@ -323,19 +272,19 @@
                                 </script>
 
                                 <!-- COMIENZO TABLA RESULTADOS -->
-                                <div class="table-responsive display" style="border:solid; border-radius:20px !important; padding-left:15px;">
-                                    <table id="mytable" class="table table-borderless">
+                                <div class="table-responsive display" style="border: 0.5px solid #bbc1c5; border-radius: 20px !important; padding-left: 15px;">
+                                    <table id="mytable" class="table" style="border:none !important;">
 
-                                        <thead id="stud_body">
-                                            <tr>
-                                                <th>NOMBRE</th>
+                                        <thead id="stud_body" style="border:none;">
+                                            <tr style="border:none;">
+                                                <th style="border:none;">NOMBRE</th>
                                             </tr>
                                         </thead>
                                         <tbody id="myTable" style="border: none !important;">
                                             @foreach (var item in ViewBag.Resultado)
                                             {
                                                 <tr>
-                                                    <td style="border-top:hidden !important;">
+                                                    <td style="border:none !important;">
                                                         <a href="~/info/index?id=@item.id" target="_blank">
                                                             @item.nombre <br /> @item.TIPO_GRAFICO_id @item.TIPO_GRAFICO.nombre
                                                             <p style="display:none;">@item.TERRITORIO.nombre </p>
@@ -345,6 +294,7 @@
                                                     </td>
                                                 </tr>
                                             }
+
                                         </tbody>
 
                                     </table>
@@ -366,7 +316,6 @@
                                                 var max = min + this.tamPagina - 1;
 
                                                 for (var i = 1; i < this.tabla.rows.length; i++) {
-                                                //alert(this.tabla.rows[i].innerText)
                                                     if (i < min || i > max)
                                                         this.tabla.rows[i].style.display = 'none';
                                                     else
@@ -383,6 +332,7 @@
                                                 var fil = tblPaginador.insertRow(tblPaginador.rows.length);
 
                                                 //Ahora, agregar las celdas que serán los controles
+                                                @*
                                                 var ant = fil.insertCell(fil.cells.length);
                                                 ant.innerHTML = 'Anterior ';
                                                 ant.className = 'pag_btn btn-primary'; //con eso le asigno un estilo
@@ -399,12 +349,13 @@
 
                                                 var sig = fil.insertCell(fil.cells.length);
                                                 sig.innerHTML = 'Siguiente';
-                                                sig.className = 'pag_btn btn-primary';
+                                                //sig.className = 'pag_btn btn-primary';
                                                 sig.onclick = function () {
                                                     if (self.pagActual == self.paginas)
                                                         return;
                                                     self.SetPagina(self.pagActual + 1);
                                                 }
+                                                *@
 
                                                 //Como ya tengo mi tabla, puedo agregarla al DIV de los controles
                                                 this.miDiv.appendChild(tblPaginador);
@@ -425,6 +376,7 @@
                                         document.getElementById('paginador'),
                                         document.getElementById('mytable'),
                                         10
+                                        
                                     );
                                     p.Mostrar();
                                 </script>
