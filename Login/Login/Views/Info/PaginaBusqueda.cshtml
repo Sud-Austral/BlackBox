@@ -61,8 +61,28 @@
                         <!-- Comienzo de Fila que contiene botón borrar filtro y buscador -->
                         <div class="row mt-5">
                             <div class="col-md-3 text-center">
-                                <button type="button" class="btn btn-secondary" style="border-radius:10px;">Borrar filtro</button>
+                                <label class="btn btn-primary">
+                                    <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this); " /> Borrar filtro
+                                </label>
+                                @*<button type="button" class="btn btn-secondary" style="border-radius:10px;">Borrar filtro</button>*@
+                                <script type="text/javascript">
+                                    function ActivarCasilla(casilla) {
+                                        miscasillas = document.getElementsByTagName('input'); //Rescatamos controles tipo Input
+                                        for (i = 0; i < miscasillas.length; i++) //Ejecutamos y recorremos los controles
+                                        {
+                                            if (miscasillas[i].type == "checkbox") // Ejecutamos si es una casilla de verificacion
+                                            {
+                                                miscasillas[i].checked = casilla.checked; // Si el input es CheckBox se aplica la funcion ActivarCasilla
+                                            }
+                                        }
+                                    }
+                                </script>
                             </div>
+                            @*<label class="btn btn-primary">
+                                <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this); " /> Marcar / Desmarcar Todos
+                            </label>*@
+                           
+                            <!--fin Comienzo de Fila que contiene botón borrar filtro y buscador -->
                             <div class="col-md-9 pr-0">
                                 <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 20px;">
                                     <div class="input-group">
