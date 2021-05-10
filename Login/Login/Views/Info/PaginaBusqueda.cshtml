@@ -118,7 +118,7 @@
                                         });
                                     });
                                 </script>
-                                
+
                                 @*Este script es para hacer el filtro de la tabla*@
                                 <!-- Comienzo filtros por Pais-->
                                 <h5 style="color:black;">TIPO DE INFORMACIÓN</h5>
@@ -130,6 +130,22 @@
                                         </div>
                                     }
                                 </div>
+                                <div>
+                                    @foreach (var item7 in ViewBag.TipoGrafico)
+                                    {
+                                        <div>
+                                            <label><input type="checkbox" class="name" name="name" value="@item7"> Informes Interactivos</label>
+                                        </div>
+                                    }
+                                </div>
+                                <div>
+                                    @foreach (var item7 in ViewBag.TipoGrafico)
+                                    {
+                                        <div>
+                                            <label><input type="checkbox" class="name" name="name" value="@item7">Reportes 360°</label>
+                                        </div>
+                                    }
+                                </div>
                                 <h4>COBERTURA</h4>
                                 <div style="overflow:scroll; height:300px; overflow-x:hidden;">
                                     @foreach (var item in ViewBag.Paises)
@@ -137,8 +153,10 @@
                                         <div>
                                             <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
                                         </div>
+
                                     }
                                 </div>
+
                                 <!-- FINAL DE FILTROS POR CATEGORY -->
 
                                 <div class="padding"></div>
@@ -190,9 +208,9 @@
 
         <!-- FINAL FILTROS POR PRODUCTO -->
         <div class="padding"></div>
-                                    *@
-        <!-- COMIENZO FILTROS POR CATEGORIA -->
-        @*
+                                *@
+                                <!-- COMIENZO FILTROS POR CATEGORIA -->
+                                @*
         <h4>Categoria:</h4>
         @foreach (var item6 in ViewBag.Categoria)
         {
@@ -200,9 +218,8 @@
                 <label><input type="checkbox" class="name icheck" name="name" value="@item6"> @item6</label>
             </div>
         }
-        *@
-        <!-- FINAL FILTROS POR CATEGORIA -->
-                                
+                                *@
+                                <!-- FINAL FILTROS POR CATEGORIA -->
                                 @*
             <div class="padding"></div>
 
@@ -293,7 +310,7 @@
 
                                 <!-- COMIENZO TABLA RESULTADOS -->
                                 <div class="table-responsive display" style="border: 0.5px solid #bbc1c5; border-radius: 20px !important; padding-left: 15px;">
-                                    <table id="mytable" class="table" style="border:none !important;">
+                                    <table id="mytable" class="table" style=" overflow:scroll; height:100px; overflow-x:hidden; border:none !important;">
 
                                         <thead id="stud_body" style="border:none;">
                                             <tr style="border:none;">
@@ -312,12 +329,121 @@
                                                         @item.TEMPORALIDAD.nombre
 
                                                     </td>
+
+                                                </tr>
+                                             }
+
+                                        </tbody>
+
+                                    </table>
+                                    <table id="mytable" class="table" style="border:none !important;">
+
+                                        <thead id="stud_body" style="border:none;">
+                                            <tr style="border:none;">
+                                                <th style="border:none;">Informes Interactivos</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable" style="border: none !important;">
+                                            @foreach (var item in ViewBag.Resultado)
+                                             {
+                                                <tr>
+                                                    <td style="border:none !important;">
+                                                        <a href="~/info/index?id=@item.id" target="_blank" type="button" class="btn2" data-toggle="modal" data-target="#myModal2" data-backdrop="false">
+                                                            @item.nombre <br /> @item.TIPO_GRAFICO_id @item.TIPO_GRAFICO.nombre
+                                                            <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                        </a>
+                                                        @item.TEMPORALIDAD.nombre
+
+                                                    </td>
+
+                                                </tr>
+                                             }
+
+                                        </tbody>
+
+                                    </table>
+                                    <table id="mytable" class="table" style="border:none !important; ">
+
+                                        <thead id="stud_body" style="border:none;">
+                                            <tr style="border:none;">
+                                                <th style="border:none;">Reportes 360°</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable" style="border: none !important;">
+                                            @foreach (var item in ViewBag.Resultado)
+                                            {
+
+                                                <tr>
+                                                    <td style="border:none !important;">
+                                                        <a href="~/info/index?id=@item.id" target="_blank" type="button" class="btn2" data-toggle="modal" data-target="#myModal2" data-backdrop="false">
+                                                            @item.nombre <br /> @item.TIPO_GRAFICO_id @item.TIPO_GRAFICO.nombre
+                                                            <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                        </a>
+                                                        @item.TEMPORALIDAD.nombre
+
+                                                    </td>
+
                                                 </tr>
                                             }
 
                                         </tbody>
 
                                     </table>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal2" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="columns">
+                                                        <ul class="price">
+                                                            <li class="header">Basic</li>
+                                                            <li class="grey">$ 9.99 / year</li>
+                                                            <li>10GB Storage</li>
+                                                            <li>10 Emails</li>
+                                                            <li>10 Domains</li>
+                                                            <li>1GB Bandwidth</li>
+                                                            <li class="grey"><a href="https://dataintelligence.store/products/avance-del-covid-19-cl" target="_blank"  class="button">Sign Up</a></li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="columns">
+                                                        <ul class="price">
+                                                            <li class="header" style="background-color:#4CAF50">Pro</li>
+                                                            <li class="grey">$ 24.99 / year</li>
+                                                            <li>25GB Storage</li>
+                                                            <li>25 Emails</li>
+                                                            <li>25 Domains</li>
+                                                            <li>2GB Bandwidth</li>
+                                                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="columns">
+                                                        <ul class="price">
+                                                            <li class="header">Premium</li>
+                                                            <li class="grey">$ 49.99 / year</li>
+                                                            <li>50GB Storage</li>
+                                                            <li>50 Emails</li>
+                                                            <li>50 Domains</li>
+                                                            <li>5GB Bandwidth</li>
+                                                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                     <!--script1 para la paginacion-->
                                     <script type="text/javascript">
                                         Paginador = function (divPaginador, tabla, tamPagina) {
