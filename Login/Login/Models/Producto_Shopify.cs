@@ -49,9 +49,18 @@ namespace Login.Models
                 URL_IMAGEN = "https://pbs.twimg.com/profile_banners/1244018511866925058/1585841185/1500x500";
             }
 
-            string descripcionAux = APIShopify.BuscarDescripcion(this.PRODUCT_ID);
-            DESCRIPCION = descripcionAux.Split(new[] { "Características" },
-                                            StringSplitOptions.RemoveEmptyEntries).ToList()[0];
+            try
+            {
+                string descripcionAux = APIShopify.BuscarDescripcion(this.PRODUCT_ID);
+                DESCRIPCION = descripcionAux.Split(new[] { "Características" },
+                                                StringSplitOptions.RemoveEmptyEntries).ToList()[0];
+            }
+            catch (Exception)
+            {
+
+                DESCRIPCION = "Sin descripcion";
+            }
+            
 
 
         }
