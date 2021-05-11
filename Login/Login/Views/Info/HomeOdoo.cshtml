@@ -52,15 +52,6 @@
             <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
                 <div class="row justify-content-center text-center">
                     <div class="col-8 mb-4" style="color:#fff;">
-
-                        @*@foreach (var item in ViewBag.Graficos)
-                        {
-                            <p>Titulo: @item.titulo</p>
-                            <p>Imagen: @item._url_Image</p>
-                            <p>Categoria: @item.CATEGORIA.nombre</p>
-                            <p>Descripcion: @item.CATEGORIA.descripcion</p>
-
-                        }*@
                         <h2 class="mb-3">¡Miles de estadísticas!</h2>
                         <p style="font-size:24px;">
                             Todas procesadas y graficadas por sectores, temas y categorías
@@ -74,37 +65,37 @@
                                     <div class="row">
 
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">Información en gráficos</div>
+                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[0].titulo</div>
                                             <div class="card" style="border:none;">
-                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[0]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[0].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[0].CATEGORIA.descripcion</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff;">
-                                                Información en mapas
+                                                @ViewBag.Graficos[1].titulo
                                             </div>
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[1]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[1].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[1].CATEGORIA.descripcion</p>
 
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">
-                                                Información anualizada
+                                                @ViewBag.Graficos[2].titulo
                                             </div>
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[2].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[2].CATEGORIA.descripcion</p>
 
                                                 </div>
                                             </div>
@@ -116,35 +107,35 @@
                                     <div class="row">
 
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[3].titulo</div>
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[3].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[3].CATEGORIA.descripcion</p>
 
                                                 </div>
 
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[4].titulo</div>
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[4].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[4].CATEGORIA.descripcion</p>
 
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[5].titulo</div>
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[5].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[5].CATEGORIA.descripcion</p>
 
                                                 </div>
                                             </div>
@@ -156,35 +147,73 @@
                                     <div class="row">
 
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[6].titulo</div>
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[6].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[6].CATEGORIA.descripcion</p>
 
                                                 </div>
 
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header</div>
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[7].titulo</div>
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[7].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[7].CATEGORIA.descripcion</p>
 
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">Header last</div>
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[8].titulo</div>
                                             <div class="card" style="border-radius:10px;">
-                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="@ViewBag.Graficos[8]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Special title treatment</h4>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h4 class="card-title">@ViewBag.Graficos[8].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[8].CATEGORIA.descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[9].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">@ViewBag.Graficos[9].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[9].CATEGORIA.descripcion</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[10].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">@ViewBag.Graficos[10].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[10].CATEGORIA.descripcion</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;">@ViewBag.Graficos[11].titulo</div>
+                                            <div class="card" style="border-radius:10px;">
+                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="@ViewBag.Graficos[11]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">@ViewBag.Graficos[11].CATEGORIA.nombre</h4>
+                                                    <p class="card-text">@ViewBag.Graficos[11].CATEGORIA.descripcion</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -208,7 +237,7 @@
     </div>
 
     <!--Sección iconos de categorias-->
-    <div class="py-5 bg-light " style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+    <!--<div class="py-5 bg-light " style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
         <section class="pt-3 pb-5">
             <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
                 <div class="row justify-content-center text-center">
@@ -262,7 +291,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div>-->
 
     <!--seccion de dimensiones-->
     <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_8.jpg');">

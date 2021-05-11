@@ -204,7 +204,7 @@ namespace AplicacionBlanco.Controllers
             var rand = new Random();
             List<GRAFICO> listaGraficos = new List<GRAFICO>();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 12; i++)
             {
                 listaGraficos.Add(Graficos[rand.Next(Graficos.Count)]);
             }
