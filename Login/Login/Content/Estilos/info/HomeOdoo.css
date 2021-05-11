@@ -1,4 +1,22 @@
-﻿
+﻿/*-----------------------BODY--------------------------*/
+
+/*@font-face {
+    font-family: 'MYRIADPRO-REGULAR';
+    src: url('Font/MYRIADPRO-REGULAR.OTF') format('opentype');
+}
+
+@font-face {
+    font-family: 'MYRIADPRO-REGULAR';
+    src: url('img/Font/MYRIADPRO-REGULAR.OTF') format('opentype');
+}*/
+
+body {
+    /*font-family: 'MYRIADPRO-REGULAR';*/
+    border: none !important;
+}
+
+
+
 /*-----------------------Section de call to action superior imagen fondo-------------------------*/
 .c2a1 {
     font-family: 'MYRIADPRO-REGULAR';
@@ -238,4 +256,7 @@ h5 {
 .carousel-inner .carousel-item-right,
 .carousel-inner .carousel-item-left {
     transform: translateX(0);
+}
+.card-text {
+    font-weight:normal !important;
 }
