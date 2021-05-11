@@ -2514,3 +2514,12 @@ h5 {
     background: #201f1d;
     color: #fff !important;
 }
+
+/*Hover contenido de paginaBusqueda contenido*/
+div.table-responsive:hover {
+    overflow: auto !important;
+}
+/*Scroll de checkbox de filtro covertura*/
+div.side:hover {
+    overflow: auto !important;
+}
