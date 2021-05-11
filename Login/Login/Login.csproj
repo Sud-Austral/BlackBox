@@ -374,6 +374,14 @@
     <Content Include="Content\img\portadas\covihome-min.png" />
     <Content Include="Content\img\portadas\covihome.png" />
     <Content Include="Content\img\Porta_ISMT.jpg" />
+    <Content Include="Content\img\Promociones\imagenpromocion_1.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_2.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3_1.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3_2.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3_3.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3_4.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_fondo.jpg" />
     <Content Include="Content\img\resultados_Master_honduras.png" />
     <Content Include="Content\img\resultados_Master_hondurasMasGrande.png" />
     <Content Include="Content\img\RRSS\Facebook.png" />
