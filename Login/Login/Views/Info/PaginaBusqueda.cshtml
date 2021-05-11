@@ -61,8 +61,9 @@
                         <!-- Comienzo de Fila que contiene botón borrar filtro y buscador -->
                         <div class="row mt-5">
                             <div class="col-md-3 text-center">
+                                @*Boton para borrar los filtros*@
                                 <label class="btn btn-primary">
-                                    <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this); " /> Borrar filtro
+                                    <input style="display:none;" type="checkbox" onClick="LimpiarTodo();// ActivarCasilla(this); " /> Borrar filtro
                                 </label>
                                 @*<button type="button" class="btn btn-secondary" style="border-radius:10px;">Borrar filtro</button>*@
                                 <script type="text/javascript">
@@ -78,11 +79,12 @@
                                     }
                                 </script>
                             </div>
+                            @*fin  Boton para borrar los filtros*@
                             @*<label class="btn btn-primary">
-                                <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this); " /> Marcar / Desmarcar Todos
-                            </label>*@
-                           
-                            <!--fin Comienzo de Fila que contiene botón borrar filtro y buscador -->
+            <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this); " /> Marcar / Desmarcar Todos
+        </label>*@
+
+                            <!--fin de Fila que contiene botón borrar filtro y buscador -->
                             <div class="col-md-8 pr-0">
                                 <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 20px;">
                                     <div class="input-group">
@@ -146,9 +148,19 @@
                                         </div>
                                     }
                                 </div>
-                                <h4>COBERTURA</h4>
+                                <h4>CATEGORÍA</h4>
                                 <div class="side" style="overflow:scroll; height:300px; overflow:hidden;">
-                                    @foreach (var item in ViewBag.Paises)
+                                    @foreach (var item in ViewBag.Categoria)
+                                    {
+                                        <div>
+                                            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                                        </div>
+
+                                    }
+                                </div>
+                                <h4>SECTOR</h4>
+                                <div class="side" style="overflow:scroll; height:300px; overflow:hidden;">
+                                    @foreach (var item in ViewBag.Sector)
                                     {
                                         <div>
                                             <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
@@ -157,11 +169,10 @@
                                     }
                                 </div>
 
-                                <!-- FINAL DE FILTROS POR CATEGORY -->
+                                @*test *@
+                         
 
-                                
 
-                                <!-- COMIENZO DE FILTROS POR ANIO -->
                                 @*
         <h4>Temporalidad:</h4>
 
@@ -307,9 +318,21 @@
                                         });
                                     });
                                 </script>
-
+                                <script>
+                                    $(document).ready(function () {
+                                        var nrows = 0; var nres = 0;
+                                        $("table tr").each(function () {
+                                            nrows++;
+                                        })
+                                        $("#nrows").html(nrows);
+                                        $(".isres").each(function () {
+                                            nres++;
+                                        })
+                                        $("#nres").html(nres);
+                                    });
+                                </script>
                                 <!-- COMIENZO TABLA RESULTADOS -->
-                                <h5 class="ml-3 mt-3">Graficos | @ViewBag.Resultado.Count resultados</h5>
+                                <h5 class="ml-3 mt-3" style="color:black">Graficos | @ViewBag.Resultado.Count resultados</h5>
                                 <div class="table-responsive display" style="height:300px; overflow:hidden; border-radius: 20px !important; padding-left: 15px;">
                                     <table id="mytable" class="table" style=" border:none !important;">
 
@@ -324,7 +347,7 @@
                                                 <tr>
                                                     <td style="border:none !important;">
                                                         <a href="~/info/index?id=@item.id" target="_blank">
-                                                            @item.nombre <br /> @item.TIPO_GRAFICO_id @item.TIPO_GRAFICO.nombre
+                                                            @item.nombre <br /> @item.TIPO_GRAFICO_id @item.TIPO_GRAFICO.nombre <br />
                                                             <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                         </a>
                                                         @item.TEMPORALIDAD.nombre
@@ -465,7 +488,7 @@
                                         }
                                     </script>
                                 </div>
-                                <h5 class="ml-3 mt-3">Informes Interactivos | @ViewBag.Resultado2.Count resultados</h5>
+                                <h5 class="ml-3 mt-3" style="color:black">Informes ? | @ViewBag.Resultado2.Count resultados</h5>
                                 <div class="table-responsive display my-3" style=" height:300px; overflow:hidden; border-radius: 20px !important; padding-left: 15px;">
                                     <table id="mytable" class="table" border:none !important;">
                                         <thead id="stud_body" style="border:none;">
@@ -620,7 +643,7 @@
                                         }
                                     </script>
                                 </div>
-                                <h5 class="ml-3 mt-3"> Reportes 360° | @ViewBag.Resultado3.Count resultados</h5>
+                                <h5 style="color:black !important;">Reportes 360° | @ViewBag.Resultado3.Count resultados</h5>                 
                                 <div class="table-responsive display mt-3" style=" height:350px; overflow:hidden; border-radius: 20px !important; padding-left: 15px;">
                                     <table id="mytable" class="table" border:none !important;">
 
@@ -776,16 +799,22 @@
                                         }
                                     </script>
                                 </div>
+                            </div>
                                 <div id="paginador"></div>
                                 @*script2 para paginacion*@
                                 <script type="text/javascript">
                                     var p = new Paginador(
                                         document.getElementById('paginador'),
                                         document.getElementById('mytable')
-                                       
-
                                     );
                                     p.Mostrar();
+                                    function LimpiarTodo() {
+                                        var p = new Paginador(
+                                            document.getElementById('paginador'),
+                                            document.getElementById('mytable')
+                                        );
+                                        p.Mostrar();
+                                    }
                                 </script>
 
                                 <!-- FINAL TABLA DE RESULTADOS -->

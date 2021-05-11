@@ -2523,3 +2523,7 @@ div.table-responsive:hover {
 div.side:hover {
     overflow: auto !important;
 }
+/*tble pagina busqueda*/
+.table td, .table th {
+    padding: .50rem !important;
+}
