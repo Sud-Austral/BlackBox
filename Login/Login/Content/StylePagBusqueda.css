@@ -2538,3 +2538,17 @@ h5 {
         background: #555;
         text-decoration: none;
     }
+
+
+/*Hover contenido de paginaBusqueda contenido*/
+div.table-responsive:hover {
+    overflow: auto !important;
+}
+/*Scroll de checkbox de filtro covertura*/
+div.side:hover {
+    overflow: auto !important;
+}
+/*tble pagina busqueda*/
+.table td, .table th {
+    padding: .50rem !important;
+}

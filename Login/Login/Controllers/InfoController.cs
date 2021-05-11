@@ -100,7 +100,9 @@ namespace AplicacionBlanco.Controllers
         }
         public ActionResult PaginaBusqueda(string id = "1")
         {
-            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id < 3).ToList();
+            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id < 3).ToList();//Liberados/Gratis
+            ViewBag.Resultado2= dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id == 3).ToList();//Informes
+            ViewBag.Resultado3 = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id == 4).ToList();//Reportes
 
             List<string> Paises = new List<string>();
             foreach (var item in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
@@ -121,6 +123,8 @@ namespace AplicacionBlanco.Controllers
                 }
             }
             ViewBag.TipoGrafico = TipoGrafico;
+
+          
 
             List<string> Temporalidad = new List<string>();
             foreach (var item2 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
