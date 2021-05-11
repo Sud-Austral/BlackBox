@@ -21,10 +21,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     @*Hoja de estilos de esta vista solamente*@
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
-   
+    <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
 </head>
 <body>
-    
+
     <div class="py-5 bg-light c2a1" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_1.jpg');">
         <div class="container" style="margin-top:120PX;">
             <!-- Row -->
@@ -38,8 +38,8 @@
                 <div class="col-md-4 col-8 text-center mt-5">
                     <h3 class="mb-3 text-white font-weight-medium ">¡Explora, busca y encuentra!</h3>
 
-                    <form action="~/info/PaginaBusqueda" method="get" >
-                            <input class="typeahead form-control" type="text"  id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:10px;">
+                    <form action="~/info/PaginaBusqueda" method="get">
+                        <input class="typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:10px;">
                     </form>
                 </div>
             </div>
@@ -47,19 +47,12 @@
 
     </div>
     <!--SECCION DE CARRUCEL DE CARDS-->
+    <!--SECCION DE CARRUCEL DE CARDS-->
     <div class="py-5 bg-light " style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
         <section class="pt-3 pb-5">
             <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
                 <div class="row justify-content-center text-center">
                     <div class="col-8 mb-4" style="color:#fff;">
-                        @foreach (var item in ViewBag.Graficos)
-                        {
-                            <p>Titulo: @item.titulo</p>
-                            <p>Imagen: @item._url_Image</p>
-                            <p>Categoria: @item.CATEGORIA.nombre</p>
-                            <p>Descripcion: @item.CATEGORIA.descripcion</p>
-
-                        }
                         <h2 class="mb-3">¡Miles de estadísticas!</h2>
                         <p style="font-size:24px;">
                             Todas procesadas y graficadas por sectores, temas y categorías
@@ -207,62 +200,63 @@
     </div>
 
     <!--Sección iconos de categorias-->
-    <div class="py-5 bg-light " style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
-        <section class="pt-3 pb-5">
-            <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
-                <div class="row justify-content-center text-center">
-                    <div class="col-8 mb-4">
-                        <h2 class="mb-3 text-white">¡Miles de estadísticas!</h2>
-                        <p style="font-size:24px; color:white;">
-                            Ofrecemos miles de estadísticas procesadas y graficadas por
-                            Sectores, Temas y Categorías
-                        </p>
-                    </div>
-                    <div class="row justify-content-center">
-                        <diV class="col-md-1 col-8 ">
-                            <img class="img-fluid" src="~/Content/image_estadistica/icono_1.1.png" />
-                        </diV>
-                        <diV class="col-md-1 col-8 ">
-                            <img class="img-fluid" src="~/Content/image_estadistica/icono_2.1.png" />
-                        </diV>
-                        <diV class="col-md-1 col-8 ">
-                            <img class="img-fluid" src="~/Content/image_estadistica/icono_3.1.png" />
-                        </diV>
-                        <diV class="col-md-1 col-8 ">
-                            <img class="img-fluid" src="~/Content/image_estadistica/icono_4.1.png" />
-                        </diV>
-                        <diV class="col-md-1 col-8 ">
-                            <img class="img-fluid" src="~/Content/image_estadistica/icono_5.1.png" />
-                        </diV>
-                        <diV class="col-md-1 col-8 ">
-                            <img class="img-fluid" src="~/Content/image_estadistica/icono_6.1.png" />
-                        </diV>
-                    </div>
-                    <div class="col-8 mb-4">
-                        <p style="font-size:24px; color:white; margin-top:1%;">
-                            Transforma estos datos sectoriales en una increíble experiencia digital
-                        </p>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 col-8 text-center mt-5">
+    @*
+        <div class="py-5 bg-light " style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+            <section class="pt-3 pb-5">
+                <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-8 mb-4">
+                            <h2 class="mb-3 text-white">¡Miles de estadísticas!</h2>
                             <p style="font-size:24px; color:white;">
-                                ¡Explora, busca y encuentra!
+                                Ofrecemos miles de estadísticas procesadas y graficadas por
+                                Sectores, Temas y Categorías
                             </p>
-                            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                        </div>
+                        <div class="row justify-content-center">
+                            <diV class="col-md-1 col-8 ">
+                                <img class="img-fluid" src="~/Content/image_estadistica/icono_1.1.png" />
+                            </diV>
+                            <diV class="col-md-1 col-8 ">
+                                <img class="img-fluid" src="~/Content/image_estadistica/icono_2.1.png" />
+                            </diV>
+                            <diV class="col-md-1 col-8 ">
+                                <img class="img-fluid" src="~/Content/image_estadistica/icono_3.1.png" />
+                            </diV>
+                            <diV class="col-md-1 col-8 ">
+                                <img class="img-fluid" src="~/Content/image_estadistica/icono_4.1.png" />
+                            </diV>
+                            <diV class="col-md-1 col-8 ">
+                                <img class="img-fluid" src="~/Content/image_estadistica/icono_5.1.png" />
+                            </diV>
+                            <diV class="col-md-1 col-8 ">
+                                <img class="img-fluid" src="~/Content/image_estadistica/icono_6.1.png" />
+                            </diV>
+                        </div>
+                        <div class="col-8 mb-4">
+                            <p style="font-size:24px; color:white; margin-top:1%;">
+                                Transforma estos datos sectoriales en una increíble experiencia digital
+                            </p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-4 col-8 text-center mt-5">
+                                <p style="font-size:24px; color:white;">
+                                    ¡Explora, busca y encuentra!
+                                </p>
+                                <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                        </div>
+                                        <input type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-light">
                                     </div>
-                                    <input type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-light">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
-
+            </section>
+        </div>
+    *@
     <!--seccion de dimensiones-->
     <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_8.jpg');">
         <div class="row">
@@ -272,10 +266,9 @@
             </p>
         </div>
         <div class="row d-flex justify-content-center">
-
             <div class="col-md-2 col-12">
                 <img class="img-fluid" src="~/Content/image_estadistica/logo_DimensionAmbiental_descripcion.png" alt="Alternate Text" />
-                <div class="row d-block palabrasClaves" style="border:#9bc4d0">
+                <div class="row d-block palabrasClaves" style="border:#9bc4d0;  overflow:scroll; height:200px; overflow-x:hidden;">
                     <div class="col">
                         <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Incendios</button>
                     </div>
@@ -288,11 +281,29 @@
                     <div class="col">
                         <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
                     </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-2 col-12">
                 <img class="img-fluid" src="~/Content/logo_DimensionSocial_descripcion.png" alt="Alternate Text" />
-                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7">
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7;  overflow:scroll; height:200px; overflow-x:hidden;">
                     <div class="col ">
                         <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Educación</button>
                     </div>
@@ -305,11 +316,29 @@
                     <div class="col ">
                         <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
                     </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-2 col-12">
                 <img class="img-fluid" src="~/Content/logo_DimensionEconomica_descripcion.png" alt="Alternate Text" />
-                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7">
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7; overflow:scroll; height:200px; overflow-x:hidden;">
                     <div class="col ">
                         <button type="button" class="btn btn-sm btn-outline-warning " style="border-radius: 25px; ">Empresas</button>
 
@@ -320,14 +349,32 @@
                     <div class="col">
                         <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
                     </div>
-                    <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">Exportaciones</button>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-2 col-12">
                 <img class="img-fluid" src="~/Content/logo_DimensionInstitucional_descripcion.png" alt="Alternate Text" />
-                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7">
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7;  overflow:scroll; height:200px; overflow-x:hidden;">
                     <div class="col ">
                         <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Municipalidad</button>
                     </div>
@@ -340,6 +387,24 @@
                     <div class="col ">
                         <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
                     </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
+                    </div>
                 </div>
             </div>
             <h3 class="mt-5 mb-5">
@@ -348,196 +413,273 @@
         </div>
     </div>
     <!--seccion de suscripciones-->
-    <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_6.jpg');padding-bottom:40px; background-size:cover;">
-        <div class="row">
-            <div class="col">
-                <h3 style="color:#fff; padding:40px 0px; ">
-                    ¡El acceso más conveniente!
+    <div class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px;">
+                    ¡Imagina toda la información pública
+                    de un país en una sola plataforma!
+                </h3>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_1.png" alt="100%x280" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
+
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px; margin-bottom:10px;">
+                    ¡Y para los que necesitan más información!
+                </h3>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mb-4" style="padding-left:35%; padding-right:35%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
+            </div>
+        </div>
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
+            </div>
+        </div>
+        <div class="row mb-1" style="padding-left:20%; padding-right:20%">
+
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px;">
+                    La suscripción anual Cuenta Profesional fue diseñada especialmente para potenciar las investigaciones, proyectos o planificaciones de quienes requieren una mayor cantidad de información.
+
                 </h3>
             </div>
 
         </div>
-        <!-- Row -->
-        <div class="row d-flex justify-content-center ">
-            <div class="col-md-3 col-10">
-                <div class="row d-block">
-                    <div class="col mb-3">
-                        <div class="card  mb-3" style="border-radius:20px; height:350px">
-                            <div class="card-header text-center" style="border: none;">
-                                Cuenta Básica Sin Pago
-                            </div>
-                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
-                                <ul style="list-style: none;color:#fff;padding-top:35px;font-size:12px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief básicos </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes restringidas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
-
-                                </ul>
-                            </div>
-
-                            <div class="card-footer" style="border: none;">
-                                <div class="row">
-                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
-                                        <span style="color:red; font-size:18px;">$0</span><span><strong>USD</strong></span><br />
-                                        UN SOLO ACCESO
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                            Inscribirse
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col mb-md-3 ">
-                        <div class="card  mb-3" style=" border-radius:20px; height:350px">
-                            <div class="card-header text-center" style="border: none;">
-                                Cuenta Profesional
-                            </div>
-                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
-                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px;; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro  </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
-
-
-                                </ul>
-
-                            </div>
-
-                            <div class="card-footer" style="border: none;">
-                                <div class="row">
-                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
-                                        <span style="color:red; font-size:18px;">$35</span><span><strong> USD</strong> mensual</span><br />
-                                        UN SOLO ACCESO
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                            Adquirir
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="row mb-4" style="padding-left:20%; padding-right:20%">
+            <h3 style="color:#009fcf">
+                INCLUYE
+            </h3>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
             </div>
-            <div class="col-md-3 col-10">
-                <div class="row d-block ">
-                    <div class="col-12 mb-3 text-center">
-                        <p style="color:#fff;">
-                            Desde una cuenta sin pago hasta cuentas mensuales y anuales, personales o para instituciones
-                        </p>
-                    </div>
-                    <div class="col-12 mb-3">
-                        <div class="card  mb-3" style=" border-radius:20px; background-color:transparent;">
-
-                            <div class="card-body text-success mt-5" style="margin-left:10px; color:#fff; margin-right:10px;  ">
-                                <img class="img-fluid" src="~/Content/image_estadistica/texto_venta1.png" alt="Alternate Text" />
-
-                            </div>
-                            <div class="card-footer mt-5" style="border: none; color:#fff;">
-                                <img class="img-fluid" src="~/Content/image_estadistica/texto_venta2.png" alt="Alternate Text" />
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
             </div>
-            <div class="col-md-3 col-10">
-                <div class="row d-block">
-                    <div class="col mb-3 ">
-                        <div class="card  mb-3" style="border-radius:20px;height:350px">
-                            <div class="card-header text-center" style="border: none;">
-                                Cuenta Universidades
-                            </div>
-                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
-                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
+            </div>
+        </div>
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right;">
+                <span style="color:white; font-size:14px;">USD</span>
+                <span style="color:red; font-size:18px;">$35</span>
+                <br />
+                <span style="color:white; font-size:14px;"> mensuales</span>
+            </div>
+            <div class="col-6" style="text-align:left;">
+                <button class="btn btn-danger btn-sm mt-2 text-left" style="border-radius:20px; font-size:14px;">
+                    Adquirir
+                </button>
+            </div>
+        </div>
+    </div>
 
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Toda la universidad o carrera </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado/ilimitado </li>
+    <!--<div class="row">
+        <div class="col">
+            <h3 style="color:#fff; padding:40px 0px; ">
+                ¡El acceso más conveniente!
+            </h3>
+        </div>
 
-                                </ul>
-                            </div>
+    </div>-->
+    <!-- Row -->
+    <!--<div class="row d-flex justify-content-center ">
+        <div class="col-md-3 col-10">
+            <div class="row d-block">
+                <div class="col mb-3">
+                    <div class="card  mb-3" style="border-radius:20px; height:350px">
+                        <div class="card-header text-center" style="border: none;">
+                            Cuenta Básica Sin Pago
+                        </div>
+                        <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                            <ul style="list-style: none;color:#fff;padding-top:35px;font-size:12px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief básicos </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes restringidas </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
 
-                            <div class="card-footer" style="border: none;">
-                                <div class="row">
-                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
-                                        <span style="color:red; font-size:18px;">$500</span><span><strong> USD </strong>mensual</span><br />
-                                        ACCESO LIMITADO/ILIMITADO
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                            Adquirir
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
+                            </ul>
                         </div>
 
-                    </div>
-                    <div class="col mb-3 ">
-                        <div class="card  mb-3" style="border-radius:20px; height:350px">
-                            <div class="card-header text-center" style="border: none;">
-                                Cuenta Empresas e Instituciones
-                            </div>
-                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
-                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:20px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Reportes sectoriales</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Encuestas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Derechos de publicación </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Servicio de investigación </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-footer" style="border: none;">
-                                <div class="row">
-                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
-                                        <span style="color:red; font-size:18px;">$700</span><span><strong> USD</strong> mensual</span><br />
-                                        ACCESO LIMITADO/ILIMITADO
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-danger btn-sm mt-1" style="border-radius:20px; font-size:12px;">
-                                            Adquirir
-                                        </button>
-                                    </div>
+                        <div class="card-footer" style="border: none;">
+                            <div class="row">
+                                <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                    <span style="color:red; font-size:18px;">$0</span><span><strong>USD</strong></span><br />
+                                    UN SOLO ACCESO
                                 </div>
-
+                                <div class="col-4">
+                                    <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                        Inscribirse
+                                    </button>
+                                </div>
                             </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col mb-md-3 ">
+                    <div class="card  mb-3" style=" border-radius:20px; height:350px">
+                        <div class="card-header text-center" style="border: none;">
+                            Cuenta Profesional
+                        </div>
+                        <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                            <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px;; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro  </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> 1 año </li>
+
+
+                            </ul>
+
                         </div>
 
+                        <div class="card-footer" style="border: none;">
+                            <div class="row">
+                                <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                    <span style="color:red; font-size:18px;">$35</span><span><strong> USD</strong> mensual</span><br />
+                                    UN SOLO ACCESO
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                        Adquirir
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <!-- Row -->
+        <div class="col-md-3 col-10">
+            <div class="row d-block ">
+                <div class="col-12 mb-3 text-center">
+                    <p style="color:#fff;">
+                        Desde una cuenta sin pago hasta cuentas mensuales y anuales, personales o para instituciones
+                    </p>
+                </div>
+                <div class="col-12 mb-3">
+                    <div class="card  mb-3" style=" border-radius:20px; background-color:transparent;">
+
+                        <div class="card-body text-success mt-5" style="margin-left:10px; color:#fff; margin-right:10px;  ">
+                            <img class="img-fluid" src="~/Content/image_estadistica/texto_venta1.png" alt="Alternate Text" />
+
+                        </div>
+                        <div class="card-footer mt-5" style="border: none; color:#fff;">
+                            <img class="img-fluid" src="~/Content/image_estadistica/texto_venta2.png" alt="Alternate Text" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-10">
+            <div class="row d-block">
+                <div class="col mb-3 ">
+                    <div class="card  mb-3" style="border-radius:20px;height:350px">
+                        <div class="card-header text-center" style="border: none;">
+                            Cuenta Universidades
+                        </div>
+                        <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                            <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Toda la universidad o carrera </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Acceso limitado/ilimitado </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="card-footer" style="border: none;">
+                            <div class="row">
+                                <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                    <span style="color:red; font-size:18px;">$500</span><span><strong> USD </strong>mensual</span><br />
+                                    ACCESO LIMITADO/ILIMITADO
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                        Adquirir
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col mb-3 ">
+                    <div class="card  mb-3" style="border-radius:20px; height:350px">
+                        <div class="card-header text-center" style="border: none;">
+                            Cuenta Empresas e Instituciones
+                        </div>
+                        <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
+                            <ul style="list-style: none;color:#fff;font-size:12px;padding-top:20px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas básicas </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga de gráficos: Excel, PNG, PDF.</li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Estadísticas pro  </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief pro </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Reportes sectoriales</li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Encuestas </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Derechos de publicación </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Servicio de investigación </li>
+                                <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Fuentes liberadas</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-footer" style="border: none;">
+                            <div class="row">
+                                <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
+                                    <span style="color:red; font-size:18px;">$700</span><span><strong> USD</strong> mensual</span><br />
+                                    ACCESO LIMITADO/ILIMITADO
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-danger btn-sm mt-1" style="border-radius:20px; font-size:12px;">
+                                        Adquirir
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- Row -->
     </div>
     <!--Seccion ultimo-->
     <div class="container-fluid py-5 bg-dark text-center" ;>
@@ -555,22 +697,22 @@
 
         <div class="row justify-content-center">
             <diV class="col-md-1 col-8 ">
-                <img class="img-fluid" src="~/Content/image_estadistica/icono_1.png" />
+                <a href="/info/ResultadoNiveles?id=10&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/icono_1.png" /></a>
             </diV>
             <diV class="col-md-1 col-8 ">
-                <img class="img-fluid" src="~/Content/image_estadistica/icono_2.png" />
+                <a href="/info/ResultadoNiveles?id=13&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/icono_2.png" /></a>
             </diV>
             <diV class="col-md-1 col-8 ">
-                <img class="img-fluid" src="~/Content/image_estadistica/icono_3.png" />
+                <a href="/info/ResultadoNiveles?id=15&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/icono_3.png" /></a>
             </diV>
             <diV class="col-md-1 col-8 ">
-                <img class="img-fluid" src="~/Content/image_estadistica/icono_4.png" />
+                <a href="/info/ResultadoNiveles?id=20&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/icono_4.png" /></a>
             </diV>
             <diV class="col-md-1 col-8 ">
-                <img class="img-fluid" src="~/Content/image_estadistica/icono_5.png" />
+                <a href="/info/ResultadoNiveles?id=22&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/icono_5.png" /></a>
             </diV>
             <diV class="col-md-1 col-8 ">
-                <img class="img-fluid" src="~/Content/image_estadistica/icono_6.png" />
+                <a href="/info/ResultadoNiveles?id=24&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/icono_6.png" /></a>
             </diV>
         </div>
         <div class="row mt-5 text-center  d-flex justify-content-center">
