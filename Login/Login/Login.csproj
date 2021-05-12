@@ -317,6 +317,11 @@
     <Content Include="Content\image_estadistica\texto_venta1.png" />
     <Content Include="Content\image_estadistica\texto_venta2.png" />
     <Content Include="Content\image_estadistica\ticked.png" />
+    <Content Include="Content\image_UsuarioIndex\cuenta_promocional_1.jpg" />
+    <Content Include="Content\image_UsuarioIndex\cuenta_promocional_contacto_1.jpg" />
+    <Content Include="Content\image_UsuarioIndex\imagenpromocion_2.png" />
+    <Content Include="Content\image_UsuarioIndex\logo_informeinteractivo.png" />
+    <Content Include="Content\image_UsuarioIndex\logo_reporte360.png" />
     <Content Include="Content\img\10_portadahomeopatia_1800x540_crop_center.jpg" />
     <Content Include="Content\img\13_portadabeso_1800x540_crop_center.jpg" />
     <Content Include="Content\img\6_portadaDiadeporte_1800x540_crop_center.jpg" />

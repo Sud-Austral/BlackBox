@@ -63,7 +63,7 @@
                             <div class="col-md-3 text-center">
                                 @*Boton para borrar los filtros*@
                                 <label class="btn btn-primary">
-                                    <input style="display:none;" type="checkbox" onClick="LimpiarTodo();// ActivarCasilla(this); " /> Borrar filtro
+                                    <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this), LimpiarTodo();" /> Borrar filtro
                                 </label>
                                 @*<button type="button" class="btn btn-secondary" style="border-radius:10px;">Borrar filtro</button>*@
                                 <script type="text/javascript">
@@ -124,7 +124,7 @@
                                 @*Este script es para hacer el filtro de la tabla*@
                                 <!-- Comienzo filtros por Pais-->
                                 <h5 style="color:black;">TIPO DE INFORMACIÓN</h5>
-                                <div>
+                                @*<div>
                                     @foreach (var item7 in ViewBag.TipoGrafico)
                                     {
                                         <div>
@@ -147,10 +147,10 @@
                                             <label><input type="checkbox" class="name" name="name" value="@item7"> Reportes 360°</label>
                                         </div>
                                     }
-                                </div>
+                                </div>*@
                                 <h4>CATEGORÍA</h4>
                                 <div class="side" style="overflow:scroll; height:300px; overflow:hidden;">
-                                    @foreach (var item in ViewBag.Categoria)
+                                    @foreach (var item in ViewBag.Sector)
                                     {
                                         <div>
                                             <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
@@ -160,7 +160,7 @@
                                 </div>
                                 <h4>SECTOR</h4>
                                 <div class="side" style="overflow:scroll; height:300px; overflow:hidden;">
-                                    @foreach (var item in ViewBag.Sector)
+                                    @foreach (var item in ViewBag.Industria)
                                     {
                                         <div>
                                             <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
