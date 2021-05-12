@@ -41,7 +41,8 @@
             var arreglo = [
                 '#uno',
                 '#dos',
-                '#tres'
+                '#tres',
+                '#cuatro'
            
             ];
             //arreglo.forEach
@@ -647,68 +648,87 @@
                                 </div>
 
                             </div>
-                            <div class="container-fluid " id="dos" style="display:none;">
-                                <div class="row">
-                                    <div class="col">
+                            @*Informes interactivos*@
+                            <div class="container-fluid mt-5" id="dos" style="display:none;">
+                                <div class="row justify-content-center">
+                                    <div class="col-10">
                                         <h3 class="text-dark mb-0">Informes Interactivos</h3>
+                                        <hr style="border:0.5px solid #000000" />
                                     </div>
                                 </div>
-                                <hr style="border:0.5px solid #000000" />
+                                
                                 <div class="row">
                                     <div class="col">
-                                        <P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Informes Interactivos</strong></P>
+                                        @*<P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Informes Interactivos</strong></P>*@
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" >
+
                                     @foreach (var item in ViewBag.Resultado)
 
-                                    {
-                                        <div class="col-12 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">@item.NOMBRE</div>
-                                        <div class="col-12 text-uppercase text-primary font-weight-bold text-xs mb-1" style="color:#000000 !important;">@item.FECHA_CREADO</div>
-                                        <div class="col-12 text-primary font-weight-bold text-md" style="color:#000000 !important;">
+                                     {
+                                        <div class="col-10" >
+                                            <div class="row justify-content-center">
+                                                <div class="col-1">
+                                                    <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_informeinteractivo.png" />
+                                                </div>
+                                                <div class="col-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
+                                                    @item.NOMBRE <br />
+                                                    @item.FECHA_CREADO
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        @*<div class="col-10 text-uppercase text-primary font-weight-bold text-xs mb-1" style="color:#000000 !important;">@item.FECHA_CREADO</div>*@
+                                        @*<div class="col-10 text-primary font-weight-bold text-md" style="color:#000000 !important;">
                                             <p>
                                                 Lorem Ipsum es simplemente el texto de relleno de las imprentas y
                                                 archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
                                                 las industrias desde el año 1500,
                                             </p>
-                                        </div>
+                                        </div>*@
 
 
-                                    }
+                                     }
                                 </div>
 
                             </div>
-                            <div class="container-fluid " id="tres" style="display:none;">
-                                <div class="row">
-                                    <div class="col">
-                                        <h3 class="text-dark mb-0">Repotes 360°</h3>
-                                    </div>
+                            @*Reportes 360*@
+                        <div class="container-fluid mt-5" id="tres" style="display:none;">
+                            <div class="row justify-content-center">
+                                <div class="col-10">
+                                    <h3 class="text-dark mb-0">Repotes 360°</h3>
+                                    <hr style="border:0.5px solid #000000" />
                                 </div>
-                                <hr style="border:0.5px solid #000000" />
-                                <div class="row">
-                                    <div class="col">
-                                        <P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Repotes 360°</strong></P>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    @foreach (var item in ViewBag.Resultado)
-
-                                    {
-                                        <div class="col-12 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">@item.NOMBRE</div>
-                                        <div class="col-12 text-uppercase text-primary font-weight-bold text-xs mb-1" style="color:#000000 !important;">@item.FECHA_CREADO</div>
-                                        <div class="col-12 text-primary font-weight-bold text-md" style="color:#000000 !important;">
-                                            <p>
-                                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-                                                archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
-                                                las industrias desde el año 1500,
-                                            </p>
-                                        </div>
-
-
-                                    }
-                                </div>
-
                             </div>
+                 
+                            <div class="row">
+                                <div class="col">
+                                    @*<P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Repotes 360°</strong></P>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                @foreach (var item in ViewBag.Resultado)
+
+                                {
+                                    <div class="col-10">
+                                        <div class="row justify-content-center">
+                                            <div class="col-1">
+                                                <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_reporte360.png" />
+                                            </div>
+                                            <div class="col-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
+                                                @item.NOMBRE <br />
+                                                @item.FECHA_CREADO
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                 }
+                            </div>
+
+                        </div>
                             <div class="container-fluid " style="display:none;">
                                 <div class="row">
                                     <div class="col">
@@ -730,7 +750,7 @@
 
                             </div>
                             @*vista bienvenido a cuenta usuario index *@
-                            <div class="container-fluid mt-5">
+                            <div class="container-fluid mt-5"  >
                                 <div class="row d-flex justify-content-center mb-3">
                                     <div class="col-10 ">
                                         <h5 class="text-dark mb-0">Bienvenido a tu cuenta, @ViewBag.User</h5>
@@ -749,12 +769,12 @@
                                         <p>Operatividad</p>
                                         <hr style="border:0.5px solid #000000" />
                                         <p>
-                                            Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                                            Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                                            cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
-                                            galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
-                                            No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos
-                                            electrónicos, quedando esencialmente igual al original.
+                                            Esta cuenta será el medio por el cual podrás ingresar a los productos adquiridos.<br />
+                                            En el menú de la izquierda accedes a MI CUENTA donde encontrarás todos los datos de usuario: la cuenta, datos personales, facturas y características de los productos adquiridos.<br />
+                                            Encontrarás un buscador secundario que indexa la información referida únicamente a los productos que hayas comprado. Para una búsqueda más extensa deberás usar el buscador de la parte superior.<br />
+                                            En el botón PRODUCTOS se encuentran los productos adquiridos, ya sean los Informes Interactivos, Reportes 360º y Datas.
+                                            En el botón NAVEGA EN MI SUSCRIPCIÓN podrás conocer todos los TEMAS de la COLECCIÓN adquirida.
+
                                         </p>
                                     </div>
                                 </div>
@@ -763,7 +783,9 @@
                             </div>
                             <div class="row justify-content-center mt-5">
                                 <div class="col-10">
-                                    <p>Consultas o problemas con tu cuenta</p>
+                                    <p>
+                                        Consultas o problemas con tu Cuenta
+                                    </p>
                                     <hr style="border:0.5px solid #000000" />
                                 </div>
                             </div>
@@ -775,30 +797,37 @@
                                         </div>
                                         <div class="col-10">
                                             <p>
-                                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                                                cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
-                                                galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
-                                                No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos
-                                                electrónicos, quedando esencialmente igual al original.
+                                                En Data Intelligence hacemos todo lo posible para que la experiencia de uso de la información sea lo más grata posible. Puedes contactarnos y hablar con un ejecutivo, un experto o si lo prefieres comunicarte directamente en estas direcciones oficiales.<br />
+                                                Estaremos encantados de solucionar cualquier inconveniente o aclarar toda duda:
+
                                             </p>
                                             <div class="row justify-content-between">
                                                 <div class="col-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                    <p>
-                                                        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                                                        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto
+                                                    <p class="mt-2">
+                                                        GENERAL <br />   
+                                                        contacto@dataintelligence-group.com <br />
+                                                        +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
+
                                                     </p>
                                                 </div>
                                                 <div class="col-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                    <p>
-                                                        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                                                        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto
+                                                    <p class="mt-1">
+                                                        SOPORTE <br />
+                                                        soporte@dataintelligence-group.com <br />
+                                                        +56 9 9438 5412  de 9:00 a 18:00 hrs (GMT-3) <br />
+                                                        +56 9 9438 5412  06:00 a 00:00 hrs (GMT-3)
+
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="row mt-3">
                                                 <div class="col-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                    <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>
+                                                    <p class="mt-2">
+                                                        VENTAS CORPORATIVAS <br />
+                                                        ventas@dataintelligence-group.com <br />
+                                                        +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
+
+                                                    </p>
                                                 </div>
                                                 
                                             </div>
