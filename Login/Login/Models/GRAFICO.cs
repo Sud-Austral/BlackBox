@@ -103,7 +103,8 @@ namespace Login.Models
                 string asciiStr = System.Text.Encoding.UTF8.GetString(tempBytes);
                 salida = asciiStr.ToLower();
                 salida = "https://github.com/Sud-Austral/MPG/raw/main/Image/" + salida + id.ToString() + ".png";
-                return salida.Replace(" ", "_");
+                /* return salida.Replace(" ", "_");*/
+                return this.auxiliar;
             }
 
             set { fecha_publicacion = "Sin Imagen"; }
