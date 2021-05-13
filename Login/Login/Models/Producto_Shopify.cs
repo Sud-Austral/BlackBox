@@ -22,6 +22,8 @@ namespace Login.Models
 
         public string DESCRIPCION { get; set; }
 
+        public int DIAS_DESDE_COMPRA { get; set; }
+
         public Producto_Shopify(JToken json, string comprobante, JToken ORDEN)
         {
             
@@ -60,8 +62,8 @@ namespace Login.Models
 
                 DESCRIPCION = "Sin descripcion";
             }
-            
 
+            DIAS_DESDE_COMPRA = 0; //Total de dias desde que se compro (FECHA_CREADO2) hasta hoy Datetime.Now()
 
         }
 
