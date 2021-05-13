@@ -39,11 +39,25 @@
             <div class="row justify-content-center" style="margin-top:190px !important">
                 <div class="col-md-4 col-8 text-center mt-5">
                     <h3 class="mb-3 text-white font-weight-medium ">¡Explora, busca y encuentra!</h3>
-
-                    <form action="~/info/PaginaBusqueda" method="get">
-                        <input class="typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:10px;">
+                    <form action="~/info/PaginaBusqueda" method="get" target="_blank">
+                        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button id="button-addon2" type="submit" class="btn btn-link text-dark bg-light rounded-pill"><i class="fa fa-search"></i></button>
+                                </div>
+                                <input class="typeahead form-control rounded-pill border-0 bg-light" type="text" id="id" name="id" placeholder="Busqueda de palabras claves">
+                            </div>
+                        </div>
                     </form>
                 </div>
+                @*<div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                        </div>
+                        <input type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-light">
+                    </div>
+                </div>*@
             </div>
         </div>
 
@@ -67,7 +81,7 @@
                                     <div class="row">
 
                                         <div class="col-md-4 mb-3">
-                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[0].id">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[0].id" target="_blank">
                                                 <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[0].titulo</div>
                                                 <div class="card" style="border:none;">
                                                     <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[0]._url_Image">
@@ -80,6 +94,7 @@
                                             </a>
                                         </div>
                                         <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[1].id" target="_blank">
                                             <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff;">
                                                 @ViewBag.Graficos[1].titulo
                                             </div>
@@ -91,59 +106,22 @@
 
                                                 </div>
                                             </div>
+                                            </a>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">
-                                                @ViewBag.Graficos[2].titulo
-                                            </div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[2].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[2].CATEGORIA.descripcion</p>
-
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[2].id" target="_blank">
+                                                <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">
+                                                    @ViewBag.Graficos[2].titulo
                                                 </div>
-                                            </div>
-                                        </div>
+                                                <div class="card">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[2].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[2].CATEGORIA.descripcion</p>
 
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff;">@ViewBag.Graficos[3].titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[3].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[3].CATEGORIA.descripcion</p>
-
+                                                    </div>
                                                 </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[4].titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[4].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[4].CATEGORIA.descripcion</p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[5].titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[5].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[5].CATEGORIA.descripcion</p>
-
-                                                </div>
-                                            </div>
+                                                </a>
                                         </div>
 
                                     </div>
@@ -152,37 +130,89 @@
                                     <div class="row">
 
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[6].titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[6].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[6].CATEGORIA.descripcion</p>
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[3].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff;">@ViewBag.Graficos[3].titulo</div>
+                                                <div class="card">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[3].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[3].CATEGORIA.descripcion</p>
+
+                                                    </div>
 
                                                 </div>
-
-                                            </div>
+                                            </a>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[7].titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[7].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[7].CATEGORIA.descripcion</p>
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[4].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[4].titulo</div>
+                                                <div class="card">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[4].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[4].CATEGORIA.descripcion</p>
 
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[8].titulo</div>
-                                            <div class="card" style="border-radius:10px;">
-                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="@ViewBag.Graficos[8]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[8].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[8].CATEGORIA.descripcion</p>
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[5].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[5].titulo</div>
+                                                <div class="card">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[5].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[5].CATEGORIA.descripcion</p>
+
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[6].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[6].titulo</div>
+                                                <div class="card">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[6].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[6].CATEGORIA.descripcion</p>
+
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[7].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[7].titulo</div>
+                                                <div class="card">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[7].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[7].CATEGORIA.descripcion</p>
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[8].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[8].titulo</div>
+                                                <div class="card" style="border-radius:10px;">
+                                                    <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="@ViewBag.Graficos[8]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[8].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[8].CATEGORIA.descripcion</p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -190,37 +220,43 @@
                                     <div class="row">
 
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[9].titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[9].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[9].CATEGORIA.descripcion</p>
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[9].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[9].titulo</div>
+                                                <div class="card">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[9].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[9].CATEGORIA.descripcion</p>
+
+                                                    </div>
 
                                                 </div>
-
-                                            </div>
+                                            </a>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[10].titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[10].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[10].CATEGORIA.descripcion</p>
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[10].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[10].titulo</div>
+                                                <div class="card">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[10].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[10].CATEGORIA.descripcion</p>
 
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[11].titulo</div>
-                                            <div class="card" style="border-radius:10px;">
-                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="@ViewBag.Graficos[11]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[11].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[11].CATEGORIA.descripcion</p>
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[11].id" target="_blank">
+                                                <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[11].titulo</div>
+                                                <div class="card" style="border-radius:10px;">
+                                                    <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="@ViewBag.Graficos[11]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[11].CATEGORIA.nombre</h4>
+                                                        <p class="card-text">@ViewBag.Graficos[11].CATEGORIA.descripcion</p>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -313,13 +349,13 @@
                         <a href="/info/PaginaBusqueda?id=incendio" class="btn btn-sm btn-outline-success" style="border-radius: 25px;" target="_blank">Incendios</a>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Agua</button>
+                        <a href="/info/PaginaBusqueda?id=agua" class="btn btn-sm btn-outline-success" style="border-radius: 25px;" target="_blank">Agua</a>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Climático</button>
+                        <a href="/info/PaginaBusqueda?id=climatico" class="btn btn-sm btn-outline-success" style="border-radius: 25px;" target="_blank">Climático</a>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
+                        <a href="/info/PaginaBusqueda?id=carbono" class="btn btn-sm btn-outline-success" style="border-radius: 25px;" target="_blank">Carbono</a>
                     </div>
                     <div class="col">
                         <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Carbono</button>
@@ -345,16 +381,16 @@
                 <img class="img-fluid" src="~/Content/logo_DimensionSocial_descripcion.png" alt="Alternate Text" />
                 <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7;  overflow:scroll; height:200px; overflow-x:hidden;">
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Educación</button>
+                        <a href="/info/PaginaBusqueda?id=educacion" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;" target="_blank">Educación</a>
                     </div>
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Covid-19</button>
+                        <a href="/info/PaginaBusqueda?id=covid-19" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;" target="_blank">Covid-19</a>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Pueblos Indígenas</button>
+                        <a href="/info/PaginaBusqueda?id=pueblosIndigenas" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;" target="_blank">Pueblos Indígenas</a>
                     </div>
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
+                        <a href="/info/PaginaBusqueda?id=femicidios" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;" target="_blank">Femicidios</a>
                     </div>
                     <div class="col ">
                         <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px;">Femicidios</button>
@@ -380,14 +416,14 @@
                 <img class="img-fluid" src="~/Content/logo_DimensionEconomica_descripcion.png" alt="Alternate Text" />
                 <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7; overflow:scroll; height:200px; overflow-x:hidden;">
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-warning " style="border-radius: 25px; ">Empresas</button>
+                        <a href="/info/PaginaBusqueda?id=empresas" class="btn btn-sm btn-outline-warning " style="border-radius: 25px;" target="_blank">Empresas</a>
 
                     </div>
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">Empleo</button>
+                        <a href="/info/PaginaBusqueda?id=empleo" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;" target="_blank">Empleo</a>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
+                        <a href="/info/PaginaBusqueda?id=pib" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;" target="_blank">PIB</a>
                     </div>
                     <div class="col">
                         <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px;">PIB</button>
@@ -416,16 +452,16 @@
                 <img class="img-fluid" src="~/Content/logo_DimensionInstitucional_descripcion.png" alt="Alternate Text" />
                 <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7;  overflow:scroll; height:200px; overflow-x:hidden;">
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Municipalidad</button>
+                        <a href="info/PaginaBusqueda?id=municipalidad" class="btn btn-sm btn-outline-info" style="border-radius: 25px;" target="_blank">Municipalidad</a>
                     </div>
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Alcaldes</button>
+                        <a href="info/PaginaBusqueda?id=alcaldes" class="btn btn-sm btn-outline-info" style="border-radius: 25px;" target="_blank">Alcaldes</a>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Gestión</button>
+                        <a href="info/PaginaBusqueda?id=gestion" class="btn btn-sm btn-outline-info" style="border-radius: 25px;" target="_blank">Gestión</a>
                     </div>
                     <div class="col ">
-                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
+                        <a href="info/PaginaBusqueda?id=global" class="btn btn-sm btn-outline-info" style="border-radius: 25px;" target="_blank">Global</a>
                     </div>
                     <div class="col ">
                         <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px;">Global</button>
