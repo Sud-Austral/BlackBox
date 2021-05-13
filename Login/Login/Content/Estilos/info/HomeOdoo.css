@@ -1,6 +1,6 @@
 ﻿/*-----------------------BODY--------------------------*/
 
-/*@font-face {
+@font-face {
     font-family: 'MYRIADPRO-REGULAR';
     src: url('Font/MYRIADPRO-REGULAR.OTF') format('opentype');
 }
@@ -8,11 +8,11 @@
 @font-face {
     font-family: 'MYRIADPRO-REGULAR';
     src: url('img/Font/MYRIADPRO-REGULAR.OTF') format('opentype');
-}*/
+}
+    
 
 body {
-    /*font-family: 'MYRIADPRO-REGULAR';*/
-    border: none !important;
+    font-family: 'Open Sans',sans-serif
 }
 
 
@@ -50,7 +50,6 @@ body {
         font-size: 14px;
         border-radius: 25px;
     }
-
 /*titulo seccion palabras claves*/
 #subT h3 {
     font-family: 'MYRIADPRO-REGULAR';
@@ -125,6 +124,9 @@ h5 {
         font-size: 25px;
     }
 }
+
+/* ========================================================================*/
+
 /*botones seccion palabras claves*/
 .bClaves .btn-sm {
     padding: 2px 35px;
@@ -132,97 +134,7 @@ h5 {
     border-radius: 25px;
     margin: 21px 0 0 0;
 }
-
-/*----------------------------------- SECCIÓN BOTÓNES DIMESIONES -------------------------*/
-
-.palabrasClaves .btn-sm {
-    width: 140px;
-    padding: 2px 25px;
-    font-size: 10px;
-    border-radius: 25px;
-    margin: 21px 0 0 0;
-}
-
-.btn-outline-warning {
-    border-color: #c97c5a !important;
-    color: #c97c5a;
-}
-
-    .btn-outline-warning:hover {
-        background: #c97c5a;
-        color: #fff !important;
-    }
-
-.btn-outline-danger {
-    border-color: #832d43 !important;
-    color: #832d43
-}
-
-    .btn-outline-danger:hover {
-        background: #832d43;
-        color: #fff !important;
-    }
-
-.btn-outline-dark:hover {
-    border-color: #e30713 !important;
-    background: #201f1d;
-    color: #fff !important;
-}
-
-/*------------------------------SCROLLS SECCIÓN DIMENSIONES----------------------------*/
-#scroll1::-webkit-scrollbar {
-    width: 8px;
-}
-
-/* Estilos barra (thumb) de scroll */
-#scroll1::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-
-    #scroll1::-webkit-scrollbar-thumb:active {
-        background-color: #999999;
-    }
-
-    #scroll1::-webkit-scrollbar-thumb:hover {
-        background: #b3b3b3;
-        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
-    }
-
-/* Estilos track de scroll */
-#scroll1::-webkit-scrollbar-track {
-    background: #e1e1e1;
-    border-radius: 4px;
-}
-
-    #scroll1::-webkit-scrollbar-track:hover,
-    #scroll1::-webkit-scrollbar-track:active {
-        background: #d4d4d4;
-    }
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-        text-decoration: none;
-    }
-
-/*SECCIÓN CARRUSEL*/
-
+/*************************carrusel pagina HomeOdoo**********************************************************/
 @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
         display: none;
@@ -257,6 +169,99 @@ h5 {
 .carousel-inner .carousel-item-left {
     transform: translateX(0);
 }
-.card-text {
-    font-weight:normal !important;
+
+.palabrasClaves .btn-sm {
+    width: 140px;
+    padding: 2px 25px;
+    font-size: 10px;
+    border-radius: 25px;
+    margin: 21px 0 0 0;
 }
+
+.btn-outline-warning {
+    border-color: #c97c5a !important;
+    color: #c97c5a;
+}
+
+    .btn-outline-warning:hover {
+        background: #c97c5a;
+        color: #fff !important;
+    }
+
+.btn-outline-danger {
+    border-color: #832d43 !important;
+    color: #832d43
+}
+
+    .btn-outline-danger:hover {
+        background: #832d43;
+        color: #fff !important;
+    }
+
+/***********************estilos submenus megamenu principal*******************************/
+
+#scroll1::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+#scroll1::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+    #scroll1::-webkit-scrollbar-thumb:active {
+        background-color: #999999;
+    }
+
+    #scroll1::-webkit-scrollbar-thumb:hover {
+        background: #b3b3b3;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+/* Estilos track de scroll */
+#scroll1::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+
+    #scroll1::-webkit-scrollbar-track:hover,
+    #scroll1::-webkit-scrollbar-track:active {
+        background: #d4d4d4;
+    }
+
+
+/*Botones de submenu */
+.btn-outline-dark:hover {
+    border-color: #e30713 !important;
+    background: #201f1d;
+    color: #fff !important;
+}
+
+/*scroll bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        text-decoration: none;
+    }
+    .link-card {
+        text-decoration:none !important;
+        color:black !important;
+    }

@@ -22,8 +22,8 @@
     @*bootstrap*@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     @*Hoja de estilos de esta vista solamente*@
-    <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
-    @*<link href="~/Content/Estilos/info/HomeOdoo.css" rel="stylesheet" />*@
+    @*<link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />*@
+    <link href="~/Content/Estilos/info/HomeOdoo.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -67,14 +67,17 @@
                                     <div class="row">
 
                                         <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[0].titulo</div>
-                                            <div class="card" style="border:none;">
-                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[0]._url_Image">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">@ViewBag.Graficos[0].CATEGORIA.nombre</h4>
-                                                    <p class="card-text">@ViewBag.Graficos[0].CATEGORIA.descripcion</p>
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[0].id">
+                                                <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff;">@ViewBag.Graficos[0].titulo</div>
+                                                <div class="card" style="border:none;">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[0]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">@ViewBag.Graficos[0].CATEGORIA.nombre</h4>
+
+                                                        <p class="card-text">@ViewBag.Graficos[0].CATEGORIA.descripcion</p>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff;">
@@ -307,7 +310,7 @@
                 <img class="img-fluid" src="~/Content/image_estadistica/logo_DimensionAmbiental_descripcion.png" alt="Alternate Text" />
                 <div class="row d-block palabrasClaves" style="border:#9bc4d0;  overflow:scroll; height:200px; overflow-x:hidden;">
                     <div class="col">
-                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Incendios</button>
+                        <a href="/info/PaginaBusqueda?id=incendio" class="btn btn-sm btn-outline-success" style="border-radius: 25px;" target="_blank">Incendios</a>
                     </div>
                     <div class="col">
                         <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px;">Agua</button>
