@@ -2671,6 +2671,10 @@
     <Content Include="Views\Usuario\GraficoUsuario.cshtml" />
     <Content Include="Views\Usuario\InformesUsuario.cshtml" />
     <Content Include="Views\Usuario\ReportesUsuario.cshtml" />
+    <Content Include="Views\Usuario\Facturados.cshtml" />
+    <Content Include="Views\Usuario\PerfilUsuario.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectProducto.cshtml" />
+    <Content Include="Views\Usuario\resultados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

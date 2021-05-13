@@ -341,5 +341,89 @@ namespace Login.Controllers
 
             return PartialView();
         }
+        public PartialViewResult Facturados()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PerfilUsuario()
+        {
+            ViewBag.User = User.Identity.GetUserName();
+            return PartialView();
+        }
+        public PartialViewResult UsuarioSelectProducto()
+        {
+            //Lista de productos de Shopify
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            //Nombre de Usuario
+            ViewBag.User = User.Identity.GetUserName();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+
+                }
+            }
+            //Objeto que separa Productos y Suscripciones
+            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+            //Productos
+            productos = shopifyYSuscripciones.producto_Shopifies;
+            //ViewBag.url = (string)Session["url"];
+            Session["Productos"] = productos;
+            //Suscripciones
+            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            ViewBag.Resultado = productos;
+            return PartialView();
+        }
+
+        public ActionResult resultados(int id= 220106007)
+        {
+            //Lista de productos de Shopify
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            //Nombre de Usuario
+            ViewBag.User = User.Identity.GetUserName();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+
+                }
+            }
+            //Objeto que separa Productos y Suscripciones
+            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+            //Productos
+            productos = shopifyYSuscripciones.producto_Shopifies;
+            //ViewBag.url = (string)Session["url"];
+            Session["Productos"] = productos;
+            //Suscripciones
+            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            ViewBag.Resultado = productos;
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
+            //Menu que esta suscrito el usuario
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
+            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id == 10).ToList();
+            var url = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id).First();
+            ViewBag.Grafico = url;
+            return View();
+        }
     }
 }
