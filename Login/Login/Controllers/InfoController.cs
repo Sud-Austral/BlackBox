@@ -100,82 +100,56 @@ namespace AplicacionBlanco.Controllers
         }
         public ActionResult PaginaBusqueda(string id = "1")
         {
-            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id < 3).ToList();//Liberados/Gratis
-            ViewBag.Resultado2= dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id == 3).ToList();//Informes
-            ViewBag.Resultado3 = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id == 4).ToList();//Reportes
-
+            var NEW_GRAFICOS = dbGrafico.GRAFICO;
+            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id < 3).ToList();//Liberados/Gratis
+            ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id == 3).ToList();//Informes
+            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.nombre.Contains(id) && x.TIPO_GRAFICO_id == 4).ToList();//Reportes
+            //Listas de Filtros
             List<string> Paises = new List<string>();
-            foreach (var item in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
+            List<string> TipoGrafico = new List<string>();
+            List<string> Temporalidad = new List<string>();
+            List<string> Producto = new List<string>();
+            List<string> Industria = new List<string>();
+            List<string> Sector = new List<string>();
+            List<string> Categoria = new List<string>();
+            
+            foreach (var item in NEW_GRAFICOS.Where(x => x.nombre.Contains(id)).ToList())
             {
                 if (!Paises.Contains(item.TERRITORIO.nombre))
                 {
                     Paises.Add(item.TERRITORIO.nombre);
                 }
-            }
-            ViewBag.Paises = Paises;
-
-            List<string> TipoGrafico = new List<string>();
-            foreach (var item7 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
-            {
-                if (!TipoGrafico.Contains(item7.TIPO_GRAFICO.nombre))
+                if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
                 {
-                    TipoGrafico.Add(item7.TIPO_GRAFICO.nombre);
+                    TipoGrafico.Add(item.TIPO_GRAFICO.nombre);
+                }
+                if (!Temporalidad.Contains(item.TEMPORALIDAD.nombre))
+                {
+                    Temporalidad.Add(item.TEMPORALIDAD.nombre);
+                }
+                if (!Producto.Contains(item.CATEGORIA.PRODUCTO.nombre))
+                {
+                    Producto.Add(item.CATEGORIA.PRODUCTO.nombre);
+                }
+                if (!Industria.Contains(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
+                {
+                    Industria.Add(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
+                }
+                if (!Sector.Contains(item.CATEGORIA.PRODUCTO.SECTOR.nombre))
+                {
+                    Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
+                }
+                if (!Categoria.Contains(item.CATEGORIA.nombre))
+                {
+                    Categoria.Add(item.CATEGORIA.nombre);
                 }
             }
+            ViewBag.Paises = Paises;           
             ViewBag.TipoGrafico = TipoGrafico;
-
-          
-
-            List<string> Temporalidad = new List<string>();
-            foreach (var item2 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
-            {
-                if (!Temporalidad.Contains(item2.TEMPORALIDAD.nombre))
-                {
-                    Temporalidad.Add(item2.TEMPORALIDAD.nombre);
-                }
-            }
             ViewBag.Temporalidad = Temporalidad;
-
-            List<string> Producto = new List<string>();
-            foreach (var item3 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
-            {
-                if (!Producto.Contains(item3.CATEGORIA.PRODUCTO.nombre))
-                {
-                    Producto.Add(item3.CATEGORIA.PRODUCTO.nombre);
-                }
-            }
             ViewBag.Producto = Producto;
-
-            List<string> Industria = new List<string>();
-            foreach (var item5 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
-            {
-                if (!Industria.Contains(item5.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
-                {
-                    Industria.Add(item5.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
-                }
-            }
-            ViewBag.Industria = Industria;
-
-
-            List<string> Sector = new List<string>();
-            foreach (var item4 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
-            {
-                if (!Sector.Contains(item4.CATEGORIA.PRODUCTO.SECTOR.nombre))
-                {
-                    Sector.Add(item4.CATEGORIA.PRODUCTO.SECTOR.nombre);
-                }
-            }
+            ViewBag.Industria = Industria;            
             ViewBag.Sector = Sector;
-
-
-            List<string> Categoria = new List<string>();
-            foreach (var item6 in dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList())
-            {
-                if (!Categoria.Contains(item6.CATEGORIA.nombre))
-                {
-                    Categoria.Add(item6.CATEGORIA.nombre);
-                }
-            }
             ViewBag.Categoria = Categoria;
             return View();
         }
