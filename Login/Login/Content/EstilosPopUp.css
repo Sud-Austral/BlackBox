@@ -1,4 +1,4 @@
-﻿
+﻿/*
 @font-face {
     font-family: 'SourceSansPro-Bold';
     src: url('../Fonts/source-sans-pro/SourceSansPro-Bold.otf') format('opentype');
@@ -15,6 +15,7 @@
     font-family: 'MYRIADPRO-REGULAR';
     src: url('Font/MYRIADPRO-REGULAR.OTF') format('opentype');
 }
+    */
 body {
     overflow-x: hidden;
     font-size: 16px;

@@ -296,6 +296,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\EstilosNuevoMenuLateral.css" />
     <Content Include="Content\EstilosPopUp.css" />
+    <Content Include="Content\Estilos\info\HomeOdoo.css" />
     <Content Include="Content\image_estadistica\icono_1.1.png" />
     <Content Include="Content\image_estadistica\icono_1.png" />
     <Content Include="Content\image_estadistica\icono_2.1.png" />
