@@ -185,6 +185,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Bienvenido.cs" />
     <Compile Include="Controllers\ClentController.cs" />
     <Compile Include="Controllers\Date.cs" />
     <Compile Include="Controllers\GraficoController.cs" />
@@ -297,6 +298,19 @@
     <Content Include="Content\EstilosNuevoMenuLateral.css" />
     <Content Include="Content\EstilosPopUp.css" />
     <Content Include="Content\Estilos\info\HomeOdoo.css" />
+    <Content Include="Content\image_estadistica\IconosMenu\10_sectores_iconos_finanzas.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\11_sectores_iconos_comunicacion.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\12_sectores_iconos_recursoquimico.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\13_sectores_iconos_empleo.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\1_sectores_iconos_agropecuario.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\2_sectores_iconos_construccion.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\3_sectores_iconos_medioambiente.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\4_sectores_iconos_salud.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\5_sectores_iconos_mediosocial.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\6_sectores_iconos_turismo.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\7_sectores_iconos_consumo.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\8_sectores_iconos_negocio.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\9_sectores_iconos_tiempolibre.png" />
     <Content Include="Content\image_estadistica\icono_1.1.png" />
     <Content Include="Content\image_estadistica\icono_1.png" />
     <Content Include="Content\image_estadistica\icono_2.1.png" />
@@ -318,6 +332,11 @@
     <Content Include="Content\image_estadistica\texto_venta1.png" />
     <Content Include="Content\image_estadistica\texto_venta2.png" />
     <Content Include="Content\image_estadistica\ticked.png" />
+    <Content Include="Content\image_UsuarioIndex\cuenta_promocional_1.jpg" />
+    <Content Include="Content\image_UsuarioIndex\cuenta_promocional_contacto_1.jpg" />
+    <Content Include="Content\image_UsuarioIndex\imagenpromocion_2.png" />
+    <Content Include="Content\image_UsuarioIndex\logo_informeinteractivo.png" />
+    <Content Include="Content\image_UsuarioIndex\logo_reporte360.png" />
     <Content Include="Content\img\10_portadahomeopatia_1800x540_crop_center.jpg" />
     <Content Include="Content\img\13_portadabeso_1800x540_crop_center.jpg" />
     <Content Include="Content\img\6_portadaDiadeporte_1800x540_crop_center.jpg" />
@@ -2649,6 +2668,14 @@
     <Content Include="Views\Usuario\Usuaria2.cshtml" />
     <Content Include="Views\Usuario\Dashboard.cshtml" />
     <Content Include="Views\Home\Mapa.cshtml" />
+    <Content Include="Views\Usuario\Bienvenido.cshtml" />
+    <Content Include="Views\Usuario\GraficoUsuario.cshtml" />
+    <Content Include="Views\Usuario\InformesUsuario.cshtml" />
+    <Content Include="Views\Usuario\ReportesUsuario.cshtml" />
+    <Content Include="Views\Usuario\Facturados.cshtml" />
+    <Content Include="Views\Usuario\PerfilUsuario.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectProducto.cshtml" />
+    <Content Include="Views\Usuario\resultados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -420,25 +420,8 @@
                                         utiliza el buscador secundario de la izquierda
                                     </p>
                                 </div>
-                            </div>
-                            @*Productos Datas*@
-                            <div class="container-fluid  " id="dos" style="display:none;">
-                                @*Productos Datas*@
-                                @{ Html.RenderAction("GraficoUsuario", "Usuario");}
-                            </div>
-                            @*Informes interactivos*@
-                            <div class="container-fluid offset-1 mt-5" id="tres" style="display:none;">
-                                @{ Html.RenderAction("InformesUsuario", "Usuario");}
-
-                            </div>
-                            @*Reportes 360*@
-                            <div class="container-fluid offset-1 mt-5" id="cuatro" style="display:none;">
-                                @{ Html.RenderAction("ReportesUsuario", "Usuario");}
-
-                            </div>
-
-                            @**************************************************************@
-                            <div class="container-fluid " id="ocho" style="display:none;">
+                            </div>       
+                            <div class="container-fluid">
                                 <div class="row">
                                     <div class="col">
                                         <h3 class="text-dark mb-0">test</h3>
@@ -448,98 +431,78 @@
                                 <hr style="border:0.5px solid #000000" />
                                 <div class="row">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item" src="https://dashboardfiltrado.azurewebsites.net/AutoDash/Index/59/0 "></iframe>
+                                        <iframe class="embed-responsive-item" src="@ViewBag.Grafico.url"></iframe>
                                     </div>
                                     <div id="image-box">
                                         <div id="myframe" class="embed-responsive">
                                         </div>
                                     </div>
                                 </div>
-
-
-                            </div>
-
-                            @{ Html.RenderAction("Bienvenido", "Usuario");}
-
-                            <div class="container-fluid offset-1 mt-5" id="cinco" style="display:none;">
-
-                                @{ Html.RenderAction("Facturados", "Usuario");}
-
-                            </div>
-                            <div class="container-fluid offset-1 mt-5" id="seis" style="display:none;">
-
-                                @{ Html.RenderAction("PerfilUsuario", "Usuario");}
-
-                            </div>
-                            <div class="container-fluid offset-1 mt-5" id="siete" style="display:none;">
-                                @{ Html.RenderAction("UsuarioSelectProducto", "Usuario");}
-
-                            </div>
-                            @*Seccion atencion al cliente*@
-                            <div class="container-fluid offset-1">
-                                <div class="row  mt-5">
-                                    <div class="col-8">
-                                        <p>Consultas o problemas con tu Cuenta</p>
-                                        <hr style="border:0.5px solid #000000" />
+                                @*Seccion atencion al cliente*@
+                                <div class="container-fluid offset-1">
+                                    <div class="row  mt-5">
+                                        <div class="col-8">
+                                            <p>Consultas o problemas con tu Cuenta</p>
+                                            <hr style="border:0.5px solid #000000" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row mt-3 mb-5">
-                                    <div class="col-8">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img class="img-fluid" src="~/Content/image_UsuarioIndex/cuenta_promocional_contacto_1.jpg" />
-                                            </div>
-                                            <div class="col-10">
-                                                <p>
-                                                    En Data Intelligence hacemos todo lo posible para que la experiencia de uso de la información
-                                                    sea lo más grata posible. Puedes contactarnos y hablar con un ejecutivo, un experto o si lo prefieres
-                                                    comunicarte directamente en estas direcciones oficiales.<br />
-                                                    Estaremos encantados de solucionar cualquier inconveniente o aclarar toda duda:
+                                    <div class="row mt-3 mb-5">
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <img class="img-fluid" src="~/Content/image_UsuarioIndex/cuenta_promocional_contacto_1.jpg" />
+                                                </div>
+                                                <div class="col-10">
+                                                    <p>
+                                                        En Data Intelligence hacemos todo lo posible para que la experiencia de uso de la información
+                                                        sea lo más grata posible. Puedes contactarnos y hablar con un ejecutivo, un experto o si lo prefieres
+                                                        comunicarte directamente en estas direcciones oficiales.<br />
+                                                        Estaremos encantados de solucionar cualquier inconveniente o aclarar toda duda:
 
-                                                </p>
-                                                <div class="row justify-content-between">
-                                                    <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                        <p class="mt-2" style="font-size:14px;">
-                                                            GENERAL <br />
-                                                            contacto@dataintelligence-group.com <br />
-                                                            +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
+                                                    </p>
+                                                    <div class="row justify-content-between">
+                                                        <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
+                                                            <p class="mt-2" style="font-size:14px;">
+                                                                GENERAL <br />
+                                                                contacto@dataintelligence-group.com <br />
+                                                                +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
 
-                                                        </p>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
+                                                            <p class="mt-1" style="font-size:14px;">
+                                                                SOPORTE <br />
+                                                                soporte@dataintelligence-group.com <br />
+                                                                +56 9 9438 5412  de 9:00 a 18:00 hrs (GMT-3) <br />
+                                                                +56 9 9438 5412  06:00 a 00:00 hrs (GMT-3)
+
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                        <p class="mt-1" style="font-size:14px;">
-                                                            SOPORTE <br />
-                                                            soporte@dataintelligence-group.com <br />
-                                                            +56 9 9438 5412  de 9:00 a 18:00 hrs (GMT-3) <br />
-                                                            +56 9 9438 5412  06:00 a 00:00 hrs (GMT-3)
+                                                    <div class="row mt-3">
+                                                        <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
+                                                            <p class="mt-2" style="font-size:14px;">
+                                                                VENTAS CORPORATIVAS <br />
+                                                                ventas@dataintelligence-group.com <br />
+                                                                +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
 
-                                                        </p>
+                                                            </p>
+                                                        </div>
+
                                                     </div>
                                                 </div>
-                                                <div class="row mt-3">
-                                                    <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                        <p class="mt-2" style="font-size:14px;">
-                                                            VENTAS CORPORATIVAS <br />
-                                                            ventas@dataintelligence-group.com <br />
-                                                            +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
 
-                                                        </p>
-                                                    </div>
-
-                                                </div>
                                             </div>
 
                                         </div>
 
                                     </div>
-
                                 </div>
+
+
                             </div>
 
-
                         </div>
-
-                    </div>
                 </div>
                 <!-- /.container-fluid -->
             </section>
