@@ -63,7 +63,7 @@ namespace Login.Models
                 DESCRIPCION = "Sin descripcion";
             }
 
-            DIAS_DESDE_COMPRA = 0; //Total de dias desde que se compro (FECHA_CREADO2) hasta hoy Datetime.Now()
+            DIAS_DESDE_COMPRA = (DateTime.Now-FECHA_CREADO2).Days; //Total de dias desde que se compro (FECHA_CREADO2) hasta hoy Datetime.Now()
 
         }
 

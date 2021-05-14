@@ -41,6 +41,7 @@
             <th> Product ID </th>
             <th> Fecha </th>
             <th> Imagen </th>
+            <th> Dias </th>
         </tr>
     </thead>
     @foreach (var item in ViewBag.Resultado)
@@ -85,6 +86,9 @@
                     <img src="@item.URL_IMAGEN" alt="Girl in a jacket" width="500" height="600">
 
 
+                </td>
+                <td>
+                    @item.DIAS_DESDE_COMPRA
                 </td>
             </tr>
         </tbody>
