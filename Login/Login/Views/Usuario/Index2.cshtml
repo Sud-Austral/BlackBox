@@ -45,7 +45,7 @@
                 '#cuatro',
                 '#cinco',
                 '#seis',
-                '#siete',
+                '#siete',     
                 '#ocho'
 
 
@@ -440,7 +440,7 @@
                             </div>
 
                             @**************************************************************@
-                            <div class="container-fluid " id="ocho" style="display:none;">
+                                                @*<div class="container-fluid " id="ocho" style="display:none;">
                                 <div class="row">
                                     <div class="col">
                                         <h3 class="text-dark mb-0">test</h3>
@@ -459,7 +459,7 @@
                                 </div>
 
 
-                            </div>
+                            </div>*@
 
                             @{ Html.RenderAction("Bienvenido", "Usuario");}
 
@@ -477,7 +477,10 @@
                                 @*@{ Html.RenderAction("UsuarioSelectProducto", "Usuario");}*@
 
                             </div>
-                            
+                            <div class="container-fluid offset-1 mt-5" id="ocho" style="display:none;">
+                               
+
+                            </div>
 
 
                             @*Seccion atencion al cliente*@
@@ -581,11 +584,9 @@
     <script src="~/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/dist/js/adminlte.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 
-   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-    
     <script>
         function fnClick(saludo) {
 
@@ -594,9 +595,9 @@
             $.ajax(
                 {
                     type: 'POST',
-                    data: "{'id':" + "'" + saludo + "'}", //datos o parametros enviados al servidor
+                    data: "{'id':" + "'" + id + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/Usuario/UsuarioSelectProducto2?id=' + saludo,
+                    url: '/Usuario/UsuarioSelectProducto2?id=' + id,
                     //URL del action result que cargara la vista parcial
                     success: function (result) {
                         // si la funcion se ejecuta lanzara un alert
@@ -613,23 +614,23 @@
                 });
 
         }
-        function ReescribirTest() {
+        function ShowGrafico(Grafico) {
 
             var id = "parametros de la funcion";
 
             $.ajax(
                 {
                     type: 'POST',
-                    data: "{'id':" + "'"  + "'}", //datos o parametros enviados al servidor
+                    data: "{'id':" + "'" + Grafico + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/Usuario/UsuarioSelectProducto3?id='+'Estamos_sobreescribiendo',
+                    url: '/Usuario/UsuarioSelectProducto3?id=' + Grafico ,
                     //URL del action result que cargara la vista parcial
                     success: function (result) {
                         // si la funcion se ejecuta lanzara un alert
                         /*alert('Success');*/
                         //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
                         //que recibio del servidor
-                        $("#siete").html(result);
+                        $("#ocho").html(result);
                     },
 
                     error: function (error) {
