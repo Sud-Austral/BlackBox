@@ -188,6 +188,7 @@
     <Compile Include="Controllers\Bienvenido.cs" />
     <Compile Include="Controllers\ClentController.cs" />
     <Compile Include="Controllers\Date.cs" />
+    <Compile Include="Controllers\DeprecatedController.cs" />
     <Compile Include="Controllers\GraficoController.cs" />
     <Compile Include="Controllers\GRAFICOesController.cs" />
     <Compile Include="Controllers\Graficos.cs" />
@@ -2655,8 +2656,8 @@
     <Content Include="Views\Info\gustavo.cshtml" />
     <Content Include="Views\Info\HomeBusqueda.cshtml" />
     <Content Include="Views\Info\Index.cshtml" />
-    <Content Include="Views\Info\Index2.cshtml" />
-    <Content Include="Views\Info\Index3.cshtml" />
+    <Content Include="Views\Deprecated\Index2.cshtml" />
+    <Content Include="Views\Deprecated\Index3.cshtml" />
     <Content Include="Views\Info\PaginaBusqueda.cshtml" />
     <Content Include="Views\Shared\_LayoutStatista.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
@@ -2664,7 +2665,7 @@
     <Content Include="Views\Info\HomeOdoo.cshtml" />
     <Content Include="Views\Info\menuLayout.cshtml" />
     <Content Include="Views\Info\Dashboard.cshtml" />
-    <Content Include="Views\Info\rpub.cshtml" />
+    <Content Include="Views\Deprecated\rpub.cshtml" />
     <Content Include="Views\Usuario\Usuaria2.cshtml" />
     <Content Include="Views\Usuario\Dashboard.cshtml" />
     <Content Include="Views\Home\Mapa.cshtml" />

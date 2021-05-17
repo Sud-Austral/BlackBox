@@ -23,10 +23,11 @@ namespace Login.Models
         public string DESCRIPCION { get; set; }
 
         public int DIAS_DESDE_COMPRA { get; set; }
+        //public string AUXILIAR { get; set; }
 
         public Producto_Shopify(JToken json, string comprobante, JToken ORDEN)
         {
-            
+                //AUXILIAR = (string)json;
                 ID = (string)json["variant_id"];
                 NOMBRE = (string)json["name"];
                 SKU = (string)json["sku"];

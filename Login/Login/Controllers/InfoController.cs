@@ -65,27 +65,9 @@ namespace AplicacionBlanco.Controllers
         }
 
         //public ActionResult Index2(int id = 1, string id2 = "grafico")
-        public ActionResult Index2(int id = 1, string id2 = "mapadechile_engeochart_2021.csv")
-        {
-            ViewBag.grafico = id2;
-            Graficos db = new Graficos();
-            ViewBag.Resultado = db.BuscarGrafico(id);
-            return View();
-        }
+        
 
-        public ActionResult Index3()
-        {
-            ViewBag.Twitter = "@data_int";
-            return View();
-        }
-
-        public ActionResult mapa(int id = 6, string id2 = "mapa")
-        {
-            ViewBag.grafico = id2;
-            Graficos db = new Graficos();
-            ViewBag.Resultado = db.BuscarGrafico(id);
-            return View();
-        }
+        
         public ActionResult PaginaBusqueda(string id = "1")
         {
             var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
@@ -131,8 +113,7 @@ namespace AplicacionBlanco.Controllers
                 if (!Categoria.Contains(item.CATEGORIA.nombre))
                 {
                     Categoria.Add(item.CATEGORIA.nombre);
-                }
-                
+                }                
             }
             ViewBag.Paises = Paises;           
             ViewBag.TipoGrafico = TipoGrafico;
@@ -165,13 +146,12 @@ namespace AplicacionBlanco.Controllers
             ViewBag.test = dbGrafico.INDUSTRIA.ToList();
             return View();
         }
+        //[OutputCache(Duration = int.MaxValue)]
         public ActionResult HomeOdoo()
         {
-            //ViewBag.Graficos 
             var Graficos = dbGrafico.GRAFICO.ToList();
             var rand = new Random();
             List<GRAFICO> listaGraficos = new List<GRAFICO>();
-
             for (int i = 0; i < 15; i++)
             {
                 listaGraficos.Add(Graficos[rand.Next(Graficos.Count)]);
@@ -279,10 +259,7 @@ namespace AplicacionBlanco.Controllers
             ViewBag.TipoGrafico = TipoGrafico;
             return View("PaginaBusqueda");
         }
-        public ActionResult rpub()
-        {
-            return View();
-        }
+        
 
     }
 }
