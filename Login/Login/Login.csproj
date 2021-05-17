@@ -323,8 +323,11 @@
     <Content Include="Content\image_estadistica\icono_5.png" />
     <Content Include="Content\image_estadistica\icono_6.1.png" />
     <Content Include="Content\image_estadistica\icono_6.png" />
+    <Content Include="Content\image_estadistica\imagenpromocion_2.png" />
     <Content Include="Content\image_estadistica\logo_DataIntelligence_slogan.png" />
     <Content Include="Content\image_estadistica\logo_DimensionAmbiental_descripcion.png" />
+    <Content Include="Content\image_estadistica\logo_informeinteractivo.png" />
+    <Content Include="Content\image_estadistica\logo_reporte360.png" />
     <Content Include="Content\image_estadistica\portadaInicio_100_1.jpg" />
     <Content Include="Content\image_estadistica\portadaInicio_100_6.jpg" />
     <Content Include="Content\image_estadistica\portadaInicio_100_7.jpg" />
