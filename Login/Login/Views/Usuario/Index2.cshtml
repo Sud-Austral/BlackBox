@@ -314,9 +314,13 @@
                                         <li class="nav-item">
                                             <a href="" class="nav-link" style=" border-bottom:1px solid #377db3">
                                                 @*<i class="far fa-circle nav-icon"></i>*@
-                                                <img class="img-fluid" style="width:25px;" src="~/Content/image_estadistica/IconosMenu/1_sectores_iconos_agropecuario.png" />
+                                                @* <img src="~/Content/img/iconos_sector/10.png" />*@
+                                                @{ 
+                                                    string RutaImagen = "/Content/img/iconos_sector/" + item.id + ".png";
+                                                }
+                                                <img class="img-fluid" style="width:25px;" src="@RutaImagen" />
                                                 <p style="color:#518bb3">
-                                                    Industria
+                                                    @*Industria*@
                                                     @item.nombre
                                                     <i class="fas fa-angle-left right"></i>
                                                 </p>
@@ -351,7 +355,7 @@
                                                                             <li class="nav-item" style="cursor: pointer;">
                                                                                 <a onclick="mostrador('#siete'); fnClick('@item4.id')" class="nav-link">
                                                                                     @*href="/Usuario/Resultados2?id==2" class="nav-link">*@
-                                                                                     
+
                                                                                     <i class="far fa-circle nav-icon"></i>
                                                                                     <p>
                                                                                         Categoria
@@ -457,12 +461,12 @@
                             </div>
                             <div class="container-fluid offset-1 mt-5" id="siete" style="display:none;">
                                 @*@{ Html.RenderAction("UsuarioSelectProducto", "Usuario");}*@
-          
 
+                                <img src="~/Content/image_UsuarioIndex/ventana_espera.gif" />
                             </div>
                             <div class="container-fluid offset-1 mt-5" id="ocho" style="display:none;">
-                               
-                                
+
+
 
                             </div>
                             <div class="container-fluid offset-1 mt-5" id="nueve" style="display:none;">
@@ -577,12 +581,15 @@
     <script src="~/dist/js/adminlte.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>@*este script va con la funcion de cargar el gif en la seccion siete*@
     <script>
         function fnClick(categoria) {
 
             var id = "parametros de la funcion";
-            $('#siete').html('<h2>Por favor, espere mientras se cargan los datos...</h2>')
+            $('#siete').load(function () {//para cargar el gif de la seccion siete
+                $("img").fadeOut("slow");
+            });
+            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
             $.ajax(
                 {
                     type: 'POST',
@@ -614,7 +621,7 @@
                     type: 'POST',
                     data: "{'id':" + "'" + Grafico + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/Usuario/UsuarioSelectProducto3?id=' + Grafico ,
+                    url: '/Usuario/UsuarioSelectProducto3?id=' + Grafico,
                     //URL del action result que cargara la vista parcial
                     success: function (result) {
                         // si la funcion se ejecuta lanzara un alert
@@ -639,7 +646,7 @@
             $.ajax(
                 {
                     type: 'POST',
-                    data: "{'id':" + "'" + Informe+ "'}", //datos o parametros enviados al servidor
+                    data: "{'id':" + "'" + Informe + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
                     url: '/Usuario/UsuarioSelectProducto3?id=' + Informe,
                     //URL del action result que cargara la vista parcial
@@ -686,7 +693,7 @@
 
         }
     </script>
-    
+
 
 </body>
 </html>

@@ -504,7 +504,12 @@ namespace Login.Controllers
             ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).ToList();//Liberados/Gratis
             ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
             ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
-            ViewBag.saludo = id;
+            string NombreCategoria = "No existe esta categoria";
+            if(NEW_GRAFICOS.Count() > 0)
+            {
+                NombreCategoria = NEW_GRAFICOS.ToList()[0].CATEGORIA.nombre;
+            }
+            ViewBag.saludo = NombreCategoria;
 
             return PartialView();
         }
