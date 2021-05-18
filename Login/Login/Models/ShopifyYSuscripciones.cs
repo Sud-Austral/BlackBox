@@ -10,15 +10,16 @@ namespace Login.Models
         public List<Producto_Shopify> producto_Shopifies { get; set; }
         public List<int> industrias { get; set; }
         public List<Suscripcion> suscripcions { get; set; }
+        public List<Producto_Shopify> todo_producto { get; set; }
 
         public ShopifyYSuscripciones(List<Producto_Shopify> entrada)
         {
+            this.todo_producto = entrada;
             this.producto_Shopifies = new List<Producto_Shopify>();
             this.industrias = new List<int>();
             this.suscripcions = new List<Suscripcion>();
             foreach (var item in entrada)
-            {
-                
+            {                
                 try
                 {
                     if (item.SKU.Contains("datasuscripcion"))
@@ -35,9 +36,7 @@ namespace Login.Models
                 }
                 catch (Exception)
                 {
-                }
-                
-                
+                }                      
             }
         }
     }

@@ -53,7 +53,6 @@ namespace Login.Controllers
 
         public string Producto()
         {
-
             //return APIShopify.BuscarOrden("5997704741018");
             JObject jObject = APIShopify.BuscarImagenes("5997704741018");
             JArray jArray = (JArray)jObject["images"];
