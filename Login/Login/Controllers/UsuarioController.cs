@@ -425,5 +425,107 @@ namespace Login.Controllers
             ViewBag.Grafico = url;
             return View();
         }
+        public ActionResult Resultados2(int id = 2)
+        {
+            //Lista de productos de Shopify
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            //Nombre de Usuario
+            ViewBag.User = User.Identity.GetUserName();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+
+                }
+            }
+            //Objeto que separa Productos y Suscripciones
+            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+            //Productos
+            productos = shopifyYSuscripciones.producto_Shopifies;
+            //ViewBag.url = (string)Session["url"];
+            Session["Productos"] = productos;
+            //Suscripciones
+            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            ViewBag.Resultado = productos;
+            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id == 10).ToList();
+            return View();
+        }
+        public ActionResult Index2()
+        {
+            //Lista de productos de Shopify
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            //Nombre de Usuario
+            ViewBag.User = User.Identity.GetUserName();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+
+                }
+            }
+            //Objeto que separa Productos y Suscripciones
+            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+            //Productos
+            productos = shopifyYSuscripciones.producto_Shopifies;
+            //ViewBag.url = (string)Session["url"];
+            Session["Productos"] = productos;
+            //Suscripciones
+            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            ViewBag.Resultado = productos;
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
+            //Menu que esta suscrito el usuario
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
+            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id == 10).ToList();
+            return View();
+        }
+        public PartialViewResult UsuarioSelectProducto2( int id=1)
+        {
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id);
+            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).ToList();//Liberados/Gratis
+            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
+            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
+            string NombreCategoria = "No existe esta categoria";
+            if(NEW_GRAFICOS.Count() > 0)
+            {
+                NombreCategoria = NEW_GRAFICOS.ToList()[0].CATEGORIA.nombre;
+            }
+            ViewBag.saludo = NombreCategoria;
+
+            return PartialView();
+        }
+        public PartialViewResult UsuarioSelectProducto3(int id = 220106007)
+        {
+            var url = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            ViewBag.Grafico = url;
+
+            return PartialView();
+        }
+
+        
+        public ActionResult test2()
+        {
+
+            return View();
+        }
     }
 }

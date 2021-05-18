@@ -347,7 +347,7 @@
                                                                     {
                                                                         <ul class="nav nav-treeview">
                                                                             <li class="nav-item">
-                                                                                <a onclick="//mostrador('#siete');" href="/Usuario/Resultados2?id==2" class="nav-link">
+                                                                                <a onclick="//mostrador('#siete');" href="#" class="nav-link">
                                                                                     <i class="far fa-circle nav-icon"></i>
                                                                                     <p>
                                                                                         Categoria
@@ -458,8 +458,12 @@
 
 
                             </div>
+                            <div class="container-fluid offset-1 mt-5" id="uno" style="display:none;">
 
-                            @{ Html.RenderAction("Bienvenido", "Usuario");}
+                                @{ Html.RenderAction("Bienvenido", "Usuario");}
+
+                            </div>
+                           
 
                             <div class="container-fluid offset-1 mt-5" id="cinco" style="display:none;">
 
@@ -471,8 +475,79 @@
                                 @{ Html.RenderAction("PerfilUsuario", "Usuario");}
 
                             </div>
-                            <div class="container-fluid offset-1 mt-5" id="siete" style="display:none;">
-                                @{ Html.RenderAction("UsuarioSelectProducto", "Usuario");}
+                            <div class="container-fluid offset-1 mt-5" id="siete">
+                                <div class="row ">
+
+                                    <div class="col-8">
+                                        <h3 class="text-dark mb-0">Informes Interactivos</h3>
+                                        <hr style="border:0.5px solid #000000" />
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        @*<P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Informes Interactivos</strong></P>*@
+                                    </div>
+                                </div>
+                                <div class="row responsive" style="overflow:scroll;height:300px;overflow-x:hidden; width:67%;">
+
+                                    @foreach (var item in ViewBag.Resultado)
+
+                                    {
+                                        <div class="col-8">
+                                            <div class="row ">
+                                                <a onclick="//mostrador('#ocho');" href="/Usuario/resultados?id==id">
+                                                    <div class="col-2">
+                                                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_informeinteractivo.png" />
+                                                    </div>
+                                                    <div class="col-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
+                                                        @item.NOMBRE <br />
+                                                        @item.FECHA_CREADO
+
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    }
+                                </div>
+
+
+                                <div class="row mt-5">
+                                    <div class="col-8">
+                                        <h3 class="text-dark mb-0">Repotes 360°</h3>
+                                        <hr style="border:0.5px solid #000000" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        @*<P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Repotes 360°</strong></P>*@
+                                    </div>
+                                </div>
+                                <div class="row responsive" style="overflow:scroll;height:300px;overflow-x:hidden; width:67%;">
+                                    @foreach (var item in ViewBag.Resultado)
+
+                                    {
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <a onclick="mostrador('#ocho');" href="">
+                                                    <div class="col-2">
+                                                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_reporte360.png" />
+                                                    </div>
+                                                    <div class="col-8 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
+                                                        @item.NOMBRE <br />
+                                                        @item.FECHA_CREADO
+
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    }
+                                </div>
+
 
                             </div>
                             @*Seccion atencion al cliente*@

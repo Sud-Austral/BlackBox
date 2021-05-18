@@ -118,8 +118,8 @@
             });
         </script>
      @*seccion iframe grafico*@
-        <section class="contenedor-main row">
-            <main class="col-md-7 ml-md-3" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none;" >
+        <section class="contenedor-main row mr-md-2">
+            <main class="col-md-12" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:500px !important;" >
                 <div class="row bg-dark mb-2" style="border:1px solid; border-top-left-radius:10px; border-top-right-radius:10px;">
                     <div class="col-md-1 col-2">
                         <img class="img-fluid mt-2" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
@@ -178,8 +178,9 @@
                 </div>
             </main>
            @*sidde*@
+            @*
             <aside class="col-md-4 align-self-start" style=" background-color: white">
-                <!--efecto flotante de esta seccion-->
+                <!--efecto flotante de esta seccion
                 <div class="sticky-top" style="z-index:1;">
                     <h6 style="margin:8px; color:black; "><strong>∙</strong> Descargar informe</h6>
                     <section style="background:#fff; border-radius:15px; background-color:#f0f3f5;">
@@ -187,11 +188,11 @@
                             <div class="row d-sm-flex mx-sm-auto" style="padding:10px; margin-bottom:10px;">
                                 <div class=" col-3 col-md-3 text-center ">
                                     <button type="button" class="btn2"  data-toggle="modal" data-target="#myModal" data-backdrop="false"><img class="img-fluid" src="~/Content/img/boton_archivo_pdf.png" /></button>
-                                    <!-- Modal -->
+                                    <!-- Modal 
                                     <div class="modal " id="myModal" role="dialog">
                                         <div class="modal-dialog modal-lg">
 
-                                            <!-- Modal content-->
+                                            <!-- Modal content
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -201,7 +202,7 @@
                                                     <section class="pricing py-5 mb-md-5">
                                                         <div class="container">
                                                             <div class="row">
-                                                                <!-- Free -->
+                                                                <!-- Free 
                                                                 <div class="col-lg-4">
                                                                     <div class="card mb-5 mb-lg-0">
                                                                         <div class="card-body">
@@ -222,7 +223,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- Plus  -->
+                                                                <!-- Plus  
                                                                 <div class="col-lg-4">
                                                                     <div class="card mb-5 mb-lg-0">
                                                                         <div class="card-body">
@@ -243,7 +244,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- Pro -->
+                                                                <!-- Pro 
                                                                 <div class="col-lg-4">
                                                                     <div class="card">
                                                                         <div class="card-body">
@@ -278,11 +279,11 @@
                                 </div>
                                 <div class="col-3 col-md-3 text-center">
                                     <button type="button" class="btn2" data-toggle="modal" data-target="#myModal2" data-backdrop="true"><img class="img-fluid" src="~/Content/img/boton_archivo_exe.png" /></button>
-                                    <!-- Modal -->
+                                    <!-- Modal 
                                     <div class="modal fade" id="myModal2" role="dialog">
                                         <div class="modal-dialog modal-lg">
 
-                                            <!-- Modal content-->
+                                            <!-- Modal content
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -338,7 +339,7 @@
                                     <button type="button" class="btn2" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="false">
                                         <img class="img-fluid" src="~/Content/img/boton_archivo_jpg.png" />
                                     </button>
-                                    <!-- Modal -->
+                                    <!-- Modal 
                                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
@@ -372,7 +373,7 @@
                             </div>
                         </div>
                     </section>
-                    <!--Seccion Iconos descargas-->
+                    <!--Seccion Iconos descargas
                     <h6 style="padding-left:3%; padding-top:5%; font-family:'MYRIADPRO-REGULAR'; color:black;"><strong>∙</strong> Información</h6>
                     <section class="widgets1" style="background:#FFF; margin-top:10px; margin-bottom:10px; border-radius:15px; background-color:#f0f3f5; padding-top:5%; padding-bottom:2%;">
                         <div style="padding-left: 3%;">
@@ -382,7 +383,7 @@
                                 <strong>Abrir esta estadística en...</strong><br>
                                 @ViewBag.ELEMENTO.idioma
                             </p>
-                            *@
+                            
                         </div>
 
                     </section>
@@ -393,7 +394,7 @@
                             @*
                                   @ViewBag.Resultado.FECHA_PUBLICACION
                             *@
-                            @*ViewBag.ELEMENTO._fecha_publicacion*@
+                            @*ViewBag.ELEMENTO._fecha_publicacion
                         </p>
 
                         <p>
@@ -415,110 +416,162 @@
                         </p>
 
                     </section>
-                    <button type="button" class="btn btn-primary" id="boton" > Más Información</button>
+                    @*<button type="button" class="btn btn-primary" id="boton" > Más Información</button>
                 </div>
                 
             </aside>
+            *@
+        </section>
+        <section class="container" >
+            <div class="row justify-content-end">
+                <div class="col-2 mr-3">
+                    <button type="button" class="btn btn-primary" id="boton" style="margin-bottom:20px;">Información del Gráfico</button>
+                </div>
+             </div>
+        </section>
+        
+        <section class="container widgets mb-5" id="leerMas" style="display:none; background:#fff;">
+            <div class="row" style="border:2px solid #e6e6e6; border-radius:15px; ">
+                <div class="col-4 m-3" style="border-right:0.5px solid #e6e6e6;">
+                    <p style="margin-bottom:0px !important;"><strong>Detalle:</strong></p>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type
+                        specimen book.
+                    </p>
+                </div>
+                <div class="col-3 m-3" style="border-right:0.5px solid #e6e6e6;">
+                    <p class="mb-5"><strong>Fuente de Datos:</strong></p>
+                    <p class="mb-5">
+                        <strong>Periodo de estudio: </strong>
+
+                        @ViewBag.ELEMENTO.TEMPORALIDAD._fecha_inicio y @ViewBag.ELEMENTO.TEMPORALIDAD._fecha_termino
+                    </p>
+                    <p>
+                        <strong>Región: </strong>
+
+                        @ViewBag.ELEMENTO.TERRITORIO.nombre
+                    </p>
+                </div>
+                <div class="col-4">
+                    <div class="row justify-content-between">
+                        <p class="mb-4 mt-3"><strong>Ver más información de estos gráficos:</strong></p>
+                        <div class="col-6">
+                            <img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/logo_informeinteractivo.png" />
+                            <button class="btn btn-danger" style="font-size:13px; width:160px; border-radius:25px;">
+                                Ver Informe Interactivo
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <img class="img-fluid mb-4 mt-1 pt-1" src="~/Content/image_UsuarioIndex/logo_reporte360.png" />
+                            <button class="btn btn-danger" style="font-size:13px; width:160px; border-radius:25px;">
+                                Ver Reporte 360°
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         @*Seccion de contenidos*@
-    <div class="col-12 pl-2">
-        <h6 style="font-weight:bold">Información disponible sobre el tema</h6>
-    </div>
+        <div class="col-12 pl-2">
+            <h6 style="font-weight:bold">Información disponible sobre el tema</h6>
+        </div>
         <section class="container widgets" style="background:#fff; border:solid #e6e6e6; border-radius:15px;">
-        <div class="col-md-12 pt-md-3">
-            <div class="row" style="border-bottom: 2px solid #e6e6e6;">
-                <div class="col-md-2 col-sm-12">
-                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+            <div class="col-md-12 pt-md-3">
+                <div class="row" style="border-bottom: 2px solid #e6e6e6;">
+                    <div class="col-md-2 col-sm-12">
+                        <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                        <p style="padding-top:10px;">
+                            <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
+                            <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-10 col-sm-12">
-                    <p style="padding-top:10px;">
-                        <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
-                        <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
+
+                <span id="leerMas" style="display:none;">
+
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type
-                    </p>
-                </div>
+                        specimen book. It has survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged. It was popularised in
+                        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                    </p> <br />
+
+
+                </span>
             </div>
 
-            <span id="leerMas" style="display:none;">
-
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type
-                    specimen book. It has survived not only five centuries, but also the leap into
-                    electronic typesetting, remaining essentially unchanged. It was popularised in
-                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including
-                    versions of Lorem Ipsum.
-                </p> <br />
-
-
-            </span>
-        </div>
-
-        <div class="col-md-12">
-            <div class="row" style="border-bottom: 2px solid #e6e6e6;">
-                <div class="col-md-2 col-sm-12">
-                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+            <div class="col-md-12">
+                <div class="row" style="border-bottom: 2px solid #e6e6e6;">
+                    <div class="col-md-2 col-sm-12">
+                        <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                        <p style="padding-top:10px;">
+                            <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
+                            <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-10 col-sm-12">
-                    <p style="padding-top:10px;">
-                        <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
-                        <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
+                <span id="leerMas" style="display:none;">
+
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type
-                    </p>
-                </div>
+                        specimen book. It has survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged. It was popularised in
+                        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                    </p> <br />
+
+
+                </span>
             </div>
-            <span id="leerMas" style="display:none;">
 
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type
-                    specimen book. It has survived not only five centuries, but also the leap into
-                    electronic typesetting, remaining essentially unchanged. It was popularised in
-                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including
-                    versions of Lorem Ipsum.
-                </p> <br />
-
-
-            </span>
-        </div>
-
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-2 col-sm-12" >
-                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12" >
+                        <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                        <p style="padding-top:10px;">
+                            <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
+                            <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-10 col-sm-12">
-                    <p style="padding-top:10px;">
-                        <span style="font-size:20px;"><strong> @ViewBag.ELEMENTO.titulo</strong></span> <br />
-                        <span style="font-size:17px; padding-top:10px;">@ViewBag.ELEMENTO.descripcion </span><br />
+
+                <span id="leerMas" style="display:none;">
+
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type
-                    </p>
-                </div>
+                        specimen book. It has survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged. It was popularised in
+                        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                    </p> <br />
+                </span>
             </div>
 
-            <span id="leerMas" style="display:none;">
-
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type
-                    specimen book. It has survived not only five centuries, but also the leap into
-                    electronic typesetting, remaining essentially unchanged. It was popularised in
-                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including
-                    versions of Lorem Ipsum.
-                </p> <br />
-            </span>
-        </div>
-
-    </section>
+        </section>
 
     </div>
     <!--seccion de suscripciones-->

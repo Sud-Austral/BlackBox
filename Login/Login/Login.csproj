@@ -341,6 +341,7 @@
     <Content Include="Content\image_UsuarioIndex\imagenpromocion_2.png" />
     <Content Include="Content\image_UsuarioIndex\logo_informeinteractivo.png" />
     <Content Include="Content\image_UsuarioIndex\logo_reporte360.png" />
+    <Content Include="Content\image_UsuarioIndex\ventana_espera.gif" />
     <Content Include="Content\img\10_portadahomeopatia_1800x540_crop_center.jpg" />
     <Content Include="Content\img\13_portadabeso_1800x540_crop_center.jpg" />
     <Content Include="Content\img\6_portadaDiadeporte_1800x540_crop_center.jpg" />
@@ -362,6 +363,19 @@
     <Content Include="Content\img\iconos_PopUp\png.png" />
     <Content Include="Content\img\iconos_PopUp\ppt.png" />
     <Content Include="Content\img\iconos_PopUp\xls.png" />
+    <Content Include="Content\img\iconos_sector\10.png" />
+    <Content Include="Content\img\iconos_sector\11.png" />
+    <Content Include="Content\img\iconos_sector\12.png" />
+    <Content Include="Content\img\iconos_sector\13.png" />
+    <Content Include="Content\img\iconos_sector\15.png" />
+    <Content Include="Content\img\iconos_sector\16.png" />
+    <Content Include="Content\img\iconos_sector\18.png" />
+    <Content Include="Content\img\iconos_sector\19.png" />
+    <Content Include="Content\img\iconos_sector\20.png" />
+    <Content Include="Content\img\iconos_sector\22.png" />
+    <Content Include="Content\img\iconos_sector\24.png" />
+    <Content Include="Content\img\iconos_sector\25.png" />
+    <Content Include="Content\img\iconos_sector\ttt.png" />
     <Content Include="Content\img\Icono_dataIntelligence_Rojo.png" />
     <Content Include="Content\img\Icono_dataIntelligence_Rojo.svg" />
     <Content Include="Content\img\icono_grafico.png" />
@@ -2501,6 +2515,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\OcultarBoton.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -2680,6 +2695,12 @@
     <Content Include="Views\Usuario\PerfilUsuario.cshtml" />
     <Content Include="Views\Usuario\UsuarioSelectProducto.cshtml" />
     <Content Include="Views\Usuario\resultados.cshtml" />
+    <Content Include="Views\Usuario\Resultados2.cshtml" />
+    <Content Include="Views\Usuario\Index2.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectProducto2.cshtml" />
+    <Content Include="Views\Usuario\test2.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectProducto3.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectReporte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
