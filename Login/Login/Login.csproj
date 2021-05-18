@@ -336,6 +336,7 @@
     <Content Include="Content\image_estadistica\texto_venta1.png" />
     <Content Include="Content\image_estadistica\texto_venta2.png" />
     <Content Include="Content\image_estadistica\ticked.png" />
+    <Content Include="Content\image_UsuarioIndex\cargadatos_es.gif" />
     <Content Include="Content\image_UsuarioIndex\cuenta_promocional_1.jpg" />
     <Content Include="Content\image_UsuarioIndex\cuenta_promocional_contacto_1.jpg" />
     <Content Include="Content\image_UsuarioIndex\imagenpromocion_2.png" />
