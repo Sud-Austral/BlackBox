@@ -2679,7 +2679,7 @@
     <Content Include="Views\Deprecated\Index3.cshtml" />
     <Content Include="Views\Info\PaginaBusqueda.cshtml" />
     <Content Include="Views\Shared\_LayoutStatista.cshtml" />
-    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Index3.cshtml" />
     <Content Include="Views\Usuario\Suscripcion.cshtml" />
     <Content Include="Views\Info\HomeOdoo.cshtml" />
     <Content Include="Views\Info\menuLayout.cshtml" />
@@ -2697,7 +2697,7 @@
     <Content Include="Views\Usuario\UsuarioSelectProducto.cshtml" />
     <Content Include="Views\Usuario\resultados.cshtml" />
     <Content Include="Views\Usuario\Resultados2.cshtml" />
-    <Content Include="Views\Usuario\Index2.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\UsuarioSelectProducto2.cshtml" />
     <Content Include="Views\Usuario\test2.cshtml" />
     <Content Include="Views\Usuario\UsuarioSelectProducto3.cshtml" />
