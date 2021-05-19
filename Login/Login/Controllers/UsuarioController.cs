@@ -365,6 +365,7 @@ namespace Login.Controllers
                 }
             }
             ViewBag.Facturados = productos;
+          
 
             return PartialView();
         }

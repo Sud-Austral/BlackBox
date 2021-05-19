@@ -18,7 +18,7 @@
     @foreach (var item in ViewBag.Resultado)
 
     {
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="row" style="cursor: pointer;">
                 <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" >
                     <div class="col-md-2">
@@ -63,7 +63,7 @@
 }*@
 <div class="row mt-5">
 
-    <div class="col-md-8">
+    <div class="col-md-10">
         <h3 class="text-dark mb-0">Informes Interactivos</h3>
         <hr style="border:0.5px solid #000000" />
     </div>
@@ -80,7 +80,7 @@
     @foreach (var item in ViewBag.Resultado2)
 
     {
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="row" style="display:flex !important; cursor: pointer;">
                 <a onclick="mostrador('#nueve'); ShowInforme('@item.id');">
                     <div class="col-md-2">
