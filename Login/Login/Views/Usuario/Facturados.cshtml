@@ -8,3 +8,24 @@
     <h5 class="text-dark mb-0">Suscripción Profesional</h5>
     <hr style="border:0.5px solid #000000" />
 </div>
+@foreach (var item in ViewBag.Facturados)
+{
+    <p></p>
+
+    <p>Nombre: @item.NOMBRE</p>
+    <p>Comprobante: @item.COMPROBANTE</p>
+    @*<p>Product Id: @item.PRODUCT_ID</p>*@
+    <p>Fecha de Compra: @item.FECHA_CREADO</p>
+    <p>Fecha de Compra: @item.FECHA_CREADO2 </p>
+    <p>Imagen: @item.URL_IMAGEN</p>
+    <p> Descripción: @item.DESCRIPCION</p>
+    @*<p>
+        Descripción: @item.DESCRIPCION  @{ IHtmlString str = new HtmlString(item.DESCRIPCION); }
+        @Html.Raw(str)
+    </p>*@
+
+     <p>Dias desde la compra: @item.DIAS_DESDE_COMPRA</p>
+
+
+
+                }
