@@ -185,8 +185,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Bienvenido.cs" />
     <Compile Include="Controllers\ClentController.cs" />
     <Compile Include="Controllers\Date.cs" />
+    <Compile Include="Controllers\DeprecatedController.cs" />
     <Compile Include="Controllers\GraficoController.cs" />
     <Compile Include="Controllers\GRAFICOesController.cs" />
     <Compile Include="Controllers\Graficos.cs" />
@@ -221,6 +223,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MENULAYOUT.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -295,14 +298,37 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\EstilosNuevoMenuLateral.css" />
     <Content Include="Content\EstilosPopUp.css" />
+    <Content Include="Content\Estilos\info\HomeOdoo.css" />
+    <Content Include="Content\image_estadistica\IconosMenu\10_sectores_iconos_finanzas.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\11_sectores_iconos_comunicacion.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\12_sectores_iconos_recursoquimico.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\13_sectores_iconos_empleo.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\1_sectores_iconos_agropecuario.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\2_sectores_iconos_construccion.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\3_sectores_iconos_medioambiente.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\4_sectores_iconos_salud.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\5_sectores_iconos_mediosocial.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\6_sectores_iconos_turismo.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\7_sectores_iconos_consumo.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\8_sectores_iconos_negocio.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\9_sectores_iconos_tiempolibre.png" />
+    <Content Include="Content\image_estadistica\icono_1.1.png" />
     <Content Include="Content\image_estadistica\icono_1.png" />
+    <Content Include="Content\image_estadistica\icono_2.1.png" />
     <Content Include="Content\image_estadistica\icono_2.png" />
+    <Content Include="Content\image_estadistica\icono_3.1.png" />
     <Content Include="Content\image_estadistica\icono_3.png" />
+    <Content Include="Content\image_estadistica\icono_4.1.png" />
     <Content Include="Content\image_estadistica\icono_4.png" />
+    <Content Include="Content\image_estadistica\icono_5.1.png" />
     <Content Include="Content\image_estadistica\icono_5.png" />
+    <Content Include="Content\image_estadistica\icono_6.1.png" />
     <Content Include="Content\image_estadistica\icono_6.png" />
+    <Content Include="Content\image_estadistica\imagenpromocion_2.png" />
     <Content Include="Content\image_estadistica\logo_DataIntelligence_slogan.png" />
     <Content Include="Content\image_estadistica\logo_DimensionAmbiental_descripcion.png" />
+    <Content Include="Content\image_estadistica\logo_informeinteractivo.png" />
+    <Content Include="Content\image_estadistica\logo_reporte360.png" />
     <Content Include="Content\image_estadistica\portadaInicio_100_1.jpg" />
     <Content Include="Content\image_estadistica\portadaInicio_100_6.jpg" />
     <Content Include="Content\image_estadistica\portadaInicio_100_7.jpg" />
@@ -310,6 +336,13 @@
     <Content Include="Content\image_estadistica\texto_venta1.png" />
     <Content Include="Content\image_estadistica\texto_venta2.png" />
     <Content Include="Content\image_estadistica\ticked.png" />
+    <Content Include="Content\image_UsuarioIndex\cargadatos_es.gif" />
+    <Content Include="Content\image_UsuarioIndex\cuenta_promocional_1.jpg" />
+    <Content Include="Content\image_UsuarioIndex\cuenta_promocional_contacto_1.jpg" />
+    <Content Include="Content\image_UsuarioIndex\imagenpromocion_2.png" />
+    <Content Include="Content\image_UsuarioIndex\logo_informeinteractivo.png" />
+    <Content Include="Content\image_UsuarioIndex\logo_reporte360.png" />
+    <Content Include="Content\image_UsuarioIndex\ventana_espera.gif" />
     <Content Include="Content\img\10_portadahomeopatia_1800x540_crop_center.jpg" />
     <Content Include="Content\img\13_portadabeso_1800x540_crop_center.jpg" />
     <Content Include="Content\img\6_portadaDiadeporte_1800x540_crop_center.jpg" />
@@ -331,6 +364,19 @@
     <Content Include="Content\img\iconos_PopUp\png.png" />
     <Content Include="Content\img\iconos_PopUp\ppt.png" />
     <Content Include="Content\img\iconos_PopUp\xls.png" />
+    <Content Include="Content\img\iconos_sector\10.png" />
+    <Content Include="Content\img\iconos_sector\11.png" />
+    <Content Include="Content\img\iconos_sector\12.png" />
+    <Content Include="Content\img\iconos_sector\13.png" />
+    <Content Include="Content\img\iconos_sector\15.png" />
+    <Content Include="Content\img\iconos_sector\16.png" />
+    <Content Include="Content\img\iconos_sector\18.png" />
+    <Content Include="Content\img\iconos_sector\19.png" />
+    <Content Include="Content\img\iconos_sector\20.png" />
+    <Content Include="Content\img\iconos_sector\22.png" />
+    <Content Include="Content\img\iconos_sector\24.png" />
+    <Content Include="Content\img\iconos_sector\25.png" />
+    <Content Include="Content\img\iconos_sector\ttt.png" />
     <Content Include="Content\img\Icono_dataIntelligence_Rojo.png" />
     <Content Include="Content\img\Icono_dataIntelligence_Rojo.svg" />
     <Content Include="Content\img\icono_grafico.png" />
@@ -367,6 +413,14 @@
     <Content Include="Content\img\portadas\covihome-min.png" />
     <Content Include="Content\img\portadas\covihome.png" />
     <Content Include="Content\img\Porta_ISMT.jpg" />
+    <Content Include="Content\img\Promociones\imagenpromocion_1.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_2.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3_1.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3_2.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3_3.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_3_4.png" />
+    <Content Include="Content\img\Promociones\imagenpromocion_fondo.jpg" />
     <Content Include="Content\img\resultados_Master_honduras.png" />
     <Content Include="Content\img\resultados_Master_hondurasMasGrande.png" />
     <Content Include="Content\img\RRSS\Facebook.png" />
@@ -455,6 +509,22 @@
     <Content Include="Images\Error\USECUENTALOCAL.jpg" />
     <Content Include="Images\login\arrow-down1.gif" />
     <Content Include="Images\login\data_portabilityprivacy_banner_003_256_30fps-1.gif" />
+    <Content Include="Images\menuLayout\icono_20.png" />
+    <Content Include="Images\menuLayout\icono_21.png" />
+    <Content Include="Images\menuLayout\icono_15.png" />
+    <Content Include="Images\menuLayout\icono_10.png" />
+    <Content Include="Images\menuLayout\icono_22.png" />
+    <Content Include="Images\menuLayout\icono_16.png" />
+    <Content Include="Images\menuLayout\icono_11.png" />
+    <Content Include="Images\menuLayout\icono_23.png" />
+    <Content Include="Images\menuLayout\icono_17.png" />
+    <Content Include="Images\menuLayout\icono_12.png" />
+    <Content Include="Images\menuLayout\icono_24.png" />
+    <Content Include="Images\menuLayout\icono_18.png" />
+    <Content Include="Images\menuLayout\icono_13.png" />
+    <Content Include="Images\menuLayout\icono_25.png" />
+    <Content Include="Images\menuLayout\icono_19.png" />
+    <Content Include="Images\menuLayout\icono_14.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -2446,6 +2516,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\OcultarBoton.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -2604,13 +2675,33 @@
     <Content Include="Views\Info\gustavo.cshtml" />
     <Content Include="Views\Info\HomeBusqueda.cshtml" />
     <Content Include="Views\Info\Index.cshtml" />
-    <Content Include="Views\Info\Index2.cshtml" />
-    <Content Include="Views\Info\Index3.cshtml" />
+    <Content Include="Views\Deprecated\Index2.cshtml" />
+    <Content Include="Views\Deprecated\Index3.cshtml" />
     <Content Include="Views\Info\PaginaBusqueda.cshtml" />
     <Content Include="Views\Shared\_LayoutStatista.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Suscripcion.cshtml" />
     <Content Include="Views\Info\HomeOdoo.cshtml" />
+    <Content Include="Views\Info\menuLayout.cshtml" />
+    <Content Include="Views\Info\Dashboard.cshtml" />
+    <Content Include="Views\Deprecated\rpub.cshtml" />
+    <Content Include="Views\Usuario\Usuaria2.cshtml" />
+    <Content Include="Views\Usuario\Dashboard.cshtml" />
+    <Content Include="Views\Home\Mapa.cshtml" />
+    <Content Include="Views\Usuario\Bienvenido.cshtml" />
+    <Content Include="Views\Usuario\GraficoUsuario.cshtml" />
+    <Content Include="Views\Usuario\InformesUsuario.cshtml" />
+    <Content Include="Views\Usuario\ReportesUsuario.cshtml" />
+    <Content Include="Views\Usuario\Facturados.cshtml" />
+    <Content Include="Views\Usuario\PerfilUsuario.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectProducto.cshtml" />
+    <Content Include="Views\Usuario\resultados.cshtml" />
+    <Content Include="Views\Usuario\Resultados2.cshtml" />
+    <Content Include="Views\Usuario\Index2.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectProducto2.cshtml" />
+    <Content Include="Views\Usuario\test2.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectProducto3.cshtml" />
+    <Content Include="Views\Usuario\UsuarioSelectReporte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

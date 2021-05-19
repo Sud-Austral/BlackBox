@@ -10,6 +10,7 @@
 namespace Login.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
@@ -38,5 +39,6 @@ namespace Login.Models
         public virtual DbSet<TERRITORIO> TERRITORIO { get; set; }
         public virtual DbSet<TIPO_GRAFICO> TIPO_GRAFICO { get; set; }
         public virtual DbSet<UNIDAD_MEDIDA> UNIDAD_MEDIDA { get; set; }
+        public IEnumerable<object> Informe { get; internal set; }
     }
 }

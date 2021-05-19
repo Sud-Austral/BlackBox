@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Login.Models;
+using System.Collections.Generic;
 
 namespace Login.Controllers
 {
@@ -83,7 +84,27 @@ namespace Login.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    //return RedirectToLocal(returnUrl);
+                    List<Producto_Shopify> productos = new List<Producto_Shopify>();
+                    //Nombre de Usuario
+                    ViewBag.User = User.Identity.GetUserName();
+                    //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+                    foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+                    {
+                        foreach (var item2 in item["line_items"])
+                        {
+                            productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                        }
+                    }
+                    //Objeto que separa Productos y Suscripciones
+                    ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+                    //Productos
+                    productos = shopifyYSuscripciones.producto_Shopifies;
+                    //ViewBag.url = (string)Session["url"];
+                    Session["Productos"] = productos;
+                    //Suscripciones
+                    Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+                    return RedirectToAction("Index", "Usuario");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
