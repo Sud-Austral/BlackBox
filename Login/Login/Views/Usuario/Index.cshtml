@@ -193,7 +193,7 @@
                                             <a onclick="mostrador('#dos');" href="#" class="nav-link ">
                                                 <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
                                                 <p style="color:#518bb3">
-                                                    Gráficos
+                                                    Plataformas
                                                 </p>
                                             </a>
                                         </li>
@@ -328,12 +328,12 @@
                                             @foreach (var item2 in item.SECTOR)
                                             {
                                                 <ul class="nav nav-treeview">
-                                                    <li class="nav-item">
+                                                    <li class="nav-item" style="border-bottom:0.5px solid #fff">
                                                         <a href="#" class="nav-link">
                                                             @*<i class="far fa-circle nav-icon"></i>*@
                                                             <i class="fas fa-circle mr-1" style="color:#fff; "></i>
                                                             <p>
-                                                                Sector
+                                                                Colección
                                                                 @item2.nombre
                                                                 <i class="fas fa-angle-left right"></i>
                                                             </p>
@@ -341,11 +341,11 @@
                                                         @foreach (var item3 in item2.PRODUCTO)
                                                         {
                                                             <ul class="nav nav-treeview">
-                                                                <li class="nav-item">
+                                                                <li class="nav-item" style="border-bottom:0.5px solid #808080">
                                                                     <a href="#" class="nav-link">
                                                                         <i class="far fa-circle nav-icon"></i>
                                                                         <p>
-                                                                            Producto
+                                                                            
                                                                             @item3.nombre
                                                                             <i class="fas fa-angle-left right"></i>
                                                                         </p>
@@ -353,13 +353,13 @@
                                                                     @foreach (var item4 in item3.CATEGORIA)
                                                                     {
                                                                         <ul class="nav nav-treeview">
-                                                                            <li class="nav-item" style="cursor: pointer;">
-                                                                                <a  onclick="mostrador('#siete'); fnClick('@item4.id')" class="nav-link btn btn-danger">
+                                                                            <li id="ChangeColor" class="nav-item" style="cursor: pointer;">
+                                                                                <a onclick="mostrador('#siete'); fnClick('@item4.id')" class="nav-link">
                                                                                     @*href="/Usuario/Resultados2?id==2" class="nav-link">*@
 
                                                                                     @*<i class="far fa-circle nav-icon"></i>*@
                                                                                     <p class="ml-5">
-                                                                                        Categoria
+                                                                                      
                                                                                         @item4.nombre
                                                                                         @*<i class="fas fa-angle-left right"></i>*@
                                                                                     </p>
@@ -684,6 +684,94 @@
                         //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
                         //que recibio del servidor
                         $("#diez").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        alert('Fail');
+                    }
+                });
+
+        }
+
+        function mostrarSeccion1() {
+
+            var id = "parametros de la funcion";
+            $('#siete').load(function () {//para cargar el gif de la seccion siete
+                $("img").fadeOut("slow");
+            });
+            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
+            $.ajax(
+                {
+                    type: 'POST',
+                    /*data: "{'id':" + "'" + categoria + "'}", //datos o parametros enviados al servidor*/
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/Seccion1',
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#siete").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        alert('Fail');
+                    }
+                });
+
+        }
+        function mostrarSeccion2() {
+
+            var id = "parametros de la funcion";
+            $('#siete').load(function () {//para cargar el gif de la seccion siete
+                $("img").fadeOut("slow");
+            });
+            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
+            $.ajax(
+                {
+                    type: 'POST',
+                    /*data: "{'id':" + "'" + categoria + "'}", //datos o parametros enviados al servidor*/
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/Seccion2',
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#siete").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        alert('Fail');
+                    }
+                });
+
+        }
+        function mostrarSeccion3() {
+
+            var id = "parametros de la funcion";
+            $('#siete').load(function () {//para cargar el gif de la seccion siete
+                $("img").fadeOut("slow");
+            });
+            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
+            $.ajax(
+                {
+                    type: 'POST',
+                    /*data: "{'id':" + "'" + categoria + "'}", //datos o parametros enviados al servidor*/
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/Seccion3',
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#siete").html(result);
                     },
 
                     error: function (error) {

@@ -365,6 +365,7 @@
     <Content Include="Content\image_UsuarioIndex\cargadatos_es.gif" />
     <Content Include="Content\image_UsuarioIndex\cuenta_promocional_1.jpg" />
     <Content Include="Content\image_UsuarioIndex\cuenta_promocional_contacto_1.jpg" />
+    <Content Include="Content\image_UsuarioIndex\fondo_submenu_emergente.jpg" />
     <Content Include="Content\image_UsuarioIndex\imagenpromocion_2.png" />
     <Content Include="Content\image_UsuarioIndex\logo_informeinteractivo.png" />
     <Content Include="Content\image_UsuarioIndex\logo_reporte360.png" />
@@ -2729,6 +2730,9 @@
     <Content Include="Views\Usuario\test2.cshtml" />
     <Content Include="Views\Usuario\UsuarioSelectProducto3.cshtml" />
     <Content Include="Views\Usuario\UsuarioSelectReporte.cshtml" />
+    <Content Include="Views\Usuario\Seccion1.cshtml" />
+    <Content Include="Views\Usuario\Seccion2.cshtml" />
+    <Content Include="Views\Usuario\Seccion3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
