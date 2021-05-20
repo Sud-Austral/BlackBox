@@ -61,6 +61,16 @@ namespace AplicacionBlanco.Controllers
             }
             var listaOtrosContenidos = listaCategorias;  
             ViewBag.listaOtrosContenidos=listaOtrosContenidos ;
+
+            var Graficos = dbGrafico.GRAFICO.ToList();
+            var rand2 = new Random();
+            List<GRAFICO> listaGraficos = new List<GRAFICO>();
+            for (int i = 0; i < 15; i++)
+            {
+                listaGraficos.Add(Graficos[rand2.Next(Graficos.Count)]);
+            }
+            ViewBag.Graficos = listaGraficos;
+
             return View();
         }
 

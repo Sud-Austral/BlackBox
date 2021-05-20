@@ -365,7 +365,7 @@ namespace Login.Controllers
                 }
             }
             ViewBag.Facturados = productos;
-          
+           
 
             return PartialView();
         }
@@ -545,7 +545,24 @@ namespace Login.Controllers
             return PartialView();
         }
 
-        
+        public PartialViewResult Seccion1()
+        {
+           
+
+            return PartialView();
+        }
+        public PartialViewResult Seccion2()
+        {
+
+
+            return PartialView();
+        }
+        public PartialViewResult Seccion3()
+        {
+
+
+            return PartialView();
+        }
         public ActionResult test2()
         {
 
