@@ -48,7 +48,8 @@
                 '#siete',     
                 '#ocho',
                 '#nueve',
-                '#diez'
+                '#diez',
+                '#once'
 
 
 
@@ -412,16 +413,17 @@
                                 @*Boton para esconder el menu lateral*@
                                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                                 @*Boton para esconder el menu lateral*@
+                                @**********************Scrollbar en usuario index*@
                                 <div class="col-md-6 col-sm-8 m-text-center offset-1 ">
                                     <h5 style="color:black; margin-top:10px;">¡Explora, busca y encuentra en todo nuestro universo de datos!</h5>
                                     <div class="p-1 bg-light  shadow-sm mb-1 mt-1" style="border-radius:20px !important;">
+                                            <form class="input-group" onsubmit="mostrador('#once'); formBusqueda(); return false;">
 
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
-                                            </div>
-                                            <input type="search" id="id" name="id" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
-                                        </div>
+                                                <div class="input-group-prepend">
+                                                    <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                                </div>
+                                                <input type="search" id="idBusqueda" name="id" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
+                                            </form>
                                     </div>
 
                                     <p>
@@ -478,7 +480,10 @@
 
 
                             </div>
+                            <div class="container-fluid offset-1 mt-5" id="once" style="display:none;">
 
+
+                            </div>
                             @*Seccion atencion al cliente*@
                             <div class="container-fluid offset-1">
                                 <div class="row  mt-5">
@@ -696,10 +701,6 @@
 
         function mostrarSeccion1() {
 
-            var id = "parametros de la funcion";
-            $('#siete').load(function () {//para cargar el gif de la seccion siete
-                $("img").fadeOut("slow");
-            });
             /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
             $.ajax(
                 {
@@ -725,10 +726,6 @@
         }
         function mostrarSeccion2() {
 
-            var id = "parametros de la funcion";
-            $('#siete').load(function () {//para cargar el gif de la seccion siete
-                $("img").fadeOut("slow");
-            });
             /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
             $.ajax(
                 {
@@ -753,11 +750,6 @@
 
         }
         function mostrarSeccion3() {
-
-            var id = "parametros de la funcion";
-            $('#siete').load(function () {//para cargar el gif de la seccion siete
-                $("img").fadeOut("slow");
-            });
             /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
             $.ajax(
                 {
@@ -779,6 +771,39 @@
                         alert('Fail');
                     }
                 });
+
+        }
+
+        function formBusqueda() {
+
+            var id = $('#idBusqueda').val();
+
+            $('#once').load(function () {//para cargar el gif de la seccion siete
+                $("img").fadeOut("slow");
+            });
+
+            $('#once').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $.ajax(
+                {
+                    type: 'POST',
+                    data: "{'id':" + "'" + id + "'}", //datos o parametros enviados al servidor
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/FormBuscador?id=' + id,
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#once").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        alert('Fail');
+                    }
+                });
+        
 
         }
     </script>

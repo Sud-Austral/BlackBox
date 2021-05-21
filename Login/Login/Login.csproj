@@ -2733,6 +2733,7 @@
     <Content Include="Views\Usuario\Seccion1.cshtml" />
     <Content Include="Views\Usuario\Seccion2.cshtml" />
     <Content Include="Views\Usuario\Seccion3.cshtml" />
+    <Content Include="Views\Usuario\FormBuscador.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
