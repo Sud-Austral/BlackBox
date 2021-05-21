@@ -79,6 +79,48 @@ namespace Login.Models
             set { fecha_publicacion = value; }
         }
 
+        public string _titulo
+        {
+            get
+            {
+                string salida = "";
+                try
+                {
+                    salida = titulo.Substring(0, 25) + " ...";
+
+
+                }
+                catch (Exception)
+                {
+
+                }
+                return salida;
+            }
+
+            set { _titulo = value; }
+        }
+
+        public string _titulo2
+        {
+            get
+            {
+                string salida = "";
+                try
+                {
+                    salida = titulo.Substring(0, 80) + " ...";
+
+
+                }
+                catch (Exception)
+                {
+
+                }
+                return salida;
+            }
+
+            set { _titulo2 = value; }
+        }
+
         public string _url_Image
         {
             get
