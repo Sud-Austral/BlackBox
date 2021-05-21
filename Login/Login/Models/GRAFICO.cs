@@ -107,7 +107,7 @@ namespace Login.Models
                 string salida = "";
                 try
                 {
-                    salida = titulo.Substring(0, 40) + " ...";
+                    salida = titulo.Substring(0, 80) + " ...";
 
 
                 }
