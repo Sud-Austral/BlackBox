@@ -366,6 +366,9 @@
     <Content Include="Content\image_UsuarioIndex\cuenta_promocional_1.jpg" />
     <Content Include="Content\image_UsuarioIndex\cuenta_promocional_contacto_1.jpg" />
     <Content Include="Content\image_UsuarioIndex\fondo_submenu_emergente.jpg" />
+    <Content Include="Content\image_UsuarioIndex\icono_graficogratuito_NARANJA.png" />
+    <Content Include="Content\image_UsuarioIndex\icono_informeinteractivo_AZUL.png" />
+    <Content Include="Content\image_UsuarioIndex\icono_reporte360_VERDE.png" />
     <Content Include="Content\image_UsuarioIndex\imagenpromocion_2.png" />
     <Content Include="Content\image_UsuarioIndex\logo_informeinteractivo.png" />
     <Content Include="Content\image_UsuarioIndex\logo_reporte360.png" />
@@ -404,6 +407,9 @@
     <Content Include="Content\img\iconos_sector\24.png" />
     <Content Include="Content\img\iconos_sector\25.png" />
     <Content Include="Content\img\iconos_sector\ttt.png" />
+    <Content Include="Content\img\iconos_TipoProducto\1.png" />
+    <Content Include="Content\img\iconos_TipoProducto\3.png" />
+    <Content Include="Content\img\iconos_TipoProducto\4.png" />
     <Content Include="Content\img\Icono_dataIntelligence_Rojo.png" />
     <Content Include="Content\img\Icono_dataIntelligence_Rojo.svg" />
     <Content Include="Content\img\icono_grafico.png" />

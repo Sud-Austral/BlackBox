@@ -49,7 +49,8 @@
                 '#ocho',
                 '#nueve',
                 '#diez',
-                '#once'
+                '#once',
+                '#doce'
 
 
 
@@ -417,13 +418,13 @@
                                 <div class="col-md-6 col-sm-8 m-text-center offset-1 ">
                                     <h5 style="color:black; margin-top:10px;">¡Explora, busca y encuentra en todo nuestro universo de datos!</h5>
                                     <div class="p-1 bg-light  shadow-sm mb-1 mt-1" style="border-radius:20px !important;">
-                                            <form class="input-group" onsubmit="mostrador('#once'); formBusqueda(); return false;">
+                                        <form class="input-group" onsubmit="mostrador('#once'); formBusqueda(); return false;">
 
-                                                <div class="input-group-prepend">
-                                                    <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
-                                                </div>
-                                                <input type="search" id="idBusqueda" name="id" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
-                                            </form>
+                                            <div class="input-group-prepend">
+                                                <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                            </div>
+                                            <input type="search" id="idBusqueda" name="id" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
+                                        </form>
                                     </div>
 
                                     <p>
@@ -484,6 +485,7 @@
 
 
                             </div>
+                        
                             @*Seccion atencion al cliente*@
                             <div class="container-fluid offset-1">
                                 <div class="row  mt-5">
@@ -699,81 +701,6 @@
 
         }
 
-        function mostrarSeccion1() {
-
-            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
-            $.ajax(
-                {
-                    type: 'POST',
-                    /*data: "{'id':" + "'" + categoria + "'}", //datos o parametros enviados al servidor*/
-                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/Usuario/Seccion1',
-                    //URL del action result que cargara la vista parcial
-                    success: function (result) {
-                        // si la funcion se ejecuta lanzara un alert
-                        /*alert('Success');*/
-                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
-                        //que recibio del servidor
-                        $("#siete").html(result);
-                    },
-
-                    error: function (error) {
-                        // si hay un error lanzara el mensaje de error
-                        alert('Fail');
-                    }
-                });
-
-        }
-        function mostrarSeccion2() {
-
-            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
-            $.ajax(
-                {
-                    type: 'POST',
-                    /*data: "{'id':" + "'" + categoria + "'}", //datos o parametros enviados al servidor*/
-                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/Usuario/Seccion2',
-                    //URL del action result que cargara la vista parcial
-                    success: function (result) {
-                        // si la funcion se ejecuta lanzara un alert
-                        /*alert('Success');*/
-                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
-                        //que recibio del servidor
-                        $("#siete").html(result);
-                    },
-
-                    error: function (error) {
-                        // si hay un error lanzara el mensaje de error
-                        alert('Fail');
-                    }
-                });
-
-        }
-        function mostrarSeccion3() {
-            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
-            $.ajax(
-                {
-                    type: 'POST',
-                    /*data: "{'id':" + "'" + categoria + "'}", //datos o parametros enviados al servidor*/
-                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/Usuario/Seccion3',
-                    //URL del action result que cargara la vista parcial
-                    success: function (result) {
-                        // si la funcion se ejecuta lanzara un alert
-                        /*alert('Success');*/
-                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
-                        //que recibio del servidor
-                        $("#siete").html(result);
-                    },
-
-                    error: function (error) {
-                        // si hay un error lanzara el mensaje de error
-                        alert('Fail');
-                    }
-                });
-
-        }
-
         function formBusqueda() {
 
             var id = $('#idBusqueda').val();
@@ -806,6 +733,7 @@
         
 
         }
+        
     </script>
 
 

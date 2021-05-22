@@ -369,8 +369,14 @@
                                         @foreach (var item in ViewBag.Resultado)
                                         {
                                             <tr>
-                                                <td style="border:none !important;">
-                                                    <a href="~/info/index?id=@item.id" target="_blank">
+                                                <td style="border:none !important;cursor: pointer;">
+
+                                                    @{
+                                                        string RutaImagen2 = "/Content/img/iconos_TipoProducto/" + item.TIPO_GRAFICO_id + ".png";
+                                                    }
+                                                    <img class="img-fluid" style="width:140px;" src="@RutaImagen2" />
+                                                    
+                                                    <a onclick="mostrador('#nueve'); ShowInforme('@item.id');">
                                                         @item.titulo <br /> @item.TIPO_GRAFICO_id @item.TIPO_GRAFICO.nombre <br />
                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                     </a>
