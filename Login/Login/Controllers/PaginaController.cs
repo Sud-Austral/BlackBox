@@ -37,10 +37,12 @@ namespace Login.Controllers
             //url = "https://sud-austral.maps.arcgis.com/apps/View/index.html?appid=8968a78812d644858916532e46c7dec3&extent=-120.5127,6.3355,-45.2343,37.5955";
             //var url = db.pedidos.Where(x => x.cliente.id == id && x.producto.id == producto).FirstOrDefault();
             string user = User.Identity.GetUserName();
+            /*
             if(!APIShopify.ValidarCorreo(ordenCliente, user))
             {
                 return View("errorCompra");
             }
+            */
             //Ordenes ordenes = new Ordenes();
             /*
             if (!ordenes.validarCompra(user, url))

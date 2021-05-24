@@ -1,5 +1,59 @@
 ﻿<h1>@ViewBag.saludo</h1>
-<div class="row ">
+
+<button onclick="mostrarSeccion1();">test1</button>
+<button onclick="mostrarSeccion2();">test2</button>
+<button onclick="mostrarSeccion3();">test3</button>
+
+@*<h1>Graficos</h1>
+    @foreach (var item in ViewBag.Resultado)
+    {
+        <p class="display-1">@item.titulo</p>
+
+    }*@
+<div class="row mt-5">
+
+    <div class="col-md-10">
+        <h3 class="text-dark mb-0">Informes Interactivos</h3>
+        <hr style="border:0.5px solid #000000" />
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col">
+        @*<P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Informes Interactivos</strong></P>*@
+    </div>
+</div>
+<div class="row responsive" style="overflow:scroll;height:300px;overflow-x:hidden; width:67%;">
+
+    @foreach (var item in ViewBag.Resultado2)
+
+    {
+        <div class="col-md-10">
+            <div class="row" style="display:flex !important; cursor: pointer;">
+                <a onclick="mostrador('#nueve'); ShowInforme('@item.id');">
+                    <div class="col-md-2">
+                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_informeinteractivo.png" />
+                    </div>
+                    <div class="col-md-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
+                        @item.titulo
+                        @*@item.NOMBRE <br />
+                            @item.FECHA_CREADO*@
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    }
+</div>
+@*@foreach (var item in ViewBag.Resultado2)
+    {
+        <p class="display-1">@item.titulo</p>
+
+    }*@
+
+<div class="row mt-5 ">
 
     <div class="col-8">
         <h3 class="text-dark mb-0">Graficos</h3>
@@ -18,9 +72,9 @@
     @foreach (var item in ViewBag.Resultado)
 
     {
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="row" style="cursor: pointer;">
-                <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" >
+                <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');">
                     <div class="col-md-2">
                         <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_informeinteractivo.png" />
                     </div>
@@ -43,9 +97,9 @@
                         </div>
                         <div class="col-md-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
                             item.titulo-->
-                            @*@item.NOMBRE <br />
-                                @item.FECHA_CREADO*@
-                        <!--</div>
+        @*@item.NOMBRE <br />
+            @item.FECHA_CREADO*@
+        <!--</div>
                     </a>
                 </div>
             </div>
@@ -55,54 +109,7 @@
 </div>
 
 
-@*<h1>Graficos</h1>
-@foreach (var item in ViewBag.Resultado)
-{
-    <p class="display-1">@item.titulo</p>
 
-}*@
-<div class="row mt-5">
-
-    <div class="col-md-8">
-        <h3 class="text-dark mb-0">Informes Interactivos</h3>
-        <hr style="border:0.5px solid #000000" />
-    </div>
-
-</div>
-
-<div class="row">
-    <div class="col">
-        @*<P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Informes Interactivos</strong></P>*@
-    </div>
-</div>
-<div class="row responsive" style="overflow:scroll;height:300px;overflow-x:hidden; width:67%;">
-
-    @foreach (var item in ViewBag.Resultado2)
-
-    {
-        <div class="col-md-8">
-            <div class="row" style="display:flex !important; cursor: pointer;">
-                <a onclick="mostrador('#nueve'); ShowInforme('@item.id');">
-                    <div class="col-md-2">
-                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_informeinteractivo.png" />
-                    </div>
-                    <div class="col-md-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
-                        @item.titulo
-                        @*@item.NOMBRE <br />
-                @item.FECHA_CREADO*@
-
-                    </div>
-                </a>
-            </div>
-        </div>
-
-    }
-</div>
-@*@foreach (var item in ViewBag.Resultado2)
-    {
-        <p class="display-1">@item.titulo</p>
-
-    }*@
 <div class="row mt-5">
     <div class="col-md-8">
         <h3 class="text-dark mb-0">Repotes 360°</h3>
@@ -127,7 +134,7 @@
                     <div class="col-md-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
                         @item.titulo
                         @*@item.NOMBRE <br />
-                @item.FECHA_CREADO*@
+                            @item.FECHA_CREADO*@
 
                     </div>
                 </a>

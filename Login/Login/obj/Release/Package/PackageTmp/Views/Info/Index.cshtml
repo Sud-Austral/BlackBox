@@ -19,7 +19,7 @@
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     @*estilos*@
     <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
-    <link href="~/Content/StyleBuscador.css" rel="stylesheet" />
+    @*<link href="~/Content/StyleBuscador.css" rel="stylesheet" />*@
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
     @*Titulo de la pagina*@
     <title>Estadística</title>
@@ -119,13 +119,13 @@
         </script>
      @*seccion iframe grafico*@
         <section class="contenedor-main row mr-md-2">
-            <main class="col-md-12" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:500px !important;" >
+            <main class="col-md-12" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:800px !important;" >
                 <div class="row bg-dark mb-2" style="border:1px solid; border-top-left-radius:10px; border-top-right-radius:10px;">
                     <div class="col-md-1 col-2">
-                        <img class="img-fluid mt-2" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                        <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
                     </div>
                     <div class="col">
-                        <p class="mt-2" style="color:#fff;">@ViewBag.Elemento.titulo</p>
+                        <p class="mt-3" style="color:#fff;">@ViewBag.Elemento.titulo</p>
                     </div>
                 </div>
                 <!--Iframe de grafico-->
@@ -142,17 +142,22 @@
                 </iframe>
                 
                 <div class="row no-gutters" style="color:blue; font-size:10px;">
-                    <div class="col-md-2 col-3 text-center mt-2 mb-5" style="border-right:1px solid #d9d9d9;">
-                        <a href="#"><span>Ver información</span></a>
-                    </div>
-                    <div class=" col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
-                        <a href="#"><span>Ver fuentes</span></a>
+                    
+                        <div class="col-2 mr-3">
+                            <button type="button" class="btn btn-primary" id="boton" style="margin-bottom:20px;">Información del Gráfico</button>
+                        </div>
+                  
+                                    @*<div class="col-md-2 col-3 text-center mt-2 mb-5" style="border-right:1px solid #d9d9d9;">
+                            <a href="#"><span>Ver información</span></a>
+                        </div>
+                        <div class=" col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
+                            <a href="#"><span>Ver fuentes</span></a>
 
-                    </div>
+                        </div>*@
 
                     <div class="col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
                         <a href="javascript:void(0);">
-                            <span id="verPdf">Ver en Pdf</span>
+                            <span id="verPdf" style="font-size:14px;">Ver en Pdf</span>
                         </a>
                         <script type="text/javascript">
                             $("#verPdf").click(function () {
@@ -422,13 +427,13 @@
             </aside>
             *@
         </section>
-        <section class="container" >
+        @*<section class="container" >
             <div class="row justify-content-end">
                 <div class="col-2 mr-3">
                     <button type="button" class="btn btn-primary" id="boton" style="margin-bottom:20px;">Información del Gráfico</button>
                 </div>
              </div>
-        </section>
+        </section>*@
         
         <section class="container widgets mb-5" id="leerMas" style="display:none; background:#fff;">
             <div class="row" style="border:2px solid #e6e6e6; border-radius:15px; ">
@@ -575,382 +580,286 @@
 
     </div>
     <!--seccion de suscripciones-->
-    <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_6.jpg');padding-bottom:40px; background-size:cover;">
-        <div class="row">
-            <div class="col">
-                <h3 style="color:#fff; padding:40px 0px; ">
-                    ¡El acceso más conveniente!
+        <div class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+
+            <div class="row" style="padding-left:20%; padding-right:20%">
+                <div class="col-12">
+                    <h3 style="color:#fff; padding:40px 0px;">
+                        ¡Imagina toda la información pública
+                        de un país en una sola plataforma!
+                    </h3>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
+                <div class="col-12">
+                    <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_1.png" alt="100%x280" />
+                </div>
+            </div>
+        </div>
+    <div class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
+
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px; margin-bottom:10px;">
+                    ¡Y para los que necesitan más información!
                 </h3>
             </div>
-           
         </div>
-        <!-- Row -->
-        <div class="row d-flex justify-content-center ">
-            <div class="col-md-3 col-10">
-                <div class="row d-block">
-                    <div class="col mb-3">
-                        <div class="card  mb-3" style="border-radius:20px; height:420px">
-                            <div class="card-header text-center" style="border: none;">
-                                Cuenta Básica Gratuita
-                            </div>
-                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
-                                <span style="color:#fff">
-                                    
-                                    @*En esta cuenta nos podrás conocer, ver algunos de los materiales
-                                    disponibles y observar su potencial. Incluye:*@
-                                </span>
-                                <ul style="list-style: none;color:#fff;padding-top:15px;font-size:12px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Gráficos, Mapas interactivos y diagramas</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descargas en Excel, PNG y PDF</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief DI </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Uso por 1 año </li>
-                                  
-                                </ul>
-                            </div>
-
-                            <div class="card-footer" style="border: none;">
-                                <div class="row">
-                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right">
-
-                                        <span style="color:red; font-size:18px;">$0 </span><span><strong>USD</strong></span><br/>
-                                        ACCESO INDIVIDUAL
-                                    </div>
-                                    <div class="col-4 col-md-1 mr-md-1">
-                                            <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                               Inscribirse
-                                            </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col mb-md-3 ">
-                        <div class="card  mb-3" style=" border-radius:20px; height:420px">
-                            <div class="card-header text-center" style="border: none;">
-                                Cuenta Profesional
-                            </div>
-                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
-                                <p style="color:#fff">
-                                    @*Podrás acceder a un contenido profesional, pensado para profundizar en tu área de interés.*@
-                                </p>
-                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Gráficos, Mapas interactivos y diagramas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descargas en Excel, PNG y PDF.</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief DI  </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informes DI </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Uso por 1 año </li>
-                                </ul>
-                            </div>
-
-                            <div class="card-footer" style="border: none;">
-                                <div class="row">
-                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
-                                        <span style="color:red; font-size:18px;">$35</span><span><strong> USD</strong> mensual</span><br />
-                                        ACCESO INDIVIDUAL
-                                    </div>
-                                    <div class="col-4 col-md-1 mr-md-1">
-                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                            Subscribirse
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-10">
-                <div class="row d-block ">
-                    <div class="col-12 mb-3 text-center">
-                        <span style="color:#fff;">
-                            @*Desde una cuenta sin pago hasta cuentas mensuales y anuales, personales o para instituciones*@
-                        </span>
-                    </div>
-                    <div class="col-12 mb-3">
-                        <div class="card  mb-3" style=" border-radius:20px; background-color:transparent;">
-
-                            <div class="card-body text-success mt-5" style="margin-left:10px; color:#fff; margin-right:10px;  ">
-                                <img class="img-fluid" src="~/Content/image_estadistica/texto_venta1.png" alt="Alternate Text" />
-
-                            </div>
-                            <div class="card-footer mt-5" style="border: none; color:#fff;">
-                                <img class="img-fluid" src="~/Content/image_estadistica/texto_venta2.png" alt="Alternate Text" />
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-10" >
-                <div class="row d-block">
-                    <div class="col mb-3 ">
-                        <div class="card  mb-3" style="border-radius:20px;height:420px">
-                            <div class="card-header text-center" style="border: none;">
-                                Cuenta Universidad y ONG'S
-                            </div>
-                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70; ">
-                                @*<span style="color:#fff">
-                                    Contamos con información especial para instituciones académicas o sociales para complementar sus proyectos o investigaciones.
-                                </span>*@
-                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:30px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Gráficos, Mapas interactivos y diagramas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descarga en Excel, PNG y PDF.</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief DI </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informe DI </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Uso por 1 año </li>
-                                </ul>
-                            </div>
-
-                            <div class="card-footer" style="border: none;">
-                                <div class="row">
-                                    <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right ">
-                                        <span style="color:red; font-size:18px;">$500</span><span><strong> USD </strong>mensual</span><br />
-                                        ACCESOS GRUPALES
-                                    </div>
-                                    <div class="col-4 col-md-1 mr-md-1">
-                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                            Subscribirse
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col mb-3 ">
-                        <div class="card  mb-3" style="border-radius:20px;height:420px;">
-                            <div class="card-header text-center" style="border: none;">
-                                Cuenta Empresas e Instituciones
-                            </div>
-                            <div class="card-body text-success text-left" style="margin-left:10px; margin-right:10px;border-radius:15px; background-color:#716f70;">
-                                <span style="color:#fff">
-                                    @*Tendrás acceso a todas nuestras estadísticas e información acerca de tu área de interés.Un elemento clave para conocer de manera eficiente y rápida cualquier ítem que requieras.*@
-                                    
-                                </span>
-                                <ul style="list-style: none;color:#fff;font-size:12px;padding-top:5px; text-align:left; padding-left:0px !important;margin-bottom:0px !important">
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Gráficos, mapas interactivos y diagramas </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Descargas en Excel, PNG y PDF.</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Brief DI  </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Informe DI </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Reporte 360 DI </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Encuestas</li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Servicio de investigación </li>
-                                    <li><span><img class="img-fluid" style="width:12px;" src="~/Content/image_estadistica/ticked.png" alt="Alternate Text" /></span> Uso por 1 año </li>
-                                </ul>
-                            </div>
-
-                            <div class="card-footer" style="border: none;">
-                                <div class="row">
-                                    <div class="col-6 text-xl-right " style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:left ">
-                                        <span style="color:red; font-size:18px;">$700</span><span><strong> USD</strong> mensual</span><br />
-                                        ACCESOS GRUPALES
-                                    </div>
-                                    <div class="col-4 col-md-1 mr-md-1">
-                                        <button class="sub btn btn-danger btn-sm mt-1" style="border-radius:20px; font-size:12px;">
-                                            Subscribirse
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="row d-flex justify-content-center mb-4" style="padding-left:35%; padding-right:35%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
             </div>
         </div>
-        <!-- Row -->
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
+            </div>
+        </div>
+        <div class="row mb-1" style="padding-left:20%; padding-right:20%">
+
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px;">
+                    La suscripción anual Cuenta Profesional fue diseñada especialmente para potenciar las investigaciones, proyectos o planificaciones de quienes requieren una mayor cantidad de información.
+
+                </h3>
+            </div>
+
+        </div>
+        <div class="row mb-4" style="padding-left:20%; padding-right:20%">
+            <h3 style="color:#009fcf">
+                INCLUYE
+            </h3>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
+            </div>
+        </div>
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right;">
+                <span style="color:white; font-size:18px;">USD</span>
+                <span style="color:red; font-size:22px;">$35</span>
+                <br />
+                <span style="color:white; font-size:18px;"> mensuales</span>
+            </div>
+            <div class="col-6" style="text-align:left;">
+                <button class="btn btn-danger btn-sm mt-2 text-left" style="border-radius:20px; font-size:20px;">
+                    Adquirir
+                </button>
+            </div>
+        </div>
     </div>
-  
+
             <!--carrucel-->
-        <section class="pt-5 pb-5">
-            <div class="container">
-                <div class="row ml-1 mr-1 " style="border:1px solid rgb(0 0 0 / 0.00); border-radius:10px; background-color:#bf1522;" >
-                    <div class="col-8 col-md-6">
-                        <p class="mt-2" style="color:#ffffff;">
-                            @*Uso de los medios de comunicación en España *@<strong>∙</strong> @ViewBag.ELEMENTO.CATEGORIA.PRODUCTO.SECTOR.nombre en
-                            @ViewBag.ELEMENTO.TERRITORIO.nombre
-                        </p>
-                    </div>
-                    <div class="col-4 col-md-6 text-right mt-2 ">
-                        <a class=" mr-1" href="#carouselExample" role="button" data-slide="prev" style="text-decoration: none; background-color: #c6c6c6; padding: 3px 3px 5px 5px;">
-                            <i class="fa fa-arrow-left align-baseline" style="color:red; font-size:0.8rem;"></i>
+    <div class="py-5 bg-light " >
+        <section class="pt-3 ">
+            <div class="container-fluid" >
+                <div class="row justify-content-center text-center">
+
+                    <div class="col-8 text-right mb-3 ml-1 mr-1" style="border:1px solid rgb(0 0 0 / 0.00); border-radius:10px; background-color:#bf1522;" >
+                        <span class="float-left mt-2" style="color:#fff;">Este es un texto de prueba</span>
+                        <a class="btn btn-primary mb-1 mr-1 mt-1" href="#carouselExampleIndicators2" role="button" data-slide="prev" style="text-decoration: none; border:none !important; background-color: #c6c6c6; padding: 3px 5px 5px 5px;">
+                            <i class="fa fa-arrow-left align-baseline" style="color:red;font-size:0.8rem;"></i>
                         </a>
-                        <a  href="#carouselExample" role="button" data-slide="next" style="text-decoration: none; background-color: #c6c6c6; padding: 3px 5px 5px 5px;">
-                            <i class="fa fa-arrow-right align-baseline" style="color:red;font-size:0.8rem; "></i>
+                        <a class="btn btn-primary mb-1 mt-1 " href="#carouselExampleIndicators2" role="button" data-slide="next" style="text-decoration: none; border:none !important; background-color: #c6c6c6; padding: 3px 5px 5px 5px;">
+                            <i class="fa fa-arrow-right align-baseline" style="color:red;font-size:0.8rem;"></i>
                         </a>
                     </div>
-                </div>
-                    <div class="container-fluid mt-4">
-                        <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
-                            <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                                <div class="carousel-item col-md-3  active"  style="margin-right:0px;">
-                                    <div class="panel panel-default">
-                                        <div class="card" style="border: 0.5px solid #e6e6e6; border-radius:25px;background-color: #ffffff;">
-                                            <a href="~/info/index?id=2" style="color:#000;">
 
-                                                <div class="card-body">
-                                                    <h4 class="card-title text-center mt-md-2">@ViewBag.ELEMENTO.titulo</h4>
-                                                    <img class="img-fluid mx-0 mt-md-2  " alt="100%x280" src="~/Content/iconos_PopUp/gracircular (1).png">
+                   
+                    <div class="col-8">
+                        <div id="carouselExampleIndicators2" class="carousel" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
 
-                                                    <h5 class="card-text text-center"> @ViewBag.ELEMENTO.descripcion</h5>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[0].id">
+                                                <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[0].titulo</div>
+                                                <div class="card" style="border:none;">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[0]._url_Image">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="color:#000">@ViewBag.Graficos[0].CATEGORIA.nombre</h4>
 
+                                                        <p class="card-text" style="color:#000">@ViewBag.Graficos[0].CATEGORIA.descripcion</p>
+                                                    </div>
                                                 </div>
                                             </a>
                                         </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;">
+                                                @ViewBag.Graficos[1].titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[1]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[1].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[1].CATEGORIA.descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">
+                                                @ViewBag.Graficos[2].titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[2].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[2].CATEGORIA.descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
-                                @foreach (var item in ViewBag.listaAsociado)
-                                 {
-                                    <div class="carousel-item col-md-3" style="margin-right:0px;">
-                                        <div class="panel panel-default">
-                                            <div class="card" style="border:0.5px solid #e6e6e6; border-radius:25px; background-color:#f2f2f2;">
-                                                @* <a href="~/info/index?id=@ViewBag.Elemento.id" style="color:#000;">*@
-                                                <a href="~/info/index?id=@item.id" style="color:#000;">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title text-center mt-md-2">@item.titulo</h4>
-                                                        @*<img class="img-fluid mx-0 mt-md-2" alt="100%x280" src="~/Content/iconos_PopUp/gracircular (1).png">*@
-                                                        @{ 
-                                                            string url = "https://raw.githubusercontent.com/Sud-Austral/MPG/main/Image/" + item.GetURL();
-                                                            url = url.Replace(".csv", ".png");
-                                                        }
-                                                        <img class="img-fluid mx-0 mt-md-2" alt="100%x280" src="@url">
-                                                        <h5 class="card-text text-center"> @item.descripcion</h5>
-                                                    </div>
-                                                </a>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;">@ViewBag.Graficos[3].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[3].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[3].CATEGORIA.descripcion</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[4].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[4].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[4].CATEGORIA.descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[5].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[5].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[5].CATEGORIA.descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[6].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[6].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[6].CATEGORIA.descripcion</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[7].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[7].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[7].CATEGORIA.descripcion</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[8].titulo</div>
+                                            <div class="card" style="border-radius:10px;">
+                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="@ViewBag.Graficos[8]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[8].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[8].CATEGORIA.descripcion</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                 }
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
 
-                            </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[9].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[9].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[9].CATEGORIA.descripcion</p>
 
-                        </div>
-                    </div>
-                
-            </div>
-        </section>
-       
-    <!--nav verticar-->
-    <div class="container">
-        <!--nav verticar
-        <section class="container mt-4">
-            <div class="text-left mb-md-3" style="border:0.5px solid rgb(0 0 0 / 0.00) ; border-radius:10px; background-color:#bf1522;">
-                <h6 style="color:#ffffff;" class="mb-md-3 mt-md-3 ml-md-2"><strong>∙</strong> Información similar de este UN PRODUCTO</h6>
-            </div>
-            @*<h4 class="text-center mb-md-5 mt-md-5"><strong>Estadísticas sobre </strong>"El consumo de prensa en España"</h4>*@
-            <div class="row" style="margin-bottom:20px; height:500px !important; overflow-y:scroll;" >
-                <div class="col-12 col-md-6">
-                    <div class="row list-group" id="list-tab" role="tablist">
-                        
-                            @foreach (var item in ViewBag.listaAsociado)
-                            {
-                                <a class="list-group-item list-group-item-action" id="list-@item.nombre-list" data-toggle="list" href="#list-@item.nombre" role="tab" aria-controls="@item.nombre" style="color:#000; font-family:MYRIADPRO-REGULAR;">@item.titulo</a>
-                            }
-                            @*
-                                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings" style="color:#000;">Empresas</a>
-                            *@
-                    </div>
-                    
+                                                </div>
 
-                </div>
-                <div class="col-md-6 ">
-                    <h6 style="color:#000;margin-top:10px;"><strong>∙ Información mas relevante</strong></h6>
-                    <div class="row" >
-                        <div class="tab-content col-8"  id="nav-tabContent"  >
-                            @foreach (var item in ViewBag.listaAsociado)
-                            { 
-                                <a href="~/info/index?id=@item.id">
-                                     <div class="row">
-                                        <div class="col-7 tab-pane fade" id="list-@item.nombre" role="tabpanel" aria-labelledby="list-@item.nombre-list" style="border:0.5px solid #808080; border-radius:10px;">
-                                            <img class=" img-fluid mx-0 " style="width:20%;" src="~/Content/img/icono_grafico.png" alt="Alternate Text" />
-                                            @item.descripcion
+                                            </div>
                                         </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[9].titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[10].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[10].CATEGORIA.descripcion</p>
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">@ViewBag.Graficos[11].titulo</div>
+                                            <div class="card" style="border-radius:10px;">
+                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="@ViewBag.Graficos[11]._url_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Graficos[11].CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Graficos[11].CATEGORIA.descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </a>
-
-                             }
-                              
-                            @*
-                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">4 Empresas</div>*@
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
-        -->
-        <!--Seccion con scrollbar
-        <section style="margin-bottom:100px; background:#F7F9FA">
-            <br />
-            <br />
-            <h4 class="text-center mb-md-4"><strong>Otros contenidos:</strong> También le podría interesar</h4>
-            <strong style="margin-left: 80px;">Estadisticas</strong>
-            <div class="row container ml-md-5" style="list-style:none;">
 
-                <div class="col-md-7" style="width:600px; height:350px; overflow-x: hidden!important; overflow-y: scroll; margin-bottom:50px; background:#fff;">
-
-                    <ul class="list-group mb-md-7" style="list-style:none">
-
-                        @foreach (var item in ViewBag.listaOtrosContenidos)
-                        {
-                            <li class="mt-md-3"><span><img class="mr-md-2 mb-md-2" src="~/Content/iconos_PopUp/barra-grafica.png" alt="Alternate Text" /></span>@item.nombre</li>
-                        }
-                        @*
-                        <li><span><img class="mr-md-2 mb-md-2" src="~/Content/iconos_PopUp/barra-grafica.png" alt="Alternate Text" /></span>A simple primary list group item</li>
-
-                        <li><span><img class="mr-md-2 mb-md-2" src="~/Content/iconos_PopUp/barra-grafica.png" alt="Alternate Text" /></span>A simple secondary list group item</li>
-
-                        @for (int i = 0; i < 10; i++)
-                        {
-                        <li><span><img class="mr-md-2 mb-md-2" src="~/Content/iconos_PopUp/barra-grafica.png" alt="Alternate Text" /></span>@i</li>
-                        }
-                        *@
-                    </ul>
-                </div>
-                <div class="col-md-5">
-
-                    <div class="row">
-
-                        <div class="col-md-2 mb-md-4">
-                            <img src="~/Content/img/Diseño sin título - copia.png" />
-                        </div>
-                        <div class="col-md-9 ml-md-3">
-                            <p>
-                                @*
-                                @ViewBag.Resultado.TITULO
-                                *@
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-            -->
-        @* Seccion de buscador*@
+    </div>
+       
+   
+    @* Seccion de buscador*@
         <section class="call-to-action">
-            <div class="container">
-                <div class="row ml-1 mr-1">
-                    <div class="col-md-6 col-sm-8 m-text-center" style="background-color:#000; height:200px;">
-                        <div class="p-1 bg-light  shadow-sm mb-4 mt-4" style="border-radius:25px !important;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-8 m-text-center" style="background-color:#000; height:300px;">
+                        <div class="p-1 bg-light  shadow-sm mb-4 mt-5 offset-2" style="border-radius:25px !important; width:60%;">
                             <div class="input-group" >
-                                <div class="input-group-prepend">
+                                <div class="input-group-prepend pt-1">
                                     <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
                                 </div>
                                 <input type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
                             </div>
                         </div>
-                        <h5 style="color:#fff;">¿Desea conocer más sobre nuestras soluciones profesionales?</h5>
-                        <p id="last">Le enviaremos encantados información detallada sobre nuestra Cuenta Corporativa.</p>
+                        <p id="last" style="color:#fff;" class="offset-2">
+                            ¿Encontraste lo que buscabas?
+                            Si necesitas un informe interactivo, reporte o plataforma en particular o te gustaría adecuar alguno de nuestros productos, OFRECEMOS SERVICOS PERSONALIZADOS.
+                            Solo tienes que contactarnos y te ayudaremos a evaluar su factibilidad.
+                        </p>
+                       
                     </div>
                     <div class="col-md-6 col-sm-4" style="background-image: url('/Content/img/ofrecemos_fondo_busqueda.jpg'); background-size: cover;">
                         <img class="img-fluid offset-6" style="width:50%;" src="~/Content/img/blanco-trans - copia.png" alt="Alternate Text" />
@@ -958,14 +867,13 @@
                 </div>
             </div>
         </section>
-    </div>
     @*Footer*@
-    <footer class="row">
+    @*<footer class="row">
         <div class="col">
             <h4 style="padding-left:50px;">Footer</h4>
         </div>
 
-    </footer>
+    </footer>*@
     <!--test highchart-->
     <script src="~/Scripts/highcharts.js"></script>
     <!--script de buscador-->
