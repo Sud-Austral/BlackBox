@@ -138,8 +138,19 @@
                                 }
                             </div>
                             <h4 class="mt-3">Tipo de producto</h4>
-
+                            
                             <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
+                                @foreach (var item in ViewBag.sinRepetir)
+                                {
+
+                                    <div>
+                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item.TIPO_GRAFICO.nombre"> @item.TIPO_GRAFICO.nombre</label>
+                                    </div>
+
+
+                                }
+
+                                s
                                 <div>
                                     <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value=""> Informes Interactivo</label>
                                 </div>

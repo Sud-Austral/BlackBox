@@ -274,6 +274,7 @@ namespace Login.Controllers
 
         public PartialViewResult InformesUsuario()
         {
+
             //Lista de productos de Shopify
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
             //Nombre de Usuario
@@ -308,6 +309,8 @@ namespace Login.Controllers
         }
         public PartialViewResult ReportesUsuario()
         {
+           
+           
             //Lista de productos de Shopify
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
             //Nombre de Usuario
@@ -550,7 +553,9 @@ namespace Login.Controllers
         {
             var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
             ViewBag.Resultado = NEW_GRAFICOS.ToList();
-           
+
+            
+
             //Listas de Filtros
             List<string> Paises = new List<string>();
             List<string> TipoGrafico = new List<string>();
@@ -601,7 +606,7 @@ namespace Login.Controllers
             ViewBag.Categoria = Categoria;
             //var Resultados = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
             //ViewBag.resultados = Resultados;
-
+            
             return PartialView();
         }
         public ActionResult test2()
