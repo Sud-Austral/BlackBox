@@ -11,6 +11,7 @@ body {
 
     font-family: 'MYRIADPRO-REGULAR';
     border:none !important;
+    margin:0px !important;
 }
 
 .pagination li {
