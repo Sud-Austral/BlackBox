@@ -418,8 +418,7 @@
                                 <div class="col-md-6 col-sm-8 m-text-center offset-1 ">
                                     <h5 style="color:black; margin-top:10px;">¡Explora, busca y encuentra en todo nuestro universo de datos!</h5>
                                     <div class="p-1 bg-light  shadow-sm mb-1 mt-1" style="border-radius:20px !important;">
-                                        <form class="input-group" onsubmit="mostrador('#once'); formBusqueda(); return false;">
-
+                                        <form class="input-group" onsubmit="BuscadorForm2(event);">
                                             <div class="input-group-prepend">
                                                 <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
                                             </div>
@@ -704,7 +703,7 @@
         function formBusqueda() {
 
             var id = $('#idBusqueda').val();
-
+         
             $('#once').load(function () {//para cargar el gif de la seccion siete
                 $("img").fadeOut("slow");
             });
@@ -732,6 +731,12 @@
                 });
         
 
+        }
+        function BuscadorForm2(e) {
+            e.preventDefault();
+            mostrador('#once');
+            formBusqueda();
+            return false;
         }
         
     </script>

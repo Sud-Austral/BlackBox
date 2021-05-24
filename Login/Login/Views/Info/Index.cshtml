@@ -847,12 +847,12 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-8 m-text-center" style="background-color:#000; height:300px;">
                         <div class="p-1 bg-light  shadow-sm mb-4 mt-5 offset-2" style="border-radius:25px !important; width:60%;">
-                            <div class="input-group" >
+                            <form class="input-group" action="~/info/PaginaBusqueda" method="get" >
                                 <div class="input-group-prepend pt-1">
                                     <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
                                 </div>
-                                <input type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
-                            </div>
+                                <input class="typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:15px;">
+                            </form>
                         </div>
                         <p id="last" style="color:#fff;" class="offset-2">
                             ¿Encontraste lo que buscabas?
