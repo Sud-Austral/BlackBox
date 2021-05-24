@@ -130,27 +130,37 @@
                             <h4 class="mt-3">COLECCIÓN</h4>
                             <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                 @foreach (var item in ViewBag.Sector)
-                                {
+                                 {
                                     <div>
                                         <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
                                     </div>
 
-                                }
+                                 }
                             </div>
                             <h4 class="mt-3">Tipo de producto</h4>
                             
                             <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
-                                @foreach (var item in ViewBag.sinRepetir)
-                                {
+                               
+                                @*@foreach (var item in ViewBag.Resultado)
+                                        {
+                                            if (!ViewBag.Resultado.contains(item))
+                                                ViewBag.Resultadoa.add(item);
+
+                                            <div>
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item.TIPO_GRAFICO.nombre"> @item.TIPO_GRAFICO.nombre</label>
+                                            </div>
+                                        }*@
+                                @foreach (var item in ViewBag.Resultado)
+                                 {
 
                                     <div>
                                         <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item.TIPO_GRAFICO.nombre"> @item.TIPO_GRAFICO.nombre</label>
                                     </div>
 
 
-                                }
+                                 }
 
-                                s
+
                                 <div>
                                     <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value=""> Informes Interactivo</label>
                                 </div>

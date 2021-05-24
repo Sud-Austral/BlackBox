@@ -237,7 +237,7 @@ namespace Login.Controllers
             ViewBag.User = User.Identity.GetUserName();
             return PartialView();
         }
-        public PartialViewResult GraficoUsuario()
+        public PartialViewResult GraficoUsuario()/*************************************************************************/
         {
             //Lista de productos de Shopify
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
@@ -272,7 +272,7 @@ namespace Login.Controllers
             return PartialView();
         }
 
-        public PartialViewResult InformesUsuario()
+        public PartialViewResult InformesUsuario()/*******************************************************************/
         {
 
             //Lista de productos de Shopify
@@ -307,10 +307,10 @@ namespace Login.Controllers
             ViewBag.Resultado = productos;
             return PartialView();
         }
-        public PartialViewResult ReportesUsuario()
+
+        public PartialViewResult ReportesUsuario()/*****************************************************************************************/
         {
-           
-           
+          
             //Lista de productos de Shopify
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
             //Nombre de Usuario

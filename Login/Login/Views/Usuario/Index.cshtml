@@ -484,7 +484,11 @@
 
 
                             </div>
-                        
+                            <div class="container-fluid offset-1 mt-5" id="doce" style="display:none;">
+
+
+                            </div>
+
                             @*Seccion atencion al cliente*@
                             <div class="container-fluid offset-1">
                                 <div class="row  mt-5">
@@ -738,7 +742,33 @@
             formBusqueda();
             return false;
         }
-        
+        //desplegar los productos de suscripcion de usuario, dashnoard, informes y reportes
+        function ProductoSuscripcion() {
+
+            var id = "parametros de la funcion";
+
+            $.ajax(
+                {
+                    type: 'POST',
+                    data: "{'id':" + "'" + Reporte + "'}", //datos o parametros enviados al servidor
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/UsuarioProductoSuscripcion?id=' + Reporte,
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#doce").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        alert('Fail');
+                    }
+                });
+
+        }
     </script>
 
 
