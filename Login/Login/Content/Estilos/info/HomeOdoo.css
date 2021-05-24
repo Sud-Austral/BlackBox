@@ -13,7 +13,7 @@
  */  
 
 body {
-    font-family: 'Open Sans',sans-serif
+    font-family: 'Open Sans',sans-serif !important;
 }
 
 
@@ -127,7 +127,15 @@ h5 {
 }
 
 /* ========================================================================*/
+/*Sección buscador*/
 
+.tituloBuscador {
+    font-family: 'Open Sans',sans-serif !important;
+}
+
+.buscador {
+    font-family: 'Open Sans',sans-serif !important;
+}
 /*botones seccion palabras claves*/
 .bClaves .btn-sm {
     padding: 2px 35px;

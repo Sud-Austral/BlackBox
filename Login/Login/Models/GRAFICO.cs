@@ -146,7 +146,7 @@ namespace Login.Models
                 salida = asciiStr.ToLower();
                 salida = "https://github.com/Sud-Austral/MPG/raw/main/Image/" + salida + id.ToString() + ".png";
                 /* return salida.Replace(" ", "_");*/
-                return this.auxiliar;
+                return "https://raw.githubusercontent.com/Sud-Austral/MPG/main/img/2521.png";
             }
 
             set { fecha_publicacion = "Sin Imagen"; }
