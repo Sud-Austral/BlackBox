@@ -299,6 +299,7 @@
     <Content Include="Content\EstilosNuevoMenuLateral.css" />
     <Content Include="Content\EstilosPopUp.css" />
     <Content Include="Content\Estilos\info\HomeOdoo.css" />
+<<<<<<< HEAD
     <Content Include="Content\image_estadistica\10_boton_finanzas_normal.png" />
     <Content Include="Content\image_estadistica\10_boton_finanzas_on.png" />
     <Content Include="Content\image_estadistica\11_boton_comunicacion_normal.png" />
@@ -325,6 +326,9 @@
     <Content Include="Content\image_estadistica\8_boton_negocio_on.png" />
     <Content Include="Content\image_estadistica\9_boton_tiempolibre_normal.png" />
     <Content Include="Content\image_estadistica\9_boton_tiempolibre_on.png" />
+=======
+    <Content Include="Content\image_estadistica\fondo_submenu_emergente.jpg" />
+>>>>>>> origin/rama_consolidado10_vivian2
     <Content Include="Content\image_estadistica\IconosMenu\10_sectores_iconos_finanzas.png" />
     <Content Include="Content\image_estadistica\IconosMenu\11_sectores_iconos_comunicacion.png" />
     <Content Include="Content\image_estadistica\IconosMenu\12_sectores_iconos_recursoquimico.png" />
