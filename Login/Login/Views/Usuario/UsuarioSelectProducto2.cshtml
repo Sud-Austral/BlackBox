@@ -1,8 +1,8 @@
 ﻿<h1>@ViewBag.saludo</h1>
 
-<button onclick="mostrarSeccion1();">test1</button>
-<button onclick="mostrarSeccion2();">test2</button>
-<button onclick="mostrarSeccion3();">test3</button>
+@*<button onclick="mostrarSeccion1();">Informes Interactivos </button>
+<button onclick="mostrarSeccion2();">Gráficos</button>
+<button onclick="mostrarSeccion3();">Repotes 360°</button>*@
 
 @*<h1>Graficos</h1>
     @foreach (var item in ViewBag.Resultado)
@@ -12,7 +12,7 @@
     }*@
 <div class="row mt-5">
 
-    <div class="col-md-10">
+    <div class="col-md-8">
         <h3 class="text-dark mb-0">Informes Interactivos</h3>
         <hr style="border:0.5px solid #000000" />
     </div>
@@ -29,19 +29,20 @@
     @foreach (var item in ViewBag.Resultado2)
 
     {
-        <div class="col-md-10">
+        <div class="col-md-11">
             <div class="row" style="display:flex !important; cursor: pointer;">
-                <a onclick="mostrador('#nueve'); ShowInforme('@item.id');">
+                
                     <div class="col-md-2">
-                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_informeinteractivo.png" />
+                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
                     </div>
                     <div class="col-md-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
-                        @item.titulo
-                        @*@item.NOMBRE <br />
+                        <a onclick="mostrador('#nueve'); ShowInforme('@item.id');">
+                            <h6 class="mt-3">@item.titulo</h6>
+                            @*@item.NOMBRE <br />
                             @item.FECHA_CREADO*@
-
+                        </a>
                     </div>
-                </a>
+                
             </div>
         </div>
 
@@ -56,7 +57,7 @@
 <div class="row mt-5 ">
 
     <div class="col-8">
-        <h3 class="text-dark mb-0">Graficos</h3>
+        <h3 class="text-dark mb-0">Gráficos</h3>
         <hr style="border:0.5px solid #000000" />
     </div>
 
@@ -72,18 +73,20 @@
     @foreach (var item in ViewBag.Resultado)
 
     {
-        <div class="col-md-10">
+        <div class="col-md-11">
             <div class="row" style="cursor: pointer;">
-                <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');">
-                    <div class="col-md-2">
-                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_informeinteractivo.png" />
+               
+                    <div class="col-md-2 col-2">
+                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" />
                     </div>
                     <div class="col-md-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
-                        @item.titulo
-                        @*@item.NOMBRE <br />
+                        <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');">
+                            <h6 class="mt-3">@item.titulo</h6>  
+                            @*@item.NOMBRE <br />
                             @item.FECHA_CREADO*@
+                        </a>
                     </div>
-                </a>
+                
             </div>
         </div>
         <!--foreach (var item in ViewBag.Resultado)
@@ -125,19 +128,21 @@
     @foreach (var item in ViewBag.Resultado3)
 
     {
-        <div class="col-md-8">
-            <div class="row" style="cursor: pointer;">
-                <a onclick="mostrador('#diez'); ShowReporte('@item.id');">
-                    <div class="col-md-2">
-                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/logo_reporte360.png" />
-                    </div>
-                    <div class="col-md-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
-                        @item.titulo
-                        @*@item.NOMBRE <br />
-                            @item.FECHA_CREADO*@
+        <div class="col-md-11">
+            <div class="row " style="cursor: pointer;">
 
-                    </div>
-                </a>
+                <div class="col-md-2">
+                    <img class="img-fluid" src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
+                </div>
+               
+                <div class="col-md-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
+                    <a onclick="mostrador('#diez'); ShowReporte('@item.id'); ">
+                        <h6 class="mt-3">@item.titulo</h6>
+                        @*@item.NOMBRE <br />
+                         @item.FECHA_CREADO*@
+                    </a>
+                </div>
+                
             </div>
         </div>
 

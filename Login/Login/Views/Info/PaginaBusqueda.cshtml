@@ -148,7 +148,7 @@
                 </div>
             }
         </div>*@
-                                <h4 class="mt-3">CATEGORÍA</h4>
+                                <h4 class="mt-3">COLECCIÓN</h4>
                                 <div class="side" style="overflow:scroll; height:250px; overflow:hidden;">
                                     @foreach (var item in ViewBag.Sector)
                                     {
@@ -168,8 +168,8 @@
 
                                     }
                                 </div>
-                                <h4>PAIS</h4>
-                                <div class="side" style="overflow:scroll; height:250px; overflow:hidden;">
+                                <h4>TERRITORIO</h4>
+                                <div class="side mb-5" style="overflow:scroll; height:250px; overflow:hidden;">
                                     @foreach (var item in ViewBag.Paises)
                                      {
                                         <div>
@@ -342,7 +342,7 @@
                                     });
                                 </script>
                                 <!-- COMIENZO TABLA RESULTADOS -->
-                                <h5 class="ml-3 mt-3" style="color:black">Graficos | @ViewBag.Resultado.Count resultados</h5>
+                                <h5 class="ml-3 mt-3" style="color:black">Gráficos | @ViewBag.Resultado.Count resultados</h5>
                                 <div class="table-responsive display" style="height:250px; overflow:hidden; border-radius: 20px !important; padding-left: 15px;">
                                     <table id="mytable" class="table" style=" border:none !important;">
 
@@ -529,7 +529,7 @@
                                         }
                                     </script>
                                 </div>
-                                <h5 class="ml-3 mt-3" style="color:black">Informes ? | @ViewBag.Resultado2.Count resultados</h5>
+                                <h5 class="ml-3 mt-3" style="color:black">Informés ? | @ViewBag.Resultado2.Count resultados</h5>
                                 <div class="table-responsive display my-3" style=" height:250px; overflow:hidden; border-radius: 20px !important; padding-left: 15px;">
                                     <table id="mytable" class="table" border:none !important;">
                                         <thead id="stud_body" style="border:none;">
@@ -899,7 +899,7 @@
             </div>
             <!-- FINAL RESULTADOS DE BUSQUEDA -->
         </div>
-    </div>
+    
 
 
     @*Jquery, Popper bootstrap.min.js*@

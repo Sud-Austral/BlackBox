@@ -545,21 +545,62 @@ namespace Login.Controllers
             return PartialView();
         }
 
-        public PartialViewResult Seccion1()
+        
+        public PartialViewResult FormBuscador(string id)
         {
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
+            ViewBag.Resultado = NEW_GRAFICOS.ToList();
            
+            //Listas de Filtros
+            List<string> Paises = new List<string>();
+            List<string> TipoGrafico = new List<string>();
+            List<string> Temporalidad = new List<string>();
+            List<string> Producto = new List<string>();
+            List<string> Industria = new List<string>();
+            List<string> Sector = new List<string>();
+            List<string> Categoria = new List<string>();
 
-            return PartialView();
-        }
-        public PartialViewResult Seccion2()
-        {
+            foreach (var item in NEW_GRAFICOS.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!Paises.Contains(item.TERRITORIO.nombre))
+                {
+                    Paises.Add(item.TERRITORIO.nombre);
+                }
+                if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
+                {
+                    TipoGrafico.Add(item.TIPO_GRAFICO.nombre);
+                }
+                if (!Temporalidad.Contains(item.TEMPORALIDAD.nombre))
+                {
+                    Temporalidad.Add(item.TEMPORALIDAD.nombre);
+                }
+                if (!Producto.Contains(item.CATEGORIA.PRODUCTO.nombre))
+                {
+                    Producto.Add(item.CATEGORIA.PRODUCTO.nombre);
+                }
+                if (!Industria.Contains(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
+                {
+                    Industria.Add(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
+                }
+                if (!Sector.Contains(item.CATEGORIA.PRODUCTO.SECTOR.nombre))
+                {
+                    Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
+                }
 
-
-            return PartialView();
-        }
-        public PartialViewResult Seccion3()
-        {
-
+                if (!Categoria.Contains(item.CATEGORIA.nombre))
+                {
+                    Categoria.Add(item.CATEGORIA.nombre);
+                }
+            }
+            ViewBag.Paises = Paises;
+            ViewBag.TipoGrafico = TipoGrafico;
+            ViewBag.Temporalidad = Temporalidad;
+            ViewBag.Producto = Producto;
+            ViewBag.Industria = Industria;
+            ViewBag.Sector = Sector;
+            ViewBag.Categoria = Categoria;
+            //var Resultados = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            //ViewBag.resultados = Resultados;
 
             return PartialView();
         }
