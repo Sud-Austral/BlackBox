@@ -616,5 +616,12 @@ namespace Login.Controllers
 
             return View();
         }
+        public PartialViewResult InformeSuscription(string id, string nombre)
+        {
+            ViewBag.urlReporte = id;
+            ViewBag.TituloReporte = nombre;
+          
+            return PartialView();
+        }
     }
 }
