@@ -555,7 +555,18 @@ namespace Login.Controllers
         
         public PartialViewResult FormBuscador(string id)
         {
+            //Supongamos que solo esta suscrito al SECTOR (COLECCION) 1001
+            List<int> suscrip = new List<int>();
+            suscrip.Add(1001);
+            //Aun tenemos que resolver esto
+
             var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
+            foreach (var item in NEW_GRAFICOS)
+            {
+                item.suscripciones = suscrip;
+            }
+            //var resultado = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id == 3).ToList();
+
             ViewBag.Resultado = NEW_GRAFICOS.ToList();
            
             //Listas de Filtros
@@ -614,6 +625,19 @@ namespace Login.Controllers
         public ActionResult test2()
         {
 
+            return View();
+        }
+
+        public ActionResult test3()
+        {
+            List<int> suscrip = new List<int>();
+            suscrip.Add(1001);
+            var resultado = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id == 3).ToList();
+            foreach (var item in resultado)
+            {
+                item.suscripciones = suscrip;
+            }
+            ViewBag.Resultado = resultado;
             return View();
         }
     }

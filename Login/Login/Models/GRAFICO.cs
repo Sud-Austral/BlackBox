@@ -152,6 +152,30 @@ namespace Login.Models
             set { fecha_publicacion = "Sin Imagen"; }
         }
 
+        public List<int> suscripciones { get; set; }
+
+        public bool mostrar
+        {
+            get
+            {
+                try
+                {
+                    if (this.TIPO_GRAFICO_id < 3)
+                    {
+                        return true;
+                    }
+                    return this.suscripciones.Contains(this.CATEGORIA.PRODUCTO.SECTOR_id);
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+                
+            }
+            set { mostrar = true; }
+        }
+
         public string GetURL()
         {
             string industria_id = CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id.ToString("D2");
@@ -177,5 +201,7 @@ namespace Login.Models
             salida = asciiStr.ToLower();
             return salida.Replace(" ", "_");
         }
+
+
     }
 }
