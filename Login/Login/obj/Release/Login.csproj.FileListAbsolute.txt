@@ -501,6 +501,7 @@ C:\Users\clent\OneDrive\Escritorio\Login\Login\obj\Release\Login.csproj.CoreComp
 C:\Users\clent\OneDrive\Escritorio\Login\Login\obj\Release\Login.csproj.CopyComplete
 C:\Users\clent\OneDrive\Escritorio\Login\Login\obj\Release\Login.dll
 C:\Users\clent\OneDrive\Escritorio\Login\Login\obj\Release\Login.pdb
+C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.AssemblyReference.cache
 D:\GitHub\BlackBox\Login\Login\bin\Login.dll.config
 D:\GitHub\BlackBox\Login\Login\bin\Login.dll
 D:\GitHub\BlackBox\Login\Login\bin\Login.pdb
@@ -622,9 +623,8 @@ D:\GitHub\BlackBox\Login\Login\bin\es\System.Web.Http.WebHost.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
 D:\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CoreCompileInputs.cache
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.pdb
-D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache
-C:\Users\clent\OneDrive\Documentos\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.AssemblyReference.cache
