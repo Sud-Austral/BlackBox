@@ -81,9 +81,9 @@ namespace AplicacionBlanco.Controllers
         public ActionResult PaginaBusqueda(string id = "1")
         {
             var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
-            ViewBag.Resultado = NEW_GRAFICOS.Where( x => x.TIPO_GRAFICO_id < 3).ToList();//Liberados/Gratis
-            ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
-            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
+            ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
+            //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
+            //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
             //Listas de Filtros
             List<string> Paises = new List<string>();
             List<string> TipoGrafico = new List<string>();
