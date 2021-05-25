@@ -31,149 +31,150 @@
                     <li class="ruby-menu-mega-blog">
                         <a href="#"> Recursos </a>
 
-                        <div style="height: 320px; overflow-y:scroll; background-color:#201f1d; border:15px solid #010101; color:#fff;" class="d-flex;">
-
-                            <style>
-                                #menu {
-                                    padding: 0;
-                                    margin: 0;
-                                    border: 0;
-                                }
-
-                                    #menu ul, li {
-                                        list-style: none;
-                                        margin: 0;
+                        <div style="height: 320px; background-image: url('../../Content/image_estadistica/fondo_submenu_emergente.jpg'); background-size: cover;  color: #fff;" class="d-flex; mb-2">
+                            <div class="d-flex; m-5 p-2" style="height: 250px; overflow-y:scroll; background-color:transparent;  color:#fff;">
+                                <style>
+                                    #menu {
                                         padding: 0;
+                                        margin: 0;
+                                        border: 0;
                                     }
 
-                                    #menu ul {
-                                        position: relative;
-                                        z-index: 597;
-                                        float: left;
-                                    }
-
-                                        #menu ul li {
-                                            float: left;
-                                            min-height: 1px;
-                                            line-height: 1em;
-                                            vertical-align: middle;
+                                        #menu ul, li {
+                                            list-style: none;
+                                            margin: 0;
+                                            padding: 0;
                                         }
 
-                                            #menu ul li.hover,
-                                            #menu ul li:hover {
-                                                position: relative;
-                                                z-index: 599;
-                                                cursor: default;
+                                        #menu ul {
+                                            position: relative;
+                                            z-index: 597;
+                                            float: left;
+                                        }
+
+                                            #menu ul li {
+                                                float: left;
+                                                min-height: 1px;
+                                                line-height: 1em;
+                                                vertical-align: middle;
                                             }
 
-                                        #menu ul ul {
-                                            visibility: hidden;
-                                            position: absolute;
-                                            top: 100%;
-                                            left: 0;
-                                            z-index: 598;
-                                            width: 100%;
-                                        }
+                                                #menu ul li.hover,
+                                                #menu ul li:hover {
+                                                    position: relative;
+                                                    z-index: 599;
+                                                    cursor: default;
+                                                }
 
-                                            #menu ul ul li {
+                                            #menu ul ul {
+                                                visibility: hidden;
+                                                position: absolute;
+                                                top: 100%;
+                                                left: 0;
+                                                z-index: 598;
+                                                width: 100%;
+                                            }
+
+                                                #menu ul ul li {
+                                                    float: none;
+                                                }
+
+                                            #menu ul li:hover > ul {
+                                                visibility: visible;
+                                            }
+
+                                            #menu ul ul {
+                                                top: 0;
+                                                left: 100%;
+                                            }
+
+                                            #menu ul li {
                                                 float: none;
                                             }
 
-                                        #menu ul li:hover > ul {
-                                            visibility: visible;
-                                        }
-
-                                        #menu ul ul {
-                                            top: 0;
-                                            left: 100%;
-                                        }
-
-                                        #menu ul li {
-                                            float: none;
-                                        }
-
-                                #menu {
-                                    width: 255px;
-                                }
-
-                                    #menu:after, #menu ul:after {
-                                        content: '';
-                                        display: block;
-                                        clear: both;
+                                    #menu {
+                                        width: 255px;
                                     }
 
-                                    #menu ul, #menu li {
-                                        width: 100%;
-                                    }
-
-                                    #menu li {
-                                        background: #dddddd;
-                                    }
-
-                                        #menu li:hover {
-                                            background: #f6f6f6;
+                                        #menu:after, #menu ul:after {
+                                            content: '';
+                                            display: block;
+                                            clear: both;
                                         }
 
-                                    /*#menu a {
+                                        #menu ul, #menu li {
+                                            width: 100%;
+                                        }
+
+                                        #menu li {
+                                            background: #dddddd;
+                                        }
+
+                                            #menu li:hover {
+                                                background: #f6f6f6;
+                                            }
+
+                                        /*#menu a {
                                         color: #666666;
                                         line-height: 160%;
                                         padding: 11px 28px 11px 28px;*/
-                                    /*width: 153px;*/
-                                    /*}*/
+                                        /*width: 153px;*/
+                                        /*}*/
 
-                                    #menu ul ul li {
-                                        background: #f6f6f6;
-                                    }
-
-                                        #menu ul ul li:hover {
-                                            background: #dddddd;
+                                        #menu ul ul li {
+                                            background: #f6f6f6;
                                         }
 
-                                            #menu ul ul li:hover a {
-                                                color: #666666;
+                                            #menu ul ul li:hover {
+                                                background: #dddddd;
                                             }
 
-                                        #menu ul ul li ul li {
-                                            background: #dddddd;
-                                        }
+                                                #menu ul ul li:hover a {
+                                                    color: #666666;
+                                                }
 
-                                            #menu ul ul li ul li:hover {
-                                                background: #b7b7b7;
+                                            #menu ul ul li ul li {
+                                                background: #dddddd;
                                             }
 
-                                    #menu .has-sub {
-                                        position: relative;
-                                    }
+                                                #menu ul ul li ul li:hover {
+                                                    background: #b7b7b7;
+                                                }
 
-                                        #menu .has-sub:after, #menu .has-sub > ul > .has-sub:hover:after {
-                                            content: '';
-                                            display: block;
-                                            width: 10px;
-                                            height: 9px;
-                                            position: absolute;
-                                            right: 5px;
-                                            top: 50%;
-                                            margin-top: -5px;
+                                        #menu .has-sub {
+                                            position: relative;
                                         }
 
-                                    #menu .fa-angle-right {
-                                        float: right;
-                                    }
-                            </style>
+                                            #menu .has-sub:after, #menu .has-sub > ul > .has-sub:hover:after {
+                                                content: '';
+                                                display: block;
+                                                width: 10px;
+                                                height: 9px;
+                                                position: absolute;
+                                                right: 5px;
+                                                top: 50%;
+                                                margin-top: -5px;
+                                            }
 
-                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                            <script>
-                                $(document).ready(function () {
-                                    $("#test2,#test4").hover(function () {
-                                        $("#vis").css("visibility", "hidden");
-                                    }, $("#test3").hover(function () {
-                                        $("#vis").css("visibility", "visible");
-                                    }));
-                                });
-                            </script>
-                            @{ Html.RenderAction("menuLayout", "info");}
+                                        #menu .fa-angle-right {
+                                            float: right;
+                                        }
+                                </style>
+
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#test2,#test4").hover(function () {
+                                            $("#vis").css("visibility", "hidden");
+                                        }, $("#test3").hover(function () {
+                                            $("#vis").css("visibility", "visible");
+                                        }));
+                                    });
+                                </script>
+                                @{ Html.RenderAction("menuLayout", "info");}
+                            </div>
                         </div>
-                        <span class="ruby-dropdown-toggle"></span>
+                            <span class="ruby-dropdown-toggle"></span>
                     </li>
 
                     <li class="ruby-menu-right">

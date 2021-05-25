@@ -325,6 +325,7 @@
     <Content Include="Content\image_estadistica\8_boton_negocio_on.png" />
     <Content Include="Content\image_estadistica\9_boton_tiempolibre_normal.png" />
     <Content Include="Content\image_estadistica\9_boton_tiempolibre_on.png" />
+    <Content Include="Content\image_estadistica\fondo_submenu_emergente.jpg" />
     <Content Include="Content\image_estadistica\IconosMenu\10_sectores_iconos_finanzas.png" />
     <Content Include="Content\image_estadistica\IconosMenu\11_sectores_iconos_comunicacion.png" />
     <Content Include="Content\image_estadistica\IconosMenu\12_sectores_iconos_recursoquimico.png" />
@@ -542,6 +543,8 @@
     <Content Include="Images\Error\USECUENTALOCAL.jpg" />
     <Content Include="Images\login\arrow-down1.gif" />
     <Content Include="Images\login\data_portabilityprivacy_banner_003_256_30fps-1.gif" />
+    <Content Include="Images\menuLayout\icono_1.png" />
+    <Content Include="Images\menuLayout\icono_2.png" />
     <Content Include="Images\menuLayout\icono_20.png" />
     <Content Include="Images\menuLayout\icono_21.png" />
     <Content Include="Images\menuLayout\icono_15.png" />
@@ -558,6 +561,13 @@
     <Content Include="Images\menuLayout\icono_25.png" />
     <Content Include="Images\menuLayout\icono_19.png" />
     <Content Include="Images\menuLayout\icono_14.png" />
+    <Content Include="Images\menuLayout\icono_3.png" />
+    <Content Include="Images\menuLayout\icono_4.png" />
+    <Content Include="Images\menuLayout\icono_5.png" />
+    <Content Include="Images\menuLayout\icono_6.png" />
+    <Content Include="Images\menuLayout\icono_7.png" />
+    <Content Include="Images\menuLayout\icono_8.png" />
+    <Content Include="Images\menuLayout\icono_9.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
