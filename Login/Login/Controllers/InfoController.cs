@@ -22,6 +22,8 @@ namespace AplicacionBlanco.Controllers
             ViewBag.file = id3;
             Graficos db = new Graficos();
             ViewBag.Resultado = null;  //db.BuscarGrafico(id);
+            ViewBag.Resultado2 = null;
+            ViewBag.Resultado3 = null;
             ViewBag.menu = dbGrafico.INDUSTRIA.ToList();
             ViewBag.menu2 = dbGrafico.SECTOR.ToList();
             ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
