@@ -187,6 +187,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Bienvenido.cs" />
     <Compile Include="Controllers\ClentController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\Date.cs" />
     <Compile Include="Controllers\DeprecatedController.cs" />
     <Compile Include="Controllers\GraficoController.cs" />
@@ -2777,6 +2778,7 @@
     <Content Include="Views\Usuario\FormBuscador.cshtml" />
     <Content Include="Views\Usuario\test3.cshtml" />
     <Content Include="Views\Usuario\InformeSuscription.cshtml" />
+    <Content Include="Views\Data\HomeOdoo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
