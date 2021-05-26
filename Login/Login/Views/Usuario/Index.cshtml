@@ -50,7 +50,8 @@
                 '#nueve',
                 '#diez',
                 '#once',
-                '#doce'
+                '#doce',
+                '#trece'
 
 
 
@@ -118,7 +119,16 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item mb-5 pb-3" style="border-bottom:0.5px solid #808080;">
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
+                            <a onclick="mostrador('#uno');" href="#" class="nav-link " style="border:1px solid #377db3">
+                                <i class="nav-icon fa-question-circle-o"></i>
+                                <p>
+                                    INICIO
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <p style="color:#fff;">
                                 Todos los datos de usuario:
                                 @*<i class="fas fa-angle-left right"></i>*@
@@ -176,9 +186,9 @@
                         </li>
 
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
 
-                        <li class="nav-item">
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
                                 <p>
@@ -216,60 +226,60 @@
                                             </a>
                                         </li>
                                         @*<li class="nav-item">
-                                                <a href="" class="nav-link">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>
-                                                        Industria
-                                                        @item.nombre
-                                                        <i class="fas fa-angle-left right"></i>
-                                                    </p>
-                                                </a>
-                                                @foreach (var item2 in item.SECTOR)
-                                                {
-                                                    <ul class="nav nav-treeview">
-                                                        <li class="nav-item">
-                                                            <a href="#" class="nav-link">
-                                                                <i class="far fa-circle nav-icon"></i>
-                                                                <p>
-                                                                    Sector
-                                                                    @item2.nombre
-                                                                    <i class="fas fa-angle-left right"></i>
-                                                                </p>
-                                                            </a>
-                                                            @foreach (var item3 in item2.PRODUCTO)
-                                                            {
-                                                                <ul class="nav nav-treeview">
-                                                                    <li class="nav-item">
-                                                                        <a href="#" class="nav-link">
-                                                                            <i class="far fa-circle nav-icon"></i>
-                                                                            <p>
-                                                                                Producto
-                                                                                @item3.nombre
-                                                                                <i class="fas fa-angle-left right"></i>
-                                                                            </p>
-                                                                        </a>
-                                                                        @foreach (var item4 in item3.CATEGORIA)
-                                                                        {
-                                                                            <ul class="nav nav-treeview">
-                                                                                <li class="nav-item">
-                                                                                    <a href="#" class="nav-link">
-                                                                                        <i class="far fa-circle nav-icon"></i>
-                                                                                        <p>
-                                                                                            Categoria
-                                                                                            @item4.nombre
-                                                                                            <i class="fas fa-angle-left right"></i>
-                                                                                        </p>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        }
-                                                                    </li>
-                                                                </ul>
-                                                            }
-                                                        </li>
-                                                    </ul>
-                                                }
-                                            </li>*@
+                            <a href="" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Industria
+                                    @item.nombre
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            @foreach (var item2 in item.SECTOR)
+                            {
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Sector
+                                                @item2.nombre
+                                                <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        @foreach (var item3 in item2.PRODUCTO)
+                                        {
+                                            <ul class="nav nav-treeview">
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">
+                                                        <i class="far fa-circle nav-icon"></i>
+                                                        <p>
+                                                            Producto
+                                                            @item3.nombre
+                                                            <i class="fas fa-angle-left right"></i>
+                                                        </p>
+                                                    </a>
+                                                    @foreach (var item4 in item3.CATEGORIA)
+                                                    {
+                                                        <ul class="nav nav-treeview">
+                                                            <li class="nav-item">
+                                                                <a href="#" class="nav-link">
+                                                                    <i class="far fa-circle nav-icon"></i>
+                                                                    <p>
+                                                                        Categoria
+                                                                        @item4.nombre
+                                                                        <i class="fas fa-angle-left right"></i>
+                                                                    </p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    }
+                                                </li>
+                                            </ul>
+                                        }
+                                    </li>
+                                </ul>
+                            }
+                        </li>*@
                                     </ul>
                                 }
                             }
@@ -289,18 +299,8 @@
 
                             }
                         </li>
-                        @*<li class="nav-item menu-open">
 
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                                    <p>
-                                        Productos
-
-                                    </p>
-                                </a>
-                            </li>*@
-
-                        <li class="nav-item">
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
                                 <p>
@@ -317,7 +317,7 @@
                                             <a href="" class="nav-link" style=" border-bottom:1px solid #377db3">
                                                 @*<i class="far fa-circle nav-icon"></i>*@
                                                 @* <img src="~/Content/img/iconos_sector/10.png" />*@
-                                                @{ 
+                                                @{
                                                     string RutaImagen = "/Content/img/iconos_sector/" + item.id + ".png";
                                                 }
                                                 <img class="img-fluid" style="width:25px;" src="@RutaImagen" />
@@ -347,7 +347,7 @@
                                                                     <a href="#" class="nav-link">
                                                                         <i class="far fa-circle nav-icon"></i>
                                                                         <p>
-                                                                            
+
                                                                             @item3.nombre
                                                                             <i class="fas fa-angle-left right"></i>
                                                                         </p>
@@ -361,7 +361,7 @@
 
                                                                                     @*<i class="far fa-circle nav-icon"></i>*@
                                                                                     <p class="ml-5">
-                                                                                      
+
                                                                                         @item4.nombre
                                                                                         @*<i class="fas fa-angle-left right"></i>*@
                                                                                     </p>
@@ -394,7 +394,15 @@
                                 </ul>
                             }
                         </li>
+                        <li class="nav-item" style="border:1px solid #377db3">
+                            <a onclick="mostrador('#trece');" href="#" class="nav-link ">
+                                <i class="nav-icon fa-question-circle-o"></i>
+                                <p>
+                                    AYUDA
 
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -410,26 +418,37 @@
                     <div class="d-flex flex-column " id="content-wrapper">
                         <div id="content">
 
-                            <div class="row " style="height:150px;background-color:#ededed;">
+                            <div class="row d-flex " style="height:155px;background-color:#ededed;">
                                 @*Boton para esconder el menu lateral*@
-                                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                                @*<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>*@
                                 @*Boton para esconder el menu lateral*@
                                 @**********************Scrollbar en usuario index*@
-                                <div class="col-md-6 col-sm-8 m-text-center offset-1 ">
-                                    <h5 style="color:black; margin-top:10px;">¡Explora, busca y encuentra en todo nuestro universo de datos!</h5>
-                                    <div class="p-1 bg-light  shadow-sm mb-1 mt-1" style="border-radius:20px !important;">
-                                        <form class="input-group" onsubmit="BuscadorForm2(event);">
-                                            <div class="input-group-prepend">
-                                                <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                <div class="col-md-12 col-sm-8 text-left offset-1 ">
+                                    <h5 class="offset-1" style="color:black; margin-top:10px;">¡Explora, busca y encuentra en todo nuestro universo de datos!</h5>
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="p-1 bg-light  shadow-sm mb-1 mt-1" style="border-radius:20px !important;">
+                                                <form class="input-group" onsubmit="BuscadorForm2(event);">
+                                                    <div class="input-group-prepend">
+                                                        <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                                    </div>
+                                                    <input type="search" id="idBusqueda" name="id" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
+                                                </form>
                                             </div>
-                                            <input type="search" id="idBusqueda" name="id" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
-                                        </form>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p>
+                                                Busca por la palabra clave en todos los sectores de nuestra Data Intelligence. Para buscar dentro de tus productos adquíridos
+                                                utiliza el buscador secundario de la izquierda.
+                                            </p>
+                                        </div>
                                     </div>
+                                    
 
-                                    <p>
-                                        Busca por la palabra clave en todos los sectores de nuestra Data Intelligence. Para buscar dentro de tus productos adquíridos
-                                        utiliza el buscador secundario de la izquierda
-                                    </p>
+                                    
                                 </div>
                             </div>
                             @*Productos Datas*@
@@ -438,59 +457,62 @@
                                 @{ Html.RenderAction("GraficoUsuario", "Usuario");}
                             </div>
                             @*Informes interactivos*@
-                            <div class="container-fluid offset-1 mt-5" id="tres" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="tres" style="display:none;">
                                 @{ Html.RenderAction("InformesUsuario", "Usuario");}
 
                             </div>
                             @*Reportes 360*@
-                            <div class="container-fluid offset-1 mt-5" id="cuatro" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="cuatro" style="display:none;">
                                 @{ Html.RenderAction("ReportesUsuario", "Usuario");}
 
                             </div>
 
+                            <div class="container-fluid offset-1 mt-2" id="uno">
+                                @{ Html.RenderAction("Bienvenido", "Usuario");}
 
+                            </div>
 
-                            @{ Html.RenderAction("Bienvenido", "Usuario");}
+                            
 
-                            <div class="container-fluid offset-1 mt-5" id="cinco" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="cinco" style="display:none;">
 
                                 @{ Html.RenderAction("Facturados", "Usuario");}
 
                             </div>
-                            <div class="container-fluid offset-1 mt-5" id="seis" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="seis" style="display:none;">
 
                                 @{ Html.RenderAction("PerfilUsuario", "Usuario");}
 
                             </div>
-                            <div class="container-fluid offset-1 mt-5" id="siete" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="siete" style="display:none;">
                                 @*@{ Html.RenderAction("UsuarioSelectProducto", "Usuario");}*@
 
                                 <img class="mx-0" src="~/Content/image_UsuarioIndex/cargadatos_es.gif" />
                             </div>
-                            <div class="container-fluid offset-1 mt-5" id="ocho" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="ocho" style="display:none;">
 
 
 
                             </div>
-                            <div class="container-fluid offset-1 mt-5" id="nueve" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="nueve" style="display:none;">
 
 
                             </div>
-                            <div class="container-fluid offset-1 mt-5" id="diez" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="diez" style="display:none;">
 
 
                             </div>
-                            <div class="container-fluid offset-1 mt-5" id="once" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="once" style="display:none;">
 
 
                             </div>
-                            <div class="container-fluid offset-1 mt-5" id="doce" style="display:none;">
+                            <div class="container-fluid offset-1 mt-2" id="doce" style="display:none; height:1000px;">
 
 
                             </div>
 
                             @*Seccion atencion al cliente*@
-                            <div class="container-fluid offset-1">
+                            <div class="container-fluid offset-1" id="trece" style="display:none;">
                                 <div class="row  mt-5">
                                     <div class="col-8">
                                         <p>Consultas o problemas con tu Cuenta</p>
