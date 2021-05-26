@@ -378,22 +378,53 @@
                                                             }
                                                             <img class="img-fluid" style="width:140px;" src="@RutaImagen2" />
                                                         </div>
-                                                        <div class="col-md-8 col-12" >
-                                                            
-                                                                @item.titulo <br />
-                                                                @item.TIPO_GRAFICO_id
-                                                                @item.TIPO_GRAFICO.nombre <br />
-                                                                @item.TEMPORALIDAD.nombre
-                                                                <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                            
-                                                        </div>
+                                                        @if (item.TIPO_GRAFICO_id == 4)
+                                                        {
+                                                            <div class="col-md-8 col-12">
+                                                                <a href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer;">
+                                                                    @item.titulo <br />
+                                                                    @item.TIPO_GRAFICO_id
+                                                                    @item.TIPO_GRAFICO.nombre <br />
+                                                                    @item.TEMPORALIDAD.nombre
+                                                                    <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                </a>
+                                                            </div>
+
+                                                        }
+                                                        else if (item.TIPO_GRAFICO_id == 3)
+                                                        {
+                                                            <div class="col-md-8 col-12">
+                                                                <a href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style=" cursor: pointer;">
+                                                                    @item.titulo <br />
+                                                                    @item.TIPO_GRAFICO_id
+                                                                    @item.TIPO_GRAFICO.nombre <br />
+                                                                    @item.TEMPORALIDAD.nombre
+                                                                    <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                </a>
+                                                            </div>
+
+                                                        }
+                                                        else if (item.TIPO_GRAFICO_id == 1)
+                                                        {
+
+                                                            <div class="col-md-8 col-12">
+                                                                <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" style=" cursor: pointer;">
+                                                                    @item.titulo <br />
+                                                                    @item.TIPO_GRAFICO_id
+                                                                    @item.TIPO_GRAFICO.nombre <br />
+                                                                    @item.TEMPORALIDAD.nombre
+                                                                    <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                </a>
+                                                            </div>
+
+                                                        }
                                                         <h1>
                                                             @item.mostrar
                                                         </h1>
                                                         <div class="col-md-2 col-12">
                                                             @if (item.TIPO_GRAFICO_id == 4)
                                                             {
-                                                                <a class="btn2 btn btn-danger btn-sm" href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" class="btn2 btn btn-danger btn-sm" href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                                                                     Adquirir
                                                                 </a>
                                                                 <!-- Modal -->
@@ -578,12 +609,13 @@
                                                             }
                                                             else if (item.TIPO_GRAFICO_id == 1)
                                                             {
-                                                                <a class="btn2 btn btn-danger btn-sm" href="~/info/index?id=@item.id" target="_blank" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" class="btn2 btn btn-danger btn-sm" target="_blank" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                                                                     Ir a Grafico
                                                                 </a>
                                                             }
 
                                                         </div>
+
                                                     </div>
                                                     
                                                      
