@@ -45,6 +45,7 @@
             border-width: 1.5px;
             border-style: solid;
             border-color: #0097c4 !important;
+            
         }
 </style>
 <div id="menu" style="width:200px;">
@@ -91,45 +92,45 @@
         @foreach (var item in ViewBag.MenuLayout.RegistroMenus)
         {
             string nombre = "icono_" + item.iNDUSTRIA.id.ToString() + ".png";
-            
-        
+            string hover = item.iNDUSTRIA.id.ToString() + "_on" + ".png";
+
         @*@for (int i = 10; i < 20; i++)
         {
             string nombre = "icono_" + i.ToString() + ".png";*@
             <li class="has-sub d-flex mt-2 " id="test2" style="background-color:transparent; width:125px; height:80px;">
                 <a title="" href="#"  style="background-color:#201f1d">
-                    <img class="img-fluid mb-3" width="80" src="~/Images/menuLayout/@nombre" />
+                    <img class="img-fluid mb-3" width="90" src="~/Images/menuLayout/@nombre" onmouseover="this.src= '/Images/menuLayout/@hover'" onmouseout="this.src='/Images/menuLayout/@nombre'" />
                 </a>
                 <ul >
                     @foreach (var item2 in item.sECTORs)
                     {
                         <li class="has-sub ml-5" id="test4" style="background-color:transparent; width:200px;">
-                            <button type="button" class="btn btn-sm btn-outline-dark mt-3" style="width:125px; border-radius: 25px; color: #fff; font-size: 14px;"><span style="white-space: pre-line;">@item2.sECTOR.nombre</span></button>
+                            <button type="button" class="btn btn-sm btn-outline-dark mt-3 ml-3" style="width:125px; border-radius: 25px; color: #fff; font-size: 14px;"><span style="white-space: pre-line;">@item2.sECTOR.nombre</span></button>
 
                             <ul>
                                 <li style="background-color:transparent">
                                           
-                                    <div class="ruby-row d-flex" >
-                                        <div class="ruby-col-12 m-1" style=" border-radius:10px;">
+                                    <div class="ruby-row d-flex ml" >
+                                        <div class="ruby-col-12 ml-4 m-1" style=" border-radius:10px;">
                                             @*Como lo queria hacer luis*@
                                             @*Pero asi se ve como pequeño*@
                                             <a class="card" href="~/info/index?id=@item2.gRAFICOs[0].id"  >
                                                 <img class="card-img-top " style="border-radius:5px; width:225px;" src="https://raw.githubusercontent.com/Sud-Austral/MPG/main/img/2521.png" alt="Card image cap">
-                                                <p id="titulo_Card" class="side back text-center  p-4 pt-4" style="margin-top: -1%; color: white;"> @item2.gRAFICOs[0].titulo</p>
+                                                <div id="titulo_Card" class="side back text-center  p-4 pt-4" style="margin-top: -1%; color: white;"><span >@item2.gRAFICOs[0].titulo</span> </div>
                                             </a>
                                             <a class="card mt-2" href="~/info/index?id=@item2.gRAFICOs[1].id">
                                                 <img class=" card-img-top" style="border-radius:5px; width:225px;" src="https://raw.githubusercontent.com/Sud-Austral/MPG/main/img/2444.png" alt="Card image cap">
-                                                <div class="side back p-4 pt-4" style="margin-top:-1%; color:white;"><span>@item2.gRAFICOs[1].titulo</span></div>
+                                                <div class="side back p-4 pt-4" style="margin-top:-1%; color:white;"><span >@item2.gRAFICOs[1].titulo</span></div>
                                             </a>
                                         </div>
                                         <div class="ruby-col-6 m-1" style=" border-radius: 10px;">
                                             <a class="card" href="~/info/index?id=@item2.gRAFICOs[1].id" >
                                                 <img class="card-img-top" style="border-radius:5px; width:225px;" src="https://raw.githubusercontent.com/Sud-Austral/MPG/main/img/2536.png" alt="Card image cap">
-                                                <p id="titulo_Card" class="side back text-center  p-4 pt-4" style="margin-top:-1%; color:white;"> @item2.gRAFICOs[1].titulo</p>
+                                                <div id="titulo_Card" class="side back text-center  p-4 pt-4" style="margin-top:-1%; color:white;"> <span >@item2.gRAFICOs[1].titulo</span></div>
                                             </a>
                                             <a class="card mt-2 align-content-center" href="~/info/index?id=@item2.gRAFICOs[2].id" >
                                                 <img class="card-img-top" style="border-radius:5px; width:225px;" src="https://raw.githubusercontent.com/Sud-Austral/MPG/main/img/1497.png" alt="Card image cap">
-                                                <p id="titulo_Card" class="side back text-center  p-4 pt-4 " style="margin-top:-1%; color:white; padding-top:50%"> @item2.gRAFICOs[2].titulo</p>
+                                                <div id="titulo_Card" class="side back text-center  p-4 pt-4 " style="margin-top:-1%; color:white; padding-top:50%"> <span>@item2.gRAFICOs[2].titulo</span></div>
                                             </a>
                                         </div>
                                     </div>
