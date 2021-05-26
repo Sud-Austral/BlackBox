@@ -1,0 +1,620 @@
+﻿@{
+    Layout = null;
+
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <title>@Page.Title</title>
+    @*Normalize para adaptarse a todos los browsers*@    
+</head>
+<body>
+    <div class="py-5 bg-light c2a1" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_1.jpg');">
+        <div class="container" style="margin-top:180PX;">
+            <!-- Row -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-4 col-8 text-center mt-5">
+                    <img class="img-fluid" src="~/Content/image_estadistica/logo_DataIntelligence_slogan.png" />
+                </div>
+            </div>
+            <!-- Row -->
+            <div class="row justify-content-center" style="margin-top:190px !important">
+                <div class="col-md-4 col-8 text-center mt-5">
+                    <h3 class="tituloBuscador mb-3 text-white font-weight-medium">¡Explora, busca y encuentra!</h3>
+
+                    <form action="~/info/PaginaBusqueda" method="get">
+                        <input class="buscador typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:10px;">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--SECCION DE CARRUCEL DE CARDS-->
+    <div class="py-5 bg-light " style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+        <section class="pt-3 pb-5">
+            <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+                <div class="row justify-content-center text-center">
+                    <div class="col-8 mb-4" style="color:#fff;">
+                        <h2 class="mb-3">¡Miles de estadísticas!</h2>
+                        <p style="font-size:24px;">
+                            Todas procesadas y graficadas por sectores, temas y categorías
+                        </p>
+                    </div>
+
+                    <div class="col-8">
+                        <div id="carouselExampleIndicators2" class="carousel" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[0].id" >
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[0].titulo">
+                                                    <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff; min-height:65px !important; max-height:65px !important;">
+                                                        @ViewBag.Graficos[0]._titulo2
+                                                    </div>
+                                                </div>
+                                                <div class="card" style="border:none;">
+                                                    <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[0]._url_Image">
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[1].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[1].titulo">
+                                                    <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">
+                                                        @ViewBag.Graficos[1]._titulo2
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[1]._url_Image">                                                        
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[2].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[2].titulo">
+                                                    <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff;color:#fff; min-height:65px !important; max-height:65px !important;">
+                                                        @ViewBag.Graficos[2]._titulo2
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[3].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[3].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[3]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[4].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[4].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[4]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[5].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[5].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[5]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[6].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[6].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[6]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[7].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[7].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[7]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[8].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[8].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[8]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[8]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[9].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[9].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[9]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[10].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[10].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[10]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index?id=@ViewBag.Graficos[11].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[11].titulo">
+                                                    <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #fff; color:#fff; min-height:65px !important; max-height:65px !important;">@ViewBag.Graficos[11]._titulo2</div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[11]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!--Sección iconos de categorias-->
+    <!--<div class="py-5 bg-light " style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+        <section class="pt-3 pb-5">
+            <div class="container-fluid" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_7.jpg');">
+                <div class="row justify-content-center text-center">
+                    <div class="col-8 mb-4">
+                        <h2 class="mb-3 text-white">¡Miles de estadísticas!</h2>
+                        <p style="font-size:24px; color:white;">
+                            Ofrecemos miles de estadísticas procesadas y graficadas por
+                            Sectores, Temas y Categorías
+                        </p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <diV class="col-md-1 col-8 ">
+                            <img class="img-fluid" src="~/Content/image_estadistica/icono_1.1.png" />
+                        </diV>
+                        <diV class="col-md-1 col-8 ">
+                            <img class="img-fluid" src="~/Content/image_estadistica/icono_2.1.png" />
+                        </diV>
+                        <diV class="col-md-1 col-8 ">
+                            <img class="img-fluid" src="~/Content/image_estadistica/icono_3.1.png" />
+                        </diV>
+                        <diV class="col-md-1 col-8 ">
+                            <img class="img-fluid" src="~/Content/image_estadistica/icono_4.1.png" />
+                        </diV>
+                        <diV class="col-md-1 col-8 ">
+                            <img class="img-fluid" src="~/Content/image_estadistica/icono_5.1.png" />
+                        </diV>
+                        <diV class="col-md-1 col-8 ">
+                            <img class="img-fluid" src="~/Content/image_estadistica/icono_6.1.png" />
+                        </diV>
+                    </div>
+                    <div class="col-8 mb-4">
+                        <p style="font-size:24px; color:white; margin-top:1%;">
+                            Transforma estos datos sectoriales en una increíble experiencia digital
+                        </p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 col-8 text-center mt-5">
+                            <p style="font-size:24px; color:white;">
+                                ¡Explora, busca y encuentra!
+                            </p>
+                            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                    </div>
+                                    <input type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-light">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>-->
+    <!--seccion de dimensiones-->
+    <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_8.jpg');">
+        <div class="row">
+            <h3 style="padding-top:60px;">¡Todo tipo de temáticas!</h3>
+            <p style="font-size:24px;padding-bottom:20px;">
+                Generamos día a día información histórica, actual y proyectada
+            </p>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-2 col-12">
+                <img class="img-fluid" src="~/Content/image_estadistica/logo_DimensionAmbiental_descripcion.png" alt="Alternate Text" />
+                <div class="row d-block palabrasClaves" style="border:#9bc4d0;  overflow:scroll; height:200px; overflow-x:hidden;">
+                    <div class="col">
+                        <a href="/info/PaginaBusqueda?id=incendio" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;" target="_blank">Incendios</a>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Agua</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Climático</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Carbono</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-success" style="border-radius: 25px; font-size:larger;">Carbono</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12">
+                <img class="img-fluid" src="~/Content/logo_DimensionSocial_descripcion.png" alt="Alternate Text" />
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7;  overflow:scroll; height:200px; overflow-x:hidden;">
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Educación</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Covid-19</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Pueblos Indígenas</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Femicidios</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-danger" style="border-radius: 25px; font-size:larger;">Femicidios</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12">
+                <img class="img-fluid" src="~/Content/logo_DimensionEconomica_descripcion.png" alt="Alternate Text" />
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7; overflow:scroll; height:200px; overflow-x:hidden;">
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-warning " style="border-radius: 25px;       font-size:larger;">Empresas</button>
+
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">Empleo</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">PIB</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-warning" style="border-radius: 25px; font-size:larger;">PIB</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12">
+                <img class="img-fluid" src="~/Content/logo_DimensionInstitucional_descripcion.png" alt="Alternate Text" />
+                <div class="row d-block palabrasClaves" style="border-left:0.5px solid #b5a7a7;  overflow:scroll; height:200px; overflow-x:hidden;">
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color:#2190b5 !important; font-size:larger; color:#2190b5 !important">Municipalidad</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Alcaldes</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Gestión</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Global</button>
+                    </div>
+                    <div class="col ">
+                        <button type="button" class="btn btn-sm btn-outline-info" style="border-radius: 25px; border-color: #2190b5 !important; font-size: larger; color: #2190b5 !important">Global</button>
+                    </div>
+                </div>
+            </div>
+            <h3 class="mt-5 mb-5">
+                ¡Explora, busca y encuentra!
+            </h3>
+        </div>
+    </div>
+    <!--seccion de suscripciones-->
+    <div class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px;">
+                    ¡Imagina toda la información pública
+                    de un país en una sola plataforma!
+                </h3>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_1.png" alt="100%x280" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
+
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px; margin-bottom:10px;">
+                    ¡Y para los que necesitan más información!
+                </h3>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mb-4" style="padding-left:35%; padding-right:35%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
+            </div>
+        </div>
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
+            </div>
+        </div>
+        <div class="row mb-1" style="padding-left:20%; padding-right:20%">
+
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px;">
+                    La suscripción anual Cuenta Profesional fue diseñada especialmente para potenciar las investigaciones, proyectos o planificaciones de quienes requieren una mayor cantidad de información.
+
+                </h3>
+            </div>
+
+        </div>
+        <div class="row mb-4" style="padding-left:20%; padding-right:20%">
+            <h3 style="color:#009fcf">
+                INCLUYE
+            </h3>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
+            </div>
+        </div>
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right;">
+                <span style="color:white; font-size:18px;">USD</span>
+                <span style="color:red; font-size:22px;">$35</span>
+                <br />
+                <span style="color:white; font-size:18px;"> mensuales</span>
+            </div>
+            <div class="col-6" style="text-align:left;">
+                <button class="btn btn-danger btn-sm mt-2 text-left" style="border-radius:20px; font-size:20px;">
+                    Adquirir
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--Seccion ultimo-->
+    <div class="container-fluid py-5 bg-dark text-center" ;>
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-2" style="color:#fff;">
+                    ¡Explora nuestro mundo de información!
+                </h2>
+                <p class="mb-4" style="color:#fff;font-size:20px;">
+                    Una opción perfecta para el informe o análisis que necesitas
+                </p>
+            </div>
+
+        </div>
+
+        <div class="carousel" id="carousel2" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center" style="padding-left:15%; padding-right:15%;">
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=10&id2=1" target="_blank">
+                                <img class="img-fluid" src="~/Content/image_estadistica/1_boton_agropecuario_normal.png" onmouseover="this.src='/Content/image_estadistica/1_boton_agropecuario_on.png'" onmouseout="this.src='/Content/image_estadistica/1_boton_agropecuario_normal.png'" />
+                            </a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=13&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/2_boton_construccion_normal.png" onmouseover="this.src = '/Content/image_estadistica/2_boton_construccion_on.png'" onmouseout="this.src='/Content/image_estadistica/2_boton_construccion_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=15&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/3_boton_medioambiente_normal.png" onmouseover="this.src = '/Content/image_estadistica/3_boton_medioambiente_on.png'" onmouseout="this.src='/Content/image_estadistica/3_boton_medioambiente_normal.png'" /></a>
+
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=20&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/4_boton_salud_normal.png" onmouseover="this.src = '/Content/image_estadistica/4_boton_salud_on.png'" onmouseout="this.src='/Content/image_estadistica/4_boton_salud_normal.png'" /></a>
+
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=20&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/4_boton_salud_normal.png" onmouseover="this.src = '/Content/image_estadistica/4_boton_salud_on.png'" onmouseout="this.src='/Content/image_estadistica/4_boton_salud_normal.png'" /></a>
+
+                        </diV>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center" style="padding-left:15%; padding-right:15%;">
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=22&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/5_boton_mediosocial_normal.png" onmouseover="this.src = '/Content/image_estadistica/5_boton_mediosocial_on.png'" onmouseout="this.src='/Content/image_estadistica/5_boton_mediosocial_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=24&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/6_boton_turismo_normal.png" onmouseover="this.src = '/Content/image_estadistica/6_boton_turismo_on.png'" onmouseout="this.src='/Content/image_estadistica/6_boton_turismo_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=11&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/7_boton_consumo_normal.png" onmouseover="this.src = '/Content/image_estadistica/7_boton_consumo_on.png'" onmouseout="this.src='/Content/image_estadistica/7_boton_consumo_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=12&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/8_boton_negocio_normal.png" onmouseover="this.src = '/Content/image_estadistica/8_boton_negocio_on.png'" onmouseout="this.src='/Content/image_estadistica/8_boton_negocio_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=12&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/8_boton_negocio_normal.png" onmouseover="this.src = '/Content/image_estadistica/8_boton_negocio_on.png'" onmouseout="this.src='/Content/image_estadistica/8_boton_negocio_normal.png'" /></a>
+                        </diV>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center" style="padding-left:15%; padding-right:15%;">
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=25&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/9_boton_tiempolibre_normal.png" onmouseover="this.src = '/Content/image_estadistica/9_boton_tiempolibre_on.png'" onmouseout="this.src='/Content/image_estadistica/9_boton_tiempolibre_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=16&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/10_boton_finanzas_normal.png" onmouseover="this.src = '/Content/image_estadistica/10_boton_finanzas_on.png'" onmouseout="this.src='/Content/image_estadistica/10_boton_finanzas_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=18&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/11_boton_comunicacion_normal.png" onmouseover="this.src = '/Content/image_estadistica/11_boton_comunicacion_on.png'" onmouseout="this.src='/Content/image_estadistica/11_boton_comunicacion_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=19&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/12_boton_recursoquimico_normal.png" onmouseover="this.src = '/Content/image_estadistica/12_boton_recursoquimico_on.png'" onmouseout="this.src='/Content/image_estadistica/12_boton_recursoquimico_normal.png'" /></a>
+                        </diV>
+                        <diV class="col-md-2 col-8 ">
+                            <a href="/info/ResultadoNiveles?id=ttt&id2=1" target="_blank"><img class="img-fluid" src="~/Content/image_estadistica/13_boton_empleo_normal.png" onmouseover="this.src = '/Content/image_estadistica/13_boton_empleo_on.png'" onmouseout="this.src='/Content/image_estadistica/13_boton_empleo_normal.png'" /></a>
+                        </diV>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 text-center">
+                <a class="btn btn-primary mb-3 mr-1" href="#carousel2" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-primary mb-3 " href="#carousel2" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row mt-5 text-center  d-flex justify-content-center">
+            <p style="color:#fff;font-size:24px;">
+                Transforma estos datos sectoriales en una increíble experiencia digital
+            </p>
+            <h3 class="mb-2" style="color:#fff;">
+                ¡Explora, busca y encuentra!
+            </h3>
+            <div class="col-md-3 col-6 mt-5"><img class="img-fluid" src="~/Content/image_estadistica/logo_DataIntelligence_slogan.png" alt="Alternate Text" /></div>
+        </div>
+    </div>
+    @*<link href="~/Content/normalize.min.css" rel="stylesheet" />*@
+
+    @*icono de fontawesome menu principal *@
+    <script src="https://kit.fontawesome.com/2f08016506.js" crossorigin="anonymous"></script>
+    @*bootstrap*@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    @*Hoja de estilos de esta vista solamente*@
+    @*<link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />*@
+    <link href="~/Content/Estilos/info/HomeOdoo.css" rel="stylesheet" />
+    @*Jquery, Popper bootstrap.min.js*@
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    @*Buscador
+        <script src="~/Scripts/ScriptBuscador.js"></script>
+    *@
+</body>
+</html>
