@@ -92,14 +92,16 @@
         @foreach (var item in ViewBag.MenuLayout.RegistroMenus)
         {
             string nombre = "icono_" + item.iNDUSTRIA.id.ToString() + ".png";
+
             string hover = item.iNDUSTRIA.id.ToString() + "_on" + ".png";
+
 
         @*@for (int i = 10; i < 20; i++)
         {
             string nombre = "icono_" + i.ToString() + ".png";*@
             <li class="has-sub d-flex mt-2 " id="test2" style="background-color:transparent; width:125px; height:80px;">
                 <a title="" href="#"  style="background-color:#201f1d">
-                    <img class="img-fluid mb-3" width="90" src="~/Images/menuLayout/@nombre" onmouseover="this.src= '/Images/menuLayout/@hover'" onmouseout="this.src='/Images/menuLayout/@nombre'" />
+                    <img class="img-fluid mb-3" width="80" src="~/Images/menuLayout/@nombre" onmouseover="this.src= '/Images/menuLayout/@hover'" onmouseout="this.src='/Images/menuLayout/@nombre'"/>
                 </a>
                 <ul >
                     @foreach (var item2 in item.sECTORs)

@@ -113,7 +113,7 @@ namespace Login.Models
                 }
                 catch (Exception)
                 {
-
+                    salida = titulo.Substring(0, 20) + " ...";
                 }
                 return salida;
             }
