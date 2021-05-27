@@ -11,7 +11,7 @@
         @*<P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Informes Interactivos</strong></P>*@
     </div>
 </div>
-<div class="row responsive" style="overflow:scroll;height:300px;overflow-x:hidden; width:67%;">
+<div class="row responsive" style="overflow:scroll;height:350px;overflow-x:hidden; width:67%;">
 
     @foreach (var item in ViewBag.Resultado)
 
@@ -22,7 +22,7 @@
                     <img class="img-fluid" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
                 </div>
                 <div class="col-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;cursor: pointer;">
-                    <a onclick="mostrador('#doce'); ProductoSuscripcion('@item.SKU', '@item.NOMBRE');">
+                    <a onclick="mostrador('#catorce'); InforReporSuscripcion('@item.SKU', '@item.NOMBRE');">
                         @item.NOMBRE <br />
                         @item.FECHA_CREADO
                     </a>

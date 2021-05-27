@@ -647,5 +647,13 @@ namespace Login.Controllers
             
                 return PartialView();
         }
+
+        public PartialViewResult InformeReporte(string id, string nombre)
+        {
+            ViewBag.urlReporte = id;
+            ViewBag.TituloReporte = nombre;
+
+            return PartialView();
+        }
     }
 }
