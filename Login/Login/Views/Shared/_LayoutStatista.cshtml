@@ -165,7 +165,9 @@
                                         }));
                                     });
                                 </script>
-                                @{ Html.RenderAction("menuLayout", "info");}
+                                @*
+                                    @{ Html.RenderAction("menuLayout", "info");}
+                                *@
                             </div>
                         </div>
                         <span class="ruby-dropdown-toggle"></span>
@@ -259,9 +261,62 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
+
+    @*fontawesome*@
+    <script src="https://kit.fontawesome.com/2f08016506.js" crossorigin="anonymous"></script>
+    @*
+        <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    *@
+    @*estilos*@
+    <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
+    @*<link href="~/Content/StyleBuscador.css" rel="stylesheet" />*@
+    <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
+    @*Titulo de la pagina*@
+    <title>Estadística</title>
+    @*Script para cargar charts*@
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--carrucel-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- pdf descargar-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--megamenu-->
+    @*stilos tamaño de texto *@
+    <style>
+        body {
+            font-family: 'MYRIADPRO-REGULAR'
+        }
+
+        h6 {
+            font-size: 17px;
+        }
+
+        h5 {
+            font-size: 15px;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        h2 {
+            font-size: 34px;
+        }
+
+        p {
+            font-size: 17px;
+        }
+    </style>
 </body>
 </html>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @*
+        @Scripts.Render("~/bundles/jquery")
+    *@
+    @Scripts.Render("~/bundles/bootstrap")
 }
