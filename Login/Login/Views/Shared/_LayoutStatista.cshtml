@@ -7,8 +7,9 @@
     <title>@Page.Title</title>
 
 
-    @*Normalize para adaptarse a todos los browsers*@
-    <link href="~/Content/normalize.min.css" rel="stylesheet" />
+    @*Normalize para adaptarse a todos los browsers
+        <link href="~/Content/normalize.min.css" rel="stylesheet" />
+    *@
     @*icono de fontawesome menu principal *@
     <script src="https://kit.fontawesome.com/2f08016506.js" crossorigin="anonymous"></script>
     @*bootstrap*@
@@ -114,13 +115,6 @@
                                                 background: #f6f6f6;
                                             }
 
-                                        /*#menu a {
-                                        color: #666666;
-                                        line-height: 160%;
-                                        padding: 11px 28px 11px 28px;*/
-                                        /*width: 153px;*/
-                                        /*}*/
-
                                         #menu ul ul li {
                                             background: #f6f6f6;
                                         }
@@ -174,7 +168,7 @@
                                 @{ Html.RenderAction("menuLayout", "info");}
                             </div>
                         </div>
-                            <span class="ruby-dropdown-toggle"></span>
+                        <span class="ruby-dropdown-toggle"></span>
                     </li>
 
                     <li class="ruby-menu-right">
@@ -202,16 +196,6 @@
                                                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
-                                                /*    <div class="form-group">
-                                                        <div class="col-md-offset-2 col-md-10">
-                                                            <div class="checkbox">
-                                                                @Html.CheckBoxFor(m => m.RememberMe)
-                                                                @Html.LabelFor(m => m.RememberMe)
-                                                            </div>
-                                                        </div>
-                                                    </div>*/
-
-
                                                 <div class="form-group">
                                                     <div class=" col-12">
                                                         <input style="width:100%;" type="submit" value="ACCEDER" class="btn btn-primary" />
@@ -222,35 +206,35 @@
                                                     @Html.ActionLink("¿OLVIDÓ CONTRASEÑA?", "ForgotPassword", "account")
                                                 </p>
                                                 <p>
-                                                    @Html.ActionLink("REGÍSTRATE","Register", "account")
+                                                    @Html.ActionLink("REGÍSTRATE", "Register", "account")
                                                 </p>
                                                 @* Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
-            <p>
-                @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
-            </p>*@
+                                                    <p>
+                                                        @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                                                    </p>*@
                                             }
                                         </section>
                                     </div>
                                 </div>
                             </li>
                             @*  <li>
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </li>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </li>
 
-        <li><a href="~/account/ForgotPassword">¿OLVIDO CONTRASEÑA</a></li>
-        <li><a href="~/account/Register">REGISTRO</a></li>
-        <li>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
-                </div>
-            </div>
-        </li>*@
+                                <li><a href="~/account/ForgotPassword">¿OLVIDO CONTRASEÑA</a></li>
+                                <li><a href="~/account/Register">REGISTRO</a></li>
+                                <li>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                </li>*@
                         </ul>
                         <span class="ruby-dropdown-toggle"></span>
                     </li>
@@ -273,8 +257,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    @*Buscador*@
-    <script src="~/Scripts/ScriptBuscador.js"></script>
+
 </body>
 </html>
 
