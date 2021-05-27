@@ -51,7 +51,8 @@
                 '#diez',
                 '#once',
                 '#doce',
-                '#trece'
+                '#trece',
+                '#catorce'
 
 
 
@@ -65,8 +66,8 @@
         }
     </script>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
+<body class="hold-transition sidebar-mini layout-fixed " >
+    <div class="wrapper" >
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
@@ -411,10 +412,10 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper ">
+        <div class="content-wrapper " style="height:1500px; overflow:hidden;">
             <!-- Main content -->
             <section class="content " style="padding:0px !important;">
-                <div class="container-fluid" style="padding:0px !important;">
+                <div class="container-fluid" style="padding:0px !important; height:900px;">
                     <div class="d-flex flex-column " id="content-wrapper">
                         <div id="content">
 
@@ -440,15 +441,15 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>
-                                                Busca por la palabra clave en todos los sectores de nuestra Data Intelligence. Para buscar dentro de tus productos adquíridos
+                                            <p style="font-size:13px;" class="mt-2">
+                                                Busca por la palabra clave en todos los sectores de nuestra Data Intelligence.<br /> Para buscar dentro de tus productos adquíridos
                                                 utiliza el buscador secundario de la izquierda.
                                             </p>
                                         </div>
                                     </div>
-                                    
 
-                                    
+
+
                                 </div>
                             </div>
                             @*Productos Datas*@
@@ -472,7 +473,7 @@
 
                             </div>
 
-                            
+
 
                             <div class="container-fluid offset-1 mt-2" id="cinco" style="display:none;">
 
@@ -507,6 +508,10 @@
 
                             </div>
                             <div class="container-fluid offset-1 mt-2" id="doce" style="display:none; height:1000px;">
+
+
+                            </div>
+                            <div class="container-fluid offset-1 mt-2" id="catorce" style="display:none; height:1000px;">
 
 
                             </div>
@@ -782,6 +787,34 @@
                         //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
                         //que recibio del servidor
                         $("#doce").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        alert('Fail');
+                    }
+                });
+
+        }
+
+        function InforReporSuscripcion(id, NOMBRE) {
+
+            $('#doce').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+
+
+            $.ajax(
+                {
+                    type: 'POST',
+                    data: "{'id':" + "'" + id + "'}", //datos o parametros enviados al servidor
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/InformeReporte?id=' + id + '&nombre=' + NOMBRE,
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#catorce").html(result);
                     },
 
                     error: function (error) {
