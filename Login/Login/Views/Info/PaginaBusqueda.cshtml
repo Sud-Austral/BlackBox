@@ -421,7 +421,7 @@
                                                             @if (item.TIPO_GRAFICO_id == 4)
                                                             {
                                                                 <div class="col-md-8 col-12">
-                                                                    <a href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer;">
+                                                                    <a href=""  type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer;">
                                                                         @item.titulo <br />
                                                                         @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
@@ -434,7 +434,7 @@
                                                             else if (item.TIPO_GRAFICO_id == 3)
                                                             {
                                                                 <div class="col-md-8 col-12">
-                                                                    <a href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style=" cursor: pointer;">
+                                                                    <a href=""  type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style=" cursor: pointer;">
                                                                         @item.titulo <br />
                                                                         @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
@@ -448,7 +448,7 @@
                                                             {
 
                                                                 <div class="col-md-8 col-12">
-                                                                    <a href="~/info/index?id=@item.id" target="_blank" style=" cursor: pointer;">
+                                                                    <a href="~/info/index?id=@item.id"  style=" cursor: pointer;">
                                                                         @item.titulo <br />
                                                                         @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
@@ -462,7 +462,7 @@
                                                             <div class="col-md-2 col-12">
                                                                 @if (item.TIPO_GRAFICO_id == 4)
                                                                 {
-                                                                    <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" class="btn2 btn btn-danger btn-sm" href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" class="btn2 btn btn-danger btn-sm" href="" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                                                                         Adquirir
                                                                     </a>
                                                                     <!-- Modal -->
@@ -555,7 +555,7 @@
                                                                 }
                                                                 else if (item.TIPO_GRAFICO_id == 3)
                                                                 {
-                                                                    <a class="btn2 btn btn-danger btn-sm" href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a class="btn2 btn btn-danger btn-sm" href="" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                                                                         Adquirir
                                                                     </a>
                                                                     <div class="modal fade" id="myModal1" role="dialog">
@@ -647,15 +647,15 @@
                                                                 }
                                                                 else if (item.TIPO_GRAFICO_id == 1)
                                                                 {
-                                                                    <a class="btn2 btn btn-danger btn-sm" href="~/info/index?id=@item.id" target="_blank" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
-                                                                        Ir a Grafico
+                                                                    <a class="btn2 btn btn-danger btn-sm" href="~/info/index?id=@item.id" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                        Ver Gráfico
                                                                     </a>
                                                                 }
 
                                                             </div>
-                                                            <h1>
+                                                            @*<h1>
                                                                 @item.mostrar
-                                                            </h1>
+                                                            </h1>*@
                                                         </div>
 
 

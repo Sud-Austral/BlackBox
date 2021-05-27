@@ -370,30 +370,44 @@
                                                             }
                                                             <img class="img-fluid" style="width:140px;" src="@RutaImagen2" />
                                                         </div>
+                                                        <div class="col-md-8">
+                                                            @if (item.mostrar)
+                                                            {<a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" style=" cursor: pointer;">
+                                                                    @item.titulo <br />
+                                                                    @item.TIPO_GRAFICO_id
+                                                                    @item.TIPO_GRAFICO.nombre <br />
+                                                                    @item.TEMPORALIDAD.nombre
+                                                                    <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                </a>
+
+                                                            }
+
+                                                            else
+                                                            {
+                                                                String Modal = "#myModal" + item.TIPO_GRAFICO_id.ToString();
+                                                                <a href="" target="_blank" type="button" data-toggle="modal" data-target="@Modal" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    @item.titulo <br />
+                                                                    @item.TIPO_GRAFICO_id
+                                                                    @item.TIPO_GRAFICO.nombre <br />
+                                                                    @item.TEMPORALIDAD.nombre
+                                                                    <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                </a>
+                                                                
+                                                            }
+                                                        </div>
                                                         @if (item.mostrar)
-                                                        {<a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" style=" cursor: pointer;">
-                                                                @item.titulo <br />
-                                                                @item.TIPO_GRAFICO_id
-                                                                @item.TIPO_GRAFICO.nombre <br />
-                                                                @item.TEMPORALIDAD.nombre
-                                                                <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                            </a>
-
+                                                        {
+                                                            <div class="col-1">
+                                                                <button class="btn btn-danger" onclick="mostrador('#ocho'); ShowGrafico('@item.id');" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">Ver</button>
+                                                            </div>
                                                         }
-
                                                         else
                                                         {
                                                             String Modal = "#myModal" + item.TIPO_GRAFICO_id.ToString();
-                                                            <a href="" target="_blank" type="button" data-toggle="modal" data-target="@Modal" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
-                                                                @item.titulo <br />
-                                                                @item.TIPO_GRAFICO_id
-                                                                @item.TIPO_GRAFICO.nombre <br />
-                                                                @item.TEMPORALIDAD.nombre
-                                                                <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                            </a>
-                                                           
+                                                            <div class="col-1">
+                                                                <button class="btn btn-danger" type="button" data-toggle="modal" data-target="@Modal" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">Adquirir</button>
+                                                            </div>
                                                         }
-
                                                     </div>
 
 
@@ -655,8 +669,8 @@
 
 
 @*Jquery, Popper bootstrap.min.js*@
-@*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+@*<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>*@
 @*este script es para la tabla y filtro de buscado agrupar y paginacion de tabla  el codigo dentro de language es para traducir elementos de la tabla*@
 @*script3 para la paginacion y selector de filas*@
