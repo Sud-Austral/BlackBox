@@ -58,7 +58,7 @@
                 @*<P><strong> Se muestran <span>@ViewBag.Resultado.Count </span>resultados de Repotes 360°</strong></P>*@
             </div>
         </div>
-        <div class="responsive row " style="overflow:scroll;height:300px;overflow-x:hidden; width:67%;">
+        <div class="responsive row " style="overflow:scroll;height:350px;overflow-x:hidden; width:67%;">
             @foreach (var item in ViewBag.Resultado)
 
             {
@@ -67,10 +67,11 @@
                         <div class="col-2">
                             <img class="img-fluid mb-3" src="@item.URL_IMAGEN">
                         </div>
-                        <div class="col-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;">
-                            @item.NOMBRE <br />
-                            @item.FECHA_CREADO
-
+                        <div class="col-9 text-dark font-weight-bold mb-0" style="color:#518bb3 !important;cursor: pointer;">
+                            <a onclick="mostrador('#doce'); ProductoSuscripcion('@item.SKU', '@item.NOMBRE');">
+                                @item.NOMBRE <br />
+                                @item.FECHA_CREADO
+                            </a>
                         </div>
                     </div>
                 </div>

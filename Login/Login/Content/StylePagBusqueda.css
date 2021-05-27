@@ -11,6 +11,7 @@ body {
 
     font-family: 'MYRIADPRO-REGULAR';
     border:none !important;
+    margin:0px !important;
 }
 
 .pagination li {
@@ -2552,3 +2553,7 @@ div.side:hover {
 .table td, .table th {
     padding: .50rem !important;
 }
+
+
+
+

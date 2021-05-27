@@ -79,6 +79,48 @@ namespace Login.Models
             set { fecha_publicacion = value; }
         }
 
+        public string _titulo
+        {
+            get
+            {
+                string salida = "";
+                try
+                {
+                    salida = titulo.Substring(0, 25) + " ...";
+
+
+                }
+                catch (Exception)
+                {
+
+                }
+                return salida;
+            }
+
+            set { _titulo = value; }
+        }
+
+        public string _titulo2
+        {
+            get
+            {
+                string salida = "";
+                try
+                {
+                    salida = titulo.Substring(0, 80) + " ...";
+
+
+                }
+                catch (Exception)
+                {
+                    salida = titulo.Substring(0, 20) + " ...";
+                }
+                return salida;
+            }
+
+            set { _titulo2 = value; }
+        }
+
         public string _url_Image
         {
             get
@@ -104,10 +146,34 @@ namespace Login.Models
                 salida = asciiStr.ToLower();
                 salida = "https://github.com/Sud-Austral/MPG/raw/main/Image/" + salida + id.ToString() + ".png";
                 /* return salida.Replace(" ", "_");*/
-                return this.auxiliar;
+                return "https://raw.githubusercontent.com/Sud-Austral/MPG/main/img/2521.png";
             }
 
             set { fecha_publicacion = "Sin Imagen"; }
+        }
+
+        public List<int> suscripciones { get; set; }
+
+        public bool mostrar
+        {
+            get
+            {
+                try
+                {
+                    if (this.TIPO_GRAFICO_id < 3)
+                    {
+                        return true;
+                    }
+                    return this.suscripciones.Contains(this.CATEGORIA.PRODUCTO.SECTOR_id);
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+                
+            }
+            set { mostrar = true; }
         }
 
         public string GetURL()
@@ -135,5 +201,7 @@ namespace Login.Models
             salida = asciiStr.ToLower();
             return salida.Replace(" ", "_");
         }
+
+
     }
 }

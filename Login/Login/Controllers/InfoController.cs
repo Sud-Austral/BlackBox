@@ -18,13 +18,13 @@ namespace AplicacionBlanco.Controllers
         public ActionResult Index(int id = 100, string id2 = "grafico", string id3 = "Geo_CL_provinces_.csv")
         {
             var rand = new Random();
-            ViewBag.grafico = id2;
-            ViewBag.file = id3;
+            //ViewBag.grafico = id2;
+            //ViewBag.file = id3;
             Graficos db = new Graficos();
-            ViewBag.Resultado = null;  //db.BuscarGrafico(id);
-            ViewBag.menu = dbGrafico.INDUSTRIA.ToList();
-            ViewBag.menu2 = dbGrafico.SECTOR.ToList();
-            ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
+            //ViewBag.Resultado = null;  //db.BuscarGrafico(id);
+            //ViewBag.menu = dbGrafico.INDUSTRIA.ToList();
+            //ViewBag.menu2 = dbGrafico.SECTOR.ToList();
+            //ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
             GRAFICO graf = new GRAFICO();
             try
             {
@@ -61,6 +61,16 @@ namespace AplicacionBlanco.Controllers
             }
             var listaOtrosContenidos = listaCategorias;  
             ViewBag.listaOtrosContenidos=listaOtrosContenidos ;
+
+            var Graficos = dbGrafico.GRAFICO.ToList();
+            var rand2 = new Random();
+            List<GRAFICO> listaGraficos = new List<GRAFICO>();
+            for (int i = 0; i < 15; i++)
+            {
+                listaGraficos.Add(Graficos[rand2.Next(Graficos.Count)]);
+            }
+            ViewBag.Graficos = listaGraficos;
+
             return View();
         }
 
@@ -71,9 +81,9 @@ namespace AplicacionBlanco.Controllers
         public ActionResult PaginaBusqueda(string id = "1")
         {
             var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
-            ViewBag.Resultado = NEW_GRAFICOS.Where( x => x.TIPO_GRAFICO_id < 3).ToList();//Liberados/Gratis
-            ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
-            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
+            ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
+            //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
+            //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
             //Listas de Filtros
             List<string> Paises = new List<string>();
             List<string> TipoGrafico = new List<string>();
@@ -149,8 +159,16 @@ namespace AplicacionBlanco.Controllers
         //[OutputCache(Duration = int.MaxValue)]
         public ActionResult HomeOdoo()
         {
-            var Graficos = dbGrafico.GRAFICO.ToList();
             var rand = new Random();
+            List<int> aux = new List<int>();
+            for (int i = 0; i < 20; i++)
+            {
+                aux.Add(rand.Next(dbGrafico.GRAFICO.Min(x => x.id), dbGrafico.GRAFICO.Max(x => x.id)));
+            }
+            var Graficos = dbGrafico.GRAFICO.Where(x => aux.Contains(x.id)).ToList();
+
+            //var Graficos = dbGrafico.GRAFICO.ToList();
+            
             List<GRAFICO> listaGraficos = new List<GRAFICO>();
             for (int i = 0; i < 15; i++)
             {

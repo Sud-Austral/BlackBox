@@ -55,7 +55,14 @@ namespace Login.Controllers
             //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
             //Menu que esta suscrito el usuario
             //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
-            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id==10).ToList();
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id==10).ToList();
+            int idExample = 1001;
+            var grafico = dbGrafico.INDUSTRIA.Where(x => x.id == idExample / 100).ToList();
+            foreach (var item in grafico)
+            {
+                item.SECTOR = (ICollection<SECTOR>)item.SECTOR.Where(x => x.id == 1001).ToArray();
+            }
+            ViewBag.Menu = grafico;
             return View();
         }
 
@@ -343,6 +350,30 @@ namespace Login.Controllers
         }
         public PartialViewResult Facturados()
         {
+            //Lista de productos de Shopify
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            //Nombre de Usuario
+            ViewBag.User = User.Identity.GetUserName();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+
+                }
+            }
+            ViewBag.Facturados = productos;
+           
+
             return PartialView();
         }
         public PartialViewResult PerfilUsuario()
@@ -522,10 +553,107 @@ namespace Login.Controllers
         }
 
         
+        public PartialViewResult FormBuscador(string id)
+        {
+            //Supongamos que solo esta suscrito al SECTOR (COLECCION) 1001
+            List<int> suscrip = new List<int>();
+            suscrip.Add(1001);
+            //Aun tenemos que resolver esto
+
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
+            foreach (var item in NEW_GRAFICOS)
+            {
+                item.suscripciones = suscrip;
+            }
+            //var resultado = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id == 3).ToList();
+
+            ViewBag.Resultado = NEW_GRAFICOS.ToList();
+           
+            //Listas de Filtros
+            List<string> Paises = new List<string>();
+            List<string> TipoGrafico = new List<string>();
+            List<string> Temporalidad = new List<string>();
+            List<string> Producto = new List<string>();
+            List<string> Industria = new List<string>();
+            List<string> Sector = new List<string>();
+            List<string> Categoria = new List<string>();
+
+            foreach (var item in NEW_GRAFICOS.Where(x => x.nombre.Contains(id)).ToList())
+            {
+                if (!Paises.Contains(item.TERRITORIO.nombre))
+                {
+                    Paises.Add(item.TERRITORIO.nombre);
+                }
+                if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
+                {
+                    TipoGrafico.Add(item.TIPO_GRAFICO.nombre);
+                }
+                if (!Temporalidad.Contains(item.TEMPORALIDAD.nombre))
+                {
+                    Temporalidad.Add(item.TEMPORALIDAD.nombre);
+                }
+                if (!Producto.Contains(item.CATEGORIA.PRODUCTO.nombre))
+                {
+                    Producto.Add(item.CATEGORIA.PRODUCTO.nombre);
+                }
+                if (!Industria.Contains(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
+                {
+                    Industria.Add(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
+                }
+                if (!Sector.Contains(item.CATEGORIA.PRODUCTO.SECTOR.nombre))
+                {
+                    Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
+                }
+
+                if (!Categoria.Contains(item.CATEGORIA.nombre))
+                {
+                    Categoria.Add(item.CATEGORIA.nombre);
+                }
+            }
+            ViewBag.Paises = Paises;
+            ViewBag.TipoGrafico = TipoGrafico;
+            ViewBag.Temporalidad = Temporalidad;
+            ViewBag.Producto = Producto;
+            ViewBag.Industria = Industria;
+            ViewBag.Sector = Sector;
+            ViewBag.Categoria = Categoria;
+            //var Resultados = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            //ViewBag.resultados = Resultados;
+
+            return PartialView();
+        }
         public ActionResult test2()
         {
 
             return View();
+        }
+
+        public ActionResult test3()
+        {
+            List<int> suscrip = new List<int>();
+            suscrip.Add(1001);
+            var resultado = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id == 3).ToList();
+            foreach (var item in resultado)
+            {
+                item.suscripciones = suscrip;
+            }
+            ViewBag.Resultado = resultado;
+            return View();
+        }
+        public PartialViewResult InformeSuscription(string id, string nombre)
+            {
+                ViewBag.urlReporte = id;
+                ViewBag.TituloReporte = nombre;
+            
+                return PartialView();
+        }
+
+        public PartialViewResult InformeReporte(string id, string nombre)
+        {
+            ViewBag.urlReporte = id;
+            ViewBag.TituloReporte = nombre;
+
+            return PartialView();
         }
     }
 }
