@@ -135,29 +135,29 @@
                                 <!-- Comienzo filtros por Pais-->
                                 @*<h5 style="color:black;" class="text-center mt-3">ÁREA DE BÚSQUEDA</h5>*@
                                 @*<div>
-                                        @foreach (var item7 in ViewBag.TipoGrafico)
-                                        {
-                                            <div>
-                                                <label><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
-                                            </div>
-                                        }
-                                    </div>
-                                    <div>
-                                        @foreach (var item8 in ViewBag.TipoGrafico)
-                                        {
-                                            <div>
-                                                <label><input type="checkbox" class="name" name="name" value="@item8"> Informes Interactivos</label>
-                                            </div>
-                                        }
-                                    </div>
-                                    <div>
-                                        @foreach (var item7 in ViewBag.TipoGrafico)
-                                        {
-                                            <div>
-                                                <label><input type="checkbox" class="name" name="name" value="@item7"> Reportes 360°</label>
-                                            </div>
-                                        }
-                                    </div>*@
+            @foreach (var item7 in ViewBag.TipoGrafico)
+            {
+                <div>
+                    <label><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
+                </div>
+            }
+        </div>
+        <div>
+            @foreach (var item8 in ViewBag.TipoGrafico)
+            {
+                <div>
+                    <label><input type="checkbox" class="name" name="name" value="@item8"> Informes Interactivos</label>
+                </div>
+            }
+        </div>
+        <div>
+            @foreach (var item7 in ViewBag.TipoGrafico)
+            {
+                <div>
+                    <label><input type="checkbox" class="name" name="name" value="@item7"> Reportes 360°</label>
+                </div>
+            }
+        </div>*@
                                 <h4 class="mt-3">ÁREA DE BÚSQUEDA</h4>
                                 <div class="side mb-5" style="overflow:scroll; max-height:80px; overflow:hidden;">
                                     <div>
@@ -168,12 +168,12 @@
                                     </div>
 
                                     @*@foreach (var item in ViewBag.Sector)
-                                        {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
-                                            </div>
+            {
+                <div>
+                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                </div>
 
-                                        }*@
+            }*@
                                 </div>
 
                                 <h4 class="mt-3">COLECCIÓN</h4>
@@ -187,36 +187,27 @@
                                     }
                                 </div>
                                 <h4 class="mt-3">TIPO DE PRODUCTO</h4>
+                               
 
                                 <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
-                                    <div>
-                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value=""> Informes Interactivo</label>
-                                    </div>
-                                    <div>
-                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value=""> Gráficos</label>
-                                    </div>
-                                    <div>
-                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value=""> Reporte 360</label>
-                                    </div>
-                                    @*@foreach (var item in ViewBag.Producto)
-                                              {
-                                                  <div>
-                                                      <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
-                                                  </div>
-
-                                        }*@
+                                    @foreach (var item7 in ViewBag.TipoGrafico)
+                                    {
+                                        <div>
+                                            <label><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
+                                        </div>
+                                    }
                                 </div>
 
-                                @*<h4>TEMA</h4>
-                                    <div class="side" style="overflow:scroll; height:100px; overflow:hidden;">
-                                        @foreach (var item in ViewBag.Industria)
-                                        {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
-                                            </div>
+                                                                @*<h4>TEMA</h4>
+                                        <div class="side" style="overflow:scroll; height:100px; overflow:hidden;">
+                                            @foreach (var item in ViewBag.Industria)
+                                            {
+                                                <div>
+                                                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                                                </div>
 
-                                        }
-                                    </div>*@
+                                            }
+                                        </div>*@
                                 <h4>TERRITORIO</h4>
                                 <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                     @foreach (var item in ViewBag.Paises)
@@ -244,117 +235,117 @@
                                 <div class="padding"></div>
                                 <!-- COMIENZO FILTROS POR PRODUCTO -->
                                 @*<h4>Producto:</h4>
-                                    <div class="side mb-5" style="overflow:scroll; height:100px; overflow:hidden;">
-                                        @foreach (var item in ViewBag.Producto)
-                                        {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
-                                            </div>
+        <div class="side mb-5" style="overflow:scroll; height:100px; overflow:hidden;">
+            @foreach (var item in ViewBag.Producto)
+            {
+                <div>
+                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                </div>
 
-                                        }
-                                    </div>*@
+            }
+        </div>*@
 
 
                                 <!-- FINAL FILTROS POR PRODUCTO -->
                                 @*
-                                    <!-- FINAL FILTROS POR ANIO -->
-                                    <div class="padding"></div>
+        <!-- FINAL FILTROS POR ANIO -->
+        <div class="padding"></div>
 
-                                    <!-- COMIENZO FILTROS POR INDUSTRIA -->
-                                    <h4>Industria:</h4>
-                                    @foreach (var item5 in ViewBag.Industria)
-                                    {
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" class="name icheck" name="name" value="@item5"> @item5</label>
-                                        </div>
-                                    }
+        <!-- COMIENZO FILTROS POR INDUSTRIA -->
+        <h4>Industria:</h4>
+        @foreach (var item5 in ViewBag.Industria)
+        {
+            <div class="checkbox">
+                <label><input type="checkbox" class="name icheck" name="name" value="@item5"> @item5</label>
+            </div>
+        }
 
-                                    <!-- FINAL DE FILTRO POR INDUSTRIA -->
-                                    <div class="padding"></div>
-                                    <!-- COMIENZO FILTROS POR SECTOR -->
-                                    <h4>Sector:</h4>
-                                    @foreach (var item4 in ViewBag.Sector)
-                                    {
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" class="name icheck" name="name" value="@item4"> @item4</label>
-                                        </div>
-                                    }
+        <!-- FINAL DE FILTRO POR INDUSTRIA -->
+        <div class="padding"></div>
+        <!-- COMIENZO FILTROS POR SECTOR -->
+        <h4>Sector:</h4>
+        @foreach (var item4 in ViewBag.Sector)
+        {
+            <div class="checkbox">
+                <label><input type="checkbox" class="name icheck" name="name" value="@item4"> @item4</label>
+            </div>
+        }
 
-                                    <!-- FINAL FILTROS POR SECTOR -->
-                                    <div class="padding"></div>
-                                    <!-- COMIENZO FILTROS POR PRODUCTO -->
-                                    <h4>Producto:</h4>
-                                    @foreach (var item2 in ViewBag.Producto)
-                                    {
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" class="name icheck" name="name" value="@item2"> @item2</label>
-                                        </div>
-                                    }
+        <!-- FINAL FILTROS POR SECTOR -->
+        <div class="padding"></div>
+        <!-- COMIENZO FILTROS POR PRODUCTO -->
+        <h4>Producto:</h4>
+        @foreach (var item2 in ViewBag.Producto)
+        {
+            <div class="checkbox">
+                <label><input type="checkbox" class="name icheck" name="name" value="@item2"> @item2</label>
+            </div>
+        }
 
-                                    <!-- FINAL FILTROS POR PRODUCTO -->
-                                    <div class="padding"></div>
+        <!-- FINAL FILTROS POR PRODUCTO -->
+        <div class="padding"></div>
                                 *@
                                 <!-- COMIENZO FILTROS POR CATEGORIA -->
                                 @*
-                                    <h4>Categoria:</h4>
-                                    @foreach (var item6 in ViewBag.Categoria)
-                                    {
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" class="name icheck" name="name" value="@item6"> @item6</label>
-                                        </div>
-                                    }
+        <h4>Categoria:</h4>
+        @foreach (var item6 in ViewBag.Categoria)
+        {
+            <div class="checkbox">
+                <label><input type="checkbox" class="name icheck" name="name" value="@item6"> @item6</label>
+            </div>
+        }
                                 *@
                                 <!-- FINAL FILTROS POR CATEGORIA -->
                                 @*
-                                        <div class="padding"></div>
+            <div class="padding"></div>
 
-                                        <!-- FILTROS POR FECHA -->
+            <!-- FILTROS POR FECHA -->
 
-                                        <h4>Por fecha:</h4>
+            <h4>Por fecha:</h4>
 
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    Fecha inicial:
-                                                </div>
-                                                <input id="startDate" width="220" />
-                                                <div class="col-12">
-                                                    Fecha término:
-                                                </div>
-                                                <input id="endDate" width="220" />
-                                            </div>
-                                        </div>
-                                        <script>
-                                            var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                            $('#startDate').datepicker({
-                                                uiLibrary: 'bootstrap4',
-                                                iconsLibrary: 'fontawesome',
-                                                minDate: today,
-                                                maxDate: function () {
-                                                    return $('#endDate').val();
-                                                }
-                                            });
-                                            $('#endDate').datepicker({
-                                                uiLibrary: 'bootstrap4',
-                                                iconsLibrary: 'fontawesome',
-                                                minDate: function () {
-                                                    return $('#startDate').val();
-                                                }
-                                            });
-                                        </script>
-                                        <!-- FINAL FILTROS POR FECHA -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        Fecha inicial:
+                    </div>
+                    <input id="startDate" width="220" />
+                    <div class="col-12">
+                        Fecha término:
+                    </div>
+                    <input id="endDate" width="220" />
+                </div>
+            </div>
+            <script>
+                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                $('#startDate').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    iconsLibrary: 'fontawesome',
+                    minDate: today,
+                    maxDate: function () {
+                        return $('#endDate').val();
+                    }
+                });
+                $('#endDate').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    iconsLibrary: 'fontawesome',
+                    minDate: function () {
+                        return $('#startDate').val();
+                    }
+                });
+            </script>
+            <!-- FINAL FILTROS POR FECHA -->
 
-                                        <div class="padding"></div>
+            <div class="padding"></div>
 
-                                        <!-- COMIENZO FILTRO POR PRECIOS -->
-                                        <h4>Por precio:</h4>
-                                        Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-                                        <div class="slider-primary">
-                                            <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
-                                        </div>
-                                        <!-- FINAL FILTROS POR PRECIOS -->
-                                    </div>
-                                    <!-- FINAL FILTROS -->
+            <!-- COMIENZO FILTRO POR PRECIOS -->
+            <h4>Por precio:</h4>
+            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
+            <div class="slider-primary">
+                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+            </div>
+            <!-- FINAL FILTROS POR PRECIOS -->
+        </div>
+        <!-- FINAL FILTROS -->
                                 *@
                             </div>
                             <!-- COMIENZO RESULTADOS -->
@@ -421,25 +412,57 @@
                                                 <tr>
                                                     <td style="border:none !important;">
                                                         <div class="row d-flex">
-                                                            <div class="col-md-2 col-12" style="cursor:default">
+                                                            <div class="col-md-2 col-12">
                                                                 @{
                                                                     string RutaImagen2 = "/Content/img/iconos_TipoProducto/" + item.TIPO_GRAFICO_id + ".png";
                                                                 }
                                                                 <img class="img-fluid" style="width:140px;" src="@RutaImagen2" />
                                                             </div>
-                                                            <div class="col-md-8 col-12" style="cursor:default">
-                                                                
-                                                                    @item.titulo <br />
-                                                                    @item.TIPO_GRAFICO_id
-                                                                    @item.TIPO_GRAFICO.nombre <br />
-                                                                    @item.TEMPORALIDAD.nombre
-                                                                    <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                                
-                                                            </div>
+                                                            @if (item.TIPO_GRAFICO_id == 4)
+                                                            {
+                                                                <div class="col-md-8 col-12">
+                                                                    <a href=""  type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer;">
+                                                                        @item.titulo <br />
+                                                                        @item.TIPO_GRAFICO_id
+                                                                        @item.TIPO_GRAFICO.nombre <br />
+                                                                        @item.TEMPORALIDAD.nombre
+                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                    </a>
+                                                                </div>
+
+                                                            }
+                                                            else if (item.TIPO_GRAFICO_id == 3)
+                                                            {
+                                                                <div class="col-md-8 col-12">
+                                                                    <a href=""  type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style=" cursor: pointer;">
+                                                                        @item.titulo <br />
+                                                                        @item.TIPO_GRAFICO_id
+                                                                        @item.TIPO_GRAFICO.nombre <br />
+                                                                        @item.TEMPORALIDAD.nombre
+                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                    </a>
+                                                                </div>
+
+                                                            }
+                                                            else if (item.TIPO_GRAFICO_id == 1)
+                                                            {
+
+                                                                <div class="col-md-8 col-12">
+                                                                    <a href="~/info/index?id=@item.id"  style=" cursor: pointer;">
+                                                                        @item.titulo <br />
+                                                                        @item.TIPO_GRAFICO_id
+                                                                        @item.TIPO_GRAFICO.nombre <br />
+                                                                        @item.TEMPORALIDAD.nombre
+                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                    </a>
+                                                                </div>
+
+                                                            }
+
                                                             <div class="col-md-2 col-12">
                                                                 @if (item.TIPO_GRAFICO_id == 4)
                                                                 {
-                                                                    <a class="btn2 btn btn-danger btn-sm" href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a onclick="mostrador('#ocho'); ShowGrafico('@item.id');" class="btn2 btn btn-danger btn-sm" href="" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                                                                         Adquirir
                                                                     </a>
                                                                     <!-- Modal -->
@@ -532,7 +555,7 @@
                                                                 }
                                                                 else if (item.TIPO_GRAFICO_id == 3)
                                                                 {
-                                                                    <a class="btn2 btn btn-danger btn-sm" href="" target="_blank" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a class="btn2 btn btn-danger btn-sm" href="" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                                                                         Adquirir
                                                                     </a>
                                                                     <div class="modal fade" id="myModal1" role="dialog">
@@ -624,12 +647,15 @@
                                                                 }
                                                                 else if (item.TIPO_GRAFICO_id == 1)
                                                                 {
-                                                                    <a class="btn2 btn btn-danger btn-sm" href="~/info/index?id=@item.id" target="_blank" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
-                                                                        Ir a Grafico
+                                                                    <a class="btn2 btn btn-danger btn-sm" href="~/info/index?id=@item.id" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                        Ver Gráfico
                                                                     </a>
                                                                 }
 
                                                             </div>
+                                                            @*<h1>
+                                                                @item.mostrar
+                                                            </h1>*@
                                                         </div>
 
 

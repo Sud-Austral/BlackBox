@@ -2780,6 +2780,7 @@
     <Content Include="Views\Usuario\test3.cshtml" />
     <Content Include="Views\Usuario\InformeSuscription.cshtml" />
     <Content Include="Views\Data\HomeOdoo.cshtml" />
+    <Content Include="Views\Usuario\InformeReporte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
