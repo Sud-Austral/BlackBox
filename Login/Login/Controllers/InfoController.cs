@@ -17,6 +17,7 @@ namespace AplicacionBlanco.Controllers
         // GET: Info
         public ActionResult Index(int id = 100)
         {
+            ViewBag.time1 = DateTime.Now;
             //Random
             var rand = new Random();
             //Busqueda del grafico correcto
@@ -77,6 +78,7 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Graficos = listaGraficos;
             */
             ViewBag.Graficos = Graficos;
+            ViewBag.time2 = DateTime.Now;
             return View();
         }
 
@@ -186,7 +188,9 @@ namespace AplicacionBlanco.Controllers
 
         public PartialViewResult menuLayout()
         {
+            ViewBag.time1 = DateTime.Now;
             ViewBag.MenuLayout = new MENULAYOUT();
+            ViewBag.time2 = DateTime.Now;
             return PartialView();
         }
 
