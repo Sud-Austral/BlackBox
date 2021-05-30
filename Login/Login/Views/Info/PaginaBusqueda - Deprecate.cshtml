@@ -29,41 +29,28 @@
     <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
     @*Titulo de la pagina*@
-    <title>Resultados de Busqueda</title>
-    <!-- pdf descargar-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Estadística</title>
     @*Script para cargar charts*@
     @*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>*@
     <!--carrucel-->
     @*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">*@
     @*<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
     <!-- pdf descargar-->
     <!--megamenu-->
-    <!--<script>
+    <script>
         $(document).ready(function () {
             $(".megamenu").on("click", function (e) {
                 e.stopPropagation();
             });
         });
 
-    </script>-->
-    <script>
-        function mostrador(seccion) {
-            var arreglo = [
-                '#PBuno',
-                '#PBdos'
-            ];
-            //arreglo.forEach
-            jQuery.each(arreglo, function (i, val) {
-                $(val).hide();
-            });
-            $(seccion).show();
-
-        }
     </script>
+
 </head>
 <body onresize="recargar();">
+    @*Menu principal*@
+
 
     <style>
         /*Hover contenido de paginaBusqueda contenido*/
@@ -75,16 +62,11 @@
             overflow-y: auto !important;
         }
     </style>
-    <div class="container" style="margin-top:20px;">
-        <div id="PBdos" style="display:none;">
-
-        </div>
-        @*<h2 class="text-center">Resultados de la búsqueda</h2>*@
+    <div class="container-fluid mt-5 " style="margin-top:100px;">
+        <h2 class="text-center">Resultados de la búsqueda</h2>
         <div class="row justify-content-center">
-
             <!-- Comienzo de rsultados de Busqueda -->
-            <div class="col-md-12" id="PBuno">
-                <h2 class="text-center">Resultados de la búsqueda</h2>
+            <div class="col-md-10">
                 <div class="grid search">
                     <div class="grid-body">
                         <!-- Comienzo de Fila que contiene botón borrar filtro y buscador -->
@@ -108,6 +90,11 @@
                                     }
                                 </script>
                             </div>
+                            @*fin  Boton para borrar los filtros*@
+                            @*<label class="btn btn-primary">
+                                    <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this); " /> Marcar / Desmarcar Todos
+                                </label>*@
+
                             <!--fin de Fila que contiene botón borrar filtro y buscador -->
                             <div class="col-md-8 pr-0">
                                 <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
@@ -123,12 +110,14 @@
                         <!-- Final de Fila que contiene botón borrar filtro y buscador -->
                         <div class="row" style="border:hidden !important;">
                             <!-- Comienzo filtros -->
-                            <div class="tags col-md-3 dropdown sidebar sidebar-md " style="margin-right:10px; border: 0.5px solid #bbc1c5; border-radius: 20px; padding-top: 12px;">
+                            <div class="tags col-md-3 dropdown sidebar sidebar-md" style="border: 0.5px solid #bbc1c5; border-radius: 20px; padding-top: 12px;">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     Filtros
                                     <span class="caret"></span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1" style="position:relative !important; transform:none !important; will-change:scroll-position !important;">
+
+                                
 
                                     @*Este script es para hacer el filtro de la tabla*@
                                     <script>
@@ -151,132 +140,243 @@
                                         });
                                     </script>
 
+                                    @*Este script es para hacer el filtro de la tabla*@
+                                    <!-- Comienzo filtros por Pais-->
+                                    @*<h5 style="color:black;" class="text-center mt-3">ÁREA DE BÚSQUEDA</h5>*@
+                                    @*<div>
+                @foreach (var item7 in ViewBag.TipoGrafico)
+                {
+                    <div>
+                        <label><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
+                    </div>
+                }
+            </div>
+            <div>
+                @foreach (var item8 in ViewBag.TipoGrafico)
+                {
+                    <div>
+                        <label><input type="checkbox" class="name" name="name" value="@item8"> Informes Interactivos</label>
+                    </div>
+                }
+            </div>
+            <div>
+                @foreach (var item7 in ViewBag.TipoGrafico)
+                {
+                    <div>
+                        <label><input type="checkbox" class="name" name="name" value="@item7"> Reportes 360°</label>
+                    </div>
+                }
+            </div>*@
+                                    <h4 class="mt-3 dropdown-header">ÁREA DE BÚSQUEDA</h4>
+                                    <div class="side mb-5" style="overflow:scroll; max-height:80px; overflow:hidden;">
+                                        <div>
+                                            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value=""> Solo Suscripción </label>
+                                        </div>
+                                        <div>
+                                            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value=""> En todo Data Intelligence</label>
+                                        </div>
+
+                                        @*@foreach (var item in ViewBag.Sector)
+                {
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                    </div>
+
+                }*@
+                                    </div>
 
                                     <h4 class="mt-3 dropdown-header">COLECCIÓN</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
-                                        @foreach (var item1 in ViewBag.Sector)
+                                        @foreach (var item in ViewBag.Sector)
                                         {
                                             <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</label>
-                                            </div>
-
-                                        }
-                                    </div>
-                                    <h4 class="dropdown-header">SECTOR</h4>
-                                    <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
-                                        @foreach (var item2 in ViewBag.Industria)
-                                        {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
-                                            </div>
-
-                                        }
-                                    </div>
-
-                                    <h4 class="dropdown-header">TEMA</h4>
-                                    <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
-                                        @foreach (var item3 in ViewBag.Producto)
-                                        {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
                                             </div>
 
                                         }
                                     </div>
                                     <h4 class="mt-3 dropdown-header">TIPO DE PRODUCTO</h4>
-                                    <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
-                                        @foreach (var item4 in ViewBag.TipoGrafico)
-                                        {
-                                            <div>
-                                                <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-                                            </div>
-                                        }
-                                    </div>
-                                    <h4 class="dropdown-header">ESCALA</h4>
-                                    <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
-                                        @foreach (var item5 in ViewBag.Paises)
-                                        {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item5"> @item5</label>
-                                            </div>
 
+
+                                    <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
+                                        @foreach (var item7 in ViewBag.TipoGrafico)
+                                        {
+                                            <div>
+                                                <label><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
+                                            </div>
                                         }
                                     </div>
+
+                                    @*<h4>TEMA</h4>
+            <div class="side" style="overflow:scroll; height:100px; overflow:hidden;">
+                @foreach (var item in ViewBag.Industria)
+                {
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                    </div>
+
+                }
+            </div>*@
                                     <h4 class="dropdown-header">TERRITORIO</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
-                                        @foreach (var item6 in ViewBag.Escala)
+                                        @foreach (var item in ViewBag.Paises)
                                         {
                                             <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6"> @item6</label>
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
                                             </div>
 
                                         }
                                     </div>
+
                                     <h4 class="dropdown-header">TEMPORALIDAD</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
-                                        @foreach (var item7 in ViewBag.Temporalidad)
+                                        @foreach (var item in ViewBag.Temporalidad)
                                         {
                                             <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
                                             </div>
 
                                         }
                                     </div>
 
+
+                                    <!-- FINAL FILTROS POR SECTOR -->
+                                    <div class="padding"></div>
+                                    <!-- COMIENZO FILTROS POR PRODUCTO -->
+                                    @*<h4>Producto:</h4>
+            <div class="side mb-5" style="overflow:scroll; height:100px; overflow:hidden;">
+                @foreach (var item in ViewBag.Producto)
+                {
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item"> @item</label>
+                    </div>
+
+                }
+            </div>*@
+
+
+                                    <!-- FINAL FILTROS POR PRODUCTO -->
                                     @*
-       
-            <!-- FILTROS POR FECHA -->
-
-            <h4>Por fecha:</h4>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        Fecha inicial:
-                    </div>
-                    <input id="startDate" width="220" />
-                    <div class="col-12">
-                        Fecha término:
-                    </div>
-                    <input id="endDate" width="220" />
-                </div>
-            </div>
-            <script>
-                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                $('#startDate').datepicker({
-                    uiLibrary: 'bootstrap4',
-                    iconsLibrary: 'fontawesome',
-                    minDate: today,
-                    maxDate: function () {
-                        return $('#endDate').val();
-                    }
-                });
-                $('#endDate').datepicker({
-                    uiLibrary: 'bootstrap4',
-                    iconsLibrary: 'fontawesome',
-                    minDate: function () {
-                        return $('#startDate').val();
-                    }
-                });
-            </script>
-            <!-- FINAL FILTROS POR FECHA -->
-
+            <!-- FINAL FILTROS POR ANIO -->
             <div class="padding"></div>
 
-            <!-- COMIENZO FILTRO POR PRECIOS -->
-            <h4>Por precio:</h4>
-            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-            <div class="slider-primary">
-                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
-            </div>
-            <!-- FINAL FILTROS POR PRECIOS -->
-        </div>
-        <!-- FINAL FILTROS -->
+            <!-- COMIENZO FILTROS POR INDUSTRIA -->
+            <h4>Industria:</h4>
+            @foreach (var item5 in ViewBag.Industria)
+            {
+                <div class="checkbox">
+                    <label><input type="checkbox" class="name icheck" name="name" value="@item5"> @item5</label>
+                </div>
+            }
+
+            <!-- FINAL DE FILTRO POR INDUSTRIA -->
+            <div class="padding"></div>
+            <!-- COMIENZO FILTROS POR SECTOR -->
+            <h4>Sector:</h4>
+            @foreach (var item4 in ViewBag.Sector)
+            {
+                <div class="checkbox">
+                    <label><input type="checkbox" class="name icheck" name="name" value="@item4"> @item4</label>
+                </div>
+            }
+
+            <!-- FINAL FILTROS POR SECTOR -->
+            <div class="padding"></div>
+            <!-- COMIENZO FILTROS POR PRODUCTO -->
+            <h4>Producto:</h4>
+            @foreach (var item2 in ViewBag.Producto)
+            {
+                <div class="checkbox">
+                    <label><input type="checkbox" class="name icheck" name="name" value="@item2"> @item2</label>
+                </div>
+            }
+
+            <!-- FINAL FILTROS POR PRODUCTO -->
+            <div class="padding"></div>
                                     *@
-                                </div>
+                                    <!-- COMIENZO FILTROS POR CATEGORIA -->
+                                    @*
+            <h4>Categoria:</h4>
+            @foreach (var item6 in ViewBag.Categoria)
+            {
+                <div class="checkbox">
+                    <label><input type="checkbox" class="name icheck" name="name" value="@item6"> @item6</label>
+                </div>
+            }
+                                    *@
+                                    <!-- FINAL FILTROS POR CATEGORIA -->
+                                    @*
+                <div class="padding"></div>
+
+                <!-- FILTROS POR FECHA -->
+
+                <h4>Por fecha:</h4>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            Fecha inicial:
+                        </div>
+                        <input id="startDate" width="220" />
+                        <div class="col-12">
+                            Fecha término:
+                        </div>
+                        <input id="endDate" width="220" />
+                    </div>
+                </div>
+                <script>
+                    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                    $('#startDate').datepicker({
+                        uiLibrary: 'bootstrap4',
+                        iconsLibrary: 'fontawesome',
+                        minDate: today,
+                        maxDate: function () {
+                            return $('#endDate').val();
+                        }
+                    });
+                    $('#endDate').datepicker({
+                        uiLibrary: 'bootstrap4',
+                        iconsLibrary: 'fontawesome',
+                        minDate: function () {
+                            return $('#startDate').val();
+                        }
+                    });
+                </script>
+                <!-- FINAL FILTROS POR FECHA -->
+
+                <div class="padding"></div>
+
+                <!-- COMIENZO FILTRO POR PRECIOS -->
+                <h4>Por precio:</h4>
+                Entre <div id="price1">$300</div> y <div id="price2">$800</div>
+                <div class="slider-primary">
+                    <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+                </div>
+                <!-- FINAL FILTROS POR PRECIOS -->
+            </div>
+            <!-- FINAL FILTROS -->
+                                    *@
+                            </div>
                             </div>
                             <!-- COMIENZO RESULTADOS -->
-                            <div class="col-md-8" style="border: 0.5px solid #bbc1c5;border-radius:20px; ">
+                            <div class="col-md-8 pr-0 ml-2" style="border: 0.5px solid #bbc1c5;border-radius:20px; ">
+
+
+                                @*
+                                    <div class="padding"></div>
+
+                                    <div class="row">
+                                        <!-- COMIENZO ORDENAR RESULTADOS -->
+                                        <div class="col-sm-6">
+
+                                        </div>
+                                        <!-- FINAL ORDENAR RESULTADOS -->
+
+                                        <div class="col-md-6 text-right">
+
+                                        </div>
+                                    </div>
+                                *@
                                 @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>*@
                                 <script>
                                     // Write on keyup event of keyword input element
@@ -307,9 +407,8 @@
                                     });
                                 </script>
                                 <!-- COMIENZO TABLA RESULTADOS -->
-
                                 <h5 class="ml-3 mt-4" style="color:black"> @ViewBag.Resultado.Count resultados</h5>
-                                <div class="table-responsive " style=" height: 1000px; overflow-x: hidden !important; border-radius: 20px !important; ">
+                                <div class="table-responsive display" style="height:750px; overflow-x:hidden !important; border-radius: 20px !important; ">
                                     <table id="mytable" class="table" style=" border:none !important;">
 
                                         <thead id="stud_body" style="border:none;">
@@ -332,12 +431,11 @@
                                                             @if (item.TIPO_GRAFICO_id == 4)
                                                             {
                                                                 <div class="col-md-8 col-12">
-                                                                    <a href="" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer;">
+                                                                    <a href=""  type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer;">
                                                                         @item.titulo <br />
                                                                         @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
-                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                     </a>
                                                                 </div>
@@ -346,12 +444,11 @@
                                                             else if (item.TIPO_GRAFICO_id == 3)
                                                             {
                                                                 <div class="col-md-8 col-12">
-                                                                    <a href="" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style=" cursor: pointer;">
+                                                                    <a href=""  type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style=" cursor: pointer;">
                                                                         @item.titulo <br />
                                                                         @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
-                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                     </a>
                                                                 </div>
@@ -361,13 +458,11 @@
                                                             {
 
                                                                 <div class="col-md-8 col-12">
-                                                                    @*<a href="~/info/index?id=@item.id" style=" cursor: pointer;">*@
-                                                                    <a onclick="mostrador('#PBdos'); PBGrafico('@item.id');" style=" cursor: pointer;">
+                                                                    <a href="~/info/index?id=@item.id"  style=" cursor: pointer;">
                                                                         @item.titulo <br />
                                                                         @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
-                                                                        <p style="display:none;">@item.TERRITORIO.auxiliar </p>
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                     </a>
                                                                 </div>
@@ -569,8 +664,8 @@
 
                                                             </div>
                                                             @*<h1>
-                                                                    @item.mostrar
-                                                                </h1>*@
+                                                                @item.mostrar
+                                                            </h1>*@
                                                         </div>
 
 
@@ -730,7 +825,7 @@
                                         document.getElementById('paginador'),
                                         document.getElementById('mytable')
                                     );
-                                    p.Mostrar();
+                                    /*p.Mostrar();*/
                                 }
                             </script>
 
@@ -744,323 +839,12 @@
         </div>
         <!-- FINAL RESULTADOS DE BUSQUEDA -->
     </div>
-    <div class="col-10 pl-2 offset-1">
-        <h6 style="font-weight:bold">Información relacionada que te podría interesar</h6>
-    </div>
-    <section class="container" style="background:#fff; border:solid #e6e6e6; border-radius:15px;">
-
-        <div class="row" style="border-bottom: 2px solid #e6e6e6; ">
-            <div class="col-md-3 col-sm-12">
-                <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
-            </div>
-            <div class="col-md-8 col-sm-12" style="background:#fff; border:solid #e6e6e6; border-radius:15px; margin-left:15px;">
-                <p style="padding-top:10px;">
-                    <span style="font-size:20px;"><strong>titulo</strong></span> <br />
-                    <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type
-                </p>
-            </div>
-        </div>
-
-        <div class="row" style="border-bottom: 2px solid #e6e6e6; ">
-            <div class="col-md-3 col-sm-12">
-                <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
-            </div>
-            <div class="col-md-8 col-sm-12" style="background:#fff; border:solid #e6e6e6; border-radius:15px; margin-left:15px;">
-                <p style="padding-top:10px;">
-                    <span style="font-size:20px;"><strong>titulo</strong></span> <br />
-                    <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type
-                </p>
-            </div>
-        </div>
-
-        <div class="row" style="border-bottom: 2px solid #e6e6e6; ">
-            <div class="col-md-3 col-sm-12">
-                <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
-            </div>
-            <div class="col-md-8 col-sm-12" style="background:#fff; border:solid #e6e6e6; border-radius:15px; margin-left:15px;">
-                <p style="padding-top:10px;">
-                    <span style="font-size:20px;"><strong>titulo</strong></span> <br />
-                    <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type
-                </p>
-            </div>
-        </div>
-
-           
-        
-
-    </section>
-
-    <!--seccion de suscripciones-->
-    <div class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
-
-        <div class="row" style="padding-left:20%; padding-right:20%">
-            <div class="col-12">
-                <h3 style="color:#fff; padding:40px 0px;">
-                    ¡Imagina toda la información pública
-                    de un país en una sola plataforma!
-                </h3>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
-            <div class="col-12">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_1.png" alt="100%x280" />
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
-
-        <div class="row" style="padding-left:20%; padding-right:20%">
-            <div class="col-12">
-                <h3 style="color:#fff; padding:40px 0px; margin-bottom:10px;">
-                    ¡Y para los que necesitan más información!
-                </h3>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center mb-4" style="padding-left:35%; padding-right:35%">
-            <div class="col-12">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
-            </div>
-        </div>
-        <div class="row" style="padding-left:20%; padding-right:20%">
-            <div class="col-12">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
-            </div>
-        </div>
-        <div class="row mb-1" style="padding-left:20%; padding-right:20%">
-
-            <div class="col-12">
-                <h3 style="color:#fff; padding:40px 0px;">
-                    La suscripción anual Cuenta Profesional fue diseñada especialmente para potenciar las investigaciones, proyectos o planificaciones de quienes requieren una mayor cantidad de información.
-
-                </h3>
-            </div>
-
-        </div>
-        <div class="row mb-4" style="padding-left:20%; padding-right:20%">
-            <h3 style="color:#009fcf">
-                INCLUYE
-            </h3>
-            <div class="col-3">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
-            </div>
-            <div class="col-3">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
-            </div>
-            <div class="col-3">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
-            </div>
-            <div class="col-3">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
-            </div>
-        </div>
-        <div class="row" style="padding-left:20%; padding-right:20%">
-            <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right;">
-                <span style="color:white; font-size:18px;">USD</span>
-                <span style="color:red; font-size:22px;">$35</span>
-                <br />
-                <span style="color:white; font-size:18px;"> mensuales</span>
-            </div>
-            <div class="col-6" style="text-align:left;">
-                <a  href="https://dataintelligence.store/products/avance-del-covid-19-gt" target="_blank" class="btn btn-danger btn-sm mt-2 text-left enlace" style="border-radius:20px; font-size:20px;" >
-                    Adquirir
-                </a>
-            </div>
-        </div>
-    </div>
 
 
-    <!--carrucel-->
-    <div class="py-5 bg-light ">
-        <section class="pt-3 ">
-            <div class="container-fluid">
-                <div class="row justify-content-center text-center">
-
-                    <div class="col-md-8 col-8  mb-3 ml-1 mr-1" style="border:1px solid rgb(0 0 0 / 0.00); border-radius:10px; background-color:#bf1522;">
-                        <span class=" mt-2" style="color:#fff; align-content:start !important;">Más información de esta colección</span>
-                        <a class="btn btn-primary mb-1 mr-1 mt-1" href="#carouselExampleIndicators2" role="button" data-slide="prev" style="text-decoration: none; border:none !important; background-color: #c6c6c6; padding: 3px 5px 5px 5px;">
-                            <i class="fa fa-arrow-left align-baseline" style="color:red;font-size:0.8rem;"></i>
-                        </a>
-                        <a class="btn btn-primary mb-1 mt-1 " href="#carouselExampleIndicators2" role="button" data-slide="next" style="text-decoration: none; border:none !important; background-color: #c6c6c6; padding: 3px 5px 5px 5px;">
-                            <i class="fa fa-arrow-right align-baseline" style="color:red;font-size:0.8rem;"></i>
-                        </a>
-                    </div>
-                    @*imagenes de carrusel*@
-                    <div class="col-md-8 col-8">
-                        <div id="carouselExampleIndicators2" class="carousel" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row">
-
-                                        <div class="col-md-4 mb-3">
-                                            <a class="link-card" href="#">
-                                                <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                                <div class="card" style="border:none;">
-                                                    <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title" style="color:#000">nombre</h4>
-
-                                                        <p class="card-text" style="color:#000">descripcion</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;">
-                                                titulo
-                                            </div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">
-                                                titulo
-                                            </div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;">titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                            <div class="card" style="border-radius:10px;">
-                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                            <div class="card">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">titulo</div>
-                                            <div class="card" style="border-radius:10px;">
-                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                                <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-                                                    <p class="card-text" style="color:#000">descripcion</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </div>
     @*Jquery, Popper bootstrap.min.js*@
-    @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>*@
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     @*este script es para la tabla y filtro de buscado agrupar y paginacion de tabla  el codigo dentro de language es para traducir elementos de la tabla*@
     @*script3 para la paginacion y selector de filas*@
     <script>
@@ -1126,48 +910,8 @@
             }
             index++
         }
-
+        
     </script>
-
-    <script>
-        function PBGrafico(Grafico) {
-            var id = "parametros de la funcion";
-            //$("#PBdos").html("<h1>Hola</h1>")
-            //alert(Grafico)
-            $.ajax(
-                {
-                    type: 'POST',
-                    data: "{'id':" + "'" + Grafico + "'}", //datos o parametros enviados al servidor
-                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/info/VisualizarGraficos?id=' + Grafico,
-                    //URL del action result que cargara la vista parcial
-                    success: function (result) {
-                        // si la funcion se ejecuta lanzara un alert
-                        /*alert('Success');*/
-                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
-                        //que recibio del servidor
-                        $("#PBdos").html(result);
-                    },
-
-                    error: function (error) {
-                        // si hay un error lanzara el mensaje de error
-                        alert('Fail');
-                    }
-                });
-
-        }
-        function volver() {
-            alert(cuerpo)
-        }
-    </script>
-
-    @*Jquery, Popper bootstrap.min.js*@
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    @*este script va con la funcion de cargar el gif en la seccion siete*@
 </body>
 </html>
 

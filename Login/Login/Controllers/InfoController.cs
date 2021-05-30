@@ -86,6 +86,7 @@ namespace AplicacionBlanco.Controllers
             //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
             //Listas de Filtros
             List<string> Paises = new List<string>();
+            List<string> Escala = new List<string>();
             List<string> TipoGrafico = new List<string>();
             List<string> Temporalidad = new List<string>();
             List<string> Producto = new List<string>();
@@ -95,9 +96,13 @@ namespace AplicacionBlanco.Controllers
             
             foreach (var item in NEW_GRAFICOS.Where(x => x.nombre.Contains(id)).ToList())
             {
-                if (!Paises.Contains(item.TERRITORIO.nombre))
+                if (!Paises.Contains(item.TERRITORIO.auxiliar))
                 {
-                    Paises.Add(item.TERRITORIO.nombre);
+                    Paises.Add(item.TERRITORIO.auxiliar);
+                }
+                if (!Escala.Contains(item.TERRITORIO.nombre))
+                {
+                    Escala.Add(item.TERRITORIO.nombre);
                 }
                 if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
                 {
@@ -125,7 +130,8 @@ namespace AplicacionBlanco.Controllers
                     Categoria.Add(item.CATEGORIA.nombre);
                 }                
             }
-            ViewBag.Paises = Paises;           
+            ViewBag.Paises = Paises;
+            ViewBag.Escala = Escala;
             ViewBag.TipoGrafico = TipoGrafico;
             ViewBag.Temporalidad = Temporalidad;
             ViewBag.Producto = Producto;
@@ -278,6 +284,39 @@ namespace AplicacionBlanco.Controllers
             return View("PaginaBusqueda");
         }
         
+        public PartialViewResult VisualizarGraficos(int id =1234)
+        {
+            ViewBag.time1 = DateTime.Now;
+            var rand = new Random();
 
+            GRAFICO graf = new GRAFICO();
+            try
+            {
+                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            }
+            catch (Exception)
+            {
+                graf = null;
+            }
+            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            {
+                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
+            }
+            ViewBag.Elemento = graf;//graficos
+            // var listaAsociado = dbGrafico.PRODUCTO.Where(x => x.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
+            //var listaAsociado = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
+
+            //List<int> aux = new List<int>();
+            //for (int i = 0; i < 50; i++)
+            //{
+            //    aux.Add(rand.Next(dbGrafico.GRAFICO.Min(x => x.id), dbGrafico.GRAFICO.Max(x => x.id)));
+            //}
+            //var Graficos = dbGrafico.GRAFICO.Where(x => aux.Contains(x.id)).ToList();
+            //ViewBag.Graficos = Graficos;//carrusel
+
+            ViewBag.time2 = DateTime.Now;
+            return PartialView();
+        }
     }
 }

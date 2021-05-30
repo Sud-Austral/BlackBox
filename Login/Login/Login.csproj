@@ -2780,7 +2780,9 @@
     <Content Include="Views\Usuario\test3.cshtml" />
     <Content Include="Views\Usuario\InformeSuscription.cshtml" />
     <Content Include="Views\Data\HomeOdoo.cshtml" />
-     <Content Include="Views\Usuario\InformeReporte.cshtml" />
+    <Content Include="Views\Usuario\InformeReporte.cshtml" />
+    <Content Include="Views\Info\PaginaBusqueda - Deprecate.cshtml" />
+    <Content Include="Views\Info\VisualizarGraficos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

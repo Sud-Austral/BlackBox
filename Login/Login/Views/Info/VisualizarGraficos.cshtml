@@ -1,0 +1,30 @@
+﻿@********************test boton ir atras**********************@
+<input type="button" onclick="mostrador('#PBuno')" name="volver atrás" value="atrás">
+@*<a href="javascript:history.back(-1);" title="Ir la página anterior">Volver</a>*@
+<div class="row justify-content-center">
+    @*<h1>@ViewBag.time1 </h1>
+    <h1>@ViewBag.time2 </h1>*@
+    <div class="col-8 ">
+        <h3 class="text-dark mb-0">@ViewBag.Elemento.titulo</h3>
+        <hr style="border:0.5px solid #000000" />
+        @*<h4 class="text-dark mb-0">@ViewBag.Elemento.titulo</h4>*@
+        @*<hr style="border:0.5px solid #000000" />*@
+    </div>
+
+</div>
+@if (ViewBag.Elemento.TIPO_GRAFICO_id < 3)
+{
+    <div class="row justify-content-center">
+        <div class="col-md-8 embed-responsive embed-responsive-16by9 mb-5">
+            <iframe style="width:100%; height:600px;" class="embed-responsive-item" src="@ViewBag.Elemento.url"></iframe>
+        </div>
+    </div> }
+else
+{
+    <div class="row justify-content-center" style="height:1000px;">
+        <div class="col-md-10 embed-responsive embed-responsive-16by9 mb-5">
+            <iframe class="embed-responsive-item" src="@ViewBag.Elemento.url"></iframe>
+        </div>
+    </div>
+}
+
