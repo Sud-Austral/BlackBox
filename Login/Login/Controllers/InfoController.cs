@@ -361,5 +361,28 @@ namespace AplicacionBlanco.Controllers
 
             return PartialView();
         }
+
+        public ActionResult index2()
+        {
+            int id = 1234;
+            var rand = new Random();
+
+            GRAFICO graf = new GRAFICO();
+            try
+            {
+                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            }
+            catch (Exception)
+            {
+                graf = null;
+            }
+            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            {
+                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
+            }
+            ViewBag.Elemento = graf;//graficos
+            return View();
+        }
     }
 }
