@@ -18,13 +18,13 @@ namespace AplicacionBlanco.Controllers
         public ActionResult Index(int id = 100, string id2 = "grafico", string id3 = "Geo_CL_provinces_.csv")
         {
             var rand = new Random();
-            ViewBag.grafico = id2;
-            ViewBag.file = id3;
+            //ViewBag.grafico = id2;
+            //ViewBag.file = id3;
             Graficos db = new Graficos();
-            ViewBag.Resultado = null;  //db.BuscarGrafico(id);
-            ViewBag.menu = dbGrafico.INDUSTRIA.ToList();
-            ViewBag.menu2 = dbGrafico.SECTOR.ToList();
-            ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
+            //ViewBag.Resultado = null;  //db.BuscarGrafico(id);
+            //ViewBag.menu = dbGrafico.INDUSTRIA.ToList();
+            //ViewBag.menu2 = dbGrafico.SECTOR.ToList();
+            //ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
             GRAFICO graf = new GRAFICO();
             try
             {
