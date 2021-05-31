@@ -67,6 +67,7 @@
     </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed " >
+    
     <div class="wrapper" >
 
         <!-- Preloader -->
@@ -413,6 +414,15 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper " style="height:1500px; overflow:hidden;">
+            <button type="button" id="botonAtras" onclick="atras();">Click Me!</button>
+            <script>
+                var cuerpo;
+                function atras() {
+                    //alert(cuerpo);
+                    mostrador('#once');
+                    $('#once').html(cuerpo);
+                }
+            </script>
             <!-- Main content -->
             <section class="content " style="padding:0px !important;">
                 <div class="container-fluid" style="padding:0px !important; height:900px;">
@@ -651,7 +661,7 @@
 
         }
         function ShowGrafico(Grafico) {
-
+            cuerpo = $("#once").html();
             var id = "parametros de la funcion";
 
             $.ajax(
@@ -694,6 +704,7 @@
                         //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
                         //que recibio del servidor
                         $("#nueve").html(result);
+                        
                     },
 
                     error: function (error) {
@@ -721,6 +732,7 @@
                         //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
                         //que recibio del servidor
                         $("#diez").html(result);
+                        
                     },
 
                     error: function (error) {
@@ -730,18 +742,23 @@
                 });
 
         }
-
+        function GuardarCuerpo() {
+            alert("Hola");
+            //cuerpo = $("#once").html();
+        }
+        
         function formBusqueda() {
 
             var id = $('#idBusqueda').val();
-         
+            /*
             $('#once').load(function () {//para cargar el gif de la seccion siete
                 $("img").fadeOut("slow");
             });
-
+            */
             $('#once').html('<h2>Cargando Datos...espere un momento por favor</h2>')
             $.ajax(
                 {
+                    //async: false,
                     type: 'POST',
                     data: "{'id':" + "'" + id + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
@@ -752,7 +769,10 @@
                         /*alert('Success');*/
                         //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
                         //que recibio del servidor
+                        //cuerpo = result;
+                        //var salida = result;
                         $("#once").html(result);
+                        //return salida;
                     },
 
                     error: function (error) {
@@ -760,7 +780,7 @@
                         alert('Fail');
                     }
                 });
-        
+            
 
         }
         function BuscadorForm2(e) {
