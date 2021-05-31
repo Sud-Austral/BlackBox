@@ -11,20 +11,20 @@ namespace AplicacionBlanco.Controllers
         private graficosEntities dbGrafico = new graficosEntities();
         public InfoController()
         {
-
+            
         }
 
         // GET: Info
         public ActionResult Index(int id = 100, string id2 = "grafico", string id3 = "Geo_CL_provinces_.csv")
         {
             var rand = new Random();
-            //ViewBag.grafico = id2;
-            //ViewBag.file = id3;
+            ViewBag.grafico = id2;
+            ViewBag.file = id3;
             Graficos db = new Graficos();
-            //ViewBag.Resultado = null;  //db.BuscarGrafico(id);
-            //ViewBag.menu = dbGrafico.INDUSTRIA.ToList();
-            //ViewBag.menu2 = dbGrafico.SECTOR.ToList();
-            //ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
+            ViewBag.Resultado = null;  //db.BuscarGrafico(id);
+            ViewBag.menu = dbGrafico.INDUSTRIA.ToList();
+            ViewBag.menu2 = dbGrafico.SECTOR.ToList();
+            ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
             GRAFICO graf = new GRAFICO();
             try
             {
@@ -33,34 +33,34 @@ namespace AplicacionBlanco.Controllers
             catch (Exception)
             {
                 graf = null;
-            }
-            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            } 
+            if(graf.TIPO_GRAFICO_id > 1 || graf == null)
             {
                 var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
                 graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
-            }
+            }            
             ViewBag.Elemento = graf;
             // var listaAsociado = dbGrafico.PRODUCTO.Where(x => x.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
             var listaAsociado = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
             ViewBag.listaAsociado = listaAsociado;
             /* var listaOtrosContenidos = dbGrafico.CATEGORIA.Where(x => x.PRODUCTO_id == graf.CATEGORIA.PRODUCTO_id).ToList(); */
             //List<int> idproductos = new List<int>();
-
+            
             List<CATEGORIA> listaCategorias = new List<CATEGORIA>();
             foreach (var item in dbGrafico.INDUSTRIA)
             {
-                var listcatAuxiliar = dbGrafico.CATEGORIA.Where(x => x.PRODUCTO.SECTOR.INDUSTRIA_id == item.id).Take(10).ToList();
+               var listcatAuxiliar = dbGrafico.CATEGORIA.Where(x => x.PRODUCTO.SECTOR.INDUSTRIA_id == item.id).Take(10).ToList();
                 try
                 {
                     CATEGORIA catAuxiliar = listcatAuxiliar[rand.Next(listcatAuxiliar.Count)];
                     listaCategorias.Add(catAuxiliar);
                 }
                 catch (Exception)
-                {
-                }
+                {                    
+                }                
             }
-            var listaOtrosContenidos = listaCategorias;
-            ViewBag.listaOtrosContenidos = listaOtrosContenidos;
+            var listaOtrosContenidos = listaCategorias;  
+            ViewBag.listaOtrosContenidos=listaOtrosContenidos ;
 
             var Graficos = dbGrafico.GRAFICO.ToList();
             var rand2 = new Random();
@@ -75,9 +75,9 @@ namespace AplicacionBlanco.Controllers
         }
 
         //public ActionResult Index2(int id = 1, string id2 = "grafico")
+        
 
-
-
+        
         public ActionResult PaginaBusqueda(string id = "1")
         {
             var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
@@ -93,7 +93,7 @@ namespace AplicacionBlanco.Controllers
             List<string> Industria = new List<string>();
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
-
+            
             foreach (var item in NEW_GRAFICOS.Where(x => x.nombre.Contains(id)).ToList())
             {
                 if (!Paises.Contains(item.TERRITORIO.auxiliar))
@@ -124,18 +124,18 @@ namespace AplicacionBlanco.Controllers
                 {
                     Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
                 }
-
+                
                 if (!Categoria.Contains(item.CATEGORIA.nombre))
                 {
                     Categoria.Add(item.CATEGORIA.nombre);
-                }
+                }                
             }
             ViewBag.Paises = Paises;
             ViewBag.Escala = Escala;
             ViewBag.TipoGrafico = TipoGrafico;
             ViewBag.Temporalidad = Temporalidad;
             ViewBag.Producto = Producto;
-            ViewBag.Industria = Industria;
+            ViewBag.Industria = Industria;            
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
             return View();
@@ -174,7 +174,7 @@ namespace AplicacionBlanco.Controllers
             var Graficos = dbGrafico.GRAFICO.Where(x => aux.Contains(x.id)).ToList();
 
             //var Graficos = dbGrafico.GRAFICO.ToList();
-
+            
             List<GRAFICO> listaGraficos = new List<GRAFICO>();
             for (int i = 0; i < 15; i++)
             {
@@ -190,7 +190,7 @@ namespace AplicacionBlanco.Controllers
             return PartialView();
         }
 
-        public ActionResult Dashboard(int id = 100)
+        public ActionResult Dashboard(int id=100)
         {
             string url = dbGrafico.GRAFICO.Where(x => x.id == id).First().url;
             ViewBag.url = url;
@@ -205,10 +205,10 @@ namespace AplicacionBlanco.Controllers
                 return View("Restriccion");
             }
             */
-
+          
             return View();
         }
-
+       
 
         public ActionResult ResultadoNiveles(int id = 10, int id2 = 1)
         {
@@ -239,9 +239,9 @@ namespace AplicacionBlanco.Controllers
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
             List<string> TipoGrafico = new List<string>();
-
-
-
+            
+                
+                
             foreach (var item in Graficos)
             {
                 if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
@@ -283,8 +283,8 @@ namespace AplicacionBlanco.Controllers
             ViewBag.TipoGrafico = TipoGrafico;
             return View("PaginaBusqueda");
         }
-
-        public PartialViewResult VisualizarGraficos(int id = 1234)
+        
+        public PartialViewResult VisualizarGraficos(int id =1234)
         {
             ViewBag.time1 = DateTime.Now;
             var rand = new Random();
@@ -318,9 +318,48 @@ namespace AplicacionBlanco.Controllers
             ViewBag.time2 = DateTime.Now;
             return PartialView();
         }
-        public ActionResult index2()
+
+        public PartialViewResult ContenidoGrafico(int id)
         {
-            return View();
+            var rand = new Random();
+            GRAFICO graf = new GRAFICO();
+            try
+            {
+                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            }
+            catch (Exception)
+            {
+                graf = null;
+            }
+            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            {
+                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
+            }
+            ViewBag.Elemento = graf;//graficos
+
+            return PartialView();
+        }
+        public PartialViewResult CarrucelBusqueda(int id=2345)
+        {
+            var rand = new Random();
+            GRAFICO graf = new GRAFICO();
+            try
+            {
+                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            }
+            catch (Exception)
+            {
+                graf = null;
+            }
+            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            {
+                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
+            }
+            ViewBag.Elemento = graf;//graficos
+
+            return PartialView();
         }
     }
 }

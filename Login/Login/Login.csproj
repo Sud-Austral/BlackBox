@@ -2792,6 +2792,8 @@
     <Content Include="Views\Info\VisualizarGraficos.cshtml" />
     <Content Include="Views\Shared\_LayoutOdoo.cshtml" />
     <Content Include="Views\Info\index2.cshtml" />
+    <Content Include="Views\Info\ContenidoGrafico.cshtml" />
+    <Content Include="Views\Info\CarrucelBusqueda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
