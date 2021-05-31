@@ -306,6 +306,8 @@
     <Content Include="Content\image_estadistica\11_boton_comunicacion_on.png" />
     <Content Include="Content\image_estadistica\12_boton_recursoquimico_normal.png" />
     <Content Include="Content\image_estadistica\12_boton_recursoquimico_on.png" />
+    <Content Include="Content\image_estadistica\12_boton_recursos_normal.png" />
+    <Content Include="Content\image_estadistica\12_boton_recursos_on.png" />
     <Content Include="Content\image_estadistica\13_boton_empleo_normal.png" />
     <Content Include="Content\image_estadistica\13_boton_empleo_on.png" />
     <Content Include="Content\image_estadistica\1_boton_agropecuario_normal.png" />
@@ -324,6 +326,10 @@
     <Content Include="Content\image_estadistica\7_boton_consumo_on.png" />
     <Content Include="Content\image_estadistica\8_boton_negocio_normal.png" />
     <Content Include="Content\image_estadistica\8_boton_negocio_on.png" />
+    <Content Include="Content\image_estadistica\8_boton_tiempolibre_normal.png" />
+    <Content Include="Content\image_estadistica\8_boton_tiempolibre_on.png" />
+    <Content Include="Content\image_estadistica\9_boton_finanzas_normal.png" />
+    <Content Include="Content\image_estadistica\9_boton_finanzas_on.png" />
     <Content Include="Content\image_estadistica\9_boton_tiempolibre_normal.png" />
     <Content Include="Content\image_estadistica\9_boton_tiempolibre_on.png" />
     <Content Include="Content\image_estadistica\fondo_submenu_emergente.jpg" />
