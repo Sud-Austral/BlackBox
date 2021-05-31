@@ -2783,6 +2783,8 @@
     <Content Include="Views\Usuario\InformeReporte.cshtml" />
     <Content Include="Views\Info\PaginaBusqueda - Deprecate.cshtml" />
     <Content Include="Views\Info\VisualizarGraficos.cshtml" />
+    <Content Include="Views\Info\ContenidoGrafico.cshtml" />
+    <Content Include="Views\Info\CarrucelBusqueda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
