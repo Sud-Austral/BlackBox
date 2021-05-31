@@ -53,6 +53,7 @@
                 '#doce',
                 '#trece',
                 '#catorce'
+               
 
 
 
@@ -66,8 +67,8 @@
         }
     </script>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed " >
-    <div class="wrapper" >
+<body class="hold-transition sidebar-mini layout-fixed ">
+    <div class="wrapper">
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
@@ -88,7 +89,7 @@
             </a>
 
             <!-- Sidebar -->
-            <div class="sidebar">
+            <div class="sidebar mb-5">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     @*
@@ -118,7 +119,7 @@
                     </div>
                 </form>
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="mt-2 ">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a onclick="mostrador('#uno');" href="#" class="nav-link " style="border:1px solid #377db3">
@@ -129,178 +130,6 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
-                            <p style="color:#fff;">
-                                Todos los datos de usuario:
-                                @*<i class="fas fa-angle-left right"></i>*@
-                            </p>
-                            <a href="#" class="nav-link" style="border:1px solid #377db3">
-                                @*<i class="nav-icon fas fa-edit"></i>*@
-                                <p>
-                                    MI CUENTA
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            @if (ViewBag.Menu.Count > 0)
-                            {
-                                foreach (var item in ViewBag.Menu)
-                                {
-                                    <ul class="nav nav-treeview mb-5" style="list-style-type: circle">
-
-                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a onclick="mostrador('#seis');" href="#" class="nav-link ">
-                                                @*<i class="nav-icon fas fa-tachometer-alt"></i>*@
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    PERFIL
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item menu-open " style=" border-bottom: 1px solid #377db3">
-                                            <a onclick="mostrador('#cinco');" href="#" class="nav-link ">
-                                                @*<i class="nav-icon fas fa-tachometer-alt"></i>*@
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    PRODUCTOS FACTURADOS
-                                                </p>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                }
-                            }
-                            else
-                            {
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" style="border:1px solid #377db3">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                Sin Suscripciones
-                                                <i class="fas fa-angle-left right"></i>
-                                            </p>
-                                        </a>
-                                    <li />
-                                </ul>
-
-                            }
-                        </li>
-
-                        <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
-
-                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
-                            <a href="#" class="nav-link" style="border:1px solid #377db3">
-                                @*<i class="nav-icon fas fa-edit"></i>*@
-                                <p>
-                                    MIS PRODUCTOS
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            @if (ViewBag.Menu.Count > 0)
-                            {
-                                foreach (var item in ViewBag.Menu)
-                                {
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a onclick="mostrador('#dos');" href="#" class="nav-link ">
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    Plataformas
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a onclick="mostrador('#tres');" href="#" class="nav-link ">
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    Informes Interactivos
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a onclick="mostrador('#cuatro');" href="#" class="nav-link ">
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    Reportes 360°
-                                                </p>
-                                            </a>
-                                        </li>
-                                        @*<li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    Industria
-                                    @item.nombre
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            @foreach (var item2 in item.SECTOR)
-                            {
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                Sector
-                                                @item2.nombre
-                                                <i class="fas fa-angle-left right"></i>
-                                            </p>
-                                        </a>
-                                        @foreach (var item3 in item2.PRODUCTO)
-                                        {
-                                            <ul class="nav nav-treeview">
-                                                <li class="nav-item">
-                                                    <a href="#" class="nav-link">
-                                                        <i class="far fa-circle nav-icon"></i>
-                                                        <p>
-                                                            Producto
-                                                            @item3.nombre
-                                                            <i class="fas fa-angle-left right"></i>
-                                                        </p>
-                                                    </a>
-                                                    @foreach (var item4 in item3.CATEGORIA)
-                                                    {
-                                                        <ul class="nav nav-treeview">
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="far fa-circle nav-icon"></i>
-                                                                    <p>
-                                                                        Categoria
-                                                                        @item4.nombre
-                                                                        <i class="fas fa-angle-left right"></i>
-                                                                    </p>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    }
-                                                </li>
-                                            </ul>
-                                        }
-                                    </li>
-                                </ul>
-                            }
-                        </li>*@
-                                    </ul>
-                                }
-                            }
-                            else
-                            {
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" style="border:1px solid #377db3">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                Sin Suscripciones
-                                                <i class="fas fa-angle-left right"></i>
-                                            </p>
-                                        </a>
-                                    <li />
-                                </ul>
-
-                            }
-                        </li>
-
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
@@ -395,7 +224,239 @@
                                 </ul>
                             }
                         </li>
-                        <li class="nav-item" style="border:1px solid #377db3">
+
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
+                            <a href="#" class="nav-link" style="border:1px solid #377db3">
+                                @*<i class="nav-icon fas fa-edit"></i>*@
+                                <p>
+                                    MIS PRODUCTOS
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            @if (ViewBag.Menu.Count > 0)
+                            {
+                                foreach (var item in ViewBag.Menu)
+                                {
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                            <a onclick="mostrador('#dos');" href="#" class="nav-link ">
+                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                                <p style="color:#518bb3">
+                                                    Plataformas
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                            <a onclick="mostrador('#tres');" href="#" class="nav-link ">
+                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                                <p style="color:#518bb3">
+                                                    Informes Interactivos
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                            <a onclick="mostrador('#cuatro');" href="#" class="nav-link ">
+                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                                <p style="color:#518bb3">
+                                                    Reportes 360°
+                                                </p>
+                                            </a>
+                                        </li>
+                                        @*<li class="nav-item">
+                                                <a href="" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>
+                                                        Industria
+                                                        @item.nombre
+                                                        <i class="fas fa-angle-left right"></i>
+                                                    </p>
+                                                </a>
+                                                @foreach (var item2 in item.SECTOR)
+                                                {
+                                                    <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="far fa-circle nav-icon"></i>
+                                                                <p>
+                                                                    Sector
+                                                                    @item2.nombre
+                                                                    <i class="fas fa-angle-left right"></i>
+                                                                </p>
+                                                            </a>
+                                                            @foreach (var item3 in item2.PRODUCTO)
+                                                            {
+                                                                <ul class="nav nav-treeview">
+                                                                    <li class="nav-item">
+                                                                        <a href="#" class="nav-link">
+                                                                            <i class="far fa-circle nav-icon"></i>
+                                                                            <p>
+                                                                                Producto
+                                                                                @item3.nombre
+                                                                                <i class="fas fa-angle-left right"></i>
+                                                                            </p>
+                                                                        </a>
+                                                                        @foreach (var item4 in item3.CATEGORIA)
+                                                                        {
+                                                                            <ul class="nav nav-treeview">
+                                                                                <li class="nav-item">
+                                                                                    <a href="#" class="nav-link">
+                                                                                        <i class="far fa-circle nav-icon"></i>
+                                                                                        <p>
+                                                                                            Categoria
+                                                                                            @item4.nombre
+                                                                                            <i class="fas fa-angle-left right"></i>
+                                                                                        </p>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        }
+                                                                    </li>
+                                                                </ul>
+                                                            }
+                                                        </li>
+                                                    </ul>
+                                                }
+                                            </li>*@
+                                    </ul>
+                                }
+                            }
+                            else
+                            {
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" style="border:1px solid #377db3">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Sin Suscripciones
+                                                <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                    <li />
+                                </ul>
+
+                            }
+                        </li>
+
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
+                            <p style="color:#fff;">
+                                Todos los datos de usuario:
+                                @*<i class="fas fa-angle-left right"></i>*@
+                            </p>
+                            <a href="#" class="nav-link" style="border:1px solid #377db3">
+                                @*<i class="nav-icon fas fa-edit"></i>*@
+                                <p>
+                                    MI CUENTA
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            @if (ViewBag.Menu.Count > 0)
+                            {
+                                foreach (var item in ViewBag.Menu)
+                                {
+                                    <ul class="nav nav-treeview mb-5" style="list-style-type: circle">
+
+                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                            <a onclick="mostrador('#seis');" href="#" class="nav-link ">
+                                                @*<i class="nav-icon fas fa-tachometer-alt"></i>*@
+                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                                <p style="color:#518bb3">
+                                                    PERFIL
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item menu-open " style=" border-bottom: 1px solid #377db3">
+                                            <a onclick="mostrador('#cinco');" href="#" class="nav-link ">
+                                                @*<i class="nav-icon fas fa-tachometer-alt"></i>*@
+                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                                <p style="color:#518bb3">
+                                                    PRODUCTOS FACTURADOS
+                                                </p>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                }
+                            }
+                            else
+                            {
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" style="border:1px solid #377db3">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Sin Suscripciones
+                                                <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                    <li />
+                                </ul>
+
+                            }
+                        </li>
+
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
+                            <a href="#" class="nav-link" style="border:1px solid #377db3">
+                                @*<i class="nav-icon fas fa-edit"></i>*@
+                                <p>
+                                    Odoo
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="https://www.dataintelligence-group.com/" target="_blank" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Inicio
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="https://www.dataintelligence-group.com/abarcamos" target="_blank" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Abarcamos
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="https://www.dataintelligence-group.com/ofrecemos" target="_blank" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Ofrecemos
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="https://www.dataintelligence-group.com/datalab" target="_blank" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            DataLab
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Estadísticas
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="#" target="_blank" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Somos
+                                        </p>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item mb-5" style="border:1px solid #377db3">
                             <a onclick="mostrador('#trece');" href="#" class="nav-link ">
                                 <i class="nav-icon fa-question-circle-o"></i>
                                 <p>
@@ -454,6 +515,7 @@
                             </div>
                             @*Productos Datas*@
                             <div class="container-fluid  " id="dos" style="display:none;">
+                                
                                 @*Productos Datas*@
                                 @{ Html.RenderAction("GraficoUsuario", "Usuario");}
                             </div>
@@ -619,8 +681,10 @@
     <script src="~/dist/js/adminlte.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>@*este script va con la funcion de cargar el gif en la seccion siete*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    @*este script va con la funcion de cargar el gif en la seccion siete*@
     <script>
+       
         function fnClick(categoria) {
 
             var id = "parametros de la funcion";
@@ -734,7 +798,7 @@
         function formBusqueda() {
 
             var id = $('#idBusqueda').val();
-         
+
             $('#once').load(function () {//para cargar el gif de la seccion siete
                 $("img").fadeOut("slow");
             });
@@ -753,6 +817,7 @@
                         //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
                         //que recibio del servidor
                         $("#once").html(result);
+
                     },
 
                     error: function (error) {
@@ -760,9 +825,10 @@
                         alert('Fail');
                     }
                 });
-        
 
+          
         }
+
         function BuscadorForm2(e) {
             e.preventDefault();
             mostrador('#once');
@@ -772,7 +838,7 @@
         function ProductoSuscripcion(id, NOMBRE) {
 
             $('#doce').html('<h2>Cargando Datos...espere un momento por favor</h2>')
-           
+
 
             $.ajax(
                 {
@@ -824,8 +890,10 @@
                 });
 
         }
-    </script>
+        
 
+    </script>
+    
 
 </body>
 </html>
