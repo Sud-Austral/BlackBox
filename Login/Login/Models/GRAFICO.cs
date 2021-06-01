@@ -121,6 +121,16 @@ namespace Login.Models
             set { _titulo2 = value; }
         }
 
+        public int _producto_id
+        {
+            get
+            {
+                return this.CATEGORIA.PRODUCTO_id;
+            }
+
+            set { _producto_id = value; }
+        }
+
         public string _url_Image
         {
             get

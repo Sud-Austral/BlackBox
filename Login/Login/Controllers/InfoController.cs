@@ -384,5 +384,75 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Elemento = graf;//graficos
             return View();
         }
+
+        public PartialViewResult tresRelacionados()
+        {
+            ViewBag.time1 = DateTime.Now;
+            int id = 1234;
+            var rand = new Random();
+            GRAFICO graf = new GRAFICO();
+            try
+            {
+                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            }
+            catch (Exception)
+            {
+                graf = null;
+            }
+            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            {
+                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
+            }
+
+            var Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == graf.CATEGORIA_id).ToList();
+            while (Graficos.Count < 4)
+            {
+                Graficos.Add(graf);
+            }
+            ViewBag.time2 = DateTime.Now;
+
+
+            return PartialView();
+        }
+
+        public PartialViewResult carruselRelacionados()
+        {
+            ViewBag.time1 = DateTime.Now;
+            int id = 1234;
+            var rand = new Random();
+            GRAFICO graf = new GRAFICO();
+            try
+            {
+                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            }
+            catch (Exception)
+            {
+                graf = null;
+            }
+            ViewBag.time3 = DateTime.Now;
+            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            {
+                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
+            }
+            //Esta
+            //var Graficos = dbGrafico.GRAFICO.Where(x => x._producto_id == graf.CATEGORIA.PRODUCTO_id).ToList();
+            //ICollection<GRAFICO> Graficos = graf.CATEGORIA.GRAFICO; //.ToList();
+            //Esta
+            //List<int> id = [1,2,3,4,5,6,7]
+            //dbGrafico.GRAFICO.Where(x => ).First();
+            ViewBag.time4 = DateTime.Now;
+            /*
+            List<GRAFICO> listaCarrusel = new List<GRAFICO>();
+            
+            for (int i = 0; i < 15; i++)
+            {
+                listaCarrusel.Add(Graficos[rand.Next(Graficos.Count)]);
+            }
+            */
+            ViewBag.time2 = DateTime.Now;
+            return PartialView();
+        }
     }
 }
