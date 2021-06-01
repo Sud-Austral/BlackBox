@@ -1,43 +1,40 @@
 ﻿
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+@*<link href="~/Content/EstilosPopUp.css" rel="stylesheet" />*@
 @********************test boton ir atras**********************@
 
-<script type="text/javascript">
-    $("#verPdf").click(function () {
-        var myIframe = document.getElementById("inlineFrameExample").contentWindow;
-        myIframe.focus();
-        myIframe.print();
-        return false;
-    });
-</script>
+
  <div class="container mt-3">
+     @*boton para volver atras*@
      <div class="row justify-content-center mb-3">
          <div class="col-md-10">
              <input type="button" class="btn btn-danger btn-sm " style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor:pointer" ;" onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
          </div>
      </div>
-     
-        <style>
-        .breadcrumb-item + .breadcrumb-item::before { content: "∙"; }
-        </style>
-        <!--<div class="row">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb" style="background-color:transparent;">
-                    <li class="breadcrumb-item"><a href="/info/homeOdoo">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id&id2=1">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</a></li>
-                    <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR_id&id2=2">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre</a></li>
-                    <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO_id&id2=3">@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre</a></li>
-                    <li class="breadcrumb-item"><a href="#">@ViewBag.Elemento.CATEGORIA.nombre</a></li>-->
-                    @*<li class="breadcrumb-item active" aria-current="page">@ViewBag.Elemento.titulo</li>*@
-                <!--</ol>
-            </nav>
-        </div>-->
-        
-
+     <div class="container">
+         <style>
+             .breadcrumb-item + .breadcrumb-item::before {
+                 content: "∙";
+             }
+         </style>
+         <div class="row justify-content-center">
+             <div class="col-md-10">
+                 <nav aria-label="breadcrumb">
+                     <ol class="breadcrumb" style="background-color:transparent;">
+                         <li class="breadcrumb-item"><a href="/info/homeOdoo">Home</a></li>
+                         <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id&id2=1">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</a></li>
+                         <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR_id&id2=2">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre</a></li>
+                         <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO_id&id2=3">@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre</a></li>
+                         <li class="breadcrumb-item"><a href="#">@ViewBag.Elemento.CATEGORIA.nombre</a></li>
+                         @*<li class="breadcrumb-item active" aria-current="page">@ViewBag.Elemento.titulo</li>*@
+                     </ol>
+                 </nav>
+             </div>
+             
+         </div>
+     </div>   
         <!--descargar pdf iframe-->
-       
         <script type="text/javascript">
             $("#verPdf").click(function () {
                 var myIframe = document.getElementById("inlineFrameExample").contentWindow;
@@ -46,6 +43,7 @@
                 return false;
             });
         </script>
+       
      @*seccion iframe grafico*@
         <section class="contenedor-main row mr-md-2 justify-content-center">
             <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:600px !important;" >
@@ -58,17 +56,15 @@
                     </div>
                 </div>
                 <!--Iframe de grafico-->
-                <iframe id="inlineFrameExample"
-                        style=" width:100%;height:95%;"
-                        scrolling="no"
+                <iframe id="inlineFrameExample" scrolling="no" src="/info/dashboard?id=@ViewBag.Elemento.id" width="1050" height="480">
+                       
+                        
                        @* src="~/Grafico/@ViewBag.grafico?id=@ViewBag.Resultado.URL&id=3=@ViewBag.file">*@
                        
                         @{ 
                             //string rutaGrafico = "/Grafico/" + ViewBag.Elemento.TIPO_GRAFICO.nombre + "?id=" + ViewBag.Elemento.id;// "&id=3=" + ViewBag.file;
-                        }
-                      
-                        src="/info/dashboard?id=@ViewBag.Elemento.id">
-
+                        }    
+                        
                 </iframe>
                 
                 <div class="row no-gutters" style="color:blue; font-size:10px;">
@@ -80,14 +76,7 @@
                         <a href="javascript:void(0);">
                             <span id="verPdf" style="font-size:14px;">Ver en Pdf</span>
                         </a>
-                        <script type="text/javascript">
-                            $("#verPdf").click(function () {
-                                var myIframe = document.getElementById("inlineFrameExample").contentWindow;
-                                myIframe.focus();
-                                myIframe.print();
-                                return false;
-                            });
-                        </script>
+                       
                     </div>
                     <div class="col">
                         <div class="row d-flex " style="justify-content:flex-end;">
@@ -324,8 +313,6 @@
                 
             </div>
         </section>
-        
-
  </div>
  <!--Script de ocultar texto-->
     <script src="~/Scripts/OcultarBoton.js"></script>

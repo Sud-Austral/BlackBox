@@ -1,0 +1,648 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>index2</title>
+    <!--Meta Tags-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Bundles rederizados-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*fontawesome*@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2f08016506.js" crossorigin="anonymous"></script>
+    @*<link href="~/Content/font-awesome.min.css" rel="stylesheet" />*@
+    @*estilos*@
+    <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
+    <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
+    @*Titulo de la pagina*@
+    <title>Resultados de Busqueda</title>
+    <!-- pdf descargar-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    @********************test boton ir atras**********************@
+
+    <script type="text/javascript">
+        $("#verPdf").click(function () {
+            var myIframe = document.getElementById("inlineFrameExample").contentWindow;
+            myIframe.focus();
+            myIframe.print();
+            return false;
+        });
+    </script>
+    <div class="container mt-3">
+
+
+        <style>
+            .breadcrumb-item + .breadcrumb-item::before {
+                content: "∙";
+            }
+        </style>
+        <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="background-color:transparent;">
+                    <li class="breadcrumb-item"><a href="/info/homeOdoo">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id&id2=1">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</a></li>
+                    <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR_id&id2=2">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre</a></li>
+                    <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO_id&id2=3">@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre</a></li>
+                    <li class="breadcrumb-item"><a href="#">@ViewBag.Elemento.CATEGORIA.nombre</a></li>
+
+                </ol>
+            </nav>
+        </div>
+        <!--descargar pdf iframe-->
+        @*seccion iframe grafico*@
+        <section class="contenedor-main row mr-md-2 justify-content-center">
+            <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:600px !important;">
+                <div class="row bg-dark mb-2" style="border:1px solid; border-top-left-radius:10px; border-top-right-radius:10px;">
+                    <div class="col-md-1 col-2">
+                        <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                    </div>
+                    <div class="col">
+                        <p class="mt-3" style="color:#fff;">@ViewBag.Elemento.titulo</p>
+                    </div>
+                </div>
+                <!--Iframe de grafico-->
+                <iframe id="inlineFrameExample"
+                        style=" width:100%;height:95%;"
+                        scrolling="no"
+                        @* src="~/Grafico/@ViewBag.grafico?id=@ViewBag.Resultado.URL&id=3=@ViewBag.file">*@
+                        src="/info/dashboard?id=@ViewBag.Elemento.id"></iframe>
+
+                <div class="row no-gutters" style="color:blue; font-size:10px;">
+
+                    <div class="col-2 mr-3">
+                        <button type="button" class="btn btn-primary" id="boton" style="margin-bottom:20px; font-size:14px;">Más información</button>
+                    </div>
+                    <div class="col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
+                        <a href="javascript:void(0);">
+                            <span id="verPdf2" style="font-size:14px;">Ver en Pdf</span>
+                        </a>
+                        <script type="text/javascript">
+                            $("#verPdf2").click(function () {
+                                var myIframe = document.getElementById("inlineFrameExample").contentWindow;
+                                myIframe.focus();
+                                myIframe.print();
+                                return false;
+                            });
+                        </script>
+                    </div>
+                    <div class="col">
+                        <div class="row d-flex " style="justify-content:flex-end;">
+                            <div class="col-5 mb-1 p-1">
+                                <img class="img-fluid " src="~/Content/img/logosDataIntelligence_creadopor.png" alt="Logo transparente" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+        </section>
+        <section class="container-main mb-5" id="leerMas" style="display:none; background:#fff;">
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="border:2px solid #e6e6e6; border-radius:15px; ">
+                    <div class="row">
+                        <div class="col-md-4 m-3" style="border-right:0.5px solid #e6e6e6;">
+                            <p style="margin-bottom:0px !important;"><strong>Descripción:</strong></p>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type
+                                specimen book.
+                            </p>
+                        </div>
+                        <div class="col-md-3 m-3" style="border-right:0.5px solid #e6e6e6;">
+                            <p class="mb-5"><strong>Fuente de Datos:</strong></p>
+                            <p class="mb-5">
+                                <strong>Periodo: </strong>
+
+                                @ViewBag.ELEMENTO.TEMPORALIDAD._fecha_inicio y @ViewBag.ELEMENTO.TEMPORALIDAD._fecha_termino
+                            </p>
+                            <p>
+                                <strong>Territorio: </strong>
+
+                                @ViewBag.ELEMENTO.TERRITORIO.nombre
+                            </p>
+                        </div>
+                        <div class=" col-md-4">
+                            <div class="row justify-content-center mb-md-3">
+                                <p class="mb-4 mt-3"><strong>Ver más información</strong></p>
+                                <div class="col-md-6 text-center">
+                                    <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="font-size: 13px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                        Ver Informe Interactivo
+                                    </button>
+                                </div>
+                                @*Modal*@
+                                <div class="modal fade" id="myModal1" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content" style="background-color:black;">
+                                            <div class="modal-header">
+                                                <p style="color:white">
+                                                    Este INFORME INTERACTIVO es posible adquirirlo de dos formas:
+                                                </p>
+                                                <button type="button" class="close" style="color:white" data-dismiss="modal">&times;</button>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row m-1" style="background-color:white; border-radius: 5px;">
+                                                    <div class="col-5 p-1">
+                                                        <div class="col-12">
+                                                            <img style="height:80%; width:80%" src="/Content/image_estadistica/logo_informeinteractivo.png" /><br> <br>
+                                                        </div>
+                                                        <div class="col-12 ">
+                                                            <div class="row">
+                                                                <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
+                                                                    <span> USD </span><span style="color:red; font-size:22px;">10</span>
+                                                                    pago único
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
+                                                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                                                            Adquirir
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7 p-1">
+                                                        <p style="color:red;"> Con un único pago, puede interactuar  en los filtros activos durante todo 1 año.</p>
+
+                                                        <p class="font-weight-bold" style="color:black;"> Incluye:</p>
+                                                        <ul style="color:black;">
+                                                            <li>Descargas en PDF, PNG y Excel.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="row m-1" style="background-color:white; border-radius:5px; margin-top:2%;">
+                                                    <div class="col-5 p-1">
+                                                        <div class="col-12">
+                                                            <img style="height:80%; width:80%" src="/Content/image_estadistica/imagenpromocion_2.png" /><br><br><br><br><br><br>
+                                                        </div>
+                                                        <div class="col-12 ">
+                                                            <div class="row">
+                                                                <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
+                                                                    <span> USD </span><span style="color:red; font-size:22px;">35</span>
+                                                                    mensuales
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
+                                                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                                                            Adquirir
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7 p-1">
+                                                        <p style="color:red;">
+                                                            Cuenta suscripción anual con acceso  la colección completa de los temas de un sector.
+                                                        </p>
+                                                        <p class="font-weight-bold" style="color:black;"> Incluye:</p>
+                                                        <ul style="color:black;">
+                                                            <li>Acceso a miles de Gráficos, Mapas interactivos y diagramas.</li>
+                                                            <li>Acceso a todos los Informes Interactivos.</li>
+                                                            <li>Acceso a Reportes 360º con 30% de descuento.</li>
+                                                            <li>Descargas en PDF, PNG y Excel.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer text-center">
+                                                <img class="mx-0 pull-left" style="width:35%; height:35%;" src="/Content/img/blanco-trans - copia.png" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 text-center">
+                                    <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="font-size:13px; width:165px; border-radius:25px;margin-left:5px;">
+                                        Ver Reporte 360°
+                                    </button>
+
+                                </div>
+                                @*Modal*@
+                                <div class="modal fade" id="myModal2" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content" style="background-color:black;">
+                                            <div class="modal-header">
+                                                <p style="color:white">
+                                                    Este REPORTE 360º es posible adquirirlo de dos formas:
+                                                </p>
+                                                <button type="button" class="close" style="color:white" data-dismiss="modal">&times;</button>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row m-1" style="background-color:white; border-radius: 5px;">
+                                                    <div class="col-5 p-1">
+                                                        <div class="col-12">
+                                                            <img style="height:80%; width:80%" src="~/Content/image_estadistica/logo_reporte360.png" /> <br> <br>
+                                                        </div>
+                                                        <div class="col-12 ">
+                                                            <div class="row">
+                                                                <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
+                                                                    <span> USD </span><span style="color:red; font-size:22px;">200</span>
+                                                                    pago único
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
+                                                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                                                            Adquirir
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7 p-1">
+                                                        <p style="color:red;"> Con un único pago, puede interactuar  en los filtros activos durante todo 1 año.</p>
+
+                                                        <p class="font-weight-bold" style="color:black;"> Incluye:</p>
+                                                        <ul style="color:black;">
+                                                            <li>Descargas en PDF, PNG y Excel.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="row m-1" style="background-color:white; border-radius:5px; margin-top:2%;">
+                                                    <div class="col-5 p-1">
+                                                        <div class="col-12">
+                                                            <img style="height:80%; width:80%" src="~/Content/image_estadistica/imagenpromocion_2.png" /><br><br><br><br><br><br>
+                                                        </div>
+                                                        <div class="col-12 ">
+                                                            <div class="row">
+                                                                <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
+                                                                    <span> USD </span><span style="color:red; font-size:22px;">35</span>
+                                                                    mensuales
+                                                                </div>
+                                                                <div class="col-7">
+                                                                    <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
+                                                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                                                            Adquirir
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7 p-1">
+                                                        <p style="color:red;">
+                                                            Cuenta suscripción anual con acceso  la colección completa de los temas de un sector.
+                                                        </p>
+                                                        <p class="font-weight-bold" style="color:black;"> Incluye:</p>
+                                                        <ul style="color:black;">
+                                                            <li>Acceso a miles de Gráficos, Mapas interactivos y diagramas.</li>
+                                                            <li>Acceso a todos los Informes Interactivos.</li>
+                                                            <li>Acceso a Reportes 360º con 30% de descuento.</li>
+                                                            <li>Descargas en PDF, PNG y Excel.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer text-center">
+                                                <img class="mx-0 pull-left" style="width:35%; height:35%;" src="~/Content/img/blanco-trans - copia.png" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+
+
+    @*seccion de contenidos*@
+    <div class="col-md-10 pl-2 offset-2">
+        <h6 style="font-weight:bold">Información relacionada que te podría interesar</h6>
+    </div>
+    <section class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10" style="background:#fff; border:solid #e6e6e6; border-radius:15px;">
+                <div class="row " style="border-bottom: 2px solid #e6e6e6;">
+                    <div class="col-md-3 col-sm-12">
+                        <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <p style="padding-top:10px;">
+                            <span style="font-size:20px;"><strong>titulo</strong></span> <br />
+                            <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                        </p>
+                    </div>
+                </div>
+                <div class="row" style="border-bottom: 2px solid #e6e6e6;">
+                    <div class="col-md-3 col-sm-12">
+                        <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <p style="padding-top:10px;">
+                            <span style="font-size:20px;"><strong>titulo</strong></span> <br />
+                            <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                        </p>
+                    </div>
+                </div>
+                <div class="row " style="border-bottom: 2px solid #e6e6e6;">
+                    <div class="col-md-3 col-sm-12">
+                        <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <p style="padding-top:10px;">
+                            <span style="font-size:20px;"><strong>titulo</strong></span> <br />
+                            <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--seccion de suscripciones-->
+    <div class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px;">
+                    ¡Imagina toda la información pública
+                    de un país en una sola plataforma!
+                </h3>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_1.png" alt="100%x280" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px; margin-bottom:10px;">
+                    ¡Y para los que necesitan más información!
+                </h3>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mb-4" style="padding-left:35%; padding-right:35%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
+            </div>
+        </div>
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
+            </div>
+        </div>
+        <div class="row mb-1" style="padding-left:20%; padding-right:20%">
+            <div class="col-12">
+                <h3 style="color:#fff; padding:40px 0px;">
+                    La suscripción anual Cuenta Profesional fue diseñada especialmente para potenciar las investigaciones, proyectos o planificaciones de quienes requieren una mayor cantidad de información.
+
+                </h3>
+            </div>
+        </div>
+        <div class="row mb-4" style="padding-left:20%; padding-right:20%">
+            <h3 style="color:#009fcf">
+                INCLUYE
+            </h3>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
+            </div>
+        </div>
+        <div class="row" style="padding-left:20%; padding-right:20%">
+            <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right;">
+                <span style="color:white; font-size:18px;">USD</span>
+                <span style="color:red; font-size:22px;">$35</span>
+                <br />
+                <span style="color:white; font-size:18px;"> mensuales</span>
+            </div>
+            <div class="col-md-6" style="text-align:left;">
+                <a href="https://dataintelligence.store/products/avance-del-covid-19-gt" target="_blank" class="btn btn-danger btn-sm mt-2 text-left enlace" style="border-radius:20px; font-size:16px;">
+                    Adquirir
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="py-5">
+        <section class="pt-3 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-8  mb-3" style="border:1px solid rgb(0 0 0 / 0.00); border-radius:10px; background-color:#bf1522;">
+                        <div class="row">
+                            <div class="col-6" style="margin-top:7px;">
+                                <span style="color:#fff;">Más información de esta colección</span>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-primary mb-1 mt-1 " href="#carouselExampleIndicators2" role="button" data-slide="prev" style="text-decoration: none; border: none !important; background-color: #c6c6c6; padding: 3px 5px 5px 5px; float: right;  ">
+                                    <i class="fa fa-arrow-left align-baseline" style="color:red;font-size:0.8rem;"></i>
+                                </a>
+                                <a class="btn btn-primary mb-1 mt-1 " href="#carouselExampleIndicators2" role="button" data-slide="next" style="text-decoration: none; border: none !important; background-color: #c6c6c6; padding: 3px 5px 5px 5px; float: right; margin-right: 4px; ">
+                                    <i class="fa fa-arrow-right align-baseline" style="color:red;font-size:0.8rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row justify-content-center text-center">
+                    @*imagenes de carrusel*@
+                    <div class="col-md-10 col-8">
+                        <div id="carouselExampleIndicators2" class="carousel" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="#">
+                                                <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">1titulo</div>
+                                                <div class="card" style="border:none;">
+                                                    <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="color:#000">nombre</h4>
+                                                        <p class="card-text" style="color:#000">descripcion</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;">
+                                                2titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">
+                                                3titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;">4titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">5titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">6titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">7titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">8titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">9titulo</div>
+                                            <div class="card" style="border-radius:10px;">
+                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">10titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">11titulo</div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">12titulo</div>
+                                            <div class="card" style="border-radius:10px;">
+                                                <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!--Script de ocultar texto-->
+    <script src="~/Scripts/OcultarBoton.js"></script>
+</body>
+</html>
