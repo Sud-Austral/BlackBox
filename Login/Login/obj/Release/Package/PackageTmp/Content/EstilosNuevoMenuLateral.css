@@ -66,5 +66,33 @@ img {
     background-color:#ff0000 !important;
 }
 
+/***************texto cambia color del buscador usuario index linea 508**********************************/
+#searchText {
+    animation-duration: 5000ms;
+    animation-name:blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    -webkit-animation: blink 8000ms infinite; /* Safari and Chrome */
+}
 
+@keyframes blink {
+    from {
+        color: red;
+    }
 
+    to {
+        color: black;
+    }
+}
+
+@-webkit-keyframes blink {
+    from {
+        color: red;
+    }
+
+    to {
+        color: black;
+    }
+}
+
+ 

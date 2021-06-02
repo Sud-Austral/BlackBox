@@ -3,316 +3,341 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 @*<link href="~/Content/EstilosPopUp.css" rel="stylesheet" />*@
 @********************test boton ir atras**********************@
-
-
- <div class="container mt-3">
-     @*boton para volver atras*@
-     <div class="row justify-content-center mb-3">
-         <div class="col-md-10">
-             <input type="button" class="btn btn-danger btn-sm " style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor:pointer" ;" onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
-         </div>
-     </div>
-     <div class="container">
-         <style>
-             .breadcrumb-item + .breadcrumb-item::before {
-                 content: "∙";
-             }
-         </style>
-         <div class="row justify-content-center">
-             <div class="col-md-10">
-                 <nav aria-label="breadcrumb">
-                     <ol class="breadcrumb" style="background-color:transparent;">
-                         <li class="breadcrumb-item"><a href="/info/homeOdoo">Home</a></li>
-                         <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id&id2=1">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</a></li>
-                         <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR_id&id2=2">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre</a></li>
-                         <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO_id&id2=3">@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre</a></li>
-                         <li class="breadcrumb-item"><a href="#">@ViewBag.Elemento.CATEGORIA.nombre</a></li>
-                         @*<li class="breadcrumb-item active" aria-current="page">@ViewBag.Elemento.titulo</li>*@
-                     </ol>
-                 </nav>
-             </div>
-             
-         </div>
-     </div>   
-        <!--descargar pdf iframe-->
-        <script type="text/javascript">
-            $("#verPdf").click(function () {
-                var myIframe = document.getElementById("inlineFrameExample").contentWindow;
-                myIframe.focus();
-                myIframe.print();
-                return false;
-            });
-        </script>
-       
-     @*seccion iframe grafico*@
-        <section class="contenedor-main row mr-md-2 justify-content-center">
-            <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:600px !important;" >
-                <div class="row bg-dark mb-2" style="border:1px solid; border-top-left-radius:10px; border-top-right-radius:10px;">
-                    <div class="col-md-1 col-2">
-                        <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                    </div>
-                    <div class="col">
-                        <p class="mt-3" style="color:#fff;">@ViewBag.Elemento.titulo</p>
-                    </div>
-                </div>
-                <!--Iframe de grafico-->
-                <iframe id="inlineFrameExample" scrolling="no" src="/info/dashboard?id=@ViewBag.Elemento.id" width="1050" height="480">
-                       
-                        
-                       @* src="~/Grafico/@ViewBag.grafico?id=@ViewBag.Resultado.URL&id=3=@ViewBag.file">*@
-                       
-                        @{ 
-                            //string rutaGrafico = "/Grafico/" + ViewBag.Elemento.TIPO_GRAFICO.nombre + "?id=" + ViewBag.Elemento.id;// "&id=3=" + ViewBag.file;
-                        }    
-                        
-                </iframe>
-                
-                <div class="row no-gutters" style="color:blue; font-size:10px;">
-                    
-                        <div class="col-2 mr-3">
-                            <button type="button" class="btn btn-primary" id="boton" style="margin-bottom:20px; font-size:14px;">Más información</button>
-                        </div>
-                    <div class="col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
-                        <a href="javascript:void(0);">
-                            <span id="verPdf" style="font-size:14px;">Ver en Pdf</span>
-                        </a>
-                       
-                    </div>
-                    <div class="col">
-                        <div class="row d-flex " style="justify-content:flex-end;">
-                            <div class="col-5 mb-1 p-1">
-                                <img class="img-fluid " src="~/Content/img/logosDataIntelligence_creadopor.png" alt="Logo transparente" />
-                            </div>
+<script>
+    $(document).ready(function () {
+        $('html').animate({ scrollTop: 0 }, 'slow'); // para IE, FF
+        $('body').animate({ scrollTop: 0 }, 'slow'); // Para Chrome
+    });
+</script>
+<div class="container">
+    @*SEARCHBAR*@
+    <div class="container ">
+        <div class="row justify-content-center  mb-md-3">
+            <div class="col-md-10 bg-light">
+                <div class="row justify-content-end ">
+                    <div class="col-md-6">
+                        <div class="p-1 bg-light  shadow-sm mb-1 mt-1" style="border-radius:20px !important;">
+                            <form class="input-group" onsubmit="BuscadorForm2(event);">
+                                <div class="input-group-prepend">
+                                    <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                </div>
+                                <input type="search" id="#" name="id" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
+                            </form>
                         </div>
                     </div>
                 </div>
-               
-            </main>
-           
-        </section>
-        <section class="container-main mb-5" id="leerMas" style="display:none; background:#fff;">
-            <div class="row justify-content-center" >
-                <div class="col-md-10" style="border:2px solid #e6e6e6; border-radius:15px; ">
-                    <div class="row">
-                        <div class="col-md-4 m-3" style="border-right:0.5px solid #e6e6e6;">
-                            <p style="margin-bottom:0px !important;"><strong>Descripción:</strong></p>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book.
-                            </p>
-                        </div>
-                        <div class="col-md-3 m-3" style="border-right:0.5px solid #e6e6e6;">
-                            <p class="mb-5"><strong>Fuente de Datos:</strong></p>
-                            <p class="mb-5">
-                                <strong>Periodo: </strong>
-
-                                @ViewBag.ELEMENTO.TEMPORALIDAD._fecha_inicio y @ViewBag.ELEMENTO.TEMPORALIDAD._fecha_termino
-                            </p>
-                            <p>
-                                <strong>Territorio: </strong>
-
-                                @ViewBag.ELEMENTO.TERRITORIO.nombre
-                            </p>
-                        </div>
-                        <div class=" col-md-4">
-                            <div class="row justify-content-center mb-md-3">
-                                <p class="mb-4 mt-3"><strong>Ver más información</strong></p>
-                                <div class="col-md-6 text-center">
-                                    <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="font-size: 13px; width: 165px; border-radius: 25px; margin-left: 5px;">
-                                        Ver Informe Interactivo
-                                    </button>
-                                </div>
-                                @*Modal*@
-                                <div class="modal fade" id="myModal1" role="dialog">
-                                    <div class="modal-dialog modal-lg">
-
-                                        <!-- Modal content-->
-                                        <div class="modal-content" style="background-color:black;">
-                                            <div class="modal-header">
-                                                <p style="color:white">
-                                                    Este INFORME INTERACTIVO es posible adquirirlo de dos formas:
-                                                </p>
-                                                <button type="button" class="close" style="color:white" data-dismiss="modal">&times;</button>
-
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row m-1" style="background-color:white; border-radius: 5px;">
-                                                    <div class="col-5 p-1">
-                                                        <div class="col-12">
-                                                            <img style="height:80%; width:80%" src="/Content/image_estadistica/logo_informeinteractivo.png" /><br> <br>
-                                                        </div>
-                                                        <div class="col-12 ">
-                                                            <div class="row">
-                                                                <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
-                                                                    <span> USD </span><span style="color:red; font-size:22px;">10</span>
-                                                                    pago único
-                                                                </div>
-                                                                <div class="col-7">
-                                                                    <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
-                                                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                                                            Adquirir
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-7 p-1">
-                                                        <p style="color:red;"> Con un único pago, puede interactuar  en los filtros activos durante todo 1 año.</p>
-
-                                                        <p class="font-weight-bold" style="color:black;"> Incluye:</p>
-                                                        <ul style="color:black;">
-                                                            <li>Descargas en PDF, PNG y Excel.</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="row m-1" style="background-color:white; border-radius:5px; margin-top:2%;">
-                                                    <div class="col-5 p-1">
-                                                        <div class="col-12">
-                                                            <img style="height:80%; width:80%" src="/Content/image_estadistica/imagenpromocion_2.png" /><br><br><br><br><br><br>
-                                                        </div>
-                                                        <div class="col-12 ">
-                                                            <div class="row">
-                                                                <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
-                                                                    <span> USD </span><span style="color:red; font-size:22px;">35</span>
-                                                                    mensuales
-                                                                </div>
-                                                                <div class="col-7">
-                                                                    <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
-                                                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                                                            Adquirir
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-7 p-1">
-                                                        <p style="color:red;">
-                                                            Cuenta suscripción anual con acceso  la colección completa de los temas de un sector.
-                                                        </p>
-                                                        <p class="font-weight-bold" style="color:black;"> Incluye:</p>
-                                                        <ul style="color:black;">
-                                                            <li>Acceso a miles de Gráficos, Mapas interactivos y diagramas.</li>
-                                                            <li>Acceso a todos los Informes Interactivos.</li>
-                                                            <li>Acceso a Reportes 360º con 30% de descuento.</li>
-                                                            <li>Descargas en PDF, PNG y Excel.</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer text-center">
-                                                <img class="mx-0 pull-left" style="width:35%; height:35%;" src="/Content/img/blanco-trans - copia.png" />
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 text-center">
-                                    <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="font-size:13px; width:165px; border-radius:25px;margin-left:5px;">
-                                        Ver Reporte 360°
-                                    </button>
-
-                                </div>
-                                @*Modal*@
-                                <div class="modal fade" id="myModal2" role="dialog">
-                                    <div class="modal-dialog modal-lg">
-
-                                        <!-- Modal content-->
-                                        <div class="modal-content" style="background-color:black;">
-                                            <div class="modal-header">
-                                                <p style="color:white">
-                                                    Este REPORTE 360º es posible adquirirlo de dos formas:
-                                                </p>
-                                                <button type="button" class="close" style="color:white" data-dismiss="modal">&times;</button>
-
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row m-1" style="background-color:white; border-radius: 5px;">
-                                                    <div class="col-5 p-1">
-                                                        <div class="col-12">
-                                                            <img style="height:80%; width:80%" src="~/Content/image_estadistica/logo_reporte360.png" /> <br> <br>
-                                                        </div>
-                                                        <div class="col-12 ">
-                                                            <div class="row">
-                                                                <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
-                                                                    <span> USD </span><span style="color:red; font-size:22px;">200</span>
-                                                                    pago único
-                                                                </div>
-                                                                <div class="col-7">
-                                                                    <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
-                                                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                                                            Adquirir
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-7 p-1">
-                                                        <p style="color:red;"> Con un único pago, puede interactuar  en los filtros activos durante todo 1 año.</p>
-
-                                                        <p class="font-weight-bold" style="color:black;"> Incluye:</p>
-                                                        <ul style="color:black;">
-                                                            <li>Descargas en PDF, PNG y Excel.</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="row m-1" style="background-color:white; border-radius:5px; margin-top:2%;">
-                                                    <div class="col-5 p-1">
-                                                        <div class="col-12">
-                                                            <img style="height:80%; width:80%" src="~/Content/image_estadistica/imagenpromocion_2.png" /><br><br><br><br><br><br>
-                                                        </div>
-                                                        <div class="col-12 ">
-                                                            <div class="row">
-                                                                <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
-                                                                    <span> USD </span><span style="color:red; font-size:22px;">35</span>
-                                                                    mensuales
-                                                                </div>
-                                                                <div class="col-7">
-                                                                    <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
-                                                                        <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
-                                                                            Adquirir
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-7 p-1">
-                                                        <p style="color:red;">
-                                                            Cuenta suscripción anual con acceso  la colección completa de los temas de un sector.
-                                                        </p>
-                                                        <p class="font-weight-bold" style="color:black;"> Incluye:</p>
-                                                        <ul style="color:black;">
-                                                            <li>Acceso a miles de Gráficos, Mapas interactivos y diagramas.</li>
-                                                            <li>Acceso a todos los Informes Interactivos.</li>
-                                                            <li>Acceso a Reportes 360º con 30% de descuento.</li>
-                                                            <li>Descargas en PDF, PNG y Excel.</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer text-center">
-                                                <img class="mx-0 pull-left" style="width:35%; height:35%;" src="~/Content/img/blanco-trans - copia.png" />
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-        </section>
- </div>
- <!--Script de ocultar texto-->
-    <script src="~/Scripts/OcultarBoton.js"></script>
+            
+        </div>
+    </div>
+    @*boton para ir atras*@
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-10">
+            <input type="button" class="btn btn-danger btn-sm " style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor:pointer" ; onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
+        </div>
+    </div>
+    @*boton para ir atras*@
+    <div class="container">
+        <style>
+            .breadcrumb-item + .breadcrumb-item::before {
+                content: "∙";
+            }
+        </style>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb" style="background-color:transparent;">
+                        <li class="breadcrumb-item"><a href="/info/homeOdoo">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id&id2=1">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</a></li>
+                        <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR_id&id2=2">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre</a></li>
+                        <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO_id&id2=3">@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre</a></li>
+                        <li class="breadcrumb-item"><a href="#">@ViewBag.Elemento.CATEGORIA.nombre</a></li>
+                        @*<li class="breadcrumb-item active" aria-current="page">@ViewBag.Elemento.titulo</li>*@
+                    </ol>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+    <!--descargar pdf iframe-->
+    <script type="text/javascript">
+        $("#verPdf").click(function () {
+            var myIframe = document.getElementById("inlineFrameExample").contentWindow;
+            myIframe.focus();
+            myIframe.print();
+            return false;
+        });
+    </script>
+
+    @*seccion iframe grafico*@
+    <section class="contenedor-main row mr-md-2 justify-content-center">
+        <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:600px !important;">
+            <div class="row bg-dark mb-2" style="border:1px solid; border-top-left-radius:10px; border-top-right-radius:10px;">
+                <div class="col-md-1 col-2">
+                    <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                </div>
+                <div class="col">
+                    <p class="mt-3" style="color:#fff;">@ViewBag.Elemento.titulo</p>
+                </div>
+            </div>
+            <!--Iframe de grafico-->
+            <iframe id="inlineFrameExample" scrolling="no" src="/info/dashboard?id=@ViewBag.Elemento.id" width="1050" height="480">
+
+
+                @* src="~/Grafico/@ViewBag.grafico?id=@ViewBag.Resultado.URL&id=3=@ViewBag.file">*@
+
+                @{
+                    //string rutaGrafico = "/Grafico/" + ViewBag.Elemento.TIPO_GRAFICO.nombre + "?id=" + ViewBag.Elemento.id;// "&id=3=" + ViewBag.file;
+                }
+
+            </iframe>
+
+            <div class="row no-gutters" style="color:blue; font-size:10px;">
+
+                <div class="col-2 mr-3">
+                    <button type="button" class="btn btn-primary" id="boton" style="margin-bottom:20px; font-size:14px;">Más información</button>
+                </div>
+                <div class="col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
+                    <a href="javascript:void(0);">
+                        <span id="verPdf" style="font-size:14px;">Ver en Pdf</span>
+                    </a>
+
+                </div>
+                <div class="col">
+                    <div class="row d-flex " style="justify-content:flex-end;">
+                        <div class="col-5 mb-1 p-1">
+                            <img class="img-fluid " src="~/Content/img/logosDataIntelligence_creadopor.png" alt="Logo transparente" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </section>
+    <section class="container-main mb-5" id="leerMas" style="display:none; background:#fff;">
+        <div class="row justify-content-center">
+            <div class="col-md-10" style="border:2px solid #e6e6e6; border-radius:15px; ">
+                <div class="row">
+                    <div class="col-md-4 m-3" style="border-right:0.5px solid #e6e6e6;">
+                        <p style="margin-bottom:0px !important;"><strong>Descripción:</strong></p>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.
+                        </p>
+                    </div>
+                    <div class="col-md-3 m-3" style="border-right:0.5px solid #e6e6e6;">
+                        <p class="mb-5"><strong>Fuente de Datos:</strong></p>
+                        <p class="mb-5">
+                            <strong>Periodo: </strong>
+
+                            @ViewBag.ELEMENTO.TEMPORALIDAD._fecha_inicio y @ViewBag.ELEMENTO.TEMPORALIDAD._fecha_termino
+                        </p>
+                        <p>
+                            <strong>Territorio: </strong>
+
+                            @ViewBag.ELEMENTO.TERRITORIO.nombre
+                        </p>
+                    </div>
+                    <div class=" col-md-4">
+                        <div class="row justify-content-center mb-md-3">
+                            <p class="mb-4 mt-3"><strong>Ver más información</strong></p>
+                            <div class="col-md-6 text-center">
+                                <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="font-size: 13px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                    Ver Informe Interactivo
+                                </button>
+                            </div>
+                            @*Modal*@
+                            <div class="modal fade" id="myModal1" role="dialog">
+                                <div class="modal-dialog modal-lg">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content" style="background-color:black;">
+                                        <div class="modal-header">
+                                            <p style="color:white">
+                                                Este INFORME INTERACTIVO es posible adquirirlo de dos formas:
+                                            </p>
+                                            <button type="button" class="close" style="color:white" data-dismiss="modal">&times;</button>
+
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row m-1" style="background-color:white; border-radius: 5px;">
+                                                <div class="col-5 p-1">
+                                                    <div class="col-12">
+                                                        <img style="height:80%; width:80%" src="/Content/image_estadistica/logo_informeinteractivo.png" /><br> <br>
+                                                    </div>
+                                                    <div class="col-12 ">
+                                                        <div class="row">
+                                                            <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
+                                                                <span> USD </span><span style="color:red; font-size:22px;">10</span>
+                                                                pago único
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
+                                                                    <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                                                        Adquirir
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-7 p-1">
+                                                    <p style="color:red;"> Con un único pago, puede interactuar  en los filtros activos durante todo 1 año.</p>
+
+                                                    <p class="font-weight-bold" style="color:black;"> Incluye:</p>
+                                                    <ul style="color:black;">
+                                                        <li>Descargas en PDF, PNG y Excel.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row m-1" style="background-color:white; border-radius:5px; margin-top:2%;">
+                                                <div class="col-5 p-1">
+                                                    <div class="col-12">
+                                                        <img style="height:80%; width:80%" src="/Content/image_estadistica/imagenpromocion_2.png" /><br><br><br><br><br><br>
+                                                    </div>
+                                                    <div class="col-12 ">
+                                                        <div class="row">
+                                                            <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
+                                                                <span> USD </span><span style="color:red; font-size:22px;">35</span>
+                                                                mensuales
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
+                                                                    <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                                                        Adquirir
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-7 p-1">
+                                                    <p style="color:red;">
+                                                        Cuenta suscripción anual con acceso  la colección completa de los temas de un sector.
+                                                    </p>
+                                                    <p class="font-weight-bold" style="color:black;"> Incluye:</p>
+                                                    <ul style="color:black;">
+                                                        <li>Acceso a miles de Gráficos, Mapas interactivos y diagramas.</li>
+                                                        <li>Acceso a todos los Informes Interactivos.</li>
+                                                        <li>Acceso a Reportes 360º con 30% de descuento.</li>
+                                                        <li>Descargas en PDF, PNG y Excel.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <img class="mx-0 pull-left" style="width:35%; height:35%;" src="/Content/img/blanco-trans - copia.png" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 text-center">
+                                <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="font-size:13px; width:165px; border-radius:25px;margin-left:5px;">
+                                    Ver Reporte 360°
+                                </button>
+
+                            </div>
+                            @*Modal*@
+                            <div class="modal fade" id="myModal2" role="dialog">
+                                <div class="modal-dialog modal-lg">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content" style="background-color:black;">
+                                        <div class="modal-header">
+                                            <p style="color:white">
+                                                Este REPORTE 360º es posible adquirirlo de dos formas:
+                                            </p>
+                                            <button type="button" class="close" style="color:white" data-dismiss="modal">&times;</button>
+
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row m-1" style="background-color:white; border-radius: 5px;">
+                                                <div class="col-5 p-1">
+                                                    <div class="col-12">
+                                                        <img style="height:80%; width:80%" src="~/Content/image_estadistica/logo_reporte360.png" /> <br> <br>
+                                                    </div>
+                                                    <div class="col-12 ">
+                                                        <div class="row">
+                                                            <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
+                                                                <span> USD </span><span style="color:red; font-size:22px;">200</span>
+                                                                pago único
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
+                                                                    <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                                                        Adquirir
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-7 p-1">
+                                                    <p style="color:red;"> Con un único pago, puede interactuar  en los filtros activos durante todo 1 año.</p>
+
+                                                    <p class="font-weight-bold" style="color:black;"> Incluye:</p>
+                                                    <ul style="color:black;">
+                                                        <li>Descargas en PDF, PNG y Excel.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row m-1" style="background-color:white; border-radius:5px; margin-top:2%;">
+                                                <div class="col-5 p-1">
+                                                    <div class="col-12">
+                                                        <img style="height:80%; width:80%" src="~/Content/image_estadistica/imagenpromocion_2.png" /><br><br><br><br><br><br>
+                                                    </div>
+                                                    <div class="col-12 ">
+                                                        <div class="row">
+                                                            <div class="col-5" style="border-right:0.5px solid #b5a7a7; text-align:right ">
+                                                                <span> USD </span><span style="color:red; font-size:22px;">35</span>
+                                                                mensuales
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <form action="https://dataintelligence.store/products/feminicidios-de-mujeres-y-ninas-2016-2019-el-salvador">
+                                                                    <button class="sub btn btn-danger btn-sm mt-2" style="border-radius:20px; font-size:12px;">
+                                                                        Adquirir
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-7 p-1">
+                                                    <p style="color:red;">
+                                                        Cuenta suscripción anual con acceso  la colección completa de los temas de un sector.
+                                                    </p>
+                                                    <p class="font-weight-bold" style="color:black;"> Incluye:</p>
+                                                    <ul style="color:black;">
+                                                        <li>Acceso a miles de Gráficos, Mapas interactivos y diagramas.</li>
+                                                        <li>Acceso a todos los Informes Interactivos.</li>
+                                                        <li>Acceso a Reportes 360º con 30% de descuento.</li>
+                                                        <li>Descargas en PDF, PNG y Excel.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <img class="mx-0 pull-left" style="width:35%; height:35%;" src="~/Content/img/blanco-trans - copia.png" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+<!--Script de ocultar texto-->
+<script src="~/Scripts/OcultarBoton.js"></script>

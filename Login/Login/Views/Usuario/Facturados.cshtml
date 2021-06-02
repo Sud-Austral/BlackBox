@@ -62,7 +62,7 @@
 
 <div class="row responsive" style="overflow: scroll; height: 450px; overflow-x: hidden; width:67%;">
 
-    @foreach (var item in ViewBag.Resultado4)
+    @foreach (var item in ViewBag.Facturados)
     {
         <div class="col-md-2">
             <img class="img-fluid" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
@@ -72,10 +72,7 @@
             <p> Descripción: @item.DESCRIPCION</p>
             <p style="color:blue">Adquirido el dia @item.FECHA_CREADO2.ToString("D") <a href="@item.COMPROBANTE" target="_blank" style="border-radius:25px;" class="btn btn-outline-dark">Ver Factura</a></p>
             <p>Dias desde la compra:@item.DIAS_DESDE_COMPRA</p>
-
         </div>
-
-
     }
 </div>
 <div class="col-md-8 mt-5">
@@ -85,7 +82,7 @@
 
 <div class="row responsive" style="overflow: scroll; height: 450px; overflow-x: hidden; width:67%;">
 
-    @foreach (var item in ViewBag.Resultado3)
+    @foreach (var item in ViewBag.Facturados)
     {
         <div class="col-md-2">
             <img class="img-fluid" src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
