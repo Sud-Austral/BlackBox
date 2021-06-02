@@ -119,7 +119,6 @@ C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\bin\es\EntityFramework.SqlSer
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
-C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.csprojAssemblyReference.cache
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CoreCompileInputs.cache
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
@@ -628,3 +627,4 @@ D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CoreCompileInputs.cache
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.CopyComplete
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.dll
 D:\GitHub\BlackBox\Login\Login\obj\Release\Login.pdb
+C:\Users\Ian\Documents\GitHub\BlackBox\Login\Login\obj\Release\Login.csproj.AssemblyReference.cache
