@@ -440,9 +440,12 @@ namespace AplicacionBlanco.Controllers
             //var Graficos = dbGrafico.GRAFICO.Where(x => x._producto_id == graf.CATEGORIA.PRODUCTO_id).ToList();
             //ICollection<GRAFICO> Graficos = graf.CATEGORIA.GRAFICO; //.ToList();
             //Esta
-            //List<int> id = [1,2,3,4,5,6,7]
-            //dbGrafico.GRAFICO.Where(x => ).First();
-            ViewBag.time4 = DateTime.Now;
+            List<int> list = new List<int>(new int[] { 200, 300, 700 });
+            string lista = "200,300,700";
+            //var listaNum = lista.Split(',');
+
+            var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == 100100).First().auxiliar.Split(',');
+            ViewBag.time4 = graf; //dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString()));
             /*
             List<GRAFICO> listaCarrusel = new List<GRAFICO>();
             
