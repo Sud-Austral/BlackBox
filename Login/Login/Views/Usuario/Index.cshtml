@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <p class="m-2" style="color:#fff;">
-                    Buscador de mis productos
+                    Buscador de mis Suscripciones
                     @*<i class="fas fa-angle-left right"></i>*@
                 </p>
                 <!-- SidebarSearch Form -->
@@ -134,7 +134,7 @@
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
                                 <p>
-                                    NAVEGA EN MI SUSCRIPCIONES
+                                     MIS SUSCRIPCIONES
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -394,10 +394,10 @@
                             }
                         </li>
 
-                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
-                            <a href="#" class="nav-link" style="border:1px solid #377db3">
+                        <!--<li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
+                            <a href="#" class="nav-link" style="border:1px solid #377db3">-->
                                 @*<i class="nav-icon fas fa-edit"></i>*@
-                                <p>
+                                <!--<p>
                                     Odoo
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
@@ -454,7 +454,7 @@
 
                             </ul>
 
-                        </li>
+                        </li>-->
 
                         <li class="nav-item mb-5" style="border:1px solid #377db3">
                             <a onclick="mostrador('#trece');" href="#" class="nav-link ">
@@ -491,6 +491,7 @@
                                         <div class="col-1">
                                             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                                         </div>
+                                        @*SEARCH BAR *@
                                         <div class="col-md-4">
                                             <div class="p-1 bg-light  shadow-sm mb-1 mt-1" style="border-radius:20px !important;">
                                                 <form class="input-group" onsubmit="BuscadorForm2(event);">
@@ -535,8 +536,6 @@
 
                             </div>
 
-
-
                             <div class="container-fluid offset-1 mt-2" id="cinco" style="display:none;">
 
                                 @{ Html.RenderAction("Facturados", "Usuario");}
@@ -547,14 +546,14 @@
                                 @{ Html.RenderAction("PerfilUsuario", "Usuario");}
 
                             </div>
+                            @*Aqui se despliega la seccion de las categorias del menu laeral usuario index*@
                             <div class="container-fluid offset-1 mt-2" id="siete" style="display:none;">
                                 @*@{ Html.RenderAction("UsuarioSelectProducto", "Usuario");}*@
 
                                 <img class="mx-0" src="~/Content/image_UsuarioIndex/cargadatos_es.gif" />
                             </div>
+
                             <div class="container-fluid offset-1 mt-2" id="ocho" style="display:none;">
-
-
 
                             </div>
                             <div class="container-fluid offset-1 mt-2" id="nueve" style="display:none;">
@@ -684,7 +683,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     @*este script va con la funcion de cargar el gif en la seccion siete*@
     <script>
-       
+       @*Funcion que despliega categoria del menu lateral del Usuario index*@
         function fnClick(categoria) {
 
             var id = "parametros de la funcion";
@@ -715,9 +714,7 @@
 
         }
         function ShowGrafico(Grafico) {
-
             var id = "parametros de la funcion";
-
             $.ajax(
                 {
                     type: 'POST',

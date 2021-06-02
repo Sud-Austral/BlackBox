@@ -3,10 +3,10 @@
 @*Este script para trabajar con fecha*@
 
 
-<div class="col-8">
+@*<div class="col-8">
     <h3 class="text-dark mb-0">Productos Facturados</h3>
     <hr style="border:0.5px solid #000000" />
-</div>
+</div>*@
 <div class="col-8">
     <h5 class="text-dark mb-0">Suscripción Profesional</h5>
     <hr style="border:0.5px solid #000000" />
@@ -15,12 +15,9 @@
 
     @foreach (var item in ViewBag.Facturados)
     {
-
-
         <div class="col-md-2">
             <img class="img-fluid" src="~/Content/image_UsuarioIndex/imagenpromocion_2.png" />
         </div>
-
         <div class="col-md-9 mb-md-3 ml-md-3" style=" border: 0.5px solid #808080; border-radius: 10px;">
             <p>Nombre: @item.NOMBRE</p>
             <p> Descripción: @item.DESCRIPCION</p>
