@@ -303,6 +303,8 @@
     <Content Include="Content\Estilos\info\HomeOdoo.css" />
     <Content Include="Content\image_estadistica\10_boton_finanzas_normal.png" />
     <Content Include="Content\image_estadistica\10_boton_finanzas_on.png" />
+    <Content Include="Content\image_estadistica\10_boton_tecnologia_normal.png" />
+    <Content Include="Content\image_estadistica\10_boton_tecnologia_on.png" />
     <Content Include="Content\image_estadistica\11_boton_comunicacion_normal.png" />
     <Content Include="Content\image_estadistica\11_boton_comunicacion_on.png" />
     <Content Include="Content\image_estadistica\12_boton_recursoquimico_normal.png" />
@@ -311,6 +313,16 @@
     <Content Include="Content\image_estadistica\12_boton_recursos_on.png" />
     <Content Include="Content\image_estadistica\13_boton_empleo_normal.png" />
     <Content Include="Content\image_estadistica\13_boton_empleo_on.png" />
+    <Content Include="Content\image_estadistica\13_boton_vidaplena_normal.png" />
+    <Content Include="Content\image_estadistica\13_boton_vidaplena_on.png" />
+    <Content Include="Content\image_estadistica\14_boton_mundo_normal.png" />
+    <Content Include="Content\image_estadistica\14_boton_mundo_on.png" />
+    <Content Include="Content\image_estadistica\15_boton_economia_normal.png" />
+    <Content Include="Content\image_estadistica\15_boton_economia_on.png" />
+    <Content Include="Content\image_estadistica\16_boton_educacion_normal.png" />
+    <Content Include="Content\image_estadistica\16_boton_educacion_on.png" />
+    <Content Include="Content\image_estadistica\17_boton_politica_normal.png" />
+    <Content Include="Content\image_estadistica\17_boton_politica_on.png" />
     <Content Include="Content\image_estadistica\1_boton_agropecuario_normal.png" />
     <Content Include="Content\image_estadistica\1_boton_agropecuario_on.png" />
     <Content Include="Content\image_estadistica\2_boton_construccion_normal.png" />
