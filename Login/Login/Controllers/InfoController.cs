@@ -362,9 +362,9 @@ namespace AplicacionBlanco.Controllers
             return PartialView();
         }
 
-        public ActionResult index2()
+        public ActionResult index2(int id = 1234)
         {
-            int id = 1234;
+            //int id = 1234;
             var rand = new Random();
 
             GRAFICO graf = new GRAFICO();
@@ -385,76 +385,19 @@ namespace AplicacionBlanco.Controllers
             return View();
         }
 
-        public PartialViewResult tresRelacionados()
+        public PartialViewResult tresRelacionados(int id)
         {
-            ViewBag.time1 = DateTime.Now;
-            int id = 1234;
-            var rand = new Random();
-            GRAFICO graf = new GRAFICO();
-            try
-            {
-                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
-            }
-            catch (Exception)
-            {
-                graf = null;
-            }
-            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
-            {
-                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
-                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
-            }
 
-            var Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == graf.CATEGORIA_id).ToList();
-            while (Graficos.Count < 4)
-            {
-                Graficos.Add(graf);
-            }
-            ViewBag.time2 = DateTime.Now;
-
-
+            var listaNum = dbGrafico.CATEGORIA.Where(x => x.id == id).First().auxiliar.Split(',');
+            ViewBag.tresRelacionados = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
             return PartialView();
         }
 
-        public PartialViewResult carruselRelacionados()
+        public PartialViewResult carruselRelacionados(int id)
         {
-            ViewBag.time1 = DateTime.Now;
-            int id = 1234;
-            var rand = new Random();
-            GRAFICO graf = new GRAFICO();
-            try
-            {
-                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
-            }
-            catch (Exception)
-            {
-                graf = null;
-            }
-            ViewBag.time3 = DateTime.Now;
-            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
-            {
-                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
-                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
-            }
-            //Esta
-            //var Graficos = dbGrafico.GRAFICO.Where(x => x._producto_id == graf.CATEGORIA.PRODUCTO_id).ToList();
-            //ICollection<GRAFICO> Graficos = graf.CATEGORIA.GRAFICO; //.ToList();
-            //Esta
-            List<int> list = new List<int>(new int[] { 200, 300, 700 });
-            string lista = "200,300,700";
-            //var listaNum = lista.Split(',');
-
-            var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == 100100).First().auxiliar.Split(',');
-            ViewBag.time4 = graf; //dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString()));
-            /*
-            List<GRAFICO> listaCarrusel = new List<GRAFICO>();
+            var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
+            ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
             
-            for (int i = 0; i < 15; i++)
-            {
-                listaCarrusel.Add(Graficos[rand.Next(Graficos.Count)]);
-            }
-            */
-            ViewBag.time2 = DateTime.Now;
             return PartialView();
         }
     }
