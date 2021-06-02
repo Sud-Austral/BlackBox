@@ -85,6 +85,7 @@ namespace AplicacionBlanco.Controllers
             //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
             //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
             //Listas de Filtros
+           
             List<string> Paises = new List<string>();
             List<string> Escala = new List<string>();
             List<string> TipoGrafico = new List<string>();
@@ -93,7 +94,7 @@ namespace AplicacionBlanco.Controllers
             List<string> Industria = new List<string>();
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
-            
+          
             foreach (var item in NEW_GRAFICOS.Where(x => x.nombre.Contains(id)).ToList())
             {
                 if (!Paises.Contains(item.TERRITORIO.auxiliar))
@@ -138,6 +139,7 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Industria = Industria;            
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
+
             return View();
         }
 

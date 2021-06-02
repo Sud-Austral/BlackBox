@@ -406,6 +406,7 @@
     <Content Include="Content\img\boton_archivo_pdf.png" />
     <Content Include="Content\img\boton_archivo_ppt.png" />
     <Content Include="Content\img\cabecera_encuesta_honduras.jpg" />
+    <Content Include="Content\img\cargando.gif" />
     <Content Include="Content\img\circulo_rojo.png" />
     <Content Include="Content\img\circulo_verde.png" />
     <Content Include="Content\img\Diseño sin título - copia.png" />

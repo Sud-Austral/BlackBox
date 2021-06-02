@@ -350,6 +350,7 @@ namespace Login.Controllers
         }
         public PartialViewResult Facturados()
         {
+
             //Lista de productos de Shopify
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
             //Nombre de Usuario
