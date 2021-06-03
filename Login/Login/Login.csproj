@@ -359,6 +359,7 @@
     <Content Include="Content\image_estadistica\IconosMenu\7_sectores_iconos_consumo.png" />
     <Content Include="Content\image_estadistica\IconosMenu\8_sectores_iconos_negocio.png" />
     <Content Include="Content\image_estadistica\IconosMenu\9_sectores_iconos_tiempolibre.png" />
+    <Content Include="Content\image_estadistica\IconosMenu\imagenpromocion_1.png" />
     <Content Include="Content\image_estadistica\icono_1.1.png" />
     <Content Include="Content\image_estadistica\icono_1.png" />
     <Content Include="Content\image_estadistica\icono_2.1.png" />
@@ -371,6 +372,7 @@
     <Content Include="Content\image_estadistica\icono_5.png" />
     <Content Include="Content\image_estadistica\icono_6.1.png" />
     <Content Include="Content\image_estadistica\icono_6.png" />
+    <Content Include="Content\image_estadistica\imagenpromocion_1.png" />
     <Content Include="Content\image_estadistica\imagenpromocion_2.png" />
     <Content Include="Content\image_estadistica\logo_DataIntelligence_slogan.png" />
     <Content Include="Content\image_estadistica\logo_DimensionAmbiental_descripcion.png" />
