@@ -30,9 +30,6 @@
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
     @*Titulo de la pagina*@
     <title>Resultados de Busqueda</title>
-    @************preloader imagenes precargados*************************@
-
-    @*****************preloader imagenes precargados**********************@
     @*Script para cargar charts*@
     @*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>*@
     <!--carrucel-->
@@ -117,6 +114,23 @@
         }
     </style>
     <div class="container mb-3">
+        @*Buscador general *@
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 bg-light">
+                    <div class="row justify-content-center  mb-md-5">
+                        <div class="col-md-8 col-8 text-center m-md-3">
+                            <h4 class="tituloBuscador mb-3 font-weight-medium" style="color:black">¡Explora, busca y encuentra en todo nuestro universo de datos!</h4>
+                            <form action="~/info/PaginaBusqueda" method="get">
+                                <input class="buscador typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:10px;">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        @*Buscador general *@
         @*seccion de graficos*@
         <div id="PBdos" style="display:none;">
 
@@ -132,7 +146,7 @@
 
             <!-- Comienzo de rsultados de Busqueda -->
             <div class="col-md-12" id="PBuno">
-                <h2 class="text-center">Resultados de la búsqueda</h2>
+                <h3 class="text-center">Resultados de la búsqueda</h3>
                 <div class="grid search">
                     <div class="grid-body">
                         <!-- Comienzo de Fila que contiene botón borrar filtro y buscador -->
@@ -283,57 +297,66 @@
 
                                         }
                                     </div>
+                                    <h4 class="dropdown-header">PARÁMETRO</h4>
+                                    <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
+                                        @foreach (var item7 in ViewBag.Parametro)
+                                        {
+                                            <div>
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
+                                            </div>
 
+                                        }
+                                    </div>
 
                                     @*
 
-                                            <!-- FILTROS POR FECHA -->
+            <!-- FILTROS POR FECHA -->
 
-                                            <h4>Por fecha:</h4>
+            <h4>Por fecha:</h4>
 
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        Fecha inicial:
-                                                    </div>
-                                                    <input id="startDate" width="220" />
-                                                    <div class="col-12">
-                                                        Fecha término:
-                                                    </div>
-                                                    <input id="endDate" width="220" />
-                                                </div>
-                                            </div>
-                                            <script>
-                                                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                                $('#startDate').datepicker({
-                                                    uiLibrary: 'bootstrap4',
-                                                    iconsLibrary: 'fontawesome',
-                                                    minDate: today,
-                                                    maxDate: function () {
-                                                        return $('#endDate').val();
-                                                    }
-                                                });
-                                                $('#endDate').datepicker({
-                                                    uiLibrary: 'bootstrap4',
-                                                    iconsLibrary: 'fontawesome',
-                                                    minDate: function () {
-                                                        return $('#startDate').val();
-                                                    }
-                                                });
-                                            </script>
-                                            <!-- FINAL FILTROS POR FECHA -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        Fecha inicial:
+                    </div>
+                    <input id="startDate" width="220" />
+                    <div class="col-12">
+                        Fecha término:
+                    </div>
+                    <input id="endDate" width="220" />
+                </div>
+            </div>
+            <script>
+                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                $('#startDate').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    iconsLibrary: 'fontawesome',
+                    minDate: today,
+                    maxDate: function () {
+                        return $('#endDate').val();
+                    }
+                });
+                $('#endDate').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    iconsLibrary: 'fontawesome',
+                    minDate: function () {
+                        return $('#startDate').val();
+                    }
+                });
+            </script>
+            <!-- FINAL FILTROS POR FECHA -->
 
-                                            <div class="padding"></div>
+            <div class="padding"></div>
 
-                                            <!-- COMIENZO FILTRO POR PRECIOS -->
-                                            <h4>Por precio:</h4>
-                                            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-                                            <div class="slider-primary">
-                                                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
-                                            </div>
-                                            <!-- FINAL FILTROS POR PRECIOS -->
-                                        </div>
-                                        <!-- FINAL FILTROS -->
+            <!-- COMIENZO FILTRO POR PRECIOS -->
+            <h4>Por precio:</h4>
+            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
+            <div class="slider-primary">
+                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+            </div>
+            <!-- FINAL FILTROS POR PRECIOS -->
+        </div>
+        <!-- FINAL FILTROS -->
                                     *@
                                 </div>
                             </div>
@@ -404,7 +427,8 @@
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                        <p style="display:none;">@item.TERRITORIO.auxiliar </p>
+                                                                        <p style="display:none;">@item.PARAMETRO.nombre </p>
                                                                     </a>
                                                                 </div>
 
@@ -418,7 +442,8 @@
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                        <p style="display:none;">@item.TERRITORIO.auxiliar </p>
+                                                                        <p style="display:none;">@item.PARAMETRO.nombre </p>
                                                                     </a>
                                                                 </div>
 
@@ -435,6 +460,7 @@
                                                                         @item.TEMPORALIDAD.nombre
                                                                         <p style="display:none;">@item.TERRITORIO.auxiliar </p>
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                                        <p style="display:none;">@item.PARAMETRO.nombre </p>
                                                                     </a>
                                                                 </div>
 
@@ -466,8 +492,8 @@
 
                                                             </div>
                                                             @*<h1>
-                                                                    @item.mostrar
-                                                                </h1>*@
+                                                                @item.mostrar
+                                                            </h1>*@
                                                         </div>
 
 
