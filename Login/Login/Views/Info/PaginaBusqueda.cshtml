@@ -118,8 +118,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10 bg-light">
-                    <div class="row justify-content-center  mb-md-5">
-                        <div class="col-md-8 col-8 text-center m-md-3">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-8 text-center mb-2">
                             <h4 class="tituloBuscador mb-3 font-weight-medium" style="color:black">¡Explora, busca y encuentra en todo nuestro universo de datos!</h4>
                             <form action="~/info/PaginaBusqueda" method="get">
                                 <input class="buscador typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:10px;">
@@ -130,7 +130,7 @@
             </div>
         </div>
         
-        @*Buscador general *@
+       
         @*seccion de graficos*@
         <div id="PBdos" style="display:none;">
 
@@ -146,12 +146,13 @@
 
             <!-- Comienzo de rsultados de Busqueda -->
             <div class="col-md-12" id="PBuno">
-                <h3 class="text-center">Resultados de la búsqueda</h3>
+                <h3 class="text-center mt-md-5">Resultados de la búsqueda</h3>
                 <div class="grid search">
                     <div class="grid-body">
                         <!-- Comienzo de Fila que contiene botón borrar filtro y buscador -->
-                        <div class="row mt-5 justify-content-center">
-                            <div class="col-md-2 text-center">
+                        <div class="row mt-md-3 justify-content-start">
+
+                            <div class="col-md-2 text-center offset-1 mb-md-2">
                                 @*Boton para borrar los filtros*@
                                 <label class="btn btn-danger btn-sm" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                                     <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this), LimpiarTodo();" /> Borrar filtro
@@ -172,7 +173,7 @@
                             </div>
                             <!--fin de Fila que contiene botón borrar filtro y buscador -->
                             <!--  buscador -->
-                            <div class="col-md-8 pr-0">
+                            @*<div class="col-md-8 pr-0">
                                 <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -181,7 +182,7 @@
                                         <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
                         </div>
                         <!--  buscador -->
                         <div class="row justify-content-center" style="border:hidden !important;">
@@ -307,7 +308,6 @@
 
                                         }
                                     </div>
-
                                     @*
 
             <!-- FILTROS POR FECHA -->
@@ -426,8 +426,8 @@
                                                                         @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
-                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.TERRITORIO.auxiliar </p>
+                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.PARAMETRO.nombre </p>
                                                                     </a>
                                                                 </div>
@@ -441,8 +441,8 @@
                                                                         @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
-                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.TERRITORIO.auxiliar </p>
+                                                                        <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.PARAMETRO.nombre </p>
                                                                     </a>
                                                                 </div>
@@ -767,7 +767,7 @@
         </div>
         <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
             <div class="col-12">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_1.png" alt="100%x280" />
+                <img class="img-fluid" src="~/Content/image_estadistica/imagenpromocion_1.1.png" alt="100%x280" />
             </div>
         </div>
     </div>
@@ -804,16 +804,16 @@
             <h3 style="color:#009fcf">
                 INCLUYE
             </h3>
-            <div class="col-3">
+            <div class="col-md-3 col-10">
                 <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-10">
                 <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-10">
                 <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-10">
                 <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
             </div>
         </div>

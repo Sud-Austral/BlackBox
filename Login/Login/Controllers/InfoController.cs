@@ -348,6 +348,7 @@ namespace AplicacionBlanco.Controllers
         }
         public PartialViewResult CarrucelBusqueda(int id=2345)
         {
+
             var rand = new Random();
             GRAFICO graf = new GRAFICO();
             try
@@ -364,7 +365,7 @@ namespace AplicacionBlanco.Controllers
                 graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
             }
             ViewBag.Elemento = graf;//graficos
-
+           
             return PartialView();
         }
 
@@ -403,7 +404,8 @@ namespace AplicacionBlanco.Controllers
         {
             var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
             ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
-            
+           
+
             return PartialView();
         }
     }
