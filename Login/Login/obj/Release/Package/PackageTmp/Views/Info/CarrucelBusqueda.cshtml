@@ -28,155 +28,197 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row">
-
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#">
-                                            <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">1titulo</div>
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Elemento.titulo" class="card-header mb-1 text-center" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+                                                @ViewBag.Elemento.titulo
+                                            </div>
                                             <div class="card" style="border:none;">
-                                                <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">nombre</h4>
-
-                                                    <p class="card-text" style="color:#000">descripcion</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Elemento.CATEGORIA.nombre</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;">
-                                            2titulo
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+                                                titulo
                                             </div>
-                                        </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">
-                                            3titulo
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+                                                titulo
                                             </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;">4titulo</div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
                                             </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">5titulo</div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">6titulo</div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">7titulo</div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">8titulo</div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">9titulo</div>
-                                        <div class="card" style="border-radius:10px;">
-                                            <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="row">
-
                                     <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">10titulo</div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
-
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+                                                titulo
                                             </div>
-
-                                        </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">11titulo</div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
-
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000; white-space:nowrap; text-overflow:ellipsis;overflow:hidden; ">
+                                                titulo
                                             </div>
-                                        </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <div class="card-header mb-1" style="border-radius:10px; background-color:transparent; border:0.5px solid #000;color:#000;">12titulo</div>
-                                        <div class="card" style="border-radius:10px;">
-                                            <img class="img-fluid" alt="100%x280" style="border-top-left-radius:10px; border-top-right-radius:10px;" src="~/Content/img/kisspng-pie-chart-drinking-water-water-footprint-digital-art-word-5ad88a82adfbc6.0742900615241406747127.jpg">
-                                            <div class="card-body">
-                                                <h4 class="card-title" style="color:#000">nombre</h4>
-                                                <p class="card-text" style="color:#000">descripcion</p>
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000; white-space:nowrap; text-overflow:ellipsis;overflow:hidden;">
+                                                titulo
                                             </div>
-                                        </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000; white-space:nowrap; text-overflow:ellipsis;overflow:hidden;">
+                                                titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000; white-space:nowrap;text-overflow:ellipsis;overflow:hidden;">
+                                                titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">
+                                               titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;white-space:nowrap;text-overflow:ellipsis; overflow:hidden;">
+                                                titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;">
+                                                titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                            <div data-toggle="tooltip" data-placement="top" title="titulo" class="card-header mb-1 text-center" style="border-radius:10px; background-color:transparent; border:0.5px solid #000; color:#000; white-space:nowrap;text-overflow:ellipsis;overflow:hidden;">
+                                                titulo
+                                            </div>
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280"
+                                                     src="_Image">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="color:#000">nombre</h4>
+                                                    <p class="card-text" style="color:#000">nombre</p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

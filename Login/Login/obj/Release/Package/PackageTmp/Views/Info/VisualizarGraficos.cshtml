@@ -1,8 +1,6 @@
 ﻿
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-@*<link href="~/Content/EstilosPopUp.css" rel="stylesheet" />*@
-@********************test boton ir atras**********************@
+@*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">*@
 <script>
     $(document).ready(function () {
         $('html').animate({ scrollTop: 0 }, 'slow'); // para IE, FF
@@ -10,33 +8,13 @@
     });
 </script>
 <div class="container">
-    @*SEARCHBAR*@
-    <div class="container ">
-        <div class="row justify-content-center  mb-md-3">
-            <div class="col-md-10 bg-light">
-                <div class="row justify-content-end ">
-                    <div class="col-md-6">
-                        <div class="p-1 bg-light  shadow-sm mb-1 mt-1" style="border-radius:20px !important;">
-                            <form class="input-group" onsubmit="BuscadorForm2(event);">
-                                <div class="input-group-prepend">
-                                    <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
-                                </div>
-                                <input type="search" id="#" name="id" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded border-0 bg-light" style="border-radius:25px !important;">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
     @*boton para ir atras*@
     <div class="row justify-content-center mb-3">
         <div class="col-md-10">
             <input type="button" class="btn btn-danger btn-sm " style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor:pointer" ; onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
         </div>
     </div>
-    @*boton para ir atras*@
+    @*fin boton para ir atras*@
     <div class="container">
         <style>
             .breadcrumb-item + .breadcrumb-item::before {
@@ -72,12 +50,12 @@
     @*seccion iframe grafico*@
     <section class="contenedor-main row mr-md-2 justify-content-center">
         <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:600px !important;">
-            <div class="row bg-dark mb-2" style="border:1px solid; border-top-left-radius:10px; border-top-right-radius:10px;">
+            <div class="row bg-dark mb-2" style="border: 1px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; max-height: 65px;">
                 <div class="col-md-1 col-2">
                     <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
                 </div>
                 <div class="col">
-                    <p class="mt-3" style="color:#fff;">@ViewBag.Elemento.titulo</p>
+                    <p class="mt-2" style="color:#fff;">@ViewBag.Elemento.titulo</p>
                 </div>
             </div>
             <!--Iframe de grafico-->
@@ -99,7 +77,7 @@
                 </div>
                 <div class="col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
                     <a href="javascript:void(0);">
-                        <span id="verPdf" style="font-size:14px;">Ver en Pdf</span>
+                        <span id="verPdf" style="font-size:12px;">Ver en Pdf</span>
                     </a>
 
                 </div>
@@ -146,7 +124,7 @@
                             <p class="mb-4 mt-3"><strong>Ver más información</strong></p>
                             <div class="col-md-6 text-center">
                                 <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="font-size: 13px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
                                     Ver Informe Interactivo
                                 </button>
                             </div>
@@ -239,7 +217,7 @@
 
                             <div class="col-md-6 text-center">
                                 <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="font-size:13px; width:165px; border-radius:25px;margin-left:5px;">
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
                                     Ver Reporte 360°
                                 </button>
 
