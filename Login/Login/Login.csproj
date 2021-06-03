@@ -2792,6 +2792,7 @@
     <Content Include="Views\Info\CarrucelBusqueda.cshtml" />
     <Content Include="Views\Info\tresRelacionados.cshtml" />
     <Content Include="Views\Info\carruselRelacionados.cshtml" />
+    <Content Include="Views\Info\Paginacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

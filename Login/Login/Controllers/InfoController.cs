@@ -80,12 +80,16 @@ namespace AplicacionBlanco.Controllers
         
         public ActionResult PaginaBusqueda(string id = "1")
         {
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains (id) || x.tags.Contains(id) ).Take(100);
-            ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
+            ViewBag.palabra = id;
+            // = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
+            
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
+            ViewBag.Resultado = NEW_GRAFICOS;
+            //ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
             //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
             //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
             //Listas de Filtros
-           
+
             List<string> Paises = new List<string>();
             List<string> Escala = new List<string>();
             List<string> TipoGrafico = new List<string>();
@@ -145,6 +149,18 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Categoria = Categoria;
             ViewBag.Parametro = Parametro;
             return View();
+        }
+
+        public PartialViewResult Paginacion(string id = "1", int id2 = 1)
+        {
+            
+            //var NEW_GRAFICOS
+            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
+                                                .OrderBy(x => x.id)
+                                                .Skip(2 * id2)
+                                                .Take(2);
+            
+            return PartialView();
         }
 
         public ActionResult PaginaBusqueda2(string id)
