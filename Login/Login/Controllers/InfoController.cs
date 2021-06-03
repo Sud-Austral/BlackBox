@@ -80,7 +80,7 @@ namespace AplicacionBlanco.Controllers
         
         public ActionResult PaginaBusqueda(string id = "1")
         {
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(100);
             ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
             //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
             //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
@@ -94,8 +94,9 @@ namespace AplicacionBlanco.Controllers
             List<string> Industria = new List<string>();
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
-          
-            foreach (var item in NEW_GRAFICOS.Where(x => x.nombre.Contains(id)).ToList())
+            List<string> Parametro = new List<string>();
+
+            foreach (var item in NEW_GRAFICOS)
             {
                 if (!Paises.Contains(item.TERRITORIO.auxiliar))
                 {
@@ -129,7 +130,11 @@ namespace AplicacionBlanco.Controllers
                 if (!Categoria.Contains(item.CATEGORIA.nombre))
                 {
                     Categoria.Add(item.CATEGORIA.nombre);
-                }                
+                }
+                if (!Parametro.Contains(item.PARAMETRO.nombre))
+                {
+                    Parametro.Add(item.PARAMETRO.nombre);
+                }
             }
             ViewBag.Paises = Paises;
             ViewBag.Escala = Escala;
@@ -139,6 +144,7 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Industria = Industria;            
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
+            ViewBag.Parametro = Parametro;
 
             return View();
         }
@@ -344,6 +350,7 @@ namespace AplicacionBlanco.Controllers
         }
         public PartialViewResult CarrucelBusqueda(int id=2345)
         {
+
             var rand = new Random();
             GRAFICO graf = new GRAFICO();
             try
@@ -360,7 +367,7 @@ namespace AplicacionBlanco.Controllers
                 graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
             }
             ViewBag.Elemento = graf;//graficos
-
+           
             return PartialView();
         }
 
@@ -399,7 +406,8 @@ namespace AplicacionBlanco.Controllers
         {
             var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
             ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
-            
+           
+
             return PartialView();
         }
     }

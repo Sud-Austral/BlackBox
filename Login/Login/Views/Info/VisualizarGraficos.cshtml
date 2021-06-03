@@ -1,6 +1,6 @@
 ﻿
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+@*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">*@
 <script>
     $(document).ready(function () {
         $('html').animate({ scrollTop: 0 }, 'slow'); // para IE, FF
@@ -8,8 +8,6 @@
     });
 </script>
 <div class="container">
-    @*SEARCHBAR*@
-    
     @*boton para ir atras*@
     <div class="row justify-content-center mb-3">
         <div class="col-md-10">
@@ -57,7 +55,7 @@
                     <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
                 </div>
                 <div class="col">
-                    <p class="mt-3" style="color:#fff;">@ViewBag.Elemento.titulo</p>
+                    <p class="mt-2" style="color:#fff;">@ViewBag.Elemento.titulo</p>
                 </div>
             </div>
             <!--Iframe de grafico-->
@@ -79,7 +77,7 @@
                 </div>
                 <div class="col-md-1 col-2 text-center mt-2 mb-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
                     <a href="javascript:void(0);">
-                        <span id="verPdf" style="font-size:14px;">Ver en Pdf</span>
+                        <span id="verPdf" style="font-size:12px;">Ver en Pdf</span>
                     </a>
 
                 </div>
@@ -126,7 +124,7 @@
                             <p class="mb-4 mt-3"><strong>Ver más información</strong></p>
                             <div class="col-md-6 text-center">
                                 <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="font-size: 13px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
                                     Ver Informe Interactivo
                                 </button>
                             </div>
@@ -219,7 +217,7 @@
 
                             <div class="col-md-6 text-center">
                                 <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="font-size:13px; width:165px; border-radius:25px;margin-left:5px;">
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
                                     Ver Reporte 360°
                                 </button>
 
