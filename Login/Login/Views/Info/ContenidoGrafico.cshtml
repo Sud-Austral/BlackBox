@@ -1,53 +1,50 @@
 ﻿@*seccion de contenidos*@
-
-
-<section class="container mb-5 ">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <h6 style="font-weight:bold">Información relacionada que te podría interesar</h6>
-            </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h6 style="font-weight:bold">Información relacionada que te podría interesar</h6>
         </div>
     </div>
-    
+</div>
+<section class="container mb-5">
     <div class="row justify-content-center">
         <div class="col-md-10" style="background:#fff; border:solid #e6e6e6; border-radius:15px;">
             <div class="row " style="border-bottom: 2px solid #e6e6e6;">
                 <div class="col-md-3 col-sm-12">
-                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4"
+                         src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="Alternate Text" />
                 </div>
                 <div class="col-md-8 col-sm-12">
                     <p style="padding-top:10px;">
-                        <span style="font-size:20px;"><strong>titulo</strong></span> <br />
-                        <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type
+                        <span style="font-size:20px;"><strong>@ViewBag.tresRelacionados[0].titulo</strong></span> <br />
+                        <span style="font-size:17px; padding-top:10px;">Descripción </span><br />
+                        @ViewBag.tresRelacionados[0].descripcion
                     </p>
                 </div>
             </div>
             <div class="row" style="border-bottom: 2px solid #e6e6e6;">
                 <div class="col-md-3 col-sm-12">
-                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4"
+                         src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="Alternate Text" />
                 </div>
                 <div class="col-md-8 col-sm-12">
                     <p style="padding-top:10px;">
-                        <span style="font-size:20px;"><strong>titulo</strong></span> <br />
-                        <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type
+                        <span style="font-size:20px;"><strong>@ViewBag.tresRelacionados[1].titulo</strong></span> <br />
+                        <span style="font-size:17px; padding-top:10px;">Descripción </span><br />
+                        @ViewBag.tresRelacionados[1].descripcion
                     </p>
                 </div>
             </div>
             <div class="row " style="border-bottom: 2px solid #e6e6e6;">
                 <div class="col-md-3 col-sm-12">
-                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4" src="~/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg" alt="Alternate Text" />
+                    <img style="width:90%;" class="img-fluid rounded mx-auto d-block mt-4 mb-4"
+                         src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="Alternate Text" />
                 </div>
                 <div class="col-md-8 col-sm-12">
                     <p style="padding-top:10px;">
-                        <span style="font-size:20px;"><strong>titulo</strong></span> <br />
-                        <span style="font-size:17px; padding-top:10px;">descripcion </span><br />
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type
+                        <span style="font-size:20px;"><strong>@ViewBag.tresRelacionados[2].titulo</strong></span> <br />
+                        <span style="font-size:17px; padding-top:10px;">Descripción </span><br />
+                        @ViewBag.tresRelacionados[2].descripcion
                     </p>
                 </div>
             </div>

@@ -79,13 +79,13 @@
     </script>
 </head>
 <body>
-    <button onclick="Paginacion('@ViewBag.palabra');">
+    @*<button onclick="Paginacion('@ViewBag.palabra');">
         Ver más
-    </button>
-    <script>      
+    </button>*@
+    <script>
         var index = 1;
         function Paginacion(palabra) {
-            
+
             var id = "parametros de la funcion";
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
@@ -145,15 +145,8 @@
             overflow-y: auto !important;
         }
     </style>
-    <style type="text/css" media="print">
-        .page {
-            -webkit-transform: rotate(-90deg);
-            -moz-transform: rotate(-90deg);
-            /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
-        }
-    </style>
     <div class="container mb-3">
-        
+
         @*Buscador general *@
         <div class="container">
             <div class="row justify-content-center">
@@ -261,9 +254,9 @@
                                                     $("#myTable tr").show();
                                                     $("#contar").text($("#myTable tr").length + " Resultados");
                                                 }
-                                                    
 
-                                                
+
+
                                             });
 
                                         });
@@ -564,9 +557,7 @@
                                         </tbody>
 
                                     </table>
-                                    <button onclick="Paginacion('@ViewBag.palabra');">
-                                        Ver más
-                                    </button>
+
                                     <!-- Modal3 -->
                                     <div class="modal fade" id="myModal1" role="dialog">
                                         <div class="modal-dialog modal-lg">
@@ -784,6 +775,9 @@
                                             }
                                         }
                                     </script>
+                                    <button class="ml-5 btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');"  style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                        Ver más
+                                    </button>
                                 </div>
                             </div>
                             <div id="paginador"></div>
@@ -978,26 +972,24 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail');
+                        alert('Fail PBGrafico VisualizarGraficos');
                     }
 
                 });
 
-            location.hash = "#PBdos";
-
         }
 
-        function PBGrafico2(Grafico) {
-            var id = "parametros de la funcion";
+        function PBGrafico2(id) {
+            
             $('#PBcuatro').html('<h2>Cargando Datos...espere un momento por favor</h2>')
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
             $.ajax(
                 {
                     type: 'POST',
-                    data: "{'id':" + "'" + Grafico + "'}", //datos o parametros enviados al servidor
+                    data: "{'id':" + "'" + id + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/info/ContenidoGrafico?id=' + Grafico,
+                    url: '/info/ContenidoGrafico?id=' + id,
                     //URL del action result que cargara la vista parcial
                     success: function (result) {
                         // si la funcion se ejecuta lanzara un alert
@@ -1009,22 +1001,22 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail');
+                        alert('Fail PBGrafico2 ContenidoGrafico');
                     }
                 });
 
         }
-        function PBGrafico3(Grafico) {
-            var id = "parametros de la funcion";
+        function PBGrafico3(id) {
+
             $('#PBcinco').html('<h2>Cargando Datos...espere un momento por favor</h2>')
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
             $.ajax(
                 {
                     type: 'POST',
-                    data: "{'id':" + "'" + Grafico + "'}", //datos o parametros enviados al servidor
+                    data: "{'id':" + "'" + id + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/info/CarrucelBusqueda?id=' + Grafico,
+                    url: '/info/CarrucelBusqueda?id=' + id,
                     //URL del action result que cargara la vista parcial
                     success: function (result) {
                         // si la funcion se ejecuta lanzara un alert
@@ -1036,7 +1028,7 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail');
+                        alert('Fail PBGrafico3  CarrucelBusqueda');
                     }
                 });
         }
@@ -1052,6 +1044,7 @@
     <script>
         $("#contar").text("@i  resultados");
     </script>
+   
 </body>
 </html>
 

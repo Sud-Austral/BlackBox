@@ -345,45 +345,50 @@ namespace AplicacionBlanco.Controllers
 
         public PartialViewResult ContenidoGrafico(int id)
         {
-            var rand = new Random();
-            GRAFICO graf = new GRAFICO();
-            try
-            {
-                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
-            }
-            catch (Exception)
-            {
-                graf = null;
-            }
-            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
-            {
-                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
-                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
-            }
-            ViewBag.Elemento = graf;//graficos
+            id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA_id;
+            var listaNum = dbGrafico.CATEGORIA.Where(x => x.id == id).First().auxiliar.Split(',');
+            ViewBag.tresRelacionados = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            //var rand = new Random();
+            //GRAFICO graf = new GRAFICO();
+            //try
+            //{
+            //    graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            //}
+            //catch (Exception)
+            //{
+            //    graf = null;
+            //}
+            //if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            //{
+            //    var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+            //    graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
+            //}
+            //ViewBag.Elemento = graf;//graficos
 
             return PartialView();
         }
-        public PartialViewResult CarrucelBusqueda(int id=2345)
+        public PartialViewResult CarrucelBusqueda(int id)
         {
+            id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA.PRODUCTO_id;
+            var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
+            ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            //var rand = new Random();
+            //GRAFICO graf = new GRAFICO();
+            //try
+            //{
+            //    graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            //}
+            //catch (Exception)
+            //{
+            //    graf = null;
+            //}
+            //if (graf.TIPO_GRAFICO_id > 1 || graf == null)
+            //{
+            //    var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+            //    graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
+            //}
+            //ViewBag.Elemento = graf;//graficos
 
-            var rand = new Random();
-            GRAFICO graf = new GRAFICO();
-            try
-            {
-                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
-            }
-            catch (Exception)
-            {
-                graf = null;
-            }
-            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
-            {
-                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
-                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
-            }
-            ViewBag.Elemento = graf;//graficos
-           
             return PartialView();
         }
 
