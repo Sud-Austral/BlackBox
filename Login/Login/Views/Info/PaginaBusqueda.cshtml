@@ -1,10 +1,4 @@
-﻿@*
-    @{
-        Layout = "~/Views/Shared/_LayoutStatista.cshtml";
-    }
-*@
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -194,11 +188,13 @@
                                 <script type="text/javascript">
                                     function ActivarCasilla(casilla) {
                                         miscasillas = document.getElementsByTagName('input'); //Rescatamos controles tipo Input
+                                        $("#myTable tr").show();
+                                        $("#contar").text($("#myTable tr").length + " Resultados");
                                         for (i = 0; i < miscasillas.length; i++) //Ejecutamos y recorremos los controles
                                         {
                                             if (miscasillas[i].type == "checkbox") // Ejecutamos si es una casilla de verificacion
                                             {
-                                                miscasillas[i].checked = casilla.checked; // Si el input es CheckBox se aplica la funcion ActivarCasilla
+                                                miscasillas[i].checked = false;  //casilla.checked; // Si el input es CheckBox se aplica la funcion ActivarCasilla
                                             }
                                         }
                                     }
@@ -246,12 +242,15 @@
                                                         }
 
                                                     });
-
+                                                    $("#contar").text(contador + " Resultados");
                                                 });
-                                                if (flag == 1)
-                                                    $("#myTable tr").show()
+                                                if (flag == 1) {
+                                                    $("#myTable tr").show();
+                                                    $("#contar").text($("#myTable tr").length + " Resultados");
+                                                }
+                                                    
 
-                                                $("#contar").text(contador + "   resultados")
+                                                
                                             });
 
                                         });
@@ -265,7 +264,6 @@
                                             <div>
                                                 <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</label>
                                             </div>
-
                                         }
                                     </div>
                                     <h4 class="dropdown-header">SECTOR</h4>
@@ -414,12 +412,14 @@
                                                                 <div id="test1" class="col-md-8 col-12">
                                                                     <a href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer; text-decoration: blink; color: black;">
                                                                         @item.titulo <br />
-                                                                        @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
                                                                         <p style="display:none;">@item.TERRITORIO.auxiliar </p>
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.PARAMETRO.nombre </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
                                                                     </a>
                                                                 </div>
 
@@ -429,12 +429,14 @@
                                                                 <div id="test1" class="col-md-8 col-12">
                                                                     <a href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style=" cursor: pointer; text-decoration:blink; color:black;">
                                                                         @item.titulo <br />
-                                                                        @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
                                                                         <p style="display:none;">@item.TERRITORIO.auxiliar </p>
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.PARAMETRO.nombre </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
                                                                     </a>
                                                                 </div>
 
@@ -446,12 +448,14 @@
                                                                     @*<a href="~/info/index?id=@item.id" style=" cursor: pointer;">*@
                                                                     <a href="#" onclick="mostrador2('#PBdos','#PBcuatro','#PBcinco'); PBGrafico('@item.id'),PBGrafico2('@item.id'),PBGrafico3('@item.id') ;" style="cursor: pointer; text-decoration: blink; color: black;">
                                                                         @item.titulo <br />
-                                                                        @item.TIPO_GRAFICO_id
                                                                         @item.TIPO_GRAFICO.nombre <br />
                                                                         @item.TEMPORALIDAD.nombre
                                                                         <p style="display:none;">@item.TERRITORIO.auxiliar </p>
                                                                         <p style="display:none;">@item.TERRITORIO.nombre </p>
                                                                         <p style="display:none;">@item.PARAMETRO.nombre </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                                                                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
                                                                     </a>
                                                                 </div>
 
@@ -483,8 +487,8 @@
 
                                                             </div>
                                                             @*<h1>
-                                                                    @item.mostrar
-                                                                </h1>*@
+                                    @item.mostrar
+                                </h1>*@
                                                         </div>
 
 
@@ -497,7 +501,9 @@
                                         </tbody>
 
                                     </table>
-
+                                    <button onclick="Paginacion('@ViewBag.palabra');">
+                                        Ver más
+                                    </button>
                                     <!-- Modal3 -->
                                     <div class="modal fade" id="myModal1" role="dialog">
                                         <div class="modal-dialog modal-lg">
@@ -874,9 +880,6 @@
                 })
             })
         })
-
-
-
         @*
         $(function () {
             $('table tr:eq(0)').prepend('<th>ID</th>')
@@ -888,18 +891,6 @@
         })
         *@
     </script>
-    <script>
-        /*
-        var index = 0;
-        function recargar() {
-            if (index > 0) {
-                location.reload();
-            }
-            index++
-        }
-        */
-    </script>
-
     <script>
         function PBGrafico(Grafico) {
             var id = "parametros de la funcion";
@@ -985,7 +976,6 @@
                         alert('Fail');
                     }
                 });
-
         }
     </script>
 

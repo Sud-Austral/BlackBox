@@ -83,7 +83,9 @@ namespace AplicacionBlanco.Controllers
             ViewBag.palabra = id;
             // = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
             
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
+                                                .OrderBy(x => x.id)
+                                                .Take(200);
             ViewBag.Resultado = NEW_GRAFICOS;
             //ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
             //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
@@ -157,8 +159,8 @@ namespace AplicacionBlanco.Controllers
             //var NEW_GRAFICOS
             ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
                                                 .OrderBy(x => x.id)
-                                                .Skip(2 * id2)
-                                                .Take(2);
+                                                .Skip(200 * id2)
+                                                .Take(200);
             
             return PartialView();
         }

@@ -23,12 +23,14 @@
                     <div id="test1" class="col-md-8 col-12">
                         <a href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer; text-decoration: blink; color: black;">
                             @item.titulo <br />
-                            @item.TIPO_GRAFICO_id
                             @item.TIPO_GRAFICO.nombre <br />
                             @item.TEMPORALIDAD.nombre
                             <p style="display:none;">@item.TERRITORIO.auxiliar </p>
                             <p style="display:none;">@item.TERRITORIO.nombre </p>
                             <p style="display:none;">@item.PARAMETRO.nombre </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
                         </a>
                     </div>
 
@@ -38,12 +40,14 @@
                     <div id="test1" class="col-md-8 col-12">
                         <a href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style=" cursor: pointer; text-decoration:blink; color:black;">
                             @item.titulo <br />
-                            @item.TIPO_GRAFICO_id
                             @item.TIPO_GRAFICO.nombre <br />
                             @item.TEMPORALIDAD.nombre
                             <p style="display:none;">@item.TERRITORIO.auxiliar </p>
                             <p style="display:none;">@item.TERRITORIO.nombre </p>
                             <p style="display:none;">@item.PARAMETRO.nombre </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
                         </a>
                     </div>
 
@@ -55,12 +59,14 @@
                         @*<a href="~/info/index?id=@item.id" style=" cursor: pointer;">*@
                         <a href="#" onclick="mostrador2('#PBdos','#PBcuatro','#PBcinco'); PBGrafico('@item.id'),PBGrafico2('@item.id'),PBGrafico3('@item.id') ;" style="cursor: pointer; text-decoration: blink; color: black;">
                             @item.titulo <br />
-                            @item.TIPO_GRAFICO_id
                             @item.TIPO_GRAFICO.nombre <br />
                             @item.TEMPORALIDAD.nombre
                             <p style="display:none;">@item.TERRITORIO.auxiliar </p>
                             <p style="display:none;">@item.TERRITORIO.nombre </p>
                             <p style="display:none;">@item.PARAMETRO.nombre </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
                         </a>
                     </div>
 
