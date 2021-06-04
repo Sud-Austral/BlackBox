@@ -14,20 +14,22 @@
 <head>
     <!--Meta Tags-->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
     <!--Bundles rederizados-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @*fontawesome*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2f08016506.js" crossorigin="anonymous"></script>
     @*<link href="~/Content/font-awesome.min.css" rel="stylesheet" />*@
     @*estilos*@
     <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
+
     @*Titulo de la pagina*@
     <title>Resultados de Busqueda</title>
     @*Script para cargar charts*@
@@ -77,10 +79,13 @@
             $(seccion3).show();
         }
     </script>
-  
+    @*para eliminar error de util.js:179 Uncaught TypeError: Bootstrap's JavaScript requires jQuery. jQuery must be included before Bootstrap's JavaScript” *@
+    <script>
+        window.jQuery = window.$ = require('jquery');
+    </script>
 </head>
-<body onresize="recargar();">
-    
+<body>
+
     @* preloader imagen precargado  *@
     <style>
         /*Loading page*/
@@ -113,7 +118,15 @@
             overflow-y: auto !important;
         }
     </style>
+    <style type="text/css" media="print">
+        .page {
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+        }
+    </style>
     <div class="container mb-3">
+        
         @*Buscador general *@
         <div class="container">
             <div class="row justify-content-center">
@@ -129,8 +142,8 @@
                 </div>
             </div>
         </div>
-        
-       
+
+
         @*seccion de graficos*@
         <div id="PBdos" style="display:none;">
 
@@ -174,15 +187,15 @@
                             <!--fin de Fila que contiene botón borrar filtro y buscador -->
                             <!--  buscador -->
                             @*<div class="col-md-8 pr-0">
-                                <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                    <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                            </div>
+                                            <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                         </div>
-                                        <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                     </div>
-                                </div>
-                            </div>*@
+                                </div>*@
                         </div>
                         <!--  buscador -->
                         <div class="row justify-content-center" style="border:hidden !important;">
@@ -310,53 +323,53 @@
                                     </div>
                                     @*
 
-            <!-- FILTROS POR FECHA -->
+                                            <!-- FILTROS POR FECHA -->
 
-            <h4>Por fecha:</h4>
+                                            <h4>Por fecha:</h4>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        Fecha inicial:
-                    </div>
-                    <input id="startDate" width="220" />
-                    <div class="col-12">
-                        Fecha término:
-                    </div>
-                    <input id="endDate" width="220" />
-                </div>
-            </div>
-            <script>
-                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                $('#startDate').datepicker({
-                    uiLibrary: 'bootstrap4',
-                    iconsLibrary: 'fontawesome',
-                    minDate: today,
-                    maxDate: function () {
-                        return $('#endDate').val();
-                    }
-                });
-                $('#endDate').datepicker({
-                    uiLibrary: 'bootstrap4',
-                    iconsLibrary: 'fontawesome',
-                    minDate: function () {
-                        return $('#startDate').val();
-                    }
-                });
-            </script>
-            <!-- FINAL FILTROS POR FECHA -->
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        Fecha inicial:
+                                                    </div>
+                                                    <input id="startDate" width="220" />
+                                                    <div class="col-12">
+                                                        Fecha término:
+                                                    </div>
+                                                    <input id="endDate" width="220" />
+                                                </div>
+                                            </div>
+                                            <script>
+                                                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                                                $('#startDate').datepicker({
+                                                    uiLibrary: 'bootstrap4',
+                                                    iconsLibrary: 'fontawesome',
+                                                    minDate: today,
+                                                    maxDate: function () {
+                                                        return $('#endDate').val();
+                                                    }
+                                                });
+                                                $('#endDate').datepicker({
+                                                    uiLibrary: 'bootstrap4',
+                                                    iconsLibrary: 'fontawesome',
+                                                    minDate: function () {
+                                                        return $('#startDate').val();
+                                                    }
+                                                });
+                                            </script>
+                                            <!-- FINAL FILTROS POR FECHA -->
 
-            <div class="padding"></div>
+                                            <div class="padding"></div>
 
-            <!-- COMIENZO FILTRO POR PRECIOS -->
-            <h4>Por precio:</h4>
-            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-            <div class="slider-primary">
-                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
-            </div>
-            <!-- FINAL FILTROS POR PRECIOS -->
-        </div>
-        <!-- FINAL FILTROS -->
+                                            <!-- COMIENZO FILTRO POR PRECIOS -->
+                                            <h4>Por precio:</h4>
+                                            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
+                                            <div class="slider-primary">
+                                                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+                                            </div>
+                                            <!-- FINAL FILTROS POR PRECIOS -->
+                                        </div>
+                                        <!-- FINAL FILTROS -->
                                     *@
                                 </div>
                             </div>
@@ -492,8 +505,8 @@
 
                                                             </div>
                                                             @*<h1>
-                                                                @item.mostrar
-                                                            </h1>*@
+                                                                    @item.mostrar
+                                                                </h1>*@
                                                         </div>
 
 
@@ -755,7 +768,7 @@
     </div>
 
     <!--seccion de suscripciones-->
-    <div class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+    <div onload="window.parent.scrollTo(0,0)" class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
 
         <div class="row" style="padding-left:20%; padding-right:20%">
             <div class="col-12">
@@ -767,7 +780,7 @@
         </div>
         <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
             <div class="col-12">
-                <img class="img-fluid" src="~/Content/image_estadistica/imagenpromocion_1.1.png" alt="100%x280" />
+                <img loading="lazy" class="img-fluid" src="~/Content/image_estadistica/imagenpromocion_1.1.png" alt="100%x280" />
             </div>
         </div>
     </div>
@@ -782,12 +795,12 @@
         </div>
         <div class="row d-flex justify-content-center mb-4" style="padding-left:35%; padding-right:35%">
             <div class="col-12">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
+                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
             </div>
         </div>
         <div class="row" style="padding-left:20%; padding-right:20%">
             <div class="col-12">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
+                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
             </div>
         </div>
         <div class="row mb-1" style="padding-left:20%; padding-right:20%">
@@ -805,16 +818,16 @@
                 INCLUYE
             </h3>
             <div class="col-md-3 col-10">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
+                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
             </div>
             <div class="col-md-3 col-10">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
+                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
             </div>
             <div class="col-md-3 col-10">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
+                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
             </div>
             <div class="col-md-3 col-10">
-                <img class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
+                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
             </div>
         </div>
         <div class="row" style="padding-left:20%; padding-right:20%">
