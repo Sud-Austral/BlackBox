@@ -426,5 +426,10 @@ namespace AplicacionBlanco.Controllers
 
             return PartialView();
         }
+
+        public ActionResult VivianIfram()
+        {
+            return View();
+        }
     }
 }

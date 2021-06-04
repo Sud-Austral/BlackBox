@@ -2794,6 +2794,7 @@
     <Content Include="Views\Info\tresRelacionados.cshtml" />
     <Content Include="Views\Info\carruselRelacionados.cshtml" />
     <Content Include="Views\Info\Paginacion.cshtml" />
+    <Content Include="Views\Info\VivianIfram.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

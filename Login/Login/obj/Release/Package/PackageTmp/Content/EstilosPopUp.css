@@ -2507,21 +2507,33 @@ h5 {
 
 /************************maraca agua query *****************************************************/
 
-@page {
+/*@page {
     margin: 0; 
-}
-@media print {
+}*/
+/*@media print {
     #chart_wrap {
         display: block !important;
-    }
+    }*/
     /*desabilita las opcion de print de pdf*/
-    * {
+    /** {
         -webkit-print-color-adjust: exact !important;
          
     }
-}
+}*/
+/*@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+    }
+    iframe {
+        transform: scale(.7) !important;
+    }
 
-@media (max-width:576px) {
+    iframe {
+        page-break-inside: avoid;
+    }
+}*/
+
+/*@media (max-width:576px) {
     .marca-de-agua {
         background-image: url('../../Content/iconos_PopUp/bloggif_6050eb8030715.png');
         background-repeat: no-repeat;
@@ -2530,7 +2542,7 @@ h5 {
         background-position: 0px 60px !important;
 
     }
-}
+}*/
     
 
 /* *****************************************caruosel**********************************************************/
