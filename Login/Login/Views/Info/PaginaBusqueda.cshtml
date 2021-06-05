@@ -222,7 +222,7 @@
                         <!--  buscador -->
                         <div class="row justify-content-center" style="border:hidden !important;">
                             <!-- Comienzo filtros -->
-                            <div class="tags col-md-2 dropdown sidebar sidebar-md " style="border: 0.5px solid #bbc1c5; border-radius: 20px; padding-top: 12px;">
+                            <div class="tags col-md-2 col-sm-12 dropdown sidebar sidebar-md " style="border: 0.5px solid #bbc1c5; border-radius: 20px; padding-top: 12px;">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     Filtros
                                     <span class="caret"></span>
@@ -398,7 +398,7 @@
                                 </div>
                             </div>
                             <!-- COMIENZO RESULTADOS -->
-                            <div class="col-md-8" style="border: 0.5px solid #bbc1c5;border-radius:20px; ">
+                            <div class="col-md-8 col-sm-12" style="border: 0.5px solid #bbc1c5;border-radius:20px; ">
                                 @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>*@
                                 <script>
                                     // Write on keyup event of keyword input element
@@ -517,10 +517,10 @@
 
                                                             }
 
-                                                            <div class="col-md-2 col-12">
+                                                            <div class="col-md-2 col-sm-12">
                                                                 @if (item.TIPO_GRAFICO_id == 4)
                                                                 {
-                                                                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
                                                                         Adquirir
                                                                     </a>
 
@@ -528,7 +528,7 @@
                                                                 }
                                                                 else if (item.TIPO_GRAFICO_id == 3)
                                                                 {
-                                                                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
                                                                         Adquirir
                                                                     </a>
 
@@ -536,7 +536,7 @@
                                                                 }
                                                                 else if (item.TIPO_GRAFICO_id < 3)
                                                                 {
-                                                                    <a onclick="mostrador('#PBdos'); PBGrafico('@item.id');" class=" btn btn-danger btn-sm" href="#" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a onclick="mostrador('#PBdos'); PBGrafico('@item.id');" class=" btn btn-danger btn-sm" href="#" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
                                                                         Ver Gráfico
                                                                     </a>
                                                                 }
