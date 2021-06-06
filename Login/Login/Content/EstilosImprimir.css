@@ -1,4 +1,4 @@
-﻿
+﻿/*
 body, h1, h2, h3, ol, ul, div {
     width: auto !important;
     border: 0 !important;
@@ -30,59 +30,59 @@ body, h1, h2, h3, ol, ul, div {
 }
 #test3{
     color:red !important;
-}
+}*/
 
 /*@media print {
     * {
-        -webkit-print-color-adjust: exact !important;*/
-        /*print-color-adjust: exact;*/
-    /*}
-}*/
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact;
+    }
+}
 
-/*#hola{
-    color:red !important;
-}*/
-/*@page {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);*/
-    /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
-/*}*/
-
-
-/*#pruebaGrafico{
+#hola{
     color:red !important;
 }
 @page {
-    size: landscape !important;*/
-/*transform: scale(.7) !important;*/
-/*}*/
-/*@media print {*/
-   /*
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
+#pruebaGrafico{
+    color:red !important;
+}
+@page {
+    size: landscape !important;
+transform: scale(.7) !important;
+}
+@media print {
+   
    *#inlineFrameExample {
         width: 50% !important;
         height: 90% !important;
         transform: scale(.7) !important;
         display: block !important;
-    }*/
-    /*#chart_wrap {
+    }
+    #chart_wrap {
         display: block !important;
     }
     desabilita las opcion de print de pdf
   * {
         -webkit-print-color-adjust: exact !important;
          
-    }*/
+    }
 }
-/*@media print {
-    body {*/
-        /*transform: scale(.7) !important;*/
-    /*}
+@media print {
+    body {
+        transform: scale(.7) !important;
+    }
 
     iframe {
         page-break-inside: avoid;
     }
-}*/
-/*@media (max-width:576px) {
+}
+@media (max-width:576px) {
     .marca-de-agua {
         background-image: url('../Images/DataImpacto/logoDataIntelligence_transparente_Blanco.png');
        

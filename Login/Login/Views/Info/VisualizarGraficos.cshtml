@@ -11,7 +11,7 @@
     @*<link rel="stylesheet" type="text/css" href="~/Content/EstilosImprimir.css" media="print" />*@
     <title>Visualizador Graficos</title>
     @*descargar grafico*@
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
 </head>
 <body>
     <script>
@@ -57,11 +57,12 @@
 
                 /*var myIframe = document.getElementById("inlineFrameExample").contentWindow;*/
                 var frame = document.getElementById("inlineFrameExample");
-                //frame.style.height = "470px";
-                //frame.style.width = "1050px";  
+                frame.style.height = "470px";
+                frame.style.width = "1020px";
                 /*frame.style.Size ="Landscape";*/
-                /*frame.style.transform = "scale(.2)!important";*/
-                /*frame.style.zoom = "80%";*/
+               /* frame.style.padding = "50px";*/
+               /* frame.style.transform = "scale(.75)!important";*/
+              /*  frame.style.zoom = "80%";*/
                 frame.focus();
                 /* myIframe.print();*/
                 frame.contentWindow.print();
@@ -80,7 +81,9 @@
                         <p class="mt-2" style="color:#fff;">@ViewBag.Elemento.titulo</p>
                     </div>
                 </div>
+
                 <!--Iframe de grafico-->
+            
                 <div class="container">
                     <iframe id='inlineFrameExample' style="width:100%; height:460px;" src="/info/dashboard?id=@ViewBag.Elemento.id">
                     </iframe>
@@ -88,7 +91,7 @@
                 <div class="row" style="color:blue; font-size:10px;">
                     @*boton para ver mas informacion*@
                     <div class="col-md-2 col-sm-2 ">
-                        <button type="button"  class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
+                        <button type="button" class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
                     </div>
                     @*boton para descargar iframe*@
                     <div class="col-md-1 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
@@ -96,7 +99,7 @@
                             <span id="verPdf" style="font-size:12px;">Ver en Pdf</span>
                         </a>
                     </div>
-                   @*Logo de DATA INTELLIGENCE PIE DEL IFRAME*@
+                    @*Logo de DATA INTELLIGENCE PIE DEL IFRAME*@
                     <div class="col-8 col-md-9">
                         <div class="row d-flex " style="justify-content:flex-end;">
                             <div class="col-5 mb-1 p-1">
@@ -108,22 +111,41 @@
             </main>
         </section>
         @*Seccion oculta de las informacion*@
+        @*estilos para acortar texto de la descripcion larga a 10 reglones*@
         <section class="container-main mb-5" id="leerMas" style="display:none; background:#fff;">
+             <style>
+                .line-clamp2 {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 10;
+                    -webkit-box-orient: vertical;
+                    overflow-wrap: normal;
+                    overflow-y: hidden;
+                    width: 98%;
+                    margin: auto;
+                    font-family: sans-serif;
+                    line-height: 1.4;
+                }
+
+                    .line-clamp2:hover {
+                        -webkit-line-clamp: 100;
+                        cursor: pointer;
+                    }
+             </style>
             <div class="row justify-content-center">
                 <div class="col-md-10 col-sm-12" style="border:2px solid #e6e6e6; border-radius:15px; ">
                     <div class="row">
                         <div class="col-md-4 col-sm-10 mt-3" style="border-right:0.5px solid #e6e6e6; white-space:normal;">
                             <p style="margin-bottom:0px !important; "><strong>Descripción:</strong></p>
 
-                            <p>
-                               @ViewBag.ELEMENTO.descripcion_larga
+                            <p class='line-clamp2'>
+                                @ViewBag.ELEMENTO.descripcion_larga
                             </p>
 
                         </div>
                         <div class="col-md-3 col-10" style="border-right: 0.5px solid #e6e6e6; white-space: normal;">
                             <p class="mt-md-3 mb-md-0"><strong>Fuente de Datos:</strong></p>
                             <p class="mb-md-1">@ViewBag.ELEMENTO.FUENTE.nombre</p>
-                            
+
                             <p class="mb-md-1">
                                 <strong>Periodo: </strong>
 
@@ -133,16 +155,18 @@
                                 <strong>@ViewBag.ELEMENTO.TERRITORIO.auxiliar:</strong>
 
                                 @ViewBag.ELEMENTO.TERRITORIO.nombre
-                            
+
                             </p>
-                            <p class="mb-md-1"><strong>País:</strong> Chile-
-                            @ViewBag.ELEMENTO.TERRITORIO.iso_pais</p>
-                            
-                            
+                            <p class="mb-md-1">
+                                <strong>País:</strong> Chile-
+                                @ViewBag.ELEMENTO.TERRITORIO.iso_pais
+                            </p>
+
+
                             <p class="mb-md-1"><Strong>Unidad de Medida:</Strong></p>
                             <p style="white-space: normal;">@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.nombre (@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.descripcion)</p>
                         </div>
-                       
+
                         <div class="col-md-5 col-10">
                             <p class="mt-md-3"><strong>Ver más información</strong></p>
                             <div class="row justify-content-center mb-md-3">
@@ -157,7 +181,7 @@
                                 <div class="col-md-5 col-10 text-center">
                                     <a href="https://dataintelligence.store/collections">
                                         <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                        <button class="btn btn-danger"  data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
+                                        <button class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
                                             Ver Reporte 360°
                                         </button>
                                     </a>
@@ -169,7 +193,7 @@
                                         -webkit-line-clamp: 3;
                                         -webkit-box-orient: vertical;
                                         overflow-wrap: break-word;
-                                        overflow-y:hidden;
+                                        overflow-y: hidden;
                                         width: 98%;
                                         margin: auto;
                                         font-family: sans-serif;
