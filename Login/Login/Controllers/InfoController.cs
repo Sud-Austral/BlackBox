@@ -83,7 +83,8 @@ namespace AplicacionBlanco.Controllers
             ViewBag.palabra = id;
             // = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
             
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("select * from grafico where titulo like '% MANZANA %'")
+                                                                //Where(x => x.nombre.Contains(id) || x.titulo.Contains(id))  // || x.tags.Contains(id))
                                                 .OrderBy(x => x.id)
                                                 .Take(200);
             ViewBag.Resultado = NEW_GRAFICOS;
