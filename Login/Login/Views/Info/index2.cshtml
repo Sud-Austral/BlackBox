@@ -31,7 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-   
+
     <div class="container">
         @*Buscador general *@
         <div class="container">
@@ -318,6 +318,9 @@
         carruselRelacionados(@ViewBag.Elemento.CATEGORIA.PRODUCTO_id);
     </script>
     @*<h1>@ViewBag.Elemento.CATEGORIA_id</h1>*@
-    
+
+    <script>
+        $(".line-clamp").text($(".line-clamp").text().split(",").join(", "));
+    </script>
 </body>
 </html>

@@ -35,10 +35,10 @@
                         font-size: 1rem;
                     }
 
-                        .line-clamp3:hover {
+                        /*.line-clamp3:hover {
                             -webkit-line-clamp: 100;
                             cursor: pointer;
-                        }
+                        }*/
                 </style>
                 <div class="col-md-10 col-8">
                     <div id="carouselExampleIndicators2" class="carousel" data-ride="carousel">
@@ -46,7 +46,7 @@
                             <div class="carousel-item active">
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[0].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[0].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; color: #000; padding:0px !important; ">
                                                 @ViewBag.Carrusel[0].titulo
                                             </div>
@@ -54,14 +54,14 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[0]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[0].CATEGORIA.nombre 1</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[0].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[0].CATEGORIA.PRODUCTO.nombre 1</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[0].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[1].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[1].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[1].titulo
                                             </div>
@@ -69,14 +69,14 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[1]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[1].CATEGORIA.nombre 2</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[1].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[1].CATEGORIA.PRODUCTO.nombre 2</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[1].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[2].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[2].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[2].titulo
                                             </div>
@@ -84,8 +84,8 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[2]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[2].CATEGORIA.nombre 3</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[2].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[2].CATEGORIA.PRODUCTO.nombre 3</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[2].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -95,7 +95,7 @@
                             <div class="carousel-item">
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[3].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[3].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[3].titulo
                                             </div>
@@ -103,14 +103,14 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[3]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[3].CATEGORIA.nombre 4</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[3].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[3].CATEGORIA.PRODUCTO.nombre 4</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[3].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[4].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[4].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[4].titulo
                                             </div>
@@ -118,14 +118,14 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[4]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[4].CATEGORIA.nombre 5</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[4].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[4].CATEGORIA.PRODUCTO.nombre 5</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[4].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[5].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[5].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[5].titulo
                                             </div>
@@ -133,8 +133,8 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[5]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[5].CATEGORIA.nombre 6</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[5].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[5].CATEGORIA.PRODUCTO.nombre 6</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[5].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -144,7 +144,7 @@
                             <div class="carousel-item">
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[6].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[6].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[6].titulo
                                             </div>
@@ -152,14 +152,14 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[6]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[6].CATEGORIA.nombre 7</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[6].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[6].CATEGORIA.PRODUCTO.nombre 7</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[6].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[7].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[7].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[7].titulo
                                             </div>
@@ -167,14 +167,14 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[7]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[7].CATEGORIA.nombre 8</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[7].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[7].CATEGORIA.PRODUCTO.nombre 8</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[7].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[8].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[8].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[8].titulo
                                             </div>
@@ -182,8 +182,8 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[8]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[8].CATEGORIA.nombre 9</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[8].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[8].CATEGORIA.PRODUCTO.nombre 9</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[8].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -193,7 +193,7 @@
                             <div class="carousel-item">
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[9].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[9].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[9].titulo
                                             </div>
@@ -201,14 +201,14 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[9]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[9].CATEGORIA.nombre 10</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[9].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[9].CATEGORIA.PRODUCTO.nombre 10</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[9].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[10].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[10].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[10].titulo
                                             </div>
@@ -216,14 +216,14 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[10]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[10].CATEGORIA.nombre 11</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[10].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[10].CATEGORIA.PRODUCTO.nombre 11</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[10].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <a class="link-card" href="#" style="text-decoration:none;">
+                                        <a class="link-card" href="/info/Index2?id=@ViewBag.Carrusel[11].id" style="text-decoration:none;">
                                             <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Carrusel[11].titulo" class="card-header mb-1 text-center line-clamp3" style="border-radius: 10px; background-color: transparent; border: 0.5px solid #000; color: #000; padding: 0px !important;">
                                                 @ViewBag.Carrusel[11].titulo
                                             </div>
@@ -231,8 +231,8 @@
                                                 <img class="img-fluid" alt="100%x280"
                                                      src="@ViewBag.Carrusel[11]._url_Image">
                                                 <div class="card-body">
-                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[11].CATEGORIA.nombre 12</h4>
-                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[11].CATEGORIA.PRODUCTO.nombre</p>
+                                                    <h4 class="card-title" style="color:#000">@ViewBag.Carrusel[11].CATEGORIA.PRODUCTO.nombre 12</h4>
+                                                    <p class="card-text" style="color:#000">@ViewBag.Carrusel[11].CATEGORIA.PRODUCTO.SECTOR.nombre</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -246,5 +246,6 @@
         </div>
     </section>
 </div>
+
 
 

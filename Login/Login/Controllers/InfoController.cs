@@ -75,9 +75,7 @@ namespace AplicacionBlanco.Controllers
         }
 
         //public ActionResult Index2(int id = 1, string id2 = "grafico")
-        
 
-        
         public ActionResult PaginaBusqueda(string id = "1")
         {
             ViewBag.palabra = id;
