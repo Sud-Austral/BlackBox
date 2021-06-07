@@ -75,9 +75,7 @@ namespace AplicacionBlanco.Controllers
         }
 
         //public ActionResult Index2(int id = 1, string id2 = "grafico")
-        
 
-        
         public ActionResult PaginaBusqueda(string id = "1")
         {
             ViewBag.palabra = id;
@@ -372,6 +370,7 @@ namespace AplicacionBlanco.Controllers
             id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA.PRODUCTO_id;
             var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
             ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+
             //var rand = new Random();
             //GRAFICO graf = new GRAFICO();
             //try
