@@ -51,5 +51,5 @@ function carruselRelacionados(id) {
                 alert('Fail');
             }
         });
-
+   
 }

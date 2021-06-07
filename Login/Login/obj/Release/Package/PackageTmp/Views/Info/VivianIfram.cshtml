@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VivianIfram</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <iframe id='inlineFrameExample' style="width:100%; height:460px;" src="https://analytics.zoho.com/open-view/2395394000006351057?ZOHO_CRITERIA=%22Trasposicion_4.10%22.%22Cod_regi%C3%B3n%22%20%3D%2013"></iframe>
+    </div>
+    <a href="javascript:void(0);" style="text-decoration: none !important;">
+        <span id="verPdf2" style="font-size:12px;">Ver en Pdf</span>
+    </a>
+    <script type="text/javascript">
+        $("#verPdf2").click(function () {
+            alert("Hola");
+            var myIframe = document.getElementById("inlineFrameExample").contentWindow;
+            myIframe.focus();
+            myIframe.print();
+            return false;
+        });
+    </script>
+</body>
+</html>
