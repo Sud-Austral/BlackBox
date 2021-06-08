@@ -533,10 +533,13 @@ namespace Login.Controllers
         public PartialViewResult UsuarioSelectProducto2( int id=1)
         {
             var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id);
-            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).ToList();//Liberados/Gratis
-            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
-            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
-            string NombreCategoria = "No hay datos de esta categoria";
+            //var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
+
+
+            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3); //.Take(200); //.ToList();//Liberados/Gratis
+            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3); //.Take(200); //.ToList();//Informes
+            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4); //.Take(200); //.ToList();//Reportes
+            string NombreCategoria = "No hay información de esta categoria";
             if(NEW_GRAFICOS.Count() > 0)
             {
                 NombreCategoria = NEW_GRAFICOS.ToList()[0].CATEGORIA.nombre;
@@ -561,14 +564,26 @@ namespace Login.Controllers
             suscrip.Add(1001);
             //Aun tenemos que resolver esto
 
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
-            foreach (var item in NEW_GRAFICOS)
+            //var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
+            IEnumerable<GRAFICO> segundaCategoria;
+            IEnumerable<GRAFICO> NEW_GRAFICOS2;
+            if (NEW_GRAFICOS.Count() < 200)
+            {
+                segundaCategoria = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
+                NEW_GRAFICOS2 = NEW_GRAFICOS.Concat(segundaCategoria);
+            }
+            else
+            {
+                NEW_GRAFICOS2 = NEW_GRAFICOS;
+            }
+            foreach (var item in NEW_GRAFICOS2)
             {
                 item.suscripciones = suscrip;
             }
             //var resultado = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id == 3).ToList();
 
-            ViewBag.Resultado = NEW_GRAFICOS.ToList();
+            ViewBag.Resultado = NEW_GRAFICOS2;
            
             //Listas de Filtros
             List<string> Paises = new List<string>();
@@ -579,7 +594,7 @@ namespace Login.Controllers
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
 
-            foreach (var item in NEW_GRAFICOS.Where(x => x.nombre.Contains(id)).ToList())
+            foreach (var item in NEW_GRAFICOS2)    //.Where(x => x.nombre.Contains(id)).ToList())
             {
                 if (!Paises.Contains(item.TERRITORIO.nombre))
                 {

@@ -88,15 +88,17 @@ namespace AplicacionBlanco.Controllers
             {
                NEW_GRAFICOS  = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
                                                 .OrderBy(x => x.id)
-                                                .Take(200);
-                union = prioridad.Union(NEW_GRAFICOS).Distinct();
+                                                .Take(200 - prioridad.Count());
+                int ent = NEW_GRAFICOS.Count();
+                union = prioridad.Concat(NEW_GRAFICOS); //.Distinct();
+               
             }
             else
             {
                 union = prioridad;
             }
-            
-            
+            int ent2 = union.Count();
+
             ViewBag.Resultado = union;
             //ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
             //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
