@@ -83,10 +83,11 @@
 
             </div>
         </div>
-        <!--descargar pdf iframe-->
+       
+        
         @*seccion iframe grafico*@
         <section class="contenedor-main row mr-md-2 justify-content-center">
-            <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; height:580px !important;">
+            <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; max-height:590px !important;">
                 <div class="row bg-dark mb-2" style="border: 1px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; max-height: 65px;">
                     <div class="col-md-1 col-2">
                         <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
@@ -97,7 +98,7 @@
                 </div>
                 <!--Iframe de grafico-->
                 <div class="container">
-                    <iframe id='inlineFrameExample' style="width:100%; height:460px;" src="/info/dashboard?id=@ViewBag.Elemento.id">
+                    <iframe id='inlineFrameExample2' style="width:100%; height:460px;" src="/info/dashboard?id=@ViewBag.Elemento.id">
                     </iframe>
                 </div>
                 <div class="row" style="color:blue; font-size:10px;">
@@ -108,9 +109,27 @@
                     @*boton para descargar iframe*@
                     <div class="col-md-1 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
                         <a href="javascript:void(0);" style="text-decoration: none !important;">
-                            <span id="verPdf" style="font-size:12px;">Ver en Pdf</span>
+                            <span id="verPdf2" style="font-size:12px;">Ver en Pdf</span>
                         </a>
                     </div>
+                    <!--descargar pdf iframe-->
+                    <script type="text/javascript">
+                        $("#verPdf2").click(function () {
+
+                            /*var myIframe = document.getElementById("inlineFrameExample").contentWindow;*/
+                            var frame = document.getElementById("inlineFrameExample2");
+                            frame.style.height = "470px";
+                            frame.style.width = "1020px";
+                            /*frame.style.Size ="Landscape";*/
+                            /* frame.style.padding = "50px";*/
+                            /* frame.style.transform = "scale(.75)!important";*/
+                            /*  frame.style.zoom = "80%";*/
+                            frame.focus();
+                            /* myIframe.print();*/
+                            frame.contentWindow.print();
+                            return false;
+                        });
+                    </script>
                     @*Logo de DATA INTELLIGENCE PIE DEL IFRAME*@
                     <div class="col-8 col-md-9">
                         <div class="row d-flex " style="justify-content:flex-end;">
