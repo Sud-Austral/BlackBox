@@ -952,7 +952,7 @@
     <script>
         function PBGrafico(Grafico) {
             var id = "parametros de la funcion";
-            $('#PBdos').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#PBdos').html('<h2>Cargando Información...espere un momento por favor</h2>')
 
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
@@ -973,7 +973,7 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail PBGrafico VisualizarGraficos');
+                        $("#PBdos").html('<h2>No pudimos encontrar tu Gráfico, pero a la brevedad estara disponible.</h2>');
                     }
 
                 });
@@ -982,7 +982,7 @@
 
         function PBGrafico2(id) {
             
-            $('#PBcuatro').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#PBcuatro').html('<h2>Cargando Información...espere un momento por favor</h2>')
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
             $.ajax(
@@ -1002,14 +1002,15 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail PBGrafico2 ContenidoGrafico');
+                        //alert('Fail PBGrafico2 ContenidoGrafico');
+                        $("#PBcuatro").html('<h2>Aun estamos trabajando en mostrar más información sobre este tema.</h2>');
                     }
                 });
 
         }
         function PBGrafico3(id) {
 
-            $('#PBcinco').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#PBcinco').html('<h2>Cargando Información...espere un momento por favor</h2>')
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
             $.ajax(
@@ -1029,7 +1030,8 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail PBGrafico3  CarrucelBusqueda');
+                        //alert('Fail PBGrafico3  CarrucelBusqueda');
+                        $("#PBcinco").html('<h2>No hemos encontrado gráficos relacionados</h2>');
                     }
                 });
         }

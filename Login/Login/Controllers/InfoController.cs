@@ -79,31 +79,8 @@ namespace AplicacionBlanco.Controllers
         public ActionResult PaginaBusqueda(string id = "1")
         {
             ViewBag.palabra = id;
-            // = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
-            var prioridad = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'")
-                                                .Take(200);
-            IEnumerable<GRAFICO> NEW_GRAFICOS;
-            IEnumerable<GRAFICO> union;
-            if (prioridad.Count() < 200)
-            {
-               NEW_GRAFICOS  = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
-                                                .OrderBy(x => x.id)
-                                                .Take(200 - prioridad.Count());
-                int ent = NEW_GRAFICOS.Count();
-                union = prioridad.Concat(NEW_GRAFICOS); //.Distinct();
-               
-            }
-            else
-            {
-                union = prioridad;
-            }
-            int ent2 = union.Count();
-
+            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
             ViewBag.Resultado = union;
-            //ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
-            //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
-            //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
-            //Listas de Filtros
 
             List<string> Paises = new List<string>();
             List<string> Escala = new List<string>();
@@ -249,45 +226,31 @@ namespace AplicacionBlanco.Controllers
 
         public ActionResult ResultadoNiveles(int id = 10, int id2 = 1)
         {
-            List<GRAFICO> Graficos = new List<GRAFICO>();
-            switch (id2)
-            {
-                case 1:
-                    Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id == id).ToList();
-                    break;
-                case 2:
-                    Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == id).ToList();
-                    break;
-                case 3:
-                    Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO_id == id).ToList();
-                    break;
-                case 4:
-                    Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id).ToList();
-                    break;
-                default:
-                    break;
-            }
-            //ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id == id).ToList();
-            //var Graficos = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id == id).ToList();
+            IEnumerable<GRAFICO> Graficos = UtilBusqueda.ResultadoNiveles(id, id2);
+            ViewBag.Resultado = Graficos;
+            ViewBag.palabra = Graficos.First().CATEGORIA.nombre;
             List<string> Paises = new List<string>();
+            List<string> Escala = new List<string>();
+            List<string> TipoGrafico = new List<string>();
             List<string> Temporalidad = new List<string>();
             List<string> Producto = new List<string>();
             List<string> Industria = new List<string>();
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
-            List<string> TipoGrafico = new List<string>();
-            
-                
-                
+            List<string> Parametro = new List<string>();
             foreach (var item in Graficos)
             {
+                if (!Paises.Contains(item.TERRITORIO.auxiliar))
+                {
+                    Paises.Add(item.TERRITORIO.auxiliar);
+                }
+                if (!Escala.Contains(item.TERRITORIO.nombre))
+                {
+                    Escala.Add(item.TERRITORIO.nombre);
+                }
                 if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
                 {
                     TipoGrafico.Add(item.TIPO_GRAFICO.nombre);
-                }
-                if (!Paises.Contains(item.TERRITORIO.nombre))
-                {
-                    Paises.Add(item.TERRITORIO.nombre);
                 }
                 if (!Temporalidad.Contains(item.TEMPORALIDAD.nombre))
                 {
@@ -305,19 +268,26 @@ namespace AplicacionBlanco.Controllers
                 {
                     Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
                 }
+
                 if (!Categoria.Contains(item.CATEGORIA.nombre))
                 {
                     Categoria.Add(item.CATEGORIA.nombre);
                 }
+                if (!Parametro.Contains(item.PARAMETRO.nombre))
+                {
+                    Parametro.Add(item.PARAMETRO.nombre);
+                }
             }
             ViewBag.Paises = Paises;
+            ViewBag.Escala = Escala;
+            ViewBag.TipoGrafico = TipoGrafico;
             ViewBag.Temporalidad = Temporalidad;
             ViewBag.Producto = Producto;
             ViewBag.Industria = Industria;
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
-            ViewBag.Resultado = Graficos;
-            ViewBag.TipoGrafico = TipoGrafico;
+            ViewBag.Parametro = Parametro;
+
             return View("PaginaBusqueda");
         }
         
