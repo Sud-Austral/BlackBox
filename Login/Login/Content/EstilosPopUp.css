@@ -2507,20 +2507,25 @@ h5 {
 
 /************************maraca agua query *****************************************************/
 
+/*@media screen {
+    P {
+        color: green;
+    }
+}*/
 /*@page {
     margin: 0; 
-}*/
-/*@media print {
+}
+@media print {
     #chart_wrap {
         display: block !important;
-    }*/
-    /*desabilita las opcion de print de pdf*/
-    /** {
+    }
+    desabilita las opcion de print de pdf
+    * {
         -webkit-print-color-adjust: exact !important;
          
     }
-}*/
-/*@media print {
+}
+@media print {
     * {
         -webkit-print-color-adjust: exact !important;
     }
@@ -2531,9 +2536,9 @@ h5 {
     iframe {
         page-break-inside: avoid;
     }
-}*/
-
-/*@media (max-width:576px) {
+}
+*/
+/*/*@media (max-width:576px) {
     .marca-de-agua {
         background-image: url('../../Content/iconos_PopUp/bloggif_6050eb8030715.png');
         background-repeat: no-repeat;

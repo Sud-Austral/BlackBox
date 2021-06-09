@@ -145,7 +145,7 @@
             overflow-y: auto !important;
         }
     </style>
-    <div class="container mb-3">
+    <div class="container-fluid mb-3">
 
         @*Buscador general *@
         <div class="container">
@@ -209,20 +209,20 @@
                             <!--fin de Fila que contiene botón borrar filtro y buscador -->
                             <!--  buscador -->
                             @*<div class="col-md-8 pr-0">
-                                    <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
-                                            </div>
-                                            <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
+                                <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
                                         </div>
+                                        <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                     </div>
-                                </div>*@
+                                </div>
+                            </div>*@
                         </div>
                         <!--  buscador -->
                         <div class="row justify-content-center" style="border:hidden !important;">
                             <!-- Comienzo filtros -->
-                            <div class="tags col-md-2 dropdown sidebar sidebar-md " style="border: 0.5px solid #bbc1c5; border-radius: 20px; padding-top: 12px;">
+                            <div class="tags col-md-2 col-sm-12 dropdown sidebar sidebar-md " style="border: 0.5px solid #bbc1c5; border-radius: 20px; padding-top: 12px;">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     Filtros
                                     <span class="caret"></span>
@@ -347,58 +347,58 @@
                                     </div>
                                     @*
 
-                                            <!-- FILTROS POR FECHA -->
+                                        <!-- FILTROS POR FECHA -->
 
-                                            <h4>Por fecha:</h4>
+                                        <h4>Por fecha:</h4>
 
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        Fecha inicial:
-                                                    </div>
-                                                    <input id="startDate" width="220" />
-                                                    <div class="col-12">
-                                                        Fecha término:
-                                                    </div>
-                                                    <input id="endDate" width="220" />
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    Fecha inicial:
                                                 </div>
+                                                <input id="startDate" width="220" />
+                                                <div class="col-12">
+                                                    Fecha término:
+                                                </div>
+                                                <input id="endDate" width="220" />
                                             </div>
-                                            <script>
-                                                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                                $('#startDate').datepicker({
-                                                    uiLibrary: 'bootstrap4',
-                                                    iconsLibrary: 'fontawesome',
-                                                    minDate: today,
-                                                    maxDate: function () {
-                                                        return $('#endDate').val();
-                                                    }
-                                                });
-                                                $('#endDate').datepicker({
-                                                    uiLibrary: 'bootstrap4',
-                                                    iconsLibrary: 'fontawesome',
-                                                    minDate: function () {
-                                                        return $('#startDate').val();
-                                                    }
-                                                });
-                                            </script>
-                                            <!-- FINAL FILTROS POR FECHA -->
-
-                                            <div class="padding"></div>
-
-                                            <!-- COMIENZO FILTRO POR PRECIOS -->
-                                            <h4>Por precio:</h4>
-                                            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-                                            <div class="slider-primary">
-                                                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
-                                            </div>
-                                            <!-- FINAL FILTROS POR PRECIOS -->
                                         </div>
-                                        <!-- FINAL FILTROS -->
+                                        <script>
+                                            var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                                            $('#startDate').datepicker({
+                                                uiLibrary: 'bootstrap4',
+                                                iconsLibrary: 'fontawesome',
+                                                minDate: today,
+                                                maxDate: function () {
+                                                    return $('#endDate').val();
+                                                }
+                                            });
+                                            $('#endDate').datepicker({
+                                                uiLibrary: 'bootstrap4',
+                                                iconsLibrary: 'fontawesome',
+                                                minDate: function () {
+                                                    return $('#startDate').val();
+                                                }
+                                            });
+                                        </script>
+                                        <!-- FINAL FILTROS POR FECHA -->
+
+                                        <div class="padding"></div>
+
+                                        <!-- COMIENZO FILTRO POR PRECIOS -->
+                                        <h4>Por precio:</h4>
+                                        Entre <div id="price1">$300</div> y <div id="price2">$800</div>
+                                        <div class="slider-primary">
+                                            <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+                                        </div>
+                                        <!-- FINAL FILTROS POR PRECIOS -->
+                                    </div>
+                                    <!-- FINAL FILTROS -->
                                     *@
                                 </div>
                             </div>
                             <!-- COMIENZO RESULTADOS -->
-                            <div class="col-md-8" style="border: 0.5px solid #bbc1c5;border-radius:20px; ">
+                            <div class="col-md-8 col-sm-12" style="border: 0.5px solid #bbc1c5;border-radius:20px; ">
                                 @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>*@
                                 <script>
                                     // Write on keyup event of keyword input element
@@ -517,10 +517,10 @@
 
                                                             }
 
-                                                            <div class="col-md-2 col-12">
+                                                            <div class="col-md-2 col-sm-12">
                                                                 @if (item.TIPO_GRAFICO_id == 4)
                                                                 {
-                                                                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
                                                                         Adquirir
                                                                     </a>
 
@@ -528,7 +528,7 @@
                                                                 }
                                                                 else if (item.TIPO_GRAFICO_id == 3)
                                                                 {
-                                                                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
                                                                         Adquirir
                                                                     </a>
 
@@ -536,15 +536,15 @@
                                                                 }
                                                                 else if (item.TIPO_GRAFICO_id < 3)
                                                                 {
-                                                                    <a onclick="mostrador('#PBdos'); PBGrafico('@item.id');" class=" btn btn-danger btn-sm" href="#" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                                                    <a onclick="mostrador('#PBdos'); PBGrafico('@item.id');" class=" btn btn-danger btn-sm" href="#" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
                                                                         Ver Gráfico
                                                                     </a>
                                                                 }
 
                                                             </div>
                                                             @*<h1>
-                                    @item.mostrar
-                                </h1>*@
+                                                                @item.mostrar
+                                                            </h1>*@
                                                         </div>
 
 
@@ -775,7 +775,7 @@
                                             }
                                         }
                                     </script>
-                                    <button class="ml-5 btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');"  style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                                    <button class="ml-5 btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                                         Ver más
                                     </button>
                                 </div>
@@ -806,89 +806,90 @@
             </div>
         </div>
         <!-- FINAL RESULTADOS DE BUSQUEDA -->
-    </div>
+        <!--seccion de suscripciones-->
+        <div onload="window.parent.scrollTo(0,0)" class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
 
-    <!--seccion de suscripciones-->
-    <div onload="window.parent.scrollTo(0,0)" class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+            <div class="row" style="padding-left:20%; padding-right:20%">
+                <div class="col-12">
+                    <h3 style="color:#fff; padding:40px 0px;">
+                        ¡Imagina toda la información pública
+                        de un país en una sola plataforma!
+                    </h3>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
+                <div class="col-12">
+                    <img loading="lazy" class="img-fluid" src="~/Content/image_estadistica/imagenpromocion_1.1.png" alt="100%x280" />
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
 
-        <div class="row" style="padding-left:20%; padding-right:20%">
-            <div class="col-12">
-                <h3 style="color:#fff; padding:40px 0px;">
-                    ¡Imagina toda la información pública
-                    de un país en una sola plataforma!
+            <div class="row" style="padding-left:20%; padding-right:20%">
+                <div class="col-12">
+                    <h3 style="color:#fff; padding:40px 0px; margin-bottom:10px;">
+                        ¡Y para los que necesitan más información!
+                    </h3>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mb-4" style="padding-left:35%; padding-right:35%">
+                <div class="col-12">
+                    <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
+                </div>
+            </div>
+            <div class="row" style="padding-left:20%; padding-right:20%">
+                <div class="col-12">
+                    <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
+                </div>
+            </div>
+            <div class="row mb-1" style="padding-left:20%; padding-right:20%">
+
+                <div class="col-12">
+                    <h3 style="color:#fff; padding:40px 0px;">
+                        La suscripción anual Cuenta Profesional fue diseñada especialmente para potenciar las investigaciones, proyectos o planificaciones de quienes requieren una mayor cantidad de información.
+
+                    </h3>
+                </div>
+
+            </div>
+            <div class="row mb-4" style="padding-left:20%; padding-right:20%">
+                <h3 style="color:#009fcf">
+                    INCLUYE
                 </h3>
+                <div class="col-md-3 col-10">
+                    <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
+                </div>
+                <div class="col-md-3 col-10">
+                    <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
+                </div>
+                <div class="col-md-3 col-10">
+                    <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
+                </div>
+                <div class="col-md-3 col-10">
+                    <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
+                </div>
+            </div>
+            <div class="row" style="padding-left:20%; padding-right:20%">
+                <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right;">
+                    <span style="color:white; font-size:18px;">USD</span>
+                    <span style="color:red; font-size:22px;">$35</span>
+                    <br />
+                    <span style="color:white; font-size:18px;"> mensuales</span>
+                </div>
+                <div class="col-md-6" style="text-align:left;">
+                    <a href="https://dataintelligence.store/products/avance-del-covid-19-gt" target="_blank" class="btn btn-danger btn-sm mt-2 text-left enlace" style="border-radius:20px; font-size:16px;">
+                        Adquirir
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="row d-flex justify-content-center" style="padding-left:20%; padding-right:20%">
-            <div class="col-12">
-                <img loading="lazy" class="img-fluid" src="~/Content/image_estadistica/imagenpromocion_1.1.png" alt="100%x280" />
-            </div>
+        <!--carrucel el codigo esta en la vista parcial CarrucelBusqueda-->
+        <div id="PBcinco" style="display:none;">
+
         </div>
     </div>
-    <div class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
 
-        <div class="row" style="padding-left:20%; padding-right:20%">
-            <div class="col-12">
-                <h3 style="color:#fff; padding:40px 0px; margin-bottom:10px;">
-                    ¡Y para los que necesitan más información!
-                </h3>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center mb-4" style="padding-left:35%; padding-right:35%">
-            <div class="col-12">
-                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_2.png" />
-            </div>
-        </div>
-        <div class="row" style="padding-left:20%; padding-right:20%">
-            <div class="col-12">
-                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3.png" />
-            </div>
-        </div>
-        <div class="row mb-1" style="padding-left:20%; padding-right:20%">
-
-            <div class="col-12">
-                <h3 style="color:#fff; padding:40px 0px;">
-                    La suscripción anual Cuenta Profesional fue diseñada especialmente para potenciar las investigaciones, proyectos o planificaciones de quienes requieren una mayor cantidad de información.
-
-                </h3>
-            </div>
-
-        </div>
-        <div class="row mb-4" style="padding-left:20%; padding-right:20%">
-            <h3 style="color:#009fcf">
-                INCLUYE
-            </h3>
-            <div class="col-md-3 col-10">
-                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_1.png" />
-            </div>
-            <div class="col-md-3 col-10">
-                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_2.png" />
-            </div>
-            <div class="col-md-3 col-10">
-                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_3.png" />
-            </div>
-            <div class="col-md-3 col-10">
-                <img loading="lazy" class="img-fluid" src="~/Content/img/Promociones/imagenpromocion_3_4.png" />
-            </div>
-        </div>
-        <div class="row" style="padding-left:20%; padding-right:20%">
-            <div class="col-6" style="border-right:0.5px solid #b5a7a7;font-size:9px;text-align:right;">
-                <span style="color:white; font-size:18px;">USD</span>
-                <span style="color:red; font-size:22px;">$35</span>
-                <br />
-                <span style="color:white; font-size:18px;"> mensuales</span>
-            </div>
-            <div class="col-md-6" style="text-align:left;">
-                <a href="https://dataintelligence.store/products/avance-del-covid-19-gt" target="_blank" class="btn btn-danger btn-sm mt-2 text-left enlace" style="border-radius:20px; font-size:16px;">
-                    Adquirir
-                </a>
-            </div>
-        </div>
-    </div>
-    <!--carrucel el codigo esta en la vista parcial CarrucelBusqueda-->
-    <div id="PBcinco" style="display:none;">
-
-    </div>
+    
 
     @*Jquery, Popper bootstrap.min.js*@
     @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -1035,11 +1036,11 @@
     </script>
 
     @*Jquery, Popper bootstrap.min.js*@
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>*@
     @*este script va con la funcion de cargar el gif en la seccion siete*@
     <script>
         $("#contar").text("@i  resultados");

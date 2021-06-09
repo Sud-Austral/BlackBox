@@ -75,19 +75,31 @@ namespace AplicacionBlanco.Controllers
         }
 
         //public ActionResult Index2(int id = 1, string id2 = "grafico")
-        
 
-        
         public ActionResult PaginaBusqueda(string id = "1")
         {
             ViewBag.palabra = id;
             // = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
-            
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("select * from grafico where titulo like '% MANZANA %'")
-                                                                //Where(x => x.nombre.Contains(id) || x.titulo.Contains(id))  // || x.tags.Contains(id))
-                                                .OrderBy(x => x.id)
+            var prioridad = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'")
                                                 .Take(200);
-            ViewBag.Resultado = NEW_GRAFICOS;
+            IEnumerable<GRAFICO> NEW_GRAFICOS;
+            IEnumerable<GRAFICO> union;
+            if (prioridad.Count() < 200)
+            {
+               NEW_GRAFICOS  = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
+                                                .OrderBy(x => x.id)
+                                                .Take(200 - prioridad.Count());
+                int ent = NEW_GRAFICOS.Count();
+                union = prioridad.Concat(NEW_GRAFICOS); //.Distinct();
+               
+            }
+            else
+            {
+                union = prioridad;
+            }
+            int ent2 = union.Count();
+
+            ViewBag.Resultado = union;
             //ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
             //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
             //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
@@ -102,7 +114,7 @@ namespace AplicacionBlanco.Controllers
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
             List<string> Parametro = new List<string>();
-            foreach (var item in NEW_GRAFICOS)
+            foreach (var item in union)
             {
                 if (!Paises.Contains(item.TERRITORIO.auxiliar))
                 {
@@ -160,8 +172,8 @@ namespace AplicacionBlanco.Controllers
             //var NEW_GRAFICOS
             ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
                                                 .OrderBy(x => x.id)
-                                                .Skip(200 * id2)
-                                                .Take(200);
+                                                .Skip(200 + 50 * id2)
+                                                .Take(50);
             
             return PartialView();
         }
@@ -373,6 +385,7 @@ namespace AplicacionBlanco.Controllers
             id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA.PRODUCTO_id;
             var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
             ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+
             //var rand = new Random();
             //GRAFICO graf = new GRAFICO();
             //try

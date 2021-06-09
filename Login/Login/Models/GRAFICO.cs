@@ -135,28 +135,28 @@ namespace Login.Models
         {
             get
             {
-                string industria_id = CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id.ToString("D2");
-                string sector_id = CATEGORIA.PRODUCTO.SECTOR_id.ToString("D2");
-                string producto_id = CATEGORIA.PRODUCTO_id.ToString("D2");
-                string categoria_id = CATEGORIA_id.ToString("D3");
-                //https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/001Agricultura/001001Agricultura/0010010001Palta/001001000100001Primera_Palta/paltas3.csv
+                //string industria_id = CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id.ToString("D2");
+                //string sector_id = CATEGORIA.PRODUCTO.SECTOR_id.ToString("D2");
+                //string producto_id = CATEGORIA.PRODUCTO_id.ToString("D2");
+                //string categoria_id = CATEGORIA_id.ToString("D3");
+                ////https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/001Agricultura/001001Agricultura/0010010001Palta/001001000100001Primera_Palta/paltas3.csv
 
-                string industria_nombre = CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre;
-                string sector_nombre = CATEGORIA.PRODUCTO.SECTOR.nombre;
-                string producto_nombre = CATEGORIA.PRODUCTO.nombre;
-                string categoria_nombre = CATEGORIA.nombre;
-                string salida = industria_id + industria_nombre + "/" +
-                            sector_id + sector_nombre + "/" +
-                            producto_id + producto_nombre + "/" +
-                            categoria_id + categoria_nombre + "/";
-                string accentedStr = salida;
-                byte[] tempBytes;
-                tempBytes = System.Text.Encoding.GetEncoding("ISO-8859-8").GetBytes(accentedStr);
-                string asciiStr = System.Text.Encoding.UTF8.GetString(tempBytes);
-                salida = asciiStr.ToLower();
-                salida = "https://github.com/Sud-Austral/MPG/raw/main/Image/" + salida + id.ToString() + ".png";
+                //string industria_nombre = CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre;
+                //string sector_nombre = CATEGORIA.PRODUCTO.SECTOR.nombre;
+                //string producto_nombre = CATEGORIA.PRODUCTO.nombre;
+                //string categoria_nombre = CATEGORIA.nombre;
+                //string salida = industria_id + industria_nombre + "/" +
+                //            sector_id + sector_nombre + "/" +
+                //            producto_id + producto_nombre + "/" +
+                //            categoria_id + categoria_nombre + "/";
+                //string accentedStr = salida;
+                //byte[] tempBytes;
+                //tempBytes = System.Text.Encoding.GetEncoding("ISO-8859-8").GetBytes(accentedStr);
+                //string asciiStr = System.Text.Encoding.UTF8.GetString(tempBytes);
+                //salida = asciiStr.ToLower();
+                //salida = "https://github.com/Sud-Austral/MPG/raw/main/Image/" + salida + id.ToString() + ".png";
                 /* return salida.Replace(" ", "_");*/
-                return "https://raw.githubusercontent.com/Sud-Austral/MPG/main/img/2521.png";
+                return "https://raw.githubusercontent.com/Sud-Austral/MPG/main/img/" + id.ToString() +".png";
             }
 
             set { fecha_publicacion = "Sin Imagen"; }
