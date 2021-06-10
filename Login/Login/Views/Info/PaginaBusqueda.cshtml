@@ -75,7 +75,7 @@
     </script>
     @*para eliminar error de util.js:179 Uncaught TypeError: Bootstrap's JavaScript requires jQuery. jQuery must be included before Bootstrap's JavaScript” *@
     <script>
-        window.jQuery = window.$ = require('jquery');
+        //window.jQuery = window.$ = require('jquery');
     </script>
 </head>
 <body>
@@ -230,7 +230,36 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1" style="position:relative !important; transform:none !important; will-change:scroll-position !important;">
 
                                     @*Este script es para hacer el filtro de la tabla*@
-                                    <script>
+                                    <script> 
+                                        //Funcion para filtrar Territorios a partir de Escala
+                                        $(document).ready(function () {
+                                            //Se activa al hacer click sobre cualquier objeto con class "escala"
+                                            $(".escala").on("click", function () {
+                                                //se guarda el contenido de la escala seleccionado, por ejemplo "pais"
+                                                var escalaTerritorial = $(this).val().toLowerCase();
+                                                //Se guarda el estado del checkbox
+                                                //true si esta marcado y false de lo contrario
+                                                var checkTerritorio = $(this).prop("checked"); 
+
+                                                $(".territorio").each(function () {                                                  
+
+                                                    var checkBox = $(this).find("label").find("input").val().toLowerCase();
+                                                    if (checkTerritorio) {
+                                                        if (!checkBox.includes(escalaTerritorial))
+                                                            $(this).hide();
+                                                        else
+                                                            $(this).show();
+                                                    }
+                                                    else {
+                                                        $(this).show();
+                                                    }
+                                                    //alert(escalaTerritorial + "-");
+                                                    //alert(checkBox + "-");
+                                                    
+
+                                                });
+                                            });
+                                        });
                                         var contador = 0;
                                         $(document).ready(function () {
                                             $(".name").on("click", function () {
@@ -279,10 +308,8 @@
                                             <div>
                                                 <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
                                             </div>
-
                                         }
                                     </div>
-
                                     <h4 class="dropdown-header">TEMA</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                                         @foreach (var item3 in ViewBag.Producto)
@@ -290,7 +317,6 @@
                                             <div>
                                                 <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
                                             </div>
-
                                         }
                                     </div>
                                     <h4 class="mt-3 dropdown-header">TIPO DE PRODUCTO</h4>
@@ -300,27 +326,23 @@
                                             <div>
                                                 <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
                                             </div>
-
-
-
                                         }
                                     </div>
                                     <h4 class="dropdown-header">ESCALA</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                         @foreach (var item5 in ViewBag.Paises)
                                         {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item5"> @item5</label>
+                                            <div >
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5"> @item5</label>
                                             </div>
-
                                         }
                                     </div>
                                     <h4 class="dropdown-header">TERRITORIO</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                         @foreach (var item6 in ViewBag.Escala)
                                         {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6"> @item6</label>
+                                            <div class="territorio">
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6"> @item6.Split('-')[0]</label>
                                             </div>
 
                                         }
@@ -943,7 +965,7 @@
     <script>
         function PBGrafico(Grafico) {
             var id = "parametros de la funcion";
-            $('#PBdos').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#PBdos').html('<h2>Cargando Información...espere un momento por favor</h2>')
 
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
@@ -964,7 +986,7 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail PBGrafico VisualizarGraficos');
+                        $("#PBdos").html('<h2>No pudimos encontrar tu Gráfico, pero a la brevedad estara disponible.</h2>');
                     }
 
                 });
@@ -973,7 +995,7 @@
 
         function PBGrafico2(id) {
             
-            $('#PBcuatro').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#PBcuatro').html('<h2>Cargando Información...espere un momento por favor</h2>')
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
             $.ajax(
@@ -993,14 +1015,15 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail PBGrafico2 ContenidoGrafico');
+                        //alert('Fail PBGrafico2 ContenidoGrafico');
+                        $("#PBcuatro").html('<h2>Aun estamos trabajando en mostrar más información sobre este tema.</h2>');
                     }
                 });
 
         }
         function PBGrafico3(id) {
 
-            $('#PBcinco').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#PBcinco').html('<h2>Cargando Información...espere un momento por favor</h2>')
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
             $.ajax(
@@ -1020,7 +1043,8 @@
 
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
-                        alert('Fail PBGrafico3  CarrucelBusqueda');
+                        //alert('Fail PBGrafico3  CarrucelBusqueda');
+                        $("#PBcinco").html('<h2>No hemos encontrado gráficos relacionados</h2>');
                     }
                 });
         }
