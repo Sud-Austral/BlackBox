@@ -687,6 +687,64 @@ namespace Login.Controllers
 
             return PartialView();
         }
+        public PartialViewResult Index22(int id = 220106007)
+        {
+            //Lista de productos de Shopify
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            //Nombre de Usuario
+            ViewBag.User = User.Identity.GetUserName();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+
+                }
+            }
+            //Objeto que separa Productos y Suscripciones
+            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+            //Productos
+            productos = shopifyYSuscripciones.producto_Shopifies;
+            //ViewBag.url = (string)Session["url"];
+            Session["Productos"] = productos;
+            //Suscripciones
+            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            ViewBag.Resultado = productos;
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
+            //Menu que esta suscrito el usuario
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id==10).ToList();
+            int idExample = 1001;
+            var grafico = dbGrafico.INDUSTRIA.Where(x => x.id == idExample / 100).ToList();
+            foreach (var item in grafico)
+            {
+                item.SECTOR = (ICollection<SECTOR>)item.SECTOR.Where(x => x.id == 1001).ToArray();
+            }
+            ViewBag.Menu = grafico;
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id);
+            //var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
+
+
+            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).Take(20); //.ToList();//Liberados/Gratis
+            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).Take(20); //.ToList();//Informes
+            //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).Take(50); //.ToList();//Reportes
+            string NombreCategoria = "No hay información de esta categoria";
+            if (NEW_GRAFICOS.Count() > 0)
+            {
+                NombreCategoria = NEW_GRAFICOS.ToList()[0].CATEGORIA.nombre;
+            }
+            ViewBag.saludo = NombreCategoria;
+            return PartialView();
+        }
     }
 }
    
