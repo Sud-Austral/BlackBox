@@ -97,9 +97,9 @@ namespace AplicacionBlanco.Controllers
                 {
                     Paises.Add(item.TERRITORIO.auxiliar);
                 }
-                if (!Escala.Contains(item.TERRITORIO.nombre))
+                if (!Escala.Contains(item.TERRITORIO.nombre + " - " + item.TERRITORIO.auxiliar))
                 {
-                    Escala.Add(item.TERRITORIO.nombre);
+                    Escala.Add(item.TERRITORIO.nombre + " - " + item.TERRITORIO.auxiliar);
                 }
                 if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
                 {

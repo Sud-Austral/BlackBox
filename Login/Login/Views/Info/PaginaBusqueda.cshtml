@@ -75,7 +75,7 @@
     </script>
     @*para eliminar error de util.js:179 Uncaught TypeError: Bootstrap's JavaScript requires jQuery. jQuery must be included before Bootstrap's JavaScript” *@
     <script>
-        window.jQuery = window.$ = require('jquery');
+        //window.jQuery = window.$ = require('jquery');
     </script>
 </head>
 <body>
@@ -231,6 +231,22 @@
 
                                     @*Este script es para hacer el filtro de la tabla*@
                                     <script>
+                                        $(document).ready(function () {
+                                            $(".escala").on("click", function () {
+                                                var escalaTerritorial = $(this).val().toLowerCase();
+                                                alert("Hola");
+                                                //$(".territorio > label > input:checkbox[name=name]").each(function () {
+                                                $(".territorio").each(function () {
+                                                    var checkBox = $(this).find("label").find("input").val().toLowerCase();
+
+                                                    alert(escalaTerritorial.indexOf())
+                                                    //alert($(this.find("label > input:checkbox[name=name]").val().toLowerCase() + " /// " + escalaTerritorial));
+                                                    //alert(escalaTerritorial.indexOf($(this).val().toLowerCase()))
+                                                    //alert($(this).val())
+
+                                                });
+                                            });
+                                        });
                                         var contador = 0;
                                         $(document).ready(function () {
                                             $(".name").on("click", function () {
@@ -279,10 +295,8 @@
                                             <div>
                                                 <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
                                             </div>
-
                                         }
                                     </div>
-
                                     <h4 class="dropdown-header">TEMA</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                                         @foreach (var item3 in ViewBag.Producto)
@@ -290,7 +304,6 @@
                                             <div>
                                                 <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
                                             </div>
-
                                         }
                                     </div>
                                     <h4 class="mt-3 dropdown-header">TIPO DE PRODUCTO</h4>
@@ -300,27 +313,23 @@
                                             <div>
                                                 <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
                                             </div>
-
-
-
                                         }
                                     </div>
                                     <h4 class="dropdown-header">ESCALA</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                         @foreach (var item5 in ViewBag.Paises)
                                         {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item5"> @item5</label>
+                                            <div >
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5"> @item5</label>
                                             </div>
-
                                         }
                                     </div>
                                     <h4 class="dropdown-header">TERRITORIO</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                         @foreach (var item6 in ViewBag.Escala)
                                         {
-                                            <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6"> @item6</label>
+                                            <div class="territorio">
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6"> @item6.Split('-')[0]</label>
                                             </div>
 
                                         }
