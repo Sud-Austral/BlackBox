@@ -319,6 +319,8 @@
     <Content Include="Content\image_estadistica\16_boton_educacion_on.png" />
     <Content Include="Content\image_estadistica\17_boton_politica_normal.png" />
     <Content Include="Content\image_estadistica\17_boton_politica_on.png" />
+    <Content Include="Content\image_estadistica\18_boton_mujer_normal.png" />
+    <Content Include="Content\image_estadistica\18_boton_mujer_on.png" />
     <Content Include="Content\image_estadistica\1_boton_agropecuario_normal.png" />
     <Content Include="Content\image_estadistica\1_boton_agropecuario_on.png" />
     <Content Include="Content\image_estadistica\2_boton_construccion_normal.png" />
