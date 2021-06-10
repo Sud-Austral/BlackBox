@@ -230,19 +230,32 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1" style="position:relative !important; transform:none !important; will-change:scroll-position !important;">
 
                                     @*Este script es para hacer el filtro de la tabla*@
-                                    <script>
+                                    <script> 
+                                        //Funcion para filtrar Territorios a partir de Escala
                                         $(document).ready(function () {
+                                            //Se activa al hacer click sobre cualquier objeto con class "escala"
                                             $(".escala").on("click", function () {
+                                                //se guarda el contenido de la escala seleccionado, por ejemplo "pais"
                                                 var escalaTerritorial = $(this).val().toLowerCase();
-                                                alert("Hola");
-                                                //$(".territorio > label > input:checkbox[name=name]").each(function () {
-                                                $(".territorio").each(function () {
-                                                    var checkBox = $(this).find("label").find("input").val().toLowerCase();
+                                                //Se guarda el estado del checkbox
+                                                //true si esta marcado y false de lo contrario
+                                                var checkTerritorio = $(this).prop("checked"); 
 
-                                                    alert(escalaTerritorial.indexOf())
-                                                    //alert($(this.find("label > input:checkbox[name=name]").val().toLowerCase() + " /// " + escalaTerritorial));
-                                                    //alert(escalaTerritorial.indexOf($(this).val().toLowerCase()))
-                                                    //alert($(this).val())
+                                                $(".territorio").each(function () {                                                  
+
+                                                    var checkBox = $(this).find("label").find("input").val().toLowerCase();
+                                                    if (checkTerritorio) {
+                                                        if (!checkBox.includes(escalaTerritorial))
+                                                            $(this).hide();
+                                                        else
+                                                            $(this).show();
+                                                    }
+                                                    else {
+                                                        $(this).show();
+                                                    }
+                                                    //alert(escalaTerritorial + "-");
+                                                    //alert(checkBox + "-");
+                                                    
 
                                                 });
                                             });
