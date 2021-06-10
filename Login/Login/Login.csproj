@@ -301,6 +301,7 @@
     <Content Include="Content\EstilosImprimir.css" />
     <Content Include="Content\EstilosNuevoMenuLateral.css" />
     <Content Include="Content\EstilosPopUp.css" />
+    <Content Include="Content\Estilos\grafico.css" />
     <Content Include="Content\Estilos\info\HomeOdoo.css" />
     <Content Include="Content\image_estadistica\10_boton_tecnologia_normal.png" />
     <Content Include="Content\image_estadistica\10_boton_tecnologia_on.png" />
