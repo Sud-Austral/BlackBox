@@ -56,11 +56,8 @@
                 '#once',
                 '#doce',
                 '#trece',
-                '#catorce'
-
-
-
-
+                '#catorce',
+                '#quince'
             ];
             //arreglo.forEach
             jQuery.each(arreglo, function (i, val) {
@@ -72,7 +69,7 @@
     </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed ">
-    <div class="wrapper">
+    <div class="wrapper" >
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
@@ -86,7 +83,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="https://www.dataintelligence-group.com/" class="brand-link">
                 <img src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="DATAINTELLIGENCE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">DATAINTELLIGENCE</span>
 
@@ -110,10 +107,10 @@
                     @*<i class="fas fa-angle-left right"></i>*@
                 </p>
                 <!-- SidebarSearch Form -->
-                <form action="~/info/PaginaBusqueda" class="mb-5">
+                <form class="input-group mb-5" href="/Usuario/Index?id=" >@*onsubmit="BuscadorSuscripciones(event);"*@
                     <div class="form-inline">
                         <div class="input-group" data-widget="sidebar-search">
-                            <input class="form-control form-control-sidebar" type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search">
+                            <input class="form-control form-control-sidebar" type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search" style="font-size:13px;">
                             <div class="input-group-append">
                                 <button class="btn btn-sidebar" type="submit" value="Submit">
                                     <i class="fas fa-search fa-fw"></i>
@@ -188,15 +185,22 @@
                                                                     </a>
                                                                     @foreach (var item4 in item3.CATEGORIA)
                                                                     {
-                                                                        <ul class="nav nav-treeview">
-                                                                            <li id="ChangeColor" class="nav-item" style="cursor: pointer;">
+                                                                        <ul class="nav nav-treeview menu" data-animation="diagonal">
+                                                                            @*el id ChangeColor cambia el color de fondo a rojo en la hoja que se llama EstilosNuevoMenuLateral linea 65*@
+                                                                            <li id="ChangeColor" class="nav-item " style="cursor: pointer;">
+
                                                                                 <a onclick="mostrador('#siete'); fnClick('@item4.id')" class="nav-link">
+                                                                                    <span class="border border-top"></span>
+                                                                                    <span class="border border-right"></span>
+                                                                                    <span class="border border-bottom"></span>
+                                                                                    <span class="border border-left"></span>
                                                                                     @*href="/Usuario/Resultados2?id==2" class="nav-link">*@
 
                                                                                     @*<i class="far fa-circle nav-icon"></i>*@
                                                                                     <p class="ml-5">
-
+                                                                                        <i class="fas fa-circle mr-3 menu " style="font-size:10px !important; color:#808080; "></i>
                                                                                         @item4.nombre
+
                                                                                         @*<i class="fas fa-angle-left right"></i>*@
                                                                                     </p>
                                                                                 </a>
@@ -394,10 +398,10 @@
                             }
                         </li>
 
-                        <!--<li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
-                            <a href="#" class="nav-link" style="border:1px solid #377db3">-->
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
+                            <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
-                                <!--<p>
+                                <p>
                                     Odoo
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
@@ -435,14 +439,14 @@
                                         </p>
                                     </a>
                                 </li>
-                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                    <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
-                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                        <p style="color:#518bb3">
-                                            Estadísticas
-                                        </p>
-                                    </a>
-                                </li>
+                                @*<li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                        <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
+                                            <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                            <p style="color:#518bb3">
+                                                Estadísticas
+                                            </p>
+                                        </a>
+                                    </li>*@
                                 <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
                                     <a href="#" target="_blank" class="nav-link ">
                                         <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
@@ -454,7 +458,7 @@
 
                             </ul>
 
-                        </li>-->
+                        </li>
 
                         <li class="nav-item mb-5" style="border:1px solid #377db3">
                             <a onclick="mostrador('#trece');" href="#" class="nav-link ">
@@ -472,11 +476,11 @@
             <!-- /.sidebar -->
         </aside>
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper " style="height:2000px; overflow:hidden;">
+        <!--************************ altura de cuerpo para informes Content Wrapper. Contains page content ************************** -->
+        <div class="content-wrapper " style="height:5000px; overflow:hidden;">
             <!-- Main content -->
             <section class="content " style="padding:0px !important;">
-                <div class="container-fluid" style="padding:0px !important; height:900px;">
+                <div class="container-fluid" style="padding:0px !important; height:1800px;">
                     <div class="d-flex flex-column " id="content-wrapper">
                         <div id="content">
 
@@ -504,7 +508,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             @*el id searchText enlaza los estilos para los efectos de este texto en la hoja de estilos se llama EstilosNuevoMenuLateral linea 70*@
-                                            <p id="searchText" style="font-size:13px;" style="font-size:13px;" class="mt-2">
+                                            <p id="searchText" style="font-size:13px;" class="mt-2">
                                                 Busca por la palabra clave en todos los sectores de Data Intelligence.<br /> Para buscar dentro de tus productos adquiridos
                                                 utiliza el buscador secundario de la izquierda.
                                             </p>
@@ -517,7 +521,7 @@
                             </div>
                             @*Productos Datas*@
                             <div class="container-fluid  " id="dos" style="display:none;">
-                                
+
                                 @*Productos Datas*@
                                 @{ Html.RenderAction("GraficoUsuario", "Usuario");}
                             </div>
@@ -551,13 +555,13 @@
                             <div class="container-fluid offset-1 mt-2" id="siete" style="display:none;">
                                 @*@{ Html.RenderAction("UsuarioSelectProducto", "Usuario");}*@
 
-                                <img class="mx-0" src="~/Content/image_UsuarioIndex/cargadatos_es.gif" />
+                                @*<img class="mx-0" src="~/Content/image_UsuarioIndex/cargadatos_es.gif" />*@
                             </div>
 
                             <div class="container-fluid offset-1 mt-2" id="ocho" style="display:none;">
 
                             </div>
-                            <div class="container-fluid offset-1 mt-2" id="nueve" style="display:none;">
+                            <div class="container-fluid mt-2 ml-2" id="nueve" style="display:none;padding-right:20px;">
 
 
                             </div>
@@ -574,6 +578,10 @@
 
                             </div>
                             <div class="container-fluid offset-1 mt-2" id="catorce" style="display:none; height:1000px;">
+
+
+                            </div>
+                            <div class="container-fluid mt-2 ml-2" id="quince" style="display:none;padding-right:20px;">
 
 
                             </div>
@@ -686,11 +694,12 @@
        @*Funcion que despliega categoria del menu lateral del Usuario index*@
         function fnClick(categoria) {
 
+            var id = $('#idBusqueda2').val();
             var id = "parametros de la funcion";
-            $('#siete').load(function () {//para cargar el gif de la seccion siete
-                $("img").fadeOut("slow");
-            });
-            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
+            //$('#siete').load(function () {//para cargar el gif de la seccion siete
+            //    $("img").fadeOut("slow");
+            //});
+            $('#siete').html('<h2>Cargando Información...espere un momento por favor</h2>')
             $.ajax(
                 {
                     type: 'POST',
@@ -794,14 +803,12 @@
         }
 
         function formBusqueda() {
-
             var id = $('#idBusqueda').val();
+            //$('#once').load(function () {//para cargar el gif de la seccion siete
+            //    $("img").fadeOut("slow");
+            //});
 
-            $('#once').load(function () {//para cargar el gif de la seccion siete
-                $("img").fadeOut("slow");
-            });
-
-            $('#once').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#once').html('<h2>Cargando Información...espere un momento por favor</h2>')
             $.ajax(
                 {
                     type: 'POST',
@@ -824,7 +831,7 @@
                     }
                 });
 
-          
+
         }
 
         function BuscadorForm2(e) {
@@ -833,9 +840,17 @@
             formBusqueda();
             return false;
         }
+
+        function BuscadorSuscripciones(e) {
+            e.preventDefault();
+            mostrador('#siete');
+            fnClick();
+            return false;
+        }
+
         function ProductoSuscripcion(id, NOMBRE) {
 
-            $('#doce').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#doce').html('<h2>Cargando Información...espere un momento por favor</h2>')
 
 
             $.ajax(
@@ -863,7 +878,7 @@
 
         function InforReporSuscripcion(id, NOMBRE) {
 
-            $('#doce').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#catorce').html('<h2>Cargando Información...espere un momento por favor</h2>')
 
 
             $.ajax(
@@ -888,10 +903,39 @@
                 });
 
         }
-        
+        function fnClick2(Informe) {
+
+            var id = $('#idBusqueda2').val();
+            var id = "parametros de la funcion";
+            //$('#siete').load(function () {//para cargar el gif de la seccion siete
+            //    $("img").fadeOut("slow");
+            //});
+            $('#quince').html('<h2>Cargando Información...espere un momento por favor</h2>')
+            $.ajax(
+                {
+                    type: 'POST',
+                    data: "{'id':" + "'" + Informe + "'}", //datos o parametros enviados al servidor
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/UsuarioSelectProducto4?id=' + Informe,
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#quince").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        alert('Fail');
+                    }
+                });
+
+        }
 
     </script>
-    
 
+    
 </body>
 </html>

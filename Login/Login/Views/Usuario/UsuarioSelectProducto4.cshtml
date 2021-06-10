@@ -1,7 +1,7 @@
 ﻿@*<h1>@ViewBag.Grafico</h1>*@
 
 @********************test boton ir atras**********************@
-<input class="btn btn-danger btn-sm  mb-2" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;" type="button" onclick="mostrador('#once')" name="volver atrás" value="Atrás">
+<input class="btn btn-danger btn-sm  mb-2" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;" type="button" onclick="mostrador('#siete')" name="volver atrás" value="Atrás">
 @*<a href="javascript:history.back(-1);" title="Ir la página anterior">Volver</a>*@
 <div class="row">
     <div class="col-8">
@@ -14,7 +14,7 @@
 </div>
 @if (ViewBag.Grafico.TIPO_GRAFICO_id < 3)
 {
-    <div class="row " style="height:300px;">
+    <div class="row  justify-content-center" style="height:300px;">
         <div class="col-md-10 embed-responsive embed-responsive-16by9 mb-5">
             <iframe class="embed-responsive-item" src="@ViewBag.Grafico.url"></iframe>
         </div>
@@ -38,7 +38,7 @@
                         cursor: pointer;
                     }
             </style>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-10 col-sm-12" style="border:2px solid #e6e6e6; border-radius:15px; ">
                     <div class="row">
                         <div class="col-md-4 col-sm-10 mt-3" style="border-right:0.5px solid #e6e6e6; white-space:normal;">
@@ -131,7 +131,7 @@
 else
 {
     @*se desplega los informes interactivos*@
-    <div class="row " style="height:5000px;">
+    <div class="row " style="height:5100px;">
         <div class="col-md-12 embed-responsive embed-responsive-16by9 mb-5">
             <iframe class="embed-responsive-item" src="@ViewBag.Grafico.url"></iframe>
         </div>
