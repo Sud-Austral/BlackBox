@@ -536,9 +536,9 @@ namespace Login.Controllers
             //var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
 
 
-            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3); //.Take(200); //.ToList();//Liberados/Gratis
-            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3); //.Take(200); //.ToList();//Informes
-            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4); //.Take(200); //.ToList();//Reportes
+            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).Take(20); //.ToList();//Liberados/Gratis
+            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).Take(20); //.ToList();//Informes
+            //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).Take(50); //.ToList();//Reportes
             string NombreCategoria = "No hay información de esta categoria";
             if(NEW_GRAFICOS.Count() > 0)
             {
@@ -557,48 +557,53 @@ namespace Login.Controllers
         }
 
         
-        public PartialViewResult FormBuscador(string id)
+        public PartialViewResult FormBuscador(string id = "1")
         {
-            //Supongamos que solo esta suscrito al SECTOR (COLECCION) 1001
-            List<int> suscrip = new List<int>();
-            suscrip.Add(1001);
-            //Aun tenemos que resolver esto
-
-            //var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
-            IEnumerable<GRAFICO> segundaCategoria;
-            IEnumerable<GRAFICO> NEW_GRAFICOS2;
-            if (NEW_GRAFICOS.Count() < 200)
+            ViewBag.palabra = id;
+            // = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
+            var prioridad = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'")
+                                                .Take(50);
+            IEnumerable<GRAFICO> NEW_GRAFICOS;
+            IEnumerable<GRAFICO> union;
+            if (prioridad.Count() < 50)
             {
-                segundaCategoria = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id));
-                NEW_GRAFICOS2 = NEW_GRAFICOS.Concat(segundaCategoria);
+                NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
+                                                 .OrderBy(x => x.id)
+                                                 .Take(50 - prioridad.Count());
+                int ent = NEW_GRAFICOS.Count();
+                union = prioridad.Concat(NEW_GRAFICOS); //.Distinct();
+
             }
             else
             {
-                NEW_GRAFICOS2 = NEW_GRAFICOS;
+                union = prioridad;
             }
-            foreach (var item in NEW_GRAFICOS2)
-            {
-                item.suscripciones = suscrip;
-            }
-            //var resultado = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id == 3).ToList();
+            int ent2 = union.Count();
 
-            ViewBag.Resultado = NEW_GRAFICOS2;
-           
+            ViewBag.Resultado = union;
+            //ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
+            //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
+            //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
             //Listas de Filtros
+
             List<string> Paises = new List<string>();
+            List<string> Escala = new List<string>();
             List<string> TipoGrafico = new List<string>();
             List<string> Temporalidad = new List<string>();
             List<string> Producto = new List<string>();
             List<string> Industria = new List<string>();
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
-
-            foreach (var item in NEW_GRAFICOS2)    //.Where(x => x.nombre.Contains(id)).ToList())
+            List<string> Parametro = new List<string>();
+            foreach (var item in union)
             {
-                if (!Paises.Contains(item.TERRITORIO.nombre))
+                if (!Paises.Contains(item.TERRITORIO.auxiliar))
                 {
-                    Paises.Add(item.TERRITORIO.nombre);
+                    Paises.Add(item.TERRITORIO.auxiliar);
+                }
+                if (!Escala.Contains(item.TERRITORIO.nombre))
+                {
+                    Escala.Add(item.TERRITORIO.nombre);
                 }
                 if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
                 {
@@ -625,16 +630,20 @@ namespace Login.Controllers
                 {
                     Categoria.Add(item.CATEGORIA.nombre);
                 }
+                if (!Parametro.Contains(item.PARAMETRO.nombre))
+                {
+                    Parametro.Add(item.PARAMETRO.nombre);
+                }
             }
             ViewBag.Paises = Paises;
+            ViewBag.Escala = Escala;
             ViewBag.TipoGrafico = TipoGrafico;
             ViewBag.Temporalidad = Temporalidad;
             ViewBag.Producto = Producto;
             ViewBag.Industria = Industria;
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
-            //var Resultados = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
-            //ViewBag.resultados = Resultados;
+            ViewBag.Parametro = Parametro;
 
             return PartialView();
         }
@@ -671,5 +680,71 @@ namespace Login.Controllers
 
             return PartialView();
         }
+        public PartialViewResult UsuarioSelectProducto4(int id = 220106007)
+        {
+            var url = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            ViewBag.Grafico = url;
+
+            return PartialView();
+        }
+        public PartialViewResult Index22(int id = 220106007)
+        {
+            //Lista de productos de Shopify
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            //Nombre de Usuario
+            ViewBag.User = User.Identity.GetUserName();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+
+                }
+            }
+            //Objeto que separa Productos y Suscripciones
+            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+            //Productos
+            productos = shopifyYSuscripciones.producto_Shopifies;
+            //ViewBag.url = (string)Session["url"];
+            Session["Productos"] = productos;
+            //Suscripciones
+            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            ViewBag.Resultado = productos;
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
+            //Menu que esta suscrito el usuario
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
+            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id==10).ToList();
+            int idExample = 1001;
+            var grafico = dbGrafico.INDUSTRIA.Where(x => x.id == idExample / 100).ToList();
+            foreach (var item in grafico)
+            {
+                item.SECTOR = (ICollection<SECTOR>)item.SECTOR.Where(x => x.id == 1001).ToArray();
+            }
+            ViewBag.Menu = grafico;
+            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id);
+            //var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
+
+
+            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).Take(20); //.ToList();//Liberados/Gratis
+            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).Take(20); //.ToList();//Informes
+            //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).Take(50); //.ToList();//Reportes
+            string NombreCategoria = "No hay información de esta categoria";
+            if (NEW_GRAFICOS.Count() > 0)
+            {
+                NombreCategoria = NEW_GRAFICOS.ToList()[0].CATEGORIA.nombre;
+            }
+            ViewBag.saludo = NombreCategoria;
+            return PartialView();
+        }
     }
 }
+   
