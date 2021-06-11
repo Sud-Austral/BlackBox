@@ -39,7 +39,7 @@
     <!-- summernote -->
     <link href="~/plugins/summernote/summernote-bs4.min.css" rel="stylesheet" />
     <script>
-        function mostrador(seccion) {
+        function mostrador(seccion1, seccion2 ) {
             var arreglo = [
                 '#uno',
                 '#dos',
@@ -54,23 +54,22 @@
                 '#once',
                 '#doce',
                 '#trece',
-                '#catorce'
-
-
-
-
+                '#catorce',
+                '#quince',
+                '#dieciséis'
             ];
             //arreglo.forEach
             jQuery.each(arreglo, function (i, val) {
                 $(val).hide();
             });
-            $(seccion).show();
+            $(seccion1).show();
+            $(seccion2).show();
 
         }
     </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed ">
-    <div class="wrapper">
+    <div class="wrapper" >
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
@@ -84,9 +83,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="https://www.dataintelligence-group.com/" class="brand-link">
                 <img src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="DATAINTELLIGENCE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">DATAINTELLIGENCE</span>
+                <span class="brand-text font-weight-light" style="font-size:16px;">DATAINTELLIGENCE</span>
 
             </a>
 
@@ -95,9 +94,9 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     @*
-                        <div class="image">
-                            <img src="~/assets/img/avatars/avatar1.jpeg" class="img-circle elevation-2" alt="User Image">
-                        </div>
+            <div class="image">
+                <img src="~/assets/img/avatars/avatar1.jpeg" class="img-circle elevation-2" alt="User Image">
+            </div>
                     *@
                     <div class="info">
                         <a href="#" class="d-block">@ViewBag.User</a>
@@ -108,25 +107,35 @@
                     @*<i class="fas fa-angle-left right"></i>*@
                 </p>
                 <!-- SidebarSearch Form -->
-                <form action="~/info/PaginaBusqueda" class="mb-5">
-                    <div class="form-inline">
-                        <div class="input-group" data-widget="sidebar-search">
-                            <input class="form-control form-control-sidebar" type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-sidebar" type="submit" value="Submit">
-                                    <i class="fas fa-search fa-fw"></i>
-                                </button>
-                            </div>
+                <div class="form-inline mb-5">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input  class="form-control form-control-sidebar" type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search" style="font-size:13px;">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
                         </div>
                     </div>
-                </form>
+                </div>
+                <!--<form class="input-group mb-5" href="/Usuario/Index?id=" >-->@*onsubmit="BuscadorSuscripciones(event);"*@
+                <!--<div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar"  type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search" style="font-size:13px;">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar" type="submit" value="Submit">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>-->
                 <!-- Sidebar Menu -->
                 <nav class="mt-2 ">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
-                            <a onclick="mostrador('#uno');" href="#" class="nav-link " style="border:1px solid #377db3">
+                            <a onclick="mostrador('#uno','#dieciséis');" href="#" class="nav-link " style="border:1px solid #377db3">
                                 <i class="nav-icon fa-question-circle-o"></i>
-                                <p>
+                                <p style="font-size:16px;" >
                                     INICIO
 
                                 </p>
@@ -135,7 +144,7 @@
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
-                                <p>
+                                <p style="font-size:16px;">
                                     MIS SUSCRIPCIONES
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
@@ -186,15 +195,22 @@
                                                                     </a>
                                                                     @foreach (var item4 in item3.CATEGORIA)
                                                                     {
-                                                                        <ul class="nav nav-treeview">
-                                                                            <li id="ChangeColor" class="nav-item" style="cursor: pointer;">
-                                                                                <a onclick="mostrador('#siete'); fnClick('@item4.id')" class="nav-link">
+                                                                        <ul class="nav nav-treeview menu" data-animation="diagonal">
+                                                                            @*el id ChangeColor cambia el color de fondo a rojo en la hoja que se llama EstilosNuevoMenuLateral linea 65*@
+                                                                            <li id="ChangeColor" class="nav-item " style="cursor: pointer;">
+
+                                                                                <a href="index22/@item4.id" target="_blank" onclick="event.preventDefault(); mostrador('#siete'); fnClick('@item4.id') " class="nav-link">
+                                                                                    <span class="border border-top"></span>
+                                                                                    <span class="border border-right"></span>
+                                                                                    <span class="border border-bottom"></span>
+                                                                                    <span class="border border-left"></span>
                                                                                     @*href="/Usuario/Resultados2?id==2" class="nav-link">*@
 
                                                                                     @*<i class="far fa-circle nav-icon"></i>*@
                                                                                     <p class="ml-5">
-
+                                                                                        <i class="fas fa-circle mr-3 menu " style="font-size:10px !important; color:#808080; "></i>
                                                                                         @item4.nombre
+
                                                                                         @*<i class="fas fa-angle-left right"></i>*@
                                                                                     </p>
                                                                                 </a>
@@ -230,7 +246,7 @@
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
-                                <p>
+                                <p style="font-size:16px;">
                                     MIS PRODUCTOS
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
@@ -241,7 +257,7 @@
                                 {
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a onclick="mostrador('#dos');" href="#" class="nav-link ">
+                                            <a href="index" onclick="event.preventDefault();mostrador('#dos');"  class="nav-link ">
                                                 <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
                                                 <p style="color:#518bb3">
                                                     Plataformas
@@ -249,7 +265,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a onclick="mostrador('#tres');" href="#" class="nav-link ">
+                                            <a href="index" onclick="event.preventDefault();mostrador('#tres');" class="nav-link ">
                                                 <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
                                                 <p style="color:#518bb3">
                                                     Informes Interactivos
@@ -257,7 +273,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a onclick="mostrador('#cuatro');" href="#" class="nav-link ">
+                                            <a href="index" onclick="event.preventDefault();mostrador('#cuatro');" class="nav-link ">
                                                 <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
                                                 <p style="color:#518bb3">
                                                     Reportes 360°
@@ -265,60 +281,60 @@
                                             </a>
                                         </li>
                                         @*<li class="nav-item">
-                                                <a href="" class="nav-link">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            Industria
+                                            @item.nombre
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    @foreach (var item2 in item.SECTOR)
+                                    {
+                                        <ul class="nav nav-treeview">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p>
-                                                        Industria
-                                                        @item.nombre
+                                                        Sector
+                                                        @item2.nombre
                                                         <i class="fas fa-angle-left right"></i>
                                                     </p>
                                                 </a>
-                                                @foreach (var item2 in item.SECTOR)
+                                                @foreach (var item3 in item2.PRODUCTO)
                                                 {
                                                     <ul class="nav nav-treeview">
                                                         <li class="nav-item">
                                                             <a href="#" class="nav-link">
                                                                 <i class="far fa-circle nav-icon"></i>
                                                                 <p>
-                                                                    Sector
-                                                                    @item2.nombre
+                                                                    Producto
+                                                                    @item3.nombre
                                                                     <i class="fas fa-angle-left right"></i>
                                                                 </p>
                                                             </a>
-                                                            @foreach (var item3 in item2.PRODUCTO)
+                                                            @foreach (var item4 in item3.CATEGORIA)
                                                             {
                                                                 <ul class="nav nav-treeview">
                                                                     <li class="nav-item">
                                                                         <a href="#" class="nav-link">
                                                                             <i class="far fa-circle nav-icon"></i>
                                                                             <p>
-                                                                                Producto
-                                                                                @item3.nombre
+                                                                                Categoria
+                                                                                @item4.nombre
                                                                                 <i class="fas fa-angle-left right"></i>
                                                                             </p>
                                                                         </a>
-                                                                        @foreach (var item4 in item3.CATEGORIA)
-                                                                        {
-                                                                            <ul class="nav nav-treeview">
-                                                                                <li class="nav-item">
-                                                                                    <a href="#" class="nav-link">
-                                                                                        <i class="far fa-circle nav-icon"></i>
-                                                                                        <p>
-                                                                                            Categoria
-                                                                                            @item4.nombre
-                                                                                            <i class="fas fa-angle-left right"></i>
-                                                                                        </p>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        }
                                                                     </li>
                                                                 </ul>
                                                             }
                                                         </li>
                                                     </ul>
                                                 }
-                                            </li>*@
+                                            </li>
+                                        </ul>
+                                    }
+                                </li>*@
                                     </ul>
                                 }
                             }
@@ -342,7 +358,7 @@
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
-                                <p>
+                                <p style="font-size:16px;">
                                     MI CUENTA
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
@@ -392,11 +408,11 @@
                             }
                         </li>
 
-                        <!--<li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
-                            <a href="#" class="nav-link" style="border:1px solid #377db3">-->
+                        <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
+                            <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
-                                <!--<p>
-                                    Odoo
+                                <p style="font-size:16px;">
+                                    ODOO
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -433,14 +449,14 @@
                                         </p>
                                     </a>
                                 </li>
-                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                    <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
-                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                        <p style="color:#518bb3">
-                                            Estadísticas
-                                        </p>
-                                    </a>
-                                </li>
+                                @*<li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                            <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
+                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                <p style="color:#518bb3">
+                                    Estadísticas
+                                </p>
+                            </a>
+                        </li>*@
                                 <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
                                     <a href="#" target="_blank" class="nav-link ">
                                         <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
@@ -452,12 +468,12 @@
 
                             </ul>
 
-                        </li>-->
+                        </li>
 
                         <li class="nav-item mb-5" style="border:1px solid #377db3">
                             <a onclick="mostrador('#trece');" href="#" class="nav-link ">
                                 <i class="nav-icon fa-question-circle-o"></i>
-                                <p>
+                                <p style="font-size:16px;">
                                     AYUDA
 
                                 </p>
@@ -470,11 +486,11 @@
             <!-- /.sidebar -->
         </aside>
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper " style="height:2000px; overflow:hidden;">
+        <!--************************ altura de cuerpo para informes Content Wrapper. Contains page content ************************** -->
+        <div class="content-wrapper " style="height:5000px; overflow:hidden;">
             <!-- Main content -->
             <section class="content " style="padding:0px !important;">
-                <div class="container-fluid" style="padding:0px !important; height:900px;">
+                <div class="container-fluid" style="padding:0px !important; height:1800px;">
                     <div class="d-flex flex-column " id="content-wrapper">
                         <div id="content">
 
@@ -502,7 +518,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             @*el id searchText enlaza los estilos para los efectos de este texto en la hoja de estilos se llama EstilosNuevoMenuLateral linea 70*@
-                                            <p id="searchText" style="font-size:13px;" style="font-size:13px;" class="mt-2">
+                                            <p id="searchText" style="font-size:13px;" class="mt-2">
                                                 Busca por la palabra clave en todos los sectores de Data Intelligence.<br /> Para buscar dentro de tus productos adquiridos
                                                 utiliza el buscador secundario de la izquierda.
                                             </p>
@@ -515,7 +531,7 @@
                             </div>
                             @*Productos Datas*@
                             <div class="container-fluid  " id="dos" style="display:none;">
-                                
+
                                 @*Productos Datas*@
                                 @{ Html.RenderAction("GraficoUsuario", "Usuario");}
                             </div>
@@ -530,7 +546,7 @@
 
                             </div>
 
-                            <div class="container-fluid offset-1 mt-2" id="uno">
+                            <div class="container-fluid  mt-2" id="uno">
                                 @{ Html.RenderAction("Bienvenido", "Usuario");}
 
                             </div>
@@ -549,13 +565,13 @@
                             <div class="container-fluid offset-1 mt-2" id="siete" style="display:none;">
                                 @*@{ Html.RenderAction("UsuarioSelectProducto", "Usuario");}*@
 
-                                <img class="mx-0" src="~/Content/image_UsuarioIndex/cargadatos_es.gif" />
+                                @*<img class="mx-0" src="~/Content/image_UsuarioIndex/cargadatos_es.gif" />*@
                             </div>
 
                             <div class="container-fluid offset-1 mt-2" id="ocho" style="display:none;">
 
                             </div>
-                            <div class="container-fluid offset-1 mt-2" id="nueve" style="display:none;">
+                            <div class="container-fluid mt-2 ml-2" id="nueve" style="display:none;padding-right:20px;">
 
 
                             </div>
@@ -575,6 +591,186 @@
 
 
                             </div>
+                            @*Mis succripciones*@
+                            <div class="container-fluid mt-2 ml-2" id="quince" style="display:none;padding-right:20px;">
+
+
+                            </div>
+                            @*otra opciones en la pagina de bienvenido*@
+                            <!--<div class="container mt-2" >
+                                
+                                   
+                                        <style>
+                                            @@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+                                            * {
+                                                box-sizing: border-box;
+                                                margin: 0;
+                                                padding: 0;
+                                            }
+
+                                            body {
+                                                font-family: 'Lato', sans-serif;
+                                                height: 100vh;
+                                            }
+
+                                            .slider-container {
+                                                position: relative;
+                                                overflow: hidden;
+                                                width: 100vw;
+                                                height: 100vh;
+                                            }
+
+                                            .left-slide {
+                                                height: 100%;
+                                                width: 25%;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                transition: transform 0.5s ease-in-out;
+                                            }
+
+                                                .left-slide > div {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    color: #fff;
+                                                }
+
+                                                .left-slide h1 {
+                                                    font-size: 40px;
+                                                    margin-bottom: 10px;
+                                                    margin-top: -30px;
+                                                }
+
+                                            .right-slide {
+                                                height: 100%;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 20%;
+                                                width: 75%;
+                                                transition: transform 0.5s ease-in-out;
+                                            }
+
+                                                .right-slide > div {
+                                                    background-repeat: no-repeat;
+                                                    background-size: cover;
+                                                    background-position: center center;
+                                                    height: 100%;
+                                                    width: 100%;
+                                                }
+
+                                            button {
+                                                background-color: #fff;
+                                                border: none;
+                                                color: #aaa;
+                                                cursor: pointer;
+                                                font-size: 16px;
+                                                padding: 15px;
+                                            }
+
+                                                button:hover {
+                                                    color: #222;
+                                                }
+
+                                                button:focus {
+                                                    outline: none;
+                                                }
+
+                                            .slider-container .action-buttons button {
+                                                position: absolute;
+                                                left: 35%;
+                                                top: 50%;
+                                                z-index: 100;
+                                            }
+
+                                            .slider-container .action-buttons .down-button {
+                                                transform: translateX(-100%);
+                                                border-top-left-radius: 5px;
+                                                border-bottom-left-radius: 5px;
+                                            }
+
+                                            .slider-container .action-buttons .up-button {
+                                                transform: translateY(-100%);
+                                                border-top-right-radius: 5px;
+                                                border-bottom-right-radius: 5px;
+                                            }
+                                        </style>
+                                       
+                                        <div class="slider-container">
+                                            <div class="left-slide">
+                                                <div style="background-color: #fde">
+                                                    <h1>SECTOR MUJERES</h1>
+                                                    <p>to evolve into care</p>
+                                                </div>
+                                                <div style="background-color: rgb(254,160,0)">
+                                                    <h1>Yellow Luck</h1>
+                                                    <p>Shinning the clouds</p>
+                                                </div>
+                                                <div style="background-color: rgb(231, 58, 95)">
+                                                    <h1>Redness Lust</h1>
+                                                    <p>in the wilderness</p>
+                                                </div>
+                                                <div style="background-color: rgb(176, 136, 240)">
+                                                    <h1>Lavanda Love</h1>
+                                                    <p>in the sunset</p>
+                                                </div>
+                                            </div>
+                                            <div class="right-slide">
+                                                <div style="background-image: url('/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg');"></div>
+                                                <div style="background-image: url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Zmxvd2Vyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1296&q=60');"></div>
+                                                <div style="background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8Zmxvd2Vyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1296&q=60');"></div>
+                                                <div style="background-image: url('https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80');"></div>
+                                            </div>
+                                            <div class="action-buttons">
+                                                <button class="down-button">
+                                                    <i class="fas fa-arrow-down"></i>
+                                                </button>
+                                                <button class="up-button">
+                                                    <i class="fas fa-arrow-up"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            const sliderContainer = document.querySelector('.slider-container')
+                                            const slideRight = document.querySelector('.right-slide')
+                                            const slideLeft = document.querySelector('.left-slide')
+                                            const upButton = document.querySelector('.up-button')
+                                            const downButton = document.querySelector('.down-button')
+                                            const slidesLength = slideRight.querySelectorAll('div').length
+
+                                            let activeSlideIndex = 0
+
+                                            slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`
+
+                                            upButton.addEventListener('click', () => changeSlide('up'))
+                                            downButton.addEventListener('click', () => changeSlide('down'))
+
+                                            const changeSlide = (direction) => {
+                                                const sliderHeight = sliderContainer.clientHeight
+                                                if (direction === 'up') {
+                                                    activeSlideIndex++
+                                                    if (activeSlideIndex > slidesLength - 1) {
+                                                        activeSlideIndex = 0
+                                                    }
+                                                } else if (direction === 'down') {
+                                                    activeSlideIndex--
+                                                    if (activeSlideIndex < 0) {
+                                                        activeSlideIndex = slidesLength - 1
+                                                    }
+                                                }
+
+                                                slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`
+                                                slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
+                                            }
+                                        </script>
+                               
+                               
+                                
+                            </div>-->
 
                             @*Seccion atencion al cliente*@
                             <div class="container-fluid offset-1" id="trece" style="display:none;">
@@ -684,11 +880,12 @@
        @*Funcion que despliega categoria del menu lateral del Usuario index*@
         function fnClick(categoria) {
 
+          
             var id = "parametros de la funcion";
-            $('#siete').load(function () {//para cargar el gif de la seccion siete
-                $("img").fadeOut("slow");
-            });
-            /*$('#siete').html('<h2>Cargando Datos...espere un momento por favor</h2>')*/
+            //$('#siete').load(function () {//para cargar el gif de la seccion siete
+            //    $("img").fadeOut("slow");
+            //});
+            $('#siete').html('<h2>Cargando Información...espere un momento por favor</h2>')
             $.ajax(
                 {
                     type: 'POST',
@@ -792,14 +989,12 @@
         }
 
         function formBusqueda() {
-
             var id = $('#idBusqueda').val();
+            //$('#once').load(function () {//para cargar el gif de la seccion siete
+            //    $("img").fadeOut("slow");
+            //});
 
-            $('#once').load(function () {//para cargar el gif de la seccion siete
-                $("img").fadeOut("slow");
-            });
-
-            $('#once').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#once').html('<h2>Cargando Información...espere un momento por favor</h2>')
             $.ajax(
                 {
                     type: 'POST',
@@ -822,7 +1017,7 @@
                     }
                 });
 
-          
+
         }
 
         function BuscadorForm2(e) {
@@ -831,9 +1026,10 @@
             formBusqueda();
             return false;
         }
+
         function ProductoSuscripcion(id, NOMBRE) {
 
-            $('#doce').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#doce').html('<h2>Cargando Información...espere un momento por favor</h2>')
 
 
             $.ajax(
@@ -861,7 +1057,7 @@
 
         function InforReporSuscripcion(id, NOMBRE) {
 
-            $('#doce').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+            $('#catorce').html('<h2>Cargando Información...espere un momento por favor</h2>')
 
 
             $.ajax(
@@ -886,10 +1082,39 @@
                 });
 
         }
-        
+        function fnClick2(Informe) {
+
+            var id = $('#idBusqueda2').val();
+            var id = "parametros de la funcion";
+            //$('#siete').load(function () {//para cargar el gif de la seccion siete
+            //    $("img").fadeOut("slow");
+            //});
+            $('#quince').html('<h2>Cargando Información...espere un momento por favor</h2>')
+            $.ajax(
+                {
+                    type: 'POST',
+                    data: "{'id':" + "'" + Informe + "'}", //datos o parametros enviados al servidor
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/UsuarioSelectProducto4?id=' + Informe,
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#quince").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        alert('Fail');
+                    }
+                });
+
+        }
 
     </script>
-    
 
+    
 </body>
 </html>
