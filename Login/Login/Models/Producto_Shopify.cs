@@ -31,6 +31,7 @@ namespace Login.Models
                 ID = (string)json["variant_id"];
                 NOMBRE = (string)json["name"];
                 SKU = (string)json["sku"];
+
                 PRODUCT_ID = (string)json["product_id"];
                 FECHA_CREADO = (string)ORDEN["created_at"];
                 FECHA_CREADO2 = DateTime.ParseExact((string)ORDEN["created_at"],  //"11/11/2021 11:00:00",
