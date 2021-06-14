@@ -1,5 +1,6 @@
 ﻿using Login.Models;
 using Microsoft.AspNet.Identity;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,9 @@ namespace Login.Controllers
     {
         //Base de datos de los graficos
         private graficosEntities dbGrafico = new graficosEntities();
-
         //Constructor del controlador
         public UsuarioController()
         {
-
         }
         // GET: Usuario
         public ActionResult Index()
@@ -26,43 +25,25 @@ namespace Login.Controllers
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
             //Nombre de Usuario
             ViewBag.User = User.Identity.GetUserName();
-            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            {
-                foreach (var item2 in item["line_items"])
-                {
-                    try
-                    {
-                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
-                    }
-                    catch (Exception)
-                    {
-
-                        string hola = "";
-                    }
-                    
-                }
-            }
-            //Objeto que separa Productos y Suscripciones
-            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
+            var ordenesPorMail = APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName());
+            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(ordenesPorMail);
+            Session["mis_recursos"] = shopifyYSuscripciones;
             //Productos
             productos = shopifyYSuscripciones.producto_Shopifies;
             //ViewBag.url = (string)Session["url"];
             Session["Productos"] = productos;
             //Suscripciones
             Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            var aux = shopifyYSuscripciones.todo_producto;
             ViewBag.Resultado = productos;
+            ViewBag.InformeInteractivo = shopifyYSuscripciones.informe_interactivo;
+            ViewBag.Reporte360 = shopifyYSuscripciones.reporte_360;
             //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
             //Menu que esta suscrito el usuario
             //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
             //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id==10).ToList();
-            int idExample = 1001;
-            var grafico = dbGrafico.INDUSTRIA.Where(x => x.id == idExample / 100).ToList();
-            foreach (var item in grafico)
-            {
-                item.SECTOR = (ICollection<SECTOR>)item.SECTOR.Where(x => x.id == 1001).ToArray();
-            }
-            ViewBag.Menu = grafico;
+
+            ViewBag.Menu = shopifyYSuscripciones.menu;  //grafico;
             return View();
         }
 
@@ -179,7 +160,7 @@ namespace Login.Controllers
             ViewBag.Resultado = productos;
             //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
             //Menu que esta suscrito el usuario
-            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
+            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.sector.Contains(x.id)).ToList();
             return View();
         }
 
@@ -223,7 +204,7 @@ namespace Login.Controllers
             ViewBag.url = url; //"https://www.c-sharpcorner.com/article/html-action-and-html-renderaction-in-Asp-Net-mvc/";
             string user = User.Identity.GetUserName();
             ShopifyYSuscripciones shopifyYSuscripciones2 = new ShopifyYSuscripciones(productos);
-            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones2.industrias.Contains(x.id)).ToList();
+            ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones2.sector.Contains(x.id)).ToList();
             ViewBag.Resultado = productos;
             /*
             ViewBag.user = user;
@@ -246,41 +227,16 @@ namespace Login.Controllers
         }
         public PartialViewResult GraficoUsuario()
         {
-            //Lista de productos de Shopify
-            List<Producto_Shopify> productos = new List<Producto_Shopify>();
-            //Nombre de Usuario
-            ViewBag.User = User.Identity.GetUserName();
-            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            {
-                foreach (var item2 in item["line_items"])
-                {
-                    try
-                    {
-                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
-                    }
-                    catch (Exception)
-                    {
-
-                        string hola = "";
-                    }
-
-                }
-            }
-            //Objeto que separa Productos y Suscripciones
-            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
-            //Productos
-            productos = shopifyYSuscripciones.producto_Shopifies;
-            //ViewBag.url = (string)Session["url"];
-            Session["Productos"] = productos;
-            //Suscripciones
-            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
-            ViewBag.Resultado = productos;
+            ShopifyYSuscripciones aux = (ShopifyYSuscripciones)Session["mis_recursos"];
+            //ViewBag.InformeInteractivo = aux.informe_interactivo;
+            
+            ViewBag.Resultado = aux.producto_Shopifies;
             return PartialView();
         }
 
         public PartialViewResult InformesUsuario()
         {
+            /*
             //Lista de productos de Shopify
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
             //Nombre de Usuario
@@ -310,41 +266,18 @@ namespace Login.Controllers
             Session["Productos"] = productos;
             //Suscripciones
             Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+            
             ViewBag.Resultado = productos;
+            */
+            ShopifyYSuscripciones aux = (ShopifyYSuscripciones)Session["mis_recursos"];
+            ViewBag.InformeInteractivo = aux.informe_interactivo;
             return PartialView();
         }
         public PartialViewResult ReportesUsuario()
         {
-            //Lista de productos de Shopify
-            List<Producto_Shopify> productos = new List<Producto_Shopify>();
-            //Nombre de Usuario
-            ViewBag.User = User.Identity.GetUserName();
-            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            {
-                foreach (var item2 in item["line_items"])
-                {
-                    try
-                    {
-                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
-                    }
-                    catch (Exception)
-                    {
-
-                        string hola = "";
-                    }
-
-                }
-            }
-            //Objeto que separa Productos y Suscripciones
-            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
-            //Productos
-            productos = shopifyYSuscripciones.producto_Shopifies;
-            //ViewBag.url = (string)Session["url"];
-            Session["Productos"] = productos;
-            //Suscripciones
-            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
-            ViewBag.Resultado = productos;
+            ShopifyYSuscripciones aux = (ShopifyYSuscripciones)Session["mis_recursos"];
+            ViewBag.Reporte360 = aux.reporte_360;
+            //ViewBag.Resultado = productos;
 
             return PartialView();
         }
@@ -744,6 +677,50 @@ namespace Login.Controllers
             }
             ViewBag.saludo = NombreCategoria;
             return PartialView();
+        }
+
+        public string nose()
+        {
+            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            ViewBag.User = User.Identity.GetUserName();
+            //ViewBag.Resultado = APIShopify.BuscarOrdenes();
+            //ViewBag.Resultado = APIShopify.BuscarOrdenesPorMail();
+            //var test = APIShopify.BuscarOrdenesPorMail();
+            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
+            foreach (var item in APIShopify.BuscarOrdenesPorMail("lmonsalve22@gmail.com"))
+            {
+                foreach (var item2 in item["line_items"])
+                {
+                    try
+                    {
+                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
+                    }
+                    catch (Exception)
+                    {
+
+                        string hola = "";
+                    }
+                    //productos.Add(new Producto_Shopify(item2,(string)item["order_status_url"],item));
+                }
+            }
+            string salida = "";
+            foreach (var item in productos)
+            {
+                salida = salida + " <br>" + item.NOMBRE; 
+            }
+            
+            return salida + "<br>" + "<h1>" + productos.Count.ToString() + "</h1>";
+        }
+
+        public string nose2()
+        {            
+            string salida = "";
+            foreach (var item in APIShopify.BuscarOrdenesPorMail("lmonsalve22@gmail.com"))
+            {
+                salida = salida + " <br>" + item.ToString();
+            }
+
+            return salida + "<br>" + "<h1>" + APIShopify.BuscarOrdenesPorMail("lmonsalve22@gmail.com").Count.ToString() + "</h1>";
         }
     }
 }

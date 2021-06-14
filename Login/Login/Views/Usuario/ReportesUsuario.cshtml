@@ -15,23 +15,41 @@
     </div>
 </div>
 <div class="row responsive" style="overflow:scroll;height:350px;overflow-x:hidden; width:67%;">
-    @foreach (var item in ViewBag.Resultado)
-
+    @if (ViewBag.Reporte360 == null)
     {
         <div class="col-8">
-            
+
             <div class="row">
-                <div class="col-2">
-                    <img class="img-fluid" src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                </div>
+                
                 <div class="col-8 text-dark font-weight-bold mb-0" style="color:#518bb3 !important; cursor: pointer;">
-                    <a onclick="mostrador('#catorce'); InforReporSuscripcion('@item.SKU', '@item.NOMBRE');">
-                        @item.NOMBRE <br />
-                        @item.FECHA_CREADO
-                    </a>
+                    No existen Reportes 360.
                 </div>
             </div>
         </div>
+    }
+    else
+    {
+        foreach (var item in ViewBag.Reporte360)
+
+        {
+            <div class="col-8">
+
+                <div class="row">
+                    <div class="col-2">
+                        <img class="img-fluid" src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
+                    </div>
+                    <div class="col-8 text-dark font-weight-bold mb-0" style="color:#518bb3 !important; cursor: pointer;">
+                        <a onclick="mostrador('#catorce'); InforReporSuscripcion('@item.url', '@item.nombre');">
+                            @item.nombre <br />
+                            @item.TEMPORALIDAD.nombre
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        }
 
     }
+
+
 </div>
