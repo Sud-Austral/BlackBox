@@ -1,27 +1,36 @@
 ﻿@media print {
-    * {
-        -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
-        color-adjust: exact !important; /*Firefox*/
+     *{
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
     }
 
     div.page {
         writing-mode: horizontal-tb;
     }
 
-    body {
-        transform: scale(1);
-    }
+    /*body {
+        transform: scale(2);
+    }*/
 
     h1 {
         display: none !important;
     }
-
+    
     .borrar {
         display: none !important;
     }
 
     @page {
-        margin: 0;
-        size: landscape;
+        /*margin: 0;*/
+        size: portrait;
     }
+
+    #grafico2 {
+        display: block !important;
+    }
+
+    iframe {
+        transform: scale(1,1) translate(1px,5px) !important;
+    }
+
 }
