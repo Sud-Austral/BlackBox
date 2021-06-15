@@ -144,14 +144,12 @@ namespace AplicacionBlanco.Controllers
         }
 
         public PartialViewResult Paginacion(string id = "1", int id2 = 1)
-        {
-            
+        {            
             //var NEW_GRAFICOS
             ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
                                                 .OrderBy(x => x.id)
                                                 .Skip(200 + 50 * id2)
-                                                .Take(50);
-            
+                                                .Take(50);            
             return PartialView();
         }
 
@@ -176,6 +174,7 @@ namespace AplicacionBlanco.Controllers
             ViewBag.test = dbGrafico.INDUSTRIA.ToList();
             return View();
         }
+
         //[OutputCache(Duration = int.MaxValue)]
         public ActionResult HomeOdoo()
         {
@@ -208,22 +207,10 @@ namespace AplicacionBlanco.Controllers
         {
             string url = dbGrafico.GRAFICO.Where(x => x.id == id).First().url;
             ViewBag.url = url;
-            //ViewBag.url = "https://analytics.zoho.com/open-view/2395394000000697928";
-            //string user = User.Identity.GetUserName();
-
-            /*
-            ViewBag.user = user;
-            List<string> aux = correos.correos;
-            if (!aux.Contains(user))
-            {
-                return View("Restriccion");
-            }
-            */
-          
+            //ViewBag.url = "https://analytics.zoho.com/open-view/2395394000000697928";           
             return View();
         }
        
-
         public ActionResult ResultadoNiveles(int id = 10, int id2 = 1)
         {
             IEnumerable<GRAFICO> Graficos = UtilBusqueda.ResultadoNiveles(id, id2);
@@ -268,7 +255,6 @@ namespace AplicacionBlanco.Controllers
                 {
                     Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
                 }
-
                 if (!Categoria.Contains(item.CATEGORIA.nombre))
                 {
                     Categoria.Add(item.CATEGORIA.nombre);
@@ -287,7 +273,6 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
             ViewBag.Parametro = Parametro;
-
             return View("PaginaBusqueda");
         }
         
@@ -295,7 +280,6 @@ namespace AplicacionBlanco.Controllers
         {
             ViewBag.time1 = DateTime.Now;
             var rand = new Random();
-
             GRAFICO graf = new GRAFICO();
             try
             {
@@ -321,58 +305,27 @@ namespace AplicacionBlanco.Controllers
             //}
             //var Graficos = dbGrafico.GRAFICO.Where(x => aux.Contains(x.id)).ToList();
             //ViewBag.Graficos = Graficos;//carrusel
-
             ViewBag.time2 = DateTime.Now;
             return PartialView();
         }
 
         public PartialViewResult ContenidoGrafico(int id)
         {
-            id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA_id;
-            var listaNum = dbGrafico.CATEGORIA.Where(x => x.id == id).First().auxiliar.Split(',');
-            ViewBag.tresRelacionados = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
-            //var rand = new Random();
-            //GRAFICO graf = new GRAFICO();
-            //try
-            //{
-            //    graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
-            //}
-            //catch (Exception)
-            //{
-            //    graf = null;
-            //}
-            //if (graf.TIPO_GRAFICO_id > 1 || graf == null)
-            //{
-            //    var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
-            //    graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
-            //}
-            //ViewBag.Elemento = graf;//graficos
-
+            //id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA_id;
+            //var listaNum = dbGrafico.CATEGORIA.Where(x => x.id == id).First().auxiliar.Split(',');
+            GRAFICO gAux = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            //ViewBag.tresRelacionados = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            ViewBag.tresRelacionados = UtilBusqueda.Relacionados3importantes(gAux.CATEGORIA_id,id);
+            var algo = UtilBusqueda.Relacionados3importantes(gAux.CATEGORIA_id, id);
+            int id2 = id;
             return PartialView();
         }
         public PartialViewResult CarrucelBusqueda(int id)
         {
             id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA.PRODUCTO_id;
-            var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
-            ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
-
-            //var rand = new Random();
-            //GRAFICO graf = new GRAFICO();
-            //try
-            //{
-            //    graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
-            //}
-            //catch (Exception)
-            //{
-            //    graf = null;
-            //}
-            //if (graf.TIPO_GRAFICO_id > 1 || graf == null)
-            //{
-            //    var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
-            //    graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
-            //}
-            //ViewBag.Elemento = graf;//graficos
-
+            //var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
+            //ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            ViewBag.Carrusel = UtilBusqueda.Relacionados12Carrusel(id);
             return PartialView();
         }
 
@@ -380,7 +333,6 @@ namespace AplicacionBlanco.Controllers
         {
             //int id = 1234;
             var rand = new Random();
-
             GRAFICO graf = new GRAFICO();
             try
             {
@@ -401,23 +353,33 @@ namespace AplicacionBlanco.Controllers
 
         public PartialViewResult tresRelacionados(int id)
         {
-
-            var listaNum = dbGrafico.CATEGORIA.Where(x => x.id == id).First().auxiliar.Split(',');
-            ViewBag.tresRelacionados = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            //var listaNum = dbGrafico.CATEGORIA.Where(x => x.id == id).First().auxiliar.Split(',');
+            //ViewBag.tresRelacionados = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            ViewBag.tresRelacionados = UtilBusqueda.Relacionados3importantes(id);
+            var algo = UtilBusqueda.Relacionados3importantes(id); 
+            int id2 = id;
             return PartialView();
         }
 
         public PartialViewResult carruselRelacionados(int id)
         {
-            var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
-            ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
-           
-
+            //var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
+            //ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            ViewBag.Carrusel = UtilBusqueda.Relacionados12Carrusel(id);
             return PartialView();
         }
 
         public ActionResult VivianIfram()
         {
+            return View();
+        }
+
+        public ActionResult nose()
+        {
+            ViewBag.time1 = DateTime.Now;
+            //ViewBag.resultado = UtilBusqueda.IdCategoria(100101001,1234);
+            //ViewBag.resultado = UtilBusqueda.IdProducto(100101, 1234);
+            ViewBag.time2 = DateTime.Now;
             return View();
         }
     }

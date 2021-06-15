@@ -2577,6 +2577,7 @@
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\toastr\toastr.js.map" />
     <None Include="Properties\PublishProfiles\entornoPruebaGrafico - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\pruebaCalculadora - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - Web Deploy.pubxml" />
@@ -2801,6 +2802,7 @@
     <Content Include="Views\Info\VivianIfram.cshtml" />
     <Content Include="Views\Usuario\UsuarioSelectProducto4.cshtml" />
     <Content Include="Views\Usuario\Index22.cshtml" />
+    <Content Include="Views\Info\nose.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

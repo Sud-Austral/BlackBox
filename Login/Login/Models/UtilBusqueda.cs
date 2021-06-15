@@ -8,6 +8,7 @@ namespace Login.Models
     public class UtilBusqueda
     {
         private static graficosEntities dbGrafico = new graficosEntities();
+        private static Random rand = new Random();
 
 
         public static IEnumerable<GRAFICO> PaginaBusqueda(string concepto)
@@ -62,6 +63,53 @@ namespace Login.Models
                     break;
             }
             return Graficos;
+        }
+
+
+        public static List<GRAFICO> Relacionados3importantes(int id, int id2)
+        {
+            List<GRAFICO> aux = new List<GRAFICO>();
+            var query = dbGrafico.GRAFICO.SqlQuery("SELECT TOP 20 * FROM grafico WHERE categoria_id = " + id.ToString() + " AND id <> " + id2.ToString()).ToList();           
+            for (int i = 0; i < 3; i++)
+            {
+                aux.Add(query[rand.Next(query.Count())]);
+            }
+            return aux;
+        }
+
+        public static List<GRAFICO> Relacionados12Carrusel(int id, int id2)
+        {
+            List<GRAFICO> aux = new List<GRAFICO>();
+            //SELECT* FROM grafico WHERE categoria_id IN(SELECT id FROM categoria WHERE PRODUCTO_id = 100101) AND id<> 1033
+            var query = dbGrafico.GRAFICO.SqlQuery("SELECT TOP 50 * FROM grafico WHERE categoria_id IN (SELECT id FROM categoria WHERE PRODUCTO_id = " + id.ToString() + ") AND id <> " + id2.ToString()).ToList();
+            for (int i = 0; i < 12; i++)
+            {
+                aux.Add(query[rand.Next(query.Count())]);
+            }
+            return aux;
+        }
+
+        public static List<GRAFICO> Relacionados3importantes(int id)
+        {
+            List<GRAFICO> aux = new List<GRAFICO>();
+            var query = dbGrafico.GRAFICO.SqlQuery("SELECT TOP 20 * FROM grafico WHERE categoria_id = " + id.ToString()).ToList();
+            for (int i = 0; i < 3; i++)
+            {
+                aux.Add(query[rand.Next(query.Count())]);
+            }
+            return aux;
+        }
+
+        public static List<GRAFICO> Relacionados12Carrusel(int id)
+        {
+            List<GRAFICO> aux = new List<GRAFICO>();
+            //SELECT* FROM grafico WHERE categoria_id IN(SELECT id FROM categoria WHERE PRODUCTO_id = 100101) AND id<> 1033
+            var query = dbGrafico.GRAFICO.SqlQuery("SELECT TOP 50 * FROM grafico WHERE categoria_id IN (SELECT id FROM categoria WHERE PRODUCTO_id = " + id.ToString() + ")").Take(50).ToList();
+            for (int i = 0; i < 12; i++)
+            {
+                aux.Add(query[rand.Next(query.Count())]);
+            }
+            return aux;
         }
     }
 }
