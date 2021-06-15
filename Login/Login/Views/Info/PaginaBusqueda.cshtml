@@ -478,7 +478,7 @@
                                 <h5 id="contar" class="ml-3 mt-4" style="color:black">
                                     @*@ViewBag.Resultado.Count resultados*@
                                 </h5>
-                                <div class="table-responsive " style=" height: 1000px; overflow-x: hidden !important; border-radius: 20px !important; ">
+                                <div class="table-responsive" style=" height: 1200px; overflow-x: hidden !important; border-radius: 20px !important; ">
                                     <table id="mytable" class="table" style=" border:none !important;">
 
                                         <thead id="stud_body" style="border:none;">
@@ -819,9 +819,13 @@
                                             }
                                         }
                                     </script>
-                                    <button class="ml-5 btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
-                                        Ver más
-                                    </button>
+                                   
+                                    <div class="col-md-2">
+                                        <button class="btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 12px; margin-left:20px; margin-bottom:10px; width: 100px; cursor: pointer;">
+                                            Ver más
+                                        </button>
+                                    </div>
+                                   
                                 </div>
                             </div>
                             <div id="paginador"></div>
