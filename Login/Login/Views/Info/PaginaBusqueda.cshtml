@@ -78,9 +78,11 @@
     </script>
 </head>
 <body>
-    @*<button onclick="Paginacion('@ViewBag.palabra');">
-        Ver más
-    </button>*@
+    @*
+        <button onclick="FiltrarReporte360();">
+            Ver más
+        </button>
+    *@
     <script>
         var index = 1;
         function Paginacion(palabra) {
@@ -208,15 +210,15 @@
                             <!--fin de Fila que contiene botón borrar filtro y buscador -->
                             <!--  buscador -->
                             @*<div class="col-md-8 pr-0">
-                                <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                    <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                            </div>
+                                            <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                         </div>
-                                        <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                     </div>
-                                </div>
-                            </div>*@
+                                </div>*@
                         </div>
                         <!--  buscador -->
                         <div class="row justify-content-center" style="border:hidden !important;">
@@ -229,7 +231,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1" style="position:relative !important; transform:none !important; will-change:scroll-position !important;">
 
                                     @*Este script es para hacer el filtro de la tabla*@
-                                    <script> 
+                                    <script>
                                         //Funcion para filtrar Territorios a partir de Escala
                                         $(document).ready(function () {
                                             //Se activa al hacer click sobre cualquier objeto con class "escala"
@@ -238,9 +240,9 @@
                                                 var escalaTerritorial = $(this).val().toLowerCase();
                                                 //Se guarda el estado del checkbox
                                                 //true si esta marcado y false de lo contrario
-                                                var checkTerritorio = $(this).prop("checked"); 
+                                                var checkTerritorio = $(this).prop("checked");
 
-                                                $(".territorio").each(function () {                                                  
+                                                $(".territorio").each(function () {
 
                                                     var checkBox = $(this).find("label").find("input").val().toLowerCase();
                                                     if (checkTerritorio) {
@@ -254,7 +256,7 @@
                                                     }
                                                     //alert(escalaTerritorial + "-");
                                                     //alert(checkBox + "-");
-                                                    
+
 
                                                 });
                                             });
@@ -282,9 +284,6 @@
                                                     $("#myTable tr").show();
                                                     $("#contar").text($("#myTable tr").length + " Resultados");
                                                 }
-
-
-
                                             });
 
                                         });
@@ -322,16 +321,34 @@
                                     <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
                                         @foreach (var item4 in ViewBag.TipoGrafico)
                                         {
-                                            <div>
-                                                <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-                                            </div>
+                                            switch (item4)
+                                            {
+                                                case "Informe Interactivo":
+                                                    <div>
+                                                        <label><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                                    </div>
+                                                    break;
+                                                case "Reporte 360°":
+                                                    <div>
+                                                        <label><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                                    </div>
+                                                    break;
+                                                default:
+                                                    <div>
+                                                        <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                                    </div>
+                                                    break;
+                                            }/**/
+                                             /**/
+                                             /**/
+
                                         }
                                     </div>
                                     <h4 class="dropdown-header">ESCALA</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                         @foreach (var item5 in ViewBag.Paises)
                                         {
-                                            <div >
+                                            <div>
                                                 <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5"> @item5</label>
                                             </div>
                                         }
@@ -346,7 +363,7 @@
 
                                         }
                                     </div>
-                                    
+
                                     <h4 class="dropdown-header">PARÁMETRO</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                                         @foreach (var item7 in ViewBag.Parametro)
@@ -359,53 +376,53 @@
                                     </div>
                                     @*
 
-                                        <!-- FILTROS POR FECHA -->
+                                            <!-- FILTROS POR FECHA -->
 
-                                        <h4>Por fecha:</h4>
+                                            <h4>Por fecha:</h4>
 
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    Fecha inicial:
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        Fecha inicial:
+                                                    </div>
+                                                    <input id="startDate" width="220" />
+                                                    <div class="col-12">
+                                                        Fecha término:
+                                                    </div>
+                                                    <input id="endDate" width="220" />
                                                 </div>
-                                                <input id="startDate" width="220" />
-                                                <div class="col-12">
-                                                    Fecha término:
-                                                </div>
-                                                <input id="endDate" width="220" />
                                             </div>
-                                        </div>
-                                        <script>
-                                            var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                            $('#startDate').datepicker({
-                                                uiLibrary: 'bootstrap4',
-                                                iconsLibrary: 'fontawesome',
-                                                minDate: today,
-                                                maxDate: function () {
-                                                    return $('#endDate').val();
-                                                }
-                                            });
-                                            $('#endDate').datepicker({
-                                                uiLibrary: 'bootstrap4',
-                                                iconsLibrary: 'fontawesome',
-                                                minDate: function () {
-                                                    return $('#startDate').val();
-                                                }
-                                            });
-                                        </script>
-                                        <!-- FINAL FILTROS POR FECHA -->
+                                            <script>
+                                                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                                                $('#startDate').datepicker({
+                                                    uiLibrary: 'bootstrap4',
+                                                    iconsLibrary: 'fontawesome',
+                                                    minDate: today,
+                                                    maxDate: function () {
+                                                        return $('#endDate').val();
+                                                    }
+                                                });
+                                                $('#endDate').datepicker({
+                                                    uiLibrary: 'bootstrap4',
+                                                    iconsLibrary: 'fontawesome',
+                                                    minDate: function () {
+                                                        return $('#startDate').val();
+                                                    }
+                                                });
+                                            </script>
+                                            <!-- FINAL FILTROS POR FECHA -->
 
-                                        <div class="padding"></div>
+                                            <div class="padding"></div>
 
-                                        <!-- COMIENZO FILTRO POR PRECIOS -->
-                                        <h4>Por precio:</h4>
-                                        Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-                                        <div class="slider-primary">
-                                            <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+                                            <!-- COMIENZO FILTRO POR PRECIOS -->
+                                            <h4>Por precio:</h4>
+                                            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
+                                            <div class="slider-primary">
+                                                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+                                            </div>
+                                            <!-- FINAL FILTROS POR PRECIOS -->
                                         </div>
-                                        <!-- FINAL FILTROS POR PRECIOS -->
-                                    </div>
-                                    <!-- FINAL FILTROS -->
+                                        <!-- FINAL FILTROS -->
                                     *@
                                 </div>
                             </div>
@@ -555,8 +572,8 @@
 
                                                             </div>
                                                             @*<h1>
-                                                                @item.mostrar
-                                                            </h1>*@
+                                                                    @item.mostrar
+                                                                </h1>*@
                                                         </div>
 
 
@@ -899,7 +916,7 @@
         </div>
     </div>
 
-    
+
 
     @*Jquery, Popper bootstrap.min.js*@
     @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -991,7 +1008,7 @@
         }
 
         function PBGrafico2(id) {
-            
+
             $('#PBcuatro').html('<h2>Cargando Información...espere un momento por favor</h2>')
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
@@ -1049,15 +1066,59 @@
 
     @*Jquery, Popper bootstrap.min.js*@
     @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>*@
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>*@
     @*este script va con la funcion de cargar el gif en la seccion siete*@
     <script>
         $("#contar").text("@i  resultados");
     </script>
-   
+    <script>
+        function FiltrarII() {
+            $("#Informe_Interactivo").prop("checked", true);
+            contador = 0;
+            name_list = []
+            $("#myTable tr").hide()
+            var flag = 1
+            $("input:checkbox[name=name]:checked").each(function () {
+                flag = 0;
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1) {
+                        $(this).show();
+                        contador++;
+                    }
+                });
+                $("#contar").text(contador + " Resultados");
+            });
+        }
+        function FiltrarReporte360() {
+
+
+            $("#Reporte_360").prop("checked", true);
+            if ($("#Reporte_360").length == 0)
+                $("#Informe_Interactivo").prop("checked", true);
+            contador = 0;
+            name_list = []
+            $("#myTable tr").hide()
+            var flag = 1
+            $("input:checkbox[name=name]:checked").each(function () {
+                flag = 0;
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1) {
+                        $(this).show();
+                        contador++;
+                    }
+                });
+                $("#contar").text(contador + " Resultados");
+                if ($("#Reporte_360").length == 0)
+                    $("#contar").text("No pudimos encontrar Reportes 360° pero aqui tienes " + contador + " Informes Interactivos");;
+            });
+        }
+    </script>
+
 </body>
 </html>
 
