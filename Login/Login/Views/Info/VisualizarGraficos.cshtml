@@ -93,7 +93,7 @@
                         <a href="javascript:void(0);" style="text-decoration: none !important;" id="generarPDF">
 
                             <span id="verPdf" style="font-size:12px;" onclick="descargarPDF();" data-toggle="tooltip" data-placement="top" title="Los mapas en Mozilla no descargan correctamente">
-                                
+
                                 Ver en Pdf
                             </span>
                         </a>
@@ -249,7 +249,10 @@
         }
         estructura();
     </script>
-
+    <div class="container page" style="display:none;" id="grafico2">
+        <iframe id='inlineFrameExample2' width="1050" height="460" src="/info/dashboard?id=@ViewBag.Elemento.id">
+        </iframe>
+    </div>
     <link href="~/Content/Estilos/grafico.css" rel="stylesheet" />
 </body>
 </html>
