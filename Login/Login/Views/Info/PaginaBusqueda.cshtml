@@ -393,7 +393,7 @@
                                         @foreach (var item5 in ViewBag.Paises)
                                         {
                                             <div>
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5"> @item5</label>
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
                                             </div>
                                         }
                                     </div>
@@ -402,7 +402,7 @@
                                         @foreach (var item6 in ViewBag.Escala)
                                         {
                                             <div class="territorio">
-                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6"> @item6.Split('-')[0]</label>
+                                                <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</label>
                                             </div>
 
                                         }
