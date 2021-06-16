@@ -172,20 +172,23 @@
                             <p class="mt-md-3"><strong>Ver más información</strong></p>
                             <div class="row justify-content-center mb-md-3">
                                 <div class="col-md-5 col-10 text-center">
-                                    <a href="https://dataintelligence.store/collections">
-                                        <img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
-                                        <button class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
-                                            Ver Informe Interactivo
-                                        </button>
-                                    </a>
+
+                                    @*  <a href="https://dataintelligence.store/collections">*@
+                                    <img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
+                                    <button onclick="mostrador('#PBuno'); FiltrarII();" class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                        Ver Informe Interactivo
+                                    </button>
+                                    @* </a>*@
                                 </div>
                                 <div class="col-md-5 col-10 text-center">
-                                    <a href="https://dataintelligence.store/collections">
-                                        <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                        <button class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
-                                            Ver Reporte 360°
-                                        </button>
-                                    </a>
+                                    @*
+                                            <a href="https://dataintelligence.store/collections">*@
+                                    <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
+                                    <button onclick="mostrador('#PBuno'); FiltrarReporte360();" class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
+                                        Ver Reporte 360°
+                                    </button>
+                                    @*
+                                    </a>*@
                                 </div>
                                 @*estilos para cortar los tags en 3 filas y ocultar los demas con la clase line-clam *@
                                 <style>
