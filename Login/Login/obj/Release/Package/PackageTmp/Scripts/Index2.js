@@ -1,6 +1,6 @@
 ﻿function tresRelacionados(id) {
 
-    $('#tresRelacionados').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+    $('#tresRelacionados').html('<h2>Cargando Información...espere un momento por favor</h2>')
 
 
     $.ajax(
@@ -20,7 +20,8 @@
 
             error: function (error) {
                 // si hay un error lanzara el mensaje de error
-                alert('Fail');
+                //alert('Fail');
+                $("#tresRelacionados").html('<h2>Aun estamos trabajando en mostrar más información sobre este tema.</h2>');
             }
         });
 
@@ -28,7 +29,7 @@
 
 function carruselRelacionados(id) {
 
-    $('#carruselRelacionados').html('<h2>Cargando Datos...espere un momento por favor</h2>')
+    $('#carruselRelacionados').html('<h2>Cargando Información...espere un momento por favor</h2>')
 
 
     $.ajax(
@@ -48,7 +49,8 @@ function carruselRelacionados(id) {
 
             error: function (error) {
                 // si hay un error lanzara el mensaje de error
-                alert('Fail');
+                //alert('Fail');
+                $("#carruselRelacionados").html('<h2>Aun estamos trabajando en mostrar más información sobre este tema.</h2>');
             }
         });
    

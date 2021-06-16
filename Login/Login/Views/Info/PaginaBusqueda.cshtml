@@ -25,6 +25,49 @@
 
     @*Titulo de la pagina*@
     <title>Resultados de Busqueda</title>
+    @*script para guardar o imprimir grafico*@
+    <style type="text/css" media="print">
+
+        @@media print {
+            /*@@page {
+                size: landscape !important;
+            }
+
+            @@page {
+                size: A4 landscape !important;
+            }*/
+            .container {
+                width: 100%;
+            }
+
+            iframe {
+                /*zoom: 90%;*/
+                transform: scale(.9,.9) translate(1px,5px) !important;
+                /* margin: -40px 0px 0px -40px !important;
+                margin-right:5in !important;
+                transform: scale(.9,.9) !important;
+                -ms-transform: scale(.9,.9) !important;
+                -webkit-transform: scale(.9,.9) !important;*/
+
+
+            }
+
+            /*body {
+                 page-break-before:always;
+                width: 100%;
+                height: 100%;
+                -webkit-transform: rotate(-90deg) scale(.68,.68);
+                    -moz-transform: rotate(-90deg) scale(.58,.58);
+                zoom: 200%
+            }*/
+            #hide{
+                display:none !important;
+            }
+            #header, #nav, .noprint {
+                display: none !important;
+            }
+        }
+    </style>
     @*Script para cargar charts*@
     @*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>*@
     <!--carrucel-->
@@ -76,6 +119,7 @@
     <script>
         //window.jQuery = window.$ = require('jquery');
     </script>
+
 </head>
 <body>
     @*
@@ -149,7 +193,7 @@
     <div class="container-fluid mb-3">
 
         @*Buscador general *@
-        <div class="container borrar">
+        <div class="container" id="hide">
             <div class="row justify-content-center">
                 <div class="col-md-10 bg-light">
                     <div class="row justify-content-center">
@@ -166,7 +210,7 @@
 
 
         @*seccion de graficos*@
-        <div id="PBdos" style="display:none;">
+        <div  id="PBdos" style="display:none;">
 
         </div>
         @*Seccion Información relacionada que te podría interesar de pagina busqueda*@
@@ -463,7 +507,7 @@
                                 <h5 id="contar" class="ml-3 mt-4" style="color:black">
                                     @*@ViewBag.Resultado.Count resultados*@
                                 </h5>
-                                <div class="table-responsive " style=" height: 1000px; overflow-x: hidden !important; border-radius: 20px !important; ">
+                                <div class="table-responsive" style=" height: 1200px; overflow-x: hidden !important; border-radius: 20px !important; ">
                                     <table id="mytable" class="table" style=" border:none !important;">
 
                                         <thead id="stud_body" style="border:none;">
@@ -804,9 +848,13 @@
                                             }
                                         }
                                     </script>
-                                    <button class="ml-5 btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
-                                        Ver más
-                                    </button>
+                                   
+                                    <div class="col-md-2">
+                                        <button class="btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 12px; margin-left:20px; margin-bottom:10px; width: 100px; cursor: pointer;">
+                                            Ver más
+                                        </button>
+                                    </div>
+                                   
                                 </div>
                             </div>
                             <div id="paginador"></div>
@@ -834,7 +882,7 @@
         </div>
         <!-- FINAL RESULTADOS DE BUSQUEDA -->
         <!--seccion de suscripciones-->
-        <div onload="window.parent.scrollTo(0,0)" class="container-fluid text-center borrar" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+        <div id="hide" onload="window.parent.scrollTo(0,0)" class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
 
             <div class="row" style="padding-left:20%; padding-right:20%">
                 <div class="col-12">
@@ -850,7 +898,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid text-center borrar" style=" background-color: black;padding-bottom:40px; background-size:cover;">
+        <div id="hide" class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
 
             <div class="row" style="padding-left:20%; padding-right:20%">
                 <div class="col-12">

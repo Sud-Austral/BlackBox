@@ -2576,8 +2576,6 @@
     <Content Include="plugins\summernote\summernote.js.map" />
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\toastr\toastr.js.map" />
-    <None Include="Properties\PublishProfiles\entornoPruebaGrafico - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\pruebaCalculadora - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - Web Deploy.pubxml" />

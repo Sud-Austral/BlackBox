@@ -1,27 +1,40 @@
-﻿@media print {
-    * {
-        -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
-        color-adjust: exact !important; /*Firefox*/
+﻿@media print{
+     *{
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
     }
 
     div.page {
         writing-mode: horizontal-tb;
     }
 
-    body {
+   /* body {
         transform: scale(1);
+    }*/
+    body {
+        width: 700px;
+        zoom: 180%;
+        padding:0px !important;
     }
-
     h1 {
         display: none !important;
     }
-
+    
     .borrar {
         display: none !important;
     }
 
     @page {
-        margin: 0;
-        size: landscape;
+        /*margin: 0;*/
+        size: portrait;
     }
+
+    #grafico2 {
+        display: block !important;
+    }
+
+    iframe {
+        transform: scale(1,1) translate(1px,5px) !important;
+    }
+
 }

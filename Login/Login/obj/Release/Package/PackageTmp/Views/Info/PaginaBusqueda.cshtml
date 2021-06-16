@@ -10,7 +10,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.8" />
     <!--Bundles rederizados-->
-
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery")
@@ -26,6 +25,49 @@
 
     @*Titulo de la pagina*@
     <title>Resultados de Busqueda</title>
+    @*script para guardar o imprimir grafico*@
+    <style type="text/css" media="print">
+
+        @@media print {
+            /*@@page {
+                size: landscape !important;
+            }
+
+            @@page {
+                size: A4 landscape !important;
+            }*/
+            .container {
+                width: 100%;
+            }
+
+            iframe {
+                /*zoom: 90%;*/
+                transform: scale(.9,.9) translate(1px,5px) !important;
+                /* margin: -40px 0px 0px -40px !important;
+                margin-right:5in !important;
+                transform: scale(.9,.9) !important;
+                -ms-transform: scale(.9,.9) !important;
+                -webkit-transform: scale(.9,.9) !important;*/
+
+
+            }
+
+            /*body {
+                 page-break-before:always;
+                width: 100%;
+                height: 100%;
+                -webkit-transform: rotate(-90deg) scale(.68,.68);
+                    -moz-transform: rotate(-90deg) scale(.58,.58);
+                zoom: 200%
+            }*/
+            #hide{
+                display:none !important;
+            }
+            #header, #nav, .noprint {
+                display: none !important;
+            }
+        }
+    </style>
     @*Script para cargar charts*@
     @*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>*@
     <!--carrucel-->
@@ -77,11 +119,14 @@
     <script>
         //window.jQuery = window.$ = require('jquery');
     </script>
+
 </head>
 <body>
-    @*<button onclick="Paginacion('@ViewBag.palabra');">
-        Ver más
-    </button>*@
+    @*
+        <button onclick="FiltrarReporte360();">
+            Ver más
+        </button>
+    *@
     <script>
         var index = 1;
         function Paginacion(palabra) {
@@ -148,7 +193,7 @@
     <div class="container-fluid mb-3">
 
         @*Buscador general *@
-        <div class="container borrar">
+        <div class="container" id="hide">
             <div class="row justify-content-center">
                 <div class="col-md-10 bg-light">
                     <div class="row justify-content-center">
@@ -165,7 +210,7 @@
 
 
         @*seccion de graficos*@
-        <div id="PBdos" style="display:none;">
+        <div  id="PBdos" style="display:none;">
 
         </div>
         @*Seccion Información relacionada que te podría interesar de pagina busqueda*@
@@ -209,15 +254,15 @@
                             <!--fin de Fila que contiene botón borrar filtro y buscador -->
                             <!--  buscador -->
                             @*<div class="col-md-8 pr-0">
-                                <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                    <div class="p-1 bg-transparent rounded-pill shadow-sm mb-4" style="border: 0.5px solid #bbc1c5; border-radius: 25px;">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                            </div>
+                                            <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                         </div>
-                                        <input id="search" type="search" placeholder="Búsqueda por palabras claves" aria-describedby="button-addon2" class="form-control rounded rounded-pill border-0 bg-transparent">
                                     </div>
-                                </div>
-                            </div>*@
+                                </div>*@
                         </div>
                         <!--  buscador -->
                         <div class="row justify-content-center" style="border:hidden !important;">
@@ -230,7 +275,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1" style="position:relative !important; transform:none !important; will-change:scroll-position !important;">
 
                                     @*Este script es para hacer el filtro de la tabla*@
-                                    <script> 
+                                    <script>
                                         //Funcion para filtrar Territorios a partir de Escala
                                         $(document).ready(function () {
                                             //Se activa al hacer click sobre cualquier objeto con class "escala"
@@ -239,9 +284,9 @@
                                                 var escalaTerritorial = $(this).val().toLowerCase();
                                                 //Se guarda el estado del checkbox
                                                 //true si esta marcado y false de lo contrario
-                                                var checkTerritorio = $(this).prop("checked"); 
+                                                var checkTerritorio = $(this).prop("checked");
 
-                                                $(".territorio").each(function () {                                                  
+                                                $(".territorio").each(function () {
 
                                                     var checkBox = $(this).find("label").find("input").val().toLowerCase();
                                                     if (checkTerritorio) {
@@ -255,7 +300,7 @@
                                                     }
                                                     //alert(escalaTerritorial + "-");
                                                     //alert(checkBox + "-");
-                                                    
+
 
                                                 });
                                             });
@@ -283,9 +328,6 @@
                                                     $("#myTable tr").show();
                                                     $("#contar").text($("#myTable tr").length + " Resultados");
                                                 }
-
-
-
                                             });
 
                                         });
@@ -323,16 +365,34 @@
                                     <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
                                         @foreach (var item4 in ViewBag.TipoGrafico)
                                         {
-                                            <div>
-                                                <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-                                            </div>
+                                            switch (item4)
+                                            {
+                                                case "Informe Interactivo":
+                                                    <div>
+                                                        <label><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                                    </div>
+                                                    break;
+                                                case "Reporte 360°":
+                                                    <div>
+                                                        <label><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                                    </div>
+                                                    break;
+                                                default:
+                                                    <div>
+                                                        <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                                    </div>
+                                                    break;
+                                            }/**/
+                                             /**/
+                                             /**/
+
                                         }
                                     </div>
                                     <h4 class="dropdown-header">ESCALA</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                         @foreach (var item5 in ViewBag.Paises)
                                         {
-                                            <div >
+                                            <div>
                                                 <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5"> @item5</label>
                                             </div>
                                         }
@@ -347,7 +407,7 @@
 
                                         }
                                     </div>
-                                    
+
                                     <h4 class="dropdown-header">PARÁMETRO</h4>
                                     <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                                         @foreach (var item7 in ViewBag.Parametro)
@@ -360,53 +420,53 @@
                                     </div>
                                     @*
 
-                                        <!-- FILTROS POR FECHA -->
+                                            <!-- FILTROS POR FECHA -->
 
-                                        <h4>Por fecha:</h4>
+                                            <h4>Por fecha:</h4>
 
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    Fecha inicial:
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        Fecha inicial:
+                                                    </div>
+                                                    <input id="startDate" width="220" />
+                                                    <div class="col-12">
+                                                        Fecha término:
+                                                    </div>
+                                                    <input id="endDate" width="220" />
                                                 </div>
-                                                <input id="startDate" width="220" />
-                                                <div class="col-12">
-                                                    Fecha término:
-                                                </div>
-                                                <input id="endDate" width="220" />
                                             </div>
-                                        </div>
-                                        <script>
-                                            var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                            $('#startDate').datepicker({
-                                                uiLibrary: 'bootstrap4',
-                                                iconsLibrary: 'fontawesome',
-                                                minDate: today,
-                                                maxDate: function () {
-                                                    return $('#endDate').val();
-                                                }
-                                            });
-                                            $('#endDate').datepicker({
-                                                uiLibrary: 'bootstrap4',
-                                                iconsLibrary: 'fontawesome',
-                                                minDate: function () {
-                                                    return $('#startDate').val();
-                                                }
-                                            });
-                                        </script>
-                                        <!-- FINAL FILTROS POR FECHA -->
+                                            <script>
+                                                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                                                $('#startDate').datepicker({
+                                                    uiLibrary: 'bootstrap4',
+                                                    iconsLibrary: 'fontawesome',
+                                                    minDate: today,
+                                                    maxDate: function () {
+                                                        return $('#endDate').val();
+                                                    }
+                                                });
+                                                $('#endDate').datepicker({
+                                                    uiLibrary: 'bootstrap4',
+                                                    iconsLibrary: 'fontawesome',
+                                                    minDate: function () {
+                                                        return $('#startDate').val();
+                                                    }
+                                                });
+                                            </script>
+                                            <!-- FINAL FILTROS POR FECHA -->
 
-                                        <div class="padding"></div>
+                                            <div class="padding"></div>
 
-                                        <!-- COMIENZO FILTRO POR PRECIOS -->
-                                        <h4>Por precio:</h4>
-                                        Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-                                        <div class="slider-primary">
-                                            <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+                                            <!-- COMIENZO FILTRO POR PRECIOS -->
+                                            <h4>Por precio:</h4>
+                                            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
+                                            <div class="slider-primary">
+                                                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+                                            </div>
+                                            <!-- FINAL FILTROS POR PRECIOS -->
                                         </div>
-                                        <!-- FINAL FILTROS POR PRECIOS -->
-                                    </div>
-                                    <!-- FINAL FILTROS -->
+                                        <!-- FINAL FILTROS -->
                                     *@
                                 </div>
                             </div>
@@ -447,7 +507,7 @@
                                 <h5 id="contar" class="ml-3 mt-4" style="color:black">
                                     @*@ViewBag.Resultado.Count resultados*@
                                 </h5>
-                                <div class="table-responsive " style=" height: 1000px; overflow-x: hidden !important; border-radius: 20px !important; ">
+                                <div class="table-responsive" style=" height: 1200px; overflow-x: hidden !important; border-radius: 20px !important; ">
                                     <table id="mytable" class="table" style=" border:none !important;">
 
                                         <thead id="stud_body" style="border:none;">
@@ -556,8 +616,8 @@
 
                                                             </div>
                                                             @*<h1>
-                                                                @item.mostrar
-                                                            </h1>*@
+                                                                    @item.mostrar
+                                                                </h1>*@
                                                         </div>
 
 
@@ -788,9 +848,13 @@
                                             }
                                         }
                                     </script>
-                                    <button class="ml-5 btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
-                                        Ver más
-                                    </button>
+                                   
+                                    <div class="col-md-2">
+                                        <button class="btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 12px; margin-left:20px; margin-bottom:10px; width: 100px; cursor: pointer;">
+                                            Ver más
+                                        </button>
+                                    </div>
+                                   
                                 </div>
                             </div>
                             <div id="paginador"></div>
@@ -809,9 +873,7 @@
                                     p.Mostrar();
                                 }
                             </script>
-
                             <!-- FINAL TABLA DE RESULTADOS -->
-
                         </div>
                         <!-- FINAL RESULTADOS -->
                     </div>
@@ -820,7 +882,7 @@
         </div>
         <!-- FINAL RESULTADOS DE BUSQUEDA -->
         <!--seccion de suscripciones-->
-        <div onload="window.parent.scrollTo(0,0)" class="container-fluid text-center borrar" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+        <div id="hide" onload="window.parent.scrollTo(0,0)" class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
 
             <div class="row" style="padding-left:20%; padding-right:20%">
                 <div class="col-12">
@@ -836,7 +898,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid text-center borrar" style=" background-color: black;padding-bottom:40px; background-size:cover;">
+        <div id="hide" class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
 
             <div class="row" style="padding-left:20%; padding-right:20%">
                 <div class="col-12">
@@ -902,7 +964,7 @@
         </div>
     </div>
 
-    
+
 
     @*Jquery, Popper bootstrap.min.js*@
     @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -994,7 +1056,7 @@
         }
 
         function PBGrafico2(id) {
-            
+
             $('#PBcuatro').html('<h2>Cargando Información...espere un momento por favor</h2>')
             //$("#PBdos").html("<h1>Hola</h1>")
             //alert(Grafico)
@@ -1052,15 +1114,59 @@
 
     @*Jquery, Popper bootstrap.min.js*@
     @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>*@
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>*@
     @*este script va con la funcion de cargar el gif en la seccion siete*@
     <script>
         $("#contar").text("@i  resultados");
     </script>
-   
+    <script>
+        function FiltrarII() {
+            $("#Informe_Interactivo").prop("checked", true);
+            contador = 0;
+            name_list = []
+            $("#myTable tr").hide()
+            var flag = 1
+            $("input:checkbox[name=name]:checked").each(function () {
+                flag = 0;
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1) {
+                        $(this).show();
+                        contador++;
+                    }
+                });
+                $("#contar").text(contador + " Resultados");
+            });
+        }
+        function FiltrarReporte360() {
+
+
+            $("#Reporte_360").prop("checked", true);
+            if ($("#Reporte_360").length == 0)
+                $("#Informe_Interactivo").prop("checked", true);
+            contador = 0;
+            name_list = []
+            $("#myTable tr").hide()
+            var flag = 1
+            $("input:checkbox[name=name]:checked").each(function () {
+                flag = 0;
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1) {
+                        $(this).show();
+                        contador++;
+                    }
+                });
+                $("#contar").text(contador + " Resultados");
+                if ($("#Reporte_360").length == 0)
+                    $("#contar").text("No pudimos encontrar Reportes 360° pero aqui tienes " + contador + " Informes Interactivos");;
+            });
+        }
+    </script>
+
 </body>
 </html>
 
