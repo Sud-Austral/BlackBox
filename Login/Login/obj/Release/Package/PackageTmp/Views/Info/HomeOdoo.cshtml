@@ -53,16 +53,18 @@
                                         <div class="col-md-4 mb-3">
                                             <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[0].id">
                                                 <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[0].titulo">
-                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                                        <div class="col-md-1 col-2">
-                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                                        </div>
-                                                        <div class="col">
-                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[0]._titulo2</p>
+                                                    <div class="card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="row">
+                                                            <div class="col-md-1 col-2">
+                                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[0]._titulo2</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[0]._url_Image">
+                                                        <img class="img-fluid" alt="https://serviciodashboard.azurewebsites.net/Content/img/iconos_TipoProducto/1.png" src="@ViewBag.Graficos[0]._url_Image">
                                                     </div>
                                                 </div>
                                             </a>
@@ -287,7 +289,7 @@
 
     </div>
     <!--seccion de dimensiones-->
-    <div class="container-fluid text-center pb-5" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_8.jpg');">
+    <div class="container-fluid text-center" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_8.jpg'); padding-bottom:8%;">
         <div class="row">
             <h3 style="padding-top:60px;">¡Todo tipo de temáticas!</h3>
             <p style="font-size:24px;padding-bottom:20px;">
@@ -295,7 +297,7 @@
             </p>
         </div>
 
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center" style="font-size:12px;">
             <div class="col-12 col-md-3 col-lg-3 col-xl-2">
                 <img class="img-fluid" src="~/Content/image_estadistica/logo_DimensionAmbiental_descripcion.png" alt="Alternate Text" />
                 <div class="row d-block palabrasClaves" style="border:#9bc4d0;  overflow:scroll; height:200px; overflow-x:hidden;">
