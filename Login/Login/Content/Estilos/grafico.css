@@ -1,4 +1,4 @@
-﻿@media print {
+﻿@media print{
      *{
         -webkit-print-color-adjust: exact !important;
         color-adjust: exact !important;
@@ -8,10 +8,14 @@
         writing-mode: horizontal-tb;
     }
 
-    /*body {
-        transform: scale(2);
+   /* body {
+        transform: scale(1);
     }*/
-
+    body {
+        width: 700px;
+        zoom: 180%;
+        padding:0px !important;
+    }
     h1 {
         display: none !important;
     }
