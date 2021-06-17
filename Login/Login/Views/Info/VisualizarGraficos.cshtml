@@ -99,17 +99,20 @@
                         <button type="button" class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
                     </div>
                     @*boton para descargar iframe*@
-                    @*<a onclick="javascript:Imprime('Imprimeme');" class="btn btn-primary">Imprime</a>
-                    <script>
-                        function Imprime(Imprimeme) {
-                            window.print()
-                        }
-                    </script>*@
+
                     <div class="col-md-1 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
-                        <a href="javascript:void(0);" style="text-decoration: none !important;">
-                            <span id="verPdf" style="font-size:12px;">Ver en Pdf</span>
-                        </a>
+                        <a onclick="javascript:Imprime('Imprimeme');" style="cursor:pointer">Ver en Pdf</a>
+                        <script>
+                            function Imprime(Imprimeme) {
+                                window.print()
+                            }
+                        </script>
                     </div>
+                    @*<div class="col-md-1 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
+            <a href="javascript:void(0);" style="text-decoration: none !important;">
+                <span id="verPdf" style="font-size:12px;">Ver en Pdf</span>
+            </a>
+        </div>*@
                     @*Logo de DATA INTELLIGENCE PIE DEL IFRAME*@
                     <div class="col-8 col-md-9">
                         <div class="row d-flex " style="justify-content:flex-end;">
