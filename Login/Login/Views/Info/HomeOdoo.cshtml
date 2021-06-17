@@ -45,7 +45,7 @@
                         </p>
                     </div>
 
-                    <div class="col-8">
+                    <div class="col-8" >
                         <div id="carouselExampleIndicators2" class="carousel" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -53,18 +53,18 @@
                                         <div class="col-md-4 mb-3">
                                             <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[0].id">
                                                 <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[0].titulo">
-                                                    <div class="card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                                        <div class="row">
-                                                            <div class="col-md-1 col-2">
-                                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                                            </div>
-                                                            <div class="col">
-                                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[0]._titulo2</p>
-                                                            </div>
+                                                    <div class="row bg-dark text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff; font-size:1em;">@ViewBag.Graficos[0]._titulo2</p>
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="https://serviciodashboard.azurewebsites.net/Content/img/iconos_TipoProducto/1.png" src="@ViewBag.Graficos[0]._url_Image">
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="" src=""
+                                                             onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -80,8 +80,8 @@
                                                             <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[1]._titulo2</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[1]._url_Image">
+                                                    <div class="card" >
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[1]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -98,7 +98,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image">
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -119,7 +119,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image">
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -135,8 +135,8 @@
                                                             <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[4]._titulo2</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image">
+                                                    <div class="card" >
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -152,8 +152,8 @@
                                                             <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[5]._titulo2</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image">
+                                                    <div class="card" >
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -174,8 +174,8 @@
                                                             <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[6]._titulo2</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image">
+                                                    <div class="card" >
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -192,7 +192,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image">
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -209,7 +209,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[8]._url_Image">
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[8]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -231,7 +231,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image">
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -248,7 +248,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image">
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
@@ -265,7 +265,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[11]._url_Image">
+                                                        <img class="img-fluid" style="min-height:250px !important; max-height: 250px !important;" alt="100%x280" src="@ViewBag.Graficos[11]._url_Image" onerror="this.src='/Content/img/iconos_TipoProducto/1.png'">
                                                     </div>
                                                 </div>
                                             </a>
