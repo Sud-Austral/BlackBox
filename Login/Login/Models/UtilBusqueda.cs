@@ -13,11 +13,16 @@ namespace Login.Models
 
         public static IEnumerable<GRAFICO> PaginaBusqueda(string concepto)
         {
+            concepto = concepto.Trim().ToLower();
+            //string accentedStr;
+            byte[] tempBytes;
+            tempBytes = System.Text.Encoding.GetEncoding("ISO-8859-8").GetBytes(concepto);
+            concepto = System.Text.Encoding.UTF8.GetString(tempBytes);
+
             var prioridad = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + concepto + " %'")
-                                                .Take(200);
-            
+                                                .Take(200);            
             IEnumerable<GRAFICO> NEW_GRAFICOS;
-            IEnumerable<GRAFICO> union;
+            IEnumerable<GRAFICO> union = prioridad;
             if (prioridad.Count() < 200)
             {
                 NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(concepto) || x.titulo.Contains(concepto) || x.tags.Contains(concepto))
@@ -25,13 +30,7 @@ namespace Login.Models
                                                  .Take(200 - prioridad.Count());
                 int ent = NEW_GRAFICOS.Count();
                 union = prioridad.Concat(NEW_GRAFICOS); //.Distinct();
-
             }
-            else
-            {
-                union = prioridad;
-            }
-
             if(union.Count() == 0)
             {
                 concepto = concepto.Substring(0, concepto.Length - 3);

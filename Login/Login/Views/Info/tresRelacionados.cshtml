@@ -18,7 +18,10 @@
                     <a class="link-card" href="/info/Index2?id=@ViewBag.tresRelacionados[0].id" style="text-decoration: none; color: #000;">
                         <p class="m-3">
                             <span style="font-size:1.1rem;"><strong>@ViewBag.tresRelacionados[0].titulo</strong></span> <br />
-                            <span style="font-size:0.9rem !important;">@ViewBag.tresRelacionados[0].descripcion</span>
+                            <span style="font-size:0.9rem !important;border:none !important" data-toggle="tooltip" data-placement="top"
+                                    title="@ViewBag.tresRelacionados[0].descripcion_larga" class="line-clamp3">
+                                @ViewBag.tresRelacionados[0].descripcion_larga
+                            </span>
                         </p>
                     </a>
                 </div>
@@ -32,7 +35,10 @@
                     <a class="link-card" href="/info/Index2?id=@ViewBag.tresRelacionados[1].id" style="text-decoration:none; color:#000;">
                         <p class="m-3">
                             <span style="font-size:1.1rem;"><strong>@ViewBag.tresRelacionados[1].titulo</strong></span> <br />
-                            <span style="font-size:0.9rem !important;">@ViewBag.tresRelacionados[1].descripcion</span>
+                            <span style="font-size:0.9rem !important;border:none !important" data-toggle="tooltip" data-placement="top"
+                                    title="@ViewBag.tresRelacionados[1].descripcion_larga" class="line-clamp3">
+                                @ViewBag.tresRelacionados[1].descripcion_larga
+                            </span>
                         </p>
                     </a>
                 </div>
@@ -46,7 +52,10 @@
                     <a class="link-card" href="/info/Index2?id=@ViewBag.tresRelacionados[2].id" style="text-decoration: none; color: #000;">
                         <p class="m-3">
                             <span style="font-size:1.1rem;"><strong>@ViewBag.tresRelacionados[2].titulo</strong></span> <br />
-                            <span style="font-size:0.9rem !important;">@ViewBag.tresRelacionados[2].descripcion</span>
+                            <span style="font-size:0.9rem !important;border:none !important" data-toggle="tooltip" data-placement="top"
+                                    title="@ViewBag.tresRelacionados[2].descripcion_larga" class="line-clamp3">
+                                @ViewBag.tresRelacionados[2].descripcion_larga
+                            </span>
                         </p>
                     </a>
                 </div>

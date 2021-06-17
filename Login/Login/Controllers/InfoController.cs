@@ -80,6 +80,11 @@ namespace AplicacionBlanco.Controllers
         {
             ViewBag.palabra = id;
             IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
+            if(union.Count() == 0)
+            {
+                ViewBag.Concepto = id;
+                return View("No_Resultado");
+            }
             ViewBag.Resultado = union;
 
             List<string> Paises = new List<string>();
@@ -380,6 +385,11 @@ namespace AplicacionBlanco.Controllers
             //ViewBag.resultado = UtilBusqueda.IdCategoria(100101001,1234);
             //ViewBag.resultado = UtilBusqueda.IdProducto(100101, 1234);
             ViewBag.time2 = DateTime.Now;
+            return View();
+        }
+
+        public ActionResult No_Resultado()
+        {            
             return View();
         }
     }

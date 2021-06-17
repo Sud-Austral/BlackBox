@@ -83,8 +83,8 @@
 
             </div>
         </div>
-       
-        
+
+
         @*seccion iframe grafico*@
         <section class="contenedor-main row mr-md-2 justify-content-center">
             <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; max-height:590px !important;">
@@ -98,8 +98,7 @@
                 </div>
                 <!--Iframe de grafico-->
                 <div class="container">
-                    <iframe id='inlineFrameExample2' style="width:100%; height:460px;" src="/info/dashboard?id=@ViewBag.Elemento.id">
-                    </iframe>
+                    <iframe id='inlineFrameExample2' style="width:100%; height:460px;" src="/info/dashboard?id=@ViewBag.Elemento.id"></iframe>
                 </div>
                 <div class="row" style="color:blue; font-size:10px;">
                     @*boton para ver mas informacion*@
@@ -238,7 +237,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <p class="mt-md-3 mb-md-1"><strong>Tags:</strong></p>
-                                        <p class='line-clamp'>@ViewBag.ELEMENTO.tags</p>
+                                        <p id="tagsGrafico" class='line-clamp'>@ViewBag.ELEMENTO.tags</p>
                                     </div>
                                 </div>
                             </div>
@@ -338,8 +337,29 @@
     </script>
     @*<h1>@ViewBag.Elemento.CATEGORIA_id</h1>*@
 
+    
     <script>
         $(".line-clamp").text($(".line-clamp").text().split(",").join(", "));
+        function construirEstructura(Concepto) {
+            Concepto = Concepto.trim();
+            return '<a href="/info/PaginaBusqueda?id=' + Concepto + '">' + Concepto + '</a>';
+
+        }
+        //var lista = [1, 2, 3, 4]
+        //lista.map(alert);
+        function estructura() {
+            // En esta linea, se transforma el texto del elemento #Gustavo en una lista separando el String por ,
+            var lista = $("#tagsGrafico").text().split(",") //["hola1", "hola2", "hola3"]
+            // A cada elemento de la lista se le aplioca la funcion construirEstructura
+            // La funcion construirEstructura toma un elemento y devuelve un elemento link (en este caso <a>)
+            var listaEstructurada = lista.map(construirEstructura)
+            // Esta variable vuelve a unir toda la lista en un solo String
+            var salida = listaEstructurada.join(", ")
+            // Setea el contenido del elemento #Gustavo con el String creado anteriormente
+            $("#tagsGrafico").html(salida)
+            return salida;
+        }
+        estructura();
     </script>
 </body>
 </html>

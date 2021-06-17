@@ -261,7 +261,7 @@
     <script>
         $(".line-clamp").text($(".line-clamp").text().split(",").join(", "));
         function construirEstructura(Concepto) {
-
+            Concepto = Concepto.trim();
             return '<a href="/info/PaginaBusqueda?id=' + Concepto + '">' + Concepto + '</a>';
 
         }
