@@ -1,7 +1,54 @@
-﻿@*<h1>@ViewBag.Grafico</h1>*@
+﻿
+
+@*<style type="text/css" media="print">
+
+    @@media print {
+        @@page {
+               /* size: landscape !important;*/
+            }
+
+            /*page {
+                size: A4 landscape !important;
+            }*/
+        /*.container {
+            width: 100%;
+        }*/
+
+        iframe {
+          /*  zoom: 50%;*/
+           /* transform: scale(.6,.6) !important;*/
+             margin: 1px 1px 1px 1px !important;
+              /*  margin-right:5in !important;*/
+               /* transform: scale(.9,.9) !important;
+                -ms-transform: scale(.9,.9) !important;
+                -webkit-transform: scale(.9,.9) !important;*/
+        }
+        /*body {
+
+                page-break-before:always;
+                width: 100%;
+                height: 100%;
+                -webkit-transform: rotate(-90deg) scale(.68,.68);
+                -moz-transform: rotate(-90deg) scale(.58,.58);
+                zoom: 200%
+        }*/
+        #hide {
+            display: none !important;
+        }
+
+        #header, #nav, .noprint {
+            display: none !important;
+        }
+    }
+</style>*@
+
+
+@*<h1>@ViewBag.Grafico</h1>*@
 
 @********************test boton ir atras**********************@
-<input class="btn btn-danger btn-sm  mb-2" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;" type="button" onclick="mostrador('#siete')" name="volver atrás" value="Atrás">
+<input class="btn btn-danger btn-sm  mb-2" id="hide" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;" type="button" onclick="mostrador('#siete')" name="volver atrás" value="Atrás">
+
+
 @*<a href="javascript:history.back(-1);" title="Ir la página anterior">Volver</a>*@
 <div class="row">
     <div class="col-8">
@@ -14,9 +61,17 @@
 </div>
 @if (ViewBag.Grafico.TIPO_GRAFICO_id < 3)
 {
-    <div class="row  justify-content-center" style="height:300px;">
-        <div class="col-md-10 embed-responsive embed-responsive-16by9 mb-5">
+    <div class="row  justify-content-center">
+        <div class="col-12 col-md-10 embed-responsive embed-responsive-16by9 mb-5">
             <iframe class="embed-responsive-item" src="@ViewBag.Grafico.url"></iframe>
+        </div>
+        <div class="col-md-3 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
+             <a onclick="javascript:Imprime('Imprimeme');" style="cursor:pointer">Ver en Pdf</a>
+            <script>
+                function Imprime(Imprimeme) {
+                    window.print()
+                }
+            </script>
         </div>
         @*descripcion y datos de graficos*@
         <section class="container-fluid">
