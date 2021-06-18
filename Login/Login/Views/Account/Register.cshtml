@@ -28,6 +28,18 @@
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
         </div>
+        <div class="col-md-10">
+            La contraseña debe poseer:
+            <br />
+
+            <strong>∙</strong> Al menos 6 caracteres
+            <br />
+            <strong>∙</strong> Al menos 1 Número
+            <br />
+            <strong>∙</strong> Al menos 1 caracter especial
+            <br />
+
+        </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
@@ -37,7 +49,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Registrarse" />
+            <input type="submit" class="btn btn-primary" value="Registrarse" />
         </div>
     </div>
 }
