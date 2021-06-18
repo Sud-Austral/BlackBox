@@ -102,12 +102,12 @@
                         <a href="#" class="d-block">@ViewBag.User</a>
                     </div>
                 </div>
-                <p class="m-2" style="color:#fff;">
-                    Buscar en mis Suscripciones
+                <!--<p class="m-2" style="color:#fff;">
+                    Buscar en mis Suscripciones-->
                     @*<i class="fas fa-angle-left right"></i>*@
-                </p>
+                <!--</p>-->
                 <!-- SidebarSearch Form -->
-                <div class="form-inline mb-5">
+                <!--<div class="form-inline mb-5">
                     <div class="input-group" data-widget="sidebar-search">
                         <input  class="form-control form-control-sidebar" type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search" style="font-size:13px;">
                         <div class="input-group-append">
@@ -116,7 +116,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!--<form class="input-group mb-5" href="/Usuario/Index?id=" >-->@*onsubmit="BuscadorSuscripciones(event);"*@
                 <!--<div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
@@ -426,6 +426,14 @@
                                     </a>
                                 </li>
                                 <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="https://www.dataintelligence-group.com/data-intelligence" target="_blank" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Somos
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
                                     <a href="https://www.dataintelligence-group.com/abarcamos" target="_blank" class="nav-link ">
                                         <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
                                         <p style="color:#518bb3">
@@ -433,6 +441,7 @@
                                         </p>
                                     </a>
                                 </li>
+
                                 <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
                                     <a href="https://www.dataintelligence-group.com/ofrecemos" target="_blank" class="nav-link ">
                                         <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
@@ -450,21 +459,14 @@
                                     </a>
                                 </li>
                                 @*<li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                            <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
-                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                <p style="color:#518bb3">
-                                    Estadísticas
-                                </p>
-                            </a>
-                        </li>*@
-                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                    <a href="#" target="_blank" class="nav-link ">
-                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                        <p style="color:#518bb3">
-                                            Somos
-                                        </p>
-                                    </a>
-                                </li>
+            <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
+                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                <p style="color:#518bb3">
+                    Estadísticas
+                </p>
+            </a>
+        </li>*@
+
 
                             </ul>
 
@@ -796,33 +798,71 @@
                                                 </p>
                                                 <div class="row justify-content-between">
                                                     <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                        <p class="mt-2" style="font-size:14px;">
-                                                            GENERAL <br />
-                                                            contacto@dataintelligence-group.com <br />
-                                                            +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
-
-                                                        </p>
+                                                        <div class="row">
+                                                            <div class="col-12 text-center" style="font-size:14px;">
+                                                                <strong>GENERAL</strong>
+                                                            </div>
+                                                            <div class="col-2" style="font-size:14px;">
+                                                                <img src="~/Images/ayuda/icono_gmail.png" />&nbsp;&nbsp;&nbsp;
+                                                            </div>
+                                                            <div class="col-10" style="font-size:14px;">
+                                                                contacto@dataintelligence-group.com
+                                                            </div>
+                                                            <div class="col-2" style="font-size:14px;">
+                                                                <img src="~/Images/ayuda/icono_telefono.png" />
+                                                            </div>
+                                                            <div class="col-10" style="font-size:14px;">
+                                                                <strong>+56 9 9438 5412 </strong> de 9:00 a 18:00 hrs (GMT-3)
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                        <p class="mt-1" style="font-size:14px;">
-                                                            SOPORTE <br />
-                                                            soporte@dataintelligence-group.com <br />
-                                                            +56 9 9438 5412  06:00 a 00:00 hrs (GMT-3)
-
-                                                        </p>
+                                                        <div class="row">
+                                                            <div class="col-12 text-center" style="font-size:14px;">
+                                                                <strong>VENTAS CORPORATIVAS</strong>
+                                                            </div>
+                                                            <div class="col-2" style="font-size:14px;">
+                                                                <img src="~/Images/ayuda/icono_gmail.png" />&nbsp;&nbsp;&nbsp;
+                                                            </div>
+                                                            <div class="col-10" style="font-size:14px;">
+                                                                ventas@dataintelligence-group.com
+                                                            </div>
+                                                            <div class="col-2" style="font-size:14px;">
+                                                                <img src="~/Images/ayuda/icono_telefono.png" />
+                                                            </div>
+                                                            <div class="col-10" style="font-size:14px;">
+                                                                <strong>+56 9 9438 5412 </strong> de 9:00 a 18:00 hrs (GMT-3)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-5 mt-2" style="border:0.5px solid #808080; border-radius:15px;">
+                                                        <div class="row">
+                                                            <div class="col-12 text-center" style="font-size:14px;">
+                                                                <strong>SOPORTE</strong>
+                                                            </div>
+                                                            <div class="col-2" style="font-size:14px;">
+                                                                <img src="~/Images/ayuda/icono_gmail.png" />&nbsp;&nbsp;&nbsp;
+                                                            </div>
+                                                            <div class="col-10" style="font-size:14px;">
+                                                                soporte@dataintelligence-group.com
+                                                            </div>
+                                                            <div class="col-2" style="font-size:14px;">
+                                                                <img src="~/Images/ayuda/icono_telefono.png" />
+                                                            </div>
+                                                            <div class="col-10" style="font-size:14px;">
+                                                                <strong>+56 9 9438 5412 </strong> de  9:00 a 18:00 hrs (GMT-3)
+                                                            </div>
+                                                            <div class="col-2" style="font-size:14px;">
+                                                             
+                                                                <img src="~/Images/ayuda/icono_whatsApp.png" />
+                                                            </div>
+                                                            <div class="col-10" style="font-size:14px;">
+                                                                <strong> +56 9 9438 5412 </strong> de 06:00 a 00:00 hrs (GMT-3)
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="row mt-3">
-                                                    <div class="col-12 col-md-5" style="border:0.5px solid #808080; border-radius:15px;">
-                                                        <p class="mt-2" style="font-size:14px;">
-                                                            VENTAS CORPORATIVAS <br />
-                                                            ventas@dataintelligence-group.com <br />
-                                                            +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
 
-                                                        </p>
-                                                    </div>
-
-                                                </div>
                                             </div>
 
                                         </div>
