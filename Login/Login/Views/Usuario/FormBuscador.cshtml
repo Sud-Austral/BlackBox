@@ -31,7 +31,6 @@
     }
 </script>
 
-
 <style>
     /*Hover contenido de paginaBusqueda contenido*/
     div.table-responsive:hover {
@@ -76,10 +75,39 @@
                     </div>
                     <!-- Final de Fila que contiene botón borrar filtro y buscador -->
                     <div class="row" style="border:hidden !important;">
-                        <!-- Comienzo filtros -->
+                        <!-- Comienzo filtros -->                        
                         <div class="tags col-md-3 " style="border: 0.5px solid #bbc1c5; border-radius: 20px; padding-top: 12px;">
                             @*Este script es para hacer el filtro de la tabla*@
                             <script>
+                                //Funcion para filtrar Territorios a partir de Escala
+                                $(document).ready(function () {
+                                    //Se activa al hacer click sobre cualquier objeto con class "escala"
+                                    $(".escala").on("click", function () {
+                                        //se guarda el contenido de la escala seleccionado, por ejemplo "pais"
+                                        var escalaTerritorial = $(this).val().toLowerCase();
+                                        //Se guarda el estado del checkbox
+                                        //true si esta marcado y false de lo contrario
+                                        var checkTerritorio = $(this).prop("checked");
+
+                                        $(".territorio").each(function () {
+
+                                            var checkBox = $(this).find("label").find("input").val().toLowerCase();
+                                            if (checkTerritorio) {
+                                                if (!checkBox.includes(escalaTerritorial))
+                                                    $(this).hide();
+                                                else
+                                                    $(this).show();
+                                            }
+                                            else {
+                                                $(this).show();
+                                            }
+                                            //alert(escalaTerritorial + "-");
+                                            //alert(checkBox + "-");
+
+
+                                        });
+                                    });
+                                });
                                 var contador = 0;
                                 $(document).ready(function () {
                                     $(".name").on("click", function () {
@@ -103,14 +131,14 @@
                                             $("#myTable tr").show();
                                             $("#contar").text($("#myTable tr").length + " Resultados");
                                         }
-
-
-
                                     });
 
                                 });
                             </script>
-                            <h5 class="mt-3">COLECCIÓN</h5>
+                            
+
+
+                            <h4 class="mt-3 dropdown-header" style="font-weight: 600;">COLECCIÓN</h4>
                             <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                 @foreach (var item1 in ViewBag.Sector)
                                 {
@@ -119,70 +147,71 @@
                                     </div>
                                 }
                             </div>
-                            <h5>SECTOR</h5>
+                            <h4 class="dropdown-header" style="font-weight: 600;">SECTOR</h4>
                             <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                                 @foreach (var item2 in ViewBag.Industria)
                                 {
                                     <div>
                                         <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
                                     </div>
-
                                 }
                             </div>
-
-                            <h5>TEMA</h5>
+                            <h4 class="dropdown-header" style="font-weight: 600;">TEMA</h4>
                             <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                                 @foreach (var item3 in ViewBag.Producto)
                                 {
                                     <div>
                                         <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
                                     </div>
-
                                 }
                             </div>
-                            <h5 class="mt-3">TIPO DE PRODUCTO</h5>
+                            <h4 class="mt-3 dropdown-header" style="font-weight: 600;">TIPO DE PRODUCTO</h4>
                             <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
                                 @foreach (var item4 in ViewBag.TipoGrafico)
                                 {
-                                    <div>
-                                        <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-                                    </div>
-
-
+                                    switch (item4)
+                                    {
+                                        case "Informe Interactivo":
+                                            <div>
+                                                <label><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                            </div>
+                                            break;
+                                        case "Reporte 360°":
+                                            <div>
+                                                <label><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                            </div>
+                                            break;
+                                        default:
+                                            <div>
+                                                <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                            </div>
+                                            break;
+                                    }/**/
+                                     /**/
+                                     /**/
 
                                 }
                             </div>
-                            <h5>ESCALA</h5>
+                            <h4 class="dropdown-header" style="font-weight: 600;">ESCALA</h4>
                             <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                 @foreach (var item5 in ViewBag.Paises)
                                 {
                                     <div>
-                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item5"> @item5</label>
+                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
                                     </div>
-
                                 }
                             </div>
-                            <h5> TERRITORIO</h5>
+                            <h4 class="dropdown-header" style="font-weight: 600;">TERRITORIO</h4>
                             <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                                 @foreach (var item6 in ViewBag.Escala)
                                 {
-                                    <div>
-                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6"> @item6</label>
+                                    <div class="territorio">
+                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</label>
                                     </div>
 
                                 }
                             </div>
-                            <h5>TEMPORALIDAD</h5>
-                            <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
-                                @foreach (var item7 in ViewBag.Temporalidad)
-                                {
-                                    <div>
-                                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
-                                    </div>
-
-                                }
-                            </div>
-                            <h5>PARÁMETRO</h5>
+                            <h4 class="dropdown-header" style="font-weight: 600;">PARÁMETRO</h4>
                             <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                                 @foreach (var item7 in ViewBag.Parametro)
                                 {
@@ -195,7 +224,6 @@
                         </div>
                         <!-- COMIENZO RESULTADOS -->
                         <div class="col-md-8 pr-0 ml-2" style="border: 0.5px solid #bbc1c5;border-radius:20px; ">
-
                             @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>*@
                             <script>
                                 // Write on keyup event of keyword input element
@@ -278,7 +306,13 @@
                                                         else if (item.TIPO_GRAFICO_id == 3)
                                                         {
                                                             <div id="test1" class="col-md-8 col-12">
-                                                                <a href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style=" cursor: pointer; text-decoration:blink; color:black;">
+                                                                <a href="#" 
+                                                                   type="button" 
+                                                                   data-toggle="modal" 
+                                                                   data-target="#myModal1" 
+                                                                   data-backdrop="True" 
+                                                                   style=" cursor: pointer; text-decoration:blink; color:black;"
+                                                                   onclick="verificarSuscripcion('@item.id');">
                                                                     @item.titulo <br />
                                                                     @item.TIPO_GRAFICO.nombre <br />
                                                                     @item.TEMPORALIDAD.nombre
@@ -339,8 +373,8 @@
 
                                                         </div>
                                                         @*<h1>
-                                                                @item.mostrar
-                                                            </h1>*@
+                                            @item.mostrar
+                                        </h1>*@
                                                     </div>
 
 
@@ -659,6 +693,32 @@
     </script>
     <script>
             $("#contar").text("@i  resultados");
+    </script>
+    <script>
+        function verificarSuscripcion(id) {
+            //alert("Hola")
+            mostrador('#ocho')
+            $.ajax(
+                {
+                    type: 'POST',
+                    data: "{'id':" + "'" + Informe + "'}", //datos o parametros enviados al servidor
+                    dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
+                    url: '/Usuario/UsuarioSelectProducto3?id=' + id,
+                    //URL del action result que cargara la vista parcial
+                    success: function (result) {
+                        // si la funcion se ejecuta lanzara un alert
+                        /*alert('Success');*/
+                        //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
+                        //que recibio del servidor
+                        $("#ocho").html(result);
+                    },
+
+                    error: function (error) {
+                        // si hay un error lanzara el mensaje de error
+                        //alert('Fail');
+                    }
+                });
+        }
     </script>
    
 </div>

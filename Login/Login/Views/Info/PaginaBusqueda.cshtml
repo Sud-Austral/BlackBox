@@ -419,56 +419,6 @@
 
                                         }
                                     </div>
-                                    @*
-
-                                            <!-- FILTROS POR FECHA -->
-
-                                            <h4>Por fecha:</h4>
-
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        Fecha inicial:
-                                                    </div>
-                                                    <input id="startDate" width="220" />
-                                                    <div class="col-12">
-                                                        Fecha término:
-                                                    </div>
-                                                    <input id="endDate" width="220" />
-                                                </div>
-                                            </div>
-                                            <script>
-                                                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                                $('#startDate').datepicker({
-                                                    uiLibrary: 'bootstrap4',
-                                                    iconsLibrary: 'fontawesome',
-                                                    minDate: today,
-                                                    maxDate: function () {
-                                                        return $('#endDate').val();
-                                                    }
-                                                });
-                                                $('#endDate').datepicker({
-                                                    uiLibrary: 'bootstrap4',
-                                                    iconsLibrary: 'fontawesome',
-                                                    minDate: function () {
-                                                        return $('#startDate').val();
-                                                    }
-                                                });
-                                            </script>
-                                            <!-- FINAL FILTROS POR FECHA -->
-
-                                            <div class="padding"></div>
-
-                                            <!-- COMIENZO FILTRO POR PRECIOS -->
-                                            <h4>Por precio:</h4>
-                                            Entre <div id="price1">$300</div> y <div id="price2">$800</div>
-                                            <div class="slider-primary">
-                                                <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
-                                            </div>
-                                            <!-- FINAL FILTROS POR PRECIOS -->
-                                        </div>
-                                        <!-- FINAL FILTROS -->
-                                    *@
                                 </div>
                             </div>
                             <!-- COMIENZO RESULTADOS -->
