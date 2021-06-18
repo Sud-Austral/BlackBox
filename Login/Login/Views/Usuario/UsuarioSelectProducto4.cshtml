@@ -61,17 +61,18 @@
 </div>
 @if (ViewBag.Grafico.TIPO_GRAFICO_id < 3)
 {
-    <div class="row  justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-12 col-md-10 embed-responsive embed-responsive-16by9 mb-5">
             <iframe class="embed-responsive-item" src="@ViewBag.Grafico.url"></iframe>
         </div>
-        <div class="col-md-3 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
-             <a onclick="javascript:Imprime('Imprimeme');" style="cursor:pointer">Ver en Pdf</a>
+        <div class="col-2 col-md-3" style="border-right:1px solid #d9d9d9;">
+            <a onclick="javascript:Imprime('Imprimeme');" style="cursor:pointer">Ver en Pdf</a>
             <script>
                 function Imprime(Imprimeme) {
                     window.print()
                 }
             </script>
+            •
         </div>
         @*descripcion y datos de graficos*@
         <section class="container-fluid">
