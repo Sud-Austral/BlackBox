@@ -12,12 +12,14 @@
     </div>
 
 </div>
+
 @if (ViewBag.Grafico.TIPO_GRAFICO_id < 3)
 {
     <div class="row " style="height:300px;">
         <div class="col-md-10 embed-responsive embed-responsive-16by9 mb-5">
             <iframe class="embed-responsive-item" src="@ViewBag.Grafico.url"></iframe>
         </div>
+        
         @*descripcion y datos de graficos*@
         <section class="container-fluid">
             <style>
@@ -71,6 +73,8 @@
 
                             <p class="mb-md-1"><Strong>Unidad de Medida:</Strong></p>
                             <p style="white-space: normal;"> @ViewBag.Grafico.UNIDAD_MEDIDA1.nombre ( @ViewBag.Grafico.UNIDAD_MEDIDA1.descripcion)</p>
+                            
+
                         </div>
 
                         <div class="col-md-5 col-10">
