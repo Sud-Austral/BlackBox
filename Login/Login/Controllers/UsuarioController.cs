@@ -586,9 +586,8 @@ namespace Login.Controllers
             ViewBag.Categoria = Categoria;
             ViewBag.Parametro = Parametro;
             */
-            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
+            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusquedaUsuario(id, new List<int>());
             ViewBag.Resultado = union;
-
             List<string> Paises = new List<string>();
             List<string> Escala = new List<string>();
             List<string> TipoGrafico = new List<string>();
@@ -647,7 +646,6 @@ namespace Login.Controllers
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
             ViewBag.Parametro = Parametro;
-            
             return PartialView();
         }
         public ActionResult test2()
@@ -791,6 +789,17 @@ namespace Login.Controllers
             }
 
             return salida + "<br>" + "<h1>" + APIShopify.BuscarOrdenesPorMail("lmonsalve22@gmail.com").Count.ToString() + "</h1>";
+        }
+
+        public PartialViewResult Paginacion(string id = "1", int id2 = 1)
+        {
+            //var NEW_GRAFICOS
+            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3)
+                                                 .Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))                                               
+                                                .OrderBy(x => x.id)
+                                                .Skip(200 + 50 * id2)
+                                                .Take(50);
+            return PartialView();
         }
     }
 }

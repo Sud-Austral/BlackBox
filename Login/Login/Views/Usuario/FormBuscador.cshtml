@@ -11,7 +11,7 @@
                 type: 'POST',
                 //data: "{'id':" + "'" + Grafico + "'}", //datos o parametros enviados al servidor
                 dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                url: '/info/Paginacion?id=' + palabra + '&id2=' + index,
+                url: '/Usuario/Paginacion?id=' + palabra + '&id2=' + index,
                 //URL del action result que cargara la vista parcial
                 success: function (result) {
                     // si la funcion se ejecuta lanzara un alert
@@ -41,6 +41,7 @@
         overflow: auto !important;
     }
 </style>
+
 <div class="container-fluid mt-2  mb-5">
     @*<h2>Resultados de la búsqueda</h2>*@
     <div class="row">
@@ -306,12 +307,13 @@
                                                         else if (item.TIPO_GRAFICO_id == 3)
                                                         {
                                                             <div id="test1" class="col-md-8 col-12">
-                                                                <a href="#" 
+                                                                <a href="#"
+                                                                   @*                                                                    
                                                                    type="button" 
                                                                    data-toggle="modal" 
                                                                    data-target="#myModal1" 
                                                                    data-backdrop="True" 
-                                                                   style=" cursor: pointer; text-decoration:blink; color:black;"
+                                                                   style=" cursor: pointer; text-decoration:blink; color:black;" *@
                                                                    onclick="verificarSuscripcion('@item.id');">
                                                                     @item.titulo <br />
                                                                     @item.TIPO_GRAFICO.nombre <br />
@@ -697,11 +699,11 @@
     <script>
         function verificarSuscripcion(id) {
             //alert("Hola")
-            mostrador('#ocho')
+            mostrador('#nueve')
             $.ajax(
                 {
                     type: 'POST',
-                    data: "{'id':" + "'" + Informe + "'}", //datos o parametros enviados al servidor
+                    //data: "{'id':" + "'" + Informe + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
                     url: '/Usuario/UsuarioSelectProducto3?id=' + id,
                     //URL del action result que cargara la vista parcial
@@ -710,7 +712,7 @@
                         /*alert('Success');*/
                         //cuando se ejecuta bien la funcion agregara al div vistaParcial el contenido
                         //que recibio del servidor
-                        $("#ocho").html(result);
+                        $("#nueve").html(result);
                     },
 
                     error: function (error) {

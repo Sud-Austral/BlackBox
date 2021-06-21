@@ -40,6 +40,38 @@ namespace Login.Models
             return union;
         }
 
+        public static IEnumerable<GRAFICO> PaginaBusquedaUsuario(string concepto, List<int> sectorId)
+        {
+            sectorId = new List<int>();
+            sectorId.Add(1001);
+            concepto = concepto.Trim().ToLower();
+            //string accentedStr;
+            byte[] tempBytes;
+            tempBytes = System.Text.Encoding.GetEncoding("ISO-8859-8").GetBytes(concepto);
+            concepto = System.Text.Encoding.UTF8.GetString(tempBytes);
+
+            var prioridad = dbGrafico.GRAFICO.SqlQuery("SELECT TOP 200 * FROM GRAFICO WHERE titulo LIKE '% " + concepto + " %' AND tipo_grafico_id = 3")
+                .Where(x => sectorId.Contains(x.CATEGORIA.PRODUCTO.SECTOR_id));
+            //prioridad = prioridad.Where(x => sectorId.Contains(x.CATEGORIA.PRODUCTO.SECTOR_id));
+            IEnumerable<GRAFICO> NEW_GRAFICOS;
+            IEnumerable<GRAFICO> union = prioridad;
+            if (prioridad.Count() < 200)
+            {
+                NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(concepto) || x.titulo.Contains(concepto) || x.tags.Contains(concepto))
+                                                 .Where(x => x.TIPO_GRAFICO_id < 3)
+                                                 .OrderBy(x => x.id)
+                                                 .Take(200 - prioridad.Count());
+                int ent = NEW_GRAFICOS.Count();
+                union = prioridad.Concat(NEW_GRAFICOS); //.Distinct();
+            }
+            if (union.Count() == 0)
+            {
+                concepto = concepto.Substring(0, concepto.Length - 3);
+                union = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(concepto) || x.titulo.Contains(concepto) || x.tags.Contains(concepto))
+                                                 .Take(200);
+            }
+            return union;
+        }
         public static IEnumerable<GRAFICO> ResultadoNiveles(int id, int tabla)
         {
             IEnumerable<GRAFICO> Graficos;
