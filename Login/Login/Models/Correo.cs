@@ -19,7 +19,7 @@ namespace Login.Models
                 var mail = new MailMessage()
                 {
                     From = new MailAddress("soporte@dataintelligence-group.com", "Recuperar contraseña"),
-                    Subject = "Recuperación de contraseña",
+                    Subject = "DATAINTELLIGENCE",
                     Body = "<html><head></head><body><p>Correo de Recuperación de Contraseña</p><br/>"+
                     contenido +
                     "</body></html>",
