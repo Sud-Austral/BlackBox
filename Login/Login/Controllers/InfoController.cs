@@ -25,10 +25,10 @@ namespace AplicacionBlanco.Controllers
             ViewBag.menu = dbGrafico.INDUSTRIA.ToList();
             ViewBag.menu2 = dbGrafico.SECTOR.ToList();
             ViewBag.menu3 = dbGrafico.PRODUCTO.ToList();
-            GRAFICO graf = new GRAFICO();
+            DATA_GRAFICO graf = new DATA_GRAFICO();
             try
             {
-                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+                graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             }
             catch (Exception)
             {
@@ -36,12 +36,12 @@ namespace AplicacionBlanco.Controllers
             } 
             if(graf.TIPO_GRAFICO_id > 1 || graf == null)
             {
-                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                var listaGraficoAuxiliar = dbGrafico.DATA_GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
                 graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
             }            
             ViewBag.Elemento = graf;
             // var listaAsociado = dbGrafico.PRODUCTO.Where(x => x.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
-            var listaAsociado = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
+            var listaAsociado = dbGrafico.DATA_GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
             ViewBag.listaAsociado = listaAsociado;
             /* var listaOtrosContenidos = dbGrafico.CATEGORIA.Where(x => x.PRODUCTO_id == graf.CATEGORIA.PRODUCTO_id).ToList(); */
             //List<int> idproductos = new List<int>();
@@ -62,9 +62,9 @@ namespace AplicacionBlanco.Controllers
             var listaOtrosContenidos = listaCategorias;  
             ViewBag.listaOtrosContenidos=listaOtrosContenidos ;
 
-            var Graficos = dbGrafico.GRAFICO.ToList();
+            var Graficos = dbGrafico.DATA_GRAFICO.ToList();
             var rand2 = new Random();
-            List<GRAFICO> listaGraficos = new List<GRAFICO>();
+            List<DATA_GRAFICO> listaGraficos = new List<DATA_GRAFICO>();
             for (int i = 0; i < 15; i++)
             {
                 listaGraficos.Add(Graficos[rand2.Next(Graficos.Count)]);
@@ -79,7 +79,7 @@ namespace AplicacionBlanco.Controllers
         public ActionResult PaginaBusqueda(string id = "1")
         {
             ViewBag.palabra = id;
-            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
+            IEnumerable<DATA_GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
             if(union.Count() == 0)
             {
                 ViewBag.Concepto = id;
@@ -151,7 +151,7 @@ namespace AplicacionBlanco.Controllers
         public PartialViewResult Paginacion(string id = "1", int id2 = 1)
         {            
             //var NEW_GRAFICOS
-            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
+            ViewBag.Resultado = dbGrafico.DATA_GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
                                                 .OrderBy(x => x.id)
                                                 .Skip(200 + 50 * id2)
                                                 .Take(50);            
@@ -160,8 +160,8 @@ namespace AplicacionBlanco.Controllers
 
         public ActionResult PaginaBusqueda2(string id)
         {
-            ViewBag.Resultado = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
-            List<GRAFICO> salida = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            ViewBag.Resultado = dbGrafico.DATA_GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
+            List<DATA_GRAFICO> salida = dbGrafico.DATA_GRAFICO.Where(x => x.nombre.Contains(id)).ToList();
             List<string> nombres = new List<string>();
             foreach (var item in salida)
             {
@@ -184,16 +184,16 @@ namespace AplicacionBlanco.Controllers
         public ActionResult HomeOdoo()
         {
             var rand = new Random();
-            List<int> aux = new List<int>();
+            List<decimal> aux = new List<decimal>();
             for (int i = 0; i < 20; i++)
             {
-                aux.Add(rand.Next(dbGrafico.GRAFICO.Min(x => x.id), dbGrafico.GRAFICO.Max(x => x.id)));
+                aux.Add(rand.Next((int)dbGrafico.DATA_GRAFICO.Min(x => x.id), (int)dbGrafico.DATA_GRAFICO.Max(x => x.id)));
             }
-            var Graficos = dbGrafico.GRAFICO.Where(x => aux.Contains(x.id)).ToList();
+            var Graficos = dbGrafico.DATA_GRAFICO.Where(x => aux.Contains(x.id)).ToList();
 
-            //var Graficos = dbGrafico.GRAFICO.ToList();
-            
-            List<GRAFICO> listaGraficos = new List<GRAFICO>();
+            //var Graficos = dbGrafico.DATA_GRAFICO.ToList();
+
+            List<DATA_GRAFICO> listaGraficos = new List<DATA_GRAFICO>();
             for (int i = 0; i < 15; i++)
             {
                 listaGraficos.Add(Graficos[rand.Next(Graficos.Count)]);
@@ -210,7 +210,7 @@ namespace AplicacionBlanco.Controllers
 
         public ActionResult Dashboard(int id=100)
         {
-            string url = dbGrafico.GRAFICO.Where(x => x.id == id).First().url;
+            string url = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First().url;
             ViewBag.url = url;
             //ViewBag.url = "https://analytics.zoho.com/open-view/2395394000000697928";           
             return View();
@@ -218,7 +218,7 @@ namespace AplicacionBlanco.Controllers
        
         public ActionResult ResultadoNiveles(int id = 10, int id2 = 1)
         {
-            IEnumerable<GRAFICO> Graficos = UtilBusqueda.ResultadoNiveles(id, id2);
+            IEnumerable<DATA_GRAFICO> Graficos = UtilBusqueda.ResultadoNiveles(id, id2);
             ViewBag.Resultado = Graficos;
             ViewBag.palabra = Graficos.First().CATEGORIA.nombre;
             List<string> Paises = new List<string>();
@@ -285,10 +285,10 @@ namespace AplicacionBlanco.Controllers
         {
             ViewBag.time1 = DateTime.Now;
             var rand = new Random();
-            GRAFICO graf = new GRAFICO();
+            DATA_GRAFICO graf = new DATA_GRAFICO();
             try
             {
-                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+                graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             }
             catch (Exception)
             {
@@ -296,19 +296,19 @@ namespace AplicacionBlanco.Controllers
             }
             if (graf.TIPO_GRAFICO_id > 1 || graf == null)
             {
-                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                var listaGraficoAuxiliar = dbGrafico.DATA_GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
                 graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
             }
             ViewBag.Elemento = graf;//graficos
             // var listaAsociado = dbGrafico.PRODUCTO.Where(x => x.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
-            //var listaAsociado = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
+            //var listaAsociado = dbGrafico.DATA_GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
 
             //List<int> aux = new List<int>();
             //for (int i = 0; i < 50; i++)
             //{
-            //    aux.Add(rand.Next(dbGrafico.GRAFICO.Min(x => x.id), dbGrafico.GRAFICO.Max(x => x.id)));
+            //    aux.Add(rand.Next(dbGrafico.DATA_GRAFICO.Min(x => x.id), dbGrafico.DATA_GRAFICO.Max(x => x.id)));
             //}
-            //var Graficos = dbGrafico.GRAFICO.Where(x => aux.Contains(x.id)).ToList();
+            //var Graficos = dbGrafico.DATA_GRAFICO.Where(x => aux.Contains(x.id)).ToList();
             //ViewBag.Graficos = Graficos;//carrusel
             ViewBag.time2 = DateTime.Now;
             return PartialView();
@@ -316,10 +316,10 @@ namespace AplicacionBlanco.Controllers
 
         public PartialViewResult ContenidoGrafico(int id)
         {
-            //id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA_id;
+            //id = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First().CATEGORIA_id;
             //var listaNum = dbGrafico.CATEGORIA.Where(x => x.id == id).First().auxiliar.Split(',');
-            GRAFICO gAux = dbGrafico.GRAFICO.Where(x => x.id == id).First();
-            //ViewBag.tresRelacionados = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            DATA_GRAFICO gAux = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
+            //ViewBag.tresRelacionados = dbGrafico.DATA_GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
             ViewBag.tresRelacionados = UtilBusqueda.Relacionados3importantes(gAux.CATEGORIA_id,id);
             var algo = UtilBusqueda.Relacionados3importantes(gAux.CATEGORIA_id, id);
             int id2 = id;
@@ -327,9 +327,9 @@ namespace AplicacionBlanco.Controllers
         }
         public PartialViewResult CarrucelBusqueda(int id)
         {
-            id = dbGrafico.GRAFICO.Where(x => x.id == id).First().CATEGORIA.PRODUCTO_id;
+            id = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First().CATEGORIA.PRODUCTO_id;
             //var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
-            //ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            //ViewBag.Carrusel = dbGrafico.DATA_GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
             ViewBag.Carrusel = UtilBusqueda.Relacionados12Carrusel(id);
             return PartialView();
         }
@@ -338,10 +338,10 @@ namespace AplicacionBlanco.Controllers
         {
             //int id = 1234;
             var rand = new Random();
-            GRAFICO graf = new GRAFICO();
+            DATA_GRAFICO graf = new DATA_GRAFICO();
             try
             {
-                graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+                graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             }
             catch (Exception)
             {
@@ -349,7 +349,7 @@ namespace AplicacionBlanco.Controllers
             }
             if (graf.TIPO_GRAFICO_id > 1 || graf == null)
             {
-                var listaGraficoAuxiliar = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
+                var listaGraficoAuxiliar = dbGrafico.DATA_GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
                 graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
             }
             ViewBag.Elemento = graf;//graficos
@@ -359,7 +359,7 @@ namespace AplicacionBlanco.Controllers
         public PartialViewResult tresRelacionados(int id)
         {
             //var listaNum = dbGrafico.CATEGORIA.Where(x => x.id == id).First().auxiliar.Split(',');
-            //ViewBag.tresRelacionados = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            //ViewBag.tresRelacionados = dbGrafico.DATA_GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
             ViewBag.tresRelacionados = UtilBusqueda.Relacionados3importantes(id);
             var algo = UtilBusqueda.Relacionados3importantes(id); 
             int id2 = id;
@@ -369,7 +369,7 @@ namespace AplicacionBlanco.Controllers
         public PartialViewResult carruselRelacionados(int id)
         {
             //var listaNum = dbGrafico.PRODUCTO.Where(x => x.id == id).First().auxiliar.Split(',');
-            //ViewBag.Carrusel = dbGrafico.GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
+            //ViewBag.Carrusel = dbGrafico.DATA_GRAFICO.Where(x => listaNum.Contains(x.id.ToString())).ToList();
             ViewBag.Carrusel = UtilBusqueda.Relacionados12Carrusel(id);
             return PartialView();
         }
