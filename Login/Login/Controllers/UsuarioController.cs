@@ -42,7 +42,6 @@ namespace Login.Controllers
             //Menu que esta suscrito el usuario
             //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
             //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id==10).ToList();
-
             ViewBag.Menu = shopifyYSuscripciones.menu;  //grafico;
             return View();
         }

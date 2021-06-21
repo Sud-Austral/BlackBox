@@ -23,8 +23,6 @@ namespace Login.Controllers
         {
         }
 
-
-
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
@@ -77,7 +75,6 @@ namespace Login.Controllers
             }
 
 
-
             // No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
             // Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
@@ -87,23 +84,7 @@ namespace Login.Controllers
                     //return RedirectToLocal(returnUrl);
                     List<Producto_Shopify> productos = new List<Producto_Shopify>();
                     //Nombre de Usuario
-                    ViewBag.User = User.Identity.GetUserName();
-                    //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-                    foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-                    {
-                        foreach (var item2 in item["line_items"])
-                        {
-                            productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
-                        }
-                    }
-                    //Objeto que separa Productos y Suscripciones
-                    ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
-                    //Productos
-                    productos = shopifyYSuscripciones.producto_Shopifies;
-                    //ViewBag.url = (string)Session["url"];
-                    Session["Productos"] = productos;
-                    //Suscripciones
-                    Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
+                    ViewBag.User = User.Identity.GetUserName();                    
                     return RedirectToAction("Index", "Usuario");
                 case SignInStatus.LockedOut:
                     return View("Lockout");

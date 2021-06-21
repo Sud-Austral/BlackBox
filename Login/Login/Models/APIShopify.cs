@@ -34,8 +34,6 @@ namespace Login.Models
                             string responseBody = objReader.ReadToEnd();
                             JObject json = JObject.Parse(responseBody);
                             return json; //.GetValue("orders").Count();   //[0];
-                            // Do something with responseBody
-                            //Console.WriteLine(responseBody);
                         }
                     }
                 }
@@ -43,9 +41,7 @@ namespace Login.Models
             catch (WebException ex)
             {
                 return null;
-                // Handle error
             }
-            //return View();
         }
 
         public static bool ValidarCorreo(string orden, string correo)
@@ -81,8 +77,6 @@ namespace Login.Models
                             string responseBody = objReader.ReadToEnd();
                             JObject json = JObject.Parse(responseBody);
                             return json; //.GetValue("orders").Count();   //[0];
-                            // Do something with responseBody
-                            //Console.WriteLine(responseBody);
                         }
                     }
                 }
@@ -90,22 +84,15 @@ namespace Login.Models
             catch (WebException ex)
             {
                 return null;
-                // Handle error
             }
-            //return View();
         }
-
-       
-
         public static List<JToken> BuscarOrdenesPorMail()
         {
             JObject json = BuscarOrdenes();
             //return JObject.Parse(json.GetValue("order").ToString());
             //return json.GetValue("orders").ToString();
-
             JArray categories = (JArray)json["orders"];
             //return categories.Select(c => (string)c).ToList(); 
-
             return categories.Where(c => (string)c["email"] == "clentebanks0@gmail.com").ToList(); //.Select(c => (string)c["email"] == "viviandrg7@gmail.com").ToList()[0];
             //return json;
             //mvcmacia@gmail.com
