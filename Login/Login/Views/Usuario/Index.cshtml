@@ -102,12 +102,12 @@
                         <a href="#" class="d-block">@ViewBag.User</a>
                     </div>
                 </div>
-                <p class="m-2" style="color:#fff;">
-                    Buscar en mis Suscripciones
+                <!--<p class="m-2" style="color:#fff;">
+                    Buscar en mis Suscripciones-->
                     @*<i class="fas fa-angle-left right"></i>*@
-                </p>
+                <!--</p>-->
                 <!-- SidebarSearch Form -->
-                <div class="form-inline mb-5">
+                <!--<div class="form-inline mb-5">
                     <div class="input-group" data-widget="sidebar-search">
                         <input  class="form-control form-control-sidebar" type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search" style="font-size:13px;">
                         <div class="input-group-append">
@@ -116,7 +116,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!--<form class="input-group mb-5" href="/Usuario/Index?id=" >-->@*onsubmit="BuscadorSuscripciones(event);"*@
                 <!--<div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
@@ -494,14 +494,14 @@
                     <div class="d-flex flex-column " id="content-wrapper">
                         <div id="content">
 
-                            <div class="row d-flex " style="height:130px;background-color:#ededed;">
+                            <div class="row d-flex " style="height:130px;background-color:#ededed;" id="borrar">
                                 @*Boton para esconder el menu lateral*@
                                 @*<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>*@
                                 @*Boton para esconder el menu lateral*@
                                 @**********************Scrollbar en usuario index*@
                                 <div class="col-md-12 col-sm-8 text-left offset-1 ">
-                                    <h5 class="offset-1" style="color:black; margin-top:10px;">¡Explora, busca y encuentra en todo nuestro universo de datos!</h5>
-                                    <div class="row">
+                                    <h5 id="borrar" class="offset-1" style="color:black; margin-top:10px;">¡Explora, busca y encuentra en todo nuestro universo de datos!</h5>
+                                    <div class="row" id="borrar">
                                         <div class="col-1">
                                             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                                         </div>
