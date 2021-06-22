@@ -146,7 +146,7 @@ namespace Login.Models
             foreach (var item in sector)
             {
                 int aux = Convert.ToInt32(item / 100);
-                var grafico = dbGrafico.INDUSTRIA.Where(x => x.id == aux ).First();
+                var grafico = dbGrafico.INDUSTRIA.Where(x => x.id == 10).First();
                 indAux.Add(grafico);
             }
             indAux = indAux.Distinct().ToList();

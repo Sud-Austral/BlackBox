@@ -81,20 +81,20 @@
                             <p class="mt-md-3"><strong>Ver más información</strong></p>
                             <div class="row justify-content-center mb-md-3">
                                 <div class="col-md-5 col-10 text-center">
-                                    <a href="https://dataintelligence.store/collections">
+                                    @*<a href="https://dataintelligence.store/collections">*@
                                         <img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
-                                        <button class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                        <button onclick="mostrador('#once'); FiltrarII();" class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
                                             Ver Informe Interactivo
                                         </button>
-                                    </a>
+                                    @*</a>*@
                                 </div>
                                 <div class="col-md-5 col-10 text-center">
-                                    <a href="https://dataintelligence.store/collections">
+                                    @*<a href="https://dataintelligence.store/collections">*@
                                         <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                        <button class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
+                                        <button onclick="mostrador('#once'); FiltrarReporte360();" class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
                                             Ver Reporte 360°
                                         </button>
-                                    </a>
+                                    @*</a>*@
                                 </div>
                                 @*estilos para cortar los tags en 3 filas y ocultar los demas con la clase line-clam *@
                                 <style>
@@ -118,7 +118,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <p class="mt-md-3 mb-md-1"><strong>Tags:</strong></p>
-                                        <p id="tagsGrafico" class='line-clamp'>@ViewBag.Grafico.tags</p>
+                                        <p onclick="mostrador('#once');" id="tagsGrafico" class='line-clamp'>@ViewBag.Grafico.tags</p>
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@ else
 <script>
     $(".line-clamp").text($(".line-clamp").text().split(",").join(", "));
     function construirEstructura(Concepto) {
-        return '<a href="/Info/Index2?id=' + Concepto + '">' + Concepto + '</a>';
+        return '<a href="/Usuario/Index?id=' + Concepto + '">' + Concepto + '</a>';
     }
     //var lista = [1, 2, 3, 4]
     //lista.map(alert);

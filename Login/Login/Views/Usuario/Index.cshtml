@@ -69,7 +69,7 @@
     </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed ">
-    <div class="wrapper" >
+    <div class="wrapper">
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
@@ -94,9 +94,9 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     @*
-            <div class="image">
-                <img src="~/assets/img/avatars/avatar1.jpeg" class="img-circle elevation-2" alt="User Image">
-            </div>
+                        <div class="image">
+                            <img src="~/assets/img/avatars/avatar1.jpeg" class="img-circle elevation-2" alt="User Image">
+                        </div>
                     *@
                     <div class="info">
                         <a href="#" class="d-block">@ViewBag.User</a>
@@ -104,7 +104,7 @@
                 </div>
                 <!--<p class="m-2" style="color:#fff;">
                     Buscar en mis Suscripciones-->
-                    @*<i class="fas fa-angle-left right"></i>*@
+                @*<i class="fas fa-angle-left right"></i>*@
                 <!--</p>-->
                 <!-- SidebarSearch Form -->
                 <!--<div class="form-inline mb-5">
@@ -119,23 +119,23 @@
                 </div>-->
                 <!--<form class="input-group mb-5" href="/Usuario/Index?id=" >-->@*onsubmit="BuscadorSuscripciones(event);"*@
                 <!--<div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar"  type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search" style="font-size:13px;">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar" type="submit" value="Submit">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </form>-->
+                        <div class="input-group" data-widget="sidebar-search">
+                            <input class="form-control form-control-sidebar"  type="search" placeholder="Buscar en mis Suscripciones" aria-label="Search" style="font-size:13px;">
+                            <div class="input-group-append">
+                                <button class="btn btn-sidebar" type="submit" value="Submit">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>-->
                 <!-- Sidebar Menu -->
                 <nav class="mt-2 ">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a onclick="mostrador('#uno','#dieciséis');" href="#" class="nav-link " style="border:1px solid #377db3">
                                 <i class="nav-icon fa-question-circle-o"></i>
-                                <p style="font-size:16px;" >
+                                <p style="font-size:16px;">
                                     INICIO
 
                                 </p>
@@ -257,7 +257,7 @@
                                 {
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a href="index" onclick="event.preventDefault();mostrador('#dos');"  class="nav-link ">
+                                            <a href="index" onclick="event.preventDefault();mostrador('#dos');" class="nav-link ">
                                                 <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
                                                 <p style="color:#518bb3">
                                                     Plataformas
@@ -281,60 +281,60 @@
                                             </a>
                                         </li>
                                         @*<li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>
-                                            Industria
-                                            @item.nombre
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    @foreach (var item2 in item.SECTOR)
-                                    {
-                                        <ul class="nav nav-treeview">
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
+                                                <a href="" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p>
-                                                        Sector
-                                                        @item2.nombre
+                                                        Industria
+                                                        @item.nombre
                                                         <i class="fas fa-angle-left right"></i>
                                                     </p>
                                                 </a>
-                                                @foreach (var item3 in item2.PRODUCTO)
+                                                @foreach (var item2 in item.SECTOR)
                                                 {
                                                     <ul class="nav nav-treeview">
                                                         <li class="nav-item">
                                                             <a href="#" class="nav-link">
                                                                 <i class="far fa-circle nav-icon"></i>
                                                                 <p>
-                                                                    Producto
-                                                                    @item3.nombre
+                                                                    Sector
+                                                                    @item2.nombre
                                                                     <i class="fas fa-angle-left right"></i>
                                                                 </p>
                                                             </a>
-                                                            @foreach (var item4 in item3.CATEGORIA)
+                                                            @foreach (var item3 in item2.PRODUCTO)
                                                             {
                                                                 <ul class="nav nav-treeview">
                                                                     <li class="nav-item">
                                                                         <a href="#" class="nav-link">
                                                                             <i class="far fa-circle nav-icon"></i>
                                                                             <p>
-                                                                                Categoria
-                                                                                @item4.nombre
+                                                                                Producto
+                                                                                @item3.nombre
                                                                                 <i class="fas fa-angle-left right"></i>
                                                                             </p>
                                                                         </a>
+                                                                        @foreach (var item4 in item3.CATEGORIA)
+                                                                        {
+                                                                            <ul class="nav nav-treeview">
+                                                                                <li class="nav-item">
+                                                                                    <a href="#" class="nav-link">
+                                                                                        <i class="far fa-circle nav-icon"></i>
+                                                                                        <p>
+                                                                                            Categoria
+                                                                                            @item4.nombre
+                                                                                            <i class="fas fa-angle-left right"></i>
+                                                                                        </p>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        }
                                                                     </li>
                                                                 </ul>
                                                             }
                                                         </li>
                                                     </ul>
                                                 }
-                                            </li>
-                                        </ul>
-                                    }
-                                </li>*@
+                                            </li>*@
                                     </ul>
                                 }
                             }
@@ -450,13 +450,13 @@
                                     </a>
                                 </li>
                                 @*<li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                            <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
-                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                <p style="color:#518bb3">
-                                    Estadísticas
-                                </p>
-                            </a>
-                        </li>*@
+                                        <a href="https://www.dataintelligence-group.com/estadisticas" target="_blank" class="nav-link ">
+                                            <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                            <p style="color:#518bb3">
+                                                Estadísticas
+                                            </p>
+                                        </a>
+                                    </li>*@
                                 <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
                                     <a href="#" target="_blank" class="nav-link ">
                                         <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
@@ -519,8 +519,8 @@
                                         <div class="col-md-6">
                                             @*el id searchText enlaza los estilos para los efectos de este texto en la hoja de estilos se llama EstilosNuevoMenuLateral linea 70*@
                                             <p id="searchText" style="font-size:13px;" class="mt-2">
-                                                Busca por la palabra clave en todos los sectores de Data Intelligence.<br /> Para buscar dentro de tus productos adquiridos
-                                                utiliza el buscador secundario de la izquierda.
+                                                Busca por la palabra clave en todos los sectores de Data Intelligence.@*<br /> Para buscar dentro de tus productos adquiridos
+                                                utiliza el buscador secundario de la izquierda.*@
                                             </p>
                                         </div>
                                     </div>
@@ -598,8 +598,8 @@
                             </div>
                             @*otra opciones en la pagina de bienvenido*@
                             <!--<div class="container mt-2" >
-                                
-                                   
+
+
                                         <style>
                                             @@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
@@ -699,7 +699,7 @@
                                                 border-bottom-right-radius: 5px;
                                             }
                                         </style>
-                                       
+
                                         <div class="slider-container">
                                             <div class="left-slide">
                                                 <div style="background-color: #fde">
@@ -767,11 +767,10 @@
                                                 slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
                                             }
                                         </script>
-                               
-                               
-                                
-                            </div>-->
 
+
+
+                            </div>-->
                             @*Seccion atencion al cliente*@
                             <div class="container-fluid offset-1" id="trece" style="display:none;">
                                 <div class="row  mt-5">
@@ -880,7 +879,7 @@
        @*Funcion que despliega categoria del menu lateral del Usuario index*@
         function fnClick(categoria) {
 
-          
+
             var id = "parametros de la funcion";
             //$('#siete').load(function () {//para cargar el gif de la seccion siete
             //    $("img").fadeOut("slow");
@@ -1114,7 +1113,50 @@
         }
 
     </script>
+    <script>
+        function FiltrarII() {
+            $("#Informe_Interactivo").prop("checked", true);
+            contador = 0;
+            name_list = []
+            $("#myTable tr").hide()
+            var flag = 1
+            $("input:checkbox[name=name]:checked").each(function () {
+                flag = 0;
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1) {
+                        $(this).show();
+                        contador++;
+                    }
+                });
+                $("#contar").text(contador + " Resultados");
+            });
+        }
+        function FiltrarReporte360() {
 
-    
+
+            $("#Reporte_360").prop("checked", true);
+            if ($("#Reporte_360").length == 0)
+                $("#Informe_Interactivo").prop("checked", true);
+            contador = 0;
+            name_list = []
+            $("#myTable tr").hide()
+            var flag = 1
+            $("input:checkbox[name=name]:checked").each(function () {
+                flag = 0;
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    if ($(this).text().toLowerCase().indexOf(value) > -1) {
+                        $(this).show();
+                        contador++;
+                    }
+                });
+                $("#contar").text(contador + " Resultados");
+                if ($("#Reporte_360").length == 0)
+                    $("#contar").text("No pudimos encontrar Reportes 360° pero aqui tienes " + contador + " Informes Interactivos");;
+            });
+        }
+    </script>
+
 </body>
 </html>
