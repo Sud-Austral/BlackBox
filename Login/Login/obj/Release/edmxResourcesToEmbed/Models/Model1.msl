@@ -165,5 +165,40 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DATA_GRAFICO">
+      <EntityTypeMapping TypeName="graficosModel.DATA_GRAFICO">
+        <MappingFragment StoreEntitySet="DATA_GRAFICO">
+          <ScalarProperty Name="UNIDAD_MEDIDA_id" ColumnName="UNIDAD_MEDIDA_id" />
+          <ScalarProperty Name="RESPONSABLE_id" ColumnName="RESPONSABLE_id" />
+          <ScalarProperty Name="auxiliar_1" ColumnName="auxiliar_1" />
+          <ScalarProperty Name="caracteristica_especial" ColumnName="caracteristica_especial" />
+          <ScalarProperty Name="tamanio_muestra" ColumnName="tamanio_muestra" />
+          <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
+          <ScalarProperty Name="FUENTE_id" ColumnName="FUENTE_id" />
+          <ScalarProperty Name="TIPO_GRAFICO_id" ColumnName="TIPO_GRAFICO_id" />
+          <ScalarProperty Name="TEMPORALIDAD_id" ColumnName="TEMPORALIDAD_id" />
+          <ScalarProperty Name="TERRITORIO_id" ColumnName="TERRITORIO_id" />
+          <ScalarProperty Name="DETALLE_id" ColumnName="DETALLE_id" />
+          <ScalarProperty Name="PARAMETRO_id" ColumnName="PARAMETRO_id" />
+          <ScalarProperty Name="CATEGORIA_id" ColumnName="CATEGORIA_id" />
+          <ScalarProperty Name="rango_edad" ColumnName="rango_edad" />
+          <ScalarProperty Name="auxiliar" ColumnName="auxiliar" />
+          <ScalarProperty Name="shopify" ColumnName="shopify" />
+          <ScalarProperty Name="responsable" ColumnName="responsable" />
+          <ScalarProperty Name="idioma" ColumnName="idioma" />
+          <ScalarProperty Name="fecha_publicacion" ColumnName="fecha_publicacion" />
+          <ScalarProperty Name="descripcion_larga" ColumnName="descripcion_larga" />
+          <ScalarProperty Name="nivel_administrativo" ColumnName="nivel_administrativo" />
+          <ScalarProperty Name="iso_pais" ColumnName="iso_pais" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -25,13 +25,13 @@ namespace Login.Models
             }
         }
 
-        public static List<List<GRAFICO>> Menu()
+        public static List<List<DATA_GRAFICO>> Menu()
         {
             //private graficosEntities dbGrafico = new graficosEntities();
-            List<List<GRAFICO>> salida = new List<List<GRAFICO>>();
+            List<List<DATA_GRAFICO>> salida = new List<List<DATA_GRAFICO>>();
             foreach (var item in dbGrafico.INDUSTRIA)
             {
-                List<GRAFICO> auxiliar = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id == item.id).ToList();
+                List<DATA_GRAFICO> auxiliar = dbGrafico.DATA_GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id == item.id).ToList();
                 /*
                 if (auxiliar.Count > 0)
                 {
@@ -70,13 +70,13 @@ namespace Login.Models
     {
         private static graficosEntities dbGrafico = new graficosEntities();
         public SECTOR sECTOR { get; set; }
-        public List<GRAFICO> gRAFICOs { get; set; }
+        public List<DATA_GRAFICO> gRAFICOs { get; set; }
         public GraficoPorSector(SECTOR se)
         {
             var rand = new Random();
             this.sECTOR = se;
-            gRAFICOs = new List<GRAFICO>();
-            var TodoGrafico = dbGrafico.GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == se.id).ToList();
+            gRAFICOs = new List<DATA_GRAFICO>();
+            var TodoGrafico = dbGrafico.DATA_GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == se.id).ToList();
             if(TodoGrafico.Count > 3)
             {
                 for (int i = 0; i < 4; i++)

@@ -393,7 +393,7 @@ namespace Login.Controllers
             //Menu que esta suscrito el usuario
             //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
             ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id == 10).ToList();
-            var url = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id).First();
+            var url = dbGrafico.DATA_GRAFICO.Where(x => x.CATEGORIA_id == id).First();
             ViewBag.Grafico = url;
             return View();
         }
@@ -472,8 +472,8 @@ namespace Login.Controllers
         }
         public PartialViewResult UsuarioSelectProducto2( int id=1)
         {
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id);
-            //var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
+            var NEW_GRAFICOS = dbGrafico.DATA_GRAFICO.Where(x => x.CATEGORIA_id == id);
+            //var NEW_GRAFICOS = dbGrafico.DATA_GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
 
 
             ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).Take(20); //.ToList();//Liberados/Gratis
@@ -490,7 +490,7 @@ namespace Login.Controllers
         }
         public PartialViewResult UsuarioSelectProducto3(int id = 220106007)
         {
-            var url = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            var url = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.Grafico = url;
 
             return PartialView();
@@ -504,11 +504,11 @@ namespace Login.Controllers
             /*
             var prioridad = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'")
                                                 .Take(50);
-            IEnumerable<GRAFICO> NEW_GRAFICOS;
-            IEnumerable<GRAFICO> union;
+            IEnumerable<DATA_GRAFICO> NEW_GRAFICOS;
+            IEnumerable<DATA_GRAFICO> union;
             if (prioridad.Count() < 50)
             {
-                NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
+                NEW_GRAFICOS = dbGrafico.DATA_GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
                                                  .OrderBy(x => x.id)
                                                  .Take(50 - prioridad.Count());
                 int ent = NEW_GRAFICOS.Count();
@@ -658,7 +658,7 @@ namespace Login.Controllers
         {
             List<int> suscrip = new List<int>();
             suscrip.Add(1001);
-            var resultado = dbGrafico.GRAFICO.Where(x => x.TIPO_GRAFICO_id == 3).ToList();
+            var resultado = dbGrafico.DATA_GRAFICO.Where(x => x.TIPO_GRAFICO_id == 3).ToList();
             foreach (var item in resultado)
             {
                 item.suscripciones = suscrip;
@@ -683,7 +683,7 @@ namespace Login.Controllers
         }
         public PartialViewResult UsuarioSelectProducto4(int id = 220106007)
         {
-            var url = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            var url = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.Grafico = url;
 
             return PartialView();
@@ -731,8 +731,8 @@ namespace Login.Controllers
                 item.SECTOR = (ICollection<SECTOR>)item.SECTOR.Where(x => x.id == 1001).ToArray();
             }
             ViewBag.Menu = grafico;
-            var NEW_GRAFICOS = dbGrafico.GRAFICO.Where(x => x.CATEGORIA_id == id);
-            //var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
+            var NEW_GRAFICOS = dbGrafico.DATA_GRAFICO.Where(x => x.CATEGORIA_id == id);
+            //var NEW_GRAFICOS = dbGrafico.DATA_GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
 
 
             ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).Take(20); //.ToList();//Liberados/Gratis
@@ -745,50 +745,11 @@ namespace Login.Controllers
             }
             ViewBag.saludo = NombreCategoria;
             return PartialView();
-        }
-
+        }    
+        
         public string nose()
         {
-            List<Producto_Shopify> productos = new List<Producto_Shopify>();
-            ViewBag.User = User.Identity.GetUserName();
-            //ViewBag.Resultado = APIShopify.BuscarOrdenes();
-            //ViewBag.Resultado = APIShopify.BuscarOrdenesPorMail();
-            //var test = APIShopify.BuscarOrdenesPorMail();
-            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            foreach (var item in APIShopify.BuscarOrdenesPorMail("lmonsalve22@gmail.com"))
-            {
-                foreach (var item2 in item["line_items"])
-                {
-                    try
-                    {
-                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
-                    }
-                    catch (Exception)
-                    {
-
-                        string hola = "";
-                    }
-                    //productos.Add(new Producto_Shopify(item2,(string)item["order_status_url"],item));
-                }
-            }
-            string salida = "";
-            foreach (var item in productos)
-            {
-                salida = salida + " <br>" + item.NOMBRE; 
-            }
-            
-            return salida + "<br>" + "<h1>" + productos.Count.ToString() + "</h1>";
-        }
-
-        public string nose2()
-        {            
-            string salida = "";
-            foreach (var item in APIShopify.BuscarOrdenesPorMail("lmonsalve22@gmail.com"))
-            {
-                salida = salida + " <br>" + item.ToString();
-            }
-
-            return salida + "<br>" + "<h1>" + APIShopify.BuscarOrdenesPorMail("lmonsalve22@gmail.com").Count.ToString() + "</h1>";
+            return dbGrafico.DATA_GRAFICO.Where(x => x.id == 1234).First().titulo;
         }
 
         public PartialViewResult Paginacion(string id = "1", int id2 = 1)

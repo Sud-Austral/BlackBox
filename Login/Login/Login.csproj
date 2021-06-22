@@ -210,6 +210,9 @@
     </Compile>
     <Compile Include="Models\Correo.cs" />
     <Compile Include="Models\Correos.cs" />
+    <Compile Include="Models\DATA_GRAFICO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DETALLE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -10,6 +10,40 @@
     <Property Name="auxiliar" Type="varchar" MaxLength="250" />
     <Property Name="PRODUCTO_id" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="DATA_GRAFICO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" />
+    <Property Name="descripcion" Type="varchar(max)" />
+    <Property Name="titulo" Type="varchar(max)" />
+    <Property Name="subtitulo" Type="varchar(max)" />
+    <Property Name="tags" Type="varchar(max)" />
+    <Property Name="url" Type="varchar(max)" />
+    <Property Name="iso_pais" Type="varchar(max)" />
+    <Property Name="nivel_administrativo" Type="varchar(max)" />
+    <Property Name="descripcion_larga" Type="varchar(max)" />
+    <Property Name="fecha_publicacion" Type="varchar(max)" />
+    <Property Name="idioma" Type="varchar(max)" />
+    <Property Name="responsable" Type="varchar(max)" />
+    <Property Name="shopify" Type="varchar(max)" />
+    <Property Name="auxiliar" Type="varchar(max)" />
+    <Property Name="rango_edad" Type="varchar(max)" />
+    <Property Name="CATEGORIA_id" Type="int" Nullable="false" />
+    <Property Name="PARAMETRO_id" Type="int" Nullable="false" />
+    <Property Name="DETALLE_id" Type="int" Nullable="false" />
+    <Property Name="TERRITORIO_id" Type="int" Nullable="false" />
+    <Property Name="TEMPORALIDAD_id" Type="int" Nullable="false" />
+    <Property Name="TIPO_GRAFICO_id" Type="int" Nullable="false" />
+    <Property Name="FUENTE_id" Type="int" Nullable="false" />
+    <Property Name="unidad_medida" Type="varchar(max)" />
+    <Property Name="tamanio_muestra" Type="varchar(max)" />
+    <Property Name="caracteristica_especial" Type="varchar(max)" />
+    <Property Name="auxiliar_1" Type="varchar(max)" />
+    <Property Name="RESPONSABLE_id" Type="int" Nullable="false" />
+    <Property Name="UNIDAD_MEDIDA_id" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="DETALLE">
     <Key>
       <PropertyRef Name="id" />
@@ -35,21 +69,21 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="250" />
-    <Property Name="descripcion" Type="varchar" MaxLength="2500" />
-    <Property Name="titulo" Type="varchar" MaxLength="250" />
-    <Property Name="subtitulo" Type="varchar" MaxLength="250" />
-    <Property Name="tags" Type="varchar" MaxLength="2500" />
-    <Property Name="url" Type="varchar" MaxLength="250" />
-    <Property Name="iso_pais" Type="varchar" MaxLength="250" />
-    <Property Name="nivel_administrativo" Type="varchar" MaxLength="250" />
-    <Property Name="descripcion_larga" Type="varchar" MaxLength="250" />
-    <Property Name="fecha_publicacion" Type="varchar" MaxLength="250" />
-    <Property Name="idioma" Type="varchar" MaxLength="250" />
-    <Property Name="responsable" Type="varchar" MaxLength="250" />
-    <Property Name="shopify" Type="varchar" MaxLength="250" />
-    <Property Name="auxiliar" Type="varchar" MaxLength="250" />
-    <Property Name="rango_edad" Type="varchar" MaxLength="250" />
+    <Property Name="nombre" Type="varchar(max)" />
+    <Property Name="descripcion" Type="varchar(max)" />
+    <Property Name="titulo" Type="varchar(max)" />
+    <Property Name="subtitulo" Type="varchar(max)" />
+    <Property Name="tags" Type="varchar(max)" />
+    <Property Name="url" Type="varchar(max)" />
+    <Property Name="iso_pais" Type="varchar(max)" />
+    <Property Name="nivel_administrativo" Type="varchar(max)" />
+    <Property Name="descripcion_larga" Type="varchar(max)" />
+    <Property Name="fecha_publicacion" Type="varchar(max)" />
+    <Property Name="idioma" Type="varchar(max)" />
+    <Property Name="responsable" Type="varchar(max)" />
+    <Property Name="shopify" Type="varchar(max)" />
+    <Property Name="auxiliar" Type="varchar(max)" />
+    <Property Name="rango_edad" Type="varchar(max)" />
     <Property Name="CATEGORIA_id" Type="int" Nullable="false" />
     <Property Name="PARAMETRO_id" Type="int" Nullable="false" />
     <Property Name="DETALLE_id" Type="int" Nullable="false" />
@@ -57,10 +91,10 @@
     <Property Name="TEMPORALIDAD_id" Type="int" Nullable="false" />
     <Property Name="TIPO_GRAFICO_id" Type="int" Nullable="false" />
     <Property Name="FUENTE_id" Type="int" Nullable="false" />
-    <Property Name="unidad_medida" Type="varchar" MaxLength="250" />
-    <Property Name="tamanio_muestra" Type="varchar" MaxLength="250" />
-    <Property Name="caracteristica_especial" Type="varchar" MaxLength="250" />
-    <Property Name="auxiliar_1" Type="varchar" MaxLength="250" />
+    <Property Name="unidad_medida" Type="varchar(max)" />
+    <Property Name="tamanio_muestra" Type="varchar(max)" />
+    <Property Name="caracteristica_especial" Type="varchar(max)" />
+    <Property Name="auxiliar_1" Type="varchar(max)" />
     <Property Name="RESPONSABLE_id" Type="int" Nullable="false" />
     <Property Name="UNIDAD_MEDIDA_id" Type="int" Nullable="false" />
   </EntityType>
@@ -160,6 +194,114 @@
       </Principal>
       <Dependent Role="CATEGORIA">
         <PropertyRef Name="PRODUCTO_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_CATEGORIA_FK">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIA">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="CATEGORIA_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_DETALLE_FK">
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DETALLE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="DETALLE_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_FUENTE_FK">
+    <End Role="FUENTE" Type="Self.FUENTE" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FUENTE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="FUENTE_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_PARAMETRO_FK">
+    <End Role="PARAMETRO" Type="Self.PARAMETRO" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PARAMETRO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="PARAMETRO_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_RESPONSABLE_FK">
+    <End Role="RESPONSABLE" Type="Self.RESPONSABLE" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RESPONSABLE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="RESPONSABLE_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_TEMPORALIDAD_FK">
+    <End Role="TEMPORALIDAD" Type="Self.TEMPORALIDAD" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEMPORALIDAD">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="TEMPORALIDAD_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_TERRITORIO_FK">
+    <End Role="TERRITORIO" Type="Self.TERRITORIO" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TERRITORIO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="TERRITORIO_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_TIPO_GRAFICO_FK">
+    <End Role="TIPO_GRAFICO" Type="Self.TIPO_GRAFICO" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_GRAFICO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="TIPO_GRAFICO_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DATA_GRAFICO_UNIDAD_MEDIDA_FK">
+    <End Role="UNIDAD_MEDIDA" Type="Self.UNIDAD_MEDIDA" Multiplicity="1" />
+    <End Role="DATA_GRAFICO" Type="Self.DATA_GRAFICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UNIDAD_MEDIDA">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DATA_GRAFICO">
+        <PropertyRef Name="UNIDAD_MEDIDA_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -297,6 +439,7 @@
   </Association>
   <EntityContainer Name="graficosModelStoreContainer">
     <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DATA_GRAFICO" EntityType="Self.DATA_GRAFICO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DETALLE" EntityType="Self.DETALLE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FUENTE" EntityType="Self.FUENTE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GRAFICO" EntityType="Self.GRAFICO" Schema="dbo" store:Type="Tables" />
@@ -312,6 +455,42 @@
     <AssociationSet Name="CATEGORIA_PRODUCTO_FK" Association="Self.CATEGORIA_PRODUCTO_FK">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_CATEGORIA_FK" Association="Self.DATA_GRAFICO_CATEGORIA_FK">
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_DETALLE_FK" Association="Self.DATA_GRAFICO_DETALLE_FK">
+      <End Role="DETALLE" EntitySet="DETALLE" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_FUENTE_FK" Association="Self.DATA_GRAFICO_FUENTE_FK">
+      <End Role="FUENTE" EntitySet="FUENTE" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_PARAMETRO_FK" Association="Self.DATA_GRAFICO_PARAMETRO_FK">
+      <End Role="PARAMETRO" EntitySet="PARAMETRO" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_RESPONSABLE_FK" Association="Self.DATA_GRAFICO_RESPONSABLE_FK">
+      <End Role="RESPONSABLE" EntitySet="RESPONSABLE" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_TEMPORALIDAD_FK" Association="Self.DATA_GRAFICO_TEMPORALIDAD_FK">
+      <End Role="TEMPORALIDAD" EntitySet="TEMPORALIDAD" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_TERRITORIO_FK" Association="Self.DATA_GRAFICO_TERRITORIO_FK">
+      <End Role="TERRITORIO" EntitySet="TERRITORIO" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_TIPO_GRAFICO_FK" Association="Self.DATA_GRAFICO_TIPO_GRAFICO_FK">
+      <End Role="TIPO_GRAFICO" EntitySet="TIPO_GRAFICO" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
+    </AssociationSet>
+    <AssociationSet Name="DATA_GRAFICO_UNIDAD_MEDIDA_FK" Association="Self.DATA_GRAFICO_UNIDAD_MEDIDA_FK">
+      <End Role="UNIDAD_MEDIDA" EntitySet="UNIDAD_MEDIDA" />
+      <End Role="DATA_GRAFICO" EntitySet="DATA_GRAFICO" />
     </AssociationSet>
     <AssociationSet Name="GRAFICO_CATEGORIA_FK" Association="Self.GRAFICO_CATEGORIA_FK">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />

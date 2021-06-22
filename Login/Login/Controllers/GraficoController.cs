@@ -38,7 +38,7 @@ namespace Login.Controllers
         public ActionResult Grafico(int id = 0)
         {
 
-            GRAFICO graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            DATA_GRAFICO graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.URL = graf.GetURL();
             ViewBag.id = graf.id;
             ViewBag.Data = Util.ObtenerTexto("https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/" + graf.GetURL());
@@ -48,7 +48,7 @@ namespace Login.Controllers
         public string GraficoString(int id = 0)
         {
 
-            GRAFICO graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            DATA_GRAFICO graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.URL = graf.GetURL();
             //ViewBag.Data = Util.ObtenerTexto("https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/" + graf.GetURL())[4];
             string Hola = graf.GetURL();
@@ -59,7 +59,7 @@ namespace Login.Controllers
         public ActionResult Grafico2(int id = 0)
         {
 
-            GRAFICO graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            DATA_GRAFICO graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.URL = graf.GetURL();
             ViewBag.id = graf.id;
             ViewBag.Data = Util.ObtenerTexto("https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/" + graf.GetURL());
@@ -76,7 +76,7 @@ namespace Login.Controllers
         public ActionResult Grafico3(int id = 0)
         {
 
-            GRAFICO graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            DATA_GRAFICO graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.URL = graf.GetURL();
             ViewBag.id = graf.id;
             ViewBag.Data = Util.ObtenerTexto("https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/" + graf.GetURL());
@@ -87,7 +87,7 @@ namespace Login.Controllers
         public ActionResult Grafico4(int id = 0)
         {
 
-            GRAFICO graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            DATA_GRAFICO graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.URL = graf.GetURL();
             ViewBag.id = graf.id;
             ViewBag.Data = Util.ObtenerTexto("https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/" + graf.GetURL());
@@ -98,7 +98,7 @@ namespace Login.Controllers
         public ActionResult Grafico5(int id = 0)
         {
 
-            GRAFICO graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            DATA_GRAFICO graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.URL = graf.GetURL();
             ViewBag.id = graf.id;
             ViewBag.Data = Util.ObtenerTexto("https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/" + graf.GetURL());
@@ -108,7 +108,7 @@ namespace Login.Controllers
         public ActionResult Grafico6(int id = 0)
         {
 
-            GRAFICO graf = dbGrafico.GRAFICO.Where(x => x.id == id).First();
+            DATA_GRAFICO graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
             ViewBag.URL = graf.GetURL();
             ViewBag.id = graf.id;
             ViewBag.Data = Util.ObtenerTexto("https://raw.githubusercontent.com/Sud-Austral/MPG/main/Datos/" + graf.GetURL());

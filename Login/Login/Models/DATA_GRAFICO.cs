@@ -15,10 +15,10 @@ namespace Login.Models
 using System;
     using System.Collections.Generic;
     
-public partial class GRAFICO
+public partial class DATA_GRAFICO
 {
 
-    public int id { get; set; }
+    public decimal id { get; set; }
 
     public string nombre { get; set; }
 

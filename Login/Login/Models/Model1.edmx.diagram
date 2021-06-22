@@ -30,6 +30,16 @@
         <AssociationConnector Association="graficosModel.GRAFICO_UNIDAD_MEDIDA_FK" ManuallyRouted="false" />
         <AssociationConnector Association="graficosModel.SECTOR_INDUSTRIA_FK" ManuallyRouted="false" />
         <AssociationConnector Association="graficosModel.PRODUCTO_SECTOR_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="graficosModel.DATA_GRAFICO" Width="1.5" PointX="9.75" PointY="13.25" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_CATEGORIA_FK" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_DETALLE_FK" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_FUENTE_FK" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_PARAMETRO_FK" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_RESPONSABLE_FK" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_TEMPORALIDAD_FK" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_TERRITORIO_FK" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_TIPO_GRAFICO_FK" />
+        <AssociationConnector Association="graficosModel.DATA_GRAFICO_UNIDAD_MEDIDA_FK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
