@@ -157,7 +157,7 @@ h5 {
 
 
 /* display 3 */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 
     .carousel-inner .carousel-item-right.active,
     .carousel-inner .carousel-item-next {
@@ -167,6 +167,18 @@ h5 {
     .carousel-inner .carousel-item-left.active,
     .carousel-inner .carousel-item-prev {
         transform: translateX(-33.333%);
+    }
+}
+@media (min-width: 768px)  {
+    .col-md-4 {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 auto !important;
+        width: 33.333% !important;
     }
 }
 
