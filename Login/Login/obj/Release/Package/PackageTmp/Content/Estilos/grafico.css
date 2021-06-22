@@ -4,16 +4,16 @@
         color-adjust: exact !important;
     }
 
-    div.page {
+    div.page{
         writing-mode: horizontal-tb;
     }
 
    /* body {
         transform: scale(1);
     }*/
-    body {
-        width: 700px;
-        zoom: 180%;
+    body{
+        width:650px;
+        zoom: 200%;
         padding:0px !important;
     }
     h1 {
@@ -28,13 +28,18 @@
         /*margin: 0;*/
         size: portrait;
     }
-
+    .pruebarara{  
+        padding-bottom: 200px !important;
+    }
     #grafico2 {
         display: block !important;
     }
-
-    iframe {
-        transform: scale(1,1) translate(1px,5px) !important;
+    .quitarespacio{
+        margin-top:-200px !important;
+    }
+    .quitarespacio2{
+        margin-top: -200px !important;
+        
     }
 
 }

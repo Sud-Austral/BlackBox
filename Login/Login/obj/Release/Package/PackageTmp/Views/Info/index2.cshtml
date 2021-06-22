@@ -25,16 +25,24 @@
     @*estilos*@
     <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
+
     @*Titulo de la pagina*@
     <!--<title>Resultados de Busqueda</title>-->
     <!-- pdf descargar-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+        function descargarPDF(theObject) {
+            window.print()
+        }
+
+    </script>
 </head>
 <body>
 
     <div class="container">
         @*Buscador general *@
-        <div class="container">
+        <div class="container borrar">
             <div class="row justify-content-center">
                 <div class="col-md-10 bg-light">
                     <div class="row justify-content-center">
@@ -52,7 +60,7 @@
 
         @*boton para ir atras*@
         <div class="container">
-            <div class="row justify-content-center mb-3">
+            <div class="row justify-content-center mb-3 borrar">
                 <div class="col-md-10">
                     <input type="button" class="btn btn-danger btn-sm " style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor:pointer" ; onClick="history.go(-1);" name="volver atrás" value="Atrás">
                 </div>
@@ -61,7 +69,7 @@
 
         @*fin boton para ir atras*@
 
-        <div class="container">
+        <div class="container borrar">
             <style>
                 .breadcrumb-item + .breadcrumb-item::before {
                     content: "∙";
@@ -88,9 +96,9 @@
         @*seccion iframe grafico*@
         <section class="contenedor-main row mr-md-2 justify-content-center">
             <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; max-height:590px !important;">
-                <div class="row bg-dark mb-2" style="border: 1px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; max-height: 65px;">
+                <div class="row bg-dark mb-2" style="border: 1px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; max-height:83px;">
                     <div class="col-md-1 col-2">
-                        <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                        <img class="img-fluid m-2" width="50" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
                     </div>
                     <div class="col">
                         <p class="mt-2" style="color:#fff;">@ViewBag.Elemento.titulo</p>
@@ -98,17 +106,25 @@
                 </div>
                 <!--Iframe de grafico-->
                 <div class="container">
-                    <iframe id='inlineFrameExample2' style="width:100%; height:460px;" src="/info/dashboard?id=@ViewBag.Elemento.id"></iframe>
+                    <iframe id="Imprimeme" style="width:100%; height:460px;" src="/info/dashboard?id=@ViewBag.Elemento.id">
+                    </iframe>
                 </div>
-                <div class="row" style="color:blue; font-size:10px;">
+                <div class="row quitarespacio" style="color:blue; font-size:10px;">
                     @*boton para ver mas informacion*@
-                    <div class="col-md-2 col-sm-2 ">
+                    <div class="col-md-2 col-sm-2 borrar">
                         <button type="button" class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
                     </div>
                     @*boton para descargar iframe*@
-                    <div class="col-md-1 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1" style="border-right:1px solid #d9d9d9;">
-                        <a href="javascript:void(0);" style="text-decoration: none !important;">
-                            <span id="verPdf2" style="font-size:12px;">Ver en Pdf</span>
+                    <div class="col-md-1 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1 borrar" style="border-right:1px solid #d9d9d9;">
+                        <script src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+
+                        <a href="javascript:void(0);" style="text-decoration: none !important;" id="generarPDF">
+
+                            <span id="verPdf2" style="font-size:12px;" onclick="descargarPDF();" data-toggle="tooltip" data-placement="top" title="Los mapas en Mozilla no descargan correctamente">
+
+                                Ver en Pdf
+                            </span>
                         </a>
                     </div>
                     <!--descargar pdf iframe-->
@@ -116,9 +132,11 @@
                         $("#verPdf2").click(function () {
 
                             /*var myIframe = document.getElementById("inlineFrameExample").contentWindow;*/
-                            var frame = document.getElementById("inlineFrameExample2");
+                            var frame = document.getElementById("MyIframe");
                             frame.style.height = "470px";
                             frame.style.width = "1020px";
+                           /*   margin = "-40px 0px 0px - 40px!important";*/
+                            transform = "scale(.3, .3)!important";
                             /*frame.style.Size ="Landscape";*/
                             /* frame.style.padding = "50px";*/
                             /* frame.style.transform = "scale(.75)!important";*/
@@ -141,7 +159,7 @@
             </main>
         </section>
         @*estilos para acortar texto de la descripcion larga a 10 reglones*@
-        <section class="container-main mb-5" id="leerMas" style="display:none; background:#fff;">
+        <section class="container-main mb-5 borrar" id="leerMas" style="display:none; background:#fff;">
             <style>
                 .line-clamp2 {
                     display: -webkit-box;
@@ -250,11 +268,11 @@
     </div>
 
 
-    <div id="tresRelacionados">
+    <div id="tresRelacionados" class="borrar">
 
     </div>
     <!--seccion de suscripciones-->
-    <div class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+    <div class="container-fluid text-center borrar" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
         <div class="row" style="padding-left:20%; padding-right:20%">
             <div class="col-12">
                 <h3 style="color:#fff; padding:40px 0px;">
@@ -269,7 +287,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid text-center" style=" background-color: black;padding-bottom:40px; background-size:cover;">
+    <div class="container-fluid text-center borrar" style=" background-color: black;padding-bottom:40px; background-size:cover;">
         <div class="row" style="padding-left:20%; padding-right:20%">
             <div class="col-12">
                 <h3 style="color:#fff; padding:40px 0px; margin-bottom:10px;">
@@ -326,7 +344,7 @@
             </div>
         </div>
     </div>
-    <div id="carruselRelacionados">
+    <div id="carruselRelacionados" class="borrar">
     </div>
     <!--Script de ocultar texto-->
     <script src="~/Scripts/OcultarBoton.js"></script>
@@ -361,5 +379,10 @@
         }
         estructura();
     </script>
+    <link href="~/Content/Estilos/grafico.css" rel="stylesheet" />
+    <div class="container page " style="display:none;" id="grafico2">
+        <iframe id='inlineFrameExample2' class="borrar" width="1050" height="460" src="/info/dashboard?id=@ViewBag.Elemento.id">
+        </iframe>
+    </div>
 </body>
 </html>
