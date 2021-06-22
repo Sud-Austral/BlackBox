@@ -586,7 +586,8 @@ namespace Login.Controllers
             ViewBag.Categoria = Categoria;
             ViewBag.Parametro = Parametro;
             */
-            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusquedaUsuario(id, new List<int>());
+            ShopifyYSuscripciones shopifyYSuscripciones = (ShopifyYSuscripciones)Session["mis_recursos"];
+            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusquedaUsuario(id, shopifyYSuscripciones.sector);    //new List<int>());
             ViewBag.Resultado = union;
             List<string> Paises = new List<string>();
             List<string> Escala = new List<string>();

@@ -42,8 +42,8 @@ namespace Login.Models
 
         public static IEnumerable<GRAFICO> PaginaBusquedaUsuario(string concepto, List<int> sectorId)
         {
-            sectorId = new List<int>();
-            sectorId.Add(1001);
+            //sectorId = new List<int>();
+            //sectorId.Add(1001);
             concepto = concepto.Trim().ToLower();
             //string accentedStr;
             byte[] tempBytes;
