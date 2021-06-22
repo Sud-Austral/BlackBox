@@ -494,7 +494,7 @@ namespace Login.Controllers
         {
             ViewBag.palabra = id;
             // = dbGrafico.DATA_GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
-            var prioridad = dbGrafico.DATA_GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'")
+            var prioridad = dbGrafico.DATA_GRAFICO.SqlQuery("SELECT * FROM DATA_GRAFICO WHERE titulo LIKE '% " + id + " %'")
                                                 .Take(50);
             IEnumerable<DATA_GRAFICO> NEW_GRAFICOS;
             IEnumerable<DATA_GRAFICO> union;
