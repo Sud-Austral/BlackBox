@@ -208,7 +208,7 @@ namespace AplicacionBlanco.Controllers
             return PartialView();
         }
 
-        public ActionResult Dashboard(int id=100)
+        public ActionResult Dashboard(decimal id =100)
         {
             string url = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First().url;
             ViewBag.url = url;
@@ -281,7 +281,7 @@ namespace AplicacionBlanco.Controllers
             return View("PaginaBusqueda");
         }
         
-        public PartialViewResult VisualizarGraficos(int id =1234)
+        public PartialViewResult VisualizarGraficos(decimal id =1234)
         {
             ViewBag.time1 = DateTime.Now;
             var rand = new Random();

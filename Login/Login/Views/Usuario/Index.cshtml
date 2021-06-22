@@ -1,6 +1,4 @@
-﻿
-
-@{
+﻿@{
 
     Layout = null;
 }
@@ -64,7 +62,6 @@
             });
             $(seccion1).show();
             $(seccion2).show();
-
         }
     </script>
 </head>
@@ -86,7 +83,6 @@
             <a href="https://www.dataintelligence-group.com/" class="brand-link">
                 <img src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="DATAINTELLIGENCE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light" style="font-size:16px;">DATAINTELLIGENCE</span>
-
             </a>
 
             <!-- Sidebar -->
@@ -242,7 +238,6 @@
                                 </ul>
                             }
                         </li>
-
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
@@ -251,108 +246,32 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-                            @if (ViewBag.Menu.Count > 0)
-                            {
-                                foreach (var item in ViewBag.Menu)
-                                {
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a href="index" onclick="event.preventDefault();mostrador('#dos');"  class="nav-link ">
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    Plataformas
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a href="index" onclick="event.preventDefault();mostrador('#tres');" class="nav-link ">
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    Informes Interactivos
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a href="index" onclick="event.preventDefault();mostrador('#cuatro');" class="nav-link ">
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    Reportes 360°
-                                                </p>
-                                            </a>
-                                        </li>
-                                        @*<li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>
-                                            Industria
-                                            @item.nombre
-                                            <i class="fas fa-angle-left right"></i>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="index" onclick="event.preventDefault();mostrador('#dos');" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Plataformas
                                         </p>
                                     </a>
-                                    @foreach (var item2 in item.SECTOR)
-                                    {
-                                        <ul class="nav nav-treeview">
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>
-                                                        Sector
-                                                        @item2.nombre
-                                                        <i class="fas fa-angle-left right"></i>
-                                                    </p>
-                                                </a>
-                                                @foreach (var item3 in item2.PRODUCTO)
-                                                {
-                                                    <ul class="nav nav-treeview">
-                                                        <li class="nav-item">
-                                                            <a href="#" class="nav-link">
-                                                                <i class="far fa-circle nav-icon"></i>
-                                                                <p>
-                                                                    Producto
-                                                                    @item3.nombre
-                                                                    <i class="fas fa-angle-left right"></i>
-                                                                </p>
-                                                            </a>
-                                                            @foreach (var item4 in item3.CATEGORIA)
-                                                            {
-                                                                <ul class="nav nav-treeview">
-                                                                    <li class="nav-item">
-                                                                        <a href="#" class="nav-link">
-                                                                            <i class="far fa-circle nav-icon"></i>
-                                                                            <p>
-                                                                                Categoria
-                                                                                @item4.nombre
-                                                                                <i class="fas fa-angle-left right"></i>
-                                                                            </p>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            }
-                                                        </li>
-                                                    </ul>
-                                                }
-                                            </li>
-                                        </ul>
-                                    }
-                                </li>*@
-                                    </ul>
-                                }
-                            }
-                            else
-                            {
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" style="border:1px solid #377db3">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                Sin Suscripciones
-                                                <i class="fas fa-angle-left right"></i>
-                                            </p>
-                                        </a>
-                                    <li />
-                                </ul>
-
-                            }
+                                </li>
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="index" onclick="event.preventDefault();mostrador('#tres');" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Informes Interactivos
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a href="index" onclick="event.preventDefault();mostrador('#cuatro');" class="nav-link ">
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            Reportes 360°
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
@@ -363,51 +282,28 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-                            @if (ViewBag.Menu.Count > 0)
-                            {
-                                foreach (var item in ViewBag.Menu)
-                                {
-                                    <ul class="nav nav-treeview mb-5" style="list-style-type: circle">
+                            <ul class="nav nav-treeview mb-5" style="list-style-type: circle">
 
-                                        <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
-                                            <a onclick="mostrador('#seis');" href="#" class="nav-link ">
-                                                @*<i class="nav-icon fas fa-tachometer-alt"></i>*@
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    PERFIL
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item menu-open " style=" border-bottom: 1px solid #377db3">
-                                            <a onclick="mostrador('#cinco');" href="#" class="nav-link ">
-                                                @*<i class="nav-icon fas fa-tachometer-alt"></i>*@
-                                                <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
-                                                <p style="color:#518bb3">
-                                                    PRODUCTOS FACTURADOS
-                                                </p>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                }
-                            }
-                            else
-                            {
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" style="border:1px solid #377db3">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                Sin Suscripciones
-                                                <i class="fas fa-angle-left right"></i>
-                                            </p>
-                                        </a>
-                                    <li />
-                                </ul>
-
-                            }
+                                <li class="nav-item menu-open" style=" border-bottom:1px solid #377db3">
+                                    <a onclick="mostrador('#seis');" href="#" class="nav-link ">
+                                        @*<i class="nav-icon fas fa-tachometer-alt"></i>*@
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            PERFIL
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item menu-open " style=" border-bottom: 1px solid #377db3">
+                                    <a onclick="mostrador('#cinco');" href="#" class="nav-link ">
+                                        @*<i class="nav-icon fas fa-tachometer-alt"></i>*@
+                                        <i class="fas fa-circle mr-1" style="color:#518bb3; "></i>
+                                        <p style="color:#518bb3">
+                                            PRODUCTOS FACTURADOS
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-
                         <li class="nav-item mb-3 pb-3" style="border-bottom:0.5px solid #808080;">
                             <a href="#" class="nav-link" style="border:1px solid #377db3">
                                 @*<i class="nav-icon fas fa-edit"></i>*@
@@ -465,17 +361,13 @@
                                         </p>
                                     </a>
                                 </li>
-
                             </ul>
-
                         </li>
-
                         <li class="nav-item mb-5" style="border:1px solid #377db3">
                             <a onclick="mostrador('#trece');" href="#" class="nav-link ">
                                 <i class="nav-icon fa-question-circle-o"></i>
                                 <p style="font-size:16px;">
                                     AYUDA
-
                                 </p>
                             </a>
                         </li>
@@ -485,7 +377,6 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-
         <!--************************ altura de cuerpo para informes Content Wrapper. Contains page content ************************** -->
         <div class="content-wrapper " style="height:5000px; overflow:hidden;">
             <!-- Main content -->
@@ -524,14 +415,10 @@
                                             </p>
                                         </div>
                                     </div>
-
-
-
                                 </div>
                             </div>
                             @*Productos Datas*@
                             <div class="container-fluid  " id="dos" style="display:none;">
-
                                 @*Productos Datas*@
                                 @{ Html.RenderAction("GraficoUsuario", "Usuario");}
                             </div>
@@ -543,23 +430,15 @@
                             @*Reportes 360*@
                             <div class="container-fluid offset-1 mt-2" id="cuatro" style="display:none;">
                                 @{ Html.RenderAction("ReportesUsuario", "Usuario");}
-
                             </div>
-
                             <div class="container-fluid  mt-2" id="uno">
                                 @{ Html.RenderAction("Bienvenido", "Usuario");}
-
                             </div>
-
                             <div class="container-fluid offset-1 mt-2" id="cinco" style="display:none;">
-
                                 @{ Html.RenderAction("Facturados", "Usuario");}
-
                             </div>
                             <div class="container-fluid offset-1 mt-2" id="seis" style="display:none;">
-
                                 @{ Html.RenderAction("PerfilUsuario", "Usuario");}
-
                             </div>
                             @*Aqui se despliega la seccion de las categorias del menu laeral usuario index*@
                             <div class="container-fluid offset-1 mt-2" id="siete" style="display:none;">
@@ -567,211 +446,22 @@
 
                                 @*<img class="mx-0" src="~/Content/image_UsuarioIndex/cargadatos_es.gif" />*@
                             </div>
-
                             <div class="container-fluid offset-1 mt-2" id="ocho" style="display:none;">
-
                             </div>
                             <div class="container-fluid mt-2 ml-2" id="nueve" style="display:none;padding-right:20px;">
-
-
                             </div>
                             <div class="container-fluid offset-1 mt-2" id="diez" style="display:none;">
-
-
                             </div>
                             <div class="container-fluid offset-1 mt-2" id="once" style="display:none;">
-
-
                             </div>
                             <div class="container-fluid offset-1 mt-2" id="doce" style="display:none; height:1000px;">
-
-
                             </div>
                             <div class="container-fluid offset-1 mt-2" id="catorce" style="display:none; height:1000px;">
-
-
                             </div>
                             @*Mis succripciones*@
                             <div class="container-fluid mt-2 ml-2" id="quince" style="display:none;padding-right:20px;">
-
-
                             </div>
-                            @*otra opciones en la pagina de bienvenido*@
-                            <!--<div class="container mt-2" >
-                                
-                                   
-                                        <style>
-                                            @@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-                                            * {
-                                                box-sizing: border-box;
-                                                margin: 0;
-                                                padding: 0;
-                                            }
-
-                                            body {
-                                                font-family: 'Lato', sans-serif;
-                                                height: 100vh;
-                                            }
-
-                                            .slider-container {
-                                                position: relative;
-                                                overflow: hidden;
-                                                width: 100vw;
-                                                height: 100vh;
-                                            }
-
-                                            .left-slide {
-                                                height: 100%;
-                                                width: 25%;
-                                                position: absolute;
-                                                top: 0;
-                                                left: 0;
-                                                transition: transform 0.5s ease-in-out;
-                                            }
-
-                                                .left-slide > div {
-                                                    height: 100%;
-                                                    width: 100%;
-                                                    display: flex;
-                                                    flex-direction: column;
-                                                    align-items: center;
-                                                    justify-content: center;
-                                                    color: #fff;
-                                                }
-
-                                                .left-slide h1 {
-                                                    font-size: 40px;
-                                                    margin-bottom: 10px;
-                                                    margin-top: -30px;
-                                                }
-
-                                            .right-slide {
-                                                height: 100%;
-                                                position: absolute;
-                                                top: 0;
-                                                left: 20%;
-                                                width: 75%;
-                                                transition: transform 0.5s ease-in-out;
-                                            }
-
-                                                .right-slide > div {
-                                                    background-repeat: no-repeat;
-                                                    background-size: cover;
-                                                    background-position: center center;
-                                                    height: 100%;
-                                                    width: 100%;
-                                                }
-
-                                            button {
-                                                background-color: #fff;
-                                                border: none;
-                                                color: #aaa;
-                                                cursor: pointer;
-                                                font-size: 16px;
-                                                padding: 15px;
-                                            }
-
-                                                button:hover {
-                                                    color: #222;
-                                                }
-
-                                                button:focus {
-                                                    outline: none;
-                                                }
-
-                                            .slider-container .action-buttons button {
-                                                position: absolute;
-                                                left: 35%;
-                                                top: 50%;
-                                                z-index: 100;
-                                            }
-
-                                            .slider-container .action-buttons .down-button {
-                                                transform: translateX(-100%);
-                                                border-top-left-radius: 5px;
-                                                border-bottom-left-radius: 5px;
-                                            }
-
-                                            .slider-container .action-buttons .up-button {
-                                                transform: translateY(-100%);
-                                                border-top-right-radius: 5px;
-                                                border-bottom-right-radius: 5px;
-                                            }
-                                        </style>
-                                       
-                                        <div class="slider-container">
-                                            <div class="left-slide">
-                                                <div style="background-color: #fde">
-                                                    <h1>SECTOR MUJERES</h1>
-                                                    <p>to evolve into care</p>
-                                                </div>
-                                                <div style="background-color: rgb(254,160,0)">
-                                                    <h1>Yellow Luck</h1>
-                                                    <p>Shinning the clouds</p>
-                                                </div>
-                                                <div style="background-color: rgb(231, 58, 95)">
-                                                    <h1>Redness Lust</h1>
-                                                    <p>in the wilderness</p>
-                                                </div>
-                                                <div style="background-color: rgb(176, 136, 240)">
-                                                    <h1>Lavanda Love</h1>
-                                                    <p>in the sunset</p>
-                                                </div>
-                                            </div>
-                                            <div class="right-slide">
-                                                <div style="background-image: url('/Content/img/portadaPowerBi_DataCLIMA_PlataformaDeAnalisisYMonitoreoDelClima_BELICE.jpg');"></div>
-                                                <div style="background-image: url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Zmxvd2Vyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1296&q=60');"></div>
-                                                <div style="background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8Zmxvd2Vyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1296&q=60');"></div>
-                                                <div style="background-image: url('https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80');"></div>
-                                            </div>
-                                            <div class="action-buttons">
-                                                <button class="down-button">
-                                                    <i class="fas fa-arrow-down"></i>
-                                                </button>
-                                                <button class="up-button">
-                                                    <i class="fas fa-arrow-up"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <script>
-                                            const sliderContainer = document.querySelector('.slider-container')
-                                            const slideRight = document.querySelector('.right-slide')
-                                            const slideLeft = document.querySelector('.left-slide')
-                                            const upButton = document.querySelector('.up-button')
-                                            const downButton = document.querySelector('.down-button')
-                                            const slidesLength = slideRight.querySelectorAll('div').length
-
-                                            let activeSlideIndex = 0
-
-                                            slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`
-
-                                            upButton.addEventListener('click', () => changeSlide('up'))
-                                            downButton.addEventListener('click', () => changeSlide('down'))
-
-                                            const changeSlide = (direction) => {
-                                                const sliderHeight = sliderContainer.clientHeight
-                                                if (direction === 'up') {
-                                                    activeSlideIndex++
-                                                    if (activeSlideIndex > slidesLength - 1) {
-                                                        activeSlideIndex = 0
-                                                    }
-                                                } else if (direction === 'down') {
-                                                    activeSlideIndex--
-                                                    if (activeSlideIndex < 0) {
-                                                        activeSlideIndex = slidesLength - 1
-                                                    }
-                                                }
-
-                                                slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`
-                                                slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
-                                            }
-                                        </script>
-                               
-                               
-                                
-                            </div>-->
-
+                            
                             @*Seccion atencion al cliente*@
                             <div class="container-fluid offset-1" id="trece" style="display:none;">
                                 <div class="row  mt-5">
@@ -818,7 +508,6 @@
                                                             VENTAS CORPORATIVAS <br />
                                                             ventas@dataintelligence-group.com <br />
                                                             +56 9 9438 5412 de 9:00 a 18:00 hrs (GMT-3)
-
                                                         </p>
                                                     </div>
 

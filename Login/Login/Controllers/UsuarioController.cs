@@ -38,23 +38,16 @@ namespace Login.Controllers
             ViewBag.Resultado = productos;
             ViewBag.InformeInteractivo = shopifyYSuscripciones.informe_interactivo;
             ViewBag.Reporte360 = shopifyYSuscripciones.reporte_360;
-            //ViewBag.Menu = dbGrafico.INDUSTRIA.ToList();
-            //Menu que esta suscrito el usuario
-            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList();
-            //ViewBag.Menu = dbGrafico.INDUSTRIA.Where(x => x.id==10).ToList();
             ViewBag.Menu = shopifyYSuscripciones.menu;  //grafico;
             return View();
         }
-
         
         public ActionResult Suscripcion()
         {
-            List<Producto_Shopify> productos = new List<Producto_Shopify>();
+            ShopifyYSuscripciones shopifyYSuscripciones = (ShopifyYSuscripciones)Session["mis_recursos"];
+            /*
+            List <Producto_Shopify> productos = new List<Producto_Shopify>();
             ViewBag.User = User.Identity.GetUserName();
-            //ViewBag.Resultado = APIShopify.BuscarOrdenes();
-            //ViewBag.Resultado = APIShopify.BuscarOrdenesPorMail();
-            //var test = APIShopify.BuscarOrdenesPorMail();
-            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
             foreach (Newtonsoft.Json.Linq.JToken item in APIShopify.BuscarOrdenesPorMail())
             {
                 foreach (var item2 in item["line_items"])
@@ -65,7 +58,9 @@ namespace Login.Controllers
             }
             //ViewBag.url = (string)Session["url"];
             Session["Productos"] = productos;
-            ViewBag.Resultado = productos;
+            //ViewBag.Resultado = productos;
+            */
+            ViewBag.Resultado = shopifyYSuscripciones.todo_producto;
             return View();
         }
 
@@ -82,60 +77,11 @@ namespace Login.Controllers
         //**************************************************************************************************************************************************************************
         //**************************************************************************************************************************************************************************
 
-        public JsonResult MenuBusqueda(int id, int id2)
-        {
-            //var salida;
-            switch (id2)
-            {
-                case 1:
-                    string salida = dbGrafico.INDUSTRIA.Where(x => x.id == id).First().nombre;
-                    return Json(salida, JsonRequestBehavior.AllowGet);
-                    //break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                default:
-                    break;
-            }
-            return null;
-            
-        }
-        public JsonResult MenuBusqueda(string id)
-        {
-            return Json(id, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult GetNombre()
-        {
-            List<Producto_Shopify> productos = new List<Producto_Shopify>();
-            ViewBag.User = User.Identity.GetUserName();
-            //ViewBag.Resultado = APIShopify.BuscarOrdenes();
-            //ViewBag.Resultado = APIShopify.BuscarOrdenesPorMail();
-            //var test = APIShopify.BuscarOrdenesPorMail();
-            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            foreach (var item in APIShopify.BuscarOrdenesPorMail())
-            {
-                foreach (var item2 in item["line_items"])
-                {
-
-                    productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
-                }
-            }
-            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
-
-            //return Json(shopifyYSuscripciones.producto_Shopifies, JsonRequestBehavior.AllowGet);
-            //return Json(productos[0].SKU.Contains("datasuscripcion"), JsonRequestBehavior.AllowGet);
-            //return Json(dbGrafico.INDUSTRIA.Where(x => shopifyYSuscripciones.industrias.Contains(x.id)).ToList(), JsonRequestBehavior.AllowGet);
-            return Json(productos, JsonRequestBehavior.AllowGet);
-        }
+        
 
         public ActionResult Usuaria2()
         {
             ViewBag.Lista = dbGrafico.INDUSTRIA.ToList();
-
             //Lista de productos de Shopify
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
             //Nombre de Usuario
@@ -235,39 +181,6 @@ namespace Login.Controllers
 
         public PartialViewResult InformesUsuario()
         {
-            /*
-            //Lista de productos de Shopify
-            List<Producto_Shopify> productos = new List<Producto_Shopify>();
-            //Nombre de Usuario
-            ViewBag.User = User.Identity.GetUserName();
-            //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
-            {
-                foreach (var item2 in item["line_items"])
-                {
-                    try
-                    {
-                        productos.Add(new Producto_Shopify(item2, (string)item["order_status_url"], item));
-                    }
-                    catch (Exception)
-                    {
-
-                        string hola = "";
-                    }
-
-                }
-            }
-            //Objeto que separa Productos y Suscripciones
-            ShopifyYSuscripciones shopifyYSuscripciones = new ShopifyYSuscripciones(productos);
-            //Productos
-            productos = shopifyYSuscripciones.producto_Shopifies;
-            //ViewBag.url = (string)Session["url"];
-            Session["Productos"] = productos;
-            //Suscripciones
-            Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
-            
-            ViewBag.Resultado = productos;
-            */
             ShopifyYSuscripciones aux = (ShopifyYSuscripciones)Session["mis_recursos"];
             ViewBag.InformeInteractivo = aux.informe_interactivo;
             return PartialView();
@@ -277,16 +190,15 @@ namespace Login.Controllers
             ShopifyYSuscripciones aux = (ShopifyYSuscripciones)Session["mis_recursos"];
             ViewBag.Reporte360 = aux.reporte_360;
             //ViewBag.Resultado = productos;
-
             return PartialView();
         }
         public PartialViewResult Facturados()
         {
-
             //Lista de productos de Shopify
+            /*
             List<Producto_Shopify> productos = new List<Producto_Shopify>();
             //Nombre de Usuario
-            ViewBag.User = User.Identity.GetUserName();
+            
             //foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
             foreach (var item in APIShopify.BuscarOrdenesPorMail(User.Identity.GetUserName()))
             {
@@ -304,9 +216,11 @@ namespace Login.Controllers
 
                 }
             }
-            ViewBag.Facturados = productos;
-           
-
+            */
+            ShopifyYSuscripciones aux = (ShopifyYSuscripciones)Session["mis_recursos"];
+            //ViewBag.Facturados = productos;
+            ViewBag.Facturados = aux.todo_producto;
+            ViewBag.User = User.Identity.GetUserName();
             return PartialView();
         }
         public PartialViewResult PerfilUsuario()
@@ -348,12 +262,6 @@ namespace Login.Controllers
             Session["Suscripcion"] = shopifyYSuscripciones.suscripcions;
             ViewBag.Resultado = productos;
             return PartialView();
-        }
-
-        public int siksi()
-        {
-            var ola = (ShopifyYSuscripciones)Session["mis_recursos"];
-            return ola.todo_producto.Count();
         }
 
         public ActionResult resultados(int id= 220106007)
@@ -499,93 +407,8 @@ namespace Login.Controllers
         public PartialViewResult FormBuscador(string id = "1")
         {
             ViewBag.palabra = id;
-            // = dbGrafico.GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id)).Take(2);
-            /*
-            var prioridad = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'")
-                                                .Take(50);
-            IEnumerable<DATA_GRAFICO> NEW_GRAFICOS;
-            IEnumerable<DATA_GRAFICO> union;
-            if (prioridad.Count() < 50)
-            {
-                NEW_GRAFICOS = dbGrafico.DATA_GRAFICO.Where(x => x.nombre.Contains(id) || x.titulo.Contains(id) || x.tags.Contains(id))
-                                                 .OrderBy(x => x.id)
-                                                 .Take(50 - prioridad.Count());
-                int ent = NEW_GRAFICOS.Count();
-                union = prioridad.Concat(NEW_GRAFICOS); //.Distinct();
-
-            }
-            else
-            {
-                union = prioridad;
-            }
-            int ent2 = union.Count();
-
-            ViewBag.Resultado = union;
-            //ViewBag.Resultado = NEW_GRAFICOS.ToList();//Liberados/Gratis
-            //ViewBag.Resultado2= NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).ToList();//Informes
-            //ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).ToList();//Reportes
-            //Listas de Filtros
-
-            List<string> Paises = new List<string>();
-            List<string> Escala = new List<string>();
-            List<string> TipoGrafico = new List<string>();
-            List<string> Temporalidad = new List<string>();
-            List<string> Producto = new List<string>();
-            List<string> Industria = new List<string>();
-            List<string> Sector = new List<string>();
-            List<string> Categoria = new List<string>();
-            List<string> Parametro = new List<string>();
-            foreach (var item in union)
-            {
-                if (!Paises.Contains(item.TERRITORIO.auxiliar))
-                {
-                    Paises.Add(item.TERRITORIO.auxiliar);
-                }
-                if (!Escala.Contains(item.TERRITORIO.nombre))
-                {
-                    Escala.Add(item.TERRITORIO.nombre);
-                }
-                if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
-                {
-                    TipoGrafico.Add(item.TIPO_GRAFICO.nombre);
-                }
-                if (!Temporalidad.Contains(item.TEMPORALIDAD.nombre))
-                {
-                    Temporalidad.Add(item.TEMPORALIDAD.nombre);
-                }
-                if (!Producto.Contains(item.CATEGORIA.PRODUCTO.nombre))
-                {
-                    Producto.Add(item.CATEGORIA.PRODUCTO.nombre);
-                }
-                if (!Industria.Contains(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
-                {
-                    Industria.Add(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
-                }
-                if (!Sector.Contains(item.CATEGORIA.PRODUCTO.SECTOR.nombre))
-                {
-                    Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
-                }
-
-                if (!Categoria.Contains(item.CATEGORIA.nombre))
-                {
-                    Categoria.Add(item.CATEGORIA.nombre);
-                }
-                if (!Parametro.Contains(item.PARAMETRO.nombre))
-                {
-                    Parametro.Add(item.PARAMETRO.nombre);
-                }
-            }
-            ViewBag.Paises = Paises;
-            ViewBag.Escala = Escala;
-            ViewBag.TipoGrafico = TipoGrafico;
-            ViewBag.Temporalidad = Temporalidad;
-            ViewBag.Producto = Producto;
-            ViewBag.Industria = Industria;
-            ViewBag.Sector = Sector;
-            ViewBag.Categoria = Categoria;
-            ViewBag.Parametro = Parametro;
-            */
-            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusquedaUsuario(id, new List<int>());
+            ShopifyYSuscripciones shopifyYSuscripciones = (ShopifyYSuscripciones)Session["mis_recursos"];
+            IEnumerable<DATA_GRAFICO> union = UtilBusqueda.PaginaBusquedaUsuario(id, shopifyYSuscripciones.sector);
             ViewBag.Resultado = union;
             List<string> Paises = new List<string>();
             List<string> Escala = new List<string>();
@@ -746,10 +569,6 @@ namespace Login.Controllers
             return PartialView();
         }    
         
-        public string nose()
-        {
-            return dbGrafico.DATA_GRAFICO.Where(x => x.id == 1234).First().titulo;
-        }
 
         public PartialViewResult Paginacion(string id = "1", int id2 = 1)
         {
