@@ -187,17 +187,20 @@ namespace AplicacionBlanco.Controllers
             List<decimal> aux = new List<decimal>();
             for (int i = 0; i < 20; i++)
             {
-                aux.Add(rand.Next((int)dbGrafico.DATA_GRAFICO.Min(x => x.id), (int)dbGrafico.DATA_GRAFICO.Max(x => x.id)));
+                //aux.Add(rand.Next(Int64.Parse(dbGrafico.DATA_GRAFICO.Min(x => x.id).ToString()), Int64.Parse(dbGrafico.DATA_GRAFICO.Max(x => x.id).ToString())));
+                //aux.Add(rand.Next(500, 10000000));
             }
-            var Graficos = dbGrafico.DATA_GRAFICO.Where(x => aux.Contains(x.id)).ToList();
+            var Graficos = dbGrafico.DATA_GRAFICO.Take(15); //Where(x => aux.Contains(x.id)).ToList();
 
             //var Graficos = dbGrafico.DATA_GRAFICO.ToList();
 
-            List<DATA_GRAFICO> listaGraficos = new List<DATA_GRAFICO>();
+            List<DATA_GRAFICO> listaGraficos = Graficos.ToList();  //new List<DATA_GRAFICO>();
+            /*
             for (int i = 0; i < 15; i++)
             {
-                listaGraficos.Add(Graficos[rand.Next(Graficos.Count)]);
+                listaGraficos.Add(Graficos[rand.Next(Graficos.Count())]);
             }
+            */
             ViewBag.Graficos = listaGraficos;
             return View();
         }
