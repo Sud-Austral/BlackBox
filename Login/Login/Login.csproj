@@ -407,6 +407,10 @@
     <Content Include="Content\img\iconos_PopUp\xls.png" />
     <Content Include="Content\img\iconos_sector\10.png" />
     <Content Include="Content\VivianIframe.css" />
+    <Content Include="Images\ayuda\ayauda.txt" />
+    <Content Include="Images\ayuda\icono_gmail.png" />
+    <Content Include="Images\ayuda\icono_telefono.png" />
+    <Content Include="Images\ayuda\icono_whatsApp.png" />
     <Content Include="Images\menuLayout\10_on.png" />
     <Content Include="Content\img\iconos_sector\11.png" />
     <Content Include="Content\img\iconos_sector\12.png" />
