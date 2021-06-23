@@ -19,7 +19,10 @@
     h1 {
         display: none !important;
     }
-    
+    .titulotamaño {
+        font-size: 13px;
+    }
+
     .borrar {
         display: none !important;
     }
