@@ -398,5 +398,15 @@ namespace AplicacionBlanco.Controllers
 
             return PartialView();
         }
+        public PartialViewResult CarruselVetical2()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult CarruselVetical3()
+        {
+
+            return PartialView();
+        }
     }
 }

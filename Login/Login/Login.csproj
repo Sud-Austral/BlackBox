@@ -293,6 +293,16 @@
     <Content Include="assets\img\dogs\image3.jpeg" />
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\theme.js" />
+    <Content Include="Content\2-blocks-template-master\css\reset.css" />
+    <Content Include="Content\2-blocks-template-master\css\style.css" />
+    <Content Include="Content\2-blocks-template-master\img\img-1.jpg" />
+    <Content Include="Content\2-blocks-template-master\img\img-2.jpg" />
+    <Content Include="Content\2-blocks-template-master\img\img-3.jpg" />
+    <Content Include="Content\2-blocks-template-master\img\img-4.jpg" />
+    <Content Include="Content\2-blocks-template-master\index.html" />
+    <Content Include="Content\2-blocks-template-master\js\jquery-2.1.4.js" />
+    <Content Include="Content\2-blocks-template-master\js\main.js" />
+    <Content Include="Content\2-blocks-template-master\js\modernizr.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -2576,6 +2586,11 @@
     <Content Include="plugins\summernote\summernote.js.map" />
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\toastr\toastr.js.map" />
+    <Content Include="Content\2-blocks-template-master\partials\_layout.scss" />
+    <Content Include="Content\2-blocks-template-master\partials\_mixins.scss" />
+    <Content Include="Content\2-blocks-template-master\partials\_variables.scss" />
+    <Content Include="Content\2-blocks-template-master\README.md" />
+    <Content Include="Content\2-blocks-template-master\scss\style.scss" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - Web Deploy.pubxml" />
@@ -2803,6 +2818,9 @@
     <Content Include="Views\Info\nose.cshtml" />
     <Content Include="Views\Info\No_Resultado.cshtml" />
     <Content Include="Views\Usuario\Paginacion.cshtml" />
+    <Content Include="Views\Info\CarruselVetical.cshtml" />
+    <Content Include="Views\Info\CarruselVetical2.cshtml" />
+    <Content Include="Views\Info\CarruselVetical3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
