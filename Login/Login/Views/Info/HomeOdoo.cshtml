@@ -14,7 +14,7 @@
     </script>
 </head>
 
-<body>
+<body style="overflow-x:hidden;">
     <div class="py-5 bg-light c2a1" style=" background-image: url('/Content/image_estadistica/portadaInicio_100_1.jpg');">
         <div class="container" style="margin-top:180PX;">
             <!-- Row -->
@@ -48,11 +48,11 @@
                     </div>
 
                     <!--Test nuevo carrusel-->
-                    <div class="container-fluid offset-0 mt-2" style="padding-right: 50px;">
+                    <div class="container offset-0 mt-2">
                         @{ Html.RenderAction("CarruselVetical", "Info");}
                     </div>
 
-                    <div class="container-fluid offset-0 mt-2" style="padding-right: 20px; display: none; ">
+                    <div class="container-fluid offset-0 mt-2" style="display: none; ">
                         @{ Html.RenderAction("CarruselVetical2", "Info");}
                     </div>
                     <div class="container offset-0 mt-1" style="height: 70vh;  ">
