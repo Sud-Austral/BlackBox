@@ -1,5 +1,4 @@
-﻿
-@*<link href="~/Content/Estilos/grafico.css" rel="stylesheet" />*@
+﻿@*<link href="~/Content/Estilos/grafico.css" rel="stylesheet" />*@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script>
@@ -70,29 +69,31 @@
                         -webkit-line-clamp: 100;
                         cursor: pointer;
                     }
-                    @@media print {
-                        #borrar{
-                            display:none;
-                        }
-                        #verPdf {
-                            display: none;
-                        }
-                         @@page {
-                            margin: 0;
-                            size:auto !important;
-                           /* size:landscape !important;*/
-                         }
-                        /** {
+
+                @@media print {
+                    #borrar {
+                        display: none;
+                    }
+
+                    #verPdf {
+                        display: none;
+                    }
+
+                    @@page {
+                        margin: 0;
+                        size: auto !important;
+                        /* size:landscape !important;*/
+                    }
+                    /** {
                             -webkit-print-color-adjust: exact !important;
                             color-adjust: exact !important;
                         }*/
-                        iframe {
-                            
-                           /* zoom:50% !important;*/
-                           /* transform: scale(.8,.8) translate(1px,5px) !important;*/
-                            /*margin-right:2cm !important;*/
-                        }
+                    iframe {
+                        /* zoom:50% !important;*/
+                        /* transform: scale(.8,.8) translate(1px,5px) !important;*/
+                        /*margin-right:2cm !important;*/
                     }
+                }
             </style>
             <div class="row justify-content-center">
                 <div class="col-md-10 col-sm-12" style="border:2px solid #e6e6e6; border-radius:15px; ">
@@ -132,29 +133,29 @@
                             <a href="javascript:void(0);" style="text-decoration: none !important;" id="generarPDF">
                                 <span id="verPdf" style="font-size:16px; color:#000; margin-top:20px;" onclick="descargarPDF();" data-toggle="tooltip" data-placement="top" title="Los mapas en Mozilla no descargan correctamente">
 
-                                    <strong>Ver en Pdf</strong>  
+                                    <strong>Ver en Pdf</strong>
                                 </span>
                             </a>
                         </div>
 
-                        <div class="col-md-5 col-10" >
+                        <div class="col-md-5 col-10">
                             <p class="mt-md-3" id="borrar"><strong>Ver más información</strong></p>
                             <div class="row justify-content-center mb-md-3">
                                 <div class="col-md-5 col-10 text-center" id="borrar">
                                     @*<a href="https://dataintelligence.store/collections">*@
-                                        <img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
-                                        <button onclick="mostrador('#siete')" class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
-                                            Ver Informe Interactivo
-                                        </button>
+                                    <img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
+                                    <button onclick="mostrador('#siete')" class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                        Ver Informe Interactivo
+                                    </button>
                                     @*</a>*@
                                 </div>
                                 <div class="col-md-5 col-10 text-center" id="borrar">
-                                    <a href="https://dataintelligence.store/collections">
+                                    @*<a href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer; text-decoration: blink; color: black;">*@
                                         <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                        <button class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
+                                        <button onclick="mostrador('#siete')" class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
                                             Ver Reporte 360°
                                         </button>
-                                    </a>
+                                    @*</a>*@
                                 </div>
                                 @*estilos para cortar los tags en 3 filas y ocultar los demas con la clase line-clam *@
                                 <style>
@@ -178,9 +179,10 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-12" id="borrar">
                                         <p class="mt-md-3 mb-md-1 ml-2"><strong>Tags:</strong></p>
-                                        <p id="tagsGrafico" class='line-clamp ml-2'>@ViewBag.Grafico.tags</p>
+                                        <p  id="tagsGrafico"  class='line-clamp ml-2'>@ViewBag.Grafico.tags</p>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -206,7 +208,7 @@ else
 <script>
     $(".line-clamp").text($(".line-clamp").text().split(",").join(", "));
     function construirEstructura(Concepto) {
-        return '<a href="/Info/Index2?id=' + Concepto + '">' + Concepto + '</a>';
+        return '<a href="/Usuario/FormBuscador?id=' + Concepto + '">' + Concepto + '</a>';
     }
     //var lista = [1, 2, 3, 4]
     //lista.map(alert);
