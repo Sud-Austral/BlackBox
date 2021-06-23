@@ -176,7 +176,8 @@ else
 <script>
     $(".line-clamp").text($(".line-clamp").text().split(",").join(", "));
     function construirEstructura(Concepto) {
-        return '<a href="/Usuario/FormBuscador?id=' +  Concepto + '">' + Concepto + '</a>';
+        /* return '<a href="/Usuario/FormBuscador?id=' +  Concepto + '">' + Concepto + '</a>';*/
+        return '<a href="/Info/PaginaBusqueda?id=' + Concepto + '">' + Concepto + '</a>';
     }
     //var lista = [1, 2, 3, 4]
     //lista.map(alert);

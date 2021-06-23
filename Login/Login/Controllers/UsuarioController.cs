@@ -476,9 +476,9 @@ namespace Login.Controllers
             //var NEW_GRAFICOS = dbGrafico.GRAFICO.SqlQuery("SELECT * FROM GRAFICO WHERE titulo LIKE '% " + id + " %'");
 
 
-            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).Take(20); //.ToList();//Liberados/Gratis
-            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).Take(20); //.ToList();//Informes
-            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).Take(50); //.ToList();//Reportes
+            ViewBag.Resultado = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id < 3).Take(100); //.ToList();//Liberados/Gratis
+            ViewBag.Resultado2 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 3).Take(100); //.ToList();//Informes
+            ViewBag.Resultado3 = NEW_GRAFICOS.Where(x => x.TIPO_GRAFICO_id == 4).Take(100); //.ToList();//Reportes
             string NombreCategoria = "No hay información de esta categoria";
             if(NEW_GRAFICOS.Count() > 0)
             {
