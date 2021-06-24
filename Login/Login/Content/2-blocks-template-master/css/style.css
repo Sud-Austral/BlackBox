@@ -74,20 +74,20 @@ Images block
 }
 .cd-images-list > li {
   height: 250px;
-  background: #979c9c url(../img/img-1.jpg) no-repeat center center;
-  background-size: cover;
+  /*background: #979c9c url(../img/img-1.jpg) no-repeat center center;
+  background-size: cover;*/
 }
 .cd-images-list > li:nth-of-type(2) {
-  background: #343642 url(../img/img-2.jpg) no-repeat center center;
-  background-size: cover;
+ /* background: #343642 url(../img/img-2.jpg) no-repeat center center;
+  background-size: cover;*/
 }
 .cd-images-list > li:nth-of-type(3) {
-  background: #982b3c url(../img/img-3.jpg) no-repeat center center;
-  background-size: cover;
+ /* background: #982b3c url(../img/img-3.jpg) no-repeat center center;
+  background-size: cover;*/
 }
 .cd-images-list > li:nth-of-type(4) {
-  background: #338899 url(../img/img-4.jpg) no-repeat center center;
-  background-size: cover;
+  /*background: #338899 url(../img/img-4.jpg) no-repeat center center;
+  background-size: cover;*/
 }
 .cd-images-list > li > a {
   /* used to vertically align the h2 child -  mobile version only */
@@ -282,12 +282,18 @@ Desktop slider - both image and content blocks
 
 ---------------------------------------------- */
 @media only screen and (min-width: 768px) {
-  .cd-image-block,
+    .cd-image-block {
+        width: 70%;
+        float: left;
+        height: 80vh;
+        overflow: hidden;
+    }
+
   .cd-content-block {
     /* slider style - desktop version only */
-    width: 50%;
+    width: 30%;
     float: left;
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
   }
   .cd-image-block > ul,
