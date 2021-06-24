@@ -122,7 +122,15 @@
 
 </head>
 <body>
-    
+    <h1>
+        @ViewBag.time1
+    </h1>
+    <h1>
+        @ViewBag.time2
+    </h1>
+    <h1>
+        @ViewBag.time3
+    </h1>
     @*
         <button onclick="FiltrarReporte360();">
             Ver más
@@ -211,7 +219,7 @@
 
 
         @*seccion de graficos*@
-        <div  id="PBdos" style="display:none;">
+        <div id="PBdos" style="display:none;">
 
         </div>
         @*Seccion Información relacionada que te podría interesar de pagina busqueda*@
@@ -794,13 +802,13 @@
                                             }
                                         }
                                     </script>
-                                   
+
                                     <div class="col-md-2">
                                         <button class="btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 12px; margin-left:20px; margin-bottom:10px; width: 100px; cursor: pointer;">
                                             Ver más
                                         </button>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                             <div id="paginador"></div>

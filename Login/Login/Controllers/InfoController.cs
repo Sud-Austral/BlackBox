@@ -78,6 +78,7 @@ namespace AplicacionBlanco.Controllers
 
         public ActionResult PaginaBusqueda(string id = "1")
         {
+            ViewBag.time1 = DateTime.Now;
             ViewBag.palabra = id;
             IEnumerable<DATA_GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
             if(union.Count() == 0)
@@ -96,6 +97,7 @@ namespace AplicacionBlanco.Controllers
             List<string> Sector = new List<string>();
             List<string> Categoria = new List<string>();
             List<string> Parametro = new List<string>();
+            ViewBag.time3 = DateTime.Now;
             foreach (var item in union)
             {
                 if (!Paises.Contains(item.TERRITORIO.auxiliar))
@@ -145,6 +147,7 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Sector = Sector;
             ViewBag.Categoria = Categoria;
             ViewBag.Parametro = Parametro;
+            ViewBag.time2 = DateTime.Now;
             return View();
         }
 
