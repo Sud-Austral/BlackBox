@@ -46,14 +46,14 @@
                     </div>
 
                     <!--Test nuevo carrusel-->
-                    <div class="col-lg-10 d-sm-none d-md-block" >
+                    <div class="col-lg-10 d-none d-sm-none d-md-block" >
                         @{ Html.RenderAction("CarruselVetical", "Info");}
                     </div>
-                    <div class="col-12 col-md-8 d-sm-inline d-md-none">
+                    <div class="col-12 col-sm-12 col-md-8 d-sm-block d-md-none">
                          @{ Html.RenderAction("CarruselVetical2", "Info");}
                     </div>
                    
-                    <div class="col-lg-12 d-sm-none" style="height: 80vh;">
+                    <div class="col-lg-12 d-none d-sm-none d-md-block offset-3" style="height: 80vh;">
                         @{ Html.RenderAction("CarruselVetical3", "Info");}
                     </div>
 
