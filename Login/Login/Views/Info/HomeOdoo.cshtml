@@ -46,255 +46,255 @@
                     </div>
 
                     <!--Test nuevo carrusel-->
-                    <div class="col-lg-10" style="display: none;">
+                    <div class="col-lg-10">
                         @{ Html.RenderAction("CarruselVetical", "Info");}
                     </div>
-                    @*Este carrusel los estilos estan afectando la vista de HomeOdoo*@
-                    @*<div class="col-lg-10" style="display: none;">
-                        @{ Html.RenderAction("CarruselVetical2", "Info");}
-                    </div>*@
-                    <div class="col-lg-12 offset-3"  style="height: 80vh; ">
+                    Este carrusel los estilos estan afectando la vista de HomeOdoo
+                    <div class="col-lg-10" style="display: none;">
+            @{ Html.RenderAction("CarruselVetical2", "Info");}
+        </div>
+                    <div class="col-lg-12 offset-3 d-none d-md-none d-lg-block" style="height: 80vh; display: none;">
                         @{ Html.RenderAction("CarruselVetical3", "Info");}
                     </div>
 
-                    @*<div class="col-8">
-            <div id="carouselExampleIndicators2" class="carousel" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[0].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[0].titulo">
-                                        <div class="card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="row">
-                                                <div class="col-md-1 col-2">
-                                                    <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                    @*<div class="col-8 d-md-none"; >
+                        <div id="carouselExampleIndicators2" class="carousel" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[0].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[0].titulo">
+                                                    <div class="card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="row">
+                                                            <div class="col-md-1 col-2">
+                                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[0]._titulo2</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="https://serviciodashboard.azurewebsites.net/Content/img/iconos_TipoProducto/1.png" src="@ViewBag.Graficos[0]._url_Image">
+                                                    </div>
                                                 </div>
-                                                <div class="col">
-                                                    <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[0]._titulo2</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[1].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[1].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[1]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[1]._url_Image">
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="https://serviciodashboard.azurewebsites.net/Content/img/iconos_TipoProducto/1.png" src="@ViewBag.Graficos[0]._url_Image">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[1].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[1].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[1]._titulo2</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[1]._url_Image">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[2].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[2].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[2]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[2].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[2].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[2]._titulo2</p>
-                                            </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[3].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[3].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[3]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[2]._url_Image">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[4].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[4].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[4]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[3].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[3].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[3]._titulo2</p>
-                                            </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[5].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[5].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[5]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[3]._url_Image">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[4].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[4].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[4]._titulo2</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[4]._url_Image">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[5].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[5].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[5]._titulo2</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[5]._url_Image">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
 
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[6].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[6].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[6]._titulo2</p>
-                                            </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[6].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[6].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[6]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[6]._url_Image">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[7].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[7].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[7]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[8].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[8].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[8]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[8]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[7].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[7].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[7]._titulo2</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[7]._url_Image">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[8].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[8].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[8]._titulo2</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[8]._url_Image">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
 
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[9].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[9].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[9]._titulo2</p>
-                                            </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[9].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[9].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[9]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[9]._url_Image">
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[10].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[10].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[10]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[11].id">
+                                                <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[11].titulo">
+                                                    <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
+                                                        <div class="col-md-1 col-2">
+                                                            <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[11]._titulo2</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[11]._url_Image">
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[10].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[10].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[10]._titulo2</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[10]._url_Image">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <a class="link-card" href="/info/Index2?id=@ViewBag.Graficos[11].id">
-                                    <div data-toggle="tooltip" data-placement="top" title="@ViewBag.Graficos[11].titulo">
-                                        <div class="row card-header bg-dark   text-center" style="border: 0.5px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; min-height:65px !important; max-height:65px !important; margin-right: 0px !important; margin-left: 0px !important;">
-                                            <div class="col-md-1 col-2">
-                                                <img class="img-fluid m-2" width="40" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
-                                            </div>
-                                            <div class="col">
-                                                <p class="mt-2" style="color:#fff;">@ViewBag.Graficos[11]._titulo2</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="@ViewBag.Graficos[11]._url_Image">
-                                        </div>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 text-right">
-            <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                <i class="fa fa-arrow-left"></i>
-            </a>
-            <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                <i class="fa fa-arrow-right"></i>
-            </a>
-        </div>*@
+                    <div class="col-6 text-right d-md-none">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>*@
                 </div>
             </div>
         </section>

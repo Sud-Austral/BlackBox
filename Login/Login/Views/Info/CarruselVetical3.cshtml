@@ -43,7 +43,8 @@
             height: 160px;
             width: 40px;
             background: #fff;
-            right: 440px !important;
+            right: 440px !important; /*mover y colocar los controles del carrusel originalmente estaba en 0*/
+            /*right:0;*/
             top: 0;
             bottom: 0;
             margin: auto;
@@ -168,6 +169,7 @@
         .content {
             position: absolute;
             width: 140%; @*para cambiar el lugar de la vuelta en el carrusel estaba originalmente en 200%*@
+            /*width: 200%;*/
             height: 100%;
             left: 0;
         }
@@ -180,14 +182,16 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 70%;@*proporcion de cada lado izquierdo del carrusel*@
+            width: 70%; @*proporcion de cada lado izquierdo del carrusel*@
+           /* width: 50%;*/
             height: 100%;
         }
         .content__right {
             position: absolute;
             left: 0;
             top: 0;
-            width: 30%;@*proporcion de cada lado derecho del carrusel*@
+            width: 30%; @*proporcion de cada lado derecho del carrusel*@
+            /*width: 50%;*/
             height: 100%;
         }
 
