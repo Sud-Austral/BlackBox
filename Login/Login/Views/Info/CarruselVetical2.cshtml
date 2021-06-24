@@ -3,165 +3,86 @@
     Layout = null;
 }
 
-<!doctype html>
-<html lang="en" class="no-js">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2 Blocks Template | CodyHouse</title>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylewise.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <style>
+        /*
+        Removes white gap between slides - chagnge to base color of slide images
+        */
+        .carousel {
+            background: #007aeb;
+        }
 
-    <link href="~/Content/2-blocks-template-master/css/reset.css" rel="stylesheet" />
-    <link href="~/Content/2-blocks-template-master/css/style.css" rel="stylesheet" />
-    <script src="~/Content/2-blocks-template-master/js/modernizr.js"></script>
+        /*
+        Forces image to be 100% width and not max width of 100%
+        */
+        .carousel-item .img-fluid {
+            width: 100%;
+        }
+
+        /* 
+        anchors are inline so you need ot make them block to go full width
+        */
+        .carousel-item a {
+            display: block;
+            width: 100%;
+        }
+
+    </style>
 </head>
+
 <body>
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <iframe class="embed-responsive-item" style="width:100%; height:80vh" src="https://analytics.zoho.com/open-view/2395394000006974537" allowfullscreen></iframe>
+            </div>
+            <!-- /.carousel-item -->
+            <div class="carousel-item">
+                <iframe class="embed-responsive-item" style="width:100%; height:80vh;" src="https://analytics.zoho.com/open-view/2395394000007224567" allowfullscreen></iframe>
+            </div>
+            <!-- /.carousel-item -->
+            <div class="carousel-item">
+                <iframe class="embed-responsive-item" style="width:100%; height:80vh" src="https://analytics.zoho.com/open-view/2395394000006974537" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-item">
+                <iframe class="embed-responsive-item" style="width:100%; height:80vh;" src="https://analytics.zoho.com/open-view/2395394000007232206?ZOHO_CRITERIA=%22Localiza_CL_Poblacion%22.%22Codreg%22%3D13" allowfullscreen></iframe>
 
-    <main>
-        <div class="cd-image-block">
-            <ul class="cd-images-list">
-                <li class="is-selected">
-                    <iframe class="embed-responsive-item" style="width:100%; height:100%" src="https://public.flourish.studio/visualisation/4555265/" allowfullscreen></iframe>
-                    <a href="#0">
-
-                        <h2>Project Two</h2>
-                    </a>
-                </li>
-
-                <li>
-                    <iframe class="embed-responsive-item" style="width:100%; height:100%" src="https://analytics.zoho.com/open-view/2395394000006610381" allowfullscreen></iframe>
-                    <a href="#0">
-                        <h2>Projects Three</h2>
-                    </a>
-                </li>
-
-                <li>
-                    <iframe class="embed-responsive-item" style="width:100%; height:100%" src="https://public.flourish.studio/visualisation/4555265/" allowfullscreen></iframe>
-                    <a href="#0">
-                        <h2>Project Four</h2>
-                    </a>
-                </li>
-                <li>
-                    <iframe class="embed-responsive-item" style="width:100%; height:100%" src="https://analytics.zoho.com/open-view/2395394000007224567" allowfullscreen></iframe>
-                    <a href="#0">
-                        <h2>Project five</h2>
-                    </a>
-                </li>
-            </ul> <!-- .cd-images-list -->
-        </div> <!-- .cd-image-block -->
-
-        <div class="cd-content-block">
-            <ul>
-                <li class="is-selected" style="background-color: #e63a60; overflow:hidden; color:#ffffff !important;">
-                    <div >
-                        <h4 style="margin-bottom: 100px; margin-top: 30px;">
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                        </h4>
-                        <h4 class="mb-2">Colección</h4>
-                        <h1 style="margin-bottom:100px">Pandemias</h1>
-
-                        <p style="color:#fff !important;">
-                            El gráfico muestra la evolución a escala comunal del COVID19 desde marzo
-                            de 2020 a la fecha. Se detallan los Casos Activos por millón de habitantes
-                            en la comuna de Iquique, de acuerdo a los datos publicados en los Informes
-                            Epidemiológicos periódicos del Ministerio de Ciencias, Tecnología, Conocimiento
-                            e Innovación de Chile para el Periodo 2020-2021
-                        </p>
-                        <h4 class="mb-2">Sector SALUD</h4>
-                    </div>
-                </li>
-
-                <li style="background-color: #e63a60; overflow: hidden; color: #ffffff !important;">
-                    <div>
-                        <h4 style="margin-bottom:100px; margin-top:30px;">
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                        </h4>
-                        <h4 class="mb-2">Colección</h4>
-                        <h1 style="margin-bottom:100px">Pandemias</h1>
-
-                        <p style="color:#fff !important;">
-                            El gráfico muestra la evolución a escala comunal del COVID19 desde marzo
-                            de 2020 a la fecha. Se detallan los Casos Activos por millón de habitantes
-                            en la comuna de Iquique, de acuerdo a los datos publicados en los Informes
-                            Epidemiológicos periódicos del Ministerio de Ciencias, Tecnología, Conocimiento
-                            e Innovación de Chile para el Periodo 2020-2021
-                        </p>
-                        <h4 class="mb-2">Sector SALUD</h4>
-                    </div>
-                </li>
-
-                <li style="background-color: #e63a60; overflow: hidden; color: #ffffff !important;">
-                    <div>
-                        <h4 style="margin-bottom:100px; margin-top:30px;">
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                        </h4>
-                        <h4 class="mb-2">Colección</h4>
-                        <h1 style="margin-bottom:100px">Pandemias</h1>
-
-                        <p style="color:#fff !important;">
-                            El gráfico muestra la evolución a escala comunal del COVID19 desde marzo
-                            de 2020 a la fecha. Se detallan los Casos Activos por millón de habitantes
-                            en la comuna de Iquique, de acuerdo a los datos publicados en los Informes
-                            Epidemiológicos periódicos del Ministerio de Ciencias, Tecnología, Conocimiento
-                            e Innovación de Chile para el Periodo 2020-2021
-                        </p>
-                        <h4 class="mb-2">Sector SALUD</h4>
-                    </div>
-                </li>
-
-                <li style="background-color: #e63a60; overflow: hidden; color: #ffffff !important;">
-                    <div>
-                        <h4 style="margin-bottom:100px; margin-top:30px;">
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                        </h4>
-                        <h4 class="mb-2">Colección</h4>
-                        <h1 style="margin-bottom:100px">Pandemias</h1>
-
-                        <p style="color:#fff !important;">
-                            El gráfico muestra la evolución a escala comunal del COVID19 desde marzo
-                            de 2020 a la fecha. Se detallan los Casos Activos por millón de habitantes
-                            en la comuna de Iquique, de acuerdo a los datos publicados en los Informes
-                            Epidemiológicos periódicos del Ministerio de Ciencias, Tecnología, Conocimiento
-                            e Innovación de Chile para el Periodo 2020-2021
-                        </p>
-                        <h4 class="mb-2">Sector SALUD</h4>
-                    </div>
-                </li>
-                <li style="background-color: #e63a60; overflow: hidden; color: #ffffff !important;">
-                    <div>
-                        <h4 style="margin-bottom:100px; margin-top:30px;">
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                        </h4>
-                        <h4 class="mb-2">Colección</h4>
-                        <h1 style="margin-bottom:100px">Pandemias</h1>
-
-                        <p style="color:#fff !important;">
-                            El gráfico muestra la evolución a escala comunal del COVID19 desde marzo
-                            de 2020 a la fecha. Se detallan los Casos Activos por millón de habitantes
-                            en la comuna de Iquique, de acuerdo a los datos publicados en los Informes
-                            Epidemiológicos periódicos del Ministerio de Ciencias, Tecnología, Conocimiento
-                            e Innovación de Chile para el Periodo 2020-2021
-                        </p>
-                        <h4 class="mb-2">Sector SALUD</h4>
-                    </div>
-                </li>
-            </ul>
-
-            <button class="cd-close">Close</button>
-        </div> <!-- .cd-content-block -->
-
-        <ul class="block-navigation">
-            <li><button class="cd-prev inactive">&larr; Prev</button></li>
-            <li><button class="cd-next">Next &rarr;</button></li>
-        </ul> <!-- .block-navigation -->
-    </main>	<!-- .cd-main -->
-    <script src="~/Content/2-blocks-template-master/js/jquery-2.1.4.js"></script>
-    <script src="~/Content/2-blocks-template-master/js/main.js"></script>
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
+
+
 </html>
+
 
