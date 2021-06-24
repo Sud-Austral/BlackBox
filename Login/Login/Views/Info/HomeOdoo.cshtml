@@ -9,9 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-
-    </script>
+  
 </head>
 
 <body style="overflow-x:hidden;">
@@ -48,14 +46,14 @@
                     </div>
 
                     <!--Test nuevo carrusel-->
-                    <div class="container offset-0 mt-2">
+                    <div class="col-lg-10" style="display: none;">
                         @{ Html.RenderAction("CarruselVetical", "Info");}
                     </div>
-
-                    <div class="container-fluid offset-0 mt-2" style="display: none; ">
+                    @*Este carrusel los estilos estan afectando la vista de HomeOdoo*@
+                    @*<div class="col-lg-10" style="display: none;">
                         @{ Html.RenderAction("CarruselVetical2", "Info");}
-                    </div>
-                    <div class="container offset-0 mt-1" style="height: 70vh;  ">
+                    </div>*@
+                    <div class="col-lg-12 offset-3"  style="height: 80vh; ">
                         @{ Html.RenderAction("CarruselVetical3", "Info");}
                     </div>
 
