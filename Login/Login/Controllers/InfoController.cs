@@ -337,7 +337,7 @@ namespace AplicacionBlanco.Controllers
             return PartialView();
         }
 
-        public ActionResult index2(int id = 1234)
+        public ActionResult index2(decimal id = 1234)
         {
             //int id = 1234;
             var rand = new Random();

@@ -18,9 +18,9 @@ namespace Login.Models
             byte[] tempBytes;
             tempBytes = System.Text.Encoding.GetEncoding("ISO-8859-8").GetBytes(concepto);
             concepto = System.Text.Encoding.UTF8.GetString(tempBytes);
-
-            var prioridad = dbGrafico.DATA_GRAFICO.SqlQuery("SELECT * FROM DATA_GRAFICO WHERE titulo LIKE '% " + concepto + " %'")
-                                                .Take(200);            
+            string query = "SELECT * FROM DATA_GRAFICO WHERE titulo LIKE '% " + concepto + " %'";
+            var prioridad = dbGrafico.DATA_GRAFICO.SqlQuery(query)
+                                                  .Take(200);            
             IEnumerable<DATA_GRAFICO> NEW_GRAFICOS;
             IEnumerable<DATA_GRAFICO> union = prioridad;
             if (prioridad.Count() < 200)
