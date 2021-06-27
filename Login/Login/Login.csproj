@@ -304,6 +304,7 @@
     <Content Include="Content\EstilosPopUp.css" />
     <Content Include="Content\Estilos\grafico.css" />
     <Content Include="Content\Estilos\info\HomeOdoo.css" />
+    <Content Include="Content\Home.css" />
     <Content Include="Content\image_estadistica\10_boton_tecnologia_normal.png" />
     <Content Include="Content\image_estadistica\10_boton_tecnologia_on.png" />
     <Content Include="Content\image_estadistica\11_boton_comunicacion_normal.png" />
@@ -372,6 +373,7 @@
     <Content Include="Content\image_UsuarioIndex\cargadatos_es.gif" />
     <Content Include="Content\image_UsuarioIndex\cuenta_promocional_1.jpg" />
     <Content Include="Content\image_UsuarioIndex\cuenta_promocional_contacto_1.jpg" />
+    <Content Include="Content\image_UsuarioIndex\female-executive.jpg" />
     <Content Include="Content\image_UsuarioIndex\fondo_submenu_emergente.jpg" />
     <Content Include="Content\image_UsuarioIndex\icono_graficogratuito_NARANJA.png" />
     <Content Include="Content\image_UsuarioIndex\icono_informeinteractivo_AZUL.png" />
@@ -379,6 +381,8 @@
     <Content Include="Content\image_UsuarioIndex\imagenpromocion_2.png" />
     <Content Include="Content\image_UsuarioIndex\logo_informeinteractivo.png" />
     <Content Include="Content\image_UsuarioIndex\logo_reporte360.png" />
+    <Content Include="Content\image_UsuarioIndex\mapa-Chile.png" />
+    <Content Include="Content\image_UsuarioIndex\senior.jpg" />
     <Content Include="Content\image_UsuarioIndex\ventana_espera.gif" />
     <Content Include="Content\img\10_portadahomeopatia_1800x540_crop_center.jpg" />
     <Content Include="Content\img\13_portadabeso_1800x540_crop_center.jpg" />
@@ -2806,6 +2810,7 @@
     <Content Include="Views\Info\CarruselVetical.cshtml" />
     <Content Include="Views\Info\CarruselVetical2.cshtml" />
     <Content Include="Views\Info\CarruselVetical3.cshtml" />
+    <Content Include="Views\Info\HomeOdoo2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
