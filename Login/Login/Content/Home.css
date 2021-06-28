@@ -47,30 +47,36 @@ body{
 
 }
 /*estilos titulo de header*/
-#titulo1 {
+
+
+
+
+
+/*segunda propuesta*/
+/*#titulo1 {
     margin-top: 20px;
-    font: 100 2em/1 "Oswald", sans-serif;
+    font: 100 2em/1 "Oswald", sans-serif;*/
     /* Clip Background Image */
-    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    /*background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
     -webkit-background-clip: text;
-    background-clip: text;
+    background-clip: text;*/
     /* Animate Background Image */
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: aitf 80s linear infinite;
+    /*-webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;*/
     /* Activate hardware acceleration for smoother animations */
-    -webkit-transform: translate3d(0, 0, 0);
+    /*-webkit-transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
-}
+}*/
 
 /* Animate Background Image */
-@-webkit-keyframes aitf {
+/*@-webkit-keyframes aitf {
     0% {
         background-position: 0% 50%;
     }
 
     100% {
         background-position: 100% 50%;
-    }
+    }*/
     /*estilos texto en el header*/
 }
 /*Estilos del primer parrafo de content1 antes del buscador*/
@@ -85,8 +91,7 @@ article.highlight {
     background: #cecece;
     background: #B3B1B2;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #cecece;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+   
 }
 
     article.highlight * {
