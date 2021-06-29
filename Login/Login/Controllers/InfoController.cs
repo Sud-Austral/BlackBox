@@ -429,6 +429,78 @@ namespace AplicacionBlanco.Controllers
             ViewBag.Graficos = listaGraficos;
             return View();
         }
+
+        public ActionResult PaginaBusquedaNuevo(string id = "1")
+        {
+            ViewBag.palabra = id;
+            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
+            if (union.Count() == 0)
+            {
+                ViewBag.Concepto = id;
+                return View("No_Resultado");
+            }
+            ViewBag.Resultado = union;
+
+            List<string> Paises = new List<string>();
+            List<string> Escala = new List<string>();
+            List<string> TipoGrafico = new List<string>();
+            List<string> Temporalidad = new List<string>();
+            List<string> Producto = new List<string>();
+            List<string> Industria = new List<string>();
+            List<string> Sector = new List<string>();
+            List<string> Categoria = new List<string>();
+            List<string> Parametro = new List<string>();
+            foreach (var item in union)
+            {
+                if (!Paises.Contains(item.TERRITORIO.auxiliar))
+                {
+                    Paises.Add(item.TERRITORIO.auxiliar);
+                }
+                if (!Escala.Contains(item.TERRITORIO.nombre + " - " + item.TERRITORIO.auxiliar))
+                {
+                    Escala.Add(item.TERRITORIO.nombre + " - " + item.TERRITORIO.auxiliar);
+                }
+                if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
+                {
+                    TipoGrafico.Add(item.TIPO_GRAFICO.nombre);
+                }
+                if (!Temporalidad.Contains(item.TEMPORALIDAD.nombre))
+                {
+                    Temporalidad.Add(item.TEMPORALIDAD.nombre);
+                }
+                if (!Producto.Contains(item.CATEGORIA.PRODUCTO.nombre))
+                {
+                    Producto.Add(item.CATEGORIA.PRODUCTO.nombre);
+                }
+                if (!Industria.Contains(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
+                {
+                    Industria.Add(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
+                }
+                if (!Sector.Contains(item.CATEGORIA.PRODUCTO.SECTOR.nombre))
+                {
+                    Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
+                }
+
+                if (!Categoria.Contains(item.CATEGORIA.nombre))
+                {
+                    Categoria.Add(item.CATEGORIA.nombre);
+                }
+                if (!Parametro.Contains(item.PARAMETRO.nombre))
+                {
+                    Parametro.Add(item.PARAMETRO.nombre);
+                }
+            }
+            ViewBag.Paises = Paises;
+            ViewBag.Escala = Escala;
+            ViewBag.TipoGrafico = TipoGrafico;
+            ViewBag.Temporalidad = Temporalidad;
+            ViewBag.Producto = Producto;
+            ViewBag.Industria = Industria;
+            ViewBag.Sector = Sector;
+            ViewBag.Categoria = Categoria;
+            ViewBag.Parametro = Parametro;
+            return View();
+        }
     }
 
 
