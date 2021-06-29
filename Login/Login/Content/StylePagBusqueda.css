@@ -2560,10 +2560,12 @@ div.side:hover {
 
 .sidebar .dropdown-toggle {
     width: 90%;
+   
 }
 
 .sidebar .dropdown-menu {
     width: 90%;
+   
 }
 
 @media (min-width: 768px) {
@@ -2595,7 +2597,7 @@ div.side:hover {
         }
 
         .sidebar.sidebar-sm .dropdown-menu li a {
-            position: relative;
+            position: static;
             display: block;
             padding: 10px 15px;
             margin-bottom: -1px;
@@ -2648,7 +2650,7 @@ div.side:hover {
         }
 
             .sidebar.sidebar-md .dropdown-menu .dropdown-header:first-child {
-                padding-top: 0px;
+                padding-top: 100px;
             }
 
         .sidebar.sidebar-md .dropdown-menu .divider {
@@ -2748,5 +2750,5 @@ div.side:hover {
             border-color: #337ab7;
         }
 }
-
+/*******************test preloader paginaBusqueda****************************/
 
