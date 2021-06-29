@@ -141,12 +141,12 @@
     </div>
     <!--seccion slider o carrusel-->
     <!--Todos los estilos y script de este carrusel estan en una sola carpeta con nombre carrusel14-->
-    <div class="col-12 col-md-12" style="margin-bottom: 10px; margin-top: 10px;">
+    <div class="col-12 col-md-12 d-none d-sm-none  d-md-block" style="margin-bottom: 10px; margin-top: 10px;">
             @{ Html.RenderAction("CarruselVetical", "Info");}
-        </div>
-    @*<div class="col-s-12 col-md-8 d-s-block d-md-none ">
+    </div>
+    <div class="col-12 col-md-8 d-sm-block d-md-none mt-3 mb-5 ">
         @{ Html.RenderAction("CarruselVetical2", "Info");}
-    </div>*@
+    </div>
     <!--seccion contenido y buscador debajo de carrusel-->
     <div class="container-fluid content1">
         <div class="row justify-content-center">
@@ -362,16 +362,17 @@
                 </div>
             </div>
         </div>
-        <style>
+        <!--Boton flotante-->
+        @*<style>
             .flotante {
                 display: scroll;
                 position: fixed;
-                bottom: 320px;
-                right: 10px;
+                bottom: 100px;
+                right: 15px;
                 z-index:100;
             }
         </style>
-        <a class="flotante btn btn-dark" href="#">Suscribirse</a>
+        <a class="flotante btn btn-dark" href="#">Suscribirse</a>*@
 
     </div>
     <!--seccion content4 mapa  -->

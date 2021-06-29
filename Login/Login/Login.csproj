@@ -301,6 +301,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\carrusel14\css\bootstrap.min.css" />
     <Content Include="Content\carrusel14\css\owl.carousel.min.css" />
+    <Content Include="Content\carrusel14\css\style2.css" />
     <Content Include="Content\carrusel14\css\style.css" />
     <Content Include="Content\carrusel14\fonts\icomoon\demo-files\demo.css" />
     <Content Include="Content\carrusel14\fonts\icomoon\demo-files\demo.js" />
