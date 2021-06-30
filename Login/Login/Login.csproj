@@ -2943,6 +2943,17 @@
     <Content Include="Views\Data_Usuario\Index.cshtml" />
     <Content Include="Views\Info\HomeOdoo2.cshtml" />
     <Content Include="Views\Info\PaginaBusquedaNuevo.cshtml" />
+    <Content Include="Views\Data\PaginaBusqueda.cshtml" />
+    <Content Include="Views\Data\VisualizarGraficos.cshtml" />
+    <Content Include="Views\Data\Colecciones.cshtml" />
+    <Content Include="Views\Data\Visualizar_colección.cshtml" />
+    <Content Include="Views\Data_Usuario\Data_UsuarioGrafico.cshtml" />
+    <Content Include="Views\Data\BusquedaColecciónUsuario.cshtml" />
+    <Content Include="Views\Data_Usuario\VisualizarGraficoColecion_Usuario.cshtml" />
+    <Content Include="Views\Data_Usuario\ContenidoColección.cshtml" />
+    <Content Include="Views\Data_Usuario\Gráfico_Contenido_Colección.cshtml" />
+    <Content Include="Views\Data_Usuario\FuentesUsuario.cshtml" />
+    <Content Include="Views\Data_Usuario\Recursos_Usuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
