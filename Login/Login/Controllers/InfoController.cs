@@ -436,7 +436,7 @@ namespace AplicacionBlanco.Controllers
         public ActionResult PaginaBusquedaNuevo(string id = "1")
         {
             ViewBag.palabra = id;
-            IEnumerable<GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
+            IEnumerable<DATA_GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
             if (union.Count() == 0)
             {
                 ViewBag.Concepto = id;
