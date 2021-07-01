@@ -2954,6 +2954,7 @@
     <Content Include="Views\Data_Usuario\Gráfico_Contenido_Colección.cshtml" />
     <Content Include="Views\Data_Usuario\FuentesUsuario.cshtml" />
     <Content Include="Views\Data_Usuario\Recursos_Usuario.cshtml" />
+    <Content Include="Views\Data\Agricultura.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

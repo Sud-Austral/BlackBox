@@ -129,6 +129,10 @@ namespace Login.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult Agricultura()
+        {
+            return PartialView();
+        }
 
         public PartialViewResult Visualizar_colección()
         {

@@ -1,5 +1,26 @@
 ﻿@{ Layout = "~/Views/Shared/_LayoutPublico.cshtml"; }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+        function mostrador(seccion1 ) {
+            var arreglo = [
+                '#agricultura',
+                '#dos',
+                '#tres'
+            ];
+            //arreglo.forEach
+            jQuery.each(arreglo, function (i, val) {
+                $(val).hide();
+            });
+            $(seccion1).show();
+        }
+</script>
 
-
+<a onclick="mostrador('#agricultura');">HOLAMOS</a>
 
 <h1>Data/Colecciones</h1>
+<div id="agricultura" style="display:none">
+    @{ Html.RenderAction("Agricultura", "Data");}
+</div>
+<div >
+    Hola2
+</div>
