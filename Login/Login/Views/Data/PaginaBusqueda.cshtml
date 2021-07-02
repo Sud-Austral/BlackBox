@@ -12,7 +12,7 @@
     @*estilos*@
     <link href="~/Content/EstilosPopUp.css" rel="stylesheet" />
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
-   
+
 
     @*Titulo de la pagina*@
     <title>Resultados de Busqueda</title>
@@ -206,33 +206,33 @@
 
                 });
             </script>
-           
+
             <h4 class="mt-3 dropdown-header">COLECCIÓN</h4>
             <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
-               
+
                 @foreach (var item1 in ViewBag.Sector)
                 {
                     <div>
 
                         <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</label>
                     </div>
-                 }
+                }
             </div>
             <h4 class="dropdown-header">SECTOR</h4>
             <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                 @foreach (var item2 in ViewBag.Industria)
                 {
-        <div>
-            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
-        </div>}
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
+                    </div>}
             </div>
             <h4 class="dropdown-header">TEMA</h4>
             <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                 @foreach (var item3 in ViewBag.Producto)
                 {
-        <div>
-            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
-        </div>}
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
+                    </div>}
             </div>
             <h4 class="mt-3 dropdown-header">TIPO DE PRODUCTO</h4>
             <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
@@ -241,47 +241,47 @@
                     switch (item4)
                     {
                         case "Informe Interactivo":
-        <div>
-            <label><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-        </div> break;
-    case "Reporte 360°":
-        <div>
-            <label><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-        </div> break;
-    default:
-        <div>
-            <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-        </div>break;
-}/**/
-/**/
-/**/
+                            <div>
+                                <label><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                            </div> break;
+                        case "Reporte 360°":
+                            <div>
+                                <label><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                            </div> break;
+                        default:
+                            <div>
+                                <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                            </div>break;
+                    }/**/
+                    /**/
+                    /**/
 
-}
+                }
             </div>
             <h4 class="dropdown-header">ESCALA</h4>
             <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                 @foreach (var item5 in ViewBag.Paises)
                 {
-        <div>
-            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
-        </div>}
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
+                    </div>}
             </div>
             <h4 class="dropdown-header">TERRITORIO</h4>
             <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
                 @foreach (var item6 in ViewBag.Escala)
                 {
-        <div class="territorio">
-            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</label>
-        </div>}
+                    <div class="territorio">
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</label>
+                    </div>}
             </div>
 
             <h4 class="dropdown-header">PARÁMETRO</h4>
             <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
                 @foreach (var item7 in ViewBag.Parametro)
                 {
-        <div>
-            <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
-        </div>}
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
+                    </div>}
             </div>
 
         </div>
@@ -317,203 +317,257 @@
     </div>
     @*Estilos de la prueba de sidebar con dropdown*@
     <style>
-        a {
-            -webkit-transition: .3s all ease;
-            -o-transition: .3s all ease;
-            transition: .3s all ease;
-            color: #fc7fb2;
-        }
+              a {
+                  -webkit-transition: .3s all ease;
+                  -o-transition: .3s all ease;
+                  transition: .3s all ease;
+                  color: #fc7fb2;
+              }
 
-            a:hover, a:focus {
-                text-decoration: none !important;
-                outline: none !important;
-                -webkit-box-shadow: none;
-                box-shadow: none;
-            }
-        h1, h2, h3, h4, h5,
-        .h1, .h2, .h3, .h4, .h5 {
-            line-height: 1.5;
-            font-weight: 400;
-            font-family: "Poppins", Arial, sans-serif;
-            color: #000;
-        }
+                  a:hover, a:focus {
+                      text-decoration: none !important;
+                      outline: none !important;
+                      -webkit-box-shadow: none;
+                      box-shadow: none;
+                  }
 
-        .ftco-section {
-            padding: 7em 0;
-        }
+              h1, h2, h3, h4, h5,
+              .h1, .h2, .h3, .h4, .h5 {
+                  line-height: 1.5;
+                  font-weight: 400;
+                  font-family: "Poppins", Arial, sans-serif;
+                  color: #000;
+              }
 
-        .ftco-no-pt {
-            padding-top: 0;
-        }
+              .ftco-section {
+                  padding: 7em 0;
+              }
 
-        .ftco-no-pb {
-            padding-bottom: 0;
-        }
+              .ftco-no-pt {
+                  padding-top: 0;
+              }
 
-        .heading-section {
-            font-size: 28px;
-            color: #000;
-        }
+              .ftco-no-pb {
+                  padding-bottom: 0;
+              }
 
-            .heading-section small {
-                font-size: 18px;
-            }
+              .heading-section {
+                  font-size: 28px;
+                  color: #000;
+              }
 
-        .img {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-        }
+                  .heading-section small {
+                      font-size: 18px;
+                  }
 
-        .wrapper {
-            width: 100%;
-        }
+              .img {
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  background-position: center center;
+              }
 
-        #sidebar {
-  min-width: 270px;
-  max-width: 270px;
-  color: #fff;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  position: relative;
-  z-index: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.05); }
-  #sidebar .h6 {
-    color: #fff; }
-  #sidebar.active {
-    margin-left: -270px; }
-  #sidebar ul.components {
-    padding: 0; }
-  #sidebar ul li {
-    font-size: 14px; }
-    #sidebar ul li > ul {
-      margin-left: 10px; }
-      #sidebar ul li > ul li {
-        font-size: 13px; }
-        #sidebar ul li > ul li a {
-          border-bottom: 1px solid transparent; }
-          #sidebar ul li > ul li a span {
-            color: #000; }
-    #sidebar ul li a {
-      padding: 10px 0;
-      display: block;
-      color: black;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
-      #sidebar ul li a span {
-        color: #fff; }
-    #sidebar ul li.active > a {
-      background: transparent;
-      color: #fc7fb2; }
-  @@media (max-width: 767.98px) {
-    #sidebar {
-      min-width: 100%;
-      max-width: 180px;
-      border-left: none; } }
-  #sidebar .custom-menu {
-    display: inline-block;
-    position: absolute;
-    top: 20px;
-    right: 0;
-    margin-right: -20px;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s; }
-    @@media (prefers-reduced-motion: reduce) {
-      #sidebar .custom-menu {
-        -webkit-transition: none;
-        -o-transition: none;
-        transition: none; } }
-    #sidebar .custom-menu .btn {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      position: relative; }
-      #sidebar .custom-menu .btn i {
-        margin-right: -40px;
-        font-size: 14px; }
-      #sidebar .custom-menu .btn.btn-primary {
-        background: transparent;
-        border-color: transparent; }
-        #sidebar .custom-menu .btn.btn-primary:after {
-          z-index: -1;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          content: '';
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-          background: #fc7fb2;
-          border-radius: 10px; }
-        #sidebar .custom-menu .btn.btn-primary:hover, #sidebar .custom-menu .btn.btn-primary:focus {
-          background: transparent !important;
-          border-color: transparent !important; }
+              .wrapper {
+                  width: 100%;
+              }
 
-a[data-toggle="collapse"] {
-  position: relative; }
+              #sidebar {
+                  min-width: 270px;
+                  max-width: 270px;
+                  color: #fff;
+                  -webkit-transition: all 0.3s;
+                  -o-transition: all 0.3s;
+                  transition: all 0.3s;
+                  position: relative;
+                  z-index: 0;
+                  border-left: 1px solid rgba(0, 0, 0, 0.05);
+              }
 
-.dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
+                  #sidebar .h6 {
+                      color: #fff;
+                  }
 
-.tagcloud a {
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 4px 10px;
-  margin-bottom: 7px;
-  margin-right: 4px;
-  border-radius: 4px;
-  color: #000;
-  border: 1px solid #ccc;
-  font-size: 11px; }
-  .tagcloud a:hover {
-    border-color: #fc7fb2;
-    background: #fc7fb2;
-    color: #fff; }
+                  #sidebar.active {
+                      margin-left: -270px;
+                  }
 
-./*form-control {
-  height: 44px !important;
-  background: #fff;
-  color: #000 !important;
-  font-size: 13px;
-  border-radius: 4px;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  border: transparent; }*/
-  .form-control:focus, .form-control:active {
-    border-color: #000; }
-  .form-control::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: rgba(0, 0, 0, 0.7); }
-  .form-control::-moz-placeholder {
-    /* Firefox 19+ */
-    color: rgba(0, 0, 0, 0.7); }
-  .form-control:-ms-input-placeholder {
-    /* IE 10+ */
-    color: rgba(0, 0, 0, 0.7); }
-  .form-control:-moz-placeholder {
-    /* Firefox 18- */
-    color: rgba(0, 0, 0, 0.7); }
+                  #sidebar ul.components {
+                      padding: 0;
+                  }
 
-.subscribe-form .form-control {
-  border: 1px solid rgba(0, 0, 0, 0.05); }
+                  #sidebar ul li {
+                      font-size: 14px;
+                  }
 
+                      #sidebar ul li > ul {
+                          margin-left: 10px;
+                      }
 
+                          #sidebar ul li > ul li {
+                              font-size: 13px;
+                          }
 
+                              #sidebar ul li > ul li a {
+                                  border-bottom: 1px solid transparent;
+                              }
+
+                                  #sidebar ul li > ul li a span {
+                                      color: #000;
+                                  }
+
+                      #sidebar ul li a {
+                          padding: 10px 0;
+                          display: block;
+                          color: black;
+                          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                      }
+
+                          #sidebar ul li a span {
+                              color: #fff;
+                          }
+
+                      #sidebar ul li.active > a {
+                          background: transparent;
+                          color: #fc7fb2;
+                      }
+
+              @@media (max-width: 767.98px) {
+                  #sidebar {
+                      min-width: 100%;
+                      max-width: 180px;
+                      border-left: none;
+                  }
+              }
+
+              #sidebar .custom-menu {
+                  display: inline-block;
+                  position: absolute;
+                  top: 20px;
+                  right: 0;
+                  margin-right: -20px;
+                  -webkit-transition: 0.3s;
+                  -o-transition: 0.3s;
+                  transition: 0.3s;
+              }
+
+              @@media (prefers-reduced-motion: reduce) {
+                  #sidebar .custom-menu {
+                      -webkit-transition: none;
+                      -o-transition: none;
+                      transition: none;
+                  }
+              }
+
+              #sidebar .custom-menu .btn {
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                  position: relative;
+              }
+
+                  #sidebar .custom-menu .btn i {
+                      margin-right: -40px;
+                      font-size: 14px;
+                  }
+
+                  #sidebar .custom-menu .btn.btn-primary {
+                      background: transparent;
+                      border-color: transparent;
+                  }
+
+                      #sidebar .custom-menu .btn.btn-primary:after {
+                          z-index: -1;
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          right: 0;
+                          bottom: 0;
+                          content: '';
+                          -webkit-transform: rotate(45deg);
+                          -ms-transform: rotate(45deg);
+                          transform: rotate(45deg);
+                          background: #fc7fb2;
+                          border-radius: 10px;
+                      }
+
+                      #sidebar .custom-menu .btn.btn-primary:hover, #sidebar .custom-menu .btn.btn-primary:focus {
+                          background: transparent !important;
+                          border-color: transparent !important;
+                      }
+
+              a[data-toggle="collapse"] {
+                  position: relative;
+              }
+
+              .dropdown-toggle::after {
+                  display: block;
+                  position: absolute;
+                  top: 50%;
+                  right: 0;
+                  -webkit-transform: translateY(-50%);
+                  -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
+              }
+
+              .tagcloud a {
+                  text-transform: uppercase;
+                  display: inline-block;
+                  padding: 4px 10px;
+                  margin-bottom: 7px;
+                  margin-right: 4px;
+                  border-radius: 4px;
+                  color: #000;
+                  border: 1px solid #ccc;
+                  font-size: 11px;
+              }
+
+                  .tagcloud a:hover {
+                      border-color: #fc7fb2;
+                      background: #fc7fb2;
+                      color: #fff;
+                  }
+
+             /* . *//*form-control {
+        height: 44px !important;
+        background: #fff;
+        color: #000 !important;
+        font-size: 13px;
+        border-radius: 4px;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: transparent; }*/
+              .form-control:focus, .form-control:active {
+                  border-color: #000;
+              }
+
+              .form-control::-webkit-input-placeholder {
+                  /* Chrome/Opera/Safari */
+                  color: rgba(0, 0, 0, 0.7);
+              }
+
+              .form-control::-moz-placeholder {
+                  /* Firefox 19+ */
+                  color: rgba(0, 0, 0, 0.7);
+              }
+
+              .form-control:-ms-input-placeholder {
+                  /* IE 10+ */
+                  color: rgba(0, 0, 0, 0.7);
+              }
+
+              .form-control:-moz-placeholder {
+                  /* Firefox 18- */
+                  color: rgba(0, 0, 0, 0.7);
+              }
+
+              .subscribe-form .form-control {
+                  border: 1px solid rgba(0, 0, 0, 0.05);
+              }
     </style>
     @********************test nuevo dise;o de pagina busqueda*****************************************@
     <main class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
         <div class="row flex-grow-sm-1 flex-grow-0">
             <div class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
-                <div class="bg-light border rounded-3 p-1 h-100 sticky-top d-none d-sm-none d-md-block">
+                <div class="bg-light border rounded-3 p-1  d-none d-sm-none d-md-block">
                     <nav id="sidebar">
                         <div class="p-4 pt-5">
                             @*Boton para borrar los filtros*@
@@ -523,14 +577,14 @@ a[data-toggle="collapse"] {
                             <h5>Filtros</h5>
                             <ul class="list-unstyled components mb-5">
                                 <li>
-                                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">COLECCIÓN</a>
+                                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle  flex-shrink-1 ">COLECCIÓN</a>
 
                                     <ul class="collapse list-unstyled" id="pageSubmenu1">
                                         @foreach (var item1 in ViewBag.Sector)
                                         {
 
                                             <li style="margin-bottom:0 !important; color:#000; cursor:pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
-                                         }
+                                        }
 
                                     </ul>
                                 </li>
@@ -540,8 +594,8 @@ a[data-toggle="collapse"] {
                                         @foreach (var item1 in ViewBag.Industria)
                                         {
 
-                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
-}
+                                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                        }
 
                                     </ul>
                                 </li>
@@ -551,8 +605,8 @@ a[data-toggle="collapse"] {
                                         @foreach (var item1 in ViewBag.Producto)
                                         {
 
-                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
-}
+                                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                        }
 
                                     </ul>
                                 </li>
@@ -565,19 +619,19 @@ a[data-toggle="collapse"] {
                                             {
                                                 case "Informe Interactivo":
 
-                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
- break;
-                        case "Reporte 360°":
-                        <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
- break;
-                    default:
-                        <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item4"> @item4</li>
-break;
-                }/**/
-                /**/
-                /**/
+                                                    <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    break;
+                                                case "Reporte 360°":
+                                                    <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    break;
+                                                default:
+                                                    <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    break;
+                                            }/**/
+                                            /**/
+                                            /**/
 
-            }
+                                        }
 
                                     </ul>
                                 </li>
@@ -587,7 +641,8 @@ break;
                                         @foreach (var item1 in ViewBag.Paises)
                                         {
 
-                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>}
+                                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+}
 
                                     </ul>
                                 </li>
@@ -596,9 +651,9 @@ break;
                                     <ul class="collapse list-unstyled" id="pageSubmenu6">
                                         @foreach (var item6 in ViewBag.Escala)
                                         {
-                            <span class="territorio">
-                            <li style="margin-bottom: 0 !important; color: #000; cursor:pointer;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</li>
-                            </span>}
+                                            <span class="territorio">
+                                            <li style="margin-bottom: 0 !important; color: #000; cursor:pointer;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</li>
+                                            </span>}
 
 
                                     </ul>
@@ -609,33 +664,34 @@ break;
                                         @foreach (var item1 in ViewBag.Parametro)
                                         {
 
-                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>}
+                                            <li style="margin-bottom: 0 !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+}
 
                                     </ul>
                                 </li>
                             </ul>
                             @*<div class="mb-5">
-            <h5>Tag Cloud</h5>
-            <div class="tagcloud">
-                <a href="#" class="tag-cloud-link">dish</a>
-                <a href="#" class="tag-cloud-link">menu</a>
-                <a href="#" class="tag-cloud-link">food</a>
-                <a href="#" class="tag-cloud-link">sweet</a>
-                <a href="#" class="tag-cloud-link">tasty</a>
-                <a href="#" class="tag-cloud-link">delicious</a>
-                <a href="#" class="tag-cloud-link">desserts</a>
-                <a href="#" class="tag-cloud-link">drinks</a>
-            </div>
-        </div>*@
+                                    <h5>Tag Cloud</h5>
+                                    <div class="tagcloud">
+                                        <a href="#" class="tag-cloud-link">dish</a>
+                                        <a href="#" class="tag-cloud-link">menu</a>
+                                        <a href="#" class="tag-cloud-link">food</a>
+                                        <a href="#" class="tag-cloud-link">sweet</a>
+                                        <a href="#" class="tag-cloud-link">tasty</a>
+                                        <a href="#" class="tag-cloud-link">delicious</a>
+                                        <a href="#" class="tag-cloud-link">desserts</a>
+                                        <a href="#" class="tag-cloud-link">drinks</a>
+                                    </div>
+                                </div>*@
                             @*<div class="mb-5">
-            <h5>Newsletter</h5>
-            <form action="#" class="subscribe-form">
-                <div class="form-group d-flex">
-                    <div class="icon"><span class="icon-paper-plane"></span></div>
-                    <input type="text" class="form-control" placeholder="Enter Email Address">
-                </div>
-            </form>
-        </div>*@
+                                    <h5>Newsletter</h5>
+                                    <form action="#" class="subscribe-form">
+                                        <div class="form-group d-flex">
+                                            <div class="icon"><span class="icon-paper-plane"></span></div>
+                                            <input type="text" class="form-control" placeholder="Enter Email Address">
+                                        </div>
+                                    </form>
+                                </div>*@
                         </div>
                     </nav>
                     @*Boton para borrar los filtros*@
@@ -712,7 +768,7 @@ break;
                                 <div>
                                     <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</label>
                                 </div>
-                             }
+                            }
                         </div>
                         <h4 class="dropdown-header">SECTOR</h4>
                         <div class="side mb-3" style="overflow:scroll; max-height:100px; overflow:hidden;">
@@ -721,15 +777,15 @@ break;
                                 <div>
                                     <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
                                 </div>
-                             }
+                            }
                         </div>
                         <h4 class="dropdown-header">TEMA</h4>
                         <div class="side mb-3" style="overflow:scroll; max-height:100px; overflow:hidden;">
                             @foreach (var item3 in ViewBag.Producto)
                             {
-                <div>
-                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
-                </div>}
+                                <div>
+                                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
+                                </div>}
                         </div>
                         <h4 class="mt-3 dropdown-header">TIPO DE PRODUCTO</h4>
                         <div class="side mb-3" style="overflow:scroll; max-height:120px; overflow:hidden;">
@@ -738,9 +794,9 @@ break;
                                 switch (item4)
                                 {
                                     case "Informe Interactivo":
-                                    <div>
-                                        <label><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-                                    </div> break;
+                                        <div>
+                                            <label><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                                        </div> break;
                                     case "Reporte 360°":
                                         <div>
                                             <label><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
@@ -753,15 +809,15 @@ break;
                                 /**/
                                 /**/
 
-                             }
+                            }
                         </div>
                         <h4 class="dropdown-header">ESCALA</h4>
                         <div class="side mb-3" style="overflow:scroll; max-height:250px; overflow:hidden;">
                             @foreach (var item5 in ViewBag.Paises)
                             {
-                <div>
-                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
-                </div>}
+                                <div>
+                                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
+                                </div>}
                         </div>
                         <h4 class="dropdown-header">TERRITORIO</h4>
                         <div class="side mb-3" style="overflow:scroll; max-height:250px; overflow:hidden;">
@@ -770,16 +826,16 @@ break;
                                 <div class="territorio">
                                     <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</label>
                                 </div>
-                             }
+                            }
                         </div>
 
                         <h4 class="dropdown-header">PARÁMETRO</h4>
                         <div class="side mb-3" style="overflow:scroll; max-height:100px; overflow:hidden;">
                             @foreach (var item7 in ViewBag.Parametro)
                             {
-                <div>
-                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
-                </div>}
+                                <div>
+                                    <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
+                                </div>}
                         </div>
 
                     </div>
@@ -839,89 +895,89 @@ break;
                                     {
                                         i++;
                                     }
-                    <tr>
-                        <td style="border:none !important;">
-                            <div class="row d-flex">
-                                <div class="col-md-2 col-12">
+                                    <tr>
+                                        <td style="border:none !important;">
+                                            <div class="row d-flex">
+                                                <div class="col-md-2 col-12">
 
-                                    @{ string RutaImagen2 = "/Content/img/iconos_TipoProducto/" + item.TIPO_GRAFICO_id + ".png"; }
-                                    <img class="img-fluid" style="width:140px;" src="@RutaImagen2" />
-                                </div>
-                                @if (item.TIPO_GRAFICO_id == 4)
-                                {
+                                                    @{ string RutaImagen2 = "/Content/img/iconos_TipoProducto/" + item.TIPO_GRAFICO_id + ".png"; }
+                                                    <img class="img-fluid" style="width:140px;" src="@RutaImagen2" />
+                                                </div>
+                                                @if (item.TIPO_GRAFICO_id == 4)
+                                                {
 
-                <div id="test1" class="col-md-8 col-12">
-                    <a href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer; text-decoration: blink; color: black;">
-                        @item.titulo <br />
-                        @item.TIPO_GRAFICO.nombre <br />
-                        @item.TEMPORALIDAD.nombre
-                        <p style="display:none;">@item.TERRITORIO.auxiliar </p>
-                        <p style="display:none;">@item.TERRITORIO.nombre </p>
-                        <p style="display:none;">@item.PARAMETRO.nombre </p>
-                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
-                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
-                        <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
-                    </a>
-                    <hr />
-                </div> }
-            else if (item.TIPO_GRAFICO_id == 3)
-            {
-<div id="test1" class="col-md-8 col-12">
-    <a href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style=" cursor: pointer; text-decoration:blink; color:black;">
-        @item.titulo <br />
-        @item.TIPO_GRAFICO.nombre <br />
-        @item.TEMPORALIDAD.nombre
-        <p style="display:none;">@item.TERRITORIO.auxiliar </p>
-        <p style="display:none;">@item.TERRITORIO.nombre </p>
-        <p style="display:none;">@item.PARAMETRO.nombre </p>
-        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
-        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
-        <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
-    </a>
-</div> }
-else if (item.TIPO_GRAFICO_id < 3)
-{
+                                                    <div id="test1" class="col-md-8 col-12">
+                                                        <a href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer; text-decoration: blink; color: black;">
+                                                            @item.titulo <br />
+                                                            @item.TIPO_GRAFICO.nombre <br />
+                                                            @item.TEMPORALIDAD.nombre
+                                                            <p style="display:none;">@item.TERRITORIO.auxiliar </p>
+                                                            <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                            <p style="display:none;">@item.PARAMETRO.nombre </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
+                                                        </a>
+                                                        <hr />
+                                                    </div> }
+                                                else if (item.TIPO_GRAFICO_id == 3)
+                                                {
+                                                    <div id="test1" class="col-md-8 col-12">
+                                                        <a href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style=" cursor: pointer; text-decoration:blink; color:black;">
+                                                            @item.titulo <br />
+                                                            @item.TIPO_GRAFICO.nombre <br />
+                                                            @item.TEMPORALIDAD.nombre
+                                                            <p style="display:none;">@item.TERRITORIO.auxiliar </p>
+                                                            <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                            <p style="display:none;">@item.PARAMETRO.nombre </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
+                                                        </a>
+                                                    </div> }
+                                                else if (item.TIPO_GRAFICO_id < 3)
+                                                {
 
-<div id="test1" class="col-md-8 col-12">
-    @*<a href="~/info/index?id=@item.id" style=" cursor: pointer;">*@
-    <a href="#" onclick="mostrador2('#PBdos','#PBcuatro','#PBcinco'); PBGrafico('@item.id'),PBGrafico2('@item.id'),PBGrafico3('@item.id') ;" style="cursor: pointer; text-decoration: blink; color: black;">
-        @item.titulo <br />
-        @item.TIPO_GRAFICO.nombre <br />
-        @item.TEMPORALIDAD.nombre
-        <p style="display:none;">@item.TERRITORIO.auxiliar </p>
-        <p style="display:none;">@item.TERRITORIO.nombre </p>
-        <p style="display:none;">@item.PARAMETRO.nombre </p>
-        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
-        <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
-        <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
-    </a>
+                                                    <div id="test1" class="col-md-8 col-12">
+                                                        @*<a href="~/info/index?id=@item.id" style=" cursor: pointer;">*@
+                                                        <a href="#" onclick="mostrador2('#PBdos','#PBcuatro','#PBcinco'); PBGrafico('@item.id'),PBGrafico2('@item.id'),PBGrafico3('@item.id') ;" style="cursor: pointer; text-decoration: blink; color: black;">
+                                                            @item.titulo <br />
+                                                            @item.TIPO_GRAFICO.nombre <br />
+                                                            @item.TEMPORALIDAD.nombre
+                                                            <p style="display:none;">@item.TERRITORIO.auxiliar </p>
+                                                            <p style="display:none;">@item.TERRITORIO.nombre </p>
+                                                            <p style="display:none;">@item.PARAMETRO.nombre </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
+                                                            <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
+                                                        </a>
 
-</div>}
+                                                    </div>}
 
-                                <div class="col-md-2 col-sm-12">
-                                    @if (item.TIPO_GRAFICO_id == 4)
-                                    {
-                    <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
-                        Adquirir
-                    </a> }
-                else if (item.TIPO_GRAFICO_id == 3)
-                {
-<a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
-    Adquirir
-</a> }
-else if (item.TIPO_GRAFICO_id < 3)
-{
-<a onclick="mostrador('#PBdos'); PBGrafico('@item.id');" class=" btn btn-danger btn-sm" href="#" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
-    Ver Gráfico
-</a>}
+                                                <div class="col-md-2 col-sm-12">
+                                                    @if (item.TIPO_GRAFICO_id == 4)
+                                                    {
+                                                        <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
+                                                            Adquirir
+                                                        </a> }
+                                                    else if (item.TIPO_GRAFICO_id == 3)
+                                                    {
+                                                        <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
+                                                            Adquirir
+                                                        </a> }
+                                                    else if (item.TIPO_GRAFICO_id < 3)
+                                                    {
+                                                        <a onclick="mostrador('#PBdos'); PBGrafico('@item.id');" class=" btn btn-danger btn-sm" href="#" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
+                                                            Ver Gráfico
+                                                        </a>}
 
-                                </div>
-                                <hr />
-                            </div>
-                        </td>
+                                                </div>
+                                                <hr />
+                                            </div>
+                                        </td>
 
-                    </tr>
-}
+                                    </tr>
+                                }
                             </tbody>
                         </table>
 
@@ -1150,7 +1206,7 @@ else if (item.TIPO_GRAFICO_id < 3)
                             </div>*@
 
                     </div>
-                    
+
                     <div class="col-md-2">
                         <button class="btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 12px; margin-left:20px; margin-bottom:10px; width: 100px; cursor: pointer;">
                             Ver más

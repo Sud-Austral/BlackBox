@@ -138,6 +138,10 @@ namespace Login.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult IndexProductos()
+        {
+            return PartialView();
+        }
     }
 
 
