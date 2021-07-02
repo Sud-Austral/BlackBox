@@ -24,6 +24,7 @@ body{
         border-top: 4px solid #fff;
         border-bottom: 4px solid #fff;
         padding: 6px 0;
+        background-color: #afabab;
     }
 /*fin estilos de los efectos del navbar principal*/
 /****content-logo********/
@@ -367,3 +368,47 @@ article.highlight {
     }
 }
 
+/* INICIA ESTILOS COLECCIONES*/
+
+/*CSS Menú MOVIL */
+.ddcolecciones{
+    background-color:#dbdde9;
+}
+.ddhcolecciones:hover {
+    font-weight: bold;
+}
+
+/*CSS Menú*/
+.h6colecciones {
+    padding-left: 10px !important;
+    padding-top: 35px;
+    padding-bottom:10px;
+    font-weight: bold;
+    border-bottom: 1px solid #d1d3de;
+}
+.liacolecciones {
+    padding:5px !important;
+    margin:0px !important;
+    padding-left:10px !important;
+}
+    .liacolecciones:hover {
+        background-color: #ffffff;
+    }
+    .liacolecciones:focus{
+        color:#00a135;
+    }
+.ulcolecciones {
+    background-color: #dbdde9;
+}
+.lispancolecciones {
+    color: #000000 !important;
+}
+.icolecciones {
+    color:#1671b8;
+}
+.licolecciones {
+    border-bottom: 1px solid #d1d3de;
+}
+
+
+/* TERMINA ESTILOS COLECCIONES*/
