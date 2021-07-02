@@ -124,11 +124,60 @@ namespace Login.Controllers
             ViewBag.time2 = DateTime.Now;
             return PartialView();
         }
-
+        //COLECCIONES
         public PartialViewResult Colecciones()
         {
             return PartialView();
         }
+        public PartialViewResult Agricultura()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Glaciares()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Ganaderia()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Salud_Enfermedades()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Violencia()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Pesca()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Educacion()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Emisiones()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Salud_Pandemia()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Elecciones()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Contaminacion()
+        {
+            return PartialView();
+        }
+        public PartialViewResult IngresosCasen()
+        {
+            return PartialView();
+        }
+        //FIN COLECCIONES
 
         public PartialViewResult Visualizar_colección()
         {

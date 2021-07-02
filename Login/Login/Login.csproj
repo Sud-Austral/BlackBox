@@ -2954,6 +2954,18 @@
     <Content Include="Views\Data_Usuario\Gráfico_Contenido_Colección.cshtml" />
     <Content Include="Views\Data_Usuario\FuentesUsuario.cshtml" />
     <Content Include="Views\Data_Usuario\Recursos_Usuario.cshtml" />
+    <Content Include="Views\Data\Agricultura.cshtml" />
+    <Content Include="Views\Data\Glaciares.cshtml" />
+    <Content Include="Views\Data\Ganaderia.cshtml" />
+    <Content Include="Views\Data\Salud_Enfermedades.cshtml" />
+    <Content Include="Views\Data\Violencia.cshtml" />
+    <Content Include="Views\Data\Pesca.cshtml" />
+    <Content Include="Views\Data\Educacion.cshtml" />
+    <Content Include="Views\Data\Emisiones.cshtml" />
+    <Content Include="Views\Data\Salud_Pandemia.cshtml" />
+    <Content Include="Views\Data\Elecciones.cshtml" />
+    <Content Include="Views\Data\Contaminacion.cshtml" />
+    <Content Include="Views\Data\IngresosCasen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
