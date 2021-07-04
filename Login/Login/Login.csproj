@@ -415,6 +415,7 @@
     <Content Include="Content\img\atras.png" />
     <Content Include="Content\img\ayuda.png" />
     <Content Include="Content\img\blanco-trans - copia.png" />
+    <Content Include="Content\img\blanco-trans.png" />
     <Content Include="Content\img\boton_archivo_exe.png" />
     <Content Include="Content\img\boton_archivo_jpg.png" />
     <Content Include="Content\img\boton_archivo_pdf.png" />

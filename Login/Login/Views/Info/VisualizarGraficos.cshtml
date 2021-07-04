@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,8 +35,11 @@
     <div class="container" id="btnAtras">
         @*boton para ir atras*@
         <div class="row justify-content-center mb-3 borrar">
-            <div class="col-md-10">
-                <input type="button" class="btn btn-danger btn-sm " style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor:pointer" ; onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
+            <div class="col-md-1 te">
+                <input type="button" class="btn btn-danger btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" ; onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
+            </div>
+            <div class="col-md-9" style="background-color:#A0A6B6">
+                
             </div>
         </div>
         @*fin boton para ir atras*@
@@ -83,9 +86,9 @@
                 </div>
                 <div class="row quitarespacio2" style="color:blue; font-size:10px;">
                     @*boton para ver mas informacion*@
-                    <div class="col-md-2 col-sm-2 borrar">
+                    @*<div class="col-md-2 col-sm-2 borrar">
                         <button type="button" class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
-                    </div>
+                    </div>*@
                     @*boton para descargar iframe*@
                     @*<a onclick="javascript:Imprime('Imprimeme');" class="btn btn-primary">Imprime</a>
                         <script>
@@ -142,7 +145,8 @@
         </section>
         @*Seccion oculta de las informacion*@
         @*estilos para acortar texto de la descripcion larga a 10 reglones*@
-        <section class="container-main mb-5 borrar" id="leerMas" style="display:none; background:#fff;">
+        @*<section class="container-main mb-5 borrar" id="leerMas" style="display:none; background:#fff;">*@
+        <section class="container-main mb-5 borrar" style="background:#fff;">
             <style>
                 .line-clamp2 {
                     display: -webkit-box;
@@ -160,8 +164,6 @@
                         -webkit-line-clamp: 100;
                         cursor: pointer;
                     }
-
-
             </style>
             <div class="row justify-content-center">
                 <div class="col-md-10 col-sm-12" style="border:2px solid #e6e6e6; border-radius:15px; ">
@@ -213,13 +215,13 @@
                                 </div>
                                 <div class="col-md-5 col-10 text-center">
                                     @*
-                                        <a href="https://dataintelligence.store/collections">*@
+                                    <a href="https://dataintelligence.store/collections">*@
                                     <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
                                     <button onclick="mostrador('#PBuno'); FiltrarReporte360();" class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
                                         Ver Reporte 360°
                                     </button>
                                     @*
-                                        </a>*@
+                                    </a>*@
                                 </div>
                                 @*estilos para cortar los tags en 3 filas y ocultar los demas con la clase line-clam *@
                                 <style>
@@ -253,7 +255,7 @@
 
             </div>
         </section>
-    </div>
+</div>
     <!--Script de ocultar texto-->
     <script src="~/Scripts/OcultarBoton.js"></script>
 
@@ -264,7 +266,7 @@
         $(".line-clamp").text($(".line-clamp").text().split(",").join(", "));
         function construirEstructura(Concepto) {
             Concepto = Concepto.trim();
-            return '<a href="/info/PaginaBusqueda?id=' + Concepto + '">' + Concepto + '</a>';
+            return '<a href="/Data/PaginaBusqueda?id=' + Concepto + '">' + Concepto + '</a>';
 
         }
         //var lista = [1, 2, 3, 4]
