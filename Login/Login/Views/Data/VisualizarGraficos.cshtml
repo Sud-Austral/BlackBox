@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">-->
     @*<link rel="stylesheet" type="text/css" href="~/Content/EstilosImprimir.css" media="print" />*@
     <title>Visualizador Graficos</title>
-    
+
     @*descargar grafico*@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
 
@@ -35,8 +35,11 @@
     <div class="container" id="btnAtras">
         @*boton para ir atras*@
         <div class="row justify-content-center mb-3 borrar">
-            <div class="col-md-10">
-                <input type="button" class="btn btn-danger btn-sm " style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor:pointer" ; onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
+            <div class="col-md-1 te">
+                <input type="button" class="btn btn-danger btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" ; onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
+            </div>
+            <div class="col-md-9" style="background-color:#A0A6B6">
+
             </div>
         </div>
         @*fin boton para ir atras*@
@@ -83,9 +86,9 @@
                 </div>
                 <div class="row quitarespacio2" style="color:blue; font-size:10px;">
                     @*boton para ver mas informacion*@
-                    <div class="col-md-2 col-sm-2 borrar">
-                        <button type="button" class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
-                    </div>
+                    @*<div class="col-md-2 col-sm-2 borrar">
+                            <button type="button" class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
+                        </div>*@
                     @*boton para descargar iframe*@
                     @*<a onclick="javascript:Imprime('Imprimeme');" class="btn btn-primary">Imprime</a>
                         <script>
@@ -142,7 +145,8 @@
         </section>
         @*Seccion oculta de las informacion*@
         @*estilos para acortar texto de la descripcion larga a 10 reglones*@
-        <section class="container-main mb-5 borrar" id="leerMas" style="display:none; background:#fff;">
+        @*<section class="container-main mb-5 borrar" id="leerMas" style="display:none; background:#fff;">*@
+        <section class="container-main mb-5 borrar" style="background:#fff;">
             <style>
                 .line-clamp2 {
                     display: -webkit-box;
@@ -160,8 +164,6 @@
                         -webkit-line-clamp: 100;
                         cursor: pointer;
                     }
-
-
             </style>
             <div class="row justify-content-center">
                 <div class="col-md-10 col-sm-12" style="border:2px solid #e6e6e6; border-radius:15px; ">
@@ -202,25 +204,24 @@
                         <div class="col-md-5 col-10">
                             <p class="mt-md-3"><strong>Ver más información</strong></p>
                             <div class="row justify-content-center mb-md-3">
-                                <div class="col-md-5 col-10 text-center">
-
-                                    @*  <a href="https://dataintelligence.store/collections">*@
-                                    <img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
-                                    <button onclick="mostrador('#PBuno'); FiltrarII();" class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
-                                        Ver Informe Interactivo
-                                    </button>
-                                    @* </a>*@
-                                </div>
-                                <div class="col-md-5 col-10 text-center">
-                                    @*
-                                        <a href="https://dataintelligence.store/collections">*@
-                                    <img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                    <button onclick="mostrador('#PBuno'); FiltrarReporte360();" class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
-                                        Ver Reporte 360°
-                                    </button>
-                                    @*
-                                        </a>*@
-                                </div>
+                                <!--<div class="col-md-5 col-10 text-center">-->
+                                @*  <a href="https://dataintelligence.store/collections">*@
+                                <!--<img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
+                                <button onclick="mostrador('#PBuno'); FiltrarII();" class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                    Ver Informe Interactivo
+                                </button>-->
+                                @* </a>*@
+                                <!--</div>
+                                <div class="col-md-5 col-10 text-center">-->
+                                @*
+                                    <a href="https://dataintelligence.store/collections">*@
+                                <!--<img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
+                                <button onclick="mostrador('#PBuno'); FiltrarReporte360();" class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
+                                    Ver Reporte 360°
+                                </button>-->
+                                @*
+                                    </a>*@
+                                <!--</div>-->
                                 @*estilos para cortar los tags en 3 filas y ocultar los demas con la clase line-clam *@
                                 <style>
                                     .line-clamp {
@@ -264,7 +265,7 @@
         $(".line-clamp").text($(".line-clamp").text().split(",").join(", "));
         function construirEstructura(Concepto) {
             Concepto = Concepto.trim();
-            return '<a href="/info/PaginaBusqueda?id=' + Concepto + '">' + Concepto + '</a>';
+            return '<a href="/Data/PaginaBusqueda?id=' + Concepto + '">' + Concepto + '</a>';
 
         }
         //var lista = [1, 2, 3, 4]
@@ -285,10 +286,11 @@
     </script>
 
     <div class="container page " style="display:none;" id="grafico2">
-        <iframe id='inlineFrameExample2' class="borrar" width="1050" height="460"  src="/info/dashboard?id=@ViewBag.Elemento.id">
+        <iframe id='inlineFrameExample2' class="borrar" width="1050" height="460" src="/info/dashboard?id=@ViewBag.Elemento.id">
         </iframe>
     </div>
 
     <link href="~/Content/Estilos/grafico.css" rel="stylesheet" />
 </body>
 </html>
+
