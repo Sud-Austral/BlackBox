@@ -6,7 +6,7 @@
 
 <!--sección content-cabecera-->
 <div class="container-fluid content-header">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="background-color: black">
         <div class="col-12 col-md-8">
             @*<H3 id="titulo1">¡Cientos de estadísticas!</H3>*@
             <style>
@@ -89,10 +89,10 @@
                 }
             </style>
             <h3 class="home-title">
-                <span>¡Cientos de estadísticas!</span>
+                <span style="color:white">¡Cientos de estadísticas!</span>
 
             </h3>
-            <p>
+            <p style="padding-left:5%; padding-right:5%;">
                 Generamos día a día información histórica, actual y proyectada
             </p>
         </div>
@@ -110,11 +110,11 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-8" id="centerbox">
             <H3>¡Explora, busca y encuentra!</H3>
-            <article class="highlight">
+
                 <p>
                     Todos nuestros <span>gráficos son gratuitos</span> gráficos son gratuitos. Ingresa una <span>palabra clave y busca</span>  en nuetra base de datos.
                 </p>
-            </article>
+
         </div>
     </div>
     <div class="row content-buscador justify-content-center">
@@ -140,93 +140,112 @@
 <div class="container content2">
     <div class="row justify-content-center">
         <div class="col-12 col-md-9">
-            <p>
-                las cuales contenian pasajes de Lorem Ipsum, y más
-                recientemente con software de autoedición, como por ejemplo Aldus
-                PageMaker, el cual incluye versiones de Lorem Ipsum.
+            <p style="font-size:20px; color:#2c77b4; font-weight:bolder;">
+                Imagina toda la información de un país en una sola plataforma
             </p>
         </div>
         <div class="col-12 col-md-9">
-            <h3>Nuestra meta es generar la mayor fuente de datos públicos del país</h3>
-            <hr />
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-s-12 col-md-9">
-            <div class="row mb-md-5">
-                <div class="content2-cuadros col-s-7 col-md-3">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
-                                <h3>Test1</h3>
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <p>
-                                    Fue popularizado en los 60s con la creación de las hojas
+            <h3 style="padding-bottom:5%;">Esa es nuestra meta, crear el mayor centro de información en línea de todos los sectores del ámbito nacional.</h3>
+            <h3 style="padding-bottom:5%; font-weight:bold;">¡Busca en nuestra colección!</h3>
 
-                                </p>
-                            </div>
+            <div class="carousel slide" id="carousel3" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center" style="padding-left:5%; padding-right:5%;">
+                            <diV class="col-6">
+                                <a href="/info/ResultadoNiveles?id=10&id2=1">
+                                    <img class="img-fluid" src="~/Content/image_estadistica/1_boton_agropecuario_normal.png" onmouseover="this.src='/Content/image_estadistica/1_boton_agropecuario_on.png'" onmouseout="this.src='/Content/image_estadistica/1_boton_agropecuario_normal.png'" />
+                                </a>
+                            </diV>
+                            <diV class="col-6">
+                                <a href="/info/ResultadoNiveles?id=13&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/2_boton_construccion_normal.png" onmouseover="this.src = '/Content/image_estadistica/2_boton_construccion_on.png'" onmouseout="this.src='/Content/image_estadistica/2_boton_construccion_normal.png'" /></a>
+                            </diV>                           
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center" style="padding-left:5%; padding-right:5%;">
+                            <diV class="col-6">
+                                <a href="/info/ResultadoNiveles?id=22&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/5_boton_mediosocial_normal.png" onmouseover="this.src = '/Content/image_estadistica/5_boton_mediosocial_on.png'" onmouseout="this.src='/Content/image_estadistica/5_boton_mediosocial_normal.png'" /></a>
+                            </diV>
+                            <diV class="col-6">
+                                <a href="/info/ResultadoNiveles?id=24&id2=1"><img class="img-fluid" src="~/Content/image_estadistica/6_boton_turismo_normal.png" onmouseover="this.src = '/Content/image_estadistica/6_boton_turismo_on.png'" onmouseout="this.src='/Content/image_estadistica/6_boton_turismo_normal.png'" /></a>
+                            </diV>                           
                         </div>
                     </div>
                 </div>
-                <div class="content2-cuadros  col-s-7 col-md-3">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
-                                <h3>Test2</h3>
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <p>
-                                    Fue popularizado en los 60s con la creación de las hojas
-
-                                </p>
-
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="row mt-2 justify-content-center" style="display:none;">
+                <div class="col-12">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carousel3" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3 " href="#carousel3" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="content2-cuadros box box3  col-s-7 col-md-3">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
-                                <h3>test3</h3>
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content2-cuadros box box1 col-s-7 col-md-3">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                                <h3>test4</h3>
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-
+    </div>
+    <div class="row justify-content-center d-flex" style="background-color:#c6ccda;">
+        <div class="col-12 col-md-9">
+            <p style="font-size:20px; color:#2c77b4; font-weight:bolder;">
+                ¿Y cómo se visualiza la información?
+            </p>
+            <h3 style="padding-bottom:5%;">Es muy sencillo, no tienes que instalar , ordenar o sistematizar datos.</h3>
+            <h3 style="padding-bottom:8%;">A diferencia de otras plataformas nuestra información es interactiva. Es rápida, se encuentra verificada y proviene de todas las bases públicas del país.</h3>
+            <h3>GRÁFICO</h3>
+            <hr />
+            <h3>Pensado para todo público, esta visualización es gratuita.</h3>
+            <div id="carousel4" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="height:30vh;">
+                        <img class="d-block w-100" src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item" style="height:30vh;">
+                        <img class="d-block w-100" src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item" style="height:30vh;">
+                        <img class="d-block w-100" src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="Third slide">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-center" style="padding-bottom:8%;">
+                <div class="col-12">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carousel4" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3" href="#carousel4" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <h3>SUBSCRIPCIÓN</h3>
+            <hr />
+            <h3>Pensado para académicos, estudiantes o empresas que requieren información procesada y detallada de su sector.</h3>
+            <div id="carousel5" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="~/Content/image_UsuarioIndex/icono_graficogratuito_NARANJA.png" alt="Third slide">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-center" style="padding-bottom:8%;">
+                <div class="col-12">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carousel5" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3" href="#carousel5" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     @*la otra propuesta*@
@@ -267,9 +286,9 @@
             </div>
 
         </div>*@
-</div>
+<!--</div>-->
 <!--seccion nuestros productos-->
-<div class="container-fluid content3">
+<!--<div class="container-fluid content3">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
             <h3>Conoce nuestros productos</h3>
@@ -321,9 +340,9 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!--seccion content4 mapa  -->
-<div class="container content4">
+<!--<div class="container content4">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
             <img class="img-fluid" src="~/Content/image_UsuarioIndex/mapa-Chile.png" alt="" />
@@ -385,9 +404,9 @@
 
         </div>
     </div>
-</div>
+</div>-->
 <!--seccion content5 comentarios de clientes ultima seccion  -->
-<div class="container content5">
+@*<div class="container content5">
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-9">
@@ -412,5 +431,5 @@
         </div>
 
     </div>
-</div>
+</div>*@
 
