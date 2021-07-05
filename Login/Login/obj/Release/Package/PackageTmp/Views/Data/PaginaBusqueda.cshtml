@@ -57,14 +57,13 @@
             }
         }
     </style>
-   
+
     <script>
         function mostrador(seccion) {
             var arreglo = [
                 '#PBuno',
-                '#PBdos',
-                '#PBcuatro',
-                '#PBcinco'
+                '#PBdos'
+               
             ];
             //arreglo.forEach
             jQuery.each(arreglo, function (i, val) {
@@ -73,41 +72,59 @@
             $(seccion).show();
 
         }
-        function mostrador2(seccion1, seccion2, seccion3) {
-            var arreglo = [
-                '#PBuno',
-                '#PBdos',
-                '#PBcuatro',
-                '#PBcinco'
-            ];
-            //arreglo.forEach
-            jQuery.each(arreglo, function (i, val) {
-                $(val).hide();
-            });
-            $(seccion1).show();
-            $(seccion2).show();
-            $(seccion3).show();
-        }
+        //function mostrador2(seccion1, seccion2, seccion3) {
+        //    var arreglo = [
+        //        '#PBuno',
+        //        '#PBdos',
+        //        '#PBcuatro',
+        //        '#PBcinco'
+        //    ];
+        //    //arreglo.forEach
+        //    jQuery.each(arreglo, function (i, val) {
+        //        $(val).hide();
+        //    });
+        //    $(seccion1).show();
+        //    $(seccion2).show();
+        //    $(seccion3).show();
+        //}
     </script>
 
 </head>
 <body>
-        <div class="container-fluid" style="background-color: #C6CCDC; height:auto" >
-            <div class="row justify-content-center" style="padding-top:3%; padding-bottom:1%;">
-                <div class="col-10 col-md-3">
-                    <form action="~/info/PaginaBusqueda" method="get">
-                        <input class="buscador typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="border-radius:10px;">
-                    </form>
+
+    <div class="container-fluid" style="background-color: #C6CCDC; height:auto">
+        <div class="row justify-content-center" style="padding-top:3%; padding-bottom:1%;">
+            <div class="col-10 col-md-3" style="padding-left:6%;">
+                <!--Buscador -->
+                <div class="input-group ">
+                    <div class="form-outline">
+                        <form action="~/Data/PaginaBusqueda" method="get" style="width:100%;">
+                            <input class="buscador typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves">
+                        </form>
+                    </div>
+                    <button id="search-button" type="submit" value="Submit" class="btn btn-danger">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
-                <div class="col-10 col-md-3">
-                    <h4 style="color:black; font-size:1.2rem;"><b>¡Explora, busca y encuentra!</b></h4>
-                    <p>todo nuestro universo de datos</p>
-                </div>
-                <div class="col-8 mb-3 col-md-2  offset-1">
-                    <img class="img-fluid" src="~/Content/img/negro-rojo-trans - copia.png" alt="" />
-                </div> 
+                @*<script>
+                        const searchButton = document.getElementById('search-button');
+                        const searchInput = document.getElementById('id');
+                        searchButton.addEventListener('click', () => {
+                            const inputValue = searchInput.value;
+
+                            /*alert(inputValue);*/
+                        });
+                    </script>*@
+            </div>
+            <div class="col-10 col-md-3 text-left">
+                <h4 style="color:black; font-size:1.2rem;"><b>¡Explora, busca y encuentra!</b></h4>
+                <p>todo nuestro universo de datos</p>
+            </div>
+            <div class="col-8 mb-3 col-md-2  offset-1">
+                <img class="img-fluid" src="~/Content/img/negro-rojo-trans - copia.png" alt="" />
             </div>
         </div>
+    </div>
 
     <div class="offcanvas offcanvas-start w-50 d-md-none" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="true" style="overflow:scroll;">
         <style>
@@ -194,7 +211,6 @@
                 @foreach (var item1 in ViewBag.Sector)
                 {
                     <div>
-
                         <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</label>
                     </div>
                 }
@@ -245,7 +261,8 @@
                 {
                     <div>
                         <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
-                    </div>}
+                    </div>
+                }
             </div>
             <h4 class="dropdown-header">TERRITORIO</h4>
             <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
@@ -298,16 +315,16 @@
     </div>
     @*Estilos de la prueba de sidebar con dropdown*@
     <style>
-             
 
-                  a:hover, a:focus {
-                      text-decoration: none !important;
-                      outline: none !important;
-                      -webkit-box-shadow: none;
-                      box-shadow: none;
-                  }
 
-             /* h1, h2, h3, h4, h5,
+        a:hover, a:focus {
+            text-decoration: none !important;
+            outline: none !important;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        /* h1, h2, h3, h4, h5,
               .h1, .h2, .h3, .h4, .h5 {
                   line-height: 1.5;
                   font-weight: 400;
@@ -315,214 +332,226 @@
                   color: #000;
               }*/
 
-              .ftco-section {
-                  padding: 7em 0;
-              }
+        .ftco-section {
+            padding: 7em 0;
+        }
 
-              .ftco-no-pt {
-                  padding-top: 0;
-              }
+        .ftco-no-pt {
+            padding-top: 0;
+        }
 
-              .ftco-no-pb {
-                  padding-bottom: 0;
-              }
+        .ftco-no-pb {
+            padding-bottom: 0;
+        }
 
-              .heading-section {
-                  font-size: 28px;
-                  color: #000;
-              }
+        .heading-section {
+            font-size: 28px;
+            color: #000;
+        }
 
-                  .heading-section small {
-                      font-size: 18px;
-                  }
-              .wrapper {
-                  width: 100%;
-              }
+            .heading-section small {
+                font-size: 18px;
+            }
 
-              #sidebar {
-                  min-width: 60%;
-                  max-width: 270px;
-                  color: #fff;
-                  -webkit-transition: all 0.3s;
-                  -o-transition: all 0.3s;
-                  transition: all 0.3s;
-                  position: relative;
-                  z-index: 0;
-                  /*border-left: 1px solid rgba(0, 0, 0, 0.05);*/
-              }
+        .wrapper {
+            width: 100%;
+        }
 
-                  #sidebar .h6 {
-                      color: #fff;
-                  }
+        #sidebar {
+            min-width: 60%;
+            max-width: 270px;
+            color: #fff;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 0;
+            /*border-left: 1px solid rgba(0, 0, 0, 0.05);*/
+        }
 
-                  #sidebar.active {
-                      margin-left: -270px;
-                  }
+            #sidebar .h6 {
+                color: #fff;
+            }
 
-                  #sidebar ul.components {
-                      padding: 0;
-                  }
+            #sidebar.active {
+                margin-left: -270px;
+            }
 
-                  #sidebar ul li {
-                      font-size: 14px;
-                  }
+            #sidebar ul.components {
+                padding: 0;
+            }
 
-                      #sidebar ul li > ul {
-                          margin-left: 10px;
-                      }
+            #sidebar ul li {
+                font-size: 14px;
+            }
 
-                          #sidebar ul li > ul li {
-                              font-size: 13px;
-                          }
+                #sidebar ul li > ul {
+                    margin-left: 10px;
+                }
 
-                              #sidebar ul li > ul li a {
-                                  border-bottom: 1px solid transparent;
-                              }
+                    #sidebar ul li > ul li {
+                        font-size: 13px;
+                    }
 
-                                  #sidebar ul li > ul li a span {
-                                      color: #000;
-                                  }
+                        #sidebar ul li > ul li a {
+                            border-bottom: 1px solid transparent;
+                        }
 
-                      #sidebar ul li a {
-                          padding: 10px 0;
-                          display: block;
-                          color: black;
-                          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-                      }
+                            #sidebar ul li > ul li a span {
+                                color: #000;
+                            }
 
-                          #sidebar ul li a span {
-                              color: #fff;
-                          }
+                #sidebar ul li a {
+                    padding: 10px 0;
+                    display: block;
+                    color: black;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                }
 
-                      #sidebar ul li.active > a {
-                          background: transparent;
-                          color: #fc7fb2;
-                      }
+                    #sidebar ul li a span {
+                        color: #fff;
+                    }
 
-              @@media (max-width: 767.98px) {
-                  #sidebar {
-                      min-width: 60%;
-                      max-width: 180px;
-                      border-left: none;
-                  }
-              }
+                #sidebar ul li.active > a {
+                    background: transparent;
+                    color: #fc7fb2;
+                }
 
-              #sidebar .custom-menu {
-                  display: inline-block;
-                  top: 20px;
-                  right: 0;
-                  margin-right: -20px;
-                  -webkit-transition: 0.3s;
-                  -o-transition: 0.3s;
-                  transition: 0.3s;
-              }
+        @@media (max-width: 767.98px) {
+            #sidebar {
+                min-width: 60%;
+                max-width: 180px;
+                border-left: none;
+            }
+        }
 
-              @@media (prefers-reduced-motion: reduce) {
-                  #sidebar .custom-menu {
-                      -webkit-transition: none;
-                      -o-transition: none;
-                      transition: none;
-                  }
-              }
+        #sidebar .custom-menu {
+            display: inline-block;
+            top: 20px;
+            right: 0;
+            margin-right: -20px;
+            -webkit-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+        }
 
-                      #sidebar .custom-menu .btn.btn-primary:after {
-                          z-index: -1;
-                          top: 0;
-                          left: 0;
-                          right: 0;
-                          bottom: 0;
-                          content: '';
-                          -webkit-transform: rotate(45deg);
-                          -ms-transform: rotate(45deg);
-                          transform: rotate(45deg);
-                          background: #fc7fb2;
-                          border-radius: 10px;
-                      }
+        @@media (prefers-reduced-motion: reduce) {
+            #sidebar .custom-menu {
+                -webkit-transition: none;
+                -o-transition: none;
+                transition: none;
+            }
+        }
 
-                      #sidebar .custom-menu .btn.btn-primary:hover, #sidebar .custom-menu .btn.btn-primary:focus {
-                          background: transparent !important;
-                          border-color: transparent !important;
-                      }
+        #sidebar .custom-menu .btn.btn-primary:after {
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: '';
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            background: #fc7fb2;
+            border-radius: 10px;
+        }
 
-              a[data-toggle="collapse"] {
-                  position: relative;
-              }
+        #sidebar .custom-menu .btn.btn-primary:hover, #sidebar .custom-menu .btn.btn-primary:focus {
+            background: transparent !important;
+            border-color: transparent !important;
+        }
 
-              .dropdown-toggle::after {
-                  display: block;
-                  position: absolute;
-                  top: 50%;
-                  right: 0;
-                  -webkit-transform: translateY(-50%);
-                  -ms-transform: translateY(-50%);
-                  transform: translateY(-50%);
-              }
+        a[data-toggle="collapse"] {
+            position: relative;
+        }
 
-                 
+        .dropdown-toggle::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
     </style>
+    @*seccion de graficos*@
+    <div id="PBdos" style="display:none;">
+
+    </div>
     @********************test nuevo dise;o de pagina busqueda*****************************************@
     <main class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
-        <div class="row flex-grow-sm-1 flex-grow-0 justify-content-between">
+        <div class="row flex-grow-sm-1 flex-grow-0 justify-content-between" id="PBuno">
             <div class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
-                <div class=" border rounded-3 p-1  d-none d-sm-none d-md-block">
+                <div class=" border rounded-3 p-1  d-none d-sm-none d-md-block" style="background-color: #DBDDE9;">
                     <nav id="sidebar">
+
                         <div class="p-4" style="border:none !important;">
+                            <h4 style="color:#000;" class="text-left">FILTROS</h4>
                             @*Boton para borrar los filtros*@
-                            <label class="btn btn-danger btn-sm" style=" font-size: 14px; margin: 0px;max-width: 150px;min-width:130px; cursor: pointer;">
-                                <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this), LimpiarTodo();" /> Limpiar filtros
+                            <label class="btn btn-danger btn-sm text-center" style=" font-size: 14px; margin: 0px;max-width: 130px; min-width:120px; cursor: pointer;">
+                                <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this), LimpiarTodo();" /> Borrar filtros
                             </label>
-                            <h5>Filtros</h5>
-                            <ul class="list-unstyled mb-5">
-                                <li>
-                                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle  flex-shrink-1 ">COLECCIÓN</a>
+                            <ul class="list-unstyled mb-5 ">
+                                <li class="mb-md-3">
+                                    <a style="background-color: #B4B4B5; text-decoration:none; " href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle  flex-shrink-1 ">COLECCIÓN</a>
 
                                     <ul class="collapse list-unstyled" id="pageSubmenu1">
                                         @foreach (var item1 in ViewBag.Sector)
                                         {
-
-                                            <li style="margin: 15px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            <label style="width: 100%;">
+                                            <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            </label>
                                         }
 
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">SECTOR</a>
+                                <li class="mb-md-3">
+                                    <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">SECTOR</a>
                                     <ul class="collapse list-unstyled" id="pageSubmenu2">
                                         @foreach (var item1 in ViewBag.Industria)
                                         {
-
-                                            <li style="margin: 15px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            <label style="width: 100%;">
+                                            <li style="margin: 5px !important; color: #000; cursor: pointer; width:100%; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            </label>
                                         }
 
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TEMA</a>
+                                <li class="mb-md-3">
+                                    <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TEMA</a>
                                     <ul class="collapse list-unstyled" id="pageSubmenu3">
                                         @foreach (var item1 in ViewBag.Producto)
                                         {
-
-                                            <li style="margin: 15px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            <label style="width: 100%;">
+                                            <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            </label>
                                         }
 
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TIPO DE GRÁFICO</a>
+                                <li class="mb-md-3">
+                                    <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TIPO DE GRÁFICO</a>
                                     <ul class="collapse list-unstyled" id="pageSubmenu4">
                                         @foreach (var item4 in ViewBag.TipoGrafico)
                                         {
                                             switch (item4)
                                             {
                                                 case "Informe Interactivo":
-
-                                                    <li style="margin: 15px !important; color: #000; cursor: pointer; "><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    <label style="width: 100%;">
+                                                    <li style="margin: 5px !important; color: #000; cursor: pointer; "><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    </label>
                                                     break;
                                                 case "Reporte 360°":
-                                                    <li style="margin: 15px !important; color: #000; cursor: pointer; "><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    <label style="width: 100%;">
+                                                    <li style="margin: 5px !important; color: #000; cursor: pointer; "><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    </label>
                                                     break;
                                                 default:
-                                                    <li style="margin: 15px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    <label style="width: 100%;">
+                                                    <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                                                    </label>
                                                     break;
                                             }/**/
                                             /**/
@@ -532,52 +561,54 @@
 
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ESCALA</a>
+                                <li class="mb-md-3">
+                                    <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ESCALA</a>
                                     <ul class="collapse list-unstyled" id="pageSubmenu5">
                                         @foreach (var item1 in ViewBag.Paises)
                                         {
-
-                                            <li style="margin: 15px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            <label style="width: 100%;">
+                                            <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            </label>
                                         }
 
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TERRITORIO</a>
+                                <li class="mb-md-3">
+                                    <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TERRITORIO</a>
                                     <ul class="collapse list-unstyled" id="pageSubmenu6">
                                         @foreach (var item6 in ViewBag.Escala)
                                         {
-                                            <span class="territorio">
-                                            <li style="margin: 15px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</li>
-                                            </span>}
+                                            <label class="territorio" style="width: 100%;">
+                                            <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</li>
+                                            </label>}
 
 
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#pageSubmenu7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">PARÁMETRO</a>
+                                <li class="mb-md-3">
+                                    <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">PARÁMETRO</a>
                                     <ul class="collapse list-unstyled" id="pageSubmenu7">
                                         @foreach (var item1 in ViewBag.Parametro)
                                         {
-
-                                            <li style="margin: 15px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            <label style="width: 100%;">
+                                            <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                            </label>
                                         }
 
                                     </ul>
                                 </li>
                             </ul>
-                            
+
                         </div>
                     </nav>
                     @*Boton para borrar los filtros*@
-                    <label class="btn btn-danger btn-sm" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                    <!--<label class="btn btn-danger btn-sm" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
                         <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this), LimpiarTodo();" /> Borrar filtro
-                    </label>
+                    </label>-->
                     @*<h6 class="d-none d-sm-block text-muted">Sticky Sidebar</h6>*@
-                    <div class="tags col-md-6 col-sm-12 ml-5" style="margin-left:10px;">
-                        @*Este script es para hacer el filtro de la tabla*@
-                        <script>
+                    <!--<div class="tags col-md-6 col-sm-12 ml-5" style="margin-left:10px;">-->
+                    @*Este script es para hacer el filtro de la tabla*@
+                    <!--<script>
                             //Funcion para filtrar Territorios a partir de Escala
                             $(document).ready(function () {
                                 //Se activa al hacer click sobre cualquier objeto con class "escala"
@@ -710,11 +741,11 @@
                                 </div>}
                         </div>
 
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
-            <div class="col-10 col-md-8 overflow-auto mt-md-5">
+            <div class="col-12 col-md-8 overflow-auto mt-md-5">
                 <h3 class="text-center"><b>Resultados de busqueda</b> </h3>
                 <hr />
                 <div class="p-3">
@@ -816,7 +847,7 @@
 
                                                     <div id="test1" class="col-md-8 col-12">
                                                         @*<a href="~/info/index?id=@item.id" style=" cursor: pointer;">*@
-                                                        <a href="#" onclick="mostrador2('#PBdos','#PBcuatro','#PBcinco'); PBGrafico('@item.id'),PBGrafico2('@item.id'),PBGrafico3('@item.id') ;" style="cursor: pointer; text-decoration: blink; color: black;">
+                                                        <a href="#" onclick="mostrador('#PBdos'); PBGrafico('@item.id');" style="cursor: pointer; text-decoration: blink; color: black;">
                                                             @item.titulo <br />
                                                             @item.TIPO_GRAFICO.nombre <br />
                                                             @item.TEMPORALIDAD.nombre
@@ -1076,10 +1107,10 @@
                         </script>
 
                         @*<div class="col-md-2">
-                    <button class="btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 12px; margin-left:20px; margin-bottom:10px; width: 100px; cursor: pointer;">
-                        Ver más
-                    </button>
-                </div>*@
+                                <button class="btn-success btn-sm" onclick="Paginacion('@ViewBag.palabra');" style="border-radius: 25px; font-size: 12px; margin-left:20px; margin-bottom:10px; width: 100px; cursor: pointer;">
+                                    Ver más
+                                </button>
+                            </div>*@
 
                     </div>
 
@@ -1093,6 +1124,7 @@
             </div>
         </div>
     </main>
+
     @*************************final nuevo dise;o pagina busqueda***************************************@
     <script>
         var index = 1;
@@ -1205,16 +1237,16 @@
             </div>
 
             @*seccion de graficos*@
-            <div id="PBdos" style="display:none;">
+            @*<div id="PBdos" style="display:none;">
 
-            </div>
+                </div>*@
             @*Seccion Información relacionada que te podría interesar de pagina busqueda*@
-            <div id="PBcuatro" style="display:none;" class="borrar">
+            @*<div id="PBcuatro" style="display:none;" class="borrar">
 
-            </div>
+                </div>*@
             <!-- FINAL RESULTADOS DE BUSQUEDA -->
             <!--seccion de suscripciones-->
-            <div id="hide" onload="window.parent.scrollTo(0,0)" class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
+            <!--<div id="hide" onload="window.parent.scrollTo(0,0)" class="container-fluid text-center" style=" background-image: url('/Content/img/Promociones/imagenpromocion_fondo.jpg');padding-bottom:40px; background-size:cover;">
 
                 <div class="row" style="padding-left:20%; padding-right:20%">
                     <div class="col-12">
@@ -1289,11 +1321,11 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!--carrucel el codigo esta en la vista parcial CarrucelBusqueda-->
-            <div id="PBcinco" style="display:none;">
+            <!--<div id="PBcinco" style="display:none;">
 
-            </div>
+            </div>-->
 
         </div>
 
@@ -1363,7 +1395,7 @@
                     type: 'POST',
                     data: "{'id':" + "'" + Grafico + "'}", //datos o parametros enviados al servidor
                     dataType: 'html', //el tipo de dato que nos regresara el servidor en este caso regresa html
-                    url: '/info/VisualizarGraficos?id=' + Grafico,
+                    url: '/Data/VisualizarGraficos?id=' + Grafico,
                     //URL del action result que cargara la vista parcial
                     success: function (result) {
                         // si la funcion se ejecuta lanzara un alert
