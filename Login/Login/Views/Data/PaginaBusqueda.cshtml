@@ -96,28 +96,31 @@
         <div class="row justify-content-center" style="padding-top:3%; padding-bottom:1%;">
             <div class="col-10 col-md-3" style="padding-left:6%;">
                 <!--Buscador -->
-                <div class="input-group ">
+                <form action="~/Data/PaginaBusqueda" method="get">
+                    <input type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="padding: 6px; border: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
+                    <button id="search-button" type="submit" value="Submit" class="btn btn-danger">
+                    <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                @*<div class="input-group ">
                     <div class="form-outline">
                         <form action="~/Data/PaginaBusqueda" method="get" style="width:100%;">
-                            <input class="buscador typeahead form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves">
-                            <button id="search-button" type="submit" value="Submit" class="btn btn-danger" style="float:right;">
-                                <i class="fas fa-search"></i>
-                            </button>
+                            <input class="form-control" type="text" id="id" name="id" placeholder="Busqueda de palabras claves">
                         </form>
                     </div>
-                    @*<button id="search-button" type="submit" value="Submit" class="btn btn-danger">
+                    <button id="search-button" type="submit" value="Submit" class="btn btn-danger">
                         <i class="fas fa-search"></i>
-                    </button>*@
-                </div>
+                    </button>
+                </div>*@
                 @*<script>
-                        const searchButton = document.getElementById('search-button');
-                        const searchInput = document.getElementById('id');
-                        searchButton.addEventListener('click', () => {
-                            const inputValue = searchInput.value;
+            const searchButton = document.getElementById('search-button');
+            const searchInput = document.getElementById('id');
+            searchButton.addEventListener('click', () => {
+                const inputValue = searchInput.value;
 
-                            /*alert(inputValue);*/
-                        });
-                    </script>*@
+                /*alert(inputValue);*/
+            });
+        </script>*@
             </div>
             <div class="col-10 col-md-3 text-left">
                 <h4 style="color:black; font-size:1.2rem;"><b>¡Explora, busca y encuentra!</b></h4>
