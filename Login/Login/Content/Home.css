@@ -8,10 +8,10 @@ body{
    
 }
 /*estilos de los efectos del navbar principal*/
-.navbar {
+.navbarClent {
     background-color: #BC1423 !important;
 }
-.nav-link {
+.nav-linkClent {
     transition: 0.3s ease;
     background: #BC1423;
     color: #ffffff;
