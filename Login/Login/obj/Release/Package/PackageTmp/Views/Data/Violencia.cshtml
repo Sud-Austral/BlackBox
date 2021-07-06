@@ -1,26 +1,71 @@
-﻿<div class="container">
+﻿<div class="container-fluid">
     <div class="row">
-        <div class="col-3" style="padding:6%;">
+        <div class="col-4 col-sm-3 col-md-2">
             <img class="img-fluid" src="~/Images/menuLayout/1_on.png" />
         </div>
-        <div class="col-9">
-            <h5>Violencia contra la mujer</h5>
-            <p>
+        <div class="col-8 col-sm-9 col-md-10" style="border-left: solid 0.5px #CCC;">
+            <h5 class="h5coleccion">Violencia contra la mujer</h5>
+            <p class="pcoleccion d-none d-md-block">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                 the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                 type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in
+                also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
         </div>
-        <div class="col-12">
-            <p>
+        <div class="col-12  d-block d-md-none">
+            <p class="pcoleccion">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                 the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                 type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in
-                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
         </div>
     </div>
 </div>
+<div class="container-fluid  d-block d-md-none">
+    <div class="row">
+        <div class="col-12 text-center ">
+            <div id="carouselExampleControls" class="carousel slide p-3 p-sm-4" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card" style="width: 18rem;">
+                            <img src="~/Images/menuLayout/19_on.png" class="d-block w-100 card-img-top" />
+                            <div class="card-body">
+                                <h5 class="card-title">EXPORTACIONES</h5>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card" style="width: 18rem;">
+                            <img src="~/Images/menuLayout/23_on.png" class="d-block w-100 card-img-top" />
+                            <div class="card-body">
+                                <h5 class="card-title">IMPORTACIONES</h5>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card" style="width: 18rem;">
+                            <img src="~/Images/menuLayout/5_on.png" class="d-block w-100 card-img-top" />
+                            <div class="card-body">
+                                <h5 class="card-title">PRECIOS</h5>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
