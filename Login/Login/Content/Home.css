@@ -7,18 +7,18 @@
 
 body {
 }
-/*estilos de los efectos del navbar principal*/
-.navbar {
+.navbarClent {
     background-color: #BC1423 !important;
 }
+/*estilos de los efectos del navbar principal*/
 .nav-link {
     transition: 0.3s ease;
-    background: #BC1423;
+    /*background: #3fa46a;*/
     color: #ffffff;
     font-size: 16px;
     text-decoration: none;
-    border-top: 4px solid #BC1423;
-    border-bottom: 4px solid #BC1423;
+    /*border-top: 4px solid #3fa46a;
+    border-bottom: 4px solid #3fa46a;*/
     padding: 20px 0;
     margin: 0 20px;
 }
@@ -34,10 +34,6 @@ body {
 .content-logo {
     width: 200px;
     height: auto;
-}
-.content-logo img{
-    width:100%;
-    height:100%;
 }
 
     .content-logo img {
@@ -214,11 +210,32 @@ article.highlight {
         color: #fff;
     }
 
+/*estos estilos para la otra propuesta*/
+/*.quotes .box:hover {
+    color: #f2f2f2;
+    box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
+}
 
-.content3 {
-    width: 100%;
-    text-align: center;
-    background-color: #EDEDED;
+.quotes .box.box1:hover,
+.quotes .box.box1:hover ~ .bg {
+    opacity: 1;
+    background: #e2a9e5;
+    background: -moz-linear-gradient(-45deg, #e2a9e5 15%, #2b94e5 100%);
+    background: -webkit-linear-gradient(-45deg, #e2a9e5 15%,#2b94e5 100%);
+    background: linear-gradient(135deg, #e2a9e5 15%,#2b94e5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2a9e5', endColorstr='#2b94e5',GradientType=1 );
+}
+
+.quotes .box.box2:hover,
+.quotes .box.box2:hover ~ .bg {
+    opacity: 1;
+    background: #632c65;
+    background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+    background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+    background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+}
+
 .quotes .box.box3:hover,
 .quotes .box.box3:hover ~ .bg {
     opacity: 1;
@@ -438,6 +455,7 @@ blockquote:after { /* final */
 .licolecciones {
     border-bottom: 1px solid #d1d3de;
 }
+
 .cardcoleccion {
     border-color: transparent;
     background-color: transparent;
