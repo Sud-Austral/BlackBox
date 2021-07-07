@@ -223,10 +223,12 @@
     <Compile Include="Models\GRAFICO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GraficoPortada.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\INDUSTRIA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListaGraficoPortada.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MENULAYOUT.cs" />
     <Compile Include="Models\Model1.Context.cs">
@@ -307,6 +309,7 @@
     <Content Include="Content\carrusel14\css\owl.carousel.min.css" />
     <Content Include="Content\carrusel14\css\style2.css" />
     <Content Include="Content\carrusel14\css\style.css" />
+    <Content Include="Content\carrusel14\DataCarrusel.css" />
     <Content Include="Content\carrusel14\fonts\icomoon\demo-files\demo.css" />
     <Content Include="Content\carrusel14\fonts\icomoon\demo-files\demo.js" />
     <Content Include="Content\carrusel14\fonts\icomoon\demo.html" />
@@ -3079,7 +3082,7 @@
     <Content Include="Views\Data\Elecciones.cshtml" />
     <Content Include="Views\Data\Contaminacion.cshtml" />
     <Content Include="Views\Data\IngresosCasen.cshtml" />
-     <Content Include="Views\Data\IndexProductos.cshtml" />
+    <Content Include="Views\Data\IndexProductos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
