@@ -37,150 +37,27 @@
             @*<h2 class="my-5 text-center">Carousel #4</h2>*@
 
             <div class="owl-carousel slide-one-item">
-
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://analytics.zoho.com/open-view/2395394000006610381" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 1</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón de habitantes desde  Evolución del número de Casos Activos de COVID-19 por 1 millón 
-                        </p>
-                        <h4>Sector SALUD</h4>
+                @foreach (var item in ViewBag.Graficos.Graficos)
+                {
+                    <div class="d-md-flex testimony-29101 ">
+                        @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
+                        <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="@item.url" allowfullscreen></iframe>
+                        <div class="text" style="background-color: @item.color !important;">
+                            <p class="textoCarrusel textoCarruselPrincipal text-center">
+                                @item.titulo
+                            </p>
+                            <p class="textoCarrusel textoCarruselIdeaFuerza text-center">
+                                @item.ideaFuerza
+                            </p>
+                            <p class="carruselLineaBlanca">
+                            </p>
+                            <p class="textoCarrusel textoCarruselDescripcion mt-3">
+                                @item.descripcion
+                            </p>
+                        </div>
                     </div>
-                </div>  <!-- .item -->
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://analytics.zoho.com/open-view/2395394000006974537" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 2</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique 100
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
-
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://analytics.zoho.com/open-view/2395394000007224567" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 3</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique 100
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
-
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://public.flourish.studio/visualisation/4555265/" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 4</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
-
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://analytics.zoho.com/open-view/2395394000006610381" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 5</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique 100
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
-
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://public.flourish.studio/visualisation/4555265/" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 6</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique 100
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://analytics.zoho.com/open-view/2395394000007224567" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 7</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique 100
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
-
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://analytics.zoho.com/open-view/2395394000006974537" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 8</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique 100
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
-
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://analytics.zoho.com/open-view/2395394000006974537" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 9</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique 100
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
-                <div class="d-md-flex testimony-29101 ">
-                    @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
-                    <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="https://analytics.zoho.com/open-view/2395394000006974537" allowfullscreen></iframe>
-                    <div class="text" style="background-color: #e63a60 !important;">
-                        <h4>Colección 10</h4>
-                        <h3>Pandemias</h3>
-                        <p>
-                            Evolución del número de Casos Activos de COVID-19 por 1 millón
-                            de habitantes desde marzo de 2020 a la fecha en la comuna de Iquique 100
-                        </p>
-                        <h4>Sector SALUD</h4>
-                    </div>
-                </div>  <!-- .item -->
+                }
             </div>
-
         </div>
     </div>
     <script src="~/Content/carrusel14/js/jquery-3.3.1.min.js"></script>

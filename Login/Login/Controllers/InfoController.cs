@@ -404,7 +404,7 @@ namespace AplicacionBlanco.Controllers
         }
         public PartialViewResult CarruselVetical2()
         {
-
+            ViewBag.Graficos = new ListaGraficoPortada();
             return PartialView();
         }
         public PartialViewResult CarruselVetical3()
