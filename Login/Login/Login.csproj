@@ -649,6 +649,7 @@
     <Content Include="Images\menuLayout\icono_8.png" />
     <Content Include="Images\menuLayout\icono_9.png" />
     <Content Include="Images\Rectangulo.png" />
+    <Content Include="Images\Rectangulo2.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -3079,7 +3080,7 @@
     <Content Include="Views\Data\Elecciones.cshtml" />
     <Content Include="Views\Data\Contaminacion.cshtml" />
     <Content Include="Views\Data\IngresosCasen.cshtml" />
-     <Content Include="Views\Data\IndexProductos.cshtml" />
+    <Content Include="Views\Data\IndexProductos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
