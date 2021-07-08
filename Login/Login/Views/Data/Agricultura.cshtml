@@ -12,7 +12,7 @@
                 also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
         </div>
-        <div class="col-12  d-block d-md-none">
+        <div class="col-12 d-block d-md-none">
             <p class="pcoleccion">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                 the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
@@ -20,9 +20,16 @@
                 also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
         </div>
+        <div class="col-md-12 text-center d-none d-md-block" style="border-bottom: solid 0.5px #CCC;">
+            <p>La suscripción a la colección de Agricultura contiene</p>
+        </div>
+        <div class="col-12 text-center d-block d-md-none" style="border-bottom: solid 0.5px #CCC;">
+            <p>Contenido de Agricultura</p>
+        </div>
     </div>
 </div>
-<div class="container-fluid  d-block d-md-none">
+ @*Carrusel contenido*@
+<div class="container-fluid d-block d-md-none mt-2 mt-sm-0">
     <div class="row">
         <div class="col-12 text-center ">
             <div id="carouselExampleControls" class="carousel slide p-sm-4" data-bs-ride="carousel">
@@ -32,7 +39,7 @@
                             <img src="~/Images/Rectangulo.png" class="d-block w-100 card-img-top" />
                             <div class="row">
                                 <div class="col-10">
-                                    <h6 class="card-title">EXPORTACIONE</h6>
+                                    <h6 class="card-title">EXPORTACIONES</h6>
                                 </div>
                                 <div class="col-2" style="z-index:100">
                                     <a data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -235,17 +242,23 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header" style="border-bottom:none !important">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog modal-dialog-centered" >
+        <div class="modal-content" style="background-color:black; color:white;" >
+            <div class="modal-header justify-content-center" style="border-bottom:none !important">
+                <button type="button" class="btn-close" style="background-color:#CCC;" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-header" style="border-bottom:none !important">
-                <img class="img-fluid" style="width:40%;" src="~/Images/menuLayout/22_on.png" />
-                <img class="img-fluid" style="width:55%;" src="~/Images/Rectangulo.png" />
-            </div>
-            <div class="modal-header justify-content-center">
-                <h5 class="modal-title" id="exampleModalLabel">EXPORTACIONES</h5>
+                <div class="row">
+                    <div class="col-4">
+                        <img class="img-fluid" style="width:100%;" src="~/Images/menuLayout/22_on.png" />
+                    </div>
+                    <div class="col-8" style="border-left: solid 0.5px #CCc;">
+                        <img class="img-fluid" style="width:100%; border:solid 0.5px #ff0000;"  src="~/Images/Rectangulo.png" />
+                    </div>
+                    <div class="offset-1 col-10 offset-1 justify-content-center mt-1">
+                        <h5 class="modal-title text-center " style="border-bottom: solid 0.5px #CCc;" id="exampleModalLabel">EXPORTACIONES</h5>
+                    </div>
+                </div>
             </div>
             <div class="modal-body">
                 <i class="bi bi-info-circle"></i> Regiones de Origen

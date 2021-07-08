@@ -652,6 +652,7 @@
     <Content Include="Images\menuLayout\icono_8.png" />
     <Content Include="Images\menuLayout\icono_9.png" />
     <Content Include="Images\Rectangulo.png" />
+    <Content Include="Images\Rectangulo2.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
