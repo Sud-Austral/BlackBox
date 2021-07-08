@@ -369,12 +369,12 @@ blockquote:after { /* final */
     }
     /* INICIA ESTILOS COLECCIONES*/
     .h5coleccion {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: bold;
     }
 
     .pcoleccion {
-        font-size: 1.1rem;
+        font-size:0.9rem;
     }
     /* FIN ESTILOS COLECCIONES*/
 

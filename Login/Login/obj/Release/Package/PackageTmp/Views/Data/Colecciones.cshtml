@@ -1,6 +1,6 @@
-﻿@{ 
-    Layout = "~/Views/Shared/_LayoutPublico.cshtml"; 
- }
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPublico.cshtml";
+}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -182,9 +182,125 @@
     </div>
 </main>
 
+<!-- footer BUSCADOR -->
+<div class="container-fluid" style="background-color: #C6CCDC; height:auto">
+    <div class="row justify-content-center" style="padding-top:3%; ">
+        <div class="col-12  text-center col-md-4">
+            <!--Buscador -->
+            <form action="~/Data/PaginaBusqueda" method="get" style="padding-top:3%;">
+                <input type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="padding: 6px; border: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
+                <button id="search-button" type="submit" value="Submit" class="btn btn-danger">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <div class="col-12 col-md-4 px-5 px-md-0 mt-3 mt-md-0">
+            <h4 style="color:black; font-size:1.1rem;">¡Explora, busca y encuentra!</h4>
+            <p style="line-height:14px;">
+                Somos un espacio creado para visualizar información.
+                Ingresa una palabra clave y busca en nuestras bases de datos.
+            </p>
+        </div>
+        <div class="col-8 col-sm-6 mb-3 col-md-3 justify-content-center">
+            <img class="img-fluid" src="~/Content/img/negro-rojo-trans - copia.png" alt="" />
+        </div>
+    </div>
+</div>
 
 
+<!--seccion contenido e icnos de nuestras metas-->
+@*NO Carrusel*@
+<div class="container-fluid d-none d-md-block" style="margin-top:-1%">
+    <div class="row justify-content-center align-items-center" style="background-color:#c6ccda;">
+        <div class="col-12 col-md-9 mt-3">
+            <h4 class="text-center"><strong style="color:blue;">SUBSCRIPCIÓN A LA CUENTA PROFESIONAL</strong></h4>
+            <hr />
+            <p style="padding-bottom:2%; font-size:1rem;">Pensado para académicos, estudiantes o empresas que requieren información procesada y detallada de su sector.</p>
+            <div class="row d-flex">
+                <div class="col-3" style="height:30vh;">
+                    <img class="d-block w-100" src="~/Content/image_UsuarioIndex/imagenpromocion_2.png" alt="First slide">
+                </div>
+                <div class="col-3" style="height:30vh;">
+                    <p style="border-radius:15px; background-color:white; height:20vh; padding-top:10%; padding-bottom:10%; padding-left:5%; padding-right:5%; color:#404040;">
+                        La Cuenta Profesional visualiza los datos en prácticos informes interactivos.
+                    </p>
+                </div>
+                <div class="col-3" style="height:30vh;">
+                    <p style="border-radius:15px; background-color:white; height:20vh; padding-top:10%; padding-bottom:10%; padding-left:5%; padding-right:5%; color:#404040; text-align:center;">
+                        Acceso a toda la información de una coleccion por el periodo de un año.
+                        <br />
+                        Prueba gratis por 7 dias.
+                    </p>
+                </div>
+                <div class="col-3" style="height:30vh;">
+                    <p style="border-radius:15px; background-color:red; height:20vh; padding-top:10%; padding-bottom:10%; padding-left:5%; padding-right:5%; color:#fdfbfa;">
+                        Modalidad
+                        <br />
+                        USD 10 mensuales por colección
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Carrusel*@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+<link href="~/Content/carrusel14/fonts/icomoon/style.css" rel="stylesheet" />
+<link href="~/Content/carrusel14/css/owl.carousel.min.css" rel="stylesheet" />
 
 
+<script src="~/Content/carrusel14/js/jquery-3.3.1.min.js"></script>
+<script src="~/Content/carrusel14/js/popper.min.js"></script>
+<script src="~/Content/carrusel14/js/bootstrap.min.js"></script>
+<script src="~/Content/carrusel14/js/owl.carousel.min.js"></script>
+<script src="~/Content/carrusel14/js/main.js"></script>
 
-
+@*Carrusel*@
+<div class="container-fluid" style="margin-top:-1%">
+    <div class="row justify-content-center d-flex d-block d-md-none" style="background-color:#c6ccda;">
+        <div class="col-12 col-md-9">
+            <h6 class="text-center"><strong style="color:blue;">SUBSCRIPCIÓN A LA CUENTA PROFESIONAL</strong></h6>
+            <hr />
+            <p style="font-size:0.8rem;" class="text-center">Pensado para académicos, estudiantes o empresas que requieren información procesada y detallada de su sector.</p>
+            <div id="carousel5" class="carousel slide mb-3" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="~/Content/image_UsuarioIndex/imagenpromocion_2.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item" style="height:30vh;">
+                        <p style="border-radius:15px; background-color:white; height:20vh; padding-top:10%; padding-bottom:10%; padding-left:5%; padding-right:5%; color:#404040;">
+                            La Cuenta Profesional visualiza los datos en prácticos informes interactivos.
+                        </p>
+                    </div>
+                    <div class="carousel-item" style="height:30vh;">
+                        <p style="border-radius:15px; background-color:white; height:20vh; padding-top:10%; padding-bottom:10%; padding-left:5%; padding-right:5%; color:#404040;">
+                            Acceso a toda la información de una coleccion por el periodo de un año.
+                            <br />
+                            Prueba gratis por 7 dias.
+                        </p>
+                    </div>
+                    <div class="carousel-item" style="height:30vh;">
+                        <p style="border-radius:15px; background-color:red; height:20vh; padding-top:10%; padding-bottom:10%; padding-left:5%; padding-right:5%; color:#fdfbfa;">
+                            Modalidad
+                            <br />
+                            USD 10 mensuales por colección
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-center" style="padding-bottom:8%; display:none;">
+                <div class="col-12">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carousel5" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3" href="#carousel5" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
