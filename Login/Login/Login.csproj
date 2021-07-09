@@ -331,6 +331,7 @@
     <Content Include="Content\EstilosPopUp.css" />
     <Content Include="Content\Estilos\grafico.css" />
     <Content Include="Content\Estilos\info\HomeOdoo.css" />
+    <Content Include="Content\LayoutLog.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\image_estadistica\10_boton_tecnologia_normal.png" />
     <Content Include="Content\image_estadistica\10_boton_tecnologia_on.png" />
@@ -3084,6 +3085,15 @@
     <Content Include="Views\Data\Contaminacion.cshtml" />
     <Content Include="Views\Data\IngresosCasen.cshtml" />
     <Content Include="Views\Data\IndexProductos.cshtml" />
+    <Content Include="Views\Data_Usuario\Tematica.cshtml" />
+    <Content Include="Views\Data_Usuario\Cosecha.cshtml" />
+    <Content Include="Views\Data_Usuario\Empresas.cshtml" />
+    <Content Include="Views\Data_Usuario\Empleados.cshtml" />
+    <Content Include="Views\Data_Usuario\Produccion.cshtml" />
+    <Content Include="Views\Data_Usuario\Precios.cshtml" />
+    <Content Include="Views\Data_Usuario\Importaciones.cshtml" />
+    <Content Include="Views\Data_Usuario\Exportaciones.cshtml" />
+    <Content Include="Views\Data_Usuario\Rendimiento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
