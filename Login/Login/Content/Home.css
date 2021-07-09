@@ -396,6 +396,9 @@ blockquote:after { /* final */
     .pcoleccion {
         font-size: 0.8rem;
     }
+    .pcarruselcolec {
+        padding: 10% 0
+    }
 }
 
 @media screen and (min-width:576px) and (max-width:768px) {
@@ -406,6 +409,9 @@ blockquote:after { /* final */
 
     .pcoleccion {
         font-size: 1rem;
+    }
+    .pcarruselcolec {
+        padding: 5% 0
     }
 }
 /*CSS Menú MOVIL */
