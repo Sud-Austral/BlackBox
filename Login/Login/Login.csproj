@@ -675,8 +675,6 @@
     <Content Include="Images\menuLayout\icono_7.png" />
     <Content Include="Images\menuLayout\icono_8.png" />
     <Content Include="Images\menuLayout\icono_9.png" />
-    <Content Include="Images\Rectangulo.png" />
-    <Content Include="Images\Rectangulo2.png" />
     <Content Include="Images\simbolossolos_botones\simbolo_coleccion_agricultura.png" />
     <Content Include="Images\simbolossolos_botones\simbolo_coleccion_contaminacion.png" />
     <Content Include="Images\simbolossolos_botones\simbolo_coleccion_educacion.png" />
