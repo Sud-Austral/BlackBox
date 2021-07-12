@@ -449,6 +449,31 @@
     <Content Include="Images\ayuda\icono_gmail.png" />
     <Content Include="Images\ayuda\icono_telefono.png" />
     <Content Include="Images\ayuda\icono_whatsApp.png" />
+    <Content Include="Images\bloque.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_agricultura.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_contaminacion.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_educacion.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_elecciones.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_emisiones.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_ganaderia.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_glaciares.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_ingresosseguncasen.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_pesca.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_salud_enfermedades.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_salud_pandemia.png" />
+    <Content Include="Images\iconosgrandes\icono_coleccion_violenciacontralamujer.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_cosecha.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_empleados.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_empresas.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_exportaciones.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_importaciones.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_plantaciones.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_precios.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_produccion.png" />
+    <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_rendimiento.png" />
+    <Content Include="Images\kisspng-rectangle-black-m-horizontal-bar-5b24c4e2a3c323.0518109315291363546708.jpg" />
+    <Content Include="Images\logo_dataintelligence_blanco.png" />
+    <Content Include="Images\logo_dataintelligence_con_slogan.png" />
     <Content Include="Images\menuLayout\10_on.png" />
     <Content Include="Content\img\iconos_sector\11.png" />
     <Content Include="Content\img\iconos_sector\12.png" />
@@ -597,7 +622,6 @@
     <Content Include="Images\Error\USECUENTALOCAL.jpg" />
     <Content Include="Images\login\arrow-down1.gif" />
     <Content Include="Images\login\data_portabilityprivacy_banner_003_256_30fps-1.gif" />
-    <Content Include="Images\menuLayout\10_on.png" />
     <Content Include="Images\menuLayout\11_on.png" />
     <Content Include="Images\menuLayout\12_on.png" />
     <Content Include="Images\menuLayout\13_on.png" />
@@ -647,6 +671,20 @@
     <Content Include="Images\menuLayout\icono_7.png" />
     <Content Include="Images\menuLayout\icono_8.png" />
     <Content Include="Images\menuLayout\icono_9.png" />
+    <Content Include="Images\Rectangulo.png" />
+    <Content Include="Images\Rectangulo2.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_agricultura.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_contaminacion.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_educacion.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_elecciones.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_emisiones.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_ganaderia.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_glaciares.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_ingresosseguncasen.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_pesca.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_salud_enfermedades.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_salud_pandemias.png" />
+    <Content Include="Images\simbolossolos_botones\simbolo_coleccion_violenciacontralamujer.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -2819,6 +2857,7 @@
     <Content Include="Content\sidebar\scss\bootstrap\_utilities.scss" />
     <Content Include="Content\sidebar\scss\bootstrap\_variables.scss" />
     <Content Include="Content\sidebar\scss\style.scss" />
+    <Content Include="Images\iconosgrandes\.DS_Store" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - Web Deploy.pubxml" />
@@ -3077,7 +3116,7 @@
     <Content Include="Views\Data\Elecciones.cshtml" />
     <Content Include="Views\Data\Contaminacion.cshtml" />
     <Content Include="Views\Data\IngresosCasen.cshtml" />
-     <Content Include="Views\Data\IndexProductos.cshtml" />
+    <Content Include="Views\Data\IndexProductos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
