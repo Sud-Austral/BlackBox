@@ -3128,6 +3128,7 @@
     <Content Include="Views\Data_Usuario\Importaciones.cshtml" />
     <Content Include="Views\Data_Usuario\Exportaciones.cshtml" />
     <Content Include="Views\Data_Usuario\Rendimiento.cshtml" />
+    <Content Include="Views\Data\No_Resultado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
