@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
+    <link href="~/Content/Home.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163367570-1"></script>
+
     <script>
 
         window.dataLayer = window.dataLayer || [];
@@ -18,45 +20,45 @@
     </script>
     <style>
 
-        .nav-link{
+        .nav-link {
             color: #858277;
         }
-        .nav-link:hover{
-            color:white;
-        }
+
+            .nav-link:hover {
+                color: white;
+            }
     </style>
 </head>
 <body style="padding-top:0px !important;">
+    <!--seccion navbar menu principal-->
+    <nav class="navbar navbar-expand-lg navbar navbar-dark navbarClent">
+        <!--seccion logo navbar -->
+        <div class="container-fluid ">
+            <a class="navbar-brand content-logo" href="#">
+                <img class="img-fluid" src="~/Content/img/blanco-trans.png" />
+            </a>
 
-    <div class="conteiner-fluid mb-2" style="background-color:black;">
-        <div class="row">
-            <div class="col-5 pt-2 text-center align-content-center">
-                <img class="img-fluid" style="width:60%; height:85%" src="~/Images/DataImpacto/logoDataIntelligence_transparente_Blanco.png" />
-            </div>
-            <div class="col-7">
-                <ul class="nav justify-content-center" >
-                    <li class="nav-item" >
-                        <a class="nav-link active" href="https://www.dataintelligence-group.com">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                    <li class="nav-item float-md-right">
+                        <a class="nav-link active" aria-current="page" href="~/Data/Index" target="_blank" style="color:#fff;">ESTADÍSTICAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.dataintelligence-group.com/data-intelligence">Somos</a>
+                        <a class="nav-link" href="~/Data/Colecciones" target="_blank" style="color:#fff;">COLECCIONES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.dataintelligence-group.com/abarcamos">Abarcamos</a>
+                        <a class="nav-link" href="https://dataintelligence.store/blogs/noticias" target="_blank" style="color:#fff;">DATALAB</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="https://www.dataintelligence-group.com/ofrecemos">Ofrecemos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.dataintelligence-group.com/datalab">DataLab</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="~/Account/login">Acceso</a>
+                        <a class="nav-link" href="~/account/login" target="_blank" tabindex="-1" aria-disabled="true" style="color:#fff;">ACCESO</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
 
     <div class="container body-content">
         @RenderBody()
