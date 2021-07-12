@@ -103,5 +103,9 @@ namespace Login.Controllers
         {
             return PartialView();
         }
+        public ActionResult Suscripciones()
+        {
+            return View();
+        }
     }
 }
