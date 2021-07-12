@@ -352,6 +352,7 @@
     <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_precios.png" />
     <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_produccion.png" />
     <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_rendimiento.png" />
+    <Content Include="Content\img\logo_dataintelligence_con_slogan.png" />
     <Content Include="Content\LayoutLog.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\image_estadistica\10_boton_tecnologia_normal.png" />
@@ -3150,6 +3151,7 @@
     <Content Include="Views\Data_Usuario\Exportaciones.cshtml" />
     <Content Include="Views\Data_Usuario\Rendimiento.cshtml" />
     <Content Include="Views\Data_Usuario\Suscripciones.cshtml" />
+    <Content Include="Views\Data\Estadisticas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
