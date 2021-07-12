@@ -191,10 +191,7 @@ namespace Login.Controllers
         {
             return PartialView();
         }
-        public ActionResult Estadisticas()
-        {
-            return View();
-        }
+      
 
     }
 
