@@ -456,8 +456,9 @@ blockquote:after { /* final */
     color: #000000 !important;
 }
 
-.icolecciones {
-    color: #1671b8;
+.icolecciones{
+    height:25px !important;
+
 }
 
 .licolecciones {
