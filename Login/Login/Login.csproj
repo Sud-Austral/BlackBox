@@ -331,6 +331,28 @@
     <Content Include="Content\EstilosPopUp.css" />
     <Content Include="Content\Estilos\grafico.css" />
     <Content Include="Content\Estilos\info\HomeOdoo.css" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_agricultura.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_contaminacion.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_educacion.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_elecciones.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_emisiones.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_ganaderia.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_glaciares.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_ingresosseguncasen.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_pesca.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_salud_enfermedades.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_salud_pandemia.png" />
+    <Content Include="Content\img\Iconos recursos\icono_coleccion_violenciacontralamujer.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_cosecha.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_empleados.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_empresas.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_exportaciones.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_importaciones.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_plantaciones.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_precios.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_produccion.png" />
+    <Content Include="Content\img\Imagenes_temas_colecciones\recuadrosweb_Agricultura_rendimiento.png" />
+    <Content Include="Content\img\logo_dataintelligence_con_slogan.png" />
     <Content Include="Content\LayoutLog.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\image_estadistica\10_boton_tecnologia_normal.png" />
@@ -3129,6 +3151,7 @@
     <Content Include="Views\Data_Usuario\Exportaciones.cshtml" />
     <Content Include="Views\Data_Usuario\Rendimiento.cshtml" />
     <Content Include="Views\Data\No_Resultado.cshtml" />
+    <Content Include="Views\Data_Usuario\Suscripciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

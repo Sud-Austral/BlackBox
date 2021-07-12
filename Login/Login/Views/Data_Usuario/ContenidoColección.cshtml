@@ -16,7 +16,8 @@
             '#plantaciones',
             '#importaciones',
             '#exportaciones',
-            '#rendimiento'
+            '#rendimiento',
+            '#graficocontenido'
             
         ];
         //arreglo.forEach
@@ -164,6 +165,9 @@
                 </div>
                 <div id="rendimiento" style="display:none">
                     @{ Html.RenderAction("Rendimiento", "Data_Usuario");}
+                </div>
+                <div id="graficocontenido" style="display:none">
+                    @{ Html.RenderAction("Gráfico_Contenido_Colección", "Data_Usuario");}
                 </div>
                 @*<div id="elecciones" style="display:none">
                     @{ Html.RenderAction("Elecciones", "Data");}
