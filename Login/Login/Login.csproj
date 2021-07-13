@@ -472,8 +472,10 @@
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_produccion.png" />
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_rendimiento.png" />
     <Content Include="Images\kisspng-rectangle-black-m-horizontal-bar-5b24c4e2a3c323.0518109315291363546708.jpg" />
+    <Content Include="Images\logo_cuentaprofesional.png" />
     <Content Include="Images\logo_dataintelligence_blanco.png" />
     <Content Include="Images\logo_dataintelligence_con_slogan.png" />
+    <Content Include="Images\logo_gratis.png" />
     <Content Include="Images\menuLayout\10_on.png" />
     <Content Include="Content\img\iconos_sector\11.png" />
     <Content Include="Content\img\iconos_sector\12.png" />
