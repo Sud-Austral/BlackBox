@@ -3119,6 +3119,7 @@
     <Content Include="Views\Data\Contaminacion.cshtml" />
     <Content Include="Views\Data\IngresosCasen.cshtml" />
     <Content Include="Views\Data\IndexProductos.cshtml" />
+    <Content Include="Views\Info\testEmpleo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
