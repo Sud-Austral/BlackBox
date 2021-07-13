@@ -14,10 +14,9 @@
     <link rel="stylesheet" type="text/css" href="~/Content/EstilosImprimir.css" media="print" />
     <link href="~/Content/StylePagBusqueda.css" rel="stylesheet" />
     <title>Visualizador Graficos</title>-->
-
     @*descargar grafico*@
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-
+    <!---->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
 
     <script>
@@ -37,17 +36,40 @@
     </script>
 
     <div class="container" id="btnAtras">
-        @*boton para ir atras*@
-        @*<div class="row justify-content-center mb-3 borrar">
-            <div class="col-md-1 te">
-                <input type="button" class="btn btn-danger btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" ; onclick="mostrador('#PBuno')" name="volver atrás" value="Atrás">
-            </div>
-            <div class="col-md-9" style="background-color:#A0A6B6">
+        @*boton para ir atras y buscador*@
+        <div class="container">
+            <div class="row justify-content-md-between mt-3">
+                <div class="col-12 col-md-4 text-left ">
+                    <div class="row mt-2">
+                        <div class="col-12 col-md-7 text-center">
+                            <form action="~/AgenciaInformacion/PaginaBusqueda" method="get">
+                                <input type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="padding: 6px; border: 1px solid #1774B9; border-top-left-radius: 3px; border-bottom-left-radius: 3px; font-size: 0.8rem;">
+                                <button id="search-button" type="submit" value="Submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-12 col-md-4 mt-1 text-center">
+                            <a class="btn btn-primary btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" href="javascript:history.back()"> Volver Atrás</a>
+                        </div>
+                    </div>
 
+                </div>
+                <div class="col-12 col-md-8 text-center ">
+                    @*<h5 class="mt-3">@ViewBag.Elemento.titulo</h5>*@
+                </div>
             </div>
-        </div>*@
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-md-8 text-center ">
+                    <h5 class="mt-3">@ViewBag.Elemento.titulo</h5>
+                </div>
+            </div>
+            
+        </div>
         @*fin boton para ir atras*@
+        
         <div id="hide" class="container">
+
             <style>
                 .breadcrumb-item + .breadcrumb-item::before {
                     content: "∙";
@@ -73,7 +95,7 @@
 
         @*seccion iframe grafico*@
         <section class="contenedor-main row mr-md-2 justify-content-center">
-            <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; max-height:590px !important;">
+            <main class="col-md-10" style="border:1px solid #e6e6e6; border-radius:10px; border-top:none; max-height:610px !important;">
                 <div class="row bg-dark mb-2" style="border: 1px solid; border-top-left-radius: 10px; border-top-right-radius: 10px; max-height:83px;">
                     <div class="col-md-1 col-2">
                         <img class="img-fluid m-2" width="50" src="~/Content/img/Icono_dataIntelligence_Rojo.png" alt="Alternate Text" />
@@ -91,20 +113,20 @@
                 <div class="row quitarespacio2" style="color:blue; font-size:10px;">
                     @*boton para ver mas informacion*@
                     @*<div class="col-md-2 col-sm-2 borrar">
-                            <button type="button" class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
-                        </div>*@
+                        <button type="button" class="btn btn-primary pull-right" id="boton" style="margin-bottom:20px; font-size:12px;">Más información</button>
+                    </div>*@
                     @*boton para descargar iframe*@
                     @*<a onclick="javascript:Imprime('Imprimeme');" class="btn btn-primary">Imprime</a>
-                        <script>
-                            function Imprime(Imprimeme) {
-                                window.print()
-                            }
-                        </script>*@
-                    <div class="col-md-1 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1 borrar" style="border-right:1px solid #d9d9d9;">
+                    <script>
+                        function Imprime(Imprimeme) {
+                            window.print()
+                        }
+                    </script>*@
+                    <!--<div class="col-md-1 col-2 mt-md-2 mb-md-5 ml-md-1 mr-md-1 borrar" style="border-right:1px solid #d9d9d9;">-->
                         @*<script src="https://www.gstatic.com/charts/loader.js"></script>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>*@
 
-                        <a href="javascript:void(0);" style="text-decoration: none !important;" id="generarPDF">
+                        <!--<a href="javascript:void(0);" style="text-decoration: none !important;" id="generarPDF">
 
                             <span id="verPdf" style="font-size:12px;" onclick="descargarPDF();" data-toggle="tooltip" data-placement="top" title="Los mapas en Mozilla no descargan correctamente">
 
@@ -113,7 +135,7 @@
                         </a>
 
                         <div id="chart_div"></div>
-                    </div>
+                    </div>-->
                     <!--descargar pdf iframe-->
                     <script type="text/javascript">
                         $("#verPdf").click(function () {
@@ -137,8 +159,8 @@
                         });
                     </script>
                     @*Logo de DATA INTELLIGENCE PIE DEL IFRAME*@
-                    <div class="col-8 col-md-9">
-                        <div class="row d-flex " style="justify-content:flex-end;">
+                    <div class="col-8 col-md-12">
+                        <div class="row justify-content-center">
                             <div class="col-5 mb-1 p-1">
                                 <img class="img-fluid " src="~/Content/img/logosDataIntelligence_creadopor.png" alt="Logo transparente" />
                             </div>
@@ -211,20 +233,20 @@
                                 <!--<div class="col-md-5 col-10 text-center">-->
                                 @*  <a href="https://dataintelligence.store/collections">*@
                                 <!--<img class="img-fluid mb-4" src="~/Content/image_UsuarioIndex/icono_informeinteractivo_AZUL.png" />
-                                <button onclick="mostrador('#PBuno'); FiltrarII();" class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
-                                    Ver Informe Interactivo
-                                </button>-->
+                            <button onclick="mostrador('#PBuno'); FiltrarII();" class="btn btn-danger" data-backdrop="True" style="font-size: 12px; width: 165px; border-radius: 25px; margin-left: 5px;">
+                                Ver Informe Interactivo
+                            </button>-->
                                 @* </a>*@
                                 <!--</div>
-                                <div class="col-md-5 col-10 text-center">-->
+                            <div class="col-md-5 col-10 text-center">-->
                                 @*
-                                    <a href="https://dataintelligence.store/collections">*@
+                                <a href="https://dataintelligence.store/collections">*@
                                 <!--<img class="img-fluid mb-4 " src="~/Content/image_UsuarioIndex/icono_reporte360_VERDE.png" />
-                                <button onclick="mostrador('#PBuno'); FiltrarReporte360();" class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
-                                    Ver Reporte 360°
-                                </button>-->
+                            <button onclick="mostrador('#PBuno'); FiltrarReporte360();" class="btn btn-danger" data-backdrop="True" style="font-size:12px; width:165px; border-radius:25px;margin-left:5px;">
+                                Ver Reporte 360°
+                            </button>-->
                                 @*
-                                    </a>*@
+                                </a>*@
                                 <!--</div>-->
                                 @*estilos para cortar los tags en 3 filas y ocultar los demas con la clase line-clam *@
                                 <style>
@@ -259,31 +281,7 @@
             </div>
         </section>
     </div>
-    <div class="container-fluid" style="background-color: #C6CCDC; height:auto">
-        <div class="row justify-content-center" style="padding-top:3%; padding-bottom:1%;">
-            <div class="col-10 col-md-3" style="padding-left:6%;">
-                <!--Buscador -->
-                <!--<form action="~/Data/PaginaBusqueda" method="get">
-                    <input type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="padding: 6px; border: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
-                    <button id="search-button" type="submit" value="Submit" class="btn btn-danger">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>-->
-                
-            </div>
-            <div class="col-10 col-md-3 text-left">
-                <h4 style="color:black; font-size:1.2rem;"><b>¡Explora, busca y encuentra!</b></h4>
-                <p>todo nuestro universo de datos</p>
-            </div>
-            <div class="col-8 mb-3 col-md-2  offset-1">
-                <img class="img-fluid" src="~/Content/img/negro-rojo-trans - copia.png" alt="" />
-            </div>
-        </div>
-    </div>
-
-    <!--Script de ocultar texto-->
-    @*<script src="~/Scripts/OcultarBoton.js"></script>*@
-
+   
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     @*<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>*@
