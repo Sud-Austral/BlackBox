@@ -15,7 +15,7 @@ namespace Login.Controllers
         {
             return View();
         }
-        public PartialViewResult Data_UsuarioGrafico(decimal id = 1234)
+        public PartialViewResult VisualizarGraficos(decimal id = 1234)
         {
             ViewBag.time1 = DateTime.Now;
             var rand = new Random();
@@ -179,7 +179,7 @@ namespace Login.Controllers
             return View();
         }
 
-        public PartialViewResult VisualizarGraficos(decimal id = 1234)
+        public PartialViewResult Data_UsuarioGrafico(decimal id = 1234)
         {
             ViewBag.time1 = DateTime.Now;
             var rand = new Random();
