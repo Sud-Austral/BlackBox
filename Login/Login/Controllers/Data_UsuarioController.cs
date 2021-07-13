@@ -107,5 +107,46 @@ namespace Login.Controllers
         {
             return View();
         }
+        public ActionResult paginabusqueda(string id = "Título")
+        {
+            var union = db.AGENCIA_INFORMACION.Where(x => x.titulo.Contains(id) || x.tag.Contains(id));
+            ViewBag.Resultado = union;
+            ViewBag.num = union.Count();
+            List<string> Paises = new List<string>();
+            List<string> Escala = new List<string>();
+            List<string> TipoGrafico = new List<string>();
+            List<string> Temporalidad = new List<string>();
+            List<string> Producto = new List<string>();
+            foreach (var item in union)
+            {
+                if (!Paises.Contains(item.territorio))
+                {
+                    Paises.Add(item.territorio);
+                }
+                if (!Escala.Contains(item.escala))
+                {
+                    Escala.Add(item.escala);
+                }
+                if (!TipoGrafico.Contains(item.visualizacion))
+                {
+                    TipoGrafico.Add(item.visualizacion);
+                }
+                if (!Temporalidad.Contains(item.temporalidad))
+                {
+                    Temporalidad.Add(item.temporalidad);
+                }
+                if (!Producto.Contains(item.contenido))
+                {
+                    Producto.Add(item.contenido);
+                }
+            }
+            ViewBag.Paises = Paises;
+            ViewBag.Escala = Escala;
+            ViewBag.TipoGrafico = TipoGrafico;
+            ViewBag.Temporalidad = Temporalidad;
+            ViewBag.Producto = Producto;
+
+            return View();
+        }
     }
 }
