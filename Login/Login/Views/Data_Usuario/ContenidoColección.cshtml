@@ -36,55 +36,55 @@
                 <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate ">
                     <li class="nav-item licolecciones">
                         <a onclick="mostrador('#cosechas');" class="nav-link px-2 text-truncate liacolecciones ">
-                            <i class="bi bi-house fs-4 icolecciones"></i>
+                           
                             <span class="lispancolecciones">Cosecha</span>
                         </a>
                     </li>
                     <li class="licolecciones">
                         <a onclick="mostrador('#empresas');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-speedometer fs-4 icolecciones"></i>
+                            
                             <span class="lispancolecciones">Empresas</span>
                         </a>
                     </li>
                     <li class="licolecciones">
                         <a onclick="mostrador('#empleados');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-card-text fs-4 icolecciones"></i>
+                            
                             <span class=" lispancolecciones">Empleados</span>
                         </a>
                     </li>
                     <li class="licolecciones">
                         <a onclick="mostrador('#produccion');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-bricks fs-4 icolecciones"></i>
+                            
                             <span class="lispancolecciones">Producción</span>
                         </a>
                     </li>
                     <li class="licolecciones">
                         <a onclick="mostrador('#precios');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-people fs-4 icolecciones"></i>
+                            
                             <span class="lispancolecciones">Precios</span>
                         </a>
                     </li>
                     <li class="licolecciones">
                         <a onclick="mostrador('#plantaciones');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-bricks fs-4 icolecciones"></i>
+                            
                             <span class="lispancolecciones">plantaciones</span>
                         </a>
                     </li>
                     <li class="licolecciones">
                         <a onclick="mostrador('#importaciones');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-people fs-4 icolecciones"></i>
+                            
                             <span class="lispancolecciones">Importaciones</span>
                         </a>
                     </li>
                     <li class="licolecciones">
                         <a onclick="mostrador('#exportaciones');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-bricks fs-4 icolecciones"></i>
+                           
                             <span class="lispancolecciones">Exportación</span>
                         </a>
                     </li>
                     <li class="licolecciones">
                         <a onclick="mostrador('#rendimiento');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-people fs-4 icolecciones"></i>
+                           
                             <span class="lispancolecciones">Rendimiento</span>
                         </a>
                     </li>
@@ -166,9 +166,9 @@
                 <div id="rendimiento" style="display:none">
                     @{ Html.RenderAction("Rendimiento", "Data_Usuario");}
                 </div>
-                <div id="graficocontenido" style="display:none">
+                @*<div id="graficocontenido" style="display:none">
                     @{ Html.RenderAction("Gráfico_Contenido_Colección", "Data_Usuario");}
-                </div>
+                </div>*@
                 @*<div id="elecciones" style="display:none">
                     @{ Html.RenderAction("Elecciones", "Data");}
                 </div>
@@ -187,9 +187,9 @@
             <div class="row justify-content-center" style="padding-top:3%; padding-bottom:1%;">
                 <div class="col-10 col-md-3" style="padding-left:6%;">
                     <!--Buscador -->
-                    <form action="~/Data/PaginaBusqueda" method="get">
+                    <form action="~/Data_Usuario/PaginaBusqueda" method="get">
                         <input type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="padding: 6px; border: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
-                        <button id="search-button" type="submit" value="Submit" class="btn btn-danger">
+                        <button id="search-button" type="submit" value="Submit" class="btn btn-primary">
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
