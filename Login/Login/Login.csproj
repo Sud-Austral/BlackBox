@@ -3152,6 +3152,8 @@
     <Content Include="Views\Data_Usuario\Rendimiento.cshtml" />
     <Content Include="Views\Data\No_Resultado.cshtml" />
     <Content Include="Views\Data_Usuario\Suscripciones.cshtml" />
+    <Content Include="Views\Data_Usuario\PaginaBusqueda.cshtml" />
+    <Content Include="Views\Data_Usuario\VisualizarGraficos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
