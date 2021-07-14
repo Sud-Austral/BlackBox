@@ -500,6 +500,8 @@
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_rendimiento.png" />
     <Content Include="Images\imagenWeb_DI_ventacorporativa.jpg" />
     <Content Include="Images\imagenWeb_DI_ventacorporativa_4imagenes.jpg" />
+    <Content Include="Images\ImagenWeb_DI_empleo.jpg" />
+    <Content Include="Images\Imagen_inversiones.jpg" />
     <Content Include="Images\kisspng-rectangle-black-m-horizontal-bar-5b24c4e2a3c323.0518109315291363546708.jpg" />
     <Content Include="Images\logo_cuentaprofesional.png" />
     <Content Include="Images\logo_dataintelligence_blanco.png" />
@@ -3162,6 +3164,9 @@
     <Content Include="Views\Data\TerminosyCondiciones.cshtml" />
     <Content Include="Views\Data\Soporte.cshtml" />
     <Content Include="Views\Data\VentasCorporativas.cshtml" />
+    <Content Include="Views\Data\Empleo.cshtml" />
+    <Content Include="Views\Data\Inversion.cshtml" />
+    <Content Include="Views\Data\FAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
