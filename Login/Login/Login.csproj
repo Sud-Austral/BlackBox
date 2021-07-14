@@ -3156,7 +3156,6 @@
     <Content Include="Views\Data_Usuario\PaginaBusqueda.cshtml" />
     <Content Include="Views\Data_Usuario\VisualizarGraficos.cshtml" />
     <Content Include="Views\Data_Usuario\VisualizarGraficoColecion_Usuario.cshtml" />
-    <Content Include="Views\Info\testEmpleo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
