@@ -471,6 +471,8 @@
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_precios.png" />
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_produccion.png" />
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_rendimiento.png" />
+    <Content Include="Images\ImagenWeb_DI_empleo.jpg" />
+    <Content Include="Images\Imagen_inversiones.jpg" />
     <Content Include="Images\kisspng-rectangle-black-m-horizontal-bar-5b24c4e2a3c323.0518109315291363546708.jpg" />
     <Content Include="Images\logo_cuentaprofesional.png" />
     <Content Include="Images\logo_dataintelligence_blanco.png" />
@@ -3119,7 +3121,9 @@
     <Content Include="Views\Data\Contaminacion.cshtml" />
     <Content Include="Views\Data\IngresosCasen.cshtml" />
     <Content Include="Views\Data\IndexProductos.cshtml" />
-    <Content Include="Views\Info\testEmpleo.cshtml" />
+    <Content Include="Views\Data\Empleo.cshtml" />
+    <Content Include="Views\Data\Inversion.cshtml" />
+    <Content Include="Views\Data\FAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
