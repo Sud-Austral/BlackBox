@@ -204,6 +204,19 @@ namespace Login.Controllers
         {
             return View();
         }
+
+        public ActionResult Empleo()
+        {
+            return View();
+        }
+        public ActionResult Inversion()
+        {
+            return View();
+        }
+        public ActionResult FAQ()
+        {
+            return View();
+        }
     }
 
 
