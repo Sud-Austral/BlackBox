@@ -191,8 +191,19 @@ namespace Login.Controllers
         {
             return PartialView();
         }
-      
 
+        public ActionResult TerminosyCondiciones()
+        {
+            return View();
+        }
+        public ActionResult Soporte()
+        {
+            return View();
+        }
+        public ActionResult VentasCorporativas()
+        {
+            return View();
+        }
     }
 
 

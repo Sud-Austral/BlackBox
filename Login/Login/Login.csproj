@@ -476,6 +476,7 @@
     <Content Include="Images\ayuda\icono_telefono.png" />
     <Content Include="Images\ayuda\icono_whatsApp.png" />
     <Content Include="Images\bloque.png" />
+    <Content Include="Images\contacto.jpg" />
     <Content Include="Images\iconosgrandes\icono_coleccion_agricultura.png" />
     <Content Include="Images\iconosgrandes\icono_coleccion_contaminacion.png" />
     <Content Include="Images\iconosgrandes\icono_coleccion_educacion.png" />
@@ -497,6 +498,8 @@
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_precios.png" />
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_produccion.png" />
     <Content Include="Images\imagenes_tematicas_coleccionagricultura\recuadrosweb_Agricultura_rendimiento.png" />
+    <Content Include="Images\imagenWeb_DI_ventacorporativa.jpg" />
+    <Content Include="Images\imagenWeb_DI_ventacorporativa_4imagenes.jpg" />
     <Content Include="Images\kisspng-rectangle-black-m-horizontal-bar-5b24c4e2a3c323.0518109315291363546708.jpg" />
     <Content Include="Images\logo_cuentaprofesional.png" />
     <Content Include="Images\logo_dataintelligence_blanco.png" />
@@ -3155,7 +3158,10 @@
     <Content Include="Views\Data_Usuario\Suscripciones.cshtml" />
     <Content Include="Views\Data_Usuario\PaginaBusqueda.cshtml" />
     <Content Include="Views\Data_Usuario\VisualizarGraficos.cshtml" />
-    <Content Include="Views\Data_Usuario\VisualizarGraficoColecion_Usuario.cshtml" />
+<Content Include="Views\Data_Usuario\VisualizarGraficoColecion_Usuario.cshtml" />
+    <Content Include="Views\Data\TerminosyCondiciones.cshtml" />
+    <Content Include="Views\Data\Soporte.cshtml" />
+    <Content Include="Views\Data\VentasCorporativas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
