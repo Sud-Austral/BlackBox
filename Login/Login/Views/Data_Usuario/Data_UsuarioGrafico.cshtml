@@ -101,33 +101,25 @@
                 *, *:before, *:after{
                   box-sizing: border-box;
                   padding: 0; margin: 0;
-                  font: 300 1em/1.5 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+                  /*font: 300 1em/1.5 'Open Sans', 'Helvetica Neue', Arial, sans-serif;*/
                   text-decoration: none;
-                  color: #111;
+                 
                 }
-
-                html, body{background: rgb(236, 240, 241);}
-
-                  section.container{
-                    min-width: 500px;
-                    margin: 10% auto;
-                    text-align: center;
-                  }
                     a:hover{border-bottom: 1px solid #111;}
                     h1{font-size: 2em; padding: 20px 0;}
-                    p{
+                    /*p{
                       font-size: .75em;
                       text-transform: uppercase;
                       letter-spacing: 2px;
                       padding: 20px 0;
-                    }
+                    }*/
 
                     button:hover{cursor: pointer}
                     button {
                       background: transparent; outline: none;
                       position: relative;
                       border: 2px solid #111;
-                      padding: 15px 50px;
+                      padding: 10px 25px;
                       overflow: hidden;
                     }
 
@@ -159,9 +151,26 @@
                         transition: all .3s ease-in-out;
                       }
             </style>
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-sm-12">
-                    <button data-hover="@ViewBag.ELEMENTO.FUENTE.nombre"><div>Colección:</div></button>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-2 col-sm-12">
+                    <button class="btn-primary" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección:</div></button>
+
+                </div>
+                <div class="col-md-2 col-sm-12">
+        this.SECTOR = new HashSet<SECTOR>();
+                    <button class="btn-primary" data-hover="@ViewBag.ELEMENTO.SECTOR.INDUSTRIA.nombre"><div>Sectores:</div></button>
+
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <button class="btn-primary" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección:</div></button>
+
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <button class="btn-primary" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección:</div></button>
+
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <button class="btn-primary" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección:</div></button>
 
                 </div>
             </div>
