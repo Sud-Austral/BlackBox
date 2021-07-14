@@ -37,9 +37,15 @@
             @*<h2 class="my-5 text-center">Carousel #4</h2>*@
 
             <div class="owl-carousel slide-one-item">
-                @foreach (var item in ViewBag.Graficos.Graficos.Take(2))
+                @{ var contador = 0; }
+                @foreach (var item in ViewBag.Graficos.Graficos)
                 {
-                    
+                    contador++;
+                    if (contador == 2)
+                    {
+                        break;
+                    }
+
                     <div class="d-md-flex testimony-29101 ">
                         @*<div class="image" style="background-image: url('../../Content/carrusel14/images/person_1.jpg');"></div>*@
                         <iframe class="embed-responsive-item " style="width: 100%; height: 300px" src="@item.url" allowfullscreen></iframe>
@@ -57,7 +63,7 @@
                             </p>
                         </div>
                     </div>
-                    
+
                 }
             </div>
         </div>

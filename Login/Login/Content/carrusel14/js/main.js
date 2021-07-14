@@ -9,7 +9,7 @@ $(function () {
         stagePadding: 0,
         margin: 0,
         smartSpeed: 2000,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 30000,
         /* autoplaySpeed: 5000,*/
         pauseOnHover: true,
