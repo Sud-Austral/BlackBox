@@ -86,16 +86,16 @@
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-2">
-                    <a href="/info/ResultadoNiveles?id=22&id2=1"> <img class="img-fluid" src="~/Content/img/Iconos recursos/icono_coleccion_glaciares.png" /></a>
+                    <a href="~/Data_Usuario/PaginaBusqueda?id"><img class="img-fluid" src="~/Content/img/Iconos recursos/icono_coleccion_glaciares.png"/></a>
                 </div>
                 <div class="col-md-2">
-                    <img class="img-fluid" src="~/Content/img/Iconos recursos/icono_coleccion_ganaderia.png" />
+                    <a href="~/Data_Usuario/PaginaBusqueda?id"> <img class="img-fluid" src="~/Content/img/Iconos recursos/icono_coleccion_ganaderia.png"/></a>
                 </div>
                 <div class="col-md-2">
                     <img class="img-fluid" src="~/Content/img/Iconos recursos/icono_coleccion_salud_enfermedades.png" />
                 </div>
                 <div class="col-md-2">
-                    <img class="img-fluid" src="~/Content/img/Iconos recursos/icono_coleccion_violenciacontralamujer.png" />
+                    <a href="~/Data_Usuario/PaginaBusqueda?id=violencia"> <img class="img-fluid" src="~/Content/img/Iconos recursos/icono_coleccion_violenciacontralamujer.png" /></a>
                 </div>
                 <div class="col-md-2">
                     <img class="img-fluid" src="~/Content/img/Iconos recursos/icono_coleccion_pesca.png" />
@@ -139,7 +139,7 @@
                     </div>
 
                     <div class="carousel-item">
-                        <a href="/info/ResultadoNiveles?id=22&id2=1"><img class=" img-fluid" style="width:70%;" src="~/Content/img/Iconos recursos/icono_coleccion_contaminacion.png"></a>
+                        <a href="/Data_Usuario/PaginaBusqueda?id=22&id2=1"><img class=" img-fluid" style="width:70%;" src="~/Content/img/Iconos recursos/icono_coleccion_contaminacion.png"></a>
                     </div>
                     <div class="carousel-item">
                         <img class=" img-fluid" style="width:70%;" src="~/Content/img/Iconos recursos/icono_coleccion_educacion.png">
@@ -195,9 +195,9 @@
     <div class="row justify-content-center" style="padding-top:3%; padding-bottom:1%;">
         <div class="col-12 col-sm-12 col-md-3 text-center">
             <!--Buscador -->
-            <form action="~/Data/PaginaBusqueda" method="get">
+            <form action="~/Data_Usuario/PaginaBusqueda" method="get">
                 <input type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="padding: 6px; border: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
-                <button id="search-button" type="submit" value="Submit" class="btn btn-danger">
+                <button id="search-button" type="submit" value="Submit" class="btn btn-primary">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
