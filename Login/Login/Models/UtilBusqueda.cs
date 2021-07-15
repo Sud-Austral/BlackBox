@@ -8,6 +8,7 @@ namespace Login.Models
     public class UtilBusqueda
     {
         private static graficosEntities dbGrafico = new graficosEntities();
+        private static graficosEntities1 db = new graficosEntities1();
         private static Random rand = new Random();
 
 
@@ -35,6 +36,35 @@ namespace Login.Models
             {
                 concepto = concepto.Substring(0, concepto.Length - 3);
                 union = dbGrafico.DATA_GRAFICO.Where(x => x.nombre.Contains(concepto) || x.titulo.Contains(concepto) || x.tags.Contains(concepto))
+                                                 .Take(200);
+            }
+            return union;
+        }
+
+        public static IEnumerable<TABLA_GENERICA_PRUEBA> PaginaBusquedaData(string concepto)
+        {
+            concepto = concepto.Trim().ToLower();
+            //string accentedStr;
+            byte[] tempBytes;
+            tempBytes = System.Text.Encoding.GetEncoding("ISO-8859-8").GetBytes(concepto);
+            concepto = System.Text.Encoding.UTF8.GetString(tempBytes);
+            string query = "SELECT * FROM TABLA_GENERICA_PRUEBA WHERE titulo LIKE '% " + concepto + " %'";
+            var prioridad = db.TABLA_GENERICA_PRUEBA.SqlQuery(query)
+                                                  .Take(200);
+            IEnumerable<TABLA_GENERICA_PRUEBA> NEW_GRAFICOS;
+            IEnumerable<TABLA_GENERICA_PRUEBA> union = prioridad;
+            if (prioridad.Count() < 200)
+            {
+                NEW_GRAFICOS = db.TABLA_GENERICA_PRUEBA.Where(x => x.tag.Contains(concepto) || x.titulo.Contains(concepto))
+                                                 .OrderBy(x => x.id)
+                                                 .Take(200 - prioridad.Count());
+                int ent = NEW_GRAFICOS.Count();
+                union = prioridad.Concat(NEW_GRAFICOS); //.Distinct();
+            }
+            if (union.Count() == 0)
+            {
+                concepto = concepto.Substring(0, concepto.Length - 3);
+                union = db.TABLA_GENERICA_PRUEBA.Where(x => x.tag.Contains(concepto) || x.titulo.Contains(concepto))
                                                  .Take(200);
             }
             return union;
