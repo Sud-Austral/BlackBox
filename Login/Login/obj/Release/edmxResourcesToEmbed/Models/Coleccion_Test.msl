@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="graficosModel1StoreContainer" CdmEntityContainer="graficosEntities1">
+    <EntitySetMapping Name="TABLA_GENERICA_PRUEBA">
+      <EntityTypeMapping TypeName="graficosModel1.TABLA_GENERICA_PRUEBA">
+        <MappingFragment StoreEntitySet="TABLA_GENERICA_PRUEBA">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="coleccion" ColumnName="coleccion" />
+          <ScalarProperty Name="idcoleccion" ColumnName="idcoleccion" />
+          <ScalarProperty Name="sector" ColumnName="sector" />
+          <ScalarProperty Name="filtro_url" ColumnName="filtro_url" />
+          <ScalarProperty Name="tema" ColumnName="tema" />
+          <ScalarProperty Name="contenido" ColumnName="contenido" />
+          <ScalarProperty Name="escala" ColumnName="escala" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="territorio" ColumnName="territorio" />
+          <ScalarProperty Name="filtro_integrado" ColumnName="filtro_integrado" />
+          <ScalarProperty Name="muestra_temporalidad" ColumnName="muestra_temporalidad" />
+          <ScalarProperty Name="temporalidad" ColumnName="temporalidad" />
+          <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
+          <ScalarProperty Name="fuente" ColumnName="fuente" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion_larga" ColumnName="descripcion_larga" />
+          <ScalarProperty Name="visualizacion" ColumnName="visualizacion" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="suscripcion" ColumnName="suscripcion" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="id_grafico" ColumnName="id_grafico" />
+          <ScalarProperty Name="id_territorio" ColumnName="id_territorio" />
+          <ScalarProperty Name="id_tema" ColumnName="id_tema" />
+          <ScalarProperty Name="id_contenido" ColumnName="id_contenido" />
+          <ScalarProperty Name="id_filtro" ColumnName="id_filtro" />
+          <ScalarProperty Name="id_muestra" ColumnName="id_muestra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

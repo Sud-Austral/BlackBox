@@ -200,6 +200,7 @@
     <Compile Include="Controllers\PaginaController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ReadAPIController.cs" />
+    <Compile Include="Controllers\TABLA_GENERICA_PRUEBAController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -208,6 +209,21 @@
     <Compile Include="Models\APIShopify.cs" />
     <Compile Include="Models\CATEGORIA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coleccion_Test.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coleccion_Test.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coleccion_Test.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coleccion_Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coleccion_Test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coleccion_Test.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Correo.cs" />
     <Compile Include="Models\Correos.cs" />
@@ -264,6 +280,9 @@
     </Compile>
     <Compile Include="Models\ShopifyYSuscripciones.cs" />
     <Compile Include="Models\Suscripcion.cs" />
+    <Compile Include="Models\TABLA_GENERICA_PRUEBA.cs">
+      <DependentUpon>Coleccion_Test.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TEMPORALIDAD.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -716,6 +735,16 @@
     <Content Include="Images\simbolossolos_botones\simbolo_coleccion_salud_enfermedades.png" />
     <Content Include="Images\simbolossolos_botones\simbolo_coleccion_salud_pandemias.png" />
     <Content Include="Images\simbolossolos_botones\simbolo_coleccion_violenciacontralamujer.png" />
+    <Content Include="Models\Coleccion_Test.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Coleccion_Test.edmx</DependentUpon>
+      <LastGenOutput>Coleccion_Test.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Coleccion_Test.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Coleccion_Test.edmx</DependentUpon>
+      <LastGenOutput>Coleccion_Test.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -2889,6 +2918,13 @@
     <Content Include="Content\sidebar\scss\bootstrap\_variables.scss" />
     <Content Include="Content\sidebar\scss\style.scss" />
     <Content Include="Images\iconosgrandes\.DS_Store" />
+    <EntityDeploy Include="Models\Coleccion_Test.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Coleccion_Test.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Coleccion_Test.edmx.diagram">
+      <DependentUpon>Coleccion_Test.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\ServicioDashboard - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ServicioDashboard - Web Deploy.pubxml" />
@@ -3160,13 +3196,18 @@
     <Content Include="Views\Data_Usuario\Suscripciones.cshtml" />
     <Content Include="Views\Data_Usuario\PaginaBusqueda.cshtml" />
     <Content Include="Views\Data_Usuario\VisualizarGraficos.cshtml" />
-<Content Include="Views\Data_Usuario\VisualizarGraficoColecion_Usuario.cshtml" />
+    <Content Include="Views\Data_Usuario\VisualizarGraficoColecion_Usuario.cshtml" />
     <Content Include="Views\Data\TerminosyCondiciones.cshtml" />
     <Content Include="Views\Data\Soporte.cshtml" />
     <Content Include="Views\Data\VentasCorporativas.cshtml" />
     <Content Include="Views\Data\Empleo.cshtml" />
     <Content Include="Views\Data\Inversion.cshtml" />
     <Content Include="Views\Data\FAQ.cshtml" />
+    <Content Include="Views\TABLA_GENERICA_PRUEBA\Create.cshtml" />
+    <Content Include="Views\TABLA_GENERICA_PRUEBA\Delete.cshtml" />
+    <Content Include="Views\TABLA_GENERICA_PRUEBA\Details.cshtml" />
+    <Content Include="Views\TABLA_GENERICA_PRUEBA\Edit.cshtml" />
+    <Content Include="Views\TABLA_GENERICA_PRUEBA\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
