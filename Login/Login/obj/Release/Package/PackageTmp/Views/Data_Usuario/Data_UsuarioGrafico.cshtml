@@ -52,9 +52,9 @@
                         <div class="col-12 col-md-12 ">
                             <form action="~/Data_Usuario/PaginaBusqueda" method="get">
                                 <input type="text" id="id" name="id" placeholder="Busqueda de palabras claves" style="padding: 6px; border: 1px solid #1774B9; border-top-left-radius: 3px; border-bottom-left-radius: 3px; font-size: 0.8rem;">
-                                <button id="search-button" type="submit" value="Submit" class="btn btn-primary">
+                                <a id="search-button" type="submit" value="Submit" class="btn btn-primary">
                                     <i class="fas fa-search"></i>
-                                </button>
+                                </a>
                             </form>
                         </div>
 
@@ -96,138 +96,161 @@
         </section>
         <section class="container">
             <style>
-                @@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+                                @@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
 
-                *, *:before, *:after {
-                    box-sizing: border-box;
-                    padding: 0;
-                    margin: 0;
-                    /*font: 300 1em/1.5 'Open Sans', 'Helvetica Neue', Arial, sans-serif;*/
-                    text-decoration: none;
-                    /* color: #111;*/
-                }
+                                *, *:before, *:after {
+                                    box-sizing: border-box;
+                                    padding: 0;
+                                    margin: 0;
+                                    /*font: 300 1em/1.5 'Open Sans', 'Helvetica Neue', Arial, sans-serif;*/
+                                    text-decoration: none;
+                                    /* color: #111;*/
+                                }
 
-                /* html, body{background: rgb(236, 240, 241);}
+                                /* html, body{background: rgb(236, 240, 241);}
 
-                  section.container{
-                    min-width: 500px;
-                    margin: 10% auto;
-                    text-align: center;
-                  }*/
-                a:hover {
-                    border-bottom: 1px solid #111;
-                }
+                                  section.container{
+                                    min-width: 500px;
+                                    margin: 10% auto;
+                                    text-align: center;
+                                  }*/
+                                a:hover {
+                                    border-bottom: 1px solid #111;
+                                }
 
-               /* h1 {
-                    font-size: 2em;
-                    padding: 20px 0;
-                }
-*/
-               /* p {
-                    font-size: .75em;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    padding: 20px 0;
-                }*/
+                                /* h1 {
+                                    font-size: 2em;
+                                    padding: 20px 0;
+                                }
+                */
+                                /* p {
+                                    font-size: .75em;
+                                    text-transform: uppercase;
+                                    letter-spacing: 2px;
+                                    padding: 20px 0;
+                                }*/
 
-                button:hover {
-                    cursor: pointer
-                }
+                                button:hover {
+                                    cursor: pointer
+                                }
 
-                button {
-                    background: transparent;
-                    outline: none;
-                    position: relative;
-                    border: 2px solid #111;
-                    padding: 15px 50px;
-                    overflow: hidden;
-                    border-radius:5px;
-                }
+                                button {
+                                    background: transparent;
+                                    outline: none;
+                                    position: relative;
+                                    /* border: 2px solid #111;*/
+                                    padding: 10px 20px;
+                                    overflow: hidden;
+                                    border-radius: 5px;
+                                    width: 100%;
+                                }
 
-                    /*button:before (attr data-hover)*/
-                    button:hover:before {
-                        opacity: 1;
-                        -webkit-transform: translate(0,0);
-                        transform: translate(0,0);
-                    }
+                                    /*button:before (attr data-hover)*/
+                                    button:hover:before {
+                                        opacity: 1;
+                                        -webkit-transform: translate(0,0);
+                                        transform: translate(0,0);
+                                    }
 
-                    button:before {
-                        content: attr(data-hover);
-                        position: absolute;
-                        top: 1.1em;
-                        left: 0;
-                        width: 100%;
-                        text-transform: uppercase;
-                        letter-spacing: 3px;
-                        font-weight: 800;
-                        font-size: .8em;
-                        opacity: 0;
-                        -webkit-transform: translate(-100%,0);
-                        transform: translate(-100%,0);
-                        -webkit-transition: all .3s ease-in-out;
-                        transition: all .3s ease-in-out;
-                    }
-                    /*button div (button text before hover)*/
-                    button:hover div {
-                        opacity: 0;
-                        -webkit-transform: translate(100%,0);
-                        transform: translate(100%,0)
-                    }
+                                    button:before {
+                                        content: attr(data-hover);
+                                        position: absolute;
+                                        /*top: 1.1em;*/
+                                        left: 0;
+                                        width: 100%;
+                                        text-transform: uppercase;
+                                        /*letter-spacing: 3px;*/
+                                        font-weight: 800;
+                                        font-size: .6em;
+                                        opacity: 0;
+                                        -webkit-transform: translate(-100%,0);
+                                        transform: translate(-100%,0);
+                                        -webkit-transition: all .3s ease-in-out;
+                                        transition: all .3s ease-in-out;
+                                    }
+                                    /*button div (button text before hover)*/
+                                    button:hover div {
+                                        opacity: 0;
+                                        -webkit-transform: translate(100%,0);
+                                        transform: translate(100%,0)
+                                    }
 
-                    button div {
-                        text-transform: uppercase;
-                        letter-spacing: 3px;
-                        font-weight: 800;
-                        font-size: .8em;
-                        -webkit-transition: all .3s ease-in-out;
-                        transition: all .3s ease-in-out;
-                    }
+                                    button div {
+                                        text-transform: uppercase;
+                                        /*letter-spacing: 3px;*/
+                                        font-weight: 800;
+                                        font-size: .6em;
+                                        -webkit-transition: all .3s ease-in-out;
+                                        transition: all .3s ease-in-out;
+                                    }
             </style>
-            <div class="row mt-3 justify-content-around">
-                <div class="col-md-2 col-12">
-                    <button class="btn-primary" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección</div></button>
+
+            <div class="row mt-3 justify-content-around d-none d-md-flex ">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-2 col-6 text-center">
+                            <button class="btn-dark" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-6 text-center">
+                            <button class="btn-danger" data-hover="@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre"><div>Sectores</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-6 text-center">
+                            <button class="btn-light" data-hover="Chile-
+                                @ViewBag.ELEMENTO.TERRITORIO.iso_pais"><div>País</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-6 text-center">
+                            <button class="btn-info" data-hover=" @ViewBag.ELEMENTO.TERRITORIO.auxiliar"><div>Escala</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-6 text-center">
+                            <button class="btn-secondary" data-hover="@ViewBag.ELEMENTO.TERRITORIO.nombre"><div>Territorio</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-6 text-center">
+                            <button class="btn-success" data-hover="@ViewBag.ELEMENTO.TEMPORALIDAD.nombre"><div>Temporalidad</div></button>
+
+                        </div>
+
+                    </div>
 
                 </div>
-                <div class="col-md-2 col-12">
-                    <button class="btn-danger" data-hover="@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre"><div>Sectores</div></button>
 
-                </div>
-
-                @*<div class="col-md-2 col-12">
-                    <button class="btn-secondary" data-hover="@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre"><div>Contenidos</div></button>
-
-                </div>*@
-                <div class="col-md-2 col-12">
-                    <button class="btn-success" data-hover="@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre"><div>Temas</div></button>
-
-                </div>
-                <div class="col-md-2 col-12">
-                    <button class="btn-warning" data-hover="@ViewBag.ELEMENTO.TERRITORIO.iso_pais"><div>País</div></button>
-
-                </div>
             </div>
-            <div class="row mt-3 justify-content-around ">
-                <div class="col-md-2 col-12 text-center">
-                    <button class="btn-info" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Escala</div></button>
+            @*<div class="row mt-3 justify-content-around ">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-2 col-12 text-center">
+                            <button class="btn-info" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Escala</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-12 text-center">
+                            <button class="btn-dark" data-hover="@ViewBag.ELEMENTO.TERRITORIO.nombre"><div>Territorio</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-12 text-center">
+                            <button class="btn-primary" data-hover=" @ViewBag.ELEMENTO.TEMPORALIDAD.nombre"><div>Temporalidad</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-sm-12 text-center">
+                            <button class="btn-success" data-hover="@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.descripcion"><div>Unidad_de_Medida</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-12 text-center">
+                            <button class="btn-secondary" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección</div></button>
+
+                        </div>
+                        <div class="col-md-2 col-12 text-center">
+                            <button class="btn-warning" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección</div></button>
+
+                        </div>
+                    </div>
 
                 </div>
-                <div class="col-md-2 col-12 text-center">
-                    <button class="btn-dark" data-hover="@ViewBag.ELEMENTO.TERRITORIO.nombre"><div>Territorio</div></button>
 
-                </div>
-                <div class="col-md-2 col-12 text-center">
-                    <button class="btn-primary" data-hover=" @ViewBag.ELEMENTO.TEMPORALIDAD.nombre"><div>Temporalidad</div></button>
-
-                </div>
-                @*<div class="col-md-2 col-sm-12 text-center">
-                    <button class="btn-primary" data-hover="@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.descripcion"><div>Unidad_deMedida</div></button>
-
-                </div>*@
-                <div class="col-md-2 col-12 text-center">
-                    <button class="btn-primary" data-hover="@ViewBag.ELEMENTO.CATEGORIA.nombre"><div>Colección</div></button>
-
-                </div>
-            </div>
+            </div>*@
         </section>
         @*Seccion oculta de las informacion*@
         @*estilos para acortar texto de la descripcion larga a 10 reglones*@
@@ -266,23 +289,32 @@
                             <p class="mt-md-3 mb-md-0"><strong>Fuente de Datos:</strong></p>
                             <p class="mb-md-1">@ViewBag.ELEMENTO.FUENTE.nombre</p>
 
-                            <p class="mb-md-1">
+                            <p class="mb-md-1 d-block d-md-none">
                                 <strong>Periodo: </strong>
 
                                 @ViewBag.ELEMENTO.TEMPORALIDAD.nombre
                             </p>
-                            <p class="mb-md-1">
+                            <p class="mb-md-1 d-block d-md-none">
                                 <strong>@ViewBag.ELEMENTO.TERRITORIO.auxiliar:</strong>
 
                                 @ViewBag.ELEMENTO.TERRITORIO.nombre
 
                             </p>
-                            <p class="mb-md-1">
+                            <p class="mb-md-1 d-block d-md-none">
                                 <strong>País:</strong> Chile-
                                 @ViewBag.ELEMENTO.TERRITORIO.iso_pais
                             </p>
+                            <p class="mb-md-1 d-block d-md-none">
+                                <strong>Colección: </strong>
 
+                                @ViewBag.ELEMENTO.CATEGORIA.nombre
+                            </p>
+                            <p class="mb-md-1 d-block d-md-none">
+                                <strong>Sectores: </strong>
 
+                                @ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre
+                            </p>
+                            
                             <p class="mb-md-1"><Strong>Unidad de Medida:</Strong></p>
                             <p style="white-space: normal;">@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.nombre (@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.descripcion)</p>
                         </div>
