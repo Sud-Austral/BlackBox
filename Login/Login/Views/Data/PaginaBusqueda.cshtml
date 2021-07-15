@@ -334,88 +334,10 @@
                     });
                 });
             </script>
-
-            <h4 class="mt-3 dropdown-header">COLECCIÓN</h4>
-            <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
-
-                @foreach (var item1 in ViewBag.Sector)
-                {
-                    <div>
-                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</label>
-                    </div>
-                }
-            </div>
-            <h4 class="dropdown-header">SECTOR</h4>
-            <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
-                @foreach (var item2 in ViewBag.Industria)
-                {
-                    <div>
-                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
-                    </div>}
-            </div>
-            <h4 class="dropdown-header">TEMA</h4>
-            <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
-                @foreach (var item3 in ViewBag.Producto)
-                {
-                    <div>
-                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
-                    </div>}
-            </div>
-            <h4 class="mt-3 dropdown-header">TIPO DE PRODUCTO</h4>
-            <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
-                @foreach (var item4 in ViewBag.TipoGrafico)
-                {
-                    switch (item4)
-                    {
-                        case "Informe Interactivo":
-                            <div>
-                                <label><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-                            </div> break;
-                        case "Reporte 360°":
-                            <div>
-                                <label><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-                            </div> break;
-                        default:
-                            <div>
-                                <label><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
-                            </div>break;
-                    }/**/
-                    /**/
-                    /**/
-
-                }
-            </div>
-            <h4 class="dropdown-header">ESCALA</h4>
-            <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
-                @foreach (var item5 in ViewBag.Paises)
-                {
-                    <div>
-                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
-                    </div>
-                }
-            </div>
-            <h4 class="dropdown-header">TERRITORIO</h4>
-            <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
-                @foreach (var item6 in ViewBag.Escala)
-                {
-                    <div class="territorio">
-                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</label>
-                    </div>}
-            </div>
-
-            <h4 class="dropdown-header">PARÁMETRO</h4>
-            <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
-                @foreach (var item7 in ViewBag.Parametro)
-                {
-                    <div>
-                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item7"> @item7</label>
-                    </div>}
-            </div>
-
         </div>
 
         <!--Botones de filtros en tamaño movil  -->
-        <button class="btn btn-success" onClick="ActivarCasilla(this), LimpiarTodo();">Limpiar Filtros</button>
+        <button class="btn btn-success" onClick="ActivarCasilla(this);">Limpiar Filtros</button>
         <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" data-bs-backdrop="false">Aplicar Filtros</button>
         <script type="text/javascript">
             function ActivarCasilla(casilla) {
@@ -621,7 +543,7 @@
                             <h4 style="color:#000;" class="text-left">FILTROS</h4>
                             @*Boton para borrar los filtros*@
                             <label class="btn btn-sm text-center" style=" font-size: 14px; margin: 0px; cursor: pointer; background-color: #868686; margin-bottom:5%;">
-                                <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this), LimpiarTodo();" /> Borrar filtros
+                                <input style="display:none;" type="checkbox" onClick="ActivarCasilla(this);" /> Borrar filtros
                             </label>
                             <ul class="list-unstyled mb-5 ">
                                 <li class="mb-md-3">
