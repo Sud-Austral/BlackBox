@@ -252,22 +252,35 @@
                         contador = 0;
                         name_list = []
                         $("#myTable tr").hide()
-                        var flag = 1
+                        var flag = 1;
+                        var conceptos = [];
                         $("input:checkbox[name=name]:checked").each(function () {
                             flag = 0;
                             var value = $(this).val().toLowerCase();
-                            $("#myTable tr").filter(function () {
-                                if ($(this).text().toLowerCase().indexOf(value) > -1) {
-                                    $(this).show();
-                                    contador++;
-                                }
-
-                            });
-                            $("#contar").text(contador + " Resultados");
+                            if (!conceptos.includes(value))
+                                conceptos.push(value);
                         });
+                        //Fin agregar
                         if (flag == 1) {
                             $("#myTable tr").show();
                             $("#contar").text($("#myTable tr").length + " Resultados");
+                        } else {
+                            //Agregar
+                            const reducer = (accumulator, currentValue) => accumulator && currentValue;
+                            $("#myTable tr").filter(function () {
+                                var valor = $(this).text().toLowerCase();
+                                //alert(valor);
+                                var flags = conceptos.map(function (x) {
+                                    //alert($(this).text().toLowerCase());
+                                    return valor.indexOf(x) > -1
+                                }
+                                );
+                                if (flags.reduce(reducer)) {
+                                    $(this).show();
+                                    contador++;
+                                }
+                            });
+                            $("#contar").text(contador + " Resultados");
                         }
                     });
 
