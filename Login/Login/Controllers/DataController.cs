@@ -92,7 +92,6 @@ namespace Login.Controllers
 
         public PartialViewResult VisualizarGraficos(decimal id = 1234)
         {
-            ViewBag.time1 = DateTime.Now;
             var rand = new Random();
             TABLA_GENERICA_PRUEBA graf = new TABLA_GENERICA_PRUEBA();
             try
