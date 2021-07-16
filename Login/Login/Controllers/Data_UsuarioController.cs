@@ -138,72 +138,65 @@ namespace Login.Controllers
         public ActionResult PaginaBusqueda(string id = "1")
         {
             ViewBag.palabra = id;
-            IEnumerable<DATA_GRAFICO> union = UtilBusqueda.PaginaBusqueda(id);
+            IEnumerable<TABLA_GENERICA_PRUEBA> union = UtilBusqueda.PaginaBusquedaData(id);
             if (union.Count() == 0)
             {
                 ViewBag.Concepto = id;
                 return View("No_Resultado");
             }
             ViewBag.Resultado = union;
+            //coleccion	sector	tema	contenido	escala	territorio
 
-            List<string> Paises = new List<string>();
-            List<string> Escala = new List<string>();
-            List<string> TipoGrafico = new List<string>();
-            List<string> Temporalidad = new List<string>();
-            List<string> Producto = new List<string>();
-            List<string> Industria = new List<string>();
+            List<string> Coleccion = new List<string>();
             List<string> Sector = new List<string>();
-            List<string> Categoria = new List<string>();
-            List<string> Parametro = new List<string>();
+            List<string> Tema = new List<string>();
+            List<string> Contenido = new List<string>();
+            List<string> Escala = new List<string>();
+            List<string> Territorio = new List<string>();
+
+            //var Escala = db.TABLA_GENERICA_PRUEBA.SqlQuery("select DISTINCT escala from tabla_generica_prueba;");
             foreach (var item in union)
             {
-                if (!Paises.Contains(item.TERRITORIO.auxiliar))
+                if (!Coleccion.Contains(item.coleccion))
                 {
-                    Paises.Add(item.TERRITORIO.auxiliar);
+                    Coleccion.Add(item.coleccion);
                 }
-                if (!Escala.Contains(item.TERRITORIO.nombre + " - " + item.TERRITORIO.auxiliar))
+                if (!Sector.Contains(item.sector))
                 {
-                    Escala.Add(item.TERRITORIO.nombre + " - " + item.TERRITORIO.auxiliar);
+                    Sector.Add(item.sector);
                 }
-                if (!TipoGrafico.Contains(item.TIPO_GRAFICO.nombre))
+                if (!Escala.Contains(item.escala))
                 {
-                    TipoGrafico.Add(item.TIPO_GRAFICO.nombre);
+                    Escala.Add(item.escala);
                 }
-                if (!Temporalidad.Contains(item.TEMPORALIDAD.nombre))
+                if (!Tema.Contains(item.tema))
                 {
-                    Temporalidad.Add(item.TEMPORALIDAD.nombre);
+                    Tema.Add(item.tema);
                 }
-                if (!Producto.Contains(item.CATEGORIA.PRODUCTO.nombre))
+                if (!Contenido.Contains(item.contenido))
                 {
-                    Producto.Add(item.CATEGORIA.PRODUCTO.nombre);
+                    Contenido.Add(item.contenido);
                 }
-                if (!Industria.Contains(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre))
+                if (!Escala.Contains(item.escala))
                 {
-                    Industria.Add(item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre);
+                    Escala.Add(item.escala);
                 }
-                if (!Sector.Contains(item.CATEGORIA.PRODUCTO.SECTOR.nombre))
+                if (!Territorio.Contains(item.territorio))
                 {
-                    Sector.Add(item.CATEGORIA.PRODUCTO.SECTOR.nombre);
+                    Territorio.Add(item.territorio);
                 }
 
-                if (!Categoria.Contains(item.CATEGORIA.nombre))
-                {
-                    Categoria.Add(item.CATEGORIA.nombre);
-                }
-                if (!Parametro.Contains(item.PARAMETRO.nombre))
-                {
-                    Parametro.Add(item.PARAMETRO.nombre);
-                }
             }
-            ViewBag.Paises = Paises;
-            ViewBag.Escala = Escala;
-            ViewBag.TipoGrafico = TipoGrafico;
-            ViewBag.Temporalidad = Temporalidad;
-            ViewBag.Producto = Producto;
-            ViewBag.Industria = Industria;
+            ViewBag.Coleccion = Coleccion;
             ViewBag.Sector = Sector;
-            ViewBag.Categoria = Categoria;
-            ViewBag.Parametro = Parametro;
+            ViewBag.Escala = Escala;
+            ViewBag.Tema = Tema;
+            ViewBag.Contenido = Contenido;
+            ViewBag.Escala = Escala;
+            ViewBag.Territorio = Territorio;
+            //ViewBag.Sector = Territorio;
+            //ViewBag.Categoria = Territorio;
+            //ViewBag.Parametro = Territorio;
             return View();
         }
 
