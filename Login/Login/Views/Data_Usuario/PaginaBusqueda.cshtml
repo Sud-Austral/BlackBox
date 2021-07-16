@@ -112,7 +112,7 @@
                     <a style="background-color: #B4B4B5; text-decoration:none; padding-right:2rem " href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle  flex-shrink-1 ">COLECCIÓN</a>
 
                     <ul class="collapse list-unstyled" id="pageSubmenu1">
-                        @foreach (var item1 in ViewBag.Sector)
+                        @foreach (var item1 in ViewBag.Coleccion)
                         {
                             <label style="width: 100%;">
                                 <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
@@ -124,7 +124,7 @@
                 <li class="mb-md-3">
                     <a style="background-color: #B4B4B5; text-decoration: none; padding-right: 2rem " href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">SECTOR</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu2">
-                        @foreach (var item1 in ViewBag.Industria)
+                        @foreach (var item1 in ViewBag.Sector)
                         {
                             <label style="width: 100%;">
                                 <li style="margin: 5px !important; color: #000; cursor: pointer; width:100%; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
@@ -136,7 +136,7 @@
                 <li class="mb-md-3">
                     <a style="background-color: #B4B4B5; text-decoration: none; padding-right: 2rem " href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TEMA</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu3">
-                        @foreach (var item1 in ViewBag.Producto)
+                        @foreach (var item1 in ViewBag.Tema)
                         {
                             <label style="width: 100%;">
                                 <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
@@ -146,31 +146,13 @@
                     </ul>
                 </li>
                 <li class="mb-md-3">
-                    <a style="background-color: #B4B4B5; text-decoration: none; padding-right:30px " href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TIPO DE GRÁFICO</a>
+                    <a style="background-color: #B4B4B5; text-decoration: none; padding-right:30px " href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">CONTENIDO</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu4">
-                        @foreach (var item4 in ViewBag.TipoGrafico)
+                        @foreach (var item4 in ViewBag.Contenido)
                         {
-                            switch (item4)
-                            {
-                                case "Informe Interactivo":
-                                    <label style="width: 100%;">
-                                        <li style="margin: 5px !important; color: #000; cursor: pointer; "><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
-                                    </label>
-                                    break;
-                                case "Reporte 360°":
-                                    <label style="width: 100%;">
-                                        <li style="margin: 5px !important; color: #000; cursor: pointer; "><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
-                                    </label>
-                                    break;
-                                default:
-                                    <label style="width: 100%;">
-                                        <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item4"> @item4</li>
-                                    </label>
-                                    break;
-                            }/**/
-                            /**/
-                            /**/
-
+                            <label style="width: 100%;">
+                            <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item4"> @item4</li>
+                            </label>
                         }
 
                     </ul>
@@ -178,7 +160,7 @@
                 <li class="mb-md-3">
                     <a style="background-color: #B4B4B5; text-decoration: none; padding-right: 100px" href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ESCALA</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu5">
-                        @foreach (var item1 in ViewBag.Paises)
+                        @foreach (var item1 in ViewBag.Escala)
                         {
                             <label style="width: 100%;">
                                 <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
@@ -190,7 +172,7 @@
                 <li class="mb-md-3">
                     <a style="background-color: #B4B4B5; text-decoration: none; padding-right: 80px" href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TERRITORIO</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu6">
-                        @foreach (var item6 in ViewBag.Escala)
+                        @foreach (var item6 in ViewBag.Territorio)
                         {
                             <label class="territorio" style="width: 100%;">
                                 <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</li>
@@ -208,14 +190,14 @@
                             <label style="width: 100%;">
                                 <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
                             </label>
-                        }
+                         }
 
                     </ul>
                 </li>
             </ul>
 
         </div>
-        <div class="tags col-md-6 col-sm-12 ml-5" style="margin-left:10px;">
+        <div class=" col-md-6 col-sm-12 ml-5" style="margin-left:10px; width:fit-content;">
             @*Este script es para hacer el filtro de la tabla*@
             <script>
                 //Funcion para filtrar Territorios a partir de Escala
@@ -288,7 +270,60 @@
                 });
             </script>
 
+            <h4 class="mt-3 dropdown-header">COLECCIÓN</h4>
+            <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
 
+                @foreach (var item1 in ViewBag.Coleccion)
+                {
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</label>
+                    </div>
+                }
+            </div>
+            <h4 class="dropdown-header">SECTOR</h4>
+            <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
+                @foreach (var item2 in ViewBag.Sector)
+                {
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item2"> @item2</label>
+                    </div>}
+            </div>
+            <h4 class="dropdown-header">TEMA</h4>
+            <div class="side mb-5" style="overflow:scroll; max-height:100px; overflow:hidden;">
+                @foreach (var item3 in ViewBag.Tema)
+                {
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item3"> @item3</label>
+                    </div>}
+            </div>
+            <h4 class="mt-3 dropdown-header">CONTENIDO</h4>
+            <div class="side mb-5" style="overflow:scroll; max-height:120px; overflow:hidden;">
+                @foreach (var item4 in ViewBag.Contenido)
+                {
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item4"> @item4</label>
+                    </div>}
+
+                }
+            </div>
+            <h4 class="dropdown-header">ESCALA</h4>
+            <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
+                @foreach (var item5 in ViewBag.Escala)
+                {
+                    <div>
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name escala" name="name" value="@item5.Split('-')[0]"> @item5.Split('-')[0]</label>
+                    </div>
+                }
+            </div>
+            <h4 class="dropdown-header">TERRITORIO</h4>
+            <div class="side mb-5" style="overflow:scroll; max-height:250px; overflow:hidden;">
+                @foreach (var item6 in ViewBag.Territorio)
+                {
+                    <div class="territorio">
+                        <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</label>
+                    </div>
+                  }
+            </div>
         </div>
 
         <!--Botones de filtros en tamaño movil  -->
@@ -484,9 +519,14 @@
         }
     </style>
     @*seccion de graficos*@
-    <div id="PBUdos" style="display:none;">
-
-    </div>
+<div id="PBUdos" style="display:none;">
+    @*<h2>
+        No pudimos encontrar tu Gráfico, pero a la brevedad estara disponible.
+    </h2>
+    <div class="col-12 col-md-2 mt-1 text-center">
+        <a class="btn btn-primary btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" onclick="mostrador('#PBUuno')" href="#"> Volver Atrás</a>
+    </div>*@
+</div>
     @******************** dise;o de pagina busqueda*****************************************@
     <div id="PBUuno">
         <div class="container-fluid" style="background-color: #C6CCDC; height:auto">
@@ -527,7 +567,7 @@
                                         <a style="background-color: #B4B4B5; text-decoration:none; padding-right:10px " href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle  flex-shrink-1 ">COLECCIÓN</a>
 
                                         <ul class="collapse list-unstyled" id="pageSubmenu1">
-                                            @foreach (var item1 in ViewBag.Sector)
+                                            @foreach (var item1 in ViewBag.Coleccion)
                                             {
                                                 <label style="width: 100%;">
                                                     <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
@@ -539,7 +579,7 @@
                                     <li class="mb-md-3">
                                         <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">SECTOR</a>
                                         <ul class="collapse list-unstyled" id="pageSubmenu2">
-                                            @foreach (var item1 in ViewBag.Industria)
+                                            @foreach (var item1 in ViewBag.Sector)
                                             {
                                                 <label style="width: 100%;">
                                                     <li style="margin: 5px !important; color: #000; cursor: pointer; width:100%; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
@@ -551,7 +591,7 @@
                                     <li class="mb-md-3">
                                         <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TEMA</a>
                                         <ul class="collapse list-unstyled" id="pageSubmenu3">
-                                            @foreach (var item1 in ViewBag.Producto)
+                                            @foreach (var item1 in ViewBag.Tema)
                                             {
                                                 <label style="width: 100%;">
                                                     <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
@@ -563,54 +603,26 @@
                                     <li class="mb-md-3">
                                         <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TIPO DE GRÁFICO</a>
                                         <ul class="collapse list-unstyled" id="pageSubmenu4">
-                                            @foreach (var item4 in ViewBag.TipoGrafico)
-                                            {
-                                                switch (item4)
-                                                {
-                                                    case "Informe Interactivo":
-                                                        <label style="width: 100%;">
-                                                            <li style="margin: 5px !important; color: #000; cursor: pointer; "><input id="@item4.Replace(" ","_")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
-                                                        </label>
-                                                        break;
-                                                    case "Reporte 360°":
-                                                        <label style="width: 100%;">
-                                                            <li style="margin: 5px !important; color: #000; cursor: pointer; "><input id="@item4.Replace(" ","_").Replace("°","")" type="checkbox" class="name" name="name" value="@item4"> @item4</li>
-                                                        </label>
-                                                        break;
-                                                    default:
-                                                        <label style="width: 100%;">
-                                                            <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item4"> @item4</li>
-                                                        </label>
-                                                        break;
-                                                }/**/
-                                                /**/
-                                                /**/
-
-                                            }
-
-                                        </ul>
-                                    </li>
-                                    <li class="mb-md-3">
-                                        <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ESCALA</a>
-                                        <ul class="collapse list-unstyled" id="pageSubmenu5">
-                                            @foreach (var item1 in ViewBag.Paises)
+                                            @foreach (var item4 in ViewBag.Contenido)
                                             {
                                                 <label style="width: 100%;">
-                                                    <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
+                                                <li style="margin: 5px !important; color: #000; cursor: pointer; "><input type="checkbox" class="name" name="name" value="@item4"> @item4</li>
                                                 </label>
+
                                             }
 
                                         </ul>
                                     </li>
+                                    
                                     <li class="mb-md-3">
                                         <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">TERRITORIO</a>
                                         <ul class="collapse list-unstyled" id="pageSubmenu6">
                                             @foreach (var item6 in ViewBag.Escala)
                                             {
                                                 <label class="territorio" style="width: 100%;">
-                                                    <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</li>
+                                                <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</li>
                                                 </label>
-}
+                                            }
 
 
                                         </ul>
@@ -618,7 +630,7 @@
                                     <li class="mb-md-3">
                                         <a style="background-color: #B4B4B5; text-decoration: none; " href="#pageSubmenu7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">PARÁMETRO</a>
                                         <ul class="collapse list-unstyled" id="pageSubmenu7">
-                                            @foreach (var item1 in ViewBag.Parametro)
+                                            @foreach (var item1 in ViewBag.Territorio)
                                             {
                                                 <label style="width: 100%;">
                                                     <li style="margin: 5px !important; color: #000; cursor: pointer;"><input type="checkbox" class="name" name="name" value="@item1"> @item1</li>
@@ -631,7 +643,6 @@
 
                             </div>
                         </nav>
-
                     </div>
                 </div>
                 <div class="col-12 col-md-8 overflow-auto mt-md-5">
@@ -696,76 +707,29 @@
                                                 <div class="row d-flex">
                                                     <div class="col-md-2 col-12">
 
-                                                        @{ string RutaImagen2 = "/Content/img/iconos_TipoProducto/" + item.TIPO_GRAFICO_id + ".png"; }
-                                                        <img class="img-fluid" style="width:140px;" src="@RutaImagen2" />
-                                                    </div>
-                                                    @if (item.TIPO_GRAFICO_id == 4)
-                                                    {
-
-                                                        <div id="test1" class="col-md-8 col-12">
-                                                            <a href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="cursor: pointer; text-decoration: blink; color: black;">
-                                                                @item.titulo <br />
-                                                                @item.TIPO_GRAFICO.nombre <br />
-                                                                @item.TEMPORALIDAD.nombre
-                                                                <p style="display:none;">@item.TERRITORIO.auxiliar </p>
-                                                                <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                                <p style="display:none;">@item.PARAMETRO.nombre </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
-                                                            </a>
-                                                            <hr />
-                                                        </div> }
-                                                    else if (item.TIPO_GRAFICO_id == 3)
-                                                    {
-                                                        <div id="test1" class="col-md-8 col-12">
-                                                            <a href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style=" cursor: pointer; text-decoration:blink; color:black;">
-                                                                @item.titulo <br />
-                                                                @item.TIPO_GRAFICO.nombre <br />
-                                                                @item.TEMPORALIDAD.nombre
-                                                                <p style="display:none;">@item.TERRITORIO.auxiliar </p>
-                                                                <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                                <p style="display:none;">@item.PARAMETRO.nombre </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
-                                                            </a>
-                                                        </div> }
-                                                    else if (item.TIPO_GRAFICO_id < 3)
-                                                    {
-
+                                                        <img class="img-fluid" style="width:140px;" src="~/Content/img/iconos_TipoProducto/1.png" />
+                                                    </div>                                         
                                                         <div id="test1" class="col-md-8 col-12">
                                                             @*<a href="~/info/index?id=@item.id" style=" cursor: pointer;">*@
                                                             <a href="#" onclick="mostrador('#PBUdos'); PBGrafico('@item.id');" style="cursor: pointer; text-decoration: blink; color: black;">
                                                                 @item.titulo <br />
-                                                                @item.TIPO_GRAFICO.nombre <br />
-                                                                @item.TEMPORALIDAD.nombre
-                                                                <p style="display:none;">@item.TERRITORIO.auxiliar </p>
-                                                                <p style="display:none;">@item.TERRITORIO.nombre </p>
-                                                                <p style="display:none;">@item.PARAMETRO.nombre </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.nombre </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre  </p>
-                                                                <p style="display:none;">@item.CATEGORIA.PRODUCTO.nombre </p>
+                                                                @item.temporalidad
+                                                                <p style="display:none;">@item.territorio </p>
+                                                                <p style="display:none;">@item.sector </p>
+                                                                <p style="display:none;">@item.unidad_medida </p>
+                                                                <p style="display:none;">@item.coleccion </p>
+                                                                <p style="display:none;">@item.tema </p>
+                                                                <p style="display:none;">@item.contenido </p>
+                                                                <p style="display:none;">@item.escala </p>
                                                             </a>
+                                                           
 
-                                                        </div>}
+                                                        </div>
 
                                                     <div class="col-md-2 col-sm-12">
-                                                        @if (item.TIPO_GRAFICO_id == 4)
-                                                        {
-                                                            <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal2" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
-                                                                Adquirir
-                                                            </a> }
-                                                        else if (item.TIPO_GRAFICO_id == 3)
-                                                        {
-                                                            <a class=" btn btn-danger btn-sm" href="#" type="button" data-toggle="modal" data-target="#myModal1" data-backdrop="True" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
-                                                                Adquirir
-                                                            </a> }
-                                                        else if (item.TIPO_GRAFICO_id < 3)
-                                                        {
                                                             <a onclick="mostrador('#PBUdos'); PBGrafico('@item.id');" class=" btn btn-primary btn-sm" href="#" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100%; cursor: pointer;">
                                                                 Ver Gráfico
-                                                            </a>}
+                                                            </a>
 
                                                     </div>
                                                     <hr />
@@ -1207,6 +1171,7 @@
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
                         $("#PBUdos").html('<h2>No pudimos encontrar tu Gráfico, pero a la brevedad estara disponible.</h2>');
+                       
                     }
 
                 });
@@ -1322,7 +1287,7 @@
                 });
                 $("#contar").text(contador + " Resultados");
                 if ($("#Reporte_360").length == 0)
-                    $("#contar").text("No pudimos encontrar Reportes 360° pero aqui tienes " + contador + " Informes Interactivos");;
+                    $("#contar").text("No pudimos encontrar Reportes 360° pero aqui tienes " + contador + " Informes Interactivos");
             });
         }
 

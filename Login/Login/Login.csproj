@@ -3209,6 +3209,7 @@
     <Content Include="Views\TABLA_GENERICA_PRUEBA\Edit.cshtml" />
     <Content Include="Views\TABLA_GENERICA_PRUEBA\Index.cshtml" />
     <Content Include="Views\Data\Paginacion.cshtml" />
+     <Content Include="Views\Data_Usuario\Paginacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

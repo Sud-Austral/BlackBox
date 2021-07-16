@@ -88,24 +88,7 @@
                             <span class="lispancolecciones">Rendimiento</span>
                         </a>
                     </li>
-                    @*<li class="licolecciones">
-                        <a onclick="mostrador('#elecciones');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-bricks fs-4 icolecciones"></i>
-                            <span class="lispancolecciones">Elecciones</span>
-                        </a>
-                    </li>
-                    <li class="licolecciones">
-                        <a onclick="mostrador('#contaminacion');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-people fs-4 icolecciones"></i>
-                            <span class="lispancolecciones">Contaminación</span>
-                        </a>
-                    </li>
-                    <li class="licolecciones">
-                        <a onclick="mostrador('#ingresoscasen');" class="nav-link px-2 text-truncate liacolecciones">
-                            <i class="bi bi-bricks fs-4 icolecciones"></i>
-                            <span class="lispancolecciones">Ingresos según CASEN</span>
-                        </a>
-                    </li>*@
+                   
                 </ul>
             </div>
         </div>
@@ -166,20 +149,6 @@
                 <div id="rendimiento" style="display:none">
                     @{ Html.RenderAction("Rendimiento", "Data_Usuario");}
                 </div>
-                @*<div id="graficocontenido" style="display:none">
-                    @{ Html.RenderAction("Gráfico_Contenido_Colección", "Data_Usuario");}
-                </div>*@
-                @*<div id="elecciones" style="display:none">
-                    @{ Html.RenderAction("Elecciones", "Data");}
-                </div>
-                <div id="contaminacion" style="display:none">
-                    @{ Html.RenderAction("Contaminacion", "Data");}
-                </div>
-                <div id="ingresoscasen" style="display:none">
-                    @{ Html.RenderAction("IngresosCasen", "Data");}
-                </div>*@
-
-
             </div>
 
         </div>

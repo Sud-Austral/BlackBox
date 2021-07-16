@@ -12,11 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
-    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">*@
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">-->
     <title>Visualizador Graficos</title>
-
-
 </head>
 <body>
     <script>
@@ -27,11 +25,11 @@
     </script>
 
     <div class="container" id="btnAtras">
-        @*boton para ir atras y buscador*@
+        @*boton para ir atras*@
         <div class="container">
             <div class="row justify-content-center  mt-5">
                 <div class="col-12 col-md-2 mt-1 text-center">
-                    <a class="btn btn-primary btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" href="javascript:history.back()"> Volver Atrás</a>
+                    <a class="btn btn-primary btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" @*onclick="mostrador('#PBUuno')"*@  href="javascript:history.back()" href="#"> Volver Atrás</a>
                 </div>
                 <style>
                     .breadcrumb-item + .breadcrumb-item::before {
@@ -40,12 +38,28 @@
                 </style>
                 <div class="col-12 col-md-5 text-center">
                     <nav aria-label="breadcrumb" class="mt-2">
-                        <ol class="breadcrumb" style="background-color:transparent; font-size:0.9rem;">
-                            <li class="breadcrumb-item"><a style="text-decoration:none; color:#000;" href="#!">Sugerencias:</a></li>
-                            <li class="breadcrumb-item"><a href="/Data_Usuario/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id&id2=1">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</a></li>
-                            <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR_id&id2=2">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre</a></li>
-                            <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO_id&id2=3">@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre</a></li>
-                            <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA_id&id2=4">@ViewBag.Elemento.CATEGORIA.nombre</a></li>
+                        <ol class="breadcrumb" style="background-color:transparent;">
+                            <li class="breadcrumb-item"><a href="/data/index">Home</a></li>
+                            <li class="breadcrumb-item">
+                                <a href="/Data_Usuario/PaginaBusqueda?id=@ViewBag.Elemento.coleccion&id2=1">
+                                    @ViewBag.Elemento.coleccion
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="Data_Usuario/PaginaBusqueda?id=@ViewBag.Elemento.sector&id2=2">
+                                    @ViewBag.Elemento.sector
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="Data_Usuario/PaginaBusqueda?id=@ViewBag.Elemento.tema&id2=3">
+                                    @ViewBag.Elemento.tema
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="Data_Usuario/PaginaBusqueda?id=@ViewBag.Elemento.contenido&id2=4">
+                                    @ViewBag.Elemento.contenido
+                                </a>
+                            </li>
                             @*<li class="breadcrumb-item active" aria-current="page">@ViewBag.Elemento.titulo</li>*@
                         </ol>
                     </nav>
@@ -70,19 +84,19 @@
             </div>
             <div class="row justify-content-center mt-3">
                 <div class="col-12 col-md-8 text-center ">
-                    <h5 class="mt-3">@ViewBag.Elemento.titulo</h5>
+                    <h6 class="mt-3" style="color:#000;">@ViewBag.Elemento.titulo</h6>
                 </div>
             </div>
 
         </div>
-        @*fin boton para ir atras*@
 
         @*seccion iframe grafico*@
-        <section class="contenedor-main row mr-md-2 justify-content-center">
+        <section class="contenedor row mr-md-2 justify-content-center">
             <main class="col-md-10 mt-2 " style="border:1px solid #e6e6e6; border-radius:10px; max-height:610px !important;">
                 <!--Iframe de grafico-->
-                <div class="container mt-100px;">
-                    <iframe id="Imprimeme" class="pruebarara" style="width:100%; height:490px;" src="/info/dashboard?id=@ViewBag.Elemento.id">
+                <div class="container">
+                    <iframe id="Imprimeme" class="pruebarara" style="width:100%; height:490px; margin-top:5% !important;" src="@ViewBag.Elemento.url">
+                        @*<iframe id="Imprimeme" class="pruebarara" style="width:100%; height:490px; margin-top:5% !important;" src="https://analytics.zoho.com/open-view/2395394000000943308?ZOHO_CRITERIA=%22Trasposicion_4.1%22.%22C%C3%B3digo_Regi%C3%B3n%22%20%3D%201">*@
                     </iframe>
                 </div>
                 <div class="row quitarespacio2" style="color:blue; font-size:10px;">
@@ -132,27 +146,27 @@
                         </div>
                         <div class="col-md-3 col-10" style="border-right: 0.5px solid #e6e6e6; white-space: normal;">
                             <p class="mt-md-3 mb-md-0"><strong>Fuente de Datos:</strong></p>
-                            <p class="mb-md-1">@ViewBag.ELEMENTO.FUENTE.nombre</p>
+                            <p class="mb-md-1">@ViewBag.ELEMENTO.fuente</p>
 
                             <p class="mb-md-1">
                                 <strong>Periodo: </strong>
 
-                                @ViewBag.ELEMENTO.TEMPORALIDAD.nombre
+                                @ViewBag.ELEMENTO.temporalidad
                             </p>
                             <p class="mb-md-1">
-                                <strong>@ViewBag.ELEMENTO.TERRITORIO.auxiliar:</strong>
+                                <strong>@ViewBag.ELEMENTO.escala:</strong>
 
-                                @ViewBag.ELEMENTO.TERRITORIO.nombre
+                                @ViewBag.ELEMENTO.territorio
 
                             </p>
                             <p class="mb-md-1">
                                 <strong>País:</strong> Chile-
-                                @ViewBag.ELEMENTO.TERRITORIO.iso_pais
+                                @ViewBag.ELEMENTO.pais
                             </p>
 
 
                             <p class="mb-md-1"><Strong>Unidad de Medida:</Strong></p>
-                            <p style="white-space: normal;">@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.nombre (@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.descripcion)</p>
+                            <p style="white-space: normal;">@ViewBag.ELEMENTO.unidad_medida </p>
                         </div>
 
                         <div class="col-md-5 col-10">
@@ -180,7 +194,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <p class="mt-md-3 mb-md-1"><strong>Tags:</strong></p>
-                                        <p id="tagsGrafico1" class='line-clamp'>@ViewBag.ELEMENTO.tags</p>
+                                        <p id="tagsGrafico" class='line-clamp'>@ViewBag.ELEMENTO.tag</p>
                                     </div>
                                 </div>
                             </div>
@@ -191,6 +205,8 @@
             </div>
         </section>
     </div>
+    <!--Script de ocultar texto-->
+    @*<script src="~/Scripts/OcultarBoton.js"></script>*@
 
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -206,14 +222,14 @@
         //lista.map(alert);
         function estructura() {
             // En esta linea, se transforma el texto del elemento #Gustavo en una lista separando el String por ,
-            var lista = $("#tagsGrafico1").text().split(",") //["hola1", "hola2", "hola3"]
+            var lista = $("#tagsGrafico").text().split(",") //["hola1", "hola2", "hola3"]
             // A cada elemento de la lista se le aplioca la funcion construirEstructura
             // La funcion construirEstructura toma un elemento y devuelve un elemento link (en este caso <a>)
             var listaEstructurada = lista.map(construirEstructura)
             // Esta variable vuelve a unir toda la lista en un solo String
             var salida = listaEstructurada.join(", ")
             // Setea el contenido del elemento #Gustavo con el String creado anteriormente
-            $("#tagsGrafico1").html(salida)
+            $("#tagsGrafico").html(salida)
             return salida;
         }
         estructura();
