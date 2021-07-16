@@ -506,13 +506,13 @@
         }
     </style>
     @*seccion de graficos*@
-<div id="PBUdos" style="display:none; height:285px !important;">
-    <h2>
+<div id="PBUdos" style="display:none;">
+    @*<h2>
         No pudimos encontrar tu Gráfico, pero a la brevedad estara disponible.
     </h2>
     <div class="col-12 col-md-2 mt-1 text-center">
         <a class="btn btn-primary btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" onclick="mostrador('#PBUuno')" href="#"> Volver Atrás</a>
-    </div>
+    </div>*@
 </div>
     @******************** dise;o de pagina busqueda*****************************************@
     <div id="PBUuno">
@@ -1158,7 +1158,7 @@
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
                         $("#PBUdos").html('<h2>No pudimos encontrar tu Gráfico, pero a la brevedad estara disponible.</h2>');
-                        $("#PBUdos").html('<a class="btn btn-primary btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" onclick="mostrador('#PBUuno')" href="#"> Volver Atrás</a>');
+                       
                     }
 
                 });
