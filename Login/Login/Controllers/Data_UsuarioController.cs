@@ -121,7 +121,7 @@ namespace Login.Controllers
             var Tema = union.Select(x => x.tema).Distinct();
             var Contenido = union.Select(x => x.contenido).Distinct();
             var Escala = union.Select(x => x.escala).Distinct();
-            var Territorio = union.Select(x => x.coleccion).Distinct();
+            var Territorio = union.Select(x => x.muestra_temporalidad).Distinct();
             ViewBag.Coleccion = Coleccion;
             ViewBag.Sector = Sector;
             ViewBag.Escala = Escala;
