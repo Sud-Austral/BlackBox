@@ -9,6 +9,7 @@ namespace Login.Controllers
 {
     public class Data_UsuarioController : Controller
     {
+        private graficosEntities1 db = new graficosEntities1();
         private graficosEntities dbGrafico = new graficosEntities();
         // GET: Data_Usuario
         public ActionResult Index()
@@ -19,21 +20,16 @@ namespace Login.Controllers
         {
             ViewBag.time1 = DateTime.Now;
             var rand = new Random();
-            DATA_GRAFICO graf = new DATA_GRAFICO();
+            TABLA_GENERICA_PRUEBA graf = new TABLA_GENERICA_PRUEBA();
             try
             {
-                graf = dbGrafico.DATA_GRAFICO.Where(x => x.id == id).First();
+                graf = db.TABLA_GENERICA_PRUEBA.Where(x => x.id == id).First();
             }
             catch (Exception)
             {
-                graf = null;
+                graf = db.TABLA_GENERICA_PRUEBA.First();
             }
-            if (graf.TIPO_GRAFICO_id > 1 || graf == null)
-            {
-                var listaGraficoAuxiliar = dbGrafico.DATA_GRAFICO.Where(x => x.TIPO_GRAFICO_id < 3).ToList();
-                graf = listaGraficoAuxiliar[rand.Next(listaGraficoAuxiliar.Count)];
-            }
-            ViewBag.Elemento = graf;//graficos
+            ViewBag.Elemento = graf;
             // var listaAsociado = dbGrafico.PRODUCTO.Where(x => x.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
             //var listaAsociado = dbGrafico.DATA_GRAFICO.Where(x => x.CATEGORIA.PRODUCTO.SECTOR_id == graf.CATEGORIA.PRODUCTO.SECTOR_id).ToList();
 

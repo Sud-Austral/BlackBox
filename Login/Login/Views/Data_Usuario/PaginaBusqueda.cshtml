@@ -184,7 +184,7 @@
             </ul>
 
         </div>
-        <div class="tags col-md-6 col-sm-12 ml-5" style="margin-left:10px;">
+        <div class=" col-md-6 col-sm-12 ml-5" style="margin-left:10px; width:fit-content;">
             @*Este script es para hacer el filtro de la tabla*@
             <script>
                 //Funcion para filtrar Territorios a partir de Escala
@@ -308,7 +308,8 @@
                 {
                     <div class="territorio">
                         <label style="margin-bottom:0 !important;"><input type="checkbox" class="name" name="name" value="@item6.Split('-')[0]"> @item6.Split('-')[0]</label>
-                    </div>}
+                    </div>
+                  }
             </div>
         </div>
 
@@ -505,9 +506,14 @@
         }
     </style>
     @*seccion de graficos*@
-    <div id="PBUdos" style="display:none;">
-
+<div id="PBUdos" style="display:none; height:285px !important;">
+    <h2>
+        No pudimos encontrar tu Gráfico, pero a la brevedad estara disponible.
+    </h2>
+    <div class="col-12 col-md-2 mt-1 text-center">
+        <a class="btn btn-primary btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" onclick="mostrador('#PBUuno')" href="#"> Volver Atrás</a>
     </div>
+</div>
     @******************** dise;o de pagina busqueda*****************************************@
     <div id="PBUuno">
         <div class="container-fluid" style="background-color: #C6CCDC; height:auto">
@@ -701,6 +707,7 @@
                                                                 <p style="display:none;">@item.coleccion </p>
                                                                 <p style="display:none;">@item.tema </p>
                                                                 <p style="display:none;">@item.contenido </p>
+                                                                <p style="display:none;">@item.escala </p>
                                                             </a>
                                                            
 
@@ -1151,6 +1158,7 @@
                     error: function (error) {
                         // si hay un error lanzara el mensaje de error
                         $("#PBUdos").html('<h2>No pudimos encontrar tu Gráfico, pero a la brevedad estara disponible.</h2>');
+                        $("#PBUdos").html('<a class="btn btn-primary btn-sm " style="font-size: 14px; margin: 0px; width: 100px; cursor: pointer" onclick="mostrador('#PBUuno')" href="#"> Volver Atrás</a>');
                     }
 
                 });
@@ -1266,7 +1274,7 @@
                 });
                 $("#contar").text(contador + " Resultados");
                 if ($("#Reporte_360").length == 0)
-                    $("#contar").text("No pudimos encontrar Reportes 360° pero aqui tienes " + contador + " Informes Interactivos");;
+                    $("#contar").text("No pudimos encontrar Reportes 360° pero aqui tienes " + contador + " Informes Interactivos");
             });
         }
     </script>
