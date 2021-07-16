@@ -40,5 +40,15 @@ namespace Login.Models
                                "euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Ut wisi enim ad.";
             this.color = "#e63a60";
         }
+
+        public GraficoPortada(string url)
+        {
+            this.url = url;
+            this.titulo = "Pandemia en Chile";
+            this.ideaFuerza = "¡Iquique duplicó sus contagios en un año!";
+            this.descripcion = "Texto de 25 palabras. Amet, consectetuer adipiscing elit, sed diam nonummy nibh " +
+                               "euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Ut wisi enim ad.";
+            this.color = "#e63a60";
+        }
     }
 }

@@ -53,11 +53,27 @@
                 <div class="col-md-10">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb" style="background-color:transparent;">
-                            <li class="breadcrumb-item"><a href="/info/homeOdoo">Home</a></li>
-                            <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA_id&id2=1">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.INDUSTRIA.nombre</a></li>
-                            <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR_id&id2=2">@ViewBag.Elemento.CATEGORIA.PRODUCTO.SECTOR.nombre</a></li>
-                            <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA.PRODUCTO_id&id2=3">@ViewBag.Elemento.CATEGORIA.PRODUCTO.nombre</a></li>
-                            <li class="breadcrumb-item"><a href="/info/ResultadoNiveles?id=@ViewBag.Elemento.CATEGORIA_id&id2=4">@ViewBag.Elemento.CATEGORIA.nombre</a></li>
+                            <li class="breadcrumb-item"><a href="/data/index">Home</a></li>
+                            <li class="breadcrumb-item">
+                                <a href="/Data/PaginaBusqueda2?id=@ViewBag.Elemento.coleccion&id2=1">
+                                    @ViewBag.Elemento.coleccion
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/Data/PaginaBusqueda2?id=@ViewBag.Elemento.sector&id2=2">    
+                                    @ViewBag.Elemento.sector
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/Data/PaginaBusqueda2?id=@ViewBag.Elemento.tema&id2=3">
+                                    @ViewBag.Elemento.tema
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/Data/PaginaBusqueda2?id=@ViewBag.Elemento.contenido&id2=4">
+                                    @ViewBag.Elemento.contenido
+                                </a>
+                            </li>
                             @*<li class="breadcrumb-item active" aria-current="page">@ViewBag.Elemento.titulo</li>*@
                         </ol>
                     </nav>
@@ -81,7 +97,7 @@
 
                 <!--Iframe de grafico-->
                 <div class="container">
-                    <iframe id="Imprimeme" class="pruebarara" style="width:100%; height:460px;" src="/info/dashboard?id=@ViewBag.Elemento.id">
+                    <iframe id="Imprimeme" class="pruebarara" style="width:100%; height:460px;" src="@ViewBag.Elemento.url">
                     </iframe>
                 </div>
                 <div class="row quitarespacio2" style="color:blue; font-size:10px;">
@@ -178,27 +194,27 @@
                         </div>
                         <div class="col-md-3 col-10" style="border-right: 0.5px solid #e6e6e6; white-space: normal;">
                             <p class="mt-md-3 mb-md-0"><strong>Fuente de Datos:</strong></p>
-                            <p class="mb-md-1">@ViewBag.ELEMENTO.FUENTE.nombre</p>
+                            <p class="mb-md-1">@ViewBag.ELEMENTO.fuente</p>
 
                             <p class="mb-md-1">
                                 <strong>Periodo: </strong>
 
-                                @ViewBag.ELEMENTO.TEMPORALIDAD.nombre
+                                @ViewBag.ELEMENTO.temporalidad
                             </p>
                             <p class="mb-md-1">
-                                <strong>@ViewBag.ELEMENTO.TERRITORIO.auxiliar:</strong>
+                                <strong>@ViewBag.ELEMENTO.escala:</strong>
 
-                                @ViewBag.ELEMENTO.TERRITORIO.nombre
+                                @ViewBag.ELEMENTO.territorio
 
                             </p>
                             <p class="mb-md-1">
                                 <strong>País:</strong> Chile-
-                                @ViewBag.ELEMENTO.TERRITORIO.iso_pais
+                                @ViewBag.ELEMENTO.pais
                             </p>
 
 
                             <p class="mb-md-1"><Strong>Unidad de Medida:</Strong></p>
-                            <p style="white-space: normal;">@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.nombre (@ViewBag.ELEMENTO.UNIDAD_MEDIDA1.descripcion)</p>
+                            <p style="white-space: normal;">@ViewBag.ELEMENTO.unidad_medida </p>
                         </div>
 
                         <div class="col-md-5 col-10">
@@ -244,7 +260,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <p class="mt-md-3 mb-md-1"><strong>Tags:</strong></p>
-                                        <p id="tagsGrafico" class='line-clamp'>@ViewBag.ELEMENTO.tags</p>
+                                        <p id="tagsGrafico" class='line-clamp'>@ViewBag.ELEMENTO.tag</p>
                                     </div>
                                 </div>
                             </div>
@@ -285,10 +301,10 @@
         estructura();
     </script>
 
-    <div class="container page " style="display:none;" id="grafico2">
-        <iframe id='inlineFrameExample2' class="borrar" width="1050" height="460" src="/info/dashboard?id=@ViewBag.Elemento.id">
+    @*<div class="container page " style="display:none;" id="grafico2">
+        <iframe id='inlineFrameExample2' class="borrar" width="1050" height="460" src="ViewBag.Elemento.url">
         </iframe>
-    </div>
+    </div>*@
 
     <link href="~/Content/Estilos/grafico.css" rel="stylesheet" />
 </body>

@@ -1,0 +1,35 @@
+﻿@{
+    int i = 0;
+}
+@foreach (var item in ViewBag.Resultado)
+{
+    {
+        i++;
+    }
+    <tr>
+        <td style="border:none !important;">
+            <div class="row d-flex">
+                <div class="col-md-2 col-12">
+                    <img class="img-fluid" style="width:140px;" src="~/Content/img/iconos_TipoProducto/1.png" />
+                </div>
+                <div id="test1" class="col-md-8 col-12">
+                    <a href="#" onclick="mostrador2('#PBdos','#PBcuatro','#PBcinco'); PBGrafico('@item.id'),PBGrafico2('@item.id'),PBGrafico3('@item.id') ;" style="cursor: pointer; text-decoration: blink; color: black;">
+                        @item.titulo <br />
+                        @item.temporalidad
+                        <p style="display:none;">@item.coleccion </p>
+                        <p style="display:none;">@item.sector </p>
+                        <p style="display:none;">@item.tema </p>
+                        <p style="display:none;">@item.contenido </p>
+                        <p style="display:none;">@item.escala </p>
+                        <p style="display:none;">@item.territorio </p>
+                    </a>
+                </div>
+                <div class="col-md-2 col-12">
+                    <a onclick="mostrador('#PBdos'); PBGrafico('@item.id');" class=" btn btn-danger btn-sm" href="#" style="border-radius: 25px; font-size: 14px; margin: 0px; width: 100px; cursor: pointer;">
+                        Ver Gráfico
+                    </a>
+                </div>
+            </div>
+        </td>
+    </tr>
+}
