@@ -115,48 +115,13 @@ namespace Login.Controllers
                 return View("No_Resultado");
             }
             ViewBag.Resultado = union;
-            //coleccion	sector	tema	contenido	escala	territorio
 
-            List<string> Coleccion = new List<string>();
-            List<string> Sector = new List<string>();
-            List<string> Tema = new List<string>();
-            List<string> Contenido = new List<string>();
-            List<string> Escala = new List<string>();
-            List<string> Territorio = new List<string>();
-
-            //var Escala = db.TABLA_GENERICA_PRUEBA.SqlQuery("select DISTINCT escala from tabla_generica_prueba;");
-            foreach (var item in union)
-            {
-                if (!Coleccion.Contains(item.coleccion))
-                {
-                    Coleccion.Add(item.coleccion);
-                }
-                if (!Sector.Contains(item.sector))
-                {
-                    Sector.Add(item.sector);
-                }
-                if (!Escala.Contains(item.escala))
-                {
-                    Escala.Add(item.escala);
-                }
-                if (!Tema.Contains(item.tema))
-                {
-                    Tema.Add(item.tema);
-                }
-                if (!Contenido.Contains(item.contenido))
-                {
-                    Contenido.Add(item.contenido);
-                }
-                if (!Escala.Contains(item.escala))
-                {
-                    Escala.Add(item.escala);
-                }
-                if (!Territorio.Contains(item.territorio))
-                {
-                    Territorio.Add(item.territorio);
-                }
-
-            }
+            var Coleccion = union.Select(x => x.coleccion).Distinct();
+            var Sector = union.Select(x => x.sector).Distinct();
+            var Tema = union.Select(x => x.tema).Distinct();
+            var Contenido = union.Select(x => x.contenido).Distinct();
+            var Escala = union.Select(x => x.escala).Distinct();
+            var Territorio = union.Select(x => x.coleccion).Distinct();
             ViewBag.Coleccion = Coleccion;
             ViewBag.Sector = Sector;
             ViewBag.Escala = Escala;
@@ -164,7 +129,7 @@ namespace Login.Controllers
             ViewBag.Contenido = Contenido;
             ViewBag.Escala = Escala;
             ViewBag.Territorio = Territorio;
-         
+
             return View();
         }
 
@@ -184,6 +149,57 @@ namespace Login.Controllers
             ViewBag.time2 = DateTime.Now;
             ViewBag.time2 = DateTime.Now;
             return PartialView();
+        }
+        public PartialViewResult Paginacion(string id = "1", int id2 = 1)
+        {
+            //var NEW_GRAFICOS
+            ViewBag.Resultado = db.TABLA_GENERICA_PRUEBA.Where(x => x.titulo.Contains(id) || x.tag.Contains(id))
+                                                .OrderBy(x => x.id)
+                                                .Skip(200 + 50 * id2)
+                                                .Take(50);
+            return PartialView();
+        }
+        public ActionResult PaginaBusqueda2(string id = "1", int id2 = 1)
+        {
+            //1 Coleccion
+            //2 Sector
+            //3 Tema
+            //4 Contenido
+            ViewBag.palabra = id;
+            IEnumerable<TABLA_GENERICA_PRUEBA> union;
+            switch (id2)
+            {
+                case 1:
+                    union = db.TABLA_GENERICA_PRUEBA.Where(x => x.coleccion.Contains(id));
+                    break;
+                case 2:
+                    union = db.TABLA_GENERICA_PRUEBA.Where(x => x.sector.Contains(id));
+                    break;
+                case 3:
+                    union = db.TABLA_GENERICA_PRUEBA.Where(x => x.tema.Contains(id));
+                    break;
+                case 4:
+                    union = db.TABLA_GENERICA_PRUEBA.Where(x => x.contenido.Contains(id));
+                    break;
+                default:
+                    union = db.TABLA_GENERICA_PRUEBA.Take(200);
+                    break;
+            }
+            ViewBag.Resultado = union;
+            var Coleccion = union.Select(x => x.coleccion).Distinct();
+            var Sector = union.Select(x => x.sector).Distinct();
+            var Tema = union.Select(x => x.tema).Distinct();
+            var Contenido = union.Select(x => x.contenido).Distinct();
+            var Escala = union.Select(x => x.escala).Distinct();
+            var Territorio = union.Select(x => x.coleccion).Distinct();
+            ViewBag.Coleccion = Coleccion;
+            ViewBag.Sector = Sector;
+            ViewBag.Escala = Escala;
+            ViewBag.Tema = Tema;
+            ViewBag.Contenido = Contenido;
+            ViewBag.Escala = Escala;
+            ViewBag.Territorio = Territorio;
+            return View("PaginaBusqueda");
         }
     }
 }
